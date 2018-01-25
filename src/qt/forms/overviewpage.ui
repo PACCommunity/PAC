@@ -55,18 +55,19 @@
           <item>
            <layout class="QHBoxLayout" name="horizontalLayout_4">
             <item>
-             <widget class="QLabel" name="labelWalletStatus">
-              <property name="toolTip">
-               <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Paccoin network after a connection is established, but this process has not completed yet.</string>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string> Balances</string>
               </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelWalletStatus">
               <property name="styleSheet">
-               <string notr="true">QLabel { color: red; }</string>
+               <string notr="true">QLabel { color: transparent; }</string>
               </property>
               <property name="text">
-               <string notr="true">(out of sync)</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               <string/>
               </property>
              </widget>
             </item>
@@ -415,7 +416,7 @@
                <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Paccoin network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
-               <string notr="true">QLabel { color: red; }</string>
+               <string notr="true">QLabel { color: transparent; }</string>
               </property>
               <property name="text">
                <string notr="true">(out of sync)</string>
@@ -674,7 +675,7 @@
                <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Paccoin network after a connection is established, but this process has not completed yet.</string>
               </property>
               <property name="styleSheet">
-               <string notr="true">QLabel { color: red; }</string>
+               <string notr="true">QLabel { color: transparent; }</string>
               </property>
               <property name="text">
                <string notr="true">(out of sync)</string>
