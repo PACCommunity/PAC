@@ -751,7 +751,7 @@ QDialog#AboutDialog {
 background-color:#F8F6F6;
 }
 
-QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About Dash Contents */
+QDialog#AboutDialog QLabel#label, QDialog#AboutDialog QLabel#copyrightLabel, QDialog#AboutDialog QLabel#label_2 { /* About PAC Contents */
 margin-left:10px;
 }
 
@@ -774,7 +774,10 @@ padding-right:5px;
 /* OVERVIEW SCREEN */
 
 QWidget .QFrame#frame { /* Wallet Balance */
-min-width:490px;
+background-color:transparent;
+/*max-width: 451px;*/
+min-width: 451px;
+max-height: 350px;
 }
 
 QWidget .QFrame#frame > .QLabel {
@@ -783,18 +786,35 @@ font-weight:normal;
 min-height:30px;
 }
 
+/*QWidget .QFrame#frame .QHBoxLayout#HorizontalLayout_4 {
+background-color:transparent;
+max-width: 421px;
+min-width: 421px;
+max-height: 350px;	
+}*/
+
+
 QWidget .QFrame#frame .QLabel#label_5 { /* Wallet Label */
-qproperty-alignment: 'AlignVCenter | AlignRight';
-min-width:160px;
-background-color:#F8F6F6;
+qproperty-alignment: 'AlignVCenter | AlignCenter';
+max-width: 421px;
+min-width: 421px;
+/*background-color:#F8F6F6;*/
+background-color:#CCC7C7;
 color:#000000;
-margin-right:5px;
-padding-right:5px;
+margin-right: 5px;
+padding-right: 5px;
+font-weight:bold;
+font-size:14px;
+min-height:35px;
+max-height:35px;
+
 }
 
 QWidget .QFrame#frame .QLabel#labelWalletStatus { /* Wallet Sync Status */
 qproperty-alignment: 'AlignVCenter | AlignLeft';
-margin-left:3px;
+margin-left:2px;
+padding-right:5px;
+
 }
 
 QWidget .QFrame#frame .QLabel#labelSpendable { /* Spendable Header */
@@ -812,7 +832,8 @@ margin-left:16px;
 QWidget .QFrame#frame .QLabel#labelBalanceText { /* Available Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color:transparent;
 color:#000000;
 margin-right:5px;
 padding-right:5px;
@@ -826,6 +847,7 @@ qproperty-alignment: 'AlignVCenter | AlignLeft';
 font-size:16px;
 color:#000000;
 margin-left:0px;
+background-color:transparent;
 /*font-weight: bold;*/
 }
 
@@ -839,7 +861,8 @@ QWidget .QFrame#frame .QLabel#labelPendingText { /* Pending Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
 font-size:12px;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color:transparent;
 margin-right:5px;
 padding-right:5px;
 }
@@ -860,7 +883,8 @@ QWidget .QFrame#frame .QLabel#labelImmatureText { /* Immature Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
 font-size:12px;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color:transparent;
 margin-right:5px;
 padding-right:5px;
 }
@@ -881,7 +905,8 @@ QWidget .QFrame#frame .QLabel#labelTotalText { /* Total Balance Label */
 qproperty-alignment: 'AlignVCenter | AlignRight';
 min-width:160px;
 font-size:12px;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color: transparent;
 margin-right:5px;
 padding-right:5px;
 }
@@ -916,7 +941,8 @@ QWidget .QFrame#framePrivateSend .QLabel#labelPrivateSendHeader { /* PrivateSend
 qproperty-alignment: 'AlignVCenter | AlignCenter';
 max-width: 421px;
 min-width: 421px;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color:#CCC7C7;
 color:#000000;
 margin-right: 5px;
 padding-right: 5px;
@@ -1313,7 +1339,8 @@ padding-left:10px;
 /* SEND COINS ENTRY */
 
 QStackedWidget#SendCoinsEntry .QFrame#SendCoins > .QLabel { /* Send Coin Entry Labels */
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color:transparent
 min-width:102px;
 font-weight:normal;
 /*font-size:11px;*/
@@ -1325,7 +1352,8 @@ padding-right:5px;
 
 QStackedWidget#SendCoinsEntry .QFrame#SendCoins .QLabel#amountLabel {
 color: #000000;
-background-color:#F8F6F6;
+/*background-color:#F8F6F6;*/
+background-color: transparent;
 }
 
 QStackedWidget#SendCoinsEntry .QValidatedLineEdit#payTo { /* Pay To Input Field */
@@ -1501,7 +1529,7 @@ QDialog#CoinControlDialog .CoinControlTreeWidget#treeWidget::indicator { /* Coin
 /* RECEIVE COINS */
 
 QWidget#ReceiveCoinsDialog .QFrame#frame2 .QLabel#label_2 { /* Label Label */
-background-color:#F8F6F6;
+background-color:transparent;
 border: 0px solid #fff;
 min-width:102px;
 color:#333;
@@ -1511,7 +1539,7 @@ padding-right:5px;
 }
 
 QWidget#ReceiveCoinsDialog .QFrame#frame2 .QLabel#label { /* Amount Label */
-background-color:#F8F6F6;
+background-color:#transparent;
 border: 0px solid #333;
 min-width:102px;
 /*color:#ffffff;*/
@@ -1521,7 +1549,7 @@ padding-right:5px;
 }
 
 QWidget#ReceiveCoinsDialog .QFrame#frame2 .QLabel#label_3 { /* Message Label */
-background-color:#F8F6F6;
+background-color:#transparent;
 border: 0px solid #fff;
 min-width:102px;
 color:#333;

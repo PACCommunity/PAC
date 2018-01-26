@@ -51,8 +51,8 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "Delete all wallet transactions and only recover those parts of the "
 "blockchain through -rescan on startup"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Disable all Paccoin specific functionality (Masternodes, PrivateSend, "
-"InstantSend, Governance) (0-1, default: %u)"),
+"Disable all Paccoin specific functionality (Masternodes, PrivatePAC, "
+"InstantPAC, Governance) (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Discover own IP addresses (default: 1 when listening and no -externalip or -"
 "proxy)"),
@@ -62,13 +62,13 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Do not keep transactions in the mempool longer than <n> hours (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Enable InstantSend, show confirmations for locked transactions (0-1, "
+"Enable InstantPAC, show confirmations for locked transactions (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Enable multiple PrivateSend mixing sessions per block, experimental (0-1, "
+"Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Enable use of automated PrivateSend for funds stored in this wallet (0-1, "
+"Enable use of automated PrivatePAC for funds stored in this wallet (0-1, "
 "default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Error loading %s: You can't enable HD on a already existing non-HD wallet"),
@@ -81,7 +81,7 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "Execute command when a relevant alert is received or we see a really long "
 "fork (%s in cmd is replaced by message)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Execute command when a wallet InstantSend transaction is successfully locked "
+"Execute command when a wallet InstantPAC transaction is successfully locked "
 "(%s in cmd is replaced by TxID)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Execute command when a wallet transaction changes (%s in cmd is replaced by "
@@ -118,10 +118,10 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "potentially skip their script verification (0 to verify all, default: %s, "
 "testnet: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"InstantSend doesn't support sending values that high yet. Transactions are "
+"InstantPAC doesn't support sending values that high yet. Transactions are "
 "currently limited to %1 PAC."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"InstantSend requires inputs with at least %d confirmations, you might need "
+"InstantPAC requires inputs with at least %d confirmations, you might need "
 "to wait a few minutes and try again."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Invalid amount for -maxtxfee=<amount>: '%s' (must be at least the minrelay "
@@ -160,10 +160,10 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "Please check that your computer's date and time are correct! If your clock "
 "is wrong Paccoin Core will not work properly."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"PrivateSend uses exact denominated amounts to send funds, you might simply "
+"PrivatePAC uses exact denominated amounts to send funds, you might simply "
 "need to anonymize some more coins."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Provide liquidity to PrivateSend by infrequently mixing coins on a continual "
+"Provide liquidity to PrivatePAC by infrequently mixing coins on a continual "
 "basis (0-100, default: %u, 1=very frequent, high fees, 100=very infrequent, "
 "low fees)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
@@ -223,9 +223,9 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Unable to bind to %s on this computer. Paccoin Core is probably already running."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Unable to locate enough PrivateSend denominated funds for this transaction."),
+"Unable to locate enough PrivatePAC denominated funds for this transaction."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Unable to locate enough PrivateSend non-denominated funds for this "
+"Unable to locate enough PrivatePAC non-denominated funds for this "
 "transaction that are not equal 1000 PAC."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Unable to locate enough funds for this transaction that are not equal 1000 "
@@ -342,10 +342,10 @@ QT_TRANSLATE_NOOP("paccoin-core", "Do you want to rebuild the block database now
 QT_TRANSLATE_NOOP("paccoin-core", "Done loading"),
 QT_TRANSLATE_NOOP("paccoin-core", "ERROR! Failed to create automatic backup"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable publish hash block in <address>"),
-QT_TRANSLATE_NOOP("paccoin-core", "Enable publish hash transaction (locked via InstantSend) in <address>"),
+QT_TRANSLATE_NOOP("paccoin-core", "Enable publish hash transaction (locked via InstantPAC) in <address>"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable publish hash transaction in <address>"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable publish raw block in <address>"),
-QT_TRANSLATE_NOOP("paccoin-core", "Enable publish raw transaction (locked via InstantSend) in <address>"),
+QT_TRANSLATE_NOOP("paccoin-core", "Enable publish raw transaction (locked via InstantPAC) in <address>"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable publish raw transaction in <address>"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable the client to act as a masternode (0-1, default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Enable transaction replacement in the memory pool (default: %u)"),
@@ -387,7 +387,7 @@ QT_TRANSLATE_NOOP("paccoin-core", "Incorrect or no genesis block found. Wrong da
 QT_TRANSLATE_NOOP("paccoin-core", "Information"),
 QT_TRANSLATE_NOOP("paccoin-core", "Initialization sanity check failed. Paccoin Core is shutting down."),
 QT_TRANSLATE_NOOP("paccoin-core", "Input is not valid."),
-QT_TRANSLATE_NOOP("paccoin-core", "InstantSend options:"),
+QT_TRANSLATE_NOOP("paccoin-core", "InstantPAC options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Insufficient funds."),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid -onion address: '%s'"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid -proxy address: '%s'"),
@@ -407,8 +407,8 @@ QT_TRANSLATE_NOOP("paccoin-core", "Keep N PAC anonymized (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Keep at most <n> unconnectable transactions in memory (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Keep the transaction memory pool below <n> megabytes (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Keypool ran out, please call keypoolrefill first"),
-QT_TRANSLATE_NOOP("paccoin-core", "Last PrivateSend was too recent."),
-QT_TRANSLATE_NOOP("paccoin-core", "Last successful PrivateSend action was too recent."),
+QT_TRANSLATE_NOOP("paccoin-core", "Last PrivatePAC was too recent."),
+QT_TRANSLATE_NOOP("paccoin-core", "Last successful PrivatePAC action was too recent."),
 QT_TRANSLATE_NOOP("paccoin-core", "Line: %d"),
 QT_TRANSLATE_NOOP("paccoin-core", "Listen for JSON-RPC connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Listen for connections on <port> (default: %u or testnet: %u)"),
@@ -453,10 +453,10 @@ QT_TRANSLATE_NOOP("paccoin-core", "Password for JSON-RPC connections"),
 QT_TRANSLATE_NOOP("paccoin-core", "Port: %d"),
 QT_TRANSLATE_NOOP("paccoin-core", "Prepend debug output with timestamp (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Print version and exit"),
-QT_TRANSLATE_NOOP("paccoin-core", "PrivateSend is idle."),
-QT_TRANSLATE_NOOP("paccoin-core", "PrivateSend options:"),
-QT_TRANSLATE_NOOP("paccoin-core", "PrivateSend request complete:"),
-QT_TRANSLATE_NOOP("paccoin-core", "PrivateSend request incomplete:"),
+QT_TRANSLATE_NOOP("paccoin-core", "PrivatePAC is idle."),
+QT_TRANSLATE_NOOP("paccoin-core", "PrivatePAC options:"),
+QT_TRANSLATE_NOOP("paccoin-core", "PrivatePAC request complete:"),
+QT_TRANSLATE_NOOP("paccoin-core", "PrivatePAC request incomplete:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Prune cannot be configured with a negative value."),
 QT_TRANSLATE_NOOP("paccoin-core", "Prune mode is incompatible with -txindex."),
 QT_TRANSLATE_NOOP("paccoin-core", "Pruning blockstore..."),

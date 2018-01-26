@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>850</width>
-    <height>526</height>
+    <height>584</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -411,7 +411,7 @@
                  </property>
                 </widget>
                </item>
-             </layout>
+              </layout>
              </item>
              <item>
               <layout class="QFormLayout" name="formLayoutCoinControl4">
@@ -587,8 +587,8 @@
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>830</width>
-        <height>69</height>
+        <width>824</width>
+        <height>72</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1">
@@ -1295,7 +1295,7 @@
           </size>
          </property>
          <property name="text">
-          <string>PrivateSend</string>
+          <string>PrivatePAC</string>
          </property>
          <property name="checked">
           <bool>false</bool>
@@ -1314,7 +1314,7 @@
           </size>
          </property>
          <property name="text">
-          <string>InstantSend</string>
+          <string>InstantPAC</string>
          </property>
         </widget>
        </item>
@@ -1368,7 +1368,7 @@
  </resources>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupCustomFee"/>
   <buttongroup name="groupFee"/>
+  <buttongroup name="groupCustomFee"/>
  </buttongroups>
 </ui>
