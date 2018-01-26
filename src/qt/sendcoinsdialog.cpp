@@ -261,7 +261,7 @@ void SendCoinsDialog::on_sendButton_clicked()
             BitcoinUnits::formatWithUnit(
                 model->getOptionsModel()->getDisplayUnit(), CPrivateSend::GetSmallestDenomination()));
         strFee = QString(tr(
-            "(privatesend requires this amount to be rounded up to the nearest %1)."
+            "(privatepac requires this amount to be rounded up to the nearest %1)."
         ).arg(strNearestAmount));
     } else {
         recipients[0].inputType = ALL_COINS;
@@ -271,7 +271,7 @@ void SendCoinsDialog::on_sendButton_clicked()
     if(ui->checkUseInstantSend->isChecked()) {
         recipients[0].fUseInstantSend = true;
         strFunds += " ";
-        strFunds += tr("and InstantSend");
+        strFunds += tr("and InstantPAC");
     } else {
         recipients[0].fUseInstantSend = false;
     }

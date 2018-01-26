@@ -441,7 +441,7 @@ void CoinControlDialog::viewItemChanged(QTreeWidgetItem* item, int column)
             int nRounds = pwalletMain->GetOutpointPrivateSendRounds(outpt);
             if (coinControl->fUsePrivateSend && nRounds < privateSendClient.nPrivateSendRounds) {
                 QMessageBox::warning(this, windowTitle(),
-                    tr("Non-anonymized input selected. <b>PrivateSend will be disabled.</b><br><br>If you still want to use PrivateSend, please deselect all non-nonymized inputs first and then check PrivateSend checkbox again."),
+                    tr("Non-anonymized input selected. <b>PrivatePAC will be disabled.</b><br><br>If you still want to use PrivatePAC, please deselect all non-nonymized inputs first and then check PrivatePAC checkbox again."),
                     QMessageBox::Ok, QMessageBox::Ok);
                 coinControl->fUsePrivateSend = false;
             }
