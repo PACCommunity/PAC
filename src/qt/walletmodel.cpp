@@ -307,7 +307,7 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
         CReserveKey *keyChange = transaction.getPossibleKeyChange();
 
         if(recipients[0].fUseInstantSend && total > sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)*COIN){
-            Q_EMIT message(tr("Send Coins"), tr("InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.").arg(sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)),
+            Q_EMIT message(tr("Send Coins"), tr("InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.").arg(sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)),
                          CClientUIInterface::MSG_ERROR);
             return TransactionCreationFailed;
         }
@@ -319,12 +319,12 @@ WalletModel::SendCoinsReturn WalletModel::prepareTransaction(WalletModelTransact
 
         if(recipients[0].fUseInstantSend) {
             if(newTx->GetValueOut() > sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)*COIN) {
-                Q_EMIT message(tr("Send Coins"), tr("InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.").arg(sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)),
+                Q_EMIT message(tr("Send Coins"), tr("InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.").arg(sporkManager.GetSporkValue(SPORK_5_INSTANTSEND_MAX_VALUE)),
                              CClientUIInterface::MSG_ERROR);
                 return TransactionCreationFailed;
             }
             if(newTx->vin.size() > CTxLockRequest::WARN_MANY_INPUTS) {
-                Q_EMIT message(tr("Send Coins"), tr("Used way too many inputs (>%1) for this InstantSend transaction, fees could be huge.").arg(CTxLockRequest::WARN_MANY_INPUTS),
+                Q_EMIT message(tr("Send Coins"), tr("Used way too many inputs (>%1) for this InstantPAC transaction, fees could be huge.").arg(CTxLockRequest::WARN_MANY_INPUTS),
                              CClientUIInterface::MSG_WARNING);
             }
         }
