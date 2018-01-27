@@ -18,14 +18,15 @@ installing the toolchain will be different.
 
 First install the toolchains:
 
-    sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev g++-mingw-w64-x86-64 mingw-w64-x86-64-dev libtool automake
+    sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev g++-mingw-w64-x86-64 mingw-w64-x86-64-dev libtool automake libdb++-dev
 
 To build executables for Windows 32-bit:
 
     cd depends
     make HOST=i686-w64-mingw32 -j4
     cd ..
-    ./configure --prefix=`pwd`/depends/i686-w64-mingw32
+    ./autogen.sh
+    ./configure --with-incompatible-bdb --prefix=`pwd`/depends/i686-w64-mingw32
     make
 
 To build executables for Windows 64-bit:
@@ -33,7 +34,8 @@ To build executables for Windows 64-bit:
     cd depends
     make HOST=x86_64-w64-mingw32 -j4
     cd ..
-    ./configure --prefix=`pwd`/depends/x86_64-w64-mingw32
+    ./autogen.sh
+    ./configure --with-incompatible-bdb --prefix=`pwd`/depends/x86_64-w64-mingw32
     make
 
 For further documentation on the depends system see [README.md](../depends/README.md) in the depends directory.
