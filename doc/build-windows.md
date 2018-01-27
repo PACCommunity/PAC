@@ -16,9 +16,11 @@ These steps can be performed on, for example, an Ubuntu VM. The depends system
 will also work on other Linux distributions, however the commands for
 installing the toolchain will be different.
 
+For Ubuntu 14.04.05 - This has been tested from FreshInstall of Desktop Ubuntu 14.04.05
+
 First install the toolchains:
 
-    sudo apt-get install g++-mingw-w64-i686 mingw-w64-i686-dev g++-mingw-w64-x86-64 mingw-w64-x86-64-dev libtool automake libdb++-dev
+    sudo apt-get install g++ g++-mingw-w64-i686 mingw-w64-i686-dev g++-mingw-w64-x86-64 mingw-w64-x86-64-dev libtool automake libdb++-dev
 
 To build executables for Windows 32-bit:
 
