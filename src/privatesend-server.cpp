@@ -122,7 +122,7 @@ void CPrivateSendServer::ProcessMessage(CNode* pfrom, std::string& strCommand, C
             }
             mnodeman.AllowMixing(dsq.vin.prevout);
 
-            LogPrint("privatesend", "DSQUEUE -- new PrivateSend queue (%s) from masternode %s\n", dsq.ToString(), mnInfo.addr.ToString());
+            LogPrint("privatesend", "DSQUEUE -- new PrivatePAC queue (%s) from masternode %s\n", dsq.ToString(), mnInfo.addr.ToString());
             vecDarksendQueue.push_back(dsq);
             dsq.Relay(connman);
         }

@@ -368,7 +368,7 @@ std::string CPrivateSend::GetMessageByID(PoolMessage nMessageID)
         case ERR_NON_STANDARD_PUBKEY:   return _("Non-standard public key detected.");
         case ERR_NOT_A_MN:              return _("This is not a Masternode."); // not used
         case ERR_QUEUE_FULL:            return _("Masternode queue is full.");
-        case ERR_RECENT:                return _("Last PrivateSend was too recent.");
+        case ERR_RECENT:                return _("Last PrivatePAC was too recent.");
         case ERR_SESSION:               return _("Session not complete!");
         case ERR_MISSING_TX:            return _("Missing input transaction information.");
         case ERR_VERSION:               return _("Incompatible version.");

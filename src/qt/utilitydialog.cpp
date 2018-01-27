@@ -141,7 +141,7 @@ You retain control of your money at all times..<hr> \
 <b>The PrivatePAC process works like this:</b>\
 <ol type=\"1\"> \
 <li>PrivatePAC begins by breaking your transaction inputs down into standard denominations. \
-These denominations are 0.01 $PAC, 0.1 $PAC, 1 $PAC and $10 PAC -- sort of like the paper money you use every day.</li> \
+These denominations are 10 $PAC, 100 $PAC, 1000 $PAC and $10000 PAC -- sort of like the paper money you use every day.</li> \
 <li>Your wallet then sends requests to specially configured software nodes on the network, called \"masternodes.\" \
 These masternodes are informed then that you are interested in mixing a certain denomination. \
 No identifiable information is sent to the masternodes, so they never know \"who\" you are.</li> \
