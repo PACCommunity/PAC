@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>576</width>
-    <height>481</height>
+    <height>457</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -20,7 +20,7 @@
    <item>
     <widget class="QTabWidget" name="tabWidget">
      <property name="currentIndex">
-      <number>1</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tabMain">
       <attribute name="title">
@@ -169,7 +169,7 @@
              <string>Show additional information and buttons for PrivateSend on overview screen.</string>
             </property>
             <property name="text">
-             <string>Enable advanced PrivateSend interface</string>
+             <string>Enable advanced PrivatePAC interface</string>
             </property>
            </widget>
           </item>
@@ -179,7 +179,7 @@
              <string>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</string>
             </property>
             <property name="text">
-             <string>Warn if PrivateSend is running out of keys</string>
+             <string>Warn if PrivatePAC is running out of keys</string>
             </property>
            </widget>
           </item>
@@ -189,7 +189,7 @@
              <string>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</string>
             </property>
             <property name="text">
-             <string>Enable PrivateSend &amp;multi-session</string>
+             <string>Enable PrivatePAC &amp;multi-session</string>
             </property>
            </widget>
           </item>
