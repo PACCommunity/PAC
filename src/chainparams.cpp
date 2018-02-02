@@ -19,19 +19,19 @@
 
 //#define FIND_GENESIS
 
-#define GENESIS_MERKLE_ROOT "0x7423812b7d53095daa5f9a5111562c948f7190612d76b43305d3168fda91f787"
+#define GENESIS_MERKLE_ROOT "0xf3939e4de05e537431ef32bbebd9bc7c4e701f7205d72016f04686557af58dbf"
 
-#define MAINNET_GENESIS_HASH "0x0000094606e5eaee14095756b185b4b8f1992ae2eba9f317f86528a78068c891"
-#define MAINNET_GENESIS_NONCE 180293UL
-#define MAINNET_GENESIS_TIMESTAMP 1517255884UL
+#define MAINNET_GENESIS_HASH "0x00000354655ff039a51273fe61d3b493bd2897fe6c16f732dbc4ae19f04b789e"
+#define MAINNET_GENESIS_NONCE 340503UL
+#define MAINNET_GENESIS_TIMESTAMP 1517541873UL
 
-#define TESTNET_GENESIS_HASH "0x00000e913af46dbb97b5d6576bafce2b1de2518bf5b400fb5cf29e62215d0255"
-#define TESTNET_GENESIS_NONCE 1643913UL
-#define TESTNET_GENESIS_TIMESTAMP 1517255968UL
+#define TESTNET_GENESIS_HASH "0x00000da63bd9478b655ef6bf1bf76cd9af05202ab68643f9091e049b2b5280ed"
+#define TESTNET_GENESIS_NONCE 2279587UL
+#define TESTNET_GENESIS_TIMESTAMP 1517541975UL
 
-#define REGTEST_GENESIS_HASH "0x2fed3c8bf417d2f183a1999ef9be84f5f38e7c96d5cfcaf3d5f3f47a1b9cefb4"
-#define REGTEST_GENESIS_NONCE 6UL
-#define REGTEST_GENESIS_TIMESTAMP 1517256614UL
+#define REGTEST_GENESIS_HASH "0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95"
+#define REGTEST_GENESIS_NONCE 1UL
+#define REGTEST_GENESIS_TIMESTAMP 1517542062UL
 
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, const Consensus::Params& consensus)
 {
@@ -53,7 +53,7 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
     genesis.hashMerkleRoot = BlockMerkleRoot(genesis);
 
     #ifdef FIND_GENESIS
-        if (true && (genesis.GetHash() != consensus.hashGenesisBlock)) {
+        if (false && (genesis.GetHash() != consensus.hashGenesisBlock)) {
             std::cout << "Begin calculating Genesis Block:" << std::endl;
             LogPrintf("Calculating Genesis Block:\n");
             arith_uint256 hashTarget = arith_uint256().SetCompact(genesis.nBits);
@@ -97,8 +97,8 @@ static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesi
  */
 static CBlock CreateGenesisBlock(uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, const Consensus::Params& consensus)
 {
-    const char* pszTimestamp = "Bitcoin Block #506705: 0000000000000000004a345102e752900bcd1f8b73895584e592ba2acb4da00f";
-    const CScript genesisOutputScript = CScript() << ParseHex("0423a5469388190915d88b3fa266ea3177f11738bd815bafcdd51f50ffc431cd19d78664320cf3b661c22aaf8227dd10b3c88f0562ed97a48e3e4376df42f787f2") << OP_CHECKSIG;
+    const char* pszTimestamp = "Bitcoin Block #507202: 0000000000000000002dcf88ad7fece8694caf75124ba181e29ce38c76b7c378";
+    const CScript genesisOutputScript = CScript() << ParseHex("0411345e927d2d3abb85541e23b211f5b9019f2b240fb9bd4b1c44234993639293846cfc74154d293a3bf7ba74592f5f358127c0062a621d3b153089d0f5bb84e5") << OP_CHECKSIG;
     return CreateGenesisBlock(pszTimestamp, genesisOutputScript, nTime, nNonce, nBits, nVersion, genesisReward, consensus);
 }
 
@@ -163,10 +163,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000015f015f0"); // 350
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010"); // 0
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000f8c86ebfc0ceec96b8b84804e1b27a5736756ab0963150201a65c349696"); // 350
+        consensus.defaultAssumeValid = uint256S("0x00000354655ff039a51273fe61d3b493bd2897fe6c16f732dbc4ae19f04b789e"); // 0
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -177,7 +177,7 @@ public:
         pchMessageStart[1] = 0xe5;
         pchMessageStart[2] = 0x61;
         pchMessageStart[3] = 0x2c;
-        vAlertPubKey = ParseHex("04334a5d3978977e42df6b2263772ffe8e83dec6890e70896edb906e8130b574e2889a0ac660822069d4f4491c497944cdccbf37adc20de8956d1c34661e409486");
+        vAlertPubKey = ParseHex("048403ac4a7059cfca5700f8f11c6790880f0ea482c9419e5d0c3fcd9ec186a295502acd665709f8aad00963667317ba5b6dd47f16a507011649922d99af5647eb");
         nDefaultPort = 7112;
         nMaxTipAge = 6 * 60 * 60; // ~144 blocks behind -> 2 x fork detection time, was 24 * 60 * 60 in bitcoin
         nDelayGetHeadersTime = 24 * 60 * 60;
@@ -217,15 +217,15 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 60*60; // fulfilled requests expire in 1 hour
-        strSporkPubKey = "04c5af054ea2d81fcb17e950462511180adc6ea7129a3a80ab76b172ca25234ecaff45d75d6b0a76b04af3a051118160796ee2bf3dc3fb863093285bb1995f6823";
+        strSporkPubKey = "04f42382c824f2e63a9c6e6a54f24b5ce6baaee23057fb22a3a92b42b817a249d39d4275456a02911ced24e21c39fc85cb08b24efa8f44a0221f1863d59e918a31";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  350, uint256S("0x00000f8c86ebfc0ceec96b8b84804e1b27a5736756ab0963150201a65c349696")),
-            1517270913, // * UNIX timestamp of last checkpoint block
+            (  0, uint256S("0x00000354655ff039a51273fe61d3b493bd2897fe6c16f732dbc4ae19f04b789e")),
+            1517541873, // * UNIX timestamp of last checkpoint block
             0,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            500        // * estimated number of transactions per day after checkpoint
+            1000        // * estimated number of transactions per day after checkpoint
         };
     }
 };
@@ -286,13 +286,13 @@ public:
         consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010"); //4000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000e913af46dbb97b5d6576bafce2b1de2518bf5b400fb5cf29e62215d0255"); //4000
+        consensus.defaultAssumeValid = uint256S("0x00000da63bd9478b655ef6bf1bf76cd9af05202ab68643f9091e049b2b5280ed"); //4000
 
         pchMessageStart[0] = 0x9b;
         pchMessageStart[1] = 0x2f;
         pchMessageStart[2] = 0xfa;
         pchMessageStart[3] = 0xe3;
-        vAlertPubKey = ParseHex("04f2fe3b262198838374a844f0bce94a9775bd2a80380cf51bfc12bcd5eb947c51eebcd3299830413b17de240bbf975acc3100c8e6532b370540894f605e7f9673");
+        vAlertPubKey = ParseHex("04b519c957b53ce4eecb9a466d169c3a73385434a1ededdec795361a57bf1a7529d82e646c1d32df8cfdbaf5a4e96b82fd78b39335198b3850bb0af6c0884a6928");
         nDefaultPort = 17112;
         nMaxTipAge = 0x7fffffff; // allow mining on top of old blocks for testnet
         nDelayGetHeadersTime = 24 * 60 * 60;
@@ -331,12 +331,12 @@ public:
 
         nPoolMaxTransactions = 3;
         nFulfilledRequestExpireTime = 5*60; // fulfilled requests expire in 5 minutes
-        strSporkPubKey = "042f3818bfc23bbe0eb26edba2c975e71bbdac8ac8c05170b4c3a7de48ef2bb8242d8afab00a7666dd10ee2ab12c40bd383d0848603a7ea1b1558bfa63eea3a743";
+        strSporkPubKey = "04be5a40f024fdf62a45efa46262a37339bd40a3d89bcdba623d1be325583027de51b066db19038974b608d058ee4e44dc062a8aa6c862ed380d36f760fcd0946b";
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (    0, uint256S("0x00000e913af46dbb97b5d6576bafce2b1de2518bf5b400fb5cf29e62215d0255")),
-            1517255968, // * UNIX timestamp of last checkpoint block
+            (    0, uint256S("0x00000da63bd9478b655ef6bf1bf76cd9af05202ab68643f9091e049b2b5280ed")),
+            1517541975, // * UNIX timestamp of last checkpoint block
             0,       // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             250         // * estimated number of transactions per day after checkpoint
@@ -392,10 +392,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00");
+        consensus.defaultAssumeValid = uint256S("0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95");
 
         pchMessageStart[0] = 0x96;
         pchMessageStart[1] = 0xa6;
@@ -424,7 +424,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x2fed3c8bf417d2f183a1999ef9be84f5f38e7c96d5cfcaf3d5f3f47a1b9cefb4")),
+            ( 0, uint256S("0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95")),
             0,
             0,
             0
