@@ -128,7 +128,6 @@ if [ $assetid == 'null' ]; then
 	exit
 fi
 
-
 echo "###############################"
 echo "#     Running the sentinel    #"		
 echo "###############################"
