@@ -116,15 +116,10 @@ echo "#      Running the wallet     #"
 echo "###############################"
 echo ""
 cd ~/
-wallinfo=$( ./paccoin-cli getinfo ) || true
-if [[ $wallinfo == "error: couldn't connect to server" ]]; then
-	echo "Wallet is already running, skipping to run it!"
-else
-	./paccoind
-	sleep 60
-fi
 
-echo "Wait.....the wallet needs to synced!"
+./paccoind
+sleep 60
+
 syncedinfo=$( ./paccoin-cli mnsync status )
 assetid=$( echo $syncedinfo | jq '.AssetID' )
 
@@ -133,22 +128,6 @@ if [ $assetid == 'null' ]; then
 	exit
 fi
 
-timing=0
-waitsynced=20
-while [ $assetid != '999' ] && [ $timing -le $waitsynced ]; do
-	timing=$((timing+1))
-	syncedinfo=$( ./paccoin-cli mnsync status )
-	assetid=$( echo $syncedinfo | jq '.AssetID' )
-	echo "Syncing wallet... current: $assetid out of 999"
-	sleep 100
-done
-
-if [ $assetid != '999' ]; then 
-	echo "Wallet did not got synced after $waitsynced"
-	exit
-else
-	echo "Wallet is synced and ready!"
-fi
 
 echo "###############################"
 echo "#     Running the sentinel    #"		
