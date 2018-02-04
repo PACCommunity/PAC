@@ -166,18 +166,3 @@ cd ~/
 
 echo "Your masternode server is ready!"
 echo "Don't forget to run the masternode from your cold wallet!"
-
-
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
