@@ -134,13 +134,13 @@ if [ $assetid == 'null' ]; then
 fi
 
 timing=0
-waitsynced=15
+waitsynced=20
 while [ $assetid != '999' ] && [ $timing -le $waitsynced ]; do
 	timing=$((timing+1))
 	syncedinfo=$( ./paccoin-cli mnsync status )
 	assetid=$( echo $syncedinfo | jq '.AssetID' )
 	echo "Syncing wallet... current: $assetid out of 999"
-	sleep 20
+	sleep 100
 done
 
 if [ $assetid != '999' ]; then 
