@@ -69,12 +69,10 @@ cp PAC-v0.12.2.3-ubuntu-16.04-x64/* ~/
 cd ~/
 rm PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz
 rm -r PAC-v0.12.2.3-ubuntu-16.04-x64
-sleep 120
 currpath=$( pwd )
 echo "Binaries got stored on: $currpath"
 chmod +x paccoind
 chmod +x paccoin-cli
-chmod +x paccoin-tx
 
 echo "###############################"
 echo "#     Configure the wallet    #"		
@@ -108,6 +106,7 @@ echo "server=1" >> paccoin.conf
 echo "daemon=1" >> paccoin.conf
 echo "listen=1" >> paccoin.conf
 echo "staking=0" >> paccoin.conf
+echo "masternode=1" >> paccoin.conf
 echo "masternodeaddr=$ipaddr:7112" >> paccoin.conf
 echo "masternodeprivkey=$mnkey" >> paccoin.conf
 
@@ -141,8 +140,7 @@ while [ $assetid != '999' ] && [ $timing -le $waitsynced ]; do
 	syncedinfo=$( ./paccoin-cli mnsync status )
 	assetid=$( echo $syncedinfo | jq '.AssetID' )
 	echo "Syncing wallet... current: $assetid out of 999"
-	echo "Timing $timing"
-	sleep 60
+	sleep 20
 done
 
 if [ $assetid != '999' ]; then 
