@@ -76,3 +76,10 @@ pull from Transifex would automatically overwrite them again.
 
 Translators should also follow the [forum](https://www.paccoin.org/forum/topic/paccoin-worldwide-collaboration.88/).
 -->
+
+Setting up a masternode on the server
+-------
+Go to your VPS and execute the following:
+1)    wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pacmn.sh
+2)    chmod +x pacmn.sh
+3)    ./pacmn.sh
