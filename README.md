@@ -65,6 +65,8 @@ not straightforward.
 <!-- Translations
 ------------
 
+Testing
+-------
 Changes to translations as well as new translations can be submitted to
 [Paccoin Core's Transifex page](https://www.transifex.com/projects/p/paccoin/).
 
@@ -76,3 +78,14 @@ pull from Transifex would automatically overwrite them again.
 
 Translators should also follow the [forum](https://www.paccoin.org/forum/topic/paccoin-worldwide-collaboration.88/).
 -->
+
+Setting up a masternode on a VPS (only for Cold wallet setup)
+-------
+Go to your VPS and execute this:
+1)    wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pacmn.sh
+2)    chmod +x pacmn.sh
+3)    ./pacmn.sh
+Follow the instructions and:
+Enter your external IP
+Enter your masternode genkey
+The script will setup the environment and run your masternode 
