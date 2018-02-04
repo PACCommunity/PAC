@@ -85,6 +85,7 @@ Go to your VPS and execute this:
 1)    wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pacmn.sh
 2)    chmod +x pacmn.sh
 3)    ./pacmn.sh
+
 Follow the instructions and:
 Enter your external IP
 Enter your masternode genkey
