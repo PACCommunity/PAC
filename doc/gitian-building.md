@@ -304,7 +304,7 @@ Clone the git repositories for Paccoin Core and Gitian.
 
 ```bash
 git clone https://github.com/devrandom/gitian-builder.git
-git clone https://github.com/paccoinpay/paccoin
+git clone https://github.com/PACCommunity/PAC
 ```
 
 Setting up the Gitian image
@@ -394,11 +394,11 @@ and inputs.
 
 For example:
 ```bash
-URL=https://github.com/crowning-/paccoin.git
+URL=https://github.com/crowning-/PAC.git
 COMMIT=b616fb8ef0d49a919b72b0388b091aaec5849b96
-./bin/gbuild --commit paccoin=${COMMIT} --url paccoin=${URL} ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
-./bin/gbuild --commit paccoin=${COMMIT} --url paccoin=${URL} ../paccoin/contrib/gitian-descriptors/gitian-win.yml
-./bin/gbuild --commit paccoin=${COMMIT} --url paccoin=${URL} ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
+./bin/gbuild --commit PAC=${COMMIT} --url paccoin=${URL} ../PAC/contrib/gitian-descriptors/gitian-linux.yml
+./bin/gbuild --commit PAC=${COMMIT} --url paccoin=${URL} ../PAC/contrib/gitian-descriptors/gitian-win.yml
+./bin/gbuild --commit PAC=${COMMIT} --url paccoin=${URL} ../PAC/contrib/gitian-descriptors/gitian-osx.yml
 ```
 
 Building fully offline
