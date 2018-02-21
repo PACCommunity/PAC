@@ -20,7 +20,7 @@ packages:
 - "python"
 reference_datetime: "2017-01-01 00:00:00"
 remotes:
-- "url": "https://github.com/devfsc/PAC.git"
+- "url": "https://github.com/PACCommunity/PAC.git"
   "dir": "PAC"
 files: []
 script: |
