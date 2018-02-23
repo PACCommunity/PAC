@@ -83,7 +83,6 @@ wget "https://github.com/PACCommunity/PAC/releases/download/v0.12.2.3/PAC-v0.12.
 tar xvf 'PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz'
 cd ~/
 rm PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz
-rm -r PAC-v0.12.2.3-ubuntu-16.04-x64
 currpath=$( pwd )
 echo "Binaries got stored on: $currpath"
 chmod +x paccoind
