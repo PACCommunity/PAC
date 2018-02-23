@@ -1,6 +1,22 @@
 #!/bin/bash
 
 set -e
+
+echo'        ..........    												   '                                                  
+echo'      `............`` 												   '                                                
+echo'   `..................`   											   '                                            
+echo'  .....-yyyyyyys+-:oo-..`      ooooooo+/.    `oooo+        -/oooo+/.  ' 
+echo' ......:MMMMNNdddmMMMd-..`    `MMMMNMMMMMh.  hMMMMM+    `sNMMMMMMMM+  '
+echo'`......:MMmy..-+MNdh:.....    `MMMM: .dMMMy oMMMyMMN-  .NMMMMy/...:-  '
+echo'.......:ddmm...-hdNm......`   `MMMM+-+mMMMs:MMMs dMMm` yMMMMo         '
+echo'....:ohNMMNdoydNMMN/......`   `MMMMMMMMMmo.NMMN` -MMMd yMMMM/         '
+echo'....+dMNdddNmmdhy+-.......    `MMMM+::-` `dMMMNmmmMMMMs:MMMMm/        '
+echo' .....::MMMm.............`    `MMMM:     yMMMdoooooNMMM//mMMMMNdddN+  '
+echo' `.....:MNdo............`     `dddd-    /dddd.     /dddd. :ohdmmdhy:  '
+echo'   `...-+-.............`                                              '
+echo'     `..............``                                                '
+echo'        ```....```          										   '
+
 echo "################################################"
 echo "#   Welcome to PAC Masternode's server setup   #"		
 echo "################################################"
@@ -65,7 +81,6 @@ echo "###############################"
 echo ""
 wget "https://github.com/PACCommunity/PAC/releases/download/v0.12.2.3/PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz"
 tar xvf 'PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz'
-cp PAC-v0.12.2.3-ubuntu-16.04-x64/* ~/
 cd ~/
 rm PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz
 rm -r PAC-v0.12.2.3-ubuntu-16.04-x64
@@ -137,6 +152,7 @@ cd sentinel
 virtualenv ./venv
 ./venv/bin/pip install -r requirements.txt
 venv/bin/python bin/sentinel.py
+sleep 3
 crontab 'crontab.txt'
 
 cd ~/
