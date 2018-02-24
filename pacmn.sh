@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+
 echo "################################################"
 echo "#   Welcome to PAC Masternode's server setup   #"		
 echo "################################################"
@@ -65,10 +66,7 @@ echo "###############################"
 echo ""
 wget "https://github.com/PACCommunity/PAC/releases/download/v0.12.2.3/PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz"
 tar xvf 'PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz'
-#cp PAC-v0.12.2.3-ubuntu-16.04-x64/* ~/
-#cd ~/
 rm PAC-v0.12.2.3-ubuntu-16.04-x64.tar.gz
-#rm -r PAC-v0.12.2.3-ubuntu-16.04-x64
 currpath=$( pwd )
 echo "Binaries got stored on: $currpath"
 chmod +x paccoind
@@ -137,6 +135,7 @@ cd sentinel
 virtualenv ./venv
 ./venv/bin/pip install -r requirements.txt
 venv/bin/python bin/sentinel.py
+sleep 3
 crontab 'crontab.txt'
 
 cd ~/
