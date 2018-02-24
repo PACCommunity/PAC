@@ -13,7 +13,7 @@ Check out the source code in the following directory hierarchy.
 	git clone https://github.com/paccoinpay/gitian.sigs.git
 	git clone https://github.com/paccoinpay/paccoin-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/paccoinpay/paccoin.git
+	git clone https://github.com/PACCommunity/PAC.git
 
 ### Paccoin Core maintainers/release engineers, update (commit) version in sources
 
@@ -40,11 +40,11 @@ Check out the source code in the following directory hierarchy.
 
  Setup Gitian descriptors:
 
-	pushd ./paccoin
+	pushd ./PAC
 	export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
 	export VERSION=(new version, e.g. 0.8.0)
 	git fetch
-	git checkout v${VERSION}
+	git checkout ${VERSION}
 	popd
 
   Ensure your gitian.sigs are up-to-date if you wish to gverify your builds against other Gitian signatures.
@@ -76,7 +76,7 @@ Check out the source code in the following directory hierarchy.
 
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
-	make -C ../paccoin/depends download SOURCES_PATH=`pwd`/cache/common
+	make -C ../PAC/depends download SOURCES_PATH=`pwd`/cache/common
 
 Only missing files will be fetched, so this is safe to re-run for each build.
 
@@ -88,16 +88,16 @@ The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
 ### Build and sign Paccoin Core for Linux, Windows, and OS X:
 
-	./bin/gbuild --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
+	./bin/gbuild --commit PAC=${VERSION} ../PAC/contrib/gitian-descriptors/gitian-linux.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
 	mv build/out/paccoin-*.tar.gz build/out/src/paccoin-*.tar.gz ../
 
-	./bin/gbuild --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-win.yml
+	./bin/gbuild --commit PAC=${VERSION} ../PAC/contrib/gitian-descriptors/gitian-win.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-win.yml
 	mv build/out/paccoin-*-win-unsigned.tar.gz inputs/paccoin-win-unsigned.tar.gz
 	mv build/out/paccoin-*.zip build/out/paccoin-*.exe ../
 
-	./bin/gbuild --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
+	./bin/gbuild --commit PAC=${VERSION} ../PAC/contrib/gitian-descriptors/gitian-osx.yml
 	./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
 	mv build/out/paccoin-*-osx-unsigned.tar.gz inputs/paccoin-osx-unsigned.tar.gz
 	mv build/out/paccoin-*.tar.gz build/out/paccoin-*.dmg ../
