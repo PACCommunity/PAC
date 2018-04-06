@@ -304,9 +304,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S(TESTNET_GENESIS_HASH));
         assert(genesis.hashMerkleRoot == uint256S(GENESIS_MERKLE_ROOT));
 
-        vFixedSeeds.clear();
         vSeeds.clear();
-        //vSeeds.push_back(CDNSSeedData("paccoin.net",  "testnet-seed.paccoin.net"));
+        vSeeds.push_back(CDNSSeedData("paccoin.io",  "testnet-static-dns.paccoin.io"));
 
         // Testnet Paccoin addresses start with 'q'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,120);
