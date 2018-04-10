@@ -1,6 +1,7 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
+// Copyright (c) 2018 The $PAC Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -163,10 +164,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000000000183bd5351b7866"); // 7200
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000001ce57d59788db15166"); // #43850
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000000000b7d73439cae777bae147b8daaee692a9e5e06fd8466749de39465"); // 7200
+        consensus.defaultAssumeValid = uint256S("0x0000000000000be675f137fbf5cbe5e9d8cb0ea509d30252a02c30944f16970f"); // #43850
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -221,12 +222,13 @@ public:
 
         checkpointData = (CCheckpointData) {
             boost::assign::map_list_of
-            (  100, uint256S("0x000005065df82218140bc7c59cfd6913eaa5a88f3255ccc977c546cb0beb9ff0"))
-            (  7200, uint256S("0x00000000000b7d73439cae777bae147b8daaee692a9e5e06fd8466749de39465")),
-            1517696635, // * UNIX timestamp of last checkpoint block
-            0,    // * total number of transactions between genesis and last checkpoint
+            (  100,     uint256S("0x000005065df82218140bc7c59cfd6913eaa5a88f3255ccc977c546cb0beb9ff0"))
+            (  7200,    uint256S("0x00000000000b7d73439cae777bae147b8daaee692a9e5e06fd8466749de39465"))
+            (  43850,   uint256S("0x0000000000000be675f137fbf5cbe5e9d8cb0ea509d30252a02c30944f16970f")),
+            1523327936, // * UNIX timestamp of last checkpoint block
+            144438,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
-            1000        // * estimated number of transactions per day after checkpoint
+            1500        // * estimated number of transactions per day after checkpoint
         };
     }
 };
