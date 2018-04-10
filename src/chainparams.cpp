@@ -193,6 +193,8 @@ public:
         vSeeds.clear();
         vSeeds.push_back(CDNSSeedData("paccoin.io", "dnsseed1.paccoin.io"));
         vSeeds.push_back(CDNSSeedData("paccoin.io", "dnsseed2.paccoin.io"));
+        vSeeds.push_back(CDNSSeedData("paccoin.io", "dns-seeder-next.paccoin.io"));
+        vSeeds.push_back(CDNSSeedData("paccoin.io", "dns-seeder-foxtrot.paccoin.io"));
 
         // Paccoin addresses start with 'P'
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,55);
