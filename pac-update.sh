@@ -21,15 +21,17 @@ echo "################################################"
 echo "" 
 echo "This script will update PAC to the latest version (xxx)"
 echo "Before running the script we recommend to backup your private keys and your wallet.dat file that is under ./paccoincore/wallet.dat even though this script will not affect them"
-read -p "Do you want to autobackup wallet.dat and continue with the process? [y/n]:" cont
-if [ $cont = 'n' ] || [ $cont = 'no' ] || [ $cont = 'N' ] || [ $cont = 'No' ]; then
+
+read -p "Do you want to autobackup wallet.dat into the current path and continue with the process? [y/n]:" cont
+if [ $cont = 'y' ] || [ $cont = 'yes' ] || [ $cont = 'Y' ] || [ $cont = 'Yes' ]; then
+	currpath=$( pwd )
+	echo "Backing up the wallet.dat into $currpath"
+	cp .paccoincore/wallet.dat "$currpath/pacwalletbackup.dat"
+	echo "Wallet.dat backup is on: $currpath"
+else
 	exit
 fi
 
-currpath=$( pwd )
-echo "Backing up the wallet.dat into $currpath"
-cp .paccoincore/wallet.dat "$currpath/walletbackup.dat"
-echo "Wallet.dat backup is on: $currpath"
 
 if [ -e ~/paccoin-cli ] && [ -e ~/paccoind ]; then
 	echo ""
