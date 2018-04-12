@@ -62,6 +62,16 @@ code. This is especially important for large or high-risk changes. It is useful
 to add a test plan to the pull request description if testing the changes is
 not straightforward.
 
+Updating Linux Wallet to the latest version
+-------
+Go to your VPS or local machine and execute this on the command line:
+1)    wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh
+2)    chmod +x pac-update.sh
+3)    ./pac-update.sh
+
+Follow the instructions:
+1)Do you want to autobackup wallet.dat and continue with the process? [y/n]: Type yes to backup and continue or no to stop process 
+
 <!-- Translations
 ------------
 
