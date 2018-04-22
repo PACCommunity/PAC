@@ -164,10 +164,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000203f8f83ae7bdcfdb6"); // #50590
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000204045f68ab84052de"); // #50620
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x0000000000002b2ce7aecd2367b13eb050e35aabbbaf5ce94568e8d684f4c6b4"); // #50590
+        consensus.defaultAssumeValid = uint256S("0x0000000000000349685ff23a2344db4d51ae9f169cda23c8a472fb783914b071"); // #50620
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -227,9 +227,10 @@ public:
             (  100,     uint256S("0x000005065df82218140bc7c59cfd6913eaa5a88f3255ccc977c546cb0beb9ff0"))
             (  7200,    uint256S("0x00000000000b7d73439cae777bae147b8daaee692a9e5e06fd8466749de39465"))
             (  43850,   uint256S("0x0000000000000be675f137fbf5cbe5e9d8cb0ea509d30252a02c30944f16970f"))
-            (  50590,   uint256S("0x0000000000002b2ce7aecd2367b13eb050e35aabbbaf5ce94568e8d684f4c6b4")),
-            1524410366, // * UNIX timestamp of last checkpoint block
-            167138,    // * total number of transactions between genesis and last checkpoint
+            (  50000,   uint256S("0x00000000000007cdd43a784898eb9cb5be63ca7db5e5935a05a1baa01a658ca0"))
+            (  50620,   uint256S("0x0000000000000349685ff23a2344db4d51ae9f169cda23c8a472fb783914b071")),
+            1524414644, // * UNIX timestamp of last checkpoint block
+            167228,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             1500        // * estimated number of transactions per day after checkpoint
         };
