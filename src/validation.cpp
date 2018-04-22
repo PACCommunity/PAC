@@ -2230,12 +2230,12 @@ static bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockInd
     // the peer who sent us this block is missing some data and wasn't able
     // to recognize that block is actually invalid.
     // TODO: resync data (both ways?) and try to reprocess this block later.
-    int nInvalidMasternodePaymentsIncreaseBlock = chainparams.GetConsensus().nMasternodePaymentsIncreaseBlock + 1;
+    int nInvalidMasternodePaymentsIncreaseBlock = chainparams.GetConsensus().nMasternodePaymentsIncreaseBlock;
     if (chainparams.NetworkIDString() == CBaseChainParams::MAIN && 
         pindex->nHeight == nInvalidMasternodePaymentsIncreaseBlock && 
-        pindex->GetBlockHash() == uint256S("0x00000000000001512d7e4fbbc17482970b5f2e5c96c553f0e48fe6b771188a1d")) {
-        InvalidateBlock(state, chainparams.GetConsensus(), pindex->pprev);
-        return state.DoS(0, error("ConnectBlock(PAC): invalid chain found after protocol 70123 fork."), REJECT_INVALID, "bad-chain-found");
+        pindex->GetBlockHash() != uint256S("0x00000000000007cdd43a784898eb9cb5be63ca7db5e5935a05a1baa01a658ca0")) {
+        InvalidateBlock(state, chainparams.GetConsensus(), pindex);
+        return state.DoS(0, error("ConnectBlock(PAC): invalid chain found on block %i", nInvalidMasternodePaymentsIncreaseBlock), REJECT_INVALID, "bad-chain-found");
     }
 
     CAmount blockReward = nFees + GetBlockSubsidy(pindex->pprev->nBits, pindex->pprev->nHeight, chainparams.GetConsensus());
