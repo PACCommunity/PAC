@@ -32,6 +32,7 @@ class WalletModel;
 class HelpMessageDialog;
 class ModalOverlay;
 class MasternodeList;
+class ProposalList;
 
 class CWallet;
 
@@ -97,6 +98,7 @@ private:
     QAction *overviewAction;
     QAction *historyAction;
     QAction *masternodeAction;
+    QAction *proposalAction;
     QAction *quitAction;
     QAction *sendCoinsAction;
     QAction *sendCoinsMenuAction;
@@ -219,6 +221,8 @@ private Q_SLOTS:
     void gotoHistoryPage();
     /** Switch to masternode page */
     void gotoMasternodePage();
+    /** Switch to proposal page */
+    void gotoProposalPage();
     /** Switch to receive coins page */
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */

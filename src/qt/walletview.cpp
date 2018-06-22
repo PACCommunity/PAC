@@ -87,6 +87,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
         addWidget(masternodeListPage);
     }
 
+    proposalList = new ProposalList(platformStyle);
+    addWidget(proposalList);
+
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
     connect(overviewPage, SIGNAL(outOfSyncWarningClicked()), this, SLOT(requestedSyncWarningInfo()));
@@ -207,6 +210,11 @@ void WalletView::processNewTransaction(const QModelIndex& parent, int start, int
 void WalletView::gotoOverviewPage()
 {
     setCurrentWidget(overviewPage);
+}
+
+void WalletView::gotoProposalPage()
+{
+    setCurrentWidget(proposalList);
 }
 
 void WalletView::gotoHistoryPage()
