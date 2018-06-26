@@ -2,6 +2,8 @@
 
 set -e
 
+export LC_ALL="en_US.UTF-8"
+
 if [ "$1" == "--testnet" ]; then
 	pac_rpc_port=17111
 	pac_port=17112
