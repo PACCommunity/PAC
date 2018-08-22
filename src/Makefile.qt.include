@@ -235,6 +235,7 @@ RES_ICONS = \
   qt/res/icons/drkblue/fontsmaller.png \
   qt/res/icons/drkblue/transaction_abandoned.png \
   qt/res/icons/drkblue/network_disabled.png \
+  qt/res/icons/drkblue/proposal.png \
   qt/res/icons/crownium/add.png \
   qt/res/icons/crownium/address-book.png \
   qt/res/icons/crownium/browse.png \
@@ -289,6 +290,7 @@ RES_ICONS = \
   qt/res/icons/crownium/fontsmaller.png \
   qt/res/icons/crownium/transaction_abandoned.png \
   qt/res/icons/crownium/network_disabled.png \
+  qt/res/icons/crownium/proposal.png \
   qt/res/icons/light/add.png \
   qt/res/icons/light/address-book.png \
   qt/res/icons/light/browse.png \
@@ -343,6 +345,7 @@ RES_ICONS = \
   qt/res/icons/light/fontsmaller.png \
   qt/res/icons/light/transaction_abandoned.png \
   qt/res/icons/light/network_disabled.png \
+  qt/res/icons/light/proposal.png \
   qt/res/icons/trad/add.png \
   qt/res/icons/trad/address-book.png \
   qt/res/icons/trad/browse.png \
@@ -396,7 +399,8 @@ RES_ICONS = \
   qt/res/icons/trad/fontbigger.png \
   qt/res/icons/trad/fontsmaller.png \
   qt/res/icons/trad/transaction_abandoned.png \
-  qt/res/icons/trad/network_disabled.png
+  qt/res/icons/trad/network_disabled.png \
+  qt/res/icons/trad/proposal.png
 
 BITCOIN_QT_CPP = \
   qt/bantablemodel.cpp \
