@@ -118,11 +118,11 @@ QVariant ProposalTableModel::data(const QModelIndex &index, int role) const
         case Proposal:
             return rec->name;
         case YesVotes:
-            return rec->yesVotes;
+            return QVariant::fromValue(rec->yesVotes);
         case NoVotes:
-            return rec->noVotes;
+            return QVariant::fromValue(rec->noVotes);
         case AbsoluteYesVotes:
-            return rec->absoluteYesVotes;
+            return QVariant::fromValue(rec->absoluteYesVotes);
         case StartDate:
             return (QDateTime::fromTime_t((qint32)rec->start_epoch)).date().toString(Qt::SystemLocaleLongDate);
         case EndDate:
@@ -143,15 +143,15 @@ QVariant ProposalTableModel::data(const QModelIndex &index, int role) const
         case EndDate:
             return rec->end_epoch;
         case YesVotes:
-            return rec->yesVotes;
+            return QVariant::fromValue(rec->yesVotes);
         case NoVotes:
-            return rec->noVotes;
+            return QVariant::fromValue(rec->noVotes);
         case AbsoluteYesVotes:
-            return rec->absoluteYesVotes;
+            return QVariant::fromValue(rec->absoluteYesVotes);
         case Amount:
             return qint64(rec->amount);
         case Percentage:
-            return rec->percentage;
+            return QVariant::fromValue(rec->percentage);
         }
         break;
     case Qt::TextAlignmentRole:
@@ -170,19 +170,19 @@ QVariant ProposalTableModel::data(const QModelIndex &index, int role) const
     case ProposalRole:
         return rec->name;
     case AmountRole:
-        return rec->amount;
+        return QVariant::fromValue(rec->amount);
     case StartDateRole:
         return rec->start_epoch;
     case EndDateRole:
         return rec->end_epoch;
     case YesVotesRole:
-        return rec->yesVotes;
+        return QVariant::fromValue(rec->yesVotes);
     case NoVotesRole:
-        return rec->noVotes;
+        return QVariant::fromValue(rec->noVotes);
     case AbsoluteYesVotesRole:
-        return rec->absoluteYesVotes;
+        return QVariant::fromValue(rec->absoluteYesVotes);
     case PercentageRole:
-        return rec->percentage;
+        return QVariant::fromValue(rec->percentage);
     case ProposalUrlRole:
         return rec->url;
     case ProposalHashRole:
