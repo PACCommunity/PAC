@@ -185,7 +185,7 @@ install_and_run_systemd_service()
 	echo "*** Some of the available options: start, stop, restart or status."
 	echo "*** Example: 'systemctl status ${PAC_SERVICE_NAME}'"
 	echo
-	systemctl status -n 0 $PAC_SERVICE_NAME
+	systemctl status -n 0 --no-pager $PAC_SERVICE_NAME
 	echo
 	paccoin-cli getinfo
 	rm $PAC_SERVICE_NAME
