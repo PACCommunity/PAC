@@ -137,12 +137,12 @@ download_binaries()
 
 	if [ -e $HOME/paccoin-cli ]; then
 		rm $HOME/paccoin-cli
-		ln -s $INSTALL_DIR/paccoind $HOME/paccoin-cli
+		ln -s $INSTALL_DIR/paccoin-cli $HOME/paccoin-cli
 	fi
 
 	if [ -e $HOME/paccoin-qt ]; then
 		rm $HOME/paccoin-qt
-		ln -s $INSTALL_DIR/paccoind $HOME/paccoin-qt
+		ln -s $INSTALL_DIR/paccoin-qt $HOME/paccoin-qt
 	fi
 }
 
