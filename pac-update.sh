@@ -1,8 +1,8 @@
 #!/bin/bash
 
-export LC_ALL=C
+export LC_ALL=en_US.UTF-8
 set -e
-version="0.12.5.0"
+version="0.12.5.1"
 
 echo 
 echo "################################################"
@@ -129,6 +129,21 @@ download_binaries()
 		echo "There was a problem downloading the binaries, please try running again the script."
 		exit -1
 	fi
+
+	if [ -e $HOME/paccoind ]; then
+		rm $HOME/paccoind
+		ln -s $INSTALL_DIR/paccoind $HOME/paccoind
+	fi
+
+	if [ -e $HOME/paccoin-cli ]; then
+		rm $HOME/paccoin-cli
+		ln -s $INSTALL_DIR/paccoind $HOME/paccoin-cli
+	fi
+
+	if [ -e $HOME/paccoin-qt ]; then
+		rm $HOME/paccoin-qt
+		ln -s $INSTALL_DIR/paccoind $HOME/paccoin-qt
+	fi
 }
 
 update_sentinel()
@@ -185,7 +200,7 @@ install_and_run_systemd_service()
 	echo "*** Some of the available options: start, stop, restart or status."
 	echo "*** Example: 'systemctl status ${PAC_SERVICE_NAME}'"
 	echo
-	systemctl status -n 0 $PAC_SERVICE_NAME
+	systemctl status -n 0 --no-pager $PAC_SERVICE_NAME
 	echo
 	paccoin-cli getinfo
 	rm $PAC_SERVICE_NAME
