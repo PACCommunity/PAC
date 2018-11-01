@@ -202,6 +202,7 @@ install_and_run_systemd_service()
 	echo
 	systemctl status -n 0 --no-pager $PAC_SERVICE_NAME
 	echo
+	sleep 5
 	paccoin-cli getinfo
 	rm $PAC_SERVICE_NAME
 	echo 
