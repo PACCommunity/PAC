@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>960</width>
-    <height>604</height>
+    <height>612</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -98,11 +98,17 @@
            <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QLabel" name="labelBalanceText">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
@@ -110,6 +116,9 @@
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
@@ -140,6 +149,9 @@
               <property name="textInteractionFlags">
                <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
               </property>
+              <property name="class" stdset="0">
+               <string>pacCoinsLabel</string>
+              </property>
              </widget>
             </item>
             <item>
@@ -169,11 +181,36 @@
             </item>
             <item>
              <widget class="QLabel" name="labelPendingText">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <weight>50</weight>
+                <bold>false</bold>
+                <underline>false</underline>
+                <strikeout>false</strikeout>
+                <kerning>true</kerning>
+               </font>
+              </property>
+              <property name="lineWidth">
+               <number>1</number>
+              </property>
+              <property name="midLineWidth">
+               <number>0</number>
+              </property>
               <property name="text">
                <string>Pending</string>
               </property>
+              <property name="scaledContents">
+               <bool>false</bool>
+              </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="margin">
+               <number>-4</number>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
@@ -199,6 +236,9 @@
               </property>
               <property name="textInteractionFlags">
                <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>pacCoinsLabel</string>
               </property>
              </widget>
             </item>
@@ -229,11 +269,19 @@
             </item>
             <item>
              <widget class="QLabel" name="labelImmatureText">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Immature</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
@@ -259,6 +307,9 @@
               </property>
               <property name="textInteractionFlags">
                <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>pacCoinsLabel</string>
               </property>
              </widget>
             </item>
@@ -289,11 +340,19 @@
             </item>
             <item>
              <widget class="QLabel" name="labelTotalText">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+               </font>
+              </property>
               <property name="text">
                <string>Total Balance</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
@@ -319,6 +378,9 @@
               </property>
               <property name="textInteractionFlags">
                <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>pacCoinsLabel</string>
               </property>
              </widget>
             </item>
@@ -391,8 +453,8 @@
               <property name="font">
                <font>
                 <pointsize>18</pointsize>
-                <weight>75</weight>
-                <bold>true</bold>
+                <weight>50</weight>
+                <bold>false</bold>
                </font>
               </property>
               <property name="text">
@@ -400,6 +462,9 @@
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
