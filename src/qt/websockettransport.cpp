@@ -34,8 +34,8 @@ void WebSocketTransport::sendMessage(const QJsonObject &message)
 
 void WebSocketTransport::textMessageReceived(const QString &messageData)
 {
+    cout << "Message in..." << endl;
+    cout << messageData.toStdString() << endl;
     qDebug() << messageData;
-    cout << "Dentro" << endl;
-    cout << messageData << endl;
-
+    cout << "Message out..." << endl;
 }
