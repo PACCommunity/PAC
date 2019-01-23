@@ -66,12 +66,18 @@
           <property name="toolTip">
            <string>An optional label to associate with the new receiving address.</string>
           </property>
+          <property name="class" stdset="0">
+           <string>LineEdit</string>
+          </property>
          </widget>
         </item>
         <item row="6" column="2">
          <widget class="QLineEdit" name="reqMessage">
           <property name="toolTip">
            <string>An optional message to attach to the payment request, which will be displayed when the request is opened.&lt;br&gt;Note: The message will not be sent with the payment over the Paccoin network.</string>
+          </property>
+          <property name="class" stdset="0">
+           <string>LineEdit</string>
           </property>
          </widget>
         </item>
@@ -124,6 +130,9 @@
           </property>
           <property name="toolTip">
            <string>An optional amount to request. Leave this empty or zero to not request a specific amount.</string>
+          </property>
+          <property name="class" stdset="0">
+           <string>LineEdit</string>
           </property>
          </widget>
         </item>
@@ -331,8 +340,6 @@
   <tabstop>showRequestButton</tabstop>
   <tabstop>removeRequestButton</tabstop>
  </tabstops>
- <resources>
-  <include location="../paccoin.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
