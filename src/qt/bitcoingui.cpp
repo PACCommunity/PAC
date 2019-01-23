@@ -55,6 +55,7 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <QDebug>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -90,6 +91,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     appMenuBar(0),
     overviewAction(0),
     historyAction(0),
+    privateAction(0),
     masternodeAction(0),
     proposalAction(0),
     quitAction(0),
@@ -286,6 +288,7 @@ void BitcoinGUI::createActions()
     QActionGroup *tabGroup = new QActionGroup(this);
 
     QString theme = GUIUtil::getThemeName();
+    std::cout << "CURRENT THEME: " << theme.toStdString();
     overviewAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
@@ -337,6 +340,19 @@ void BitcoinGUI::createActions()
     historyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
 #endif
     tabGroup->addAction(historyAction);
+    //:v
+    privateAction = new QAction(QIcon(":/icons/" + theme + "/private"), tr("&Private"), this);
+    privateAction->setStatusTip(tr("Browse private section"));
+    privateAction->setToolTip(historyAction->statusTip());
+    privateAction->setCheckable(true);
+#ifdef Q_OS_MAC
+    privateAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+#else
+    privateAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+#endif
+    tabGroup->addAction(privateAction);
+    //v:
+
 
 #ifdef ENABLE_WALLET
     QSettings settings;
@@ -346,9 +362,9 @@ void BitcoinGUI::createActions()
         masternodeAction->setToolTip(masternodeAction->statusTip());
         masternodeAction->setCheckable(true);
 #ifdef Q_OS_MAC
-        masternodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+        masternodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
 #else
-        masternodeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+        masternodeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
 #endif
         tabGroup->addAction(masternodeAction);
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
@@ -360,9 +376,9 @@ void BitcoinGUI::createActions()
     proposalAction->setToolTip(proposalAction->statusTip());
     proposalAction->setCheckable(true);
 #ifdef Q_OS_MAC
-    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
+    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
 #else
-    proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
+    proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
 #endif
     tabGroup->addAction(proposalAction);
 
@@ -380,6 +396,8 @@ void BitcoinGUI::createActions()
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
+    connect(privateAction, SIGNAL(triggered()), this, SLOT(gotoPrivatePage()));
+    connect(privateAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
 #endif // ENABLE_WALLET
@@ -582,6 +600,7 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
         toolbar->addAction(historyAction);
+        toolbar->addAction(privateAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool())
         {
@@ -728,6 +747,7 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     receiveCoinsAction->setEnabled(enabled);
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
+    privateAction->setEnabled(enabled);
     proposalAction->setEnabled(enabled);
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool() && masternodeAction) {
@@ -897,6 +917,10 @@ void BitcoinGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage();
+}
+void BitcoinGUI::gotoPrivatePage(){
+    privateAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoPrivatePage();
 }
 
 void BitcoinGUI::gotoMasternodePage()
