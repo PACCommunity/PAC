@@ -8,17 +8,25 @@ QLabel{
 QMainWindow{
     border-image: url(:/images/pac/drkblue_walletFrame_bg) 0 0 0 0 stretch stretch;
 }
-
-/* Text Entry Fields */
-[class="LineEdit"]{
+QMessageBox {
+    background-color:rgb(20,20,20);
+}
+/* Global Progress Bar styles */
+QStatusBar{
+    background-color: rgb(20,20,20) !important;
+}
+/* Global text inputs */
+[class="LineEdit"], [class="LineEdit_PacCoins"]{
     border: 0px;
-    border-radius: 8px;
+    border-radius: 20px;
     font-size:11px;
-    min-height:25px;
     outline:0;
     padding:3px;
-    background-color: rgba(224, 224, 224, 0.1);
+    background-color: rgb(20, 20, 20);
     color: #fff;
+    height: 40px !important;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
 }
 [class="LineEdit"]:focus {
     font-size:12px;
@@ -30,6 +38,7 @@ QMainWindow{
 
 [class="QuickButton"]{
     background-color: transparent;
+    border: none;
 }
 /* labels */
 QLabel[class="titleLabel"]{
@@ -50,7 +59,7 @@ QLabel[class="usdLabel"]{
 }
 
 
-/* text input */
+/* text input
 QTextEdit {
     background: rgb(10, 10, 10);
     color: rgb(255, 255, 255);
@@ -70,7 +79,7 @@ QPlainTextEdit {
 }
 /*textbox with more and less button*/
 QDoubleSpinBox {
-    background: rgb(255, 255, 255);
+    background: rgb(0, 255, 0);
     color: rgb(20, 20, 20);
     border: 0px solid rgb(61, 61, 61);
     border-radius: 8px;
@@ -120,6 +129,14 @@ QToolBar > QToolButton:checked {
     background-color:rgba(150,150,150,0.1);
 }
 
+#toolbarIcon{
+    background: none;
+    margin-left: 0px;
+    margin-top: 0px;
+    margin: 12px !important;
+    border-image: url(:/icons/bitcoin);
+}
+
 /* Global Button styles*/
 QPushButton {
     background: rgb(5,5,5);
@@ -142,8 +159,8 @@ QPushButton:hover, QPushButton:focus {
     color: rgb(5,5,5);
 }
 QPushButton:disabled {
-    background: rgb(233, 201, 166);
-    border: 0px;
+background: rgb(45,45,45);
+border: 1px solid rgb(263,242,76);
 }
 QPushButton:pressed {
     background: rgba(243,232,56, 0.3) !important;
@@ -151,30 +168,20 @@ QPushButton:pressed {
     color: rgb(243,232,56) !important;
 }
 
-/* Global Progress Bar styles */
-QStatusBar{
-    background-color: rgb(80,80,80) !important;
-}
-
-#toolbarIcon{
-    background: none;
-    margin-left: 0px;
-    margin-top: 0px;
-    margin: 15px !important;
-    border-image: url(:/icons/bitcoin);
-}
-
-QMessageBox {
-    background-color:#0000FF;
-}
-
 /*
  * Overview Page
 */
-#frame_RecentTransactions, #frame_Balances{
+#frame_RecentTransactions, #frame_Balances, [class="container"]{
     background-color: rgba(50,50,50,0.6);
     border: 0px !important;
 }
 #frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
     text-transform:uppercase;
+}
+/*
+ * SendCoins Page
+ */
+#SendCoinsEntry>BitcoinAmountField{
+    background:white;
+    border: 0px;
 }
