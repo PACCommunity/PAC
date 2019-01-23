@@ -40,28 +40,6 @@ QStatusBar{
     background-color: transparent;
     border: none;
 }
-[class="linkButton"]{
-    background-color: transparent;
-    border: none;
-    color:rgb(243,232,56);
-}
-[class="accentButton"]{
-    background-color: transparent;
-    border: none;
-    background: rgb(243,232,56);
-    border: 0px;
-    color: rgb(5,5,5);
-    border-radius: 12px;
-    height: 40px;
-    width: 150px;
-    font-family: Arial;
-    font-style: normal;
-    font-size: 12pt;
-    font-weight: bold;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
-    text-transform:uppercase;
-}
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
@@ -75,7 +53,7 @@ QLabel[class="pacCoinsLabel"]{
     font-weight: bold;
 }
 QLabel[class="usdLabel"]{
-    color:rgb(243,232,56);
+    color:rgb(255,255,255);
     font-family: 'Montserrat', sans-serif;
     font-size: 15em;
 }
@@ -169,7 +147,6 @@ QPushButton {
     width: 150px;
     font-family: Arial;
     font-style: normal;
-    font-size: 12pt;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 10px;
@@ -189,6 +166,44 @@ QPushButton:pressed {
     border: 2px solid rgb(5, 5, 5) !important;
     color: rgb(243,232,56) !important;
 }
+[class="linkButton"]{
+    background-color: transparent;
+    border: none;
+    color:rgb(243,232,56);
+    text-decoration: underline;
+}
+[class="linkButton"]:hover, [class="linkButton"]:focus {
+    background: rgb(243,232,56) !important;
+    border: 2px solid rgb(5,5,5) !important;
+    color: rgb(5,5,5) !important;
+}
+[class="linkButton"]:disabled {
+    background: rgb(45,45,45) !important;
+    border: 1px solid rgb(263,242,76) !important;
+}
+[class="linkButton"]:pressed {
+    background: rgba(243,232,56, 0.3) !important;
+    border: 2px solid rgb(5, 5, 5) !important;
+    color: rgb(243,232,56) !important;
+}
+
+[class="accentButton"]{
+    border: none;
+    background: rgb(243,232,56);
+    color: rgb(5,5,5);
+    border-radius: 25px;
+    height: 50px;
+    font-style: normal;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-transform:uppercase;
+}
+QCheckBox {
+    color: rgb(255, 255, 255);
+}
+QRadioButton {
+    color: rgb(255, 255, 255);
+}
 
 /*
  * Overview Page
@@ -203,7 +218,18 @@ QPushButton:pressed {
 /*
  * SendCoins Page
  */
-#SendCoinsEntry>BitcoinAmountField{
-    background:white;
-    border: 0px;
-}
+ #SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
+     background:red !important;
+     border: 0px !important;
+ }
+ #frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
+     border: 0px !important;
+ }
+ #frameCoinControl{
+     background: rgba(255,255,255,0.3);
+     border-radius: 8px !important;
+ }
+ #scrollArea, #scrollAreaWidgetContents{
+     background-color:rgba(0,0,0,0) !important;
+ }
+

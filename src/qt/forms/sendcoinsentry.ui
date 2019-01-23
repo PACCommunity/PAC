@@ -16,12 +16,20 @@
   <property name="autoFillBackground">
    <bool>false</bool>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#SendCoins, #SendCoins{
+  background:transparent;
+}</string>
+  </property>
   <property name="currentIndex">
    <number>0</number>
   </property>
   <widget class="QFrame" name="SendCoins">
    <property name="toolTip">
     <string>This is a normal payment.</string>
+   </property>
+  <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
