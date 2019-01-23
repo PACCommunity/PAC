@@ -117,14 +117,7 @@ void PrivatePage::setBalance(const CAmount& balance, const CAmount& unconfirmedB
     currentWatchImmatureBalance = watchImmatureBalance;
     ui->labelAnonymized->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, anonymizedBalance, false, BitcoinUnits::separatorAlways));
 
-    // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
-    // for the non-mining users
-    bool showImmature = immatureBalance != 0;
-    bool showWatchOnlyImmature = watchImmatureBalance != 0;
-
     // for symmetry reasons also show immature label when the watch-only one is shown
-
-    updatePrivateSendProgress();
 
     static int cachedTxLocks = 0;
 
