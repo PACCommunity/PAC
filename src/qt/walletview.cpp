@@ -19,6 +19,7 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
+#include "privatepage.h"
 
 #include "ui_interface.h"
 
@@ -88,7 +89,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     }
 
     proposalList = new ProposalList(platformStyle);
+    privatePage = new PrivatePage(platformStyle);
     addWidget(proposalList);
+    addWidget(privatePage);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
@@ -142,6 +145,7 @@ void WalletView::setClientModel(ClientModel *clientModel)
     overviewPage->setClientModel(clientModel);
     sendCoinsPage->setClientModel(clientModel);
     QSettings settings;
+    privatePage->setClientModel(clientModel);
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeListPage->setClientModel(clientModel);
     }
@@ -160,6 +164,7 @@ void WalletView::setWalletModel(WalletModel *walletModel)
     }
     receiveCoinsPage->setModel(walletModel);
     sendCoinsPage->setModel(walletModel);
+    privatePage->setModel(walletModel);
     usedReceivingAddressesPage->setModel(walletModel->getAddressTableModel());
     usedSendingAddressesPage->setModel(walletModel->getAddressTableModel());
 
@@ -215,6 +220,11 @@ void WalletView::gotoOverviewPage()
 void WalletView::gotoProposalPage()
 {
     setCurrentWidget(proposalList);
+}
+
+void WalletView::gotoPrivatePage()
+{
+    setCurrentWidget(privatePage);
 }
 
 void WalletView::gotoHistoryPage()

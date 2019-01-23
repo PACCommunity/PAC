@@ -21,6 +21,7 @@ class SendCoinsRecipient;
 class TransactionView;
 class WalletModel;
 class AddressBookPage;
+class PrivatePage;
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -71,6 +72,7 @@ private:
 
     TransactionView *transactionView;
     ProposalList *proposalList;
+    PrivatePage *privatePage;
 
     QProgressDialog *progressDialog;
     QLabel *transactionSum;
@@ -89,7 +91,8 @@ public Q_SLOTS:
     void gotoReceiveCoinsPage();
     /** Switch to send coins page */
     void gotoSendCoinsPage(QString addr = "");
-
+    /** Switch to private page */
+    void gotoPrivatePage();
     /** Show Sign/Verify Message dialog and switch to sign message tab */
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */

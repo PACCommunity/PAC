@@ -133,10 +133,12 @@ paccoind
 paccoin-qt
 make
 
+#Custom build
 generate-mac-wallet.sh
-
-src/qt/paccoin-qt.creator.user
-src/qt/paccoin-qt.config
-src/qt/paccoin-qt.creator
-src/qt/paccoin-qt.files
-src/qt/paccoin-qt.includes
+kill_PAC.sh
+paccoin-qt.config
+paccoin-qt.creator
+paccoin-qt.creator.user
+paccoin-qt.files
+paccoin-qt.includes
+contrib/dash-qt.pro.user
