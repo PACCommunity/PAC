@@ -169,27 +169,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
 
     // that's it for litemode
     if(fLiteMode) return;
-
-    // Disable any PS UI for masternode or when autobackup is disabled or failed for whatever reason
-    if(fMasterNode || nWalletBackups <= 0){
-        DisablePrivateSendCompletely();
-        if (nWalletBackups <= 0) {
-            ui->labelPrivateSendEnabled->setToolTip(tr("Automatic backups are disabled, no mixing available!"));
-        }
-    } else {
-        if(!privateSendClient.fEnablePrivateSend){
-            ui->togglePrivateSend->setText(tr("Start Mixing"));
-        } else {
-            ui->togglePrivateSend->setText(tr("Stop Mixing"));
-        }
-        // Disable privateSendClient builtin support for automatic backups while we are in GUI,
-        // we'll handle automatic backups and user warnings in privateSendStatus()
-        privateSendClient.fCreateAutoBackups = false;
-
-        timer = new QTimer(this);
-        connect(timer, SIGNAL(timeout()), this, SLOT(privateSendStatus()));
-        timer->start(1000);
-    }
+    
     WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
 }
 
