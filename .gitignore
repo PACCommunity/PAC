@@ -132,3 +132,11 @@ paccoin-cli
 paccoind
 paccoin-qt
 make
+
+generate-mac-wallet.sh
+
+src/qt/paccoin-qt.creator.user
+src/qt/paccoin-qt.config
+src/qt/paccoin-qt.creator
+src/qt/paccoin-qt.files
+src/qt/paccoin-qt.includes
