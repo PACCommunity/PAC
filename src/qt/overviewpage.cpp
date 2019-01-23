@@ -28,6 +28,15 @@
 #include <QSettings>
 #include <QTimer>
 
+#include "qwebchannel.h"
+#include <QCoreApplication>
+#include "websocketclientwrapper.h"
+
+#include <string>
+#include <iostream>
+
+using namespace std;
+
 #define ICON_OFFSET 16
 #define DECORATION_SIZE 54
 #define NUM_ITEMS 5
@@ -181,6 +190,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
         connect(timer, SIGNAL(timeout()), this, SLOT(privateSendStatus()));
         timer->start(1000);
     }
+    WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)
