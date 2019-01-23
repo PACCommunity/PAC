@@ -40,6 +40,28 @@ QStatusBar{
     background-color: transparent;
     border: none;
 }
+[class="linkButton"]{
+    background-color: transparent;
+    border: none;
+    color:rgb(243,232,56);
+}
+[class="accentButton"]{
+    background-color: transparent;
+    border: none;
+    background: rgb(243,232,56);
+    border: 0px;
+    color: rgb(5,5,5);
+    border-radius: 12px;
+    height: 40px;
+    width: 150px;
+    font-family: Arial;
+    font-style: normal;
+    font-size: 12pt;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-transform:uppercase;
+}
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
