@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>960</width>
-    <height>551</height>
+    <height>604</height>
    </rect>
   </property>
   <property name="minimumSize">
@@ -95,9 +95,16 @@
            </widget>
           </item>
           <item>
-           <layout class="QVBoxLayout" name="verticalLayout_5">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
             <item>
              <widget class="QLabel" name="labelBalanceText">
+              <property name="font">
+               <font>
+                <pointsize>18</pointsize>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
               <property name="text">
                <string>Available Balance</string>
               </property>
@@ -106,6 +113,10 @@
               </property>
              </widget>
             </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QVBoxLayout" name="verticalLayout_5">
             <item>
              <widget class="QLabel" name="labelBalance">
               <property name="font">

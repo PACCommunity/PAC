@@ -92,7 +92,8 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     }
     
     /* Theme selector */
-    ui->theme->addItem(QString("(default)"), QVariant("light"));
+    ui->theme->addItem(QString("pac theme"), QVariant("pac"));
+    ui->theme->addItem(QString("light"), QVariant("light"));
     //ui->theme->addItem(QString("PAC-light"), QVariant("light"));
     //ui->theme->addItem(QString("PAC-light-hires"), QVariant("light-hires"));
     //ui->theme->addItem(QString("PAC-blue"), QVariant("drkblue"));

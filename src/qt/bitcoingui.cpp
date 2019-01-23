@@ -194,6 +194,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     // Create status bar
     statusBar();
+    //statusBar()->setObjectName("statusProgressBar");
+    statusBar()->setFixedHeight(33);
 
     // Disable size grip because it looks ugly and nobody needs it
     statusBar()->setSizeGripEnabled(false);
@@ -238,7 +240,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QString curStyle = QApplication::style()->metaObject()->className();
     if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
     {
-        progressBar->setStyleSheet("QProgressBar { background-color: #F8F8F8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
+        //progressBar->setStyleSheet("QProgressBar { background-color: #F8F8F8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
     }
 
     statusBar()->addWidget(progressBarLabel);
@@ -586,14 +588,18 @@ void BitcoinGUI::createToolBars()
 #ifdef ENABLE_WALLET
     if(walletFrame)
     {
-                QLabel* mainIcon = new QLabel();
-        mainIcon->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
-        mainIcon->setPixmap(QPixmap(":icons/bitcoin"));
-        mainIcon->setAlignment(Qt::AlignCenter);
+        QWidget* mainIcon = new QWidget();
+        mainIcon->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        mainIcon->setObjectName("toolbarIcon");
+        mainIcon->setFixedWidth(100);
+        mainIcon->setFixedHeight(100);
 
         QToolBar *toolbar = new QToolBar(tr("Tabs toolbar"));
-        toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        toolbar->setObjectName("toolBar");
+
+        toolbar->setToolButtonStyle(Qt::ToolButtonIconOnly);
         addToolBar(Qt::LeftToolBarArea, toolbar);
+        toolbar->setFixedWidth(100);
         toolbar->addWidget(mainIcon);
         toolbar->setOrientation(Qt::Vertical);
         toolbar->addAction(overviewAction);
@@ -619,6 +625,7 @@ void BitcoinGUI::createToolBars()
         layout->setSpacing(0);
         layout->setContentsMargins(QMargins());
         QWidget *containerWidget = new QWidget();
+        containerWidget->setObjectName("containerWidget"); // Label ID as CSS-reference
         containerWidget->setLayout(layout);
         setCentralWidget(containerWidget);
     }

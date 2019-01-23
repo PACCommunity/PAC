@@ -4,6 +4,11 @@
         <file alias="prompticon">res/icons/chevron.png</file>
         <file alias="warning">res/icons/warning.png</file>
     </qresource>
+    <qresource prefix="/fonts">
+        <file alias="typo">res/fonts/ZCOOLKuaiLe-Regular.ttf</file>
+        <file alias="Montserrat-Regular">res/fonts/Montserrat-Regular.otf</file>
+        <file alias="Montserrat-Medium">res/fonts/Montserrat-Medium.otf</file>
+    </qresource>
     <qresource prefix="/icons/drkblue">
         <file alias="address-book">res/icons/drkblue/address-book.png</file>
         <file alias="quit">res/icons/drkblue/quit.png</file>

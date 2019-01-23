@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>382</height>
+    <height>391</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,9 @@
    <item>
     <widget class="QWidget" name="bgWidget" native="true">
      <property name="styleSheet">
-      <string notr="true"/>
+      <string notr="true">#bgWidget, #contentWidget{
+background-color: rgba(128,128,128,0.6)
+}</string>
      </property>
      <layout class="QVBoxLayout" name="verticalLayoutMain" stretch="0">
       <property name="leftMargin">
@@ -79,6 +81,13 @@
               <number>0</number>
              </property>
              <item>
+              <widget class="QWidget" name="widget" native="true">
+               <property name="styleSheet">
+                <string notr="true">border-image:</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="warningIcon">
                <property name="enabled">
                 <bool>false</bool>
@@ -87,7 +96,7 @@
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../paccoin.qrc">
                  <normaloff>:/icons/warning</normaloff>
                  <disabledoff>:/icons/warning</disabledoff>:/icons/warning</iconset>
                </property>
@@ -386,6 +395,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../paccoin.qrc"/>
+ </resources>
  <connections/>
 </ui>
