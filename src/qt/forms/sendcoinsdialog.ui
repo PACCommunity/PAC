@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1157</width>
-    <height>584</height>
+    <width>1163</width>
+    <height>607</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -27,7 +27,7 @@
    </property>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout_3">
-      <property name="spacing">
+     <property name="spacing">
       <number>0</number>
      </property>
      <item>
@@ -85,7 +85,7 @@
             <number>6</number>
            </property>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayoutCoinControl" stretch="0,0,0,0,1">
+            <layout class="QVBoxLayout" name="verticalLayoutCoinControl" stretch="0,0,0,0,0">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -619,7 +619,7 @@
              <x>0</x>
              <y>0</y>
              <width>811</width>
-             <height>92</height>
+             <height>69</height>
             </rect>
            </property>
            <property name="styleSheet">

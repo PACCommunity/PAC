@@ -3,8 +3,8 @@
  */
 
 QLabel{
-    font-family: 'Montserrat', sans-serif !important;
-    color: rgb(250,250,250) !important;
+    font-family: 'ZCOOL KuaiLe', cursive !important;
+    color: rgb(255,255,255) !important;
 }
 
 QMainWindow{
@@ -24,6 +24,15 @@ QDialog{
 QStatusBar{
     background-color: rgb(10,10,10) !important;
 }
+
+#btnChangeImage{
+    border: 2px solid pink !important;
+    border-image: url(:/images/pac/profile) !important;
+}
+#btnChangeImage:hover {
+    border-image: url(:/images/pac/hover_profile) !important;
+}
+
 [class="container"]{
     background-color: rgba(50,50,50,0.6);
     border: 0px !important;
@@ -220,10 +229,12 @@ QHeaderView::section { /* Top of the table Header Sections */
 }
 .QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(224, 224, 224, 0.1);
+    color: white !important;
     /*alternate-background-color: yellow;*/
 }
 QTableView::item { /* Table Item */
     font-size:12px;
+    color: white !important;
 }
 QTableView::item:selected { /* Table Item Selected */
     background-color: rgb(255, 255, 0);
@@ -378,8 +389,8 @@ QPushButton:pressed {
     color: rgb(5,5,5) !important;
 }
 [class="linkButton"]:disabled {
-    background: rgb(45,45,45) !important;
-    border: 1px solid rgb(263,242,76) !important;
+    color:rgb(243,232,56);
+    text-decoration: underline;
 }
 [class="linkButton"]:pressed {
     background: rgba(243,232,56, 0.3) !important;
@@ -405,6 +416,34 @@ QRadioButton {
 }
 
 
+/* GLOBAL CHECKBOX */
+
+QCheckBox::indicator:unchecked {
+    image:url(':/images/pac/unchecked');
+}
+QCheckBox::indicator:unchecked:hover {
+    image:url(':/images/pac/unchecked');
+}
+QCheckBox::indicator:unchecked:pressed {
+    image:url(':/images/pac/checked');
+}
+QCheckBox::indicator:checked {
+    image:url(':/images/pac/checked');
+}
+QCheckBox::indicator:checked:hover {
+    image:url(':/images/pac/checked');
+}
+QCheckBox::indicator:checked:pressed {
+    image:url(':/images/pac/unchecked');
+}
+QCheckBox::indicator:indeterminate:hover {
+    image:url(':/images/pac/unchecked');
+}
+QCheckBox::indicator:indeterminate:pressed {
+    image:url(':/images/pac/checked');
+}
+
+
 /*
  * Overview Page
 */
@@ -426,6 +465,9 @@ QRadioButton {
 #frameCoinControl{
     background: rgba(255,255,255,0.3);
     border-radius: 8px !important;
+}
+#frameFee{
+    border: 0px;
 }
 #scrollArea, #scrollAreaWidgetContents{
     background-color:rgba(0,0,0,0) !important;
@@ -467,7 +509,8 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
  * Private Page
  */
 #framePrivateSend{
-    background-color: rgba(50,50,50,0.6);
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(28, 28, 28, 0.3), stop: 1 rgba(89, 89, 89, 0.3));
+    /*background-color: rgba(50,50,50,0.6);*/
     border: 0px !important;
 }
 #labelPrivateSendHeader{
@@ -479,8 +522,30 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
     font-weight: 100;
 }
-
-
+#togglePrivateSend{
+    background: rgb(48,48,48);
+    border: 0px;
+    color: #fff;
+    border-radius: 12px;
+    height: 30px;
+    /*font-family: Arial;*/
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 10px;
+    text-transform:uppercase;
+}
+#togglePrivateSend:hover, #togglePrivateSend:focus {
+    background: #444444 !important;
+}
+#togglePrivateSend:disabled {
+    background: #444444 !important;
+    color: #c6c6c6;
+}
+#togglePrivateSend:pressed {
+    background: rgba(243,232,56, 0.3) !important;
+    border: 2px solid rgb(5, 5, 5) !important;
+    color: rgb(243,232,56) !important;
+}
 /*
  * Proposal Page
  */
