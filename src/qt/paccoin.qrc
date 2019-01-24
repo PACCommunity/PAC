@@ -3,6 +3,7 @@
         <file alias="bitcoin">res/icons/bitcoin.png</file>
         <file alias="prompticon">res/icons/chevron.png</file>
         <file alias="warning">res/icons/warning.png</file>
+        <file alias="bitcoin-32">res/icons/bitcoin-32.png</file>
     </qresource>
     <qresource prefix="/fonts">
     </qresource>
@@ -360,6 +361,9 @@
         <file alias="drkblue_walletFrame_bg">res/images/pac/drkblue_walletFrame_bg.jpg</file>
         <file alias="splash">res/images/pac/splash.png</file>
         <file alias="splash_testnet">res/images/pac/splash_testnet.png</file>
+        <file alias="hover_profile">res/images/pac/hover_profile.png</file>
+        <file alias="profile_bkg">res/images/pac/profile_bkg.png</file>
+        <file alias="profile">res/images/pac/profile.jpg</file>
     </qresource>
     <qresource prefix="/images/trad">
         <file alias="about">res/images/trad/about.png</file>
