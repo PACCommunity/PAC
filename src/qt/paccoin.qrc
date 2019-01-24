@@ -6,6 +6,11 @@
         <file alias="bitcoin-32">res/icons/bitcoin-32.png</file>
     </qresource>
     <qresource prefix="/fonts">
+        <file alias="VolteRounded-Regular">res/fonts/VolteRounded-Regular.otf</file>c
+        <file alias="VolteRounded-Bold">res/fonts/VolteRounded-Bold.otf</file>
+        <file alias="VolteRounded-Light">res/fonts/VolteRounded-Light.otf</file>
+        <file alias="VolteRounded-Medium">res/fonts/VolteRounded-Medium.otf</file>
+        <file alias="VolteRounded-Semibold">res/fonts/VolteRounded-Semibold.otf</file>
     </qresource>
     <qresource prefix="/icons/drkblue">
         <file alias="address-book">res/icons/drkblue/address-book.png</file>
