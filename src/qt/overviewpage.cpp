@@ -165,7 +165,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     // that's it for litemode
     if(fLiteMode) return;
     
-    WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
+    //WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)

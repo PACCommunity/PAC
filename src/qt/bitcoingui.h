@@ -138,6 +138,8 @@ private:
     HelpMessageDialog *helpMessageDialog;
     ModalOverlay *modalOverlay;
 
+    QFrame *headerFrame;
+
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
@@ -154,7 +156,8 @@ private:
     void createTrayIcon(const NetworkStyle *networkStyle);
     /** Create system tray menu (or setup the dock menu) */
     void createIconMenu(QMenu *pmenu);
-
+    /** Create the top header bar where the message and profile picture will be located*/
+    void createHeaderBar();
     /** Enable or disable all wallet-related actions */
     void setWalletActionsEnabled(bool enabled);
 

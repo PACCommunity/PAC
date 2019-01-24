@@ -211,7 +211,8 @@ QToolBar > QToolButton:checked {
     border-image: url(:/icons/bitcoin);
 }
 #test{
-    background: green !important;
+    background-color: rgba(255,0,0,0.6);
+    border:1px green !important;
 }
 #toptoolBar{
     background: cyan;
@@ -296,10 +297,10 @@ QRadioButton {
 /*
  * SendCoins Page
  */
- #SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
+ /*#SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
      background:red !important;
      border: 0px !important;
- }
+ }*/
  #frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
      border: 0px !important;
  }

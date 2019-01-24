@@ -56,6 +56,8 @@
 #include <QToolBar>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QRegion>
+#include <QPushButton>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -619,26 +621,7 @@ void BitcoinGUI::createToolBars()
         /** Create additional container for toolbar and walletFrame and make it the central widget.
             This is a workaround mostly for toolbar styling on Mac OS but should work fine for every other OSes too.
         */
-        QFrame *headerFrame = new QFrame;
-        headerFrame->setFixedHeight(100);
-        headerFrame->setStyleSheet("    background-color: rgba(50,50,50,0.6); border: 0px !important;");
-
-        QWidget* img = new QWidget();
-        img->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-        img->setObjectName("test");
-
-        QLabel *message = new QLabel(this);
-        message->setText("Socket Message will be displayed here.");
-        message->setAlignment(Qt::AlignCenter);
-        message->setStyleSheet("color:red;");
-        message->setStyleSheet("color:white; font-size:30px;");
-
-        QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
-        headerFrameLayout->setContentsMargins(0,0,0,0);
-        headerFrameLayout->setContentsMargins(0,0,0,0);
-        headerFrameLayout->addWidget(message);
-        headerFrameLayout->addWidget(img);
-        headerFrame->setLayout(headerFrameLayout);
+        createHeaderBar();
 
         QVBoxLayout *verticalLayout = new QVBoxLayout;
         verticalLayout->addWidget(headerFrame);
@@ -658,6 +641,40 @@ void BitcoinGUI::createToolBars()
         setCentralWidget(containerWidget);
     }
 #endif // ENABLE_WALLET
+}
+void BitcoinGUI::createHeaderBar()
+{
+    headerFrame = new QFrame;
+    headerFrame->setFixedHeight(100);
+    headerFrame->setObjectName("headerFrameLayout");
+    headerFrame->setStyleSheet("QFrame {background: rgba(50,50,50,0.6);} #headerFrameLayout{background:transparent !important;}");
+    headerFrame->setContentsMargins(40,20,40,0);
+
+
+    QPushButton* btnChangeImage = new QPushButton();
+    btnChangeImage->setText("Test Text");
+    btnChangeImage->setFixedHeight(50);
+    btnChangeImage->setFixedWidth(50);
+    QRect rect(0,0,48,48);
+    QRegion region(rect, QRegion::Ellipse);
+    btnChangeImage->setMask(region);
+
+    QWidget* img = new QWidget();
+    img->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    img->setStyleSheet("QWidget { background-color: yellow !important; width:100px !important;  height:100px !important;}");
+
+    QLabel *message = new QLabel(this);
+    message->setText("Socket Message will be displayed here.");
+    message->setAlignment(Qt::AlignCenter);
+    message->setStyleSheet("QLabel { color:white; font-size:25px;}");
+
+    QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
+    headerFrameLayout->setContentsMargins(0,0,0,0);
+    headerFrameLayout->setContentsMargins(0,0,0,0);
+    headerFrameLayout->addWidget(message);
+    headerFrameLayout->addWidget(img);
+    headerFrameLayout->addWidget(btnChangeImage);
+    headerFrame->setLayout(headerFrameLayout);
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
