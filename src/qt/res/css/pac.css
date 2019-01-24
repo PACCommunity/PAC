@@ -84,6 +84,69 @@ QPlainTextEdit {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
+/* Dropdown Menus */
+QComboBox {
+    border-radius: 20px;
+    background-color: rgb(20, 20, 20);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border:0px;
+    padding: 3px 5px 3px 5px;
+    min-height:40px;
+    color:#fff;
+}
+
+QComboBox:checked {
+    background-color: rgba(219, 219, 219,0.5);
+}
+
+QComboBox:editable {
+    background-color: rgba(219, 219, 219,0.5);
+    color:#616161;
+    border:0px;
+}
+
+QComboBox::drop-down {
+    width:25px;
+    border:0px;
+}
+
+QComboBox::down-arrow {
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+
+QComboBox QListView {
+    background-color:  rgb(20, 20, 20);
+    border:1px solid transparent;
+    border-radius: 5px;
+    padding-right:1px;
+    padding-left:1px;
+}
+
+QComboBox QAbstractItemView::item { margin:4px; }
+
+QComboBox::item {
+    color:#fff;
+}
+
+QComboBox::item:alternate {
+    background:rgb(20, 20, 20);
+}
+
+QComboBox::item:selected {
+    border:0px solid transparent;
+    background-color:  rgb(40, 40, 40);
+}
+
+QComboBox::indicator {
+    background-color:transparent;
+    selection-background-color:transparent;
+    color:transparent;
+    selection-color:transparent;
+}
+
+
 /*textbox with more and less button*/
 QDoubleSpinBox {
     background: rgb(0, 255, 0);
