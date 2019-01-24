@@ -58,6 +58,7 @@ public:
     {
         painter->save();
         QFont customFont("Volte Rounded",11, 1, false);
+        customFont.setBold(false);
         QFont defaultFont = painter->font();
         painter->setFont(customFont);
 

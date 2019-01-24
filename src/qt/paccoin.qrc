@@ -369,6 +369,7 @@
         <file alias="hover_profile">res/images/pac/hover_profile.png</file>
         <file alias="profile_bkg">res/images/pac/profile_bkg.png</file>
         <file alias="profile">res/images/pac/profile.jpg</file>
+        <file alias="header_bkg">res/images/pac/header_bkg.png</file>
     </qresource>
     <qresource prefix="/images/trad">
         <file alias="about">res/images/trad/about.png</file>

@@ -3,7 +3,7 @@
  */
 
 QLabel{
-    font-family: 'Volte Rounded',sans-serif !important;
+
     color: rgb(255,255,255) !important;
 }
 
@@ -53,7 +53,6 @@ QStatusBar{
     background-color: rgb(20, 20, 20);
     color: #fff;
     height: 40px !important;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
 [class="LineEdit"]:focus {
@@ -72,18 +71,15 @@ QStatusBar{
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
     color:rgb(243,232,56);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 30px;/*20px*/
     font-weight: 100;
 }
 QLabel[class="usdLabel"]{
     color:rgb(255,255,255);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 20px;
     font-weight: 100;
 }
@@ -92,7 +88,6 @@ QLabel[class="usdLabel"]{
 QPlainTextEdit {
     background: rgb(255, 0, 0);
     color: rgb(20, 20, 20);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
 
@@ -101,7 +96,6 @@ QPlainTextEdit {
 QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -160,7 +154,6 @@ QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboB
 QAbstractSpinBox {
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -351,10 +344,8 @@ QPushButton {
     border-radius: 12px;
     height: 30px;
     width: 150px;
-    font-family: Arial;
     font-style: normal;
     font-weight: bold;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 10px;
     text-transform:uppercase;
 }
@@ -399,7 +390,6 @@ QPushButton:pressed {
     border-radius: 25px;
     height: 50px;
     font-style: normal;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-transform:uppercase;
 }
@@ -551,7 +541,6 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     height: 30px;
     /*font-family: Arial;*/
     font-weight: bold;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 10px;
     text-transform:uppercase;
 }

@@ -59,6 +59,8 @@
 #include <QRegion>
 #include <QPushButton>
 #include <QFontDatabase>
+#include <QSpacerItem>
+#include <QFont>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -133,6 +135,10 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     int id = QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     std::cout<< "family: " << family.toStdString();
+
+    QFont defaultFont("Volte Rounded",11, 1, false);
+    defaultFont.setBold(false);
+    QApplication::setFont(defaultFont);
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
@@ -650,31 +656,49 @@ void BitcoinGUI::createToolBars()
 }
 void BitcoinGUI::createHeaderBar()
 {
+    /** Creating the profile image widget */
     headerFrame = new QFrame;
+    QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
+    QLabel *messageLabel = new QLabel(this);
+    QFrame *frameImg = new QFrame;
+    QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
+    QPushButton *btnImg = new QPushButton;
+    QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
+
+
     headerFrame->setFixedHeight(100);
     headerFrame->setObjectName("headerFrameLayout");
-    headerFrame->setStyleSheet("QFrame {background: rgba(50,50,50,0.6);} #headerFrameLayout{background:transparent !important;}");
-    headerFrame->setContentsMargins(40,20,40,10);
+    headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/pac/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");//background-size: cover; background-repeat: repeat;
+    headerFrame->setContentsMargins(40,0,0,0);
 
 
-    QPushButton* btnChangeImage = new QPushButton();
-    btnChangeImage->setObjectName("btnChangeImage");
-    btnChangeImage->setFixedHeight(80);
-    btnChangeImage->setFixedWidth(80);
-    QRect rect(0,0,80,80);
-    QRegion region(rect, QRegion::Ellipse);
-    btnChangeImage->setMask(region);
-
-    QLabel *messageLabel = new QLabel(this);
-    messageLabel->setText("LATEST NEWS: $PAC launches new desktop wallet, featuring new merchant-focused featu...");
+    messageLabel->setText("LATEST NEWS: $PAC launches new desktop wallet, featuring new merchant-focused...");
     messageLabel->setAlignment(Qt::AlignCenter);
-    messageLabel->setStyleSheet("QLabel { color:white; font-size:25px;}");
+    messageLabel->setStyleSheet("QLabel { color:white; font-size:24px;}");
 
-    QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
+    frameImg->setFrameStyle(QFrame::StyledPanel);
+    frameImg->setFrameShadow(QFrame::Raised);
+    frameImg->setStyleSheet("QFrame { border-image: url(:/images/pac/profile_bkg) 0 0 0 0 stretch stretch; margin-right:-1px !important }");
+    frameImg->setFixedWidth(100);
+    frameImg->setFixedHeight(85);
+
+    btnImg->setObjectName("btnChangeImage");
+    btnImg->setStyleSheet("border-image: ; border-radius: 35px; width:70px; height:70px;");
+    btnImg->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnImg->setFixedHeight(70);
+    btnImg->setFixedWidth(70);
+
+    profileImgLayout->setContentsMargins(0,0,0,0);
+    profileImgLayout->addWidget(btnImg);
+    profileImgLayout->addSpacerItem(item);
+    frameImg->setLayout(profileImgLayout);
+
+    /* inserting everything inside the header*/
+
     headerFrameLayout->setContentsMargins(0,0,0,0);
     headerFrameLayout->setContentsMargins(0,0,0,0);
     headerFrameLayout->addWidget(messageLabel);
-    headerFrameLayout->addWidget(btnChangeImage);
+    headerFrameLayout->addWidget(frameImg);
     headerFrame->setLayout(headerFrameLayout);
 }
 
