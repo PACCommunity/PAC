@@ -236,3 +236,19 @@ QRadioButton {
      background-color:rgba(0,0,0,0) !important;
  }
 
+/*
+ * Private Page
+ */
+#framePrivateSend{
+    background-color: rgba(50,50,50,0.6);
+    border: 0px !important;
+}
+#labelPrivateSendHeader{
+    font-size: 25px;
+}
+#labelAnonymized{
+    font-size: 30px;
+}
+#labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
+    font-weight: 100;
+}
