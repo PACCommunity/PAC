@@ -58,6 +58,7 @@
 #include <QDebug>
 #include <QRegion>
 #include <QPushButton>
+#include <QFontDatabase>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -128,6 +129,12 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     platformStyle(platformStyle)
 {
     /* Open CSS when configured */
+    GUIUtil::setGUITextColor();
+    QFontDatabase::addApplicationFont(":/fonts/Montserrat-Medium");
+    QFontDatabase::addApplicationFont(":/fonts/LC50Book");
+    QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular");
+    QFontDatabase::addApplicationFont(":/fonts/typo");
+
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
@@ -660,7 +667,7 @@ void BitcoinGUI::createHeaderBar()
     btnChangeImage->setMask(region);
 
     QLabel *messageLabel = new QLabel(this);
-    messageLabel->setText("Socket Message will be displayed here.");
+    messageLabel->setText("LATEST NEWS: $PAC launches new desktop wallet, featuring new merchant-focused featu...");
     messageLabel->setAlignment(Qt::AlignCenter);
     messageLabel->setStyleSheet("QLabel { color:white; font-size:25px;}");
 

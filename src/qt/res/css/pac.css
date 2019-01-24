@@ -3,7 +3,6 @@
  */
 
 QLabel{
-    font-family: 'ZCOOL KuaiLe', cursive !important;
     color: rgb(255,255,255) !important;
 }
 
@@ -68,7 +67,6 @@ QStatusBar{
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
-    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
@@ -227,7 +225,7 @@ QHeaderView::section { /* Top of the table Header Sections */
     background:transparent;
     border:2px solid transparent;
 }
-.QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
+QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(224, 224, 224, 0.1);
     color: white !important;
     /*alternate-background-color: yellow;*/

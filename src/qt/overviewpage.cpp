@@ -59,8 +59,6 @@ public:
         painter->save();
 
         QFont montserratFontRegular("Montserrat",11, 1, false);
-        QFont montserratFontLarge("typo",18, 1, false);
-        montserratFontLarge.setBold(false);
         QFont defaultFont = painter->font();
         painter->setFont(montserratFontRegular);
 
@@ -118,7 +116,7 @@ public:
         {
             amountText = QString("[") + amountText + QString("]");
         }
-        painter->setFont(montserratFontLarge);
+        painter->setFont(montserratFontRegular);
         painter->drawText(amountRect, Qt::AlignRight|Qt::AlignVCenter, amountText);
         painter->setPen(COLOR_TEXT);
         painter->setFont(montserratFontRegular);

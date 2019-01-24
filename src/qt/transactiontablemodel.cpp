@@ -243,6 +243,7 @@ TransactionTableModel::TransactionTableModel(const PlatformStyle *platformStyle,
         fProcessingQueuedTransactions(false),
         platformStyle(platformStyle)
 {
+    theme = GUIUtil::getThemeName();
     columns << QString() << QString() << tr("Date") << tr("Type") << tr("Address / Label") << BitcoinUnits::getAmountColumnTitle(walletModel->getOptionsModel()->getDisplayUnit());
     priv->refreshWallet();
 
@@ -401,7 +402,6 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
 
 QVariant TransactionTableModel::txAddressDecoration(const TransactionRecord *wtx) const
 {
-    QString theme = GUIUtil::getThemeName();
     switch(wtx->type)
     {
     case TransactionRecord::Generated:
@@ -486,7 +486,6 @@ QString TransactionTableModel::formatTxAmount(const TransactionRecord *wtx, bool
 
 QVariant TransactionTableModel::txStatusDecoration(const TransactionRecord *wtx) const
 {
-    QString theme = GUIUtil::getThemeName();
     switch(wtx->status.status)
     {
     case TransactionStatus::OpenUntilBlock:
@@ -520,13 +519,12 @@ QVariant TransactionTableModel::txStatusDecoration(const TransactionRecord *wtx)
     case TransactionStatus::NotAccepted:
         return QIcon(":/icons/" + theme + "/transaction_0");
     default:
-        return COLOR_BLACK;
+        return COLOR_TEXT;
     }
 }
 
 QVariant TransactionTableModel::txWatchonlyDecoration(const TransactionRecord *wtx) const
 {
-    QString theme = GUIUtil::getThemeName();
     if (wtx->involvesWatchAddress)
         return QIcon(":/icons/" + theme + "/eye");
     else
