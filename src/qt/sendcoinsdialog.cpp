@@ -53,7 +53,8 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     }
 
     ui->iconLabelConvertedCurrency->setPixmap(QPixmap(":icons/bitcoin-32"));
-
+    ui->iconLabelAvailableBalance->setPixmap(QPixmap(":icons/bitcoin-32"));
+    
     GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
 
     addEntry();

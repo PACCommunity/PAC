@@ -499,7 +499,7 @@ QRadioButton::indicator:indeterminate:pressed {
 #frameFee{
     border: 0px;
 }
-#scrollArea, #scrollAreaWidgetContents{
+#scrollArea, #scrollAreaWidgetContents, #scrollAreaWidgetContents_3{
     background-color:rgba(0,0,0,0) !important;
 }
 
