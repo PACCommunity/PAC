@@ -48,7 +48,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     setContentsMargins(0,0,0,0);
 
     QHBoxLayout *hlayout = new QHBoxLayout();
-    hlayout->setContentsMargins(0,0,0,8);
+    hlayout->setContentsMargins(0,0,0,8 );
     if (platformStyle->getUseExtraSpacing()) {
         hlayout->setSpacing(0);
         hlayout->addSpacing(6);
@@ -219,6 +219,7 @@ void TransactionView::setModel(WalletModel *model)
         transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         transactionView->setModel(transactionProxyModel);
         transactionView->setAlternatingRowColors(false);
+        transactionView->setShowGrid(false);
         transactionView->setSelectionBehavior(QAbstractItemView::SelectRows);
         transactionView->setSelectionMode(QAbstractItemView::ExtendedSelection);
         transactionView->setSortingEnabled(true);

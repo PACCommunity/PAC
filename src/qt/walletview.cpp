@@ -95,6 +95,8 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     proposalList = new ProposalList(platformStyle);
     privatePage = new PrivatePage(platformStyle);
+    proposalList->setContentsMargins(50,50,50,50);
+    privatePage->setContentsMargins(50,50,50,50);
     addWidget(proposalList);
     addWidget(privatePage);
 

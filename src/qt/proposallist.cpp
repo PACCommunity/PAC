@@ -52,21 +52,22 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     hlayout->setSpacing(0);
 
     proposalWidget = new QLineEdit(this);
+    proposalWidget->setObjectName("proposalWidget");
 #if QT_VERSION >= 0x040700
     proposalWidget->setPlaceholderText(tr("Enter proposal name"));
 #endif
-    proposalWidget->setObjectName("proposalWidget");
     hlayout->addWidget(proposalWidget);
 
     amountWidget = new QLineEdit(this);
+    amountWidget->setObjectName("amountWidget");
 #if QT_VERSION >= 0x040700
     amountWidget->setPlaceholderText(tr("Min amount"));
 #endif
     amountWidget->setValidator(new QDoubleValidator(0, 1e20, 8, this));
-    amountWidget->setObjectName("amountWidget");
     hlayout->addWidget(amountWidget);
 
     startDateWidget = new QComboBox(this);
+    startDateWidget->setObjectName("startDateWidget");
     startDateWidget->addItem(tr("All"), All);
     startDateWidget->addItem(tr("Today"), Today);
     startDateWidget->addItem(tr("This week"), ThisWeek);
@@ -78,6 +79,7 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     hlayout->addWidget(startDateWidget);
 
     endDateWidget = new QComboBox(this);
+    endDateWidget->setObjectName("endDateWidget");
     endDateWidget->addItem(tr("All"), All);
     endDateWidget->addItem(tr("Today"), Today);
     endDateWidget->addItem(tr("This week"), ThisWeek);
@@ -89,36 +91,36 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     hlayout->addWidget(endDateWidget);
 
     yesVotesWidget = new QLineEdit(this);
+    yesVotesWidget->setObjectName("yesVotesWidget");
 #if QT_VERSION >= 0x040700
     yesVotesWidget->setPlaceholderText(tr("Min yes votes"));
 #endif
     yesVotesWidget->setValidator(new QIntValidator(0, INT_MAX, this));
-    yesVotesWidget->setObjectName("yesVotesWidget");
     hlayout->addWidget(yesVotesWidget);
 
     noVotesWidget = new QLineEdit(this);
+    noVotesWidget->setObjectName("noVotesWidget");
 #if QT_VERSION >= 0x040700
     noVotesWidget->setPlaceholderText(tr("Min no votes"));
 #endif
     noVotesWidget->setValidator(new QIntValidator(0, INT_MAX, this));
-    noVotesWidget->setObjectName("noVotesWidget");
     hlayout->addWidget(noVotesWidget);
 
 
     absoluteYesVotesWidget = new QLineEdit(this);
+    absoluteYesVotesWidget->setObjectName("absoluteYesVotesWidget");
 #if QT_VERSION >= 0x040700
     absoluteYesVotesWidget->setPlaceholderText(tr("Min abs. yes votes"));
 #endif
     absoluteYesVotesWidget->setValidator(new QIntValidator(INT_MIN, INT_MAX, this));
-    absoluteYesVotesWidget->setObjectName("absoluteYesVotesWidget");
     hlayout->addWidget(absoluteYesVotesWidget);
 
     percentageWidget = new QLineEdit(this);
+    percentageWidget->setObjectName("percentageWidget");
 #if QT_VERSION >= 0x040700
     percentageWidget->setPlaceholderText(tr("Min percentage"));
 #endif
     percentageWidget->setValidator(new QIntValidator(-100, 100, this));
-    percentageWidget->setObjectName("percentageWidget");
     hlayout->addWidget(percentageWidget);
 
     QVBoxLayout *vlayout = new QVBoxLayout(this);
@@ -214,6 +216,7 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     proposalList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     proposalList->setModel(proposalProxyModel);
     proposalList->setAlternatingRowColors(false);
+    proposalList->setShowGrid(false);
     proposalList->setSelectionBehavior(QAbstractItemView::SelectRows);
     proposalList->setSortingEnabled(true);
     proposalList->sortByColumn(ProposalTableModel::StartDate, Qt::DescendingOrder);
