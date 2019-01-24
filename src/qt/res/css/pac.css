@@ -3,8 +3,7 @@
  */
 
 QLabel{
-    font-family: 'Montserrat', sans-serif !important;
-    color: rgb(100,10,10) !important;
+    color: rgb(255,255,255) !important;
 }
 
 QMainWindow{
@@ -217,8 +216,9 @@ QHeaderView::section { /* Top of the table Header Sections */
     background:transparent;
     border:2px solid transparent;
 }
-.QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
+QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(224, 224, 224, 0.1);
+    color: white !important;
     /*alternate-background-color: yellow;*/
 }
 QTableView::item { /* Table Item */
@@ -377,8 +377,8 @@ QPushButton:pressed {
     color: rgb(5,5,5) !important;
 }
 [class="linkButton"]:disabled {
-    background: rgb(45,45,45) !important;
-    border: 1px solid rgb(263,242,76) !important;
+    color:rgb(243,232,56);
+    text-decoration: underline;
 }
 [class="linkButton"]:pressed {
     background: rgba(243,232,56, 0.3) !important;
