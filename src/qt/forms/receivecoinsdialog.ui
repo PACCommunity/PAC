@@ -10,6 +10,11 @@
     <height>414</height>
    </rect>
   </property>
+  <property name="styleSheet">
+   <string notr="true">#ReceiveCoinsDialog{
+  background:transparent !important;
+}</string>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,1">
    <item>
     <widget class="QFrame" name="frame2">

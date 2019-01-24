@@ -10,10 +10,12 @@ QMainWindow{
 }
 QMessageBox {
     background-color:rgb(20,20,20);
+}QDialog{
+background-color:rgb(30,30,30);
 }
 /* Global Progress Bar styles */
 QStatusBar{
-    background-color: rgb(20,20,20) !important;
+background-color: rgb(10,10,10) !important;
 }
 /* Global text inputs */
 [class="LineEdit"], [class="LineEdit_PacCoins"]{

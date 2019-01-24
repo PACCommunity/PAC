@@ -14,7 +14,9 @@
    <string>Send Coins</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">#SendCoinsDialog{
+  background:transparent;
+}</string>
   </property>
   <property name="windowFilePath">
    <string/>
