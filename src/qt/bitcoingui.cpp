@@ -619,9 +619,37 @@ void BitcoinGUI::createToolBars()
         /** Create additional container for toolbar and walletFrame and make it the central widget.
             This is a workaround mostly for toolbar styling on Mac OS but should work fine for every other OSes too.
         */
+        QFrame *headerFrame = new QFrame;
+        headerFrame->setFixedHeight(100);
+        headerFrame->setStyleSheet("    background-color: rgba(50,50,50,0.6); border: 0px !important;");
+
+        QWidget* img = new QWidget();
+        img->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        img->setObjectName("test");
+
+        QLabel *message = new QLabel(this);
+        message->setText("Socket Message will be displayed here.");
+        message->setAlignment(Qt::AlignCenter);
+        message->setStyleSheet("color:red;");
+        message->setStyleSheet("color:white; font-size:30px;");
+
+        QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
+        headerFrameLayout->setContentsMargins(0,0,0,0);
+        headerFrameLayout->setContentsMargins(0,0,0,0);
+        headerFrameLayout->addWidget(message);
+        headerFrameLayout->addWidget(img);
+        headerFrame->setLayout(headerFrameLayout);
+
+        QVBoxLayout *verticalLayout = new QVBoxLayout;
+        verticalLayout->addWidget(headerFrame);
+        verticalLayout->addWidget(walletFrame);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(QMargins());
+
+        QWidget* container = new QWidget();
+        container->setLayout(verticalLayout);
         QHBoxLayout *layout = new QHBoxLayout;
-        layout->addWidget(toolbar);
-        layout->addWidget(walletFrame);
+        layout->addWidget(container);
         layout->setSpacing(0);
         layout->setContentsMargins(QMargins());
         QWidget *containerWidget = new QWidget();

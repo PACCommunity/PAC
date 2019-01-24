@@ -74,6 +74,9 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <property name="class" stdset="0">
+          <string>container</string>
+         </property>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
            <widget class="QLabel" name="labelWalletStatus">
@@ -613,6 +616,9 @@
          </property>
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
+         </property>
+         <property name="class" stdset="0">
+          <string>container</string>
          </property>
          <layout class="QVBoxLayout" name="verticalLayout">
           <item>

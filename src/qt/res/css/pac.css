@@ -17,6 +17,10 @@ background-color:rgb(30,30,30);
 QStatusBar{
 background-color: rgb(10,10,10) !important;
 }
+[class="container"]{
+    background-color: rgba(50,50,50,0.6);
+    border: 0px !important;
+}
 /* Global text inputs */
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
     border: 0px;
@@ -139,6 +143,14 @@ QToolBar > QToolButton:checked {
     margin: 12px !important;
     border-image: url(:/icons/bitcoin);
 }
+#test{
+    background: green !important;
+}
+#toptoolBar{
+    background: cyan;
+    width:1000px;
+    height:100px;
+}
 
 /* Global Button styles*/
 QPushButton {
@@ -211,10 +223,6 @@ QRadioButton {
 /*
  * Overview Page
 */
-#frame_RecentTransactions, #frame_Balances, [class="container"]{
-    background-color: rgba(50,50,50,0.6);
-    border: 0px !important;
-}
 #frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
     text-transform:uppercase;
 }
