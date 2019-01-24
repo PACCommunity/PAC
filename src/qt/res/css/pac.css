@@ -46,18 +46,19 @@ background-color: rgb(10,10,10) !important;
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
     font-family: 'Montserrat', sans-serif;
-    font-size: 15px;
+    font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
     color:rgb(243,232,56);
     font-family: 'Montserrat', sans-serif;
-    font-size: 15em;/*20px*/
-    font-weight: bold;
+    font-size: 30px;/*20px*/
+    font-weight: 100;
 }
 QLabel[class="usdLabel"]{
     color:rgb(255,255,255);
     font-family: 'Montserrat', sans-serif;
-    font-size: 15em;
+    font-size: 20px;
+    font-weight: 100;
 }
 
 
