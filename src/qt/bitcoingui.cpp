@@ -130,10 +130,9 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 {
     /* Open CSS when configured */
     GUIUtil::setGUITextColor();
-    QFontDatabase::addApplicationFont(":/fonts/Montserrat-Medium");
-    QFontDatabase::addApplicationFont(":/fonts/LC50Book");
-    QFontDatabase::addApplicationFont(":/fonts/Montserrat-Regular");
-    QFontDatabase::addApplicationFont(":/fonts/typo");
+    int id = QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    std::cout<< "family: " << family.toStdString();
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 

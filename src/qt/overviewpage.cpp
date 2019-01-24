@@ -57,10 +57,9 @@ public:
                       const QModelIndex &index ) const
     {
         painter->save();
-
-        QFont montserratFontRegular("Montserrat",11, 1, false);
+        QFont customFont("Volte Rounded",11, 1, false);
         QFont defaultFont = painter->font();
-        painter->setFont(montserratFontRegular);
+        painter->setFont(customFont);
 
         QIcon icon = qvariant_cast<QIcon>(index.data(TransactionTableModel::RawDecorationRole));
         QRect mainRect = option.rect;
@@ -116,10 +115,10 @@ public:
         {
             amountText = QString("[") + amountText + QString("]");
         }
-        painter->setFont(montserratFontRegular);
+        painter->setFont(customFont);
         painter->drawText(amountRect, Qt::AlignRight|Qt::AlignVCenter, amountText);
         painter->setPen(COLOR_TEXT);
-        painter->setFont(montserratFontRegular);
+        painter->setFont(customFont);
         painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::dateStr(date));
         painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::timeStr(date));
         painter->restore();
