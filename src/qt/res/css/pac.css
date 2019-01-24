@@ -3,7 +3,7 @@
  */
 
 QLabel{
-
+    font-family: 'Volte Rounded',sans-serif !important;
     color: rgb(255,255,255) !important;
 }
 
@@ -53,6 +53,7 @@ QStatusBar{
     background-color: rgb(20, 20, 20);
     color: #fff;
     height: 40px !important;
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
 [class="LineEdit"]:focus {
@@ -71,15 +72,18 @@ QStatusBar{
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
     color:rgb(243,232,56);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 30px;/*20px*/
     font-weight: 100;
 }
 QLabel[class="usdLabel"]{
     color:rgb(255,255,255);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 20px;
     font-weight: 100;
 }
@@ -88,6 +92,7 @@ QLabel[class="usdLabel"]{
 QPlainTextEdit {
     background: rgb(255, 0, 0);
     color: rgb(20, 20, 20);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
 
@@ -96,6 +101,7 @@ QPlainTextEdit {
 QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -154,6 +160,7 @@ QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboB
 QAbstractSpinBox {
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -344,8 +351,10 @@ QPushButton {
     border-radius: 12px;
     height: 30px;
     width: 150px;
+    font-family: Arial;
     font-style: normal;
     font-weight: bold;
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 10px;
     text-transform:uppercase;
 }
@@ -390,6 +399,7 @@ QPushButton:pressed {
     border-radius: 25px;
     height: 50px;
     font-style: normal;
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-transform:uppercase;
 }
@@ -520,7 +530,7 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
  * Private Page
  */
 #framePrivateSend{
-    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(28, 28, 28, 0.3), stop: 1 rgba(89, 89, 89, 0.3));
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.5), stop: 1 rgba(89, 89, 89, 0.3));
     /*background-color: rgba(50,50,50,0.6);*/
     border: 0px !important;
 }
@@ -541,6 +551,7 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     height: 30px;
     /*font-family: Arial;*/
     font-weight: bold;
+    font-family: 'Volte Rounded', sans-serif;
     font-size: 10px;
     text-transform:uppercase;
 }
@@ -588,3 +599,15 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
     padding-left:1px;
 }
 
+
+
+#SendCoinsEntry QAbstractSpinBox {
+    width: 200%;
+    background-color: rgb(10, 20, 60);
+    /*qproperty-sizePolicy: 'Expanding,Preferred,0,0' ;*/
+}
+
+#buttonChooseFee {
+    background-color: rgb(10, 20, 60);
+    qproperty-text: 'test';
+}

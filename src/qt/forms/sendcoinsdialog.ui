@@ -1121,10 +1121,10 @@
                <string notr="true">font-weight:bold;</string>
               </property>
               <property name="text">
-               <string>Transaction Fee:</string>
+               <string>Transaction Fee: </string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignCenter</set>
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
               </property>
              </widget>
             </item>
@@ -1372,7 +1372,7 @@
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>-73</y>
+               <y>-67</y>
                <width>357</width>
                <height>411</height>
               </rect>
