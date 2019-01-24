@@ -1,37 +1,35 @@
 /*
  *  Global GUI styles
  */
+
 QLabel{
     font-family: 'Montserrat', sans-serif !important;
     color: rgb(250,250,250) !important;
 }
+
 QMainWindow{
     border-image: url(:/images/pac/drkblue_walletFrame_bg) 0 0 0 0 stretch stretch;
 }
+
 QMessageBox {
     background-color:rgb(20,20,20);
-}QDialog{
-    background-color:rgb(30,30,30);
 }
+
 QDialog{
     background-color:rgb(30,30,30);
 }
+
+
 /* Global Progress Bar styles */
 QStatusBar{
     background-color: rgb(10,10,10) !important;
 }
-#btnChangeImage{
-    border: 2px solid pink !important;
-    border-image: url(:/images/pac/profile) !important;
-}
-#btnChangeImage:hover {
-    border-image: url(:/images/pac/hover_profile) !important;
-}
-
 [class="container"]{
     background-color: rgba(50,50,50,0.6);
     border: 0px !important;
 }
+
+
 /* Global text inputs */
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
     border: 0px;
@@ -56,6 +54,8 @@ QStatusBar{
     background-color: transparent;
     border: none;
 }
+
+
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
@@ -75,6 +75,7 @@ QLabel[class="usdLabel"]{
     font-weight: 100;
 }
 
+
 /* text input
 QTextEdit {
     background: rgb(10, 10, 10);
@@ -86,6 +87,7 @@ QTextEdit {
     font-size: 20px;
 }*/
 
+
 /*textarea*/
 QPlainTextEdit {
     background: rgb(255, 0, 0);
@@ -93,6 +95,8 @@ QPlainTextEdit {
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
+
+
 /* Dropdown Menus  not for the tables */
 QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
     border-radius: 20px;
@@ -105,31 +109,25 @@ QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox {
     min-height:40px;
     color:#fff;
 }
-
 QDialog#SendCoinsDialog QComboBox:disabled, QDialog#ReceiveCoinsDialog QComboBox:disabled{
     background-color: rgb(61,61,61);
     color: #efefef;
 }
-
 QDialog#SendCoinsDialog QComboBox:checked, QDialog#ReceiveCoinsDialog QComboBox:checked{
     background-color: rgba(219, 219, 219,0.5);
 }
-
 QDialog#SendCoinsDialog QComboBox:editable, QDialog#ReceiveCoinsDialog QComboBox:editable {
     background-color: rgba(219, 219, 219,0.5);
     color:#616161;
     border:0px;
 }
-
 QDialog#SendCoinsDialog QComboBox::drop-down, QDialog#ReceiveCoinsDialog QComboBox::drop-down {
     width:25px;
     border:0px;
 }
-
 QDialog#SendCoinsDialog QComboBox::down-arrow, QDialog#ReceiveCoinsDialog QComboBox::down-arrow {
     border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
 }
-
 QDialog#SendCoinsDialog QComboBox QListView, QDialog#ReceiveCoinsDialog QComboBox QListView {
     background-color:  rgb(20, 20, 20);
     border:1px solid transparent;
@@ -137,30 +135,26 @@ QDialog#SendCoinsDialog QComboBox QListView, QDialog#ReceiveCoinsDialog QComboBo
     padding-right:1px;
     padding-left:1px;
 }
-
 QDialog#SendCoinsDialog QComboBox QAbstractItemView::item, QDialog#ReceiveCoinsDialog QComboBox QAbstractItemView::item {
     margin:4px;
 }
-
 QDialog#SendCoinsDialog QComboBox::item, QDialog#ReceiveCoinsDialog QComboBox::item {
     color:#fff;
 }
-
 QDialog#SendCoinsDialog QComboBox::item:alternate, QDialog#ReceiveCoinsDialog QComboBox::item:alternate {
     background:rgb(20, 20, 20);
 }
-
 QDialog#SendCoinsDialog QComboBox::item:selected, QDialog#ReceiveCoinsDialog QComboBox::item:selected {
     border:0px solid transparent;
     background-color:  rgb(40, 40, 40);
 }
-
 QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboBox::indicator {
     background-color:transparent;
     selection-background-color:transparent;
     color:transparent;
     selection-color:transparent;
 }
+
 
 /* GLOBAL SPINBOX */
 QAbstractSpinBox {
@@ -174,7 +168,6 @@ QAbstractSpinBox {
     color:#fff;
     padding: 3px 5px 3px 5px;
 }
-
 QAbstractSpinBox::up-button {
     subcontrol-origin: border;
     subcontrol-position: top right;
@@ -185,11 +178,9 @@ QAbstractSpinBox::up-button {
     padding-left:5px;
     padding-top:2px;
 }
-
 QAbstractSpinBox::up-arrow {
     image: url(':/images/pac/drkblue_upArrow_small') 0 0 0 0 stretch stretch;
 }
-
 QAbstractSpinBox::down-button {
     subcontrol-origin: border;
     subcontrol-position: bottom right;
@@ -200,15 +191,15 @@ QAbstractSpinBox::down-button {
     padding-left:5px;
     padding-bottom:2px;
 }
-
 QAbstractSpinBox::down-arrow {
     image: url(':/images/pac/drkblue_downArrow_small') 0.5 0.5 0.5 0.5 stretch stretch;
 }
+
+
 /* GLOBAL TABLES*/
 QHeaderView { /* Top of the table Header */
     background-color: rgba(224, 224, 224, 0.1);
 }
-
 QHeaderView::section { /* Top of the table Header Sections */
     qproperty-alignment:center;
     background-color: rgba(224, 224, 224, 0.1);
@@ -223,121 +214,90 @@ QHeaderView::section { /* Top of the table Header Sections */
     padding-top:2px;
     padding-bottom:2px;
 }
-
-QHeaderView::section:last {
-    /*border-right: 0px;*/
-}
-
 .QScrollArea {
     background:transparent;
     border:2px solid transparent;
 }
-
 .QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(224, 224, 224, 0.1);
     /*alternate-background-color: yellow;*/
-    border:3px solid transparent;
 }
-
 QTableView::item { /* Table Item */
-    background-color: rgba(224, 224, 224, 0.1);
     font-size:12px;
 }
-
 QTableView::item:selected { /* Table Item Selected */
-    background-color: rgb(255, 251, 158);
+    background-color: rgb(255, 255, 0);
     color:#000;
 }
-
 .QTableWidget{
     background-color: rgba(224, 224, 224, 0.1); 
 }
-
 QScrollBar { /* Scroll Bar */
-
 }
-
 QScrollBar:vertical { /* Vertical Scroll Bar Attributes */
-    border:0;
+    border:0px;
     background:#333333;
     width:18px;
     margin: 18px 0px 18px 0px;
 }
-
 QScrollBar:horizontal { /* Horizontal Scroll Bar Attributes */
-    border:0;
+    border:0px;
     background:#333333;
     height:18px;
     margin: 0px 18px 0px 18px;
 }
-
-
 QScrollBar::handle:vertical { /* Scroll Bar Slider - vertical */
     background:#999999;
     min-height:10px;
 }
-
 QScrollBar::handle:horizontal { /* Scroll Bar Slider - horizontal */
     background:#999999;
     min-width:10px;
 }
-
 QScrollBar::add-page, QScrollBar::sub-page { /* Scroll Bar Background */
     background:#3d3d3d;
 }
-
 QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { /* Define Arrow Button Dimensions */
     background-color:#050505;
     border: 1px solid #050505;
     width:16px;
     height:16px;
 }
-
 QScrollBar::add-line:vertical:pressed, QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:horizontal:pressed, QScrollBar::sub-line:horizontal:pressed {
     background-color:#e0e004;
 }
-
 QScrollBar::sub-line:vertical { /* Vertical - top button position */
     subcontrol-position:top;
     subcontrol-origin: margin;
 }
-
 QScrollBar::add-line:vertical { /* Vertical - bottom button position */
     subcontrol-position:bottom;
     subcontrol-origin: margin;
 }
-
 QScrollBar::sub-line:horizontal { /* Vertical - left button position */
     subcontrol-position:left;
     subcontrol-origin: margin;
 }
-
 QScrollBar::add-line:horizontal { /* Vertical - right button position */
     subcontrol-position:right;
     subcontrol-origin: margin;
 }
-
 QScrollBar:up-arrow, QScrollBar:down-arrow, QScrollBar:left-arrow, QScrollBar:right-arrow { /* Arrows Icon */
     width:10px;
     height:10px;
 }
-
 QScrollBar:up-arrow {
     background-image: url(':/images/pac/drkblue_upArrow_small');
 }
-
 QScrollBar:down-arrow {
     background-image: url(':/images/pac/drkblue_downArrow_small');
 }
-
 QScrollBar:left-arrow {
     background-image: url(':/images/pac/drkblue_leftArrow_small');
 }
-
 QScrollBar:right-arrow {
     background-image: url(':/images/pac/drkblue_rightArrow_small');
 }
-
 
 
 /* ToolBar Menu */
@@ -359,7 +319,6 @@ QToolBar > QToolButton {
 QToolBar > QToolButton:checked {
     background-color:rgba(150,150,150,0.1);
 }
-
 #toolbarIcon{
     background: none;
     margin-left: 0px;
@@ -427,7 +386,6 @@ QPushButton:pressed {
     border: 2px solid rgb(5, 5, 5) !important;
     color: rgb(243,232,56) !important;
 }
-
 [class="accentButton"]{
     border: none;
     background: rgb(243,232,56);
@@ -445,13 +403,16 @@ QCheckBox {
 QRadioButton {
     color: rgb(255, 255, 255);
 }
+
+
 /*
  * Overview Page
 */
-
 #frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
     text-transform:uppercase;
 }
+
+
 /*
  * SendCoins Page
  */
@@ -469,8 +430,41 @@ QRadioButton {
 #scrollArea, #scrollAreaWidgetContents{
     background-color:rgba(0,0,0,0) !important;
 }
+
 /*
- * SendCoins Page
+ * Transactions Page
+ */
+QLineEdit#addressWidget, QLineEdit#tAmountWidget{
+    background-color: rgba(224, 224, 224, 0.2);
+    color:#fff;
+    border:0px;
+    min-height: 30px !important;
+}
+
+QComboBox#watchOnlyWidget, QComboBox#dateWidget, QComboBox#typeWidget {
+    background-color: rgba(224, 224, 224, 0.2);
+    border:0px;
+    padding: 3px 5px 3px 5px;
+    color:#fff;
+    min-height: 24px !important;
+}
+#watchOnlyWidget::down-arrow, #dateWidget::down-arrow, #typeWidget::down-arrow {
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+#watchOnlyWidget::drop-down, #dateWidget::drop-down, #typeWidget::drop-down {
+    width:25px;
+    border:3px red;
+}
+QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#typeWidget QListView {
+    background-color:  rgb(20, 20, 20);
+    border:0px;
+    border-radius: 5px;
+    padding-right:1px;
+    padding-left:1px;
+}
+
+/*
+ * Private Page
  */
 #framePrivateSend{
     background-color: rgba(50,50,50,0.6);
@@ -485,3 +479,37 @@ QRadioButton {
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
     font-weight: 100;
 }
+
+
+/*
+ * Proposal Page
+ */
+/* Over the table */
+QLineEdit#proposalWidget, QLineEdit#amountWidget, QLineEdit#yesVotesWidget, QLineEdit#noVotesWidget, QLineEdit#absoluteYesVotesWidget, QLineEdit#percentageWidget{ /* Example of setObjectName for widgets without name */
+    background-color: rgba(224, 224, 224, 0.2);
+    color:#fff;
+    border:0px;
+    min-height: 30px !important;
+}
+QComboBox#startDateWidget, QComboBox#endDateWidget{
+    background-color: rgba(224, 224, 224, 0.2);
+    border:0px;
+    padding: 3px 5px 3px 5px;
+    color:#fff;
+    min-height: 24px !important;
+}
+#startDateWidget::down-arrow, #endDateWidget::down-arrow {
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+#startDateWidget::drop-down, #endDateWidget::drop-down {
+    width:25px;
+    border:3px red;
+}
+QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
+    background-color:  rgb(20, 20, 20);
+    border:0px;
+    border-radius: 5px;
+    padding-right:1px;
+    padding-left:1px;
+}
+

@@ -48,7 +48,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     setContentsMargins(0,0,0,0);
 
     QHBoxLayout *hlayout = new QHBoxLayout();
-    hlayout->setContentsMargins(0,0,0,0);
+    hlayout->setContentsMargins(0,0,0,8);
     if (platformStyle->getUseExtraSpacing()) {
         hlayout->setSpacing(0);
         hlayout->addSpacing(6);
@@ -58,6 +58,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     }
     QString theme = GUIUtil::getThemeName();
     watchOnlyWidget = new QComboBox(this);
+    watchOnlyWidget->setObjectName("watchOnlyWidget");
     watchOnlyWidget->setFixedWidth(24);
     watchOnlyWidget->addItem("", TransactionFilterProxy::WatchOnlyFilter_All);
     watchOnlyWidget->addItem(QIcon(":/icons/" + theme + "/eye_plus"), "", TransactionFilterProxy::WatchOnlyFilter_Yes);
@@ -65,6 +66,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(watchOnlyWidget);
 
     dateWidget = new QComboBox(this);
+    dateWidget->setObjectName("dateWidget");
     if (platformStyle->getUseExtraSpacing()) {
         dateWidget->setFixedWidth(120);
     } else {
@@ -81,6 +83,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(dateWidget);
 
     typeWidget = new QComboBox(this);
+    typeWidget->setObjectName("typeWidget");
     if (platformStyle->getUseExtraSpacing()) {
         typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH);
     } else {
@@ -122,7 +125,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
         amountWidget->setFixedWidth(125);
     }  
     amountWidget->setValidator(new QDoubleValidator(0, 1e20, 8, this));
-    amountWidget->setObjectName("amountWidget");
+    amountWidget->setObjectName("tAmountWidget");
     hlayout->addWidget(amountWidget);
 
     QVBoxLayout *vlayout = new QVBoxLayout(this);

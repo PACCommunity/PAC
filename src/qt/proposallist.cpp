@@ -48,7 +48,7 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     setContentsMargins(0,0,0,0);
 
     hlayout = new ColumnAlignedLayout();
-    hlayout->setContentsMargins(0,0,0,0);
+    hlayout->setContentsMargins(0,0,0,8);
     hlayout->setSpacing(0);
 
     proposalWidget = new QLineEdit(this);
