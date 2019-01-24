@@ -3,6 +3,7 @@
  */
 
 QLabel{
+    font-family: 'ZCOOL KuaiLe', cursive !important;
     color: rgb(255,255,255) !important;
 }
 
@@ -67,6 +68,7 @@ QStatusBar{
 /* labels */
 QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
+    font-family: 'Montserrat', sans-serif;
     font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
@@ -175,6 +177,10 @@ QAbstractSpinBox {
     color:#fff;
     padding: 3px 5px 3px 5px;
 }
+QAbstractSpinBox:disabled{
+    background-color: rgb(61,61,61);
+    color: #efefef;
+}
 QAbstractSpinBox::up-button {
     subcontrol-origin: border;
     subcontrol-position: top right;
@@ -225,7 +231,7 @@ QHeaderView::section { /* Top of the table Header Sections */
     background:transparent;
     border:2px solid transparent;
 }
-QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
+.QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(224, 224, 224, 0.1);
     color: white !important;
     /*alternate-background-color: yellow;*/
@@ -415,29 +421,55 @@ QRadioButton {
 
 
 /* GLOBAL CHECKBOX */
-
 QCheckBox::indicator:unchecked {
-    image:url(':/images/pac/unchecked');
+    
 }
 QCheckBox::indicator:unchecked:hover {
-    image:url(':/images/pac/unchecked');
+    
 }
 QCheckBox::indicator:unchecked:pressed {
-    image:url(':/images/pac/checked');
+    
 }
 QCheckBox::indicator:checked {
-    image:url(':/images/pac/checked');
+    
 }
 QCheckBox::indicator:checked:hover {
-    image:url(':/images/pac/checked');
+    
 }
 QCheckBox::indicator:checked:pressed {
-    image:url(':/images/pac/unchecked');
+    
 }
 QCheckBox::indicator:indeterminate:hover {
-    image:url(':/images/pac/unchecked');
+    
 }
 QCheckBox::indicator:indeterminate:pressed {
+    
+}
+
+
+/* GLOBAL RADIO BUTTON */
+QRadioButton::indicator:unchecked {
+    image:url(':/images/pac/unchecked');
+}
+QRadioButton::indicator:unchecked:hover {
+    image:url(':/images/pac/unchecked');
+}
+QRadioButton::indicator:unchecked:pressed {
+    image:url(':/images/pac/checked');
+}
+QRadioButton::indicator:checked {
+    image:url(':/images/pac/checked');
+}
+QRadioButton::indicator:checked:hover {
+    image:url(':/images/pac/checked');
+}
+QRadioButton::indicator:checked:pressed {
+    image:url(':/images/pac/unchecked');
+}
+QRadioButton::indicator:indeterminate:hover {
+    image:url(':/images/pac/unchecked');
+}
+QRadioButton::indicator:indeterminate:pressed {
     image:url(':/images/pac/checked');
 }
 

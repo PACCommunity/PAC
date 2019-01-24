@@ -50,22 +50,6 @@
     <item row="2" column="0">
      <layout class="QHBoxLayout" name="labelAmounTitles">
       <item>
-       <widget class="QLabel" name="amountLabel">
-        <property name="text">
-         <string>A&amp;mount:</string>
-        </property>
-        <property name="alignment">
-         <set>Qt::AlignCenter</set>
-        </property>
-        <property name="buddy">
-         <cstring>payAmount</cstring>
-        </property>
-        <property name="class" stdset="0">
-         <string>titleLabel</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLabel" name="labellLabel">
         <property name="text">
          <string>&amp;Label:</string>
@@ -75,6 +59,22 @@
         </property>
         <property name="buddy">
          <cstring>addAsLabel</cstring>
+        </property>
+        <property name="class" stdset="0">
+         <string>titleLabel</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="amountLabel">
+        <property name="text">
+         <string>A&amp;mount:</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+        <property name="buddy">
+         <cstring>payAmount</cstring>
         </property>
         <property name="class" stdset="0">
          <string>titleLabel</string>
@@ -215,19 +215,19 @@
     <item row="3" column="0">
      <layout class="QHBoxLayout" name="inputsContainer">
       <item>
-       <widget class="BitcoinAmountField" name="payAmount">
-        <property name="class" stdset="0">
-         <string>LineEdit_PacCoins</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <widget class="QLineEdit" name="addAsLabel">
         <property name="toolTip">
          <string>Enter a label for this address to add it to the list of used addresses</string>
         </property>
         <property name="class" stdset="0">
          <string>LineEdit</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="BitcoinAmountField" name="payAmount">
+        <property name="class" stdset="0">
+         <string>LineEdit_PacCoins</string>
         </property>
        </widget>
       </item>

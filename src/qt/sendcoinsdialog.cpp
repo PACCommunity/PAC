@@ -52,6 +52,8 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
         ui->sendButton->setIcon(QIcon(":/icons/" + theme + "/send"));
     }
 
+    ui->iconLabelConvertedCurrency->setPixmap(QPixmap(":icons/bitcoin-32"));
+
     GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
 
     addEntry();
