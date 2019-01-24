@@ -17,6 +17,9 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "util.h"
+#include "guiconstants.h"
+#include <iostream>
+#include <string>
 
 #ifdef WIN32
 #ifdef _WIN32_WINNT
@@ -87,6 +90,14 @@ namespace GUIUtil {
 QString dateTimeStr(const QDateTime &date)
 {
     return date.date().toString(Qt::SystemLocaleShortDate) + QString(" ") + date.toString("hh:mm");
+}
+QString timeStr(const QDateTime &date)
+{
+    return date.toString("hh:mm");
+}
+QString dateStr(const QDateTime &date)
+{
+    return date.date().toString(Qt::SystemLocaleShortDate);
 }
 
 QString dateTimeStr(qint64 nTime)
@@ -909,6 +920,13 @@ QString getThemeName()
     }
     return QString("pac");
 }
+void setGUITextColor(){
+    QString theme = getThemeName();
+    if( theme.toStdString().compare("pac") == 0 )
+        COLOR_TEXT = QColor(255,255,255);
+    else
+        COLOR_TEXT = QColor(20,20,20);
+}
 
 // Open CSS when configured
 QString loadStyleSheet()
@@ -919,7 +937,7 @@ QString loadStyleSheet()
     QString theme = settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        cssName = QString(":/css/") + theme; 
+        cssName = QString(":/css/") + theme;
     }
     else {
         cssName = QString(":/css/pac");
@@ -930,7 +948,7 @@ QString loadStyleSheet()
     if (qFile.open(QFile::ReadOnly)) {
         styleSheet = QLatin1String(qFile.readAll());
     }
-        
+    setGUITextColor();
     return styleSheet;
 }
 
