@@ -6,7 +6,7 @@
         <file alias="bitcoin-32">res/icons/bitcoin-32.png</file>
     </qresource>
     <qresource prefix="/fonts">
-        <file alias="VolteRounded-Regular">res/fonts/VolteRounded-Regular.otf</file>c
+        <file alias="VolteRounded-Regular">res/fonts/VolteRounded-Regular.otf</file>
         <file alias="VolteRounded-Bold">res/fonts/VolteRounded-Bold.otf</file>
         <file alias="VolteRounded-Light">res/fonts/VolteRounded-Light.otf</file>
         <file alias="VolteRounded-Medium">res/fonts/VolteRounded-Medium.otf</file>
