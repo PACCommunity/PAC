@@ -142,3 +142,8 @@ paccoin-qt.creator.user
 paccoin-qt.files
 paccoin-qt.includes
 contrib/dash-qt.pro.user
+src/qt/paccoin-qt.config
+src/qt/paccoin-qt.file
+src/qt/paccoin-qt.includes
+src/qt/paccoin-qt.creator
+src/qt/paccoin-qt.creator.user

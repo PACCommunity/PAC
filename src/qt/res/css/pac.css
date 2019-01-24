@@ -64,8 +64,6 @@ QLabel[class="usdLabel"]{
     font-size: 20px;
     font-weight: 100;
 }
-
-
 /* text input
 QTextEdit {
     background: rgb(10, 10, 10);
@@ -77,15 +75,14 @@ QTextEdit {
     font-size: 20px;
 }
 /*textarea*/
-
 QPlainTextEdit {
     background: rgb(255, 255, 255);
     color: rgb(20, 20, 20);
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
-/* Dropdown Menus */
-QComboBox {
+/* Dropdown Menus  not for the tables */
+QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox {
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
     font-family: 'Montserrat', sans-serif;
@@ -97,26 +94,31 @@ QComboBox {
     color:#fff;
 }
 
-QComboBox:checked {
+QDialog#SendCoinsDialog QComboBox:disabled, QDialog#ReceiveCoinsDialog QComboBox:disabled{
+    background-color: rgb(61,61,61);
+    color: #efefef;
+}
+
+QDialog#SendCoinsDialog QComboBox:checked, QDialog#ReceiveCoinsDialog QComboBox:checked{
     background-color: rgba(219, 219, 219,0.5);
 }
 
-QComboBox:editable {
+QDialog#SendCoinsDialog QComboBox:editable, QDialog#ReceiveCoinsDialog QComboBox:editable {
     background-color: rgba(219, 219, 219,0.5);
     color:#616161;
     border:0px;
 }
 
-QComboBox::drop-down {
+QDialog#SendCoinsDialog QComboBox::drop-down, QDialog#ReceiveCoinsDialog QComboBox::drop-down {
     width:25px;
     border:0px;
 }
 
-QComboBox::down-arrow {
+QDialog#SendCoinsDialog QComboBox::down-arrow, QDialog#ReceiveCoinsDialog QComboBox::down-arrow {
     border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
 }
 
-QComboBox QListView {
+QDialog#SendCoinsDialog QComboBox QListView, QDialog#ReceiveCoinsDialog QComboBox QListView {
     background-color:  rgb(20, 20, 20);
     border:1px solid transparent;
     border-radius: 5px;
@@ -124,22 +126,24 @@ QComboBox QListView {
     padding-left:1px;
 }
 
-QComboBox QAbstractItemView::item { margin:4px; }
+QDialog#SendCoinsDialog QComboBox QAbstractItemView::item, QDialog#ReceiveCoinsDialog QComboBox QAbstractItemView::item {
+    margin:4px;
+}
 
-QComboBox::item {
+QDialog#SendCoinsDialog QComboBox::item, QDialog#ReceiveCoinsDialog QComboBox::item {
     color:#fff;
 }
 
-QComboBox::item:alternate {
+QDialog#SendCoinsDialog QComboBox::item:alternate, QDialog#ReceiveCoinsDialog QComboBox::item:alternate {
     background:rgb(20, 20, 20);
 }
 
-QComboBox::item:selected {
+QDialog#SendCoinsDialog QComboBox::item:selected, QDialog#ReceiveCoinsDialog QComboBox::item:selected {
     border:0px solid transparent;
     background-color:  rgb(40, 40, 40);
 }
 
-QComboBox::indicator {
+QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboBox::indicator {
     background-color:transparent;
     selection-background-color:transparent;
     color:transparent;
