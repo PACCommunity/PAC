@@ -10,12 +10,13 @@ QMainWindow{
 }
 QMessageBox {
     background-color:rgb(20,20,20);
-}QDialog{
-background-color:rgb(30,30,30);
+}
+QDialog{
+    background-color:rgb(30,30,30);
 }
 /* Global Progress Bar styles */
 QStatusBar{
-background-color: rgb(10,10,10) !important;
+    background-color: rgb(10,10,10) !important;
 }
 [class="container"]{
     background-color: rgba(50,50,50,0.6);
@@ -41,7 +42,6 @@ background-color: rgb(10,10,10) !important;
     background:blue !important;
     background-color:#f2f2f2;
 }
-
 [class="QuickButton"]{
     background-color: transparent;
     border: none;
@@ -64,6 +64,7 @@ QLabel[class="usdLabel"]{
     font-size: 20px;
     font-weight: 100;
 }
+
 /* text input
 QTextEdit {
     background: rgb(10, 10, 10);
@@ -73,16 +74,17 @@ QTextEdit {
     height: 120px !important;
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-}
+}*/
+
 /*textarea*/
 QPlainTextEdit {
-    background: rgb(255, 255, 255);
+    background: rgb(255, 0, 0);
     color: rgb(20, 20, 20);
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
 }
 /* Dropdown Menus  not for the tables */
-QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox {
+QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
     border-radius: 20px;
     background-color: rgb(20, 20, 20);
     font-family: 'Montserrat', sans-serif;
@@ -150,36 +152,181 @@ QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboB
     selection-color:transparent;
 }
 
-
-/*textbox with more and less button*/
-QDoubleSpinBox {
-    background: rgb(0, 255, 0);
-    color: rgb(20, 20, 20);
-    border: 0px solid rgb(61, 61, 61);
-    border-radius: 8px;
-    height: 35px !important;
+/* GLOBAL SPINBOX */
+QAbstractSpinBox {
+    border-radius: 20px;
+    background-color: rgb(20, 20, 20);
     font-family: 'Montserrat', sans-serif;
     font-size: 15px;
-}
-QDoubleSpinBox::up-button, QDoubleSpinBox::down-button {
-    width: 17px;
-    height: 17px;
-    border: 0px solid black;
-}
-QDoubleSpinBox::up-button {
-    /*image: url(:/icons/uparrow) !important;*/
-    border-top-left-radius:4px;
-    border-top-right-radius:4px;
-}
-QDoubleSpinBox::down-button {
-    /*image: url(:/icons/downarrow) !important;*/
-    border-bottom-left-radius:4px;
-    border-bottom-right-radius:4px;
-}
-QDoubleSpinBox::up-button:hover, QDoubleSpinBox::down-button:hover{
-    background-color:rgba(198,38,146,0.4);
+    text-align: center;
+    border:0px;
+    min-height:40px;
+    color:#fff;
+    padding: 3px 5px 3px 5px;
 }
 
+QAbstractSpinBox::up-button {
+    subcontrol-origin: border;
+    subcontrol-position: top right;
+    width:21px;
+    background-color: transparent;
+    border:0px;
+    padding-right:1px;
+    padding-left:5px;
+    padding-top:2px;
+}
+
+QAbstractSpinBox::up-arrow {
+    image: url(':/images/pac/drkblue_upArrow_small') 0 0 0 0 stretch stretch;
+}
+
+QAbstractSpinBox::down-button {
+    subcontrol-origin: border;
+    subcontrol-position: bottom right;
+    width:21px;
+    background-color: transparent;
+    border:0px;
+    padding-right:1px;
+    padding-left:5px;
+    padding-bottom:2px;
+}
+
+QAbstractSpinBox::down-arrow {
+    image: url(':/images/pac/drkblue_downArrow_small') 0.5 0.5 0.5 0.5 stretch stretch;
+}
+/* GLOBAL TABLES*/
+QHeaderView { /* Top of the table Header */
+    background-color: rgba(224, 224, 224, 0.1);
+}
+
+QHeaderView::section { /* Top of the table Header Sections */
+    qproperty-alignment:center;
+    background-color: rgba(224, 224, 224, 0.1);
+    color:#fff;
+    min-height:25px;
+    font-weight:bold;
+    font-size:11px;
+    outline:0;
+    border:0px solid #fff;
+    padding-left:5px;
+    padding-right:5px;
+    padding-top:2px;
+    padding-bottom:2px;
+}
+
+QHeaderView::section:last {
+    /*border-right: 0px;*/
+}
+
+.QScrollArea {
+    background:transparent;
+    border:2px solid transparent;
+}
+
+.QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
+    background-color: rgba(224, 224, 224, 0.1);
+    /*alternate-background-color: yellow;*/
+    border:3px solid transparent;
+}
+
+QTableView::item { /* Table Item */
+    background-color: rgba(224, 224, 224, 0.1);
+    font-size:12px;
+}
+
+QTableView::item:selected { /* Table Item Selected */
+    background-color: rgb(255, 251, 158);
+    color:#000;
+}
+
+.QTableWidget{
+    background-color: rgba(224, 224, 224, 0.1); 
+}
+
+QScrollBar { /* Scroll Bar */
+
+}
+
+QScrollBar:vertical { /* Vertical Scroll Bar Attributes */
+    border:0;
+    background:#333333;
+    width:18px;
+    margin: 18px 0px 18px 0px;
+}
+
+QScrollBar:horizontal { /* Horizontal Scroll Bar Attributes */
+    border:0;
+    background:#333333;
+    height:18px;
+    margin: 0px 18px 0px 18px;
+}
+
+
+QScrollBar::handle:vertical { /* Scroll Bar Slider - vertical */
+    background:#999999;
+    min-height:10px;
+}
+
+QScrollBar::handle:horizontal { /* Scroll Bar Slider - horizontal */
+    background:#999999;
+    min-width:10px;
+}
+
+QScrollBar::add-page, QScrollBar::sub-page { /* Scroll Bar Background */
+    background:#3d3d3d;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { /* Define Arrow Button Dimensions */
+    background-color:#050505;
+    border: 1px solid #050505;
+    width:16px;
+    height:16px;
+}
+
+QScrollBar::add-line:vertical:pressed, QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:horizontal:pressed, QScrollBar::sub-line:horizontal:pressed {
+    background-color:#e0e004;
+}
+
+QScrollBar::sub-line:vertical { /* Vertical - top button position */
+    subcontrol-position:top;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:vertical { /* Vertical - bottom button position */
+    subcontrol-position:bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:horizontal { /* Vertical - left button position */
+    subcontrol-position:left;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::add-line:horizontal { /* Vertical - right button position */
+    subcontrol-position:right;
+    subcontrol-origin: margin;
+}
+
+QScrollBar:up-arrow, QScrollBar:down-arrow, QScrollBar:left-arrow, QScrollBar:right-arrow { /* Arrows Icon */
+    width:10px;
+    height:10px;
+}
+
+QScrollBar:up-arrow {
+    background-image: url(':/images/pac/drkblue_upArrow_small');
+}
+
+QScrollBar:down-arrow {
+    background-image: url(':/images/pac/drkblue_downArrow_small');
+}
+
+QScrollBar:left-arrow {
+    background-image: url(':/images/pac/drkblue_leftArrow_small');
+}
+
+QScrollBar:right-arrow {
+    background-image: url(':/images/pac/drkblue_rightArrow_small');
+}
 
 
 
@@ -220,6 +367,7 @@ QToolBar > QToolButton:checked {
     height:100px;
 }
 
+
 /* Global Button styles*/
 QPushButton {
     background: rgb(5,5,5);
@@ -241,8 +389,8 @@ QPushButton:hover, QPushButton:focus {
     color: rgb(5,5,5);
 }
 QPushButton:disabled {
-background: rgb(45,45,45);
-border: 1px solid rgb(263,242,76);
+    background: rgb(45,45,45);
+    border: 1px solid rgb(263,242,76);
 }
 QPushButton:pressed {
     background: rgba(243,232,56, 0.3) !important;
@@ -287,33 +435,32 @@ QCheckBox {
 QRadioButton {
     color: rgb(255, 255, 255);
 }
-
 /*
  * Overview Page
 */
+
 #frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
     text-transform:uppercase;
 }
 /*
  * SendCoins Page
  */
- /*#SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
-     background:red !important;
-     border: 0px !important;
- }*/
- #frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
-     border: 0px !important;
- }
- #frameCoinControl{
-     background: rgba(255,255,255,0.3);
-     border-radius: 8px !important;
- }
- #scrollArea, #scrollAreaWidgetContents{
-     background-color:rgba(0,0,0,0) !important;
- }
-
+/*#SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
+    background:red !important;
+    border: 0px !important;
+}*/
+#frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
+    border: 0px !important;
+}
+#frameCoinControl{
+    background: rgba(255,255,255,0.3);
+    border-radius: 8px !important;
+}
+#scrollArea, #scrollAreaWidgetContents{
+    background-color:rgba(0,0,0,0) !important;
+}
 /*
- * Private Page
+ * SendCoins Page
  */
 #framePrivateSend{
     background-color: rgba(50,50,50,0.6);

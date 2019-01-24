@@ -213,7 +213,7 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
 
     proposalList->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     proposalList->setModel(proposalProxyModel);
-    proposalList->setAlternatingRowColors(true);
+    proposalList->setAlternatingRowColors(false);
     proposalList->setSelectionBehavior(QAbstractItemView::SelectRows);
     proposalList->setSortingEnabled(true);
     proposalList->sortByColumn(ProposalTableModel::StartDate, Qt::DescendingOrder);
