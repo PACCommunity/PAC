@@ -58,6 +58,12 @@ public:
     {
         painter->save();
 
+        QFont montserratFontRegular("Montserrat",11, 1, false);
+        QFont montserratFontLarge("typo",18, 1, false);
+        montserratFontLarge.setBold(false);
+        QFont defaultFont = painter->font();
+        painter->setFont(montserratFontRegular);
+
         QIcon icon = qvariant_cast<QIcon>(index.data(TransactionTableModel::RawDecorationRole));
         QRect mainRect = option.rect;
         mainRect.moveLeft(ICON_OFFSET);
@@ -66,7 +72,7 @@ public:
         int ypad = 6;
         int halfheight = (mainRect.height() - 2*ypad)/2;
         QRect amountRect(mainRect.left() + xspace, mainRect.top()+ypad, mainRect.width() - xspace - ICON_OFFSET, halfheight);
-        QRect addressRect(mainRect.left() + xspace, mainRect.top()+ypad+halfheight, mainRect.width() - xspace, halfheight);
+        QRect addressRect(mainRect.left() + xspace, mainRect.top()+ypad+halfheight, mainRect.width() - xspace - ICON_OFFSET, halfheight);
         icon = platformStyle->SingleColorIcon(icon);
         icon.paint(painter, decorationRect);
 
@@ -75,16 +81,16 @@ public:
         qint64 amount = index.data(TransactionTableModel::AmountRole).toLongLong();
         bool confirmed = index.data(TransactionTableModel::ConfirmedRole).toBool();
         QVariant value = index.data(Qt::ForegroundRole);
-        QColor foreground = option.palette.color(QPalette::Text);
+        QColor foreground = option.palette.color(QPalette::BrightText);
         if(value.canConvert<QBrush>())
         {
             QBrush brush = qvariant_cast<QBrush>(value);
             foreground = brush.color();
         }
 
-        painter->setPen(foreground);
+        painter->setPen(COLOR_TEXT);
         QRect boundingRect;
-        painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, address, &boundingRect);
+        painter->drawText(addressRect, Qt::AlignRight|Qt::AlignVCenter, address, &boundingRect);
 
         if (index.data(TransactionTableModel::WatchonlyRole).toBool())
         {
@@ -103,7 +109,8 @@ public:
         }
         else
         {
-            foreground = option.palette.color(QPalette::Text);
+            foreground = COLOR_POSITIVE;
+            //foreground = option.palette.color(QPalette::Text);
         }
         painter->setPen(foreground);
         QString amountText = BitcoinUnits::floorWithUnit(unit, amount, true, BitcoinUnits::separatorAlways);
@@ -111,11 +118,12 @@ public:
         {
             amountText = QString("[") + amountText + QString("]");
         }
+        painter->setFont(montserratFontLarge);
         painter->drawText(amountRect, Qt::AlignRight|Qt::AlignVCenter, amountText);
-
-        painter->setPen(option.palette.color(QPalette::Text));
-        painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::dateTimeStr(date));
-
+        painter->setPen(COLOR_TEXT);
+        painter->setFont(montserratFontRegular);
+        painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::dateStr(date));
+        painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::timeStr(date));
         painter->restore();
     }
 

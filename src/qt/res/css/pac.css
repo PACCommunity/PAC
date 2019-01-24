@@ -10,6 +10,8 @@ QMainWindow{
 }
 QMessageBox {
     background-color:rgb(20,20,20);
+}QDialog{
+    background-color:rgb(30,30,30);
 }
 QDialog{
     background-color:rgb(30,30,30);
@@ -18,6 +20,14 @@ QDialog{
 QStatusBar{
     background-color: rgb(10,10,10) !important;
 }
+#btnChangeImage{
+    border: 2px solid pink !important;
+    border-image: url(:/images/pac/profile) !important;
+}
+#btnChangeImage:hover {
+    border-image: url(:/images/pac/hover_profile) !important;
+}
+
 [class="container"]{
     background-color: rgba(50,50,50,0.6);
     border: 0px !important;

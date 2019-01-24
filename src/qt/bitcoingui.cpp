@@ -648,31 +648,26 @@ void BitcoinGUI::createHeaderBar()
     headerFrame->setFixedHeight(100);
     headerFrame->setObjectName("headerFrameLayout");
     headerFrame->setStyleSheet("QFrame {background: rgba(50,50,50,0.6);} #headerFrameLayout{background:transparent !important;}");
-    headerFrame->setContentsMargins(40,20,40,0);
+    headerFrame->setContentsMargins(40,20,40,10);
 
 
     QPushButton* btnChangeImage = new QPushButton();
-    btnChangeImage->setText("Test Text");
-    btnChangeImage->setFixedHeight(50);
-    btnChangeImage->setFixedWidth(50);
-    QRect rect(0,0,48,48);
+    btnChangeImage->setObjectName("btnChangeImage");
+    btnChangeImage->setFixedHeight(80);
+    btnChangeImage->setFixedWidth(80);
+    QRect rect(0,0,80,80);
     QRegion region(rect, QRegion::Ellipse);
     btnChangeImage->setMask(region);
 
-    QWidget* img = new QWidget();
-    img->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    img->setStyleSheet("QWidget { background-color: yellow !important; width:100px !important;  height:100px !important;}");
-
-    QLabel *message = new QLabel(this);
-    message->setText("Socket Message will be displayed here.");
-    message->setAlignment(Qt::AlignCenter);
-    message->setStyleSheet("QLabel { color:white; font-size:25px;}");
+    QLabel *messageLabel = new QLabel(this);
+    messageLabel->setText("Socket Message will be displayed here.");
+    messageLabel->setAlignment(Qt::AlignCenter);
+    messageLabel->setStyleSheet("QLabel { color:white; font-size:25px;}");
 
     QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
     headerFrameLayout->setContentsMargins(0,0,0,0);
     headerFrameLayout->setContentsMargins(0,0,0,0);
-    headerFrameLayout->addWidget(message);
-    headerFrameLayout->addWidget(img);
+    headerFrameLayout->addWidget(messageLabel);
     headerFrameLayout->addWidget(btnChangeImage);
     headerFrame->setLayout(headerFrameLayout);
 }

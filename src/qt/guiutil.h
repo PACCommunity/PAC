@@ -15,6 +15,7 @@
 #include <QString>
 #include <QTableView>
 #include <QLabel>
+#include <QColor>
 
 #include <boost/filesystem.hpp>
 
@@ -36,6 +37,8 @@ namespace GUIUtil
 {
     // Create human-readable string from date
     QString dateTimeStr(const QDateTime &datetime);
+    QString timeStr(const QDateTime &datetime);
+    QString dateStr(const QDateTime &datetime);
     QString dateTimeStr(qint64 nTime);
 
     // Return a monospace font
@@ -193,6 +196,9 @@ namespace GUIUtil
     void saveWindowGeometry(const QString& strSetting, QWidget *parent);
     /** Restore window size and position */
     void restoreWindowGeometry(const QString& strSetting, const QSize &defaultSizeIn, QWidget *parent);
+
+    /** Returns the current color for the body text according to the theme*/
+    void setGUITextColor();
 
     /** Load global CSS theme */
     QString loadStyleSheet();
