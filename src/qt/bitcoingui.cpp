@@ -136,7 +136,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     std::cout<< "family: " << family.toStdString();
 
-    QFont defaultFont("Volte Rounded",11, 1, false);
+    QFont defaultFont("Volte Rounded",13, 1, false);
     defaultFont.setBold(false);
     QApplication::setFont(defaultFont);
 
@@ -602,19 +602,31 @@ void BitcoinGUI::createToolBars()
 #ifdef ENABLE_WALLET
     if(walletFrame)
     {
+        QWidget* spacer = new QWidget();
+        spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        spacer->setFixedWidth(120);
+        spacer->setFixedHeight(10);
+
+        QWidget* spacerBottomIcon = new QWidget();
+        spacerBottomIcon->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        spacerBottomIcon->setFixedWidth(120);
+        spacerBottomIcon->setFixedHeight(5);
+
         QWidget* mainIcon = new QWidget();
         mainIcon->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
         mainIcon->setObjectName("toolbarIcon");
-        mainIcon->setFixedWidth(100);
-        mainIcon->setFixedHeight(100);
+        mainIcon->setFixedWidth(105);//the size we are looking is 90px but since it's css margin it's shrinking it we add +15px here
+        mainIcon->setFixedHeight(105);//same for this
 
         QToolBar *toolbar = new QToolBar(tr("Tabs toolbar"));
         toolbar->setObjectName("toolBar");
 
         toolbar->setToolButtonStyle(Qt::ToolButtonIconOnly);
         addToolBar(Qt::LeftToolBarArea, toolbar);
-        toolbar->setFixedWidth(100);
+        toolbar->setFixedWidth(120);
+        toolbar->addWidget(spacer);
         toolbar->addWidget(mainIcon);
+        toolbar->addWidget(spacerBottomIcon);
         toolbar->setOrientation(Qt::Vertical);
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
@@ -634,8 +646,10 @@ void BitcoinGUI::createToolBars()
             This is a workaround mostly for toolbar styling on Mac OS but should work fine for every other OSes too.
         */
         createHeaderBar();
+        QSpacerItem *HeaderSpacer = new QSpacerItem(1,27, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
         QVBoxLayout *verticalLayout = new QVBoxLayout;
+        verticalLayout->addSpacerItem(HeaderSpacer);
         verticalLayout->addWidget(headerFrame);
         verticalLayout->addWidget(walletFrame);
         verticalLayout->setSpacing(0);
@@ -664,12 +678,12 @@ void BitcoinGUI::createHeaderBar()
     QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
     QPushButton *btnImg = new QPushButton;
     QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
+    QSpacerItem *messageLeftSpacer = new QSpacerItem(30,1, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
 
     headerFrame->setFixedHeight(100);
     headerFrame->setObjectName("headerFrameLayout");
-    headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/pac/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");//background-size: cover; background-repeat: repeat;
-    headerFrame->setContentsMargins(40,0,0,0);
+    headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/pac/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");
 
 
     messageLabel->setText("LATEST NEWS: $PAC launches new desktop wallet, featuring new merchant-focused...");
@@ -679,14 +693,13 @@ void BitcoinGUI::createHeaderBar()
     frameImg->setFrameStyle(QFrame::StyledPanel);
     frameImg->setFrameShadow(QFrame::Raised);
     frameImg->setStyleSheet("QFrame { border-image: url(:/images/pac/profile_bkg) 0 0 0 0 stretch stretch; margin-right:-1px !important }");
-    frameImg->setFixedWidth(100);
-    frameImg->setFixedHeight(85);
+    frameImg->setFixedWidth(115);
+    frameImg->setFixedHeight(95);
 
     btnImg->setObjectName("btnChangeImage");
-    btnImg->setStyleSheet("border-image: ; border-radius: 35px; width:70px; height:70px;");
     btnImg->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    btnImg->setFixedHeight(70);
-    btnImg->setFixedWidth(70);
+    btnImg->setFixedHeight(80);
+    btnImg->setFixedWidth(80);
 
     profileImgLayout->setContentsMargins(0,0,0,0);
     profileImgLayout->addWidget(btnImg);
@@ -697,6 +710,7 @@ void BitcoinGUI::createHeaderBar()
 
     headerFrameLayout->setContentsMargins(0,0,0,0);
     headerFrameLayout->setContentsMargins(0,0,0,0);
+    headerFrameLayout->addSpacerItem(messageLeftSpacer);
     headerFrameLayout->addWidget(messageLabel);
     headerFrameLayout->addWidget(frameImg);
     headerFrame->setLayout(headerFrameLayout);

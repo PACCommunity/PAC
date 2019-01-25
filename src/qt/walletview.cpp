@@ -90,13 +90,14 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     QSettings settings;
     if (settings.value("fShowMasternodesTab").toBool()) {
         masternodeListPage = new MasternodeList(platformStyle);
+        masternodeListPage->setContentsMargins(30,0,30,10);
         addWidget(masternodeListPage);
     }
 
     proposalList = new ProposalList(platformStyle);
     privatePage = new PrivatePage(platformStyle);
-    proposalList->setContentsMargins(50,50,50,50);
-    privatePage->setContentsMargins(50,50,50,50);
+    proposalList->setContentsMargins(30,0,30,10);
+    privatePage->setContentsMargins(30,0,30,10);
     addWidget(proposalList);
     addWidget(privatePage);
 
