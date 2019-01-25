@@ -40,7 +40,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>1200</width>
+         <width>1600</width>
          <height>16777215</height>
         </size>
        </property>
@@ -619,7 +619,7 @@
              <x>0</x>
              <y>0</y>
              <width>811</width>
-             <height>184</height>
+             <height>212</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -983,13 +983,13 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>200</width>
+         <width>250</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>400</width>
+         <width>450</width>
          <height>16777215</height>
         </size>
        </property>
@@ -997,6 +997,9 @@
         <string>container</string>
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="leftMargin">
+         <number>40</number>
+        </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="2" column="0">
@@ -1372,9 +1375,9 @@
              <property name="geometry">
               <rect>
                <x>0</x>
-               <y>-67</y>
-               <width>357</width>
-               <height>411</height>
+               <y>0</y>
+               <width>345</width>
+               <height>458</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">

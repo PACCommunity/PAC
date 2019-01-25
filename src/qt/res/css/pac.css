@@ -405,6 +405,8 @@ QPushButton:pressed {
 }
 QCheckBox {
     color: rgb(255, 255, 255);
+    width: 10px;
+    height: 10px;
 }
 QRadioButton {
     color: rgb(255, 255, 255);
@@ -413,28 +415,28 @@ QRadioButton {
 
 /* GLOBAL CHECKBOX */
 QCheckBox::indicator:unchecked {
-    
+    image:url(':/images/pac/unchecked_b');
 }
 QCheckBox::indicator:unchecked:hover {
-    
+    image:url(':/images/pac/unchecked_b');
 }
 QCheckBox::indicator:unchecked:pressed {
-    
+    image:url(':/images/pac/unchecked_b');
 }
 QCheckBox::indicator:checked {
-    
+    image:url(':/images/pac/checked_b');
 }
 QCheckBox::indicator:checked:hover {
-    
+    image:url(':/images/pac/checked_b');
 }
 QCheckBox::indicator:checked:pressed {
-    
+    image:url(':/images/pac/checked_b');
 }
 QCheckBox::indicator:indeterminate:hover {
-    
+    image:url(':/images/pac/unchecked_b');
 }
 QCheckBox::indicator:indeterminate:pressed {
-    
+    image:url(':/images/pac/checked_b');
 }
 
 

@@ -25,6 +25,18 @@
 }</string>
   </property>
   <layout class="QVBoxLayout" name="topLayout">
+   <property name="leftMargin">
+    <number>2</number>
+   </property>
+   <property name="topMargin">
+    <number>2</number>
+   </property>
+   <property name="rightMargin">
+    <number>2</number>
+   </property>
+   <property name="bottomMargin">
+    <number>2</number>
+   </property>
    <item>
     <widget class="QLabel" name="labelAlerts">
      <property name="visible">
@@ -46,6 +58,9 @@
    </item>
    <item>
     <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+     <property name="spacing">
+      <number>3</number>
+     </property>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
        <property name="sizeConstraint">
@@ -570,7 +585,7 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_10">
               <item>
-                <spacer name="horizontalSpacer_4">
+               <spacer name="horizontalSpacer_4">
                 <property name="orientation">
                  <enum>Qt::Horizontal</enum>
                 </property>
