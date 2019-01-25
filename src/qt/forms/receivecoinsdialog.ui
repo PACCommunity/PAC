@@ -11,10 +11,7 @@
    </rect>
   </property>
   <property name="styleSheet">
-   <string notr="true">#ReceiveCoinsDialog{
-  background:transparent !important;
-}
-QFrame{
+   <string notr="true">QFrame{
   border:none;
 }</string>
   </property>
@@ -344,7 +341,7 @@ QFrame{
           <widget class="QPushButton" name="receiveButton">
            <property name="minimumSize">
             <size>
-             <width>150</width>
+             <width>300</width>
              <height>0</height>
             </size>
            </property>

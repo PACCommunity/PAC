@@ -601,13 +601,21 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
 
 
 
+
+
+/* TESTS */
 #SendCoinsEntry QAbstractSpinBox {
     width: 200%;
     background-color: rgb(10, 20, 60);
-    /*qproperty-sizePolicy: 'Expanding,Preferred,0,0' ;*/
+    qproperty-sizePolicy: '[Expanding, Preferred, 0, 0]' ;
 }
-
 #buttonChooseFee {
     background-color: rgb(10, 20, 60);
-    qproperty-text: 'test';
+    /*qproperty-text: 'test';*/
+}
+#verticalWidget{
+    margin-left: 25px !important;
+}
+#ReceiveCoinsDialog{
+    margin: 12px 42px 18px 42px;
 }
