@@ -37,8 +37,10 @@ QStatusBar{
     background-color: rgb(263,252,76) !important;
 }
 
+
+/* Global containers */
 [class="container"]{
-    background-color: rgba(50,50,50,0.6);
+    background-color: rgba(50,50,50,0.35);
     border: 0px !important;
 }
 
@@ -50,7 +52,7 @@ QStatusBar{
     font-size:11px;
     outline:0;
     padding:3px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(10, 10, 10);
     color: #fff;
     height: 40px !important;
     font-family: 'Volte Rounded', sans-serif;
@@ -345,10 +347,10 @@ QToolBar > QToolButton:checked {
 
 /* Global Button styles*/
 QPushButton {
-    background: rgb(5,5,5);
+    background: transparent;
     border: 1px solid rgb(243,232,56);
     color: rgb(243,232,56);
-    border-radius: 12px;
+    border-radius: 16px;
     height: 30px;
     width: 150px;
     font-family: Arial;
@@ -373,6 +375,7 @@ QPushButton:pressed {
     color: rgb(243,232,56) !important;
 }
 [class="linkButton"]{
+    border-radius: 13px;
     background-color: transparent;
     border: none;
     color:rgb(243,232,56);
@@ -499,13 +502,14 @@ QRadioButton::indicator:indeterminate:pressed {
 /*
  * Transactions Page
  */
+
+/* Over the table */
 QLineEdit#addressWidget, QLineEdit#tAmountWidget{
     background-color: rgba(224, 224, 224, 0.2);
     color:#fff;
     border:0px;
     min-height: 30px !important;
 }
-
 QComboBox#watchOnlyWidget, QComboBox#dateWidget, QComboBox#typeWidget {
     background-color: rgba(224, 224, 224, 0.2);
     border:0px;
@@ -532,7 +536,7 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
  * Private Page
  */
 #framePrivateSend{
-    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.5), stop: 1 rgba(89, 89, 89, 0.3));
+    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.35), stop: 1 rgba(89, 89, 89, 0.35));
     /*background-color: rgba(50,50,50,0.6);*/
     border: 0px !important;
 }
@@ -545,33 +549,11 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
     font-weight: 100;
 }
-#togglePrivateSend{
-    background: rgb(48,48,48);
-    border: 0px;
-    color: #fff;
-    border-radius: 12px;
-    height: 30px;
-    /*font-family: Arial;*/
-    font-weight: bold;
-    font-family: 'Volte Rounded', sans-serif;
-    font-size: 10px;
-    text-transform:uppercase;
-}
-#togglePrivateSend:hover, #togglePrivateSend:focus {
-    background: #444444 !important;
-}
-#togglePrivateSend:disabled {
-    background: #444444 !important;
-    color: #c6c6c6;
-}
-#togglePrivateSend:pressed {
-    background: rgba(243,232,56, 0.3) !important;
-    border: 2px solid rgb(5, 5, 5) !important;
-    color: rgb(243,232,56) !important;
-}
+
 /*
  * Proposal Page
  */
+
 /* Over the table */
 QLineEdit#proposalWidget, QLineEdit#amountWidget, QLineEdit#yesVotesWidget, QLineEdit#noVotesWidget, QLineEdit#absoluteYesVotesWidget, QLineEdit#percentageWidget{ /* Example of setObjectName for widgets without name */
     background-color: rgba(224, 224, 224, 0.2);
@@ -620,4 +602,29 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
 }
 #ReceiveCoinsDialog{
     margin: 12px 42px 18px 42px;
+}
+
+[class="buttonAllBlack"]{
+    background: #1A1919;
+    border: 0px;
+    color: #fff;
+    border-radius: 11px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform:uppercase;
+}
+[class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
+    background: #1A1919;
+    border: 2px #444444;
+    color: #fff;
+}
+[class="buttonAllBlack"]:disabled {
+    background: #444444;
+    color: #d3d3d3
+}
+[class="buttonAllBlack"]pressed {
+    background: rgb(243,232,56);
+    border: 2px solid rgb(5, 5, 5);
+    color: yellow;
 }
