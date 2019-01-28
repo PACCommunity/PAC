@@ -830,7 +830,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit">
+           <widget class="QLineEdit" name="lineComment">
             <property name="class" stdset="0">
              <string>LineEdit</string>
             </property>
@@ -909,7 +909,7 @@
            </spacer>
           </item>
           <item>
-           <widget class="QLineEdit" name="lineEdit_2">
+           <widget class="QLineEdit" name="lineConvertCurrency">
             <property name="class" stdset="0">
              <string>LineEdit</string>
             </property>
@@ -1127,7 +1127,7 @@
                <string>Transaction Fee: </string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
              </widget>
             </item>

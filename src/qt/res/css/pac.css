@@ -101,7 +101,7 @@ QPlainTextEdit {
 /* Dropdown Menus  not for the tables */
 QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
     border-radius: 20px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(10, 10, 10);
     font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
@@ -160,7 +160,7 @@ QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboB
 /* GLOBAL SPINBOX */
 QAbstractSpinBox {
     border-radius: 20px;
-    background-color: rgb(20, 20, 20);
+    background-color: rgb(10, 10, 10);
     font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
@@ -179,7 +179,7 @@ QAbstractSpinBox::up-button {
     width:21px;
     background-color: transparent;
     border:0px;
-    padding-right:1px;
+    padding-right:4px;
     padding-left:5px;
     padding-top:2px;
 }
@@ -192,7 +192,7 @@ QAbstractSpinBox::down-button {
     width:21px;
     background-color: transparent;
     border:0px;
-    padding-right:1px;
+    padding-right:4px;
     padding-left:5px;
     padding-bottom:2px;
 }
@@ -487,11 +487,20 @@ QRadioButton::indicator:indeterminate:pressed {
 #scrollArea, #scrollAreaWidgetContents, #scrollAreaWidgetContents_3{
     background-color:rgba(0,0,0,0) !important;
 }
+#verticalWidget{
+    margin-left: 25px !important;
+}
+
+/*
+ * ReceiveCoins Page
+ */
+#ReceiveCoinsDialog{
+    margin: 12px 42px 18px 42px;
+}
 
 /*
  * Transactions Page
  */
-
 /* Over the table */
 QLineEdit#addressWidget, QLineEdit#tAmountWidget{
     background-color: rgba(224, 224, 224, 0.2);
@@ -526,7 +535,6 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
  */
 #framePrivateSend{
     background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.35), stop: 1 rgba(89, 89, 89, 0.35));
-    /*background-color: rgba(50,50,50,0.6);*/
     border: 0px !important;
 }
 #labelPrivateSendHeader{
@@ -538,6 +546,32 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
     font-weight: 100;
 }
+/* Black button */
+[class="buttonAllBlack"]{
+    background: #1A1919;
+    border: 0px;
+    color: #fff;
+    border-radius: 11px;
+    height: 40px;
+    font-weight: bold;
+    font-size: 10px;
+    text-transform:uppercase;
+}
+[class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
+    background: #1A1919;
+    border: 2px #444444;
+    color: #fff;
+}
+[class="buttonAllBlack"]:disabled {
+    background: #444444;
+    color: #d3d3d3
+}
+[class="buttonAllBlack"]:pressed {
+    background: rgb(243,232,56);
+    border: 2px solid rgb(5, 5, 5);
+    color: yellow;
+}
+
 
 /*
  * Proposal Page
@@ -577,43 +611,6 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
 
 
 /* TESTS */
-#SendCoinsEntry QAbstractSpinBox {
-    width: 200%;
-    background-color: rgb(10, 20, 60);
+/*#SendCoinsEntry QAbstractSpinBox {
     qproperty-sizePolicy: '[Expanding, Preferred, 0, 0]' ;
-}
-#buttonChooseFee {
-    background-color: rgb(10, 20, 60);
-    /*qproperty-text: 'test';*/
-}
-#verticalWidget{
-    margin-left: 25px !important;
-}
-#ReceiveCoinsDialog{
-    margin: 12px 42px 18px 42px;
-}
-
-[class="buttonAllBlack"]{
-    background: #1A1919;
-    border: 0px;
-    color: #fff;
-    border-radius: 11px;
-    height: 40px;
-    font-weight: bold;
-    font-size: 10px;
-    text-transform:uppercase;
-}
-[class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
-    background: #1A1919;
-    border: 2px #444444;
-    color: #fff;
-}
-[class="buttonAllBlack"]:disabled {
-    background: #444444;
-    color: #d3d3d3
-}
-[class="buttonAllBlack"]pressed {
-    background: rgb(243,232,56);
-    border: 2px solid rgb(5, 5, 5);
-    color: yellow;
-}
+}*/
