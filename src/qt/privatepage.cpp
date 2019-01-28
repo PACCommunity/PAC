@@ -27,6 +27,7 @@
 #include <QPainter>
 #include <QSettings>
 #include <QTimer>
+#include <QGraphicsDropShadowEffect>
 
 #include <string>
 #include <iostream>
@@ -87,6 +88,12 @@ PrivatePage::PrivatePage(const PlatformStyle *platformStyle, QWidget *parent) :
         connect(timer, SIGNAL(timeout()), this, SLOT(privateSendStatus()));
         timer->start(1000);
     }
+
+        QGraphicsDropShadowEffect *cardShadow = new QGraphicsDropShadowEffect;
+        cardShadow->setBlurRadius(12.0);
+        cardShadow->setColor(QColor(0, 0, 0, 160));
+        cardShadow->setOffset(2.0);
+        ui->togglePrivateSend->setGraphicsEffect(cardShadow);
 }
 
 void PrivatePage::handleTransactionClicked(const QModelIndex &index)
