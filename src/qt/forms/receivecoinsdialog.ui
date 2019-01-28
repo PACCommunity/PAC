@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>929</width>
+    <width>932</width>
     <height>490</height>
    </rect>
   </property>
@@ -202,6 +202,9 @@
               <property name="buddy">
                <cstring>reqLabel</cstring>
               </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
+              </property>
              </widget>
             </item>
             <item row="7" column="2">
@@ -217,6 +220,9 @@
               </property>
               <property name="buddy">
                <cstring>reqMessage</cstring>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>
@@ -240,6 +246,9 @@
               </property>
               <property name="buddy">
                <cstring>reqAmount</cstring>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>

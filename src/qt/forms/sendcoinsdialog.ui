@@ -120,6 +120,9 @@
                  <property name="text">
                   <string>Coin Control Features</string>
                  </property>
+                 <property name="class" stdset="0">
+                  <string>titleLabel</string>
+                 </property>
                 </widget>
                </item>
               </layout>
@@ -811,6 +814,9 @@
             <property name="alignment">
              <set>Qt::AlignCenter</set>
             </property>
+            <property name="class" stdset="0">
+             <string>titleLabel</string>
+            </property>
            </widget>
           </item>
           <item>
@@ -877,6 +883,9 @@
               </property>
               <property name="alignment">
                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+              <property name="class" stdset="0">
+               <string>titleLabel</string>
               </property>
              </widget>
             </item>

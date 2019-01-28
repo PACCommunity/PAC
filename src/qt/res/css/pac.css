@@ -156,6 +156,63 @@ QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboB
     selection-color:transparent;
 }
 
+/* ScrollBar */
+
+QScrollBar:vertical {
+    background-color: #191919;
+    width: 16px;
+    margin: 16px 2px 16px 2px;
+    border: 1px solid rgb(50,50,50);
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical {
+    background-color: #787878;
+    border: 1px solid rgb(50,50,50);
+    min-height: 8px;
+    border-radius: 4px;
+}
+QScrollBar::handle:vertical:hover {
+    background-color: rgb(243,232,56);
+    border: 1px solid rgb(243,232,56);
+    border-radius: 4px;
+    min-height: 8px;
+}
+QScrollBar::sub-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/images/pac/drkblue_upArrow_small);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical {
+    margin: 3px 0px 3px 0px;
+    border-image: url(:/images/pac/drkblue_downArrow_small);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on {
+    border-image: url(:/images/pac/drkblue_upArrow_small);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on {
+    border-image: url(:/images/pac/drkblue_downArrow_small);
+    height: 10px;
+    width: 10px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    background: none;
+}
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
 
 /* GLOBAL SPINBOX */
 QAbstractSpinBox {
@@ -233,77 +290,11 @@ QTableView::item { /* Table Item */
     color: white !important;
 }
 QTableView::item:selected { /* Table Item Selected */
-    background-color: rgb(255, 255, 0);
-    color:#000;
+    background-color: rgb(70, 70, 70);
+    color: rgb(180,180,180);
 }
 QTableWidget{
     background-color: rgba(224, 224, 224, 0.1); 
-}
-QScrollBar { /* Scroll Bar */
-}
-QScrollBar:vertical { /* Vertical Scroll Bar Attributes */
-    border:0px;
-    background:#333333;
-    width:18px;
-    margin: 18px 0px 18px 0px;
-}
-QScrollBar:horizontal { /* Horizontal Scroll Bar Attributes */
-    border:0px;
-    background:#333333;
-    height:18px;
-    margin: 0px 18px 0px 18px;
-}
-QScrollBar::handle:vertical { /* Scroll Bar Slider - vertical */
-    background:#999999;
-    min-height:10px;
-}
-QScrollBar::handle:horizontal { /* Scroll Bar Slider - horizontal */
-    background:#999999;
-    min-width:10px;
-}
-QScrollBar::add-page, QScrollBar::sub-page { /* Scroll Bar Background */
-    background:#3d3d3d;
-}
-QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical, QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal { /* Define Arrow Button Dimensions */
-    background-color:#050505;
-    border: 1px solid #050505;
-    width:16px;
-    height:16px;
-}
-QScrollBar::add-line:vertical:pressed, QScrollBar::sub-line:vertical:pressed, QScrollBar::add-line:horizontal:pressed, QScrollBar::sub-line:horizontal:pressed {
-    background-color:#e0e004;
-}
-QScrollBar::sub-line:vertical { /* Vertical - top button position */
-    subcontrol-position:top;
-    subcontrol-origin: margin;
-}
-QScrollBar::add-line:vertical { /* Vertical - bottom button position */
-    subcontrol-position:bottom;
-    subcontrol-origin: margin;
-}
-QScrollBar::sub-line:horizontal { /* Vertical - left button position */
-    subcontrol-position:left;
-    subcontrol-origin: margin;
-}
-QScrollBar::add-line:horizontal { /* Vertical - right button position */
-    subcontrol-position:right;
-    subcontrol-origin: margin;
-}
-QScrollBar:up-arrow, QScrollBar:down-arrow, QScrollBar:left-arrow, QScrollBar:right-arrow { /* Arrows Icon */
-    width:10px;
-    height:10px;
-}
-QScrollBar:up-arrow {
-    background-image: url(':/images/pac/drkblue_upArrow_small');
-}
-QScrollBar:down-arrow {
-    background-image: url(':/images/pac/drkblue_downArrow_small');
-}
-QScrollBar:left-arrow {
-    background-image: url(':/images/pac/drkblue_leftArrow_small');
-}
-QScrollBar:right-arrow {
-    background-image: url(':/images/pac/drkblue_rightArrow_small');
 }
 
 
@@ -342,11 +333,9 @@ QPushButton {
     border-radius: 16px;
     height: 30px;
     width: 150px;
-    font-family: Arial;
-    font-style: normal;
-    font-weight: bold;
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 10px;
+    font-weight: bold;
+    font-size: 15px;
     text-transform:uppercase;
 }
 QPushButton:hover, QPushButton:focus {
