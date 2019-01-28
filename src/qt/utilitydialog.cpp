@@ -202,6 +202,7 @@ void HelpMessageDialog::on_okButton_accepted()
 ShutdownWindow::ShutdownWindow(QWidget *parent, Qt::WindowFlags f):
     QWidget(parent, f)
 {
+    setStyleSheet("background: rgb(50,50,50); color:white;");
     QVBoxLayout *layout = new QVBoxLayout();
     layout->addWidget(new QLabel(
         tr("$PAC Core is shutting down...") + "<br /><br />" +
