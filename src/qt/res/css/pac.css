@@ -292,7 +292,7 @@ QTableView::item { /* Table Item */
 }
 QTableView::item:selected { /* Table Item Selected */
     background-color: rgb(70, 70, 70);
-    color: rgb(180,180,180);
+    color: white;
 }
 QTableWidget{
     background-color: rgba(224, 224, 224, 0.1); 
@@ -337,7 +337,6 @@ QPushButton {
     font-family: 'Volte Rounded', sans-serif;
     font-weight: bold;
     font-size: 15px;
-    text-transform:uppercase;
 }
 QPushButton:hover, QPushButton:focus {
     background: rgb(243,232,56) !important;
@@ -346,7 +345,7 @@ QPushButton:hover, QPushButton:focus {
 }
 QPushButton:disabled {
     background: rgb(45,45,45);
-    border: 1px solid rgb(263,242,76);
+    border: 0px;
 }
 QPushButton:pressed {
     background: rgba(243,232,56, 0.3) !important;
@@ -354,35 +353,38 @@ QPushButton:pressed {
     color: rgb(243,232,56) !important;
 }
 [class="linkButton"]{
-    border-radius: 13px;
-    background-color: transparent;
+    background-color: transparent !important;
     border: none;
-    color:rgb(243,232,56);
+    color: #F4EA13;
+    font-size: 11px;
     text-decoration: underline;
 }
-[class="linkButton"]:hover, [class="linkButton"]:focus {
-    background: rgb(243,232,56) !important;
-    border: 2px solid rgb(5,5,5) !important;
-    color: rgb(5,5,5) !important;
+[class="linkButton"]:hover, [class="linkButton"]:focus, #removeRequestButton:hover, #removeRequestButton:focus {
+    color:rgb(61,47,255);
+    background-color: transparent !important;
+    border: 0px !important;
 }
-[class="linkButton"]:disabled {
-    color:rgb(243,232,56);
+[class="linkButton"]:disabled, #removeRequestButton:disabled  {
+    background-color: transparent !important;
+    color:rgb(100,100,100) !important;
     text-decoration: underline;
 }
-[class="linkButton"]:pressed {
-    background: rgba(243,232,56, 0.3) !important;
-    border: 2px solid rgb(5, 5, 5) !important;
-    color: rgb(243,232,56) !important;
+[class="linkButton"]:pressed, #removeRequestButton:pressed {
+    background: transparent !important;
+    border: 0px !important;
+    color: rgb(255,255,255) !important;
 }
 [class="accentButton"]{
     border: none;
     background: rgb(243,232,56);
     color: rgb(5,5,5);
-    border-radius: 25px;
-    height: 50px;
+    border-radius: 35px;
+    height: 70px;
+    max-width:260px;
     font-style: normal;
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 15px;
+    font-size: 18px;
+    font-weight:bold;
     text-transform:uppercase;
 }
 QCheckBox {
@@ -488,6 +490,12 @@ QRadioButton::indicator:indeterminate:pressed {
     margin: 12px 42px 18px 42px;
 }
 
+#removeRequestButton{
+    color: #FF1D1D;
+}
+#recentRequestsView{
+
+}
 /*
  * Transactions Page
  */
