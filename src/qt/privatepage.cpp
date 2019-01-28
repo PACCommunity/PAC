@@ -13,7 +13,6 @@
 #include "init.h"
 #include "optionsmodel.h"
 #include "platformstyle.h"
-#include "transactionfilterproxy.h"
 #include "transactiontablemodel.h"
 #include "utilitydialog.h"
 #include "walletmodel.h"
@@ -41,16 +40,11 @@ using namespace std;
 
 PrivatePage::PrivatePage(const PlatformStyle *platformStyle, QWidget *parent) :
     QWidget(parent),
+    timer(nullptr),
     ui(new Ui::PrivatePage),
     clientModel(0),
     walletModel(0),
-    currentBalance(-1),
-    currentUnconfirmedBalance(-1),
-    currentImmatureBalance(-1),
-    currentWatchOnlyBalance(-1),
-    currentWatchUnconfBalance(-1),
-    currentWatchImmatureBalance(-1),
-    timer(nullptr)
+    currentBalance(-1)
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
@@ -89,17 +83,11 @@ PrivatePage::PrivatePage(const PlatformStyle *platformStyle, QWidget *parent) :
         timer->start(1000);
     }
 
-        QGraphicsDropShadowEffect *cardShadow = new QGraphicsDropShadowEffect;
-        cardShadow->setBlurRadius(12.0);
-        cardShadow->setColor(QColor(0, 0, 0, 160));
-        cardShadow->setOffset(2.0);
-        ui->togglePrivateSend->setGraphicsEffect(cardShadow);
-}
-
-void PrivatePage::handleTransactionClicked(const QModelIndex &index)
-{
-    if(filter)
-        Q_EMIT transactionClicked(filter->mapToSource(index));
+    QGraphicsDropShadowEffect *cardShadow = new QGraphicsDropShadowEffect;
+    cardShadow->setBlurRadius(12.0);
+    cardShadow->setColor(QColor(0, 0, 0, 160));
+    cardShadow->setOffset(2.0);
+    ui->togglePrivateSend->setGraphicsEffect(cardShadow);
 }
 
 void PrivatePage::handleOutOfSyncWarningClicks()
@@ -113,15 +101,10 @@ PrivatePage::~PrivatePage()
     delete ui;
 }
 
-void PrivatePage::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance, const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance)
+void PrivatePage::setBalance(const CAmount& balance, const CAmount& anonymizedBalance)
 {
     currentBalance = balance;
-    currentUnconfirmedBalance = unconfirmedBalance;
-    currentImmatureBalance = immatureBalance;
     currentAnonymizedBalance = anonymizedBalance;
-    currentWatchOnlyBalance = watchOnlyBalance;
-    currentWatchUnconfBalance = watchUnconfBalance;
-    currentWatchImmatureBalance = watchImmatureBalance;
     ui->iconLabelPrivateInfo->setPixmap(QPixmap(":icons/pac/info"));
     ui->labelAnonymized->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, anonymizedBalance, false, BitcoinUnits::separatorAlways));
 
@@ -153,9 +136,8 @@ void PrivatePage::setModel(WalletModel *model)
         // update the display unit, to not use the default ("PAC")
         updateDisplayUnit();
         // Keep up to date with wallet
-        setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(), model->getAnonymizedBalance(),
-                   model->getWatchBalance(), model->getWatchUnconfirmedBalance(), model->getWatchImmatureBalance());
-        connect(model, SIGNAL(balanceChanged(CAmount,CAmount,CAmount,CAmount,CAmount,CAmount,CAmount)), this, SLOT(setBalance(CAmount,CAmount,CAmount,CAmount,CAmount,CAmount,CAmount)));
+        setBalance(model->getBalance(), model->getAnonymizedBalance());
+        connect(model, SIGNAL(balanceChanged(CAmount,CAmount)), this, SLOT(setBalance(CAmount,CAmount)));
 
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         connect(model->getOptionsModel(), SIGNAL(privateSendRoundsChanged()), this, SLOT(updatePrivateSendProgress()));
@@ -177,9 +159,7 @@ void PrivatePage::updateDisplayUnit()
     {
         nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
         if(currentBalance != -1)
-            setBalance(currentBalance, currentUnconfirmedBalance, currentImmatureBalance, currentAnonymizedBalance,
-                       currentWatchOnlyBalance, currentWatchUnconfBalance, currentWatchImmatureBalance);
-
+            setBalance(currentBalance, currentAnonymizedBalance);
     }
 }
 

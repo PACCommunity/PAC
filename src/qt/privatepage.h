@@ -39,11 +39,9 @@ public:
 
 public Q_SLOTS:
     void privateSendStatus();
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
-                    const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
+    void setBalance(const CAmount& balance, const CAmount& anonymizedBalance);
 
 Q_SIGNALS:
-    void transactionClicked(const QModelIndex &index);
     void outOfSyncWarningClicked();
 
 private:
@@ -52,19 +50,12 @@ private:
     ClientModel *clientModel;
     WalletModel *walletModel;
     CAmount currentBalance;
-    CAmount currentUnconfirmedBalance;
-    CAmount currentImmatureBalance;
     CAmount currentAnonymizedBalance;
-    CAmount currentWatchOnlyBalance;
-    CAmount currentWatchUnconfBalance;
-    CAmount currentWatchImmatureBalance;
     int nDisplayUnit;
     bool fShowAdvancedPSUI;
 
     TxViewDelegate *txdelegate;
-    std::unique_ptr<TransactionFilterProxy> filter;
 
-    void SetupTransactionList(int nNumItems);
     void DisablePrivateSendCompletely();
 
 private Q_SLOTS:
@@ -75,7 +66,6 @@ private Q_SLOTS:
     void updateDisplayUnit();
     void updatePrivateSendProgress();
     void updateAdvancedPSUI(bool fShowAdvancedPSUI);
-    void handleTransactionClicked(const QModelIndex &index);
     void updateAlerts(const QString &warnings);
     void handleOutOfSyncWarningClicks();
 };
