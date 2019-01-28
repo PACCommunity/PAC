@@ -48,6 +48,18 @@
         <string>container</string>
        </property>
        <layout class="QVBoxLayout" name="container">
+        <property name="leftMargin">
+         <number>50</number>
+        </property>
+        <property name="topMargin">
+         <number>50</number>
+        </property>
+        <property name="rightMargin">
+         <number>50</number>
+        </property>
+        <property name="bottomMargin">
+         <number>50</number>
+        </property>
         <item>
          <widget class="QFrame" name="frameCoinControl">
           <property name="sizePolicy">
@@ -622,7 +634,7 @@
              <x>0</x>
              <y>0</y>
              <width>811</width>
-             <height>212</height>
+             <height>194</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -796,7 +808,7 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -825,7 +837,7 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -837,6 +849,9 @@
           </item>
           <item>
            <widget class="QLineEdit" name="lineComment">
+            <property name="placeholderText">
+             <string>Add a comment to the payment</string>
+            </property>
             <property name="class" stdset="0">
              <string>LineEdit</string>
             </property>
@@ -848,7 +863,7 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -907,7 +922,7 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -919,6 +934,9 @@
           </item>
           <item>
            <widget class="QLineEdit" name="lineConvertCurrency">
+            <property name="placeholderText">
+             <string>Insert in dollars to convert to $PAC</string>
+            </property>
             <property name="class" stdset="0">
              <string>LineEdit</string>
             </property>
@@ -930,7 +948,7 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Preferred</enum>
+             <enum>QSizePolicy::Expanding</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
@@ -963,22 +981,6 @@
           </item>
          </layout>
         </item>
-        <item>
-         <spacer name="verticalSpacer_8">
-          <property name="orientation">
-           <enum>Qt::Vertical</enum>
-          </property>
-          <property name="sizeType">
-           <enum>QSizePolicy::Preferred</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>20</width>
-            <height>40</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
       </widget>
      </item>
@@ -1007,7 +1009,16 @@
        </property>
        <layout class="QVBoxLayout" name="verticalLayout_3">
         <property name="leftMargin">
-         <number>40</number>
+         <number>25</number>
+        </property>
+        <property name="topMargin">
+         <number>50</number>
+        </property>
+        <property name="rightMargin">
+         <number>9</number>
+        </property>
+        <property name="bottomMargin">
+         <number>50</number>
         </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
@@ -1182,7 +1193,7 @@
             <property name="minimumSize">
              <size>
               <width>100</width>
-              <height>10</height>
+              <height>15</height>
              </size>
             </property>
             <property name="text">
@@ -1190,6 +1201,9 @@
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
+            </property>
+            <property name="class" stdset="0">
+             <string>titleLabel</string>
             </property>
            </widget>
           </item>
@@ -1201,7 +1215,7 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1261,7 +1275,7 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1383,10 +1397,10 @@
             <widget class="QWidget" name="scrollAreaWidgetContents_3">
              <property name="geometry">
               <rect>
-               <x>0</x>
-               <y>0</y>
-               <width>345</width>
-               <height>458</height>
+               <x>-2</x>
+               <y>-141</y>
+               <width>293</width>
+               <height>484</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1777,9 +1791,15 @@
                             </item>
                             <item>
                              <widget class="QCheckBox" name="checkBoxMinimumFee">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
                               <property name="maximumSize">
                                <size>
-                                <width>25</width>
+                                <width>16777215</width>
                                 <height>16777215</height>
                                </size>
                               </property>
@@ -1791,23 +1811,43 @@
                               </property>
                              </widget>
                             </item>
-                            <item>
-                             <widget class="QLabel" name="labelMinFeeWarning">
-                              <property name="enabled">
-                               <bool>true</bool>
-                              </property>
-                              <property name="toolTip">
-                               <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for paccoin transactions than the network can process.</string>
-                              </property>
-                              <property name="text">
-                               <string>(read the tooltip)</string>
-                              </property>
-                              <property name="margin">
-                               <number>5</number>
-                              </property>
-                             </widget>
-                            </item>
                            </layout>
+                          </item>
+                         </layout>
+                        </item>
+                        <item row="3" column="0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_11">
+                          <item>
+                           <spacer name="horizontalSpacer_14">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                             <enum>QSizePolicy::Fixed</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>30</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="labelMinFeeWarning">
+                            <property name="enabled">
+                             <bool>true</bool>
+                            </property>
+                            <property name="toolTip">
+                             <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for paccoin transactions than the network can process.</string>
+                            </property>
+                            <property name="text">
+                             <string>    (read the tooltip)</string>
+                            </property>
+                            <property name="margin">
+                             <number>5</number>
+                            </property>
+                           </widget>
                           </item>
                          </layout>
                         </item>

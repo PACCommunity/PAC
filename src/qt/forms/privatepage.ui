@@ -65,6 +65,12 @@
      </item>
      <item>
       <layout class="QVBoxLayout" name="verticalLayout_2">
+       <property name="topMargin">
+        <number>25</number>
+       </property>
+       <property name="bottomMargin">
+        <number>25</number>
+       </property>
        <item>
         <widget class="QFrame" name="framePrivateSend">
          <property name="minimumSize">
