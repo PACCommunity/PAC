@@ -11,11 +11,12 @@ QMainWindow{
 }
 
 QMessageBox {
-    background-color:rgb(20,20,20);
+    background-color:rgb(26,26,26);
 }
 
 QDialog{
-    background-color:rgb(30,30,30);
+    background-color:rgb(26,26,26);
+    color:white;
 }
 
 
@@ -340,7 +341,7 @@ QPushButton {
 }
 QPushButton:hover, QPushButton:focus {
     background: rgb(243,232,56) !important;
-    border: 2px solid rgb(5,5,5) !important;
+    border: 0px !important;
     color: rgb(5,5,5);
 }
 QPushButton:disabled {
@@ -349,7 +350,7 @@ QPushButton:disabled {
 }
 QPushButton:pressed {
     background: rgba(243,232,56, 0.3) !important;
-    border: 2px solid rgb(5, 5, 5) !important;
+    border: 0px !important;
     color: rgb(243,232,56) !important;
 }
 [class="linkButton"]{
