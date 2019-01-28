@@ -81,6 +81,7 @@ void ReceiveCoinsDialog::setModel(WalletModel *model)
 
         tableView->verticalHeader()->hide();
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setModel(model->getRecentRequestsTableModel());
         tableView->setAlternatingRowColors(false);
         tableView->setShowGrid(false);
