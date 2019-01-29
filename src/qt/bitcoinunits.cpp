@@ -9,6 +9,9 @@
 
 #include <QSettings>
 #include <QStringList>
+#include <QLocale>
+#include <iostream>
+#include <string>
 
 BitcoinUnits::BitcoinUnits(QObject *parent):
         QAbstractListModel(parent),
@@ -147,7 +150,17 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     if (num_decimals <= 0)
         return quotient_str;
 
-    return quotient_str + QString(".") + remainder_str;
+    QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
+    QLocale aEnglish;
+    //inside the Qstring there are some spaces, it must remove those in order to parse correcly:
+    QString str = quotient_str.simplified();
+    str.replace( " ", "" );
+    //it parse to the longest type of data:
+    qlonglong quantity = str.toLongLong();
+    //adds the commas:
+    QString quotient_str_withcomma =  aEnglish.toString((unsigned long long int) quantity);
+    //then it adds the dot and the cents:
+    return quotient_str_withcomma + QString(".") + remainder_str;
 }
 
 
