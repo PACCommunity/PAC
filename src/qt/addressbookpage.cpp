@@ -42,7 +42,8 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode mode, 
         ui->deleteAddress->setIcon(QIcon(":/icons/" + theme + "/remove"));
         ui->exportButton->setIcon(QIcon(":/icons/" + theme + "/export"));
     }
-
+    ui->tableView->setShowGrid(false);
+    ui->tableView->setAlternatingRowColors(false);
     switch(mode)
     {
     case ForSelection:
