@@ -147,20 +147,16 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     else if (fPlus && n > 0)
         quotient_str.insert(0, '+');
 
-    if (num_decimals <= 0)
-        return quotient_str;
+    //a substring is created in order to replace spaces with commas for easier reading.
+    QString _str;
+    _str = quotient_str.simplified();
+    _str.replace( " ", "," );
 
-    QLocale::setDefault(QLocale(QLocale::English, QLocale::UnitedStates));
-    QLocale aEnglish;
-    //inside the Qstring there are some spaces, it must remove those in order to parse correcly:
-    QString str = quotient_str.simplified();
-    str.replace( " ", "" );
-    //it parse to the longest type of data:
-    qlonglong quantity = str.toLongLong();
-    //adds the commas:
-    QString quotient_str_withcomma =  aEnglish.toString((unsigned long long int) quantity);
+    if (num_decimals <= 0)
+        return _str;
+
     //then it adds the dot and the cents:
-    return quotient_str_withcomma + QString(".") + remainder_str;
+    return _str + QString(".") + remainder_str;
 }
 
 
