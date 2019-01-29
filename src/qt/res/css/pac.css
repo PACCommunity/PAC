@@ -49,7 +49,6 @@ QStatusBar{
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
     border: 0px;
     border-radius: 20px;
-    font-size:11px;
     outline:0;
     padding:3px;
     background-color: rgb(10, 10, 10);
@@ -58,12 +57,30 @@ QStatusBar{
     font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
-[class="LineEdit"]:focus {
+[class="LineEdit"]:focus, [class="LineEditSmall"]:focus {
     font-size:12px;
 }
-[class="LineEdit"]:disabled {
+[class="LineEdit"]:disabled, [class="LineEditSmall"]:disabled {
     background-color:#f2f2f2;
 }
+[class="QuickButton"]{
+    background-color: transparent;
+    border: none;
+}
+[class="LineEditSmall"]{
+    border: 0px;
+    border-radius: 10px;
+    outline:0;
+    padding:3px;
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    height: 20px !important;
+    font-family: 'Volte Rounded', sans-serif;
+    font-size: 13px;
+}
+
+
+
 [class="QuickButton"]{
     background-color: transparent;
     border: none;
@@ -624,8 +641,8 @@ QTabBar::tab {
     background:#1D1D1D;
     border: 0px solid transparent;
     border-bottom-color: transparent; /* same as the pane color */
-    min-width: 180px;
     padding: 2px;
+    width: 180px;
     color:#FFFFFF;
     font-family: 'Volte Rounded',sans-serif !important;
 }
@@ -636,3 +653,10 @@ QTabBar::tab:selected {
     border-color: transparent;
     border-bottom-color: transparent; /* same as pane color */
 }
+MasternodeList > QTabBar::tab{
+    min-width:180px;
+}
+OptionsDialo > QTabBar::tab {
+    min-width:100px;
+}
+
