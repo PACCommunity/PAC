@@ -260,11 +260,11 @@ QAbstractSpinBox::down-arrow {
 
 /* GLOBAL TABLES*/
 QHeaderView { /* Top of the table Header */
-    background-color: rgba(224, 224, 224, 0.1);
+    background-color: #0F0F0F;
 }
 QHeaderView::section { /* Top of the table Header Sections */
     qproperty-alignment:center;
-    background-color: rgba(224, 224, 224, 0.1);
+    background-color: rgba(40, 40, 40, 0.3);
     color:#fff;
     min-height:25px;
     font-weight:bold;
@@ -281,7 +281,7 @@ QScrollArea {
     border:2px solid transparent;
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
-    background-color: rgba(224, 224, 224, 0.1);
+    background-color: rgba(40, 40, 40, 0.3);
     color: white !important;
     /*alternate-background-color: yellow;*/
 }
@@ -294,7 +294,7 @@ QTableView::item:selected { /* Table Item Selected */
     color: white;
 }
 QTableWidget{
-    background-color: rgba(224, 224, 224, 0.1); 
+    background-color: rgba(40, 40, 40, 0.3);
 }
 
 
@@ -494,21 +494,19 @@ QRadioButton::indicator:indeterminate:pressed {
 #removeRequestButton{
     color: #FF1D1D;
 }
-#recentRequestsView{
 
-}
 /*
  * Transactions Page
  */
 /* Over the table */
 QLineEdit#addressWidget, QLineEdit#tAmountWidget{
-    background-color: rgba(224, 224, 224, 0.2);
+    background-color: #0B0B0B;
     color:#fff;
     border:0px;
     min-height: 30px !important;
 }
 QComboBox#watchOnlyWidget, QComboBox#dateWidget, QComboBox#typeWidget {
-    background-color: rgba(224, 224, 224, 0.2);
+    background-color: #0B0B0B;
     border:0px;
     padding: 3px 5px 3px 5px;
     color:#fff;
@@ -584,13 +582,13 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
 
 /* Over the table */
 QLineEdit#proposalWidget, QLineEdit#amountWidget, QLineEdit#yesVotesWidget, QLineEdit#noVotesWidget, QLineEdit#absoluteYesVotesWidget, QLineEdit#percentageWidget{ /* Example of setObjectName for widgets without name */
-    background-color: rgba(224, 224, 224, 0.2);
+    background-color: #0B0B0B;
     color:#fff;
     border:0px;
     min-height: 30px !important;
 }
 QComboBox#startDateWidget, QComboBox#endDateWidget{
-    background-color: rgba(224, 224, 224, 0.2);
+    background-color: #0B0B0B;
     border:0px;
     padding: 3px 5px 3px 5px;
     color:#fff;
