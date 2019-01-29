@@ -362,9 +362,9 @@ void BitcoinGUI::createActions()
     privateAction->setToolTip(historyAction->statusTip());
     privateAction->setCheckable(true);
 #ifdef Q_OS_MAC
-    privateAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+    privateAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
 #else
-    privateAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+    privateAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
 #endif
     tabGroup->addAction(privateAction);
     //v:
@@ -392,9 +392,9 @@ void BitcoinGUI::createActions()
     proposalAction->setToolTip(proposalAction->statusTip());
     proposalAction->setCheckable(true);
 #ifdef Q_OS_MAC
-    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
+    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
 #else
-    proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+    proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
 #endif
     tabGroup->addAction(proposalAction);
 
@@ -632,13 +632,13 @@ void BitcoinGUI::createToolBars()
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
         toolbar->addAction(historyAction);
-        toolbar->addAction(privateAction);
+        toolbar->addAction(proposalAction);
         QSettings settings;
         if (settings.value("fShowMasternodesTab").toBool())
         {
             toolbar->addAction(masternodeAction);
         }
-        toolbar->addAction(proposalAction);
+        toolbar->addAction(privateAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         overviewAction->setChecked(true);
 
