@@ -604,6 +604,27 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
 
 
 /* TESTS */
-/*#SendCoinsEntry QAbstractSpinBox {
-    qproperty-sizePolicy: '[Expanding, Preferred, 0, 0]' ;
-}*/
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 0px solid transparent;
+}
+QTabWidget::tab-bar {
+    left: 0px; /* move to the right by 5px */
+}
+/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background:#1D1D1D;
+    border: 0px solid transparent;
+    border-bottom-color: transparent; /* same as the pane color */
+    min-width: 180px;
+    padding: 2px;
+    color:#FFFFFF;
+    font-family: 'Volte Rounded',sans-serif !important;
+}
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #363636;
+}
+QTabBar::tab:selected {
+    border-color: transparent;
+    border-bottom-color: transparent; /* same as pane color */
+}
