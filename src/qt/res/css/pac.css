@@ -1,7 +1,7 @@
 /*
  *  Global GUI styles
  */
-QLabel{
+QLabel, QGroupBox::title{
     font-family: 'Volte Rounded',sans-serif !important;
     color: rgb(255,255,255) !important;
 }
@@ -18,7 +18,34 @@ QDialog{
     background-color:rgb(26,26,26);
     color:white;
 }
+/* Global TabBar styles */
+QTabWidget::pane {
+    background-color: transparent;
+    border: 0px !important;
+    border-radius:15px;
+}
+/* move to the right by 5px
+QTabWidget::tab-bar {
+    left: 200px;
+}*/
 
+/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
+QTabBar::tab {
+    background:#1D1D1D;
+    border: 0px solid transparent;
+    border-bottom-color: transparent; /* same as the pane color */
+    padding: 2px;
+    width: 180px;
+    color:#FFFFFF;
+    font-family: 'Volte Rounded',sans-serif !important;
+}
+QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog QTabBar::tab:selected, #tabWidget_OptionsDialog QTabBar::tab:hover {
+    background-color: #363636 !important;
+}
+QTabBar::tab:selected {
+    border-color: transparent !important;
+    border-bottom-color: transparent !important;
+}
 
 /* Global Progress Bar styles */
 QStatusBar{
@@ -46,41 +73,31 @@ QStatusBar{
 
 
 /* Global text inputs */
-[class="LineEdit"], [class="LineEdit_PacCoins"]{
+[class="LineEdit"], [class="LineEdit_PacCoins"], [class="LineEditSmall"]{
     border: 0px;
-    border-radius: 20px;
     outline:0;
     padding:3px;
     background-color: rgb(10, 10, 10);
     color: #fff;
-    height: 40px !important;
     font-family: 'Volte Rounded', sans-serif;
+}
+[class="LineEdit"], [class="LineEdit_PacCoins"]{
+    height: 40px !important;
     font-size: 15px;
+    border-radius: 20px;
+}
+[class="LineEditSmall"]{
+    height: 20px !important;
+    font-size: 13px;
+    border-radius: 10px;
 }
 [class="LineEdit"]:focus, [class="LineEditSmall"]:focus {
     font-size:12px;
 }
 [class="LineEdit"]:disabled, [class="LineEditSmall"]:disabled {
-    background-color:#f2f2f2;
+    background-color:#474747;
+    color: #878787;
 }
-[class="QuickButton"]{
-    background-color: transparent;
-    border: none;
-}
-[class="LineEditSmall"]{
-    border: 0px;
-    border-radius: 10px;
-    outline:0;
-    padding:3px;
-    background-color: rgb(10, 10, 10);
-    color: #fff;
-    height: 20px !important;
-    font-family: 'Volte Rounded', sans-serif;
-    font-size: 13px;
-}
-
-
-
 [class="QuickButton"]{
     background-color: transparent;
     border: none;
@@ -234,12 +251,12 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 /* GLOBAL SPINBOX */
 QAbstractSpinBox {
     border-radius: 20px;
+    font-size: 15px;
+    min-height:40px;
     background-color: rgb(10, 10, 10);
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 15px;
     text-align: center;
     border:0px;
-    min-height:40px;
     color:#fff;
     padding: 3px 5px 3px 5px;
 }
@@ -625,36 +642,28 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
     padding-right:1px;
     padding-left:1px;
 }
-
-
-/* TESTS */
-QTabWidget::pane { /* The tab widget frame */
-    border-top: 0px solid transparent;
-}
-QTabWidget::tab-bar {
-    left: 200px; /* move to the right by 5px */
-}
-/* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
-QTabBar::tab {
-    background:#1D1D1D;
-    border: 0px solid transparent;
-    border-bottom-color: transparent; /* same as the pane color */
-    padding: 2px;
-    width: 180px;
-    color:#FFFFFF;
-    font-family: 'Volte Rounded',sans-serif !important;
-}
-QTabBar::tab:selected, QTabBar::tab:hover {
-    background-color: #363636;
-}
-QTabBar::tab:selected {
-    border-color: transparent;
-    border-bottom-color: transparent; /* same as pane color */
-}
+/*
+ * Masternodes Page
+*/
 MasternodeList > QTabBar::tab{
     min-width:180px;
 }
-OptionsDialo > QTabBar::tab {
-    min-width:100px;
+/*
+ * OptionsDialog
+*/
+#tabWidget_OptionsDialog QTabBar::tab {
+    background: rgb(50,50,50);
+    width:80px;
 }
-
+#tabWidget_OptionsDialog::pane {
+    background-color: rgba(50,50,50,0.35);
+}
+#OptionsDialog > #resetButton{
+    width:200px !important;
+}
+[class="SpinBoxSmall"]{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}

@@ -3210,7 +3210,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <message>
         <location line="+3"/>
         <source>&amp;Message:</source>
-        <translation>&amp;Message:</translation>
+        <translation>Message:</translation>
     </message>
     <message>
         <location line="+13"/>

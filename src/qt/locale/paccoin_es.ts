@@ -2040,7 +2040,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
-        <translation>&amp;Mensaje:</translation>
+        <translation>Mensaje:</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2056,7 +2056,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>&amp;Etiqueta:</translation>
+        <translation>Etiqueta:</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
@@ -2064,11 +2064,11 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Amount:</source>
-        <translation>&amp;Cuantía:</translation>
+        <translation>Cuantía:</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
-        <translation>&amp;Solicitar pago</translation>
+        <translation>Solicitar pago</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
