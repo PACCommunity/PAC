@@ -105,7 +105,6 @@ void PrivatePage::setBalance(const CAmount& balance, const CAmount& anonymizedBa
 {
     currentBalance = balance;
     currentAnonymizedBalance = anonymizedBalance;
-    ui->iconLabelPrivateInfo->setPixmap(QPixmap(":icons/pac/info"));
     ui->labelAnonymized->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, anonymizedBalance, false, BitcoinUnits::separatorAlways));
 
     // for symmetry reasons also show immature label when the watch-only one is shown

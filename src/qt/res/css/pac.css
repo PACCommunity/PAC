@@ -75,6 +75,7 @@ QLabel[class="titleLabel"]{
     color:rgb(255,255,255);
     font-family: 'Volte Rounded', sans-serif;
     font-size: 20px;
+    text-transform:uppercase;
 }
 QLabel[class="pacCoinsLabel"]{
     color:rgb(243,232,56);
@@ -537,10 +538,14 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     font-size: 25px;
 }
 #labelAnonymized{
-    font-size: 30px;
+    font-size: 45px;
+    font: bolder;
 }
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
     font-weight: 100;
+}
+#labelAmountRounds, #labelPrivateSendEnabled, #labelPrivateSendHeader {
+    text-transform:uppercase;
 }
 /* Black button */
 [class="buttonAllBlack"]{
@@ -548,9 +553,9 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     border: 0px;
     color: #fff;
     border-radius: 11px;
-    height: 40px;
+    height: 50px;
     font-weight: bold;
-    font-size: 10px;
+    font-size: 18px;
     text-transform:uppercase;
 }
 [class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
@@ -566,7 +571,10 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     background: rgb(243,232,56);
     color: #fff;
 }
-
+#privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed{
+    background: transparent;
+    border: 0px;
+}
 
 /*
  * Proposal Page
