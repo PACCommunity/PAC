@@ -464,7 +464,12 @@ QCheckBox::indicator:indeterminate:hover {
 QCheckBox::indicator:indeterminate:pressed {
     image:url(':/images/pac/checked_b');
 }
-
+QCheckBox::indicator:checked:disabled{
+    image:url(':/images/pac/checked_b_dis');
+}
+QCheckBox::indicator:unchecked:disabled{
+    image:url(':/images/pac/unchecked_b_dis');
+}
 
 /* GLOBAL RADIO BUTTON */
 QRadioButton::indicator:unchecked {
@@ -491,7 +496,12 @@ QRadioButton::indicator:indeterminate:hover {
 QRadioButton::indicator:indeterminate:pressed {
     image:url(':/images/pac/checked');
 }
-
+QRadioButton::indicator:checked:disabled{
+    image:url(':/images/pac/checked_dis');
+}
+QRadioButton::indicator:unchecked:disabled{
+    image:url(':/images/pac/unchecked_dis');
+}
 
 /*
  * Overview Page
