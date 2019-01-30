@@ -3,7 +3,8 @@
  */
 QLabel, QGroupBox::title{
     font-family: 'Volte Rounded',sans-serif !important;
-    color: rgb(255,255,255) !important;
+    color: white !important;
+    font-weight:normal;
 }
 
 QMainWindow{
@@ -106,23 +107,24 @@ QStatusBar{
 
 /* labels */
 QLabel[class="titleLabel"]{
-    color:rgb(255,255,255);
-    font-family: 'Volte Rounded', sans-serif;
-    font-size: 20px;
     text-transform:uppercase;
+    color: #FFF;
+    font-family: 'Volte Rounded', sans-serif;
+    font-weight: medium;
+    font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
     margin: 0px;
-    color:rgb(243,232,56);
+    color: #F4EA13;
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 30px;/*20px*/
-    font-weight: 100;
+    font-size: 32px;
+    font-weight: medium;
 }
 QLabel[class="usdLabel"]{
-    color:rgb(255,255,255);
+    color: #FFF;
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 20px;
-    font-weight: 100;
+    font-size: 23px;
+    font-weight: normal;
 }
 QLabel[class="labelPacIcon"]{
     margin: 0px;
@@ -367,14 +369,14 @@ QToolBar > QToolButton:checked {
 /* Global Button styles*/
 QPushButton {
     background: transparent;
-    border: 1px solid rgb(243,232,56);
-    color: rgb(243,232,56);
+    border: 1px solid #F4EA13;
+    color: #F4EA13;
     border-radius: 16px;
-    height: 30px;
-    width: 150px;
+    height: 35px;
+    width: 160px;
     font-family: 'Volte Rounded', sans-serif;
-    font-weight: bold;
-    font-size: 15px;
+    font-weight: medium;
+    font-size: 16px;
 }
 QPushButton:hover, QPushButton:focus {
     background: rgb(243,232,56) !important;
@@ -415,20 +417,20 @@ QPushButton:pressed {
     color: rgb(255,255,255) !important;
 }
 [class="accentButton"]{
+    text-transform:uppercase;
     border: none;
-    background: rgb(243,232,56);
+    background: #F4EA13;
     color: rgb(5,5,5);
     border-radius: 35px;
     height: 70px;
-    max-width:260px;
+    width: 280px;
     font-style: normal;
     font-family: 'Volte Rounded', sans-serif;
-    font-size: 18px;
-    font-weight:bold;
-    text-transform:uppercase;
+    font-size: 22px;
+    font-weight:medium;
 }
 QCheckBox {
-    color: rgb(255, 255, 255);
+    color: #FFF;
     width: 10px;
     height: 10px;
 }
@@ -589,13 +591,15 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     font-weight:medium;
     color: #FDF002;
 }
-#labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledTextP{
+#labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledText{
+    text-transform:uppercase;
     font-size: 16px;
     font-family:"Gotham", sans-serif;
     font-weight:medium;
     color:#FFF;
 }
 #labelAmountRounds, #labelPrivateSendEnabled {
+    text-transform:uppercase;
     font-size: 27px;
     font-family:"Gotham", sans-serif;
     font-weight:medium;
@@ -604,14 +608,15 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
 
 /* Black button */
 [class="buttonAllBlack"]{
-    background: #141414;
+    text-transform:uppercase;
+    font-family:"Gotham", sans-serif;
+    background: #1A1919;
     border: 0px;
     color: #fff;
     border-radius: 11px;
     height: 50px;
-    font-weight: bold;
+    font-weight: medium;
     font-size: 18px;
-    text-transform:uppercase;
 }
 [class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
     background: #1A1919;
