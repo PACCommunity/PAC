@@ -72,6 +72,11 @@ MasternodeList::MasternodeList(const PlatformStyle *platformStyle, QWidget *pare
     connect(timer, SIGNAL(timeout()), this, SLOT(updateMyNodeList()));
     timer->start(1000);
 
+    /*QLabel *lblMasternodes = new QLabel;
+    lblMasternodes->setText("MASTERNODES");
+    lblMasternodes->setAlignment(Qt::AlignBottom | Qt::AlignLeft);
+    lblMasternodes->setParent(this);*/
+
     fFilterUpdated = false;
     nTimeFilterUpdated = GetTime();
     updateNodeList();

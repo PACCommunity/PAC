@@ -58,19 +58,9 @@
       </spacer>
      </item>
      <item>
-      <widget class="QLabel" name="label">
-       <property name="text">
-        <string>MASTERNODES</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QTabWidget" name="tabWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tabMyMasternodes">
         <attribute name="title">
