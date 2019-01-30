@@ -266,6 +266,9 @@
              <property name="toolTip">
               <string>Filter masternode list</string>
              </property>
+             <property name="class" stdset="0">
+              <string>LineEdit</string>
+             </property>
             </widget>
            </item>
            <item>
