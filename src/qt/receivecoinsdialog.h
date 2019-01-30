@@ -49,6 +49,8 @@ public Q_SLOTS:
     void clear();
     void reject();
     void accept();
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
+                                 const CAmount& watchBalance, const CAmount& watchUnconfirmedBalance, const CAmount& watchImmatureBalance);
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
