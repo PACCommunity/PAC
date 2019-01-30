@@ -586,37 +586,33 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     color:#FFF;
 }
 #labelAnonymized{
-    font-size: 50px;
-    font-family:"Gotham", sans-serif;
-    font-weight:medium;
+    font-size: 48px;
+    font-family:"Gotham Medium", sans-serif;
     color: #FDF002;
 }
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledText{
     text-transform:uppercase;
-    font-size: 16px;
-    font-family:"Gotham", sans-serif;
-    font-weight:medium;
+    font-size: 14px;
+    font-family:"Gotham Medium", sans-serif;
     color:#FFF;
 }
 #labelAmountRounds, #labelPrivateSendEnabled {
     text-transform:uppercase;
-    font-size: 27px;
-    font-family:"Gotham", sans-serif;
-    font-weight:medium;
+    font-size: 25px;
+    font-family:"Gotham Medium", sans-serif;
     color: #FDF002;
 }
 
 /* Black button */
 [class="buttonAllBlack"]{
     text-transform:uppercase;
-    font-family:"Gotham", sans-serif;
+    font-family:"Gotham Medium", sans-serif;
     background: #1A1919;
     border: 0px;
     color: #fff;
     border-radius: 11px;
     height: 50px;
-    font-weight: medium;
-    font-size: 18px;
+    font-size: 16px;
 }
 [class="buttonAllBlack"]:hover, [class="buttonAllBlack"]:focus {
     background: #1A1919;
