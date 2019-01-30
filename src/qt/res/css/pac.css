@@ -297,7 +297,6 @@ QHeaderView { /* Top of the table Header */
     background-color: #0F0F0F;
 }
 QHeaderView::section { /* Top of the table Header Sections */
-    qproperty-alignment:center;
     background-color: rgba(40, 40, 40, 0.3);
     color:#fff;
     min-height:25px;
@@ -305,6 +304,7 @@ QHeaderView::section { /* Top of the table Header Sections */
     font-size:11px;
     outline:0;
     border:0px solid #fff;
+    border-right:  1px solid qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.5, stop: 0 transparent, stop: 1 rgb(71, 71, 71));
     padding-left:5px;
     padding-right:5px;
     padding-top:2px;
@@ -524,9 +524,12 @@ QRadioButton::indicator:indeterminate:pressed {
 #ReceiveCoinsDialog{
     margin: 12px 42px 18px 42px;
 }
-
 #removeRequestButton{
     color: #FF1D1D;
+}
+#recentRequestsView QHeaderView::section{
+    border-bottom: 1px solid #474747;
+    border-right: 0px solid transparent;
 }
 
 /*
