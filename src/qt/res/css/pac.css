@@ -112,6 +112,7 @@ QLabel[class="titleLabel"]{
     text-transform:uppercase;
 }
 QLabel[class="pacCoinsLabel"]{
+    margin: 0px;
     color:rgb(243,232,56);
     font-family: 'Volte Rounded', sans-serif;
     font-size: 30px;/*20px*/
@@ -123,6 +124,10 @@ QLabel[class="usdLabel"]{
     font-size: 20px;
     font-weight: 100;
 }
+QLabel[class="labelPacIcon"]{
+    margin: 0px;
+}
+
 
 /*textarea*/
 QPlainTextEdit {
@@ -651,6 +656,12 @@ QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
 MasternodeList > QTabBar::tab{
     min-width:180px;
 }
+#filterLineEdit{
+    background-color: #0B0B0B;
+    border-radius: 12px;
+    height: 24px;
+}
+
 /*
  * OptionsDialog
 */
@@ -670,3 +681,6 @@ MasternodeList > QTabBar::tab{
     min-width: 40px !important;
     min-height:20px !important;
 }
+
+
+
