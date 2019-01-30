@@ -779,15 +779,27 @@
                </widget>
               </item>
               <item>
-               <widget class="QLabel" name="iconLabelOverviewInfo">
+               <widget class="QPushButton" name="overviewInfo">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="maximumSize">
                  <size>
-                  <width>50</width>
-                  <height>16777215</height>
+                  <width>30</width>
+                  <height>30</height>
                  </size>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(&quot;:/icons/pac/info&quot;);</string>
                 </property>
                 <property name="text">
                  <string/>
+                </property>
+                <property name="class" stdset="0">
+                 <string>QuickButton</string>
                 </property>
                </widget>
               </item>

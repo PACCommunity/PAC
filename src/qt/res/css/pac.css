@@ -627,10 +627,11 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     background: rgb(243,232,56);
     color: #fff;
 }
-#privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed{
+#privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed, #overviewInfo, #overviewInfo:hover, #overviewInfo:focus, #overviewInfo:disabled, #overviewInfo:pressed{
     background: transparent;
     border: 0px;
 }
+
 
 /*
  * Proposal Page

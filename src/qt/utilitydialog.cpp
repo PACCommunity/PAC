@@ -163,6 +163,18 @@ Consequently, users who have backups disabled will also have PrivatePAC disabled
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
         ui->aboutLogo->setVisible(false);
+    } else if (helpMode == ovhelp) {
+        setWindowTitle(tr("OverviewPAC information"));
+
+        ui->aboutMessage->setTextFormat(Qt::RichText);
+        ui->scrollArea->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        ui->aboutMessage->setText(tr("\
+<h3>PAC Basics</h3> \
+Ask for the information on this window"));
+        
+        ui->aboutMessage->setWordWrap(true);
+        ui->helpMessage->setVisible(false);
+        ui->aboutLogo->setVisible(false);
     }
     // Theme dependent Gfx in About popup
     QString helpMessageGfx = ":/images/" + GUIUtil::getThemeName() + "/about";

@@ -197,7 +197,6 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->iconLabelAvailable->setPixmap(QPixmap(":icons/bitcoin-32"));
     ui->iconLabelPending->setPixmap(QPixmap(":icons/bitcoin-32"));
     ui->iconLabelTotal->setPixmap(QPixmap(":icons/bitcoin-32"));
-    ui->iconLabelOverviewInfo->setPixmap(QPixmap(":icons/pac/info"));
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, balance, false, BitcoinUnits::separatorAlways));
     ui->labelUnconfirmed->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, unconfirmedBalance, false, BitcoinUnits::separatorAlways));
     ui->labelImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, immatureBalance, false, BitcoinUnits::separatorAlways));
@@ -206,6 +205,8 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
     ui->labelWatchPending->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchUnconfBalance, false, BitcoinUnits::separatorAlways));
     ui->labelWatchImmature->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchImmatureBalance, false, BitcoinUnits::separatorAlways));
     ui->labelWatchTotal->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, watchOnlyBalance + watchUnconfBalance + watchImmatureBalance, false, BitcoinUnits::separatorAlways));
+    
+    connect(ui->overviewInfo, SIGNAL(clicked()), this, SLOT(overviewInfo()));
 
     // only show immature (newly mined) balance if it's non-zero, so as not to complicate things
     // for the non-mining users
@@ -328,3 +329,7 @@ void OverviewPage::SetupTransactionList(int nNumItems) {
     }
 }
 
+void OverviewPage::overviewInfo(){
+    HelpMessageDialog dlg(this, HelpMessageDialog::ovhelp);
+    dlg.exec();
+}
