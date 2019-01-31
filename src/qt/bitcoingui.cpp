@@ -18,6 +18,7 @@
 #include "platformstyle.h"
 #include "rpcconsole.h"
 #include "utilitydialog.h"
+#include "util.h"
 
 #ifdef ENABLE_WALLET
 #include "walletframe.h"
@@ -745,16 +746,14 @@ void BitcoinGUI::createHeaderBar()
     /** initializing profile image */
     QSettings settings;
     QString strImgValue = settings.value("profilePicture").toString();
-    QString imgPath;
-    if(strImgValue != "" && strImgValue != NULL){
-        imgPath = "/Users/IvanPacheco/Desktop/Captura de pantalla 2019-01-30 a la(s) 22.15.39.png";
+
+    if(strImgValue == "" && strImgValue == NULL){
+        strImgValue = ":/icons/bitcoin";
     }
-    else{
-        imgPath = ":/icons/bitcoin";
-    }
+
     QPixmap target(80, 80);
     target.fill(Qt::transparent);
-    QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+    QPixmap pixmap = QPixmap::fromImage( QImage(strImgValue).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
     QPainter painter(&target);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::Antialiasing, true);
@@ -1543,12 +1542,23 @@ void BitcoinGUI::selectProfileImageFile(){
     dialog.setNameFilter(tr("Images (*.png *.xpm *.jpg)"));
     dialog.setViewMode(QFileDialog::Detail);
 
-    QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.png *.xpm *.jpg)"));
+    //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
+    QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
 
+    /** Copy the image to the Pac Folder: */
+    boost::filesystem::path directoryToCopy = GetDefaultDataDir();
+    std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
+    std::cout << "imgPath: " << imgPath.toStdString() << std::endl;//debug
+    std::cout << "imgFinalPath: " << imgFinalPath << std::endl;//debug
+
+    std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
+    std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
+    ofs << ifs.rdbuf();
+    imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
 
     QSettings settings;
     settings.setValue("profilePicture", imgPath);
-    //settings.sync();
+    settings.sync();
     std::cout << "picturePath: " << imgPath.toStdString() << std::endl;
     std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
 
