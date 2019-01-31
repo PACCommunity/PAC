@@ -51,6 +51,12 @@
      <layout class="QHBoxLayout" name="labelAmounTitles">
       <item>
        <widget class="QLabel" name="labellLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="text">
          <string>&amp;Label:</string>
         </property>
@@ -67,6 +73,18 @@
       </item>
       <item>
        <widget class="QLabel" name="amountLabel">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="text">
          <string>A&amp;mount:</string>
         </property>
@@ -226,6 +244,12 @@
       </item>
       <item>
        <widget class="BitcoinAmountField" name="payAmount">
+        <property name="maximumSize">
+         <size>
+          <width>300</width>
+          <height>16777215</height>
+         </size>
+        </property>
         <property name="class" stdset="0">
          <string>LineEdit_PacCoins</string>
         </property>
