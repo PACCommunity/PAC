@@ -63,6 +63,7 @@
 #include <QFont>
 #include <QFileDialog>
 #include <QProxyStyle>
+#include <QPainter>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -744,19 +745,27 @@ void BitcoinGUI::createHeaderBar()
     /** initializing profile image */
     QSettings settings;
     QString strImgValue = settings.value("profilePicture").toString();
+    QString imgPath;
     if(strImgValue != "" && strImgValue != NULL){
-        QPixmap pixmap(strImgValue);
-        QIcon ButtonIcon(pixmap);
-        btnImg->setIcon(ButtonIcon);
-        btnImg->setIconSize(QSize(80,80));
-        btnImg->setFixedSize(80,80);
-        //btnImg->setMask(QRegion(btnImg->geometry(),QRegion::Ellipse));
-        btnImg->setStyleSheet("#btnChangeImage{height: 80px !important;border-radius: 40px !important;#btnChangeImage:hover {border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch !important;}#btnChangeImage:pressed {background-color: rgb(263,252,76) !important;}");
+        imgPath = "/Users/IvanPacheco/Desktop/Captura de pantalla 2019-01-30 a la(s) 22.15.39.png";
     }
     else{
-        std::cout << "ther is no image";
-        //ask for the user to choose the profile picture as pop up message and then set it.
+        imgPath = ":/icons/bitcoin";
     }
+    QPixmap target(80, 80);
+    target.fill(Qt::transparent);
+    QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+    QPainter painter(&target);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    QPainterPath p;
+    p.addEllipse(QRect(0,0,80,80));
+    painter.setClipPath(p);
+    painter.drawPixmap(0, 0,pixmap);
+    //btnImg->setPixmap(target); this for a Qlabel
+    QIcon ButtonIcon(target);
+    btnImg->setIcon(ButtonIcon);
+    btnImg->setIconSize(QSize(78,78));
     connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
 }
 
@@ -1534,24 +1543,29 @@ void BitcoinGUI::selectProfileImageFile(){
     dialog.setNameFilter(tr("Images (*.png *.xpm *.jpg)"));
     dialog.setViewMode(QFileDialog::Detail);
 
-    QString picturePath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.png *.xpm *.jpg)"));
+    QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.png *.xpm *.jpg)"));
 
-    QPixmap pixmap(picturePath);
-    QIcon ButtonIcon(pixmap);
+
+    QSettings settings;
+    settings.setValue("profilePicture", imgPath);
+    //settings.sync();
+    std::cout << "picturePath: " << imgPath.toStdString() << std::endl;
+    std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
+
+    QPixmap target(80, 80);
+    target.fill(Qt::transparent);
+    QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+    QPainter painter(&target);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    QPainterPath p;
+    p.addEllipse(QRect(0,0,80,80));
+    painter.setClipPath(p);
+    painter.drawPixmap(0, 0,pixmap);
+    //btnImg->setPixmap(target); this for a Qlabel
+    QIcon ButtonIcon(target);
     btnImg->setIcon(ButtonIcon);
-    btnImg->setIconSize(QSize(80,80));
-    btnImg->setFixedSize(80,80);
-    //btnImg->setMask(QRegion(btnImg->geometry(),QRegion::Ellipse));
-    btnImg->setStyleSheet("#btnChangeImage{height: 80px !important;border-radius: 40px !important;#btnChangeImage:hover {border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch !important;}#btnChangeImage:pressed {background-color: rgb(263,252,76) !important;}");
-
-    if(picturePath != "" && picturePath != NULL){
-        QSettings settings;
-        settings.setValue("profilePicture", picturePath);
-        settings.sync();
-        std::cout << "picturePath: " << picturePath.toStdString() << std::endl;
-        std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
-    }
-
+    btnImg->setIconSize(QSize(78,78));
 }
 
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
