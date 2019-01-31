@@ -18,6 +18,7 @@
 #include <QPoint>
 #include <QPushButton>
 #include <QSystemTrayIcon>
+#include <boost/filesystem/path.hpp>
 
 class ClientModel;
 class NetworkStyle;
