@@ -349,7 +349,7 @@ QToolBar {
 QToolBar > QToolButton {
     background-color:transparent;
     border: 0px;
-    height: 68px !important;
+    height: 63px !important;
     width: 120px;
     color: #fff;
 }
