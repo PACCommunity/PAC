@@ -84,6 +84,7 @@ const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
 
 const QString BitcoinGUI::DEFAULT_WALLET = "~Default";
 
+/** For the style on the comboBox */
 class MyProxyStyle : public QProxyStyle
 {
 public:
@@ -541,7 +542,7 @@ void BitcoinGUI::createActions()
     // prevents an open debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, SIGNAL(triggered()), rpcConsole, SLOT(hide()));
 
-    // TEST for combobox
+    // Setting the new style for the comboBox
     qApp->setStyle( new MyProxyStyle );
 
 #ifdef ENABLE_WALLET

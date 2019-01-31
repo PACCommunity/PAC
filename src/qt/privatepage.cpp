@@ -44,7 +44,12 @@ PrivatePage::PrivatePage(const PlatformStyle *platformStyle, QWidget *parent) :
     ui(new Ui::PrivatePage),
     clientModel(0),
     walletModel(0),
-    currentBalance(-1)
+    currentBalance(-1),
+    currentUnconfirmedBalance(-1),
+    currentImmatureBalance(-1),
+    currentWatchOnlyBalance(-1),
+    currentWatchUnconfBalance(-1),
+    currentWatchImmatureBalance(-1)
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
@@ -101,10 +106,18 @@ PrivatePage::~PrivatePage()
     delete ui;
 }
 
-void PrivatePage::setBalance(const CAmount& balance, const CAmount& anonymizedBalance)
+void PrivatePage::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance, const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance)
 {
     currentBalance = balance;
     currentAnonymizedBalance = anonymizedBalance;
+
+    // Not used
+    currentUnconfirmedBalance = unconfirmedBalance;
+    currentImmatureBalance = immatureBalance;
+    currentWatchOnlyBalance = watchOnlyBalance;
+    currentWatchUnconfBalance = watchUnconfBalance;
+    currentWatchImmatureBalance = watchImmatureBalance;
+
     ui->labelAnonymized->setText(BitcoinUnits::floorHtmlWithUnit(nDisplayUnit, anonymizedBalance, false, BitcoinUnits::separatorAlways));
 
     // for symmetry reasons also show immature label when the watch-only one is shown
@@ -135,8 +148,9 @@ void PrivatePage::setModel(WalletModel *model)
         // update the display unit, to not use the default ("PAC")
         updateDisplayUnit();
         // Keep up to date with wallet
-        setBalance(model->getBalance(), model->getAnonymizedBalance());
-        connect(model, SIGNAL(balanceChanged(CAmount,CAmount)), this, SLOT(setBalance(CAmount,CAmount)));
+        setBalance(model->getBalance(), model->getUnconfirmedBalance(), model->getImmatureBalance(), model->getAnonymizedBalance(),
+                   model->getWatchBalance(), model->getWatchUnconfirmedBalance(), model->getWatchImmatureBalance());
+        connect(model, SIGNAL(balanceChanged(CAmount,CAmount,CAmount,CAmount,CAmount,CAmount,CAmount)), this, SLOT(setBalance(CAmount,CAmount,CAmount,CAmount,CAmount,CAmount,CAmount)));
 
         connect(model->getOptionsModel(), SIGNAL(displayUnitChanged(int)), this, SLOT(updateDisplayUnit()));
         connect(model->getOptionsModel(), SIGNAL(privateSendRoundsChanged()), this, SLOT(updatePrivateSendProgress()));
@@ -158,7 +172,8 @@ void PrivatePage::updateDisplayUnit()
     {
         nDisplayUnit = walletModel->getOptionsModel()->getDisplayUnit();
         if(currentBalance != -1)
-            setBalance(currentBalance, currentAnonymizedBalance);
+            setBalance(currentBalance, currentUnconfirmedBalance, currentImmatureBalance, currentAnonymizedBalance,
+                       currentWatchOnlyBalance, currentWatchUnconfBalance, currentWatchImmatureBalance);
     }
 }
 
