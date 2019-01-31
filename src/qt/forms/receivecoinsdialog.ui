@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>938</width>
-    <height>456</height>
+    <width>986</width>
+    <height>504</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -44,11 +44,23 @@
         </property>
         <property name="maximumSize">
          <size>
-          <width>1000</width>
+          <width>16777215</width>
           <height>16777215</height>
          </size>
         </property>
         <layout class="QGridLayout" name="gridForLeft">
+         <property name="leftMargin">
+          <number>50</number>
+         </property>
+         <property name="topMargin">
+          <number>35</number>
+         </property>
+         <property name="rightMargin">
+          <number>50</number>
+         </property>
+         <property name="bottomMargin">
+          <number>20</number>
+         </property>
          <item row="1" column="0">
           <widget class="QFrame" name="verticalFrame">
            <property name="maximumSize">
@@ -98,7 +110,7 @@
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>700</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -155,7 +167,7 @@
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>202</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -214,7 +226,7 @@ max-width:400px !important;
                 </property>
                 <property name="maximumSize">
                  <size>
-                  <width>700</width>
+                  <width>16777215</width>
                   <height>16777215</height>
                  </size>
                 </property>
@@ -456,14 +468,20 @@ max-width:400px !important;
       <item>
        <widget class="QFrame" name="QRCodeFrame">
         <property name="sizePolicy">
-         <sizepolicy hsizetype="Fixed" vsizetype="Expanding">
+         <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="minimumSize">
+         <size>
+          <width>315</width>
+          <height>0</height>
+         </size>
+        </property>
         <property name="maximumSize">
          <size>
-          <width>300</width>
+          <width>450</width>
           <height>16777215</height>
          </size>
         </property>
@@ -472,21 +490,140 @@ max-width:400px !important;
           <number>6</number>
          </property>
          <property name="leftMargin">
-          <number>20</number>
+          <number>27</number>
          </property>
          <property name="topMargin">
-          <number>1</number>
+          <number>47</number>
          </property>
          <property name="rightMargin">
           <number>20</number>
          </property>
          <property name="bottomMargin">
-          <number>20</number>
+          <number>34</number>
          </property>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>15</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>AVAILABLE BALANCE</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="class" stdset="0">
+            <string>titleLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <layout class="QHBoxLayout" name="horizontalLayout_5">
+           <item>
+            <spacer name="horizontalSpacer">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QLabel" name="iconLabelAvailableBalance">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>30</height>
+              </size>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="labelBalance">
+             <property name="minimumSize">
+              <size>
+               <width>0</width>
+               <height>70</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>123,456.00</string>
+             </property>
+             <property name="class" stdset="0">
+              <string>pacCoinsLabel</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="horizontalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <widget class="QLabel" name="label_8">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>50</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>$ 578.03 USD</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+           <property name="class" stdset="0">
+            <string>usdLabel</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
          <item>
           <widget class="QLabel" name="lblQRCode">
            <property name="text">
             <string>QRCODE</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
            </property>
           </widget>
          </item>
@@ -507,32 +644,36 @@ max-width:400px !important;
           </spacer>
          </item>
          <item>
-          <widget class="QPushButton" name="receiveButton">
-           <property name="sizePolicy">
-            <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-             <horstretch>0</horstretch>
-             <verstretch>0</verstretch>
-            </sizepolicy>
-           </property>
-           <property name="minimumSize">
-            <size>
-             <width>260</width>
-             <height>0</height>
-            </size>
-           </property>
-           <property name="text">
-            <string>&amp;Request payment</string>
-           </property>
-           <property name="class" stdset="0">
-            <string>accentButton</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <layout class="QHBoxLayout" name="horizontalLayout"/>
+          <layout class="QHBoxLayout" name="horizontalLayout">
+           <item>
+            <widget class="QPushButton" name="receiveButton">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>260</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>&amp;Request payment</string>
+             </property>
+             <property name="class" stdset="0">
+              <string>accentButton</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item>
           <layout class="QHBoxLayout" name="horizontaLayoutlButton">
+           <property name="topMargin">
+            <number>9</number>
+           </property>
            <item>
             <spacer name="horizontalSpacer_3">
              <property name="orientation">
@@ -543,7 +684,7 @@ max-width:400px !important;
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>124</width>
+               <width>120</width>
                <height>20</height>
               </size>
              </property>

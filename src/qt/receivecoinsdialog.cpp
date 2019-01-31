@@ -43,6 +43,7 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
         ui->showRequestButton->setIcon(QIcon(":/icons/" + theme + "/edit"));
         ui->removeRequestButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
     }
+    ui->iconLabelAvailableBalance->setPixmap(QPixmap(":icons/bitcoin-32")); 
 
     // context menu actions
     QAction *copyURIAction = new QAction(tr("Copy URI"), this);
