@@ -61,6 +61,7 @@
 #include <QFontDatabase>
 #include <QSpacerItem>
 #include <QFont>
+#include <QFileDialog>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -424,6 +425,7 @@ void BitcoinGUI::createActions()
     connect(privateAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
+
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(QIcon(":/icons/" + theme + "/quit"), tr("E&xit"), this);
@@ -684,10 +686,9 @@ void BitcoinGUI::createHeaderBar()
     QLabel *messageLabel = new QLabel(this);
     QFrame *frameImg = new QFrame;
     QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
-    QPushButton *btnImg = new QPushButton;
+    btnImg = new QPushButton;
     QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
     QSpacerItem *messageLeftSpacer = new QSpacerItem(30,1, QSizePolicy::Fixed, QSizePolicy::Fixed);
-
 
     headerFrame->setFixedHeight(100);
     headerFrame->setObjectName("headerFrameLayout");
@@ -722,6 +723,24 @@ void BitcoinGUI::createHeaderBar()
     headerFrameLayout->addWidget(messageLabel);
     headerFrameLayout->addWidget(frameImg);
     headerFrame->setLayout(headerFrameLayout);
+
+    /** initializing profile image */
+    QSettings settings;
+    QString strImgValue = settings.value("profilePicture").toString();
+    if(strImgValue != "" && strImgValue != NULL){
+        QPixmap pixmap(strImgValue);
+        QIcon ButtonIcon(pixmap);
+        btnImg->setIcon(ButtonIcon);
+        btnImg->setIconSize(QSize(80,80));
+        btnImg->setFixedSize(80,80);
+        //btnImg->setMask(QRegion(btnImg->geometry(),QRegion::Ellipse));
+        btnImg->setStyleSheet("#btnChangeImage{height: 80px !important;border-radius: 40px !important;#btnChangeImage:hover {border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch !important;}#btnChangeImage:pressed {background-color: rgb(263,252,76) !important;}");
+    }
+    else{
+        std::cout << "ther is no image";
+        //ask for the user to choose the profile picture as pop up message and then set it.
+    }
+    connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -1491,6 +1510,32 @@ void BitcoinGUI::setEncryptionStatus(int status)
     }
 }
 #endif // ENABLE_WALLET
+
+void BitcoinGUI::selectProfileImageFile(){
+    QFileDialog dialog(this);
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setNameFilter(tr("Images (*.png *.xpm *.jpg)"));
+    dialog.setViewMode(QFileDialog::Detail);
+
+    QString picturePath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.png *.xpm *.jpg)"));
+
+    QPixmap pixmap(picturePath);
+    QIcon ButtonIcon(pixmap);
+    btnImg->setIcon(ButtonIcon);
+    btnImg->setIconSize(QSize(80,80));
+    btnImg->setFixedSize(80,80);
+    //btnImg->setMask(QRegion(btnImg->geometry(),QRegion::Ellipse));
+    btnImg->setStyleSheet("#btnChangeImage{height: 80px !important;border-radius: 40px !important;#btnChangeImage:hover {border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch !important;}#btnChangeImage:pressed {background-color: rgb(263,252,76) !important;}");
+
+    if(picturePath != "" && picturePath != NULL){
+        QSettings settings;
+        settings.setValue("profilePicture", picturePath);
+        settings.sync();
+        std::cout << "picturePath: " << picturePath.toStdString() << std::endl;
+        std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
+    }
+
+}
 
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
 {

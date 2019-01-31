@@ -139,6 +139,7 @@ private:
     ModalOverlay *modalOverlay;
 
     QFrame *headerFrame;
+    QPushButton *btnImg;
 
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
@@ -242,6 +243,8 @@ private Q_SLOTS:
     /** Show open dialog */
     void openClicked();
 #endif // ENABLE_WALLET
+    /** It will open a file picker to choose the image file*/
+    void selectProfileImageFile();
     /** Show configuration dialog */
     void optionsClicked();
     /** Show about dialog */
