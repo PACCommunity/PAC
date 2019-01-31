@@ -56,7 +56,7 @@ QStatusBar{
 #btnChangeImage{
     height: 80px !important;
     border-radius: 40px !important;
-    border-image: url(:/images/pac/profile) 0 0 0 0 stretch stretch;
+    border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch;
 }
 #btnChangeImage:hover {
     border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch !important;
@@ -349,7 +349,7 @@ QToolBar {
 QToolBar > QToolButton {
     background-color:transparent;
     border: 0px;
-    height: 68px !important;
+    height: 63px !important;
     width: 120px;
     color: #fff;
 }
