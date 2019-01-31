@@ -1537,45 +1537,44 @@ void BitcoinGUI::setEncryptionStatus(int status)
 #endif // ENABLE_WALLET
 
 void BitcoinGUI::selectProfileImageFile(){
-    QFileDialog dialog(this);
-    dialog.setFileMode(QFileDialog::ExistingFile);
-    dialog.setNameFilter(tr("Images (*.png *.xpm *.jpg)"));
-    dialog.setViewMode(QFileDialog::Detail);
-
     //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
     QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
 
-    /** Copy the image to the Pac Folder: */
-    boost::filesystem::path directoryToCopy = GetDefaultDataDir();
-    std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
-    std::cout << "imgPath: " << imgPath.toStdString() << std::endl;//debug
-    std::cout << "imgFinalPath: " << imgFinalPath << std::endl;//debug
+    if(!imgPath.isEmpty() && !imgPath.isNull()){/** when the user click on ok button inside the file picker */
+        /** Copy the image to the Pac Folder: */
+        boost::filesystem::path directoryToCopy = GetDefaultDataDir();
+        std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
+        std::cout << "imgPath: " << imgPath.toStdString() << std::endl;//debug
+        std::cout << "imgFinalPath: " << imgFinalPath << std::endl;//debug
 
-    std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
-    std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
-    ofs << ifs.rdbuf();
-    imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
+        std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
+        std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
+        ofs << ifs.rdbuf();
+        imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
 
-    QSettings settings;
-    settings.setValue("profilePicture", imgPath);
-    settings.sync();
-    std::cout << "picturePath: " << imgPath.toStdString() << std::endl;
-    std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
+        // saves the path as setting
+        QSettings settings;
+        settings.setValue("profilePicture", imgPath);
+        settings.sync();
+        std::cout << "picturePath: " << imgPath.toStdString() << std::endl;
+        std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
 
-    QPixmap target(80, 80);
-    target.fill(Qt::transparent);
-    QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
-    QPainter painter(&target);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setRenderHint(QPainter::Antialiasing, true);
-    QPainterPath p;
-    p.addEllipse(QRect(0,0,80,80));
-    painter.setClipPath(p);
-    painter.drawPixmap(0, 0,pixmap);
-    //btnImg->setPixmap(target); this for a Qlabel
-    QIcon ButtonIcon(target);
-    btnImg->setIcon(ButtonIcon);
-    btnImg->setIconSize(QSize(78,78));
+        //load the image from that path as the icon of the button
+        QPixmap target(80, 80);
+        target.fill(Qt::transparent);
+        QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+        QPainter painter(&target);
+        painter.setRenderHint(QPainter::Antialiasing);
+        painter.setRenderHint(QPainter::Antialiasing, true);
+        QPainterPath p;
+        p.addEllipse(QRect(0,0,80,80));
+        painter.setClipPath(p);
+        painter.drawPixmap(0, 0,pixmap);
+        //btnImg->setPixmap(target); this for a Qlabel
+        QIcon ButtonIcon(target);
+        btnImg->setIcon(ButtonIcon);
+        btnImg->setIconSize(QSize(78,78));
+    }
 }
 
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
