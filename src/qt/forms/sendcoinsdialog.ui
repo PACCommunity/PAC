@@ -52,7 +52,7 @@
          <number>50</number>
         </property>
         <property name="topMargin">
-         <number>50</number>
+         <number>30</number>
         </property>
         <property name="rightMargin">
          <number>50</number>
@@ -634,7 +634,7 @@
              <x>0</x>
              <y>0</y>
              <width>811</width>
-             <height>194</height>
+             <height>204</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -970,7 +970,7 @@
          <number>25</number>
         </property>
         <property name="topMargin">
-         <number>50</number>
+         <number>30</number>
         </property>
         <property name="rightMargin">
          <number>9</number>
@@ -1342,8 +1342,8 @@
             <widget class="QWidget" name="scrollAreaWidgetContents_3">
              <property name="geometry">
               <rect>
-               <x>-2</x>
-               <y>-141</y>
+               <x>0</x>
+               <y>0</y>
                <width>293</width>
                <height>484</height>
               </rect>

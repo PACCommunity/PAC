@@ -182,7 +182,7 @@ QDialog#SendCoinsDialog QComboBox QAbstractItemView::item, QDialog#ReceiveCoinsD
     margin:4px;
 }
 QDialog#SendCoinsDialog QComboBox::item, QDialog#ReceiveCoinsDialog QComboBox::item {
-    color:#fff;
+    color:#fff !important;
 }
 QDialog#SendCoinsDialog QComboBox::item:alternate, QDialog#ReceiveCoinsDialog QComboBox::item:alternate {
     background:rgb(20, 20, 20);
@@ -706,6 +706,3 @@ MasternodeList > QTabBar::tab{
     min-width: 40px !important;
     min-height:20px !important;
 }
-
-
-

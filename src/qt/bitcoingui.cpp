@@ -62,6 +62,7 @@
 #include <QSpacerItem>
 #include <QFont>
 #include <QFileDialog>
+#include <QProxyStyle>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -82,6 +83,19 @@ const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
 
 const QString BitcoinGUI::DEFAULT_WALLET = "~Default";
 
+class MyProxyStyle : public QProxyStyle
+{
+public:
+    int styleHint( StyleHint hint, const QStyleOption*
+    option = 0, const QWidget* widget = 0, QStyleHintReturn* returnData =
+    0 ) const   
+    {
+    if( SH_ComboBox_Popup == hint )
+            return 0;//disable combo-box popup top & bottom areas
+        return QProxyStyle::styleHint( hint, option, widget, returnData );   
+    }
+};
+
 BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
     QMainWindow(parent),
     clientModel(0),
@@ -97,8 +111,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     appMenuBar(0),
     overviewAction(0),
     historyAction(0),
-    privateAction(0),
     masternodeAction(0),
+    privateAction(0),
     proposalAction(0),
     quitAction(0),
     sendCoinsAction(0),
@@ -525,6 +539,9 @@ void BitcoinGUI::createActions()
     
     // prevents an open debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, SIGNAL(triggered()), rpcConsole, SLOT(hide()));
+
+    // TEST for combobox
+    qApp->setStyle( new MyProxyStyle );
 
 #ifdef ENABLE_WALLET
     if(walletFrame)

@@ -53,7 +53,7 @@
           <number>50</number>
          </property>
          <property name="topMargin">
-          <number>35</number>
+          <number>17</number>
          </property>
          <property name="rightMargin">
           <number>50</number>
@@ -475,7 +475,7 @@ max-width:400px !important;
         </property>
         <property name="minimumSize">
          <size>
-          <width>315</width>
+          <width>350</width>
           <height>0</height>
          </size>
         </property>
@@ -490,10 +490,10 @@ max-width:400px !important;
           <number>6</number>
          </property>
          <property name="leftMargin">
-          <number>27</number>
+          <number>5</number>
          </property>
          <property name="topMargin">
-          <number>47</number>
+          <number>27</number>
          </property>
          <property name="rightMargin">
           <number>20</number>
