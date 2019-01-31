@@ -27,8 +27,8 @@ public:
         currentUnit(BitcoinUnits::PAC),
         singleStep(100000) // satoshis
     {
-        setAlignment(Qt::AlignRight);
-
+        setAlignment(Qt::AlignHCenter);
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);//Expanding, Fixed
         connect(lineEdit(), SIGNAL(textEdited(QString)), this, SIGNAL(valueChanged()));
     }
 
@@ -198,6 +198,7 @@ BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
     amount->setLocale(QLocale::c());
     amount->installEventFilter(this);
     //amount->setMaximumWidth(170);
+    amount->setAlignment(Qt::AlignHCenter);//:v
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
