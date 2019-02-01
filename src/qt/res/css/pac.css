@@ -6,7 +6,6 @@ QLabel, QGroupBox::title{
     color: white !important;
     font-weight:normal;
 }
-
 QMainWindow{
     border-image: url(:/images/pac/drkblue_walletFrame_bg) 0 0 0 0 stretch stretch;
 }
@@ -19,6 +18,37 @@ QDialog{
     background-color:rgb(26,26,26);
     color:white;
 }
+/* Global ComboBox */
+QComboBox{
+    background-color: #0B0B0B;
+    border:0px;
+    height: 26px;
+    padding: 3px 5px 3px 5px;
+    color:#fff;
+    min-height: 24px !important;
+}
+QComboBox::down-arrow {
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+QComboBox::drop-down {
+    width:25px;
+    border:3px red;
+}
+QComboBox QListView {
+    color: #FFF;
+    background-color:  rgb(20, 20, 20);
+    border:0px;
+    height:100px;
+    border-radius: 5px;
+    padding-right:1px;
+    padding-left:1px;
+}
+QComboBox QAbstractItemView::item {
+    color: rgb(255, 255, 255) !important;
+    selection-background-color: #494949;
+    height: 35px !important;
+    min-width: 100px !important;
+}
 /* Global TabBar styles */
 QTabWidget::pane {
     background-color: transparent;
@@ -29,7 +59,6 @@ QTabWidget::pane {
 QTabWidget::tab-bar {
     left: 200px;
 }*/
-
 /* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
 QTabBar::tab {
     background:#1D1D1D;
@@ -52,7 +81,6 @@ QTabBar::tab:selected {
 QStatusBar{
     background-color: rgb(10,10,10) !important;
 }
-
 #btnChangeImage{
     height:80px;
     width:80px;
@@ -72,15 +100,11 @@ QStatusBar{
     border-radius: 40px;
     border: 1px solid rgb(263,252,76) !important;
 }
-
-
 /* Global containers */
 [class="container"]{
     background-color: rgba(50,50,50,0.35);
     border: 0px !important;
 }
-
-
 /* Global text inputs */
 [class="LineEdit"], [class="LineEdit_PacCoins"], [class="LineEditSmall"]{
     border: 0px;
@@ -111,8 +135,12 @@ QStatusBar{
     background-color: transparent;
     border: none;
 }
-
-
+[class="SpinBoxSmall"]{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}
 /* labels */
 QLabel[class="titleLabel"]{
     text-transform:uppercase;
@@ -137,8 +165,6 @@ QLabel[class="usdLabel"]{
 QLabel[class="labelPacIcon"]{
     margin: 0px;
 }
-
-
 /*textarea*/
 QPlainTextEdit {
     background: rgb(255, 0, 0);
@@ -146,66 +172,6 @@ QPlainTextEdit {
     font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
-
-
-/* Dropdown Menus  not for the tables */
-QDialog#SendCoinsDialog QComboBox, QDialog#ReceiveCoinsDialog QComboBox { 
-    border-radius: 20px;
-    background-color: rgb(10, 10, 10);
-    font-family: 'Volte Rounded', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    border:0px;
-    padding: 3px 5px 3px 5px;
-    min-height:40px;
-    color:#fff;
-}
-QDialog#SendCoinsDialog QComboBox:disabled, QDialog#ReceiveCoinsDialog QComboBox:disabled{
-    background-color: rgb(61,61,61);
-    color: #efefef;
-}
-QDialog#SendCoinsDialog QComboBox:checked, QDialog#ReceiveCoinsDialog QComboBox:checked{
-    background-color: rgba(219, 219, 219,0.5);
-}
-QDialog#SendCoinsDialog QComboBox:editable, QDialog#ReceiveCoinsDialog QComboBox:editable {
-    background-color: rgba(219, 219, 219,0.5);
-    color:#616161;
-    border:0px;
-}
-QDialog#SendCoinsDialog QComboBox::drop-down, QDialog#ReceiveCoinsDialog QComboBox::drop-down {
-    width:25px;
-    border:0px;
-}
-QDialog#SendCoinsDialog QComboBox::down-arrow, QDialog#ReceiveCoinsDialog QComboBox::down-arrow {
-    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
-}
-QDialog#SendCoinsDialog QComboBox QListView, QDialog#ReceiveCoinsDialog QComboBox QListView {
-    background-color:  rgb(20, 20, 20);
-    border:1px solid transparent;
-    border-radius: 5px;
-    padding-right:1px;
-    padding-left:1px;
-}
-QDialog#SendCoinsDialog QComboBox QAbstractItemView::item, QDialog#ReceiveCoinsDialog QComboBox QAbstractItemView::item {
-    margin:4px;
-}
-QDialog#SendCoinsDialog QComboBox::item, QDialog#ReceiveCoinsDialog QComboBox::item {
-    color:#fff !important;
-}
-QDialog#SendCoinsDialog QComboBox::item:alternate, QDialog#ReceiveCoinsDialog QComboBox::item:alternate {
-    background:rgb(20, 20, 20);
-}
-QDialog#SendCoinsDialog QComboBox::item:selected, QDialog#ReceiveCoinsDialog QComboBox::item:selected {
-    border:0px solid transparent;
-    background-color:  rgb(40, 40, 40);
-}
-QDialog#SendCoinsDialog QComboBox::indicator, QDialog#ReceiveCoinsDialog QComboBox::indicator {
-    background-color:transparent;
-    selection-background-color:transparent;
-    color:transparent;
-    selection-color:transparent;
-}
-
 /* ScrollBar */
 QScrollBar:vertical {
     background-color: #191919;
@@ -262,7 +228,6 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
     background: none;
 }
-
 /* GLOBAL SPINBOX */
 QAbstractSpinBox {
     border-radius: 20px;
@@ -305,16 +270,15 @@ QAbstractSpinBox::down-button {
 QAbstractSpinBox::down-arrow {
     image: url(':/images/pac/drkblue_downArrow_small') 0.5 0.5 0.5 0.5 stretch stretch;
 }
-
-
 /* GLOBAL TABLES*/
 QHeaderView { /* Top of the table Header */
     background-color: #0F0F0F;
 }
 QHeaderView::section { /* Top of the table Header Sections */
-    background-color: rgba(40, 40, 40, 0.3);
+    background-color: #0F0F0F;
     color:#fff;
     min-height:25px;
+    height:40px;
     font-weight:bold;
     font-size:11px;
     outline:0;
@@ -324,6 +288,18 @@ QHeaderView::section { /* Top of the table Header Sections */
     padding-right:5px;
     padding-top:2px;
     padding-bottom:2px;
+}
+QHeaderView::down-arrow{
+    image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
+}
+QHeaderView::up-arrow{
+    image: url(':/images/pac/drkblue_upArrow_small') 0 0 0 0 stretch stretch;
+    width: 13px;
+    height: 13px;
+    margin-right: 5px;
 }
 QScrollArea {
     background:transparent;
@@ -345,8 +321,6 @@ QTableView::item:selected { /* Table Item Selected */
 QTableWidget{
     background-color: rgba(40, 40, 40, 0.3);
 }
-
-
 /* ToolBar Menu */
 QToolBar {
     background-color: #000000;
@@ -373,7 +347,6 @@ QToolBar > QToolButton:checked {
     background-color: rgba(255,0,0,0.6);
     border:1px green !important;
 }
-
 /* Global Button styles*/
 QPushButton {
     background: transparent;
@@ -430,7 +403,8 @@ QPushButton:pressed {
     background: #F4EA13;
     color: rgb(5,5,5);
     border-radius: 35px;
-    height: 70px;
+    min-height:70px !important;
+    height: 70px !important;
     width: 280px;
     font-style: normal;
     font-family: 'Volte Rounded', sans-serif;
@@ -445,31 +419,11 @@ QCheckBox {
 QRadioButton {
     color: rgb(255, 255, 255);
 }
-
-
 /* GLOBAL CHECKBOX */
-QCheckBox::indicator:unchecked {
+QCheckBox::indicator:unchecked, QCheckBox::indicator:unchecked:hover, QCheckBox::indicator:unchecked:pressed, QCheckBox::indicator:indeterminate:hover{
     image:url(':/images/pac/unchecked_b');
 }
-QCheckBox::indicator:unchecked:hover {
-    image:url(':/images/pac/unchecked_b');
-}
-QCheckBox::indicator:unchecked:pressed {
-    image:url(':/images/pac/unchecked_b');
-}
-QCheckBox::indicator:checked {
-    image:url(':/images/pac/checked_b');
-}
-QCheckBox::indicator:checked:hover {
-    image:url(':/images/pac/checked_b');
-}
-QCheckBox::indicator:checked:pressed {
-    image:url(':/images/pac/checked_b');
-}
-QCheckBox::indicator:indeterminate:hover {
-    image:url(':/images/pac/unchecked_b');
-}
-QCheckBox::indicator:indeterminate:pressed {
+QCheckBox::indicator:checked, QCheckBox::indicator:checked:hover, QCheckBox::indicator:checked:pressed, QCheckBox::indicator:indeterminate:pressed {
     image:url(':/images/pac/checked_b');
 }
 QCheckBox::indicator:checked:disabled{
@@ -478,30 +432,11 @@ QCheckBox::indicator:checked:disabled{
 QCheckBox::indicator:unchecked:disabled{
     image:url(':/images/pac/unchecked_b_dis');
 }
-
 /* GLOBAL RADIO BUTTON */
-QRadioButton::indicator:unchecked {
+QRadioButton::indicator:unchecked, QRadioButton::indicator:unchecked:hover, QRadioButton::indicator:checked:pressed, QRadioButton::indicator:indeterminate:hover {
     image:url(':/images/pac/unchecked');
 }
-QRadioButton::indicator:unchecked:hover {
-    image:url(':/images/pac/unchecked');
-}
-QRadioButton::indicator:unchecked:pressed {
-    image:url(':/images/pac/checked');
-}
-QRadioButton::indicator:checked {
-    image:url(':/images/pac/checked');
-}
-QRadioButton::indicator:checked:hover {
-    image:url(':/images/pac/checked');
-}
-QRadioButton::indicator:checked:pressed {
-    image:url(':/images/pac/unchecked');
-}
-QRadioButton::indicator:indeterminate:hover {
-    image:url(':/images/pac/unchecked');
-}
-QRadioButton::indicator:indeterminate:pressed {
+QRadioButton::indicator:unchecked:pressed, QRadioButton::indicator:checked, QRadioButton::indicator:checked:hover , QRadioButton::indicator:indeterminate:pressed {
     image:url(':/images/pac/checked');
 }
 QRadioButton::indicator:checked:disabled{
@@ -510,22 +445,85 @@ QRadioButton::indicator:checked:disabled{
 QRadioButton::indicator:unchecked:disabled{
     image:url(':/images/pac/unchecked_dis');
 }
-
+/* ComboBox dropdown Menus for the selector of PAC units inside BitcoinAmountField inputs  */
+BitcoinAmountField QComboBox {
+    border-radius: 20px;
+    background-color: #0A0A0A;
+    font-family: 'Volte Rounded', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border:0px;
+    padding: 3px 5px 3px 5px;
+    min-height:40px;
+    color:#fff;
+}
+/* when the combo box is disabled */
+BitcoinAmountField QComboBox{
+    border-radius: 20px;
+    background-color: rgb(10, 10, 10);
+    font-family: 'Volte Rounded', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    border:0px;
+    padding: 3px 5px 3px 5px;
+    min-height:40px;
+    color:#fff;
+}
+BitcoinAmountField QComboBox:disabled{
+    background-color: rgb(61,61,61);
+    color: #efefef;
+}
+BitcoinAmountField QComboBox:checked{
+    background-color: rgba(219, 219, 219,0.5);
+}
+BitcoinAmountField QComboBox:editable{
+    background-color: rgba(219, 219, 219,0.5);
+    color:#616161;
+    border:0px;
+}
+BitcoinAmountField QComboBox::drop-down {
+    width:25px;
+    border:0px;
+}
+BitcoinAmountField QComboBox::down-arrow {
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
+}
+BitcoinAmountField QComboBox QListView{
+    color: #FFF;
+    background-color:  rgb(20, 20, 20);
+    border:1px solid transparent;
+    border-radius: 5px;
+    padding-right:1px;
+    padding-left:1px;
+}
+BitcoinAmountField QComboBox QAbstractItemView::item {
+    margin:4px;
+}
+BitcoinAmountField QComboBox::item {
+    color:#fff !important;
+}
+BitcoinAmountField QComboBox::item:alternate{
+    background:rgb(20, 20, 20);
+}
+BitcoinAmountField QComboBox::item:selected{
+    border:0px solid transparent;
+    background-color:  rgb(40, 40, 40);
+}
+BitcoinAmountField QComboBox::indicator {
+    background-color:transparent;
+    selection-background-color:transparent;
+    color:transparent;
+    selection-color:transparent;
+}
 /*
  * Overview Page
 */
 #frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
     text-transform:uppercase;
 }
-
-
 /*
  * SendCoins Page
  */
-/*#SendCoinsEntry>QValidatedLineEdit, #SendCoinsEntry>BitcoinAmountField, #payAmount{
-    background:red !important;
-    border: 0px !important;
-}*/
 #frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
     border: 0px !important;
 }
@@ -542,7 +540,6 @@ QRadioButton::indicator:unchecked:disabled{
 #verticalWidget{
     margin-left: 25px !important;
 }
-
 /*
  * ReceiveCoins Page
  */
@@ -556,7 +553,6 @@ QRadioButton::indicator:unchecked:disabled{
     border-bottom: 1px solid #474747;
     border-right: 0px solid transparent;
 }
-
 /*
  * Transactions Page
  */
@@ -567,32 +563,9 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget{
     border:0px;
     min-height: 30px !important;
 }
-QComboBox#watchOnlyWidget, QComboBox#dateWidget, QComboBox#typeWidget {
-    background-color: #0B0B0B;
-    border:0px;
-    padding: 3px 5px 3px 5px;
-    color:#fff;
-    min-height: 24px !important;
-}
-#watchOnlyWidget::down-arrow, #dateWidget::down-arrow, #typeWidget::down-arrow {
-    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
-}
-#watchOnlyWidget::drop-down, #dateWidget::drop-down, #typeWidget::drop-down {
-    width:25px;
-    border:3px red;
-}
-QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#typeWidget QListView {
-    background-color:  rgb(20, 20, 20);
-    border:0px;
-    border-radius: 5px;
-    padding-right:1px;
-    padding-left:1px;
-}
-
 /*
  * Private Page
  */
-
 #framePrivateSend{
     background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.35), stop: 1 rgba(75, 75, 75, 0.30));
     border: 0px !important;
@@ -620,7 +593,6 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     font-family:"Gotham Medium", sans-serif;
     color: #FDF002;
 }
-
 /* Black button */
 [class="buttonAllBlack"]{
     text-transform:uppercase;
@@ -649,8 +621,6 @@ QComboBox#watchOnlyWidget QListView, QComboBox#dateWidget QListView, QComboBox#t
     background: transparent;
     border: 0px;
 }
-
-
 /*
  * Proposal Page
  */
@@ -694,7 +664,6 @@ MasternodeList > QTabBar::tab{
     border-radius: 12px;
     height: 24px;
 }
-
 /*
  * OptionsDialog
 */
@@ -707,10 +676,4 @@ MasternodeList > QTabBar::tab{
 }
 #OptionsDialog > #resetButton{
     width:200px !important;
-}
-[class="SpinBoxSmall"]{
-    border-radius: 10px !important;
-    font-size: 12px !important;
-    min-width: 40px !important;
-    min-height:20px !important;
 }
