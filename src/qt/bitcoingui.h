@@ -247,7 +247,7 @@ private Q_SLOTS:
     void gotoVerifyMessageTab(QString addr = "");
 
     /** Receive the news from the web socket */
-    void receive_from_object(QString data);
+    void receive_from_wrapper(QString data);
 
     /** Show open dialog */
     void openClicked();

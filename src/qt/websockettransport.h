@@ -17,8 +17,8 @@ public:
 
     void sendMessage(const QJsonObject &message) Q_DECL_OVERRIDE;
 
-//Q_SIGNALS:
-//	void transmit_to_gui(QString message);
+Q_SIGNALS:
+	void transmit_to_wrapper(QString message);
 
 private Q_SLOTS:
     void textMessageReceived(const QString &message);

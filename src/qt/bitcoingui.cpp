@@ -311,7 +311,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(walletFrame, SIGNAL(requestedSyncWarningInfo()), this, SLOT(showModalOverlay()));
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
-        connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_object(QString)));
+        connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_wrapper(QString)));
     }
 #endif
 }
@@ -1781,7 +1781,7 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
     }
 }
 
-void BitcoinGUI::receive_from_object(QString message)
+void BitcoinGUI::receive_from_wrapper(QString message)
 {
     messageLabel->setText(message);
     //messageLabel->setText(message);

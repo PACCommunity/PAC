@@ -25,8 +25,13 @@ void WebSocketClientWrapper::handleNewConnection()
 {
     cout << "BeforeConnecting" << endl;
     qWarning() << "WebSocket connected: " << m_url;
-    Q_EMIT clientConnected(new WebSocketTransport(&m_webSocket));
+    m_websockettransport = new WebSocketTransport(&m_webSocket);
+    connect(m_websockettransport,SIGNAL(transmit_to_wrapper(QString)),this,SLOT(receive_from_transport(QString)));
+    Q_EMIT clientConnected(m_websockettransport);
     cout << "AfterConnecting" << endl;
+}
 
-    Q_EMIT transmit_to_gui("messageDataaaaaaa");
+void WebSocketClientWrapper::receive_from_transport(QString message)
+{
+    Q_EMIT transmit_to_gui(message);
 }

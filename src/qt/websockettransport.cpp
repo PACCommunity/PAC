@@ -39,4 +39,6 @@ void WebSocketTransport::textMessageReceived(const QString &messageData)
     qDebug() << messageData;
     cout << "Message out..." << endl;
     //emit transmit_to_gui(messageData);
+
+    Q_EMIT transmit_to_wrapper(messageData);
 }

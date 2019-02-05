@@ -1,7 +1,7 @@
 #ifndef WEBSOCKETCLIENTWRAPPER_H
 #define WEBSOCKETCLIENTWRAPPER_H
 
-//#include "bitcoingui.h"
+#include "websockettransport.h"
 
 #include <QObject>
 #include <QtWebSockets/QWebSocket>
@@ -23,10 +23,13 @@ Q_SIGNALS:
 
 private Q_SLOTS:
     void handleNewConnection();
+    /** Receive the news from the web socket */
+    void receive_from_transport(QString data);
 
 private:
     QUrl m_url;
     QWebSocket m_webSocket;
+    WebSocketTransport *m_websockettransport;
 };
 
 QT_END_NAMESPACE
