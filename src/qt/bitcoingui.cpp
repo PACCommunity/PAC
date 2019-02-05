@@ -35,6 +35,7 @@
 #include "util.h"
 #include "masternode-sync.h"
 #include "masternodelist.h"
+#include "websocketclientwrapper.h"
 
 #include <iostream>
 
@@ -300,11 +301,17 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     connect(labelConnectionsIcon, SIGNAL(clicked(QPoint)), this, SLOT(showPeers()));
 
     modalOverlay = new ModalOverlay(this->centralWidget());
+
+    // Socket connection
+    // WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
+    m_websocketclientwrapper = new WebSocketClientWrapper(QUrl("ws://144.202.121.149"));
+
 #ifdef ENABLE_WALLET
     if(enableWallet) {
         connect(walletFrame, SIGNAL(requestedSyncWarningInfo()), this, SLOT(showModalOverlay()));
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
+        connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_object(QString)));
     }
 #endif
 }
@@ -703,7 +710,7 @@ void BitcoinGUI::createHeaderBar()
     /** Creating the profile image widget */
     headerFrame = new QFrame;
     QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
-    QLabel *messageLabel = new QLabel(this);
+    messageLabel = new QLabel(this);
     QFrame *frameImg = new QFrame;
     QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
     btnImg = new QPushButton;
@@ -1772,4 +1779,11 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
     {
         optionsModel->setDisplayUnit(action->data());
     }
+}
+
+void BitcoinGUI::receive_from_object(QString message)
+{
+    messageLabel->setText(message);
+    //messageLabel->setText(message);
+    //ui->lineEdit->setText("true");
 }

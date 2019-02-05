@@ -1,6 +1,8 @@
 #ifndef WEBSOCKETTRANSPORT_H
 #define WEBSOCKETTRANSPORT_H
 
+//#include "bitcoingui.h"
+
 #include <QtWebChannel/QWebChannelAbstractTransport>
 #include <QtWebSockets/QWebSocket>
 
@@ -14,6 +16,9 @@ public:
     virtual ~WebSocketTransport();
 
     void sendMessage(const QJsonObject &message) Q_DECL_OVERRIDE;
+
+//Q_SIGNALS:
+//	void transmit_to_gui(QString message);
 
 private Q_SLOTS:
     void textMessageReceived(const QString &message);

@@ -166,8 +166,6 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
     
-    //Socket connection
-    //WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)

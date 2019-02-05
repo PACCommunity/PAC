@@ -27,4 +27,6 @@ void WebSocketClientWrapper::handleNewConnection()
     qWarning() << "WebSocket connected: " << m_url;
     Q_EMIT clientConnected(new WebSocketTransport(&m_webSocket));
     cout << "AfterConnecting" << endl;
+
+    Q_EMIT transmit_to_gui("messageDataaaaaaa");
 }

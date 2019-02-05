@@ -1,6 +1,8 @@
 #ifndef WEBSOCKETCLIENTWRAPPER_H
 #define WEBSOCKETCLIENTWRAPPER_H
 
+//#include "bitcoingui.h"
+
 #include <QObject>
 #include <QtWebSockets/QWebSocket>
 
@@ -17,6 +19,7 @@ public:
 
 Q_SIGNALS:
     void clientConnected(WebSocketTransport* client);
+    void transmit_to_gui(QString message);
 
 private Q_SLOTS:
     void handleNewConnection();
