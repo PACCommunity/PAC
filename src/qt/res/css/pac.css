@@ -277,8 +277,8 @@ QHeaderView { /* Top of the table Header */
 QHeaderView::section { /* Top of the table Header Sections */
     background-color: #0F0F0F;
     color:#fff;
-    min-height:25px;
-    height:40px;
+    min-height:20px;
+    height:35px;
     font-weight:bold;
     font-size:11px;
     outline:0;
@@ -550,9 +550,14 @@ BitcoinAmountField QComboBox::indicator {
     color: #FF1D1D;
 }
 #recentRequestsView QHeaderView::section{
-    border-bottom: 1px solid #474747;
-    border-right: 0px solid transparent;
+    text-transform:uppercase;
+    height:20px !important;
+    border-bottom: 1px solid #707070 !important;
+    border-right: 0px solid transparent !important;
+    background: transparent !important;
+    color: #8E8E8E !important;
 }
+
 /*
  * Transactions Page
  */
