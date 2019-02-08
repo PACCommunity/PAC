@@ -29,7 +29,6 @@
 
 #include "qwebchannel.h"
 #include <QCoreApplication>
-#include "websocketclientwrapper.h"
 
 #include <string>
 #include <iostream>

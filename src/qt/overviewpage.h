@@ -64,6 +64,8 @@ private:
     std::unique_ptr<TransactionFilterProxy> filter;
 
     void SetupTransactionList(int nNumItems);
+    void getadata();
+    void myFunction();
 
 private Q_SLOTS:
     void updateDisplayUnit();

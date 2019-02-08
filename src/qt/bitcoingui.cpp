@@ -66,6 +66,9 @@
 #include <QFileDialog>
 #include <QProxyStyle>
 #include <QPainter>
+#include <QJsonDocument>
+#include <QJsonObject>
+#include <QJsonValue>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -1781,9 +1784,39 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
     }
 }
 
+/** Setss the message for the news and the value of the PAC to USD */
 void BitcoinGUI::receive_from_wrapper(QString message)
 {
-    messageLabel->setText(message);
-    //messageLabel->setText(message);
-    //ui->lineEdit->setText("true");
+    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
+    if(!doc.isNull())
+    {
+        if(doc.isObject())
+        {
+            QJsonObject ob = doc.object();
+            if(ob.isEmpty())
+            {
+                messageLabel->setText("There's an issue getting the latest news.");
+            }
+            else
+            {
+                if (ob.contains("message"))
+                {
+                    messageLabel->setText(ob["message"].toString());
+                    
+                }
+                else
+                {
+                    messageLabel->setText("There's an issue getting the latest news.");
+                }
+            }
+        }
+        else
+        {
+            messageLabel->setText("There's an issue getting the latest news.");
+        }
+    }
+    else
+    {
+        messageLabel->setText("There's an issue getting the latest news.");
+    }
 }

@@ -144,7 +144,6 @@ private:
     QPushButton *btnImg;
     QLabel *messageLabel;
 
-    //WebSocketTransport m_websockettransport;
     WebSocketClientWrapper *m_websocketclientwrapper;
 
     /** Keep track of previous number of blocks, to detect progress */
