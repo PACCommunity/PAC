@@ -291,6 +291,8 @@ void OverviewPage::updateDisplayUnit()
 
         ui->listTransactions->update();
     }
+    QSettings settings;
+    ui->labelBalanceUSD->setText(settings.value("PACvalue").toString() + "" + currentBalance);
 }
 
 void OverviewPage::updateAlerts(const QString &warnings)

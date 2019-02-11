@@ -59,7 +59,7 @@ bool WalletFrame::addWallet(const QString& name, WalletModel *walletModel)
 
     connect(walletView, SIGNAL(outOfSyncWarningClicked()), this, SLOT(outOfSyncWarningClicked()));
     connect(this,SIGNAL(transmit_to_walletview(QString)), walletView, SLOT(receive_from_walletframe(QString)));
-
+    
     return true;
 }
 

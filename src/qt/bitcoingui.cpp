@@ -1802,7 +1802,9 @@ void BitcoinGUI::receive_from_wrapper(QString message)
                 if (ob.contains("message"))
                 {
                     messageLabel->setText(ob["message"].toString());
-                    Q_EMIT transmit_to_walletframe("messageDataaaaaaa");
+                    QSettings settings;
+                    settings.setValue("PACvalue",ob["pacusd"].toString());
+                    settings.sync();
                 }
                 else
                 {
