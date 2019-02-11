@@ -120,6 +120,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
 
     // Pass through messages from transactionView
     connect(transactionView, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+    // Sends the value of the PAC to the overviewPage
+    connect(this,SIGNAL(transmit_to_overview(QString)), overviewPage, SLOT(receive_from_walletview(QString)));
 }
 
 WalletView::~WalletView()
@@ -416,5 +419,6 @@ void WalletView::trxAmount(QString amount)
 
 void WalletView::receive_from_walletframe(QString data)
 {
-    // QEMIT next step
+    overviewPage->setStyleSheet("background: red;");
+    Q_EMIT transmit_to_overview(data);
 }

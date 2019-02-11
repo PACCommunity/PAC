@@ -52,13 +52,13 @@
          <number>50</number>
         </property>
         <property name="topMargin">
-         <number>30</number>
+         <number>25</number>
         </property>
         <property name="rightMargin">
          <number>50</number>
         </property>
         <property name="bottomMargin">
-         <number>50</number>
+         <number>30</number>
         </property>
         <item>
          <widget class="QFrame" name="frameCoinControl">
@@ -634,7 +634,7 @@
              <x>0</x>
              <y>0</y>
              <width>811</width>
-             <height>70</height>
+             <height>186</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -672,12 +672,12 @@
                <enum>Qt::Vertical</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
                 <width>20</width>
-                <height>40</height>
+                <height>150</height>
                </size>
               </property>
              </spacer>
@@ -761,72 +761,17 @@
         <item>
          <layout class="QVBoxLayout" name="verticalLayout_4">
           <item>
-           <spacer name="verticalSpacer_10">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_5">
-            <property name="text">
-             <string>Comments</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="class" stdset="0">
-             <string>titleLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_2">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>10</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QLineEdit" name="lineComment">
-            <property name="placeholderText">
-             <string>Add a comment to the payment</string>
-            </property>
-            <property name="class" stdset="0">
-             <string>LineEdit</string>
-            </property>
-           </widget>
-          </item>
-          <item>
            <spacer name="verticalSpacer_3">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
+             <enum>QSizePolicy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>10</height>
+              <height>5</height>
              </size>
             </property>
            </spacer>
@@ -843,7 +788,7 @@
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>170</width>
+                <width>200</width>
                 <height>20</height>
                </size>
               </property>
@@ -880,12 +825,12 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
+             <enum>QSizePolicy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>10</height>
+              <height>5</height>
              </size>
             </property>
            </spacer>
@@ -906,12 +851,12 @@
              <enum>Qt::Vertical</enum>
             </property>
             <property name="sizeType">
-             <enum>QSizePolicy::Expanding</enum>
+             <enum>QSizePolicy::Preferred</enum>
             </property>
             <property name="sizeHint" stdset="0">
              <size>
               <width>20</width>
-              <height>10</height>
+              <height>5</height>
              </size>
             </property>
            </spacer>
@@ -970,13 +915,13 @@
          <number>25</number>
         </property>
         <property name="topMargin">
-         <number>30</number>
+         <number>25</number>
         </property>
         <property name="rightMargin">
          <number>9</number>
         </property>
         <property name="bottomMargin">
-         <number>50</number>
+         <number>30</number>
         </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
@@ -1037,7 +982,7 @@
               <property name="minimumSize">
                <size>
                 <width>0</width>
-                <height>70</height>
+                <height>50</height>
                </size>
               </property>
               <property name="text">
@@ -1243,7 +1188,7 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>50</height>
+              <height>30</height>
              </size>
             </property>
             <property name="text">
@@ -1342,7 +1287,7 @@
             <widget class="QWidget" name="scrollAreaWidgetContents_3">
              <property name="geometry">
               <rect>
-               <x>0</x>
+               <x>-95</x>
                <y>0</y>
                <width>293</width>
                <height>484</height>

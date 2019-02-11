@@ -148,6 +148,8 @@ Q_SIGNALS:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
+    /** Send PAC value to overviewPage */
+    void transmit_to_overview(QString message);
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H
