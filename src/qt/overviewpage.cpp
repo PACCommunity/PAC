@@ -17,6 +17,7 @@
 #include "transactiontablemodel.h"
 #include "utilitydialog.h"
 #include "walletmodel.h"
+#include "walletview.h"
 
 #include "instantx.h"
 #include "darksendconfig.h"
@@ -164,7 +165,7 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
 
     // start with displaying the "out of sync" warnings
     showOutOfSyncWarning(true);
-    
+
 }
 
 void OverviewPage::handleTransactionClicked(const QModelIndex &index)
@@ -290,6 +291,8 @@ void OverviewPage::updateDisplayUnit()
 
         ui->listTransactions->update();
     }
+    QSettings settings;
+    ui->labelBalanceUSD->setText(settings.value("PACvalue").toString() + "" + currentBalance);
 }
 
 void OverviewPage::updateAlerts(const QString &warnings)
@@ -332,4 +335,11 @@ void OverviewPage::on_overviewInfo_clicked()
 {
     HelpMessageDialog dlg(this, HelpMessageDialog::ovhelp);
     dlg.exec();
+}
+
+void OverviewPage::receive_from_walletview(QString data)
+{
+    //ui->labelBalanceUSD->setText(data);
+
+    ui->labelBalanceUSD->setText("TEST");
 }

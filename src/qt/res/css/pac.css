@@ -402,8 +402,8 @@ QPushButton:pressed {
     border: none;
     background: #F4EA13;
     color: rgb(5,5,5);
-    border-radius: 35px;
-    min-height:70px !important;
+    border-radius: 30px;
+    min-height:60px !important;
     height: 70px !important;
     width: 280px;
     font-style: normal;
