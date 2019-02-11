@@ -214,7 +214,6 @@ void ReceiveCoinsDialog::generateQRCode()
             painter.fillPath(painterPath, Qt::white);
             painter.drawPixmap(25,25,pixmap);
             lblQRCode->setPixmap(target);
-            lblQRCode->setSizePolicy();
             //lblQRCode->setPixmap(QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding));
         }
     }
