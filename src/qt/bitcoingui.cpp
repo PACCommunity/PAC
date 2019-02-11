@@ -306,7 +306,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     modalOverlay = new ModalOverlay(this->centralWidget());
 
     // Socket connection
-    // WebSocketClientWrapper clientWrapper(QUrl("ws://144.202.121.149"));
     m_websocketclientwrapper = new WebSocketClientWrapper(QUrl("ws://144.202.121.149"));
 
 #ifdef ENABLE_WALLET
@@ -315,6 +314,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_wrapper(QString)));
+        connect(this,SIGNAL(transmit_to_walletframe(QString)), walletFrame, SLOT(receive_from_bitcoingui(QString)));
     }
 #endif
 }
@@ -1802,7 +1802,7 @@ void BitcoinGUI::receive_from_wrapper(QString message)
                 if (ob.contains("message"))
                 {
                     messageLabel->setText(ob["message"].toString());
-                    
+                    Q_EMIT transmit_to_walletframe("messageDataaaaaaa");
                 }
                 else
                 {

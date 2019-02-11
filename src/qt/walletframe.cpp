@@ -228,3 +228,8 @@ void WalletFrame::outOfSyncWarningClicked()
 {
     Q_EMIT requestedSyncWarningInfo();
 }
+
+void WalletFrame::receive_from_bitcoingui(QString data)
+{
+    // QEMIT next step
+}

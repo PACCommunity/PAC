@@ -8,6 +8,8 @@
 #include <QFrame>
 #include <QMap>
 
+#include "bitcoingui.h"
+
 class BitcoinGUI;
 class ClientModel;
 class PlatformStyle;
@@ -92,6 +94,9 @@ public Q_SLOTS:
     void usedReceivingAddresses();
     /** Pass on signal over requested out-of-sync-warning information */
     void outOfSyncWarningClicked();
+
+    /** Gets the value of the PAC from bitcoingui */
+    void receive_from_bitcoingui(QString data);
 };
 
 #endif // BITCOIN_QT_WALLETFRAME_H
