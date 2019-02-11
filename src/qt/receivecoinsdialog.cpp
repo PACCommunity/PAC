@@ -173,7 +173,6 @@ void ReceiveCoinsDialog::generateQRCode()
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
     QString uri = GUIUtil::formatBitcoinURI(info);
-
 #ifdef USE_QRCODE
     lblQRCode->setText("");
     if(!uri.isEmpty())
@@ -201,20 +200,19 @@ void ReceiveCoinsDialog::generateQRCode()
                 }
             }
             QRcode_free(code);
-            int LabelSize = 200;
-
-            QPixmap target(200, 200);
+            int QRCodeLabelSize = 160;
+            int QRCodeSize = QRCodeLabelSize - 20;
+            QPixmap target(QRCodeLabelSize, QRCodeLabelSize);
             target.fill(Qt::transparent);
-            QPixmap pixmap = QPixmap::fromImage(myImage).scaled(150, 150,Qt::KeepAspectRatioByExpanding);
+            QPixmap pixmap = QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
             QPainter painter(&target);
             painter.setRenderHint(QPainter::Antialiasing, true);
             QPainterPath painterPath;
-            painterPath.addEllipse(QRect(0,0,200,200));
+            painterPath.addEllipse(QRect(0,0,QRCodeLabelSize,QRCodeLabelSize));
             painter.setClipPath(painterPath);
             painter.fillPath(painterPath, Qt::white);
-            painter.drawPixmap(25,25,pixmap);
+            painter.drawPixmap(10,10,pixmap);
             lblQRCode->setPixmap(target);
-            //lblQRCode->setPixmap(QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding));
         }
     }
 #endif
