@@ -6,6 +6,7 @@
 #define BITCOIN_QT_RECEIVECOINSDIALOG_H
 
 #include "guiutil.h"
+#include "receiverequestdialog.h"
 
 #include <QDialog>
 #include <QHeaderView>
@@ -14,6 +15,8 @@
 #include <QMenu>
 #include <QPoint>
 #include <QVariant>
+#include <QImage>
+#include <QLabel>
 
 class OptionsModel;
 class PlatformStyle;
@@ -49,8 +52,7 @@ public Q_SLOTS:
     void clear();
     void reject();
     void accept();
-    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
-                                 const CAmount& watchBalance, const CAmount& watchUnconfirmedBalance, const CAmount& watchImmatureBalance);
+    void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance, const CAmount& watchBalance, const CAmount& watchUnconfirmedBalance, const CAmount& watchImmatureBalance);
 
 protected:
     virtual void keyPressEvent(QKeyEvent *event);
@@ -65,6 +67,8 @@ private:
     QModelIndex selectedRow();
     void copyColumnToClipboard(int column);
     virtual void resizeEvent(QResizeEvent *event);
+    void generateQRCode();
+    QRImageWidget *lblQRCode;
 
 private Q_SLOTS:
     void on_receiveButton_clicked();
