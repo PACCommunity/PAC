@@ -8,6 +8,7 @@
 #include "amount.h"
 #include "masternodelist.h"
 #include "proposallist.h"
+#include "walletframe.h"
 
 #include <QStackedWidget>
 
@@ -97,6 +98,9 @@ public Q_SLOTS:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
+
+    /** Gets the value of the PAC from walletframe */
+    void receive_from_walletframe(QString data);
 
     /** Show incoming transaction notification for new transactions.
 

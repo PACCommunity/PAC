@@ -43,6 +43,7 @@ public:
 Q_SIGNALS:
     /** Notify that the user has requested more information about the out-of-sync warning */
     void requestedSyncWarningInfo();
+    void transmit_to_walletview(QString message);
 
 private:
     QStackedWidget *walletStack;

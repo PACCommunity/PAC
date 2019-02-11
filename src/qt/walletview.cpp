@@ -20,6 +20,7 @@
 #include "transactionview.h"
 #include "walletmodel.h"
 #include "privatepage.h"
+#include "walletframe.h"
 
 #include "ui_interface.h"
 
@@ -411,4 +412,9 @@ void WalletView::requestedSyncWarningInfo()
 void WalletView::trxAmount(QString amount)
 {
     transactionSum->setText(amount);
+}
+
+void WalletView::receive_from_walletframe(QString data)
+{
+    // QEMIT next step
 }

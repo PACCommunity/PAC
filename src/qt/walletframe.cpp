@@ -58,6 +58,7 @@ bool WalletFrame::addWallet(const QString& name, WalletModel *walletModel)
     connect(walletView, SIGNAL(showNormalIfMinimized()), gui, SLOT(showNormalIfMinimized()));
 
     connect(walletView, SIGNAL(outOfSyncWarningClicked()), this, SLOT(outOfSyncWarningClicked()));
+    connect(this,SIGNAL(transmit_to_walletview(QString)), walletView, SLOT(receive_from_walletframe(QString)));
 
     return true;
 }
@@ -231,5 +232,5 @@ void WalletFrame::outOfSyncWarningClicked()
 
 void WalletFrame::receive_from_bitcoingui(QString data)
 {
-    // QEMIT next step
+    Q_EMIT transmit_to_walletview(data);
 }
