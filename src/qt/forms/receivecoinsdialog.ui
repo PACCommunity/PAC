@@ -503,7 +503,7 @@
           <number>20</number>
          </property>
          <property name="bottomMargin">
-          <number>34</number>
+          <number>15</number>
          </property>
          <item>
           <widget class="QLabel" name="label_5">
@@ -622,7 +622,7 @@
           </spacer>
          </item>
          <item>
-          <widget class="QFrame" name="">
+          <widget class="QFrame" name="frame">
            <layout class="QHBoxLayout" name="qrLayoutContainer"/>
           </widget>
          </item>
