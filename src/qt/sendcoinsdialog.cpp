@@ -949,3 +949,28 @@ void SendCoinsDialog::coinControlUpdateLabels()
         ui->labelCoinControlInsuffFunds->hide();
     }
 }
+
+void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
+{
+    bool ok;
+    double dbal;
+    dbal = arg1.toDouble(&ok);
+    if(ok){
+        QSettings settings;
+        double dval = (settings.value("PACvalue").toString()).toDouble();
+        QString sconv = QString::number(dbal/dval, 'g', 17);
+
+        QStringList list1 = sconv.split('.');
+        int q_size = list1[0].size();
+            for (int i = 3; i < q_size; i += 3)
+                list1[0].insert(q_size - i, ',');
+        if(list1.length() == 1){
+            ui->labelConvertionUSD->setText(list1[0]);
+        }else{
+            ui->labelConvertionUSD->setText(list1[0] + '.' + list1[1]);
+        }
+    }else{
+        ui->labelConvertionUSD->setText("0.0");
+    }
+    
+}
