@@ -763,7 +763,7 @@ void BitcoinGUI::createHeaderBar()
 
     QPixmap target(80, 80);
     target.fill(Qt::transparent);
-    QPixmap pixmap = QPixmap::fromImage( QImage(strImgValue).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+    QPixmap pixmap = QPixmap::fromImage( QImage(strImgValue).scaled(80,80,Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
     QPainter painter(&target);
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setRenderHint(QPainter::Antialiasing, true);

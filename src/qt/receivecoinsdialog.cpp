@@ -14,6 +14,8 @@
 #include "receiverequestdialog.h"
 #include "recentrequeststablemodel.h"
 #include "walletmodel.h"
+#include "receiverequestdialog.h"
+#include "guiconstants.h"
 
 #include <QAction>
 #include <QCursor>
@@ -21,6 +23,28 @@
 #include <QMessageBox>
 #include <QScrollBar>
 #include <QTextDocument>
+
+#include <QClipboard>
+#include <QDrag>
+#include <QMenu>
+#include <QMimeData>
+#include <QMouseEvent>
+#include <QPixmap>
+#include <QDebug>
+#include <QPainter>
+
+
+#if QT_VERSION < 0x050000
+#include <QUrl>
+#endif
+
+#if defined(HAVE_CONFIG_H)
+#include "config/paccoin-config.h" /* for USE_QRCODE */
+#endif
+
+#ifdef USE_QRCODE
+#include <qrencode.h>
+#endif
 
 ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -31,7 +55,16 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
-    
+
+    lblQRCode = new QRImageWidget;
+    lblQRCode->setAlignment(Qt::AlignCenter);
+    lblQRCode->setContentsMargins(0,0,0,0);
+    lblQRCode->setSizePolicy(QSizePolicy::MinimumExpanding, QSizePolicy::MinimumExpanding);
+
+    ui->qrLayoutContainer->setAlignment(Qt::AlignCenter);
+    ui->qrLayoutContainer->setContentsMargins(0,0,0,0);
+    ui->qrLayoutContainer->addWidget(lblQRCode);
+
     if (!platformStyle->getImagesOnButtons()) {
         ui->clearButton->setIcon(QIcon());
         ui->receiveButton->setIcon(QIcon());
@@ -109,7 +142,81 @@ ReceiveCoinsDialog::~ReceiveCoinsDialog()
 {
     delete ui;
 }
-
+void ReceiveCoinsDialog::generateQRCode()
+{
+    if(!model || !model->getOptionsModel() || !model->getAddressTableModel() || !model->getRecentRequestsTableModel())
+        return;
+    QString address;
+    QString label = ui->reqLabel->text();
+    if(ui->reuseAddress->isChecked())
+    {
+        /* Choose existing receiving address */
+        AddressBookPage dlg(platformStyle, AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
+        dlg.setModel(model->getAddressTableModel());
+        if(dlg.exec())
+        {
+            address = dlg.getReturnValue();
+            if(label.isEmpty()) /* If no label provided, use the previously used label */
+            {
+                label = model->getAddressTableModel()->labelForAddress(address);
+            }
+        } else {
+            return;
+        }
+    } else {
+        /* Generate new receiving address */
+        address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
+    }
+    SendCoinsRecipient info(address, label, ui->reqAmount->value(), ui->reqMessage->text());
+    info.fUseInstantSend = ui->checkUseInstantSend->isChecked();
+    clear();
+    /* Store request for later reference */
+    model->getRecentRequestsTableModel()->addNewRequest(info);
+    QString uri = GUIUtil::formatBitcoinURI(info);
+#ifdef USE_QRCODE
+    lblQRCode->setText("");
+    if(!uri.isEmpty())
+    {
+        // limit URI length
+        if (uri.length() > MAX_URI_LENGTH)
+        {
+            lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
+        } else {
+            QRcode *code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
+            if (!code)
+            {
+                lblQRCode->setText(tr("Error encoding URI into QR Code."));
+                return;
+            }
+            QImage myImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
+            myImage.fill(0xffffff);
+            unsigned char *p = code->data;
+            for (int y = 0; y < code->width; y++)
+            {
+                for (int x = 0; x < code->width; x++)
+                {
+                    myImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
+                    p++;
+                }
+            }
+            QRcode_free(code);
+            int QRCodeLabelSize = 160;
+            int QRCodeSize = QRCodeLabelSize - 20;
+            QPixmap target(QRCodeLabelSize, QRCodeLabelSize);
+            target.fill(Qt::transparent);
+            QPixmap pixmap = QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
+            QPainter painter(&target);
+            painter.setRenderHint(QPainter::Antialiasing, true);
+            QPainterPath painterPath;
+            painterPath.addEllipse(QRect(0,0,QRCodeLabelSize,QRCodeLabelSize));
+            painter.setClipPath(painterPath);
+            painter.fillPath(painterPath, Qt::white);
+            painter.drawPixmap(10,10,pixmap);
+            lblQRCode->setPixmap(target);
+        }
+    }
+#endif
+}
 void ReceiveCoinsDialog::clear()
 {
     ui->reqAmount->clear();
@@ -142,42 +249,7 @@ void ReceiveCoinsDialog::updateDisplayUnit()
 
 void ReceiveCoinsDialog::on_receiveButton_clicked()
 {
-    if(!model || !model->getOptionsModel() || !model->getAddressTableModel() || !model->getRecentRequestsTableModel())
-        return;
-
-    QString address;
-    QString label = ui->reqLabel->text();
-    if(ui->reuseAddress->isChecked())
-    {
-        /* Choose existing receiving address */
-        AddressBookPage dlg(platformStyle, AddressBookPage::ForSelection, AddressBookPage::ReceivingTab, this);
-        dlg.setModel(model->getAddressTableModel());
-        if(dlg.exec())
-        {
-            address = dlg.getReturnValue();
-            if(label.isEmpty()) /* If no label provided, use the previously used label */
-            {
-                label = model->getAddressTableModel()->labelForAddress(address);
-            }
-        } else {
-            return;
-        }
-    } else {
-        /* Generate new receiving address */
-        address = model->getAddressTableModel()->addRow(AddressTableModel::Receive, label, "");
-    }
-    SendCoinsRecipient info(address, label,
-        ui->reqAmount->value(), ui->reqMessage->text());
-    info.fUseInstantSend = ui->checkUseInstantSend->isChecked();
-    ReceiveRequestDialog *dialog = new ReceiveRequestDialog(this);
-    dialog->setAttribute(Qt::WA_DeleteOnClose);
-    dialog->setModel(model->getOptionsModel());
-    dialog->setInfo(info);
-    dialog->show();
-    clear();
-
-    /* Store request for later reference */
-    model->getRecentRequestsTableModel()->addNewRequest(info);
+    generateQRCode();
 }
 
 void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex &index)
