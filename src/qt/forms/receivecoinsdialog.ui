@@ -590,7 +590,7 @@
           </layout>
          </item>
          <item>
-          <widget class="QLabel" name="label_8">
+          <widget class="QLabel" name="labelAvailableUSD">
            <property name="minimumSize">
             <size>
              <width>0</width>
@@ -598,7 +598,7 @@
             </size>
            </property>
            <property name="text">
-            <string>$ 00.00 USD</string>
+            <string>$ 0.00 USD</string>
            </property>
            <property name="alignment">
             <set>Qt::AlignCenter</set>

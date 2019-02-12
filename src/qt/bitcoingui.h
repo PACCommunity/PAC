@@ -182,9 +182,6 @@ Q_SIGNALS:
     void receivedURI(const QString &uri);
     /** Restart handling */
     void requestedRestart(QStringList args);
-    
-    /** Send PAC value to the walletframe */
-    void transmit_to_walletframe(QString pacValue);
 
 public Q_SLOTS:
     /** Set number of connections shown in the UI */

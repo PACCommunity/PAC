@@ -1178,7 +1178,7 @@
            </layout>
           </item>
           <item row="3" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="labelAvailableUSD">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
               <horstretch>0</horstretch>
@@ -1192,7 +1192,7 @@
              </size>
             </property>
             <property name="text">
-             <string>$ 578.03 USD</string>
+             <string>$ 0.0 USD</string>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>

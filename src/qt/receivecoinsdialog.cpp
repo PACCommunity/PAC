@@ -318,4 +318,5 @@ void ReceiveCoinsDialog::setBalance(const CAmount& balance, const CAmount& uncon
     Q_UNUSED(watchImmatureBalance);
 
     ui->labelBalance->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), balance));
+    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
 }

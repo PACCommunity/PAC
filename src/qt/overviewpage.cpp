@@ -17,7 +17,6 @@
 #include "transactiontablemodel.h"
 #include "utilitydialog.h"
 #include "walletmodel.h"
-#include "walletview.h"
 
 #include "instantx.h"
 #include "darksendconfig.h"
@@ -224,6 +223,11 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         cachedTxLocks = nCompleteTXLocks;
         ui->listTransactions->update();
     }
+
+    
+    ui->labelBalanceUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
+    ui->labelUnconfirmedUSD->setText("$ " + BitcoinUnits::pacToUsd(unconfirmedBalance) + " USD");
+    ui->labelTotalUSD->setText("$ " + BitcoinUnits::pacToUsd(balance + unconfirmedBalance + immatureBalance) + " USD");
 }
 
 // show/hide watch-only labels
@@ -291,8 +295,6 @@ void OverviewPage::updateDisplayUnit()
 
         ui->listTransactions->update();
     }
-    QSettings settings;
-    ui->labelBalanceUSD->setText(settings.value("PACvalue").toString() + "" + currentBalance);
 }
 
 void OverviewPage::updateAlerts(const QString &warnings)
@@ -335,11 +337,4 @@ void OverviewPage::on_overviewInfo_clicked()
 {
     HelpMessageDialog dlg(this, HelpMessageDialog::ovhelp);
     dlg.exec();
-}
-
-void OverviewPage::receive_from_walletview(QString data)
-{
-    //ui->labelBalanceUSD->setText(data);
-
-    ui->labelBalanceUSD->setText("TEST");
 }

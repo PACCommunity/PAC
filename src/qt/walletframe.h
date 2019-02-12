@@ -8,8 +8,6 @@
 #include <QFrame>
 #include <QMap>
 
-#include "bitcoingui.h"
-
 class BitcoinGUI;
 class ClientModel;
 class PlatformStyle;
@@ -43,8 +41,6 @@ public:
 Q_SIGNALS:
     /** Notify that the user has requested more information about the out-of-sync warning */
     void requestedSyncWarningInfo();
-    /** Transmit to walletview the PAC value */
-    void transmit_to_walletview(QString message);
 
 private:
     QStackedWidget *walletStack;
@@ -96,9 +92,6 @@ public Q_SLOTS:
     void usedReceivingAddresses();
     /** Pass on signal over requested out-of-sync-warning information */
     void outOfSyncWarningClicked();
-
-    /** Gets the value of the PAC from bitcoingui */
-    void receive_from_bitcoingui(QString data);
 };
 
 #endif // BITCOIN_QT_WALLETFRAME_H

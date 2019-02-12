@@ -6,7 +6,6 @@
 #define BITCOIN_QT_OVERVIEWPAGE_H
 
 #include "amount.h"
-#include "walletview.h"
 
 #include <QWidget>
 #include <memory>
@@ -76,7 +75,6 @@ private Q_SLOTS:
     void updateWatchOnlyLabels(bool showWatchOnly);
     void handleOutOfSyncWarningClicks();
     void on_overviewInfo_clicked();
-    void receive_from_walletview(QString data);
 };
 
 #endif // BITCOIN_QT_OVERVIEWPAGE_H

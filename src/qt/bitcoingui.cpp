@@ -314,7 +314,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_wrapper(QString)));
-        connect(this,SIGNAL(transmit_to_walletframe(QString)), walletFrame, SLOT(receive_from_bitcoingui(QString)));
     }
 #endif
 }
@@ -1801,7 +1800,9 @@ void BitcoinGUI::receive_from_wrapper(QString message)
             {
                 if (ob.contains("message"))
                 {
+                    // Printing the value on the message bar
                     messageLabel->setText(ob["message"].toString());
+                    // Setting the value for the other views to use it
                     QSettings settings;
                     settings.setValue("PACvalue",ob["pacusd"].toString());
                     settings.sync();
