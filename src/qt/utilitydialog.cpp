@@ -178,7 +178,8 @@ first need to be confirme by the network, this means that it is yours but first 
 (the sum of the available and pending). <br><br> \
 On the right side you can see all of your transactions, the coins you send, receive or get rewarded, if you click on one of them it will redirect you to \
 see all of the information of the transaction. <br> \
-For more information see https://wallets.paccoin.net/."));
+For more information see https://wallets.paccoin.net/.<hr><br> \
+IMPORTANT: the convertion PAC to USD can have some fluctuation since the value is obtained from an external API and the value is obtained every certain time."));
         
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
