@@ -1149,7 +1149,7 @@
     <message>
         <location line="+11"/>
         <source>&amp;Label</source>
-        <translation>&amp;Label</translation>
+        <translation>Label</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -3231,7 +3231,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <message>
         <location line="+10"/>
         <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <translation>Label:</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -3242,7 +3242,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <message>
         <location line="-19"/>
         <source>&amp;Amount:</source>
-        <translation>&amp;Amount:</translation>
+        <translation>Amount:</translation>
     </message>
     <message>
         <location line="+34"/>
@@ -3857,7 +3857,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <message>
         <location line="-1055"/>
         <source>&amp;Label:</source>
-        <translation>&amp;Label:</translation>
+        <translation>Label:</translation>
     </message>
     <message>
         <location line="+13"/>
