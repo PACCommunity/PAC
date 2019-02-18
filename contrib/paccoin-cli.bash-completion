@@ -1,45 +1,52 @@
-# bash programmable completion for paccoind(1) and paccoin-cli(1)
-# Copyright (c) 2012,2014 Christian von Roques <roques@mti.ag>
+# bash programmable completion for paccoin-cli(1)
+# Copyright (c) 2012-2016 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-have paccoind && {
-
-# call $paccoind for RPC
+# call $paccoin-cli for RPC
 _paccoin_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()
     for i in ${COMP_LINE}; do
         case "$i" in
-            -conf=*|-proxy*|-rpc*)
+            -conf=*|-datadir=*|-regtest|-rpc*|-testnet)
                 rpcargs=( "${rpcargs[@]}" "$i" )
                 ;;
         esac
     done
-    $paccoind "${rpcargs[@]}" "$@"
+    $paccoin_cli "${rpcargs[@]}" "$@"
 }
 
-# Add paccoin accounts to COMPREPLY
+# Add wallet accounts to COMPREPLY
 _paccoin_accounts() {
     local accounts
-    accounts=$(_paccoin_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
+    accounts=$(_paccoin_rpc listaccounts | awk -F '"' '{ print $2 }')
     COMPREPLY=( "${COMPREPLY[@]}" $( compgen -W "$accounts" -- "$cur" ) )
 }
 
-_paccoind() {
+_paccoin_cli() {
     local cur prev words=() cword
-    local paccoind
+    local paccoin_cli
 
-    # save and use original argument to invoke paccoind
-    # paccoind might not be in $PATH
-    paccoind="$1"
+    # save and use original argument to invoke paccoin-cli for -help, help and RPC
+    # as paccoin-cli might not be in $PATH
+    paccoin_cli="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n = cur prev words cword
 
+    if ((cword > 5)); then
+        case ${words[cword-5]} in
+            sendtoaddress)
+                COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
+                return 0
+                ;;
+        esac
+    fi
+
     if ((cword > 4)); then
         case ${words[cword-4]} in
-            listtransactions)
+            importaddress|listtransactions|setban)
                 COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
                 return 0
                 ;;
@@ -56,7 +63,7 @@ _paccoind() {
                 _paccoin_accounts
                 return 0
                 ;;
-            getbalance|gettxout|importaddress|importprivkey|listreceivedbyaccount|listreceivedbyaddress|listsinceblock)
+            getbalance|gettxout|importaddress|importpubkey|importprivkey|listreceivedbyaccount|listreceivedbyaddress|listsinceblock)
                 COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
                 return 0
                 ;;
@@ -69,7 +76,11 @@ _paccoind() {
                 COMPREPLY=( $( compgen -W "add remove onetry" -- "$cur" ) )
                 return 0
                 ;;
-            getblock|getrawtransaction|gettransaction|listaccounts|listreceivedbyaccount|listreceivedbyaddress|sendrawtransaction)
+            setban)
+                COMPREPLY=( $( compgen -W "add remove" -- "$cur" ) )
+                return 0
+                ;;
+            fundrawtransaction|getblock|getblockheader|getmempoolancestors|getmempooldescendants|getrawtransaction|gettransaction|listaccounts|listreceivedbyaccount|listreceivedbyaddress|sendrawtransaction)
                 COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
                 return 0
                 ;;
@@ -85,7 +96,7 @@ _paccoind() {
             _filedir
             return 0
             ;;
-        getmempool|lockunspent|setgenerate)
+        getaddednodeinfo|getrawmempool|lockunspent|setgenerate)
             COMPREPLY=( $( compgen -W "true false" -- "$cur" ) )
             return 0
             ;;
@@ -96,7 +107,7 @@ _paccoind() {
     esac
 
     case "$cur" in
-        -conf=*|-pid=*|-loadblock=*|-wallet=*)
+        -conf=*)
             cur="${cur#*=}"
             _filedir
             return 0
@@ -112,9 +123,9 @@ _paccoind() {
         *)
             local helpopts commands
 
-            # only parse --help if senseful
+            # only parse -help if senseful
             if [[ -z "$cur" || "$cur" =~ ^- ]]; then
-                helpopts=$($paccoind --help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
+                helpopts=$($paccoin_cli -help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
             fi
 
             # only parse help if senseful
@@ -131,10 +142,8 @@ _paccoind() {
             return 0
             ;;
     esac
-}
-
-complete -F _paccoind paccoind paccoin-cli
-}
+} &&
+complete -F _paccoin_cli paccoin-cli
 
 # Local variables:
 # mode: shell-script
