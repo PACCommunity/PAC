@@ -102,8 +102,6 @@ public:
     static QString getAmountColumnTitle(int unit);
     ///@}
 
-    static QString pacToUsd(CAmount balance);
-
     //! @name AbstractListModel implementation
     //! List model for unit drop-down selection box.
     ///@{
