@@ -587,7 +587,6 @@ void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfir
 	    }
 
         ui->labelBalance->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), bal));
-        ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(bal) + " USD");
     }
 }
 

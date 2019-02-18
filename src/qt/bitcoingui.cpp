@@ -35,7 +35,6 @@
 #include "util.h"
 #include "masternode-sync.h"
 #include "masternodelist.h"
-#include "websocketclientwrapper.h"
 
 #include <iostream>
 
@@ -305,15 +304,11 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     modalOverlay = new ModalOverlay(this->centralWidget());
 
-    // Socket connection
-    m_websocketclientwrapper = new WebSocketClientWrapper(QUrl("ws://144.202.121.149"));
-
 #ifdef ENABLE_WALLET
     if(enableWallet) {
         connect(walletFrame, SIGNAL(requestedSyncWarningInfo()), this, SLOT(showModalOverlay()));
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
-        connect(m_websocketclientwrapper,SIGNAL(transmit_to_gui(QString)),this,SLOT(receive_from_wrapper(QString)));
     }
 #endif
 }
@@ -1780,46 +1775,5 @@ void UnitDisplayStatusBarControl::onMenuSelection(QAction* action)
     if (action)
     {
         optionsModel->setDisplayUnit(action->data());
-    }
-}
-
-/** Setss the message for the news and the value of the PAC to USD */
-void BitcoinGUI::receive_from_wrapper(QString message)
-{
-    QJsonDocument doc = QJsonDocument::fromJson(message.toUtf8());
-    if(!doc.isNull())
-    {
-        if(doc.isObject())
-        {
-            QJsonObject ob = doc.object();
-            if(ob.isEmpty())
-            {
-                messageLabel->setText("There's an issue getting the latest news.");
-            }
-            else
-            {
-                if (ob.contains("message"))
-                {
-                    // Printing the value on the message bar
-                    messageLabel->setText(ob["message"].toString());
-                    // Setting the value for the other views to use it
-                    QSettings settings;
-                    settings.setValue("PACvalue",ob["pacusd"].toString());
-                    settings.sync();
-                }
-                else
-                {
-                    messageLabel->setText("There's an issue getting the latest news.");
-                }
-            }
-        }
-        else
-        {
-            messageLabel->setText("There's an issue getting the latest news.");
-        }
-    }
-    else
-    {
-        messageLabel->setText("There's an issue getting the latest news.");
     }
 }

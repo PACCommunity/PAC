@@ -40,7 +40,9 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_BLACK QColor(20,20,20)
 #define COLOR_WHITE QColor(255,255,255)
 
-extern QColor COLOR_TEXT = QColor(128,128,128);
+//extern QColor COLOR_TEXT;
+static QColor COLOR_TEXT = QColor(128,128,128);
+//extern COLOR_TEXT;
 
 
 /* Tooltips longer than this (in characters) are converted into rich text,

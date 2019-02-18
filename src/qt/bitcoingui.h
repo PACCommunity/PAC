@@ -10,7 +10,6 @@
 #endif
 
 #include "amount.h"
-#include "websocketclientwrapper.h"
 
 #include <QLabel>
 #include <QMainWindow>
@@ -144,8 +143,6 @@ private:
     QPushButton *btnImg;
     QLabel *messageLabel;
 
-    WebSocketClientWrapper *m_websocketclientwrapper;
-
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
@@ -245,8 +242,6 @@ private Q_SLOTS:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
-    /** Receive the news from the web socket */
-    void receive_from_wrapper(QString data);
 
     /** Show open dialog */
     void openClicked();
