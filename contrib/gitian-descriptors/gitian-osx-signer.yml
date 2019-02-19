@@ -10,7 +10,7 @@ remotes:
 - "url": "https://github.com/PACCommunity/pac-detached-sigs.git"
   "dir": "signature"
 files:
-- "paccoincore-osx-unsigned.tar.gz"
+- "Paccoin-osx-unsigned.tar.gz"
 script: |
   WRAP_DIR=$HOME/wrapped
   mkdir -p ${WRAP_DIR}
@@ -27,8 +27,8 @@ script: |
     chmod +x ${WRAP_DIR}/${prog}
   done
 
-  UNSIGNED=paccoincore-osx-unsigned.tar.gz
-  SIGNED=paccoincore-osx-signed.dmg
+  UNSIGNED=Paccoin-osx-unsigned.tar.gz
+  SIGNED=Paccoin-osx-signed.dmg
 
   tar -xf ${UNSIGNED}
   OSX_VOLNAME="$(cat osx_volname)"
