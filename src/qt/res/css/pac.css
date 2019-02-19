@@ -180,7 +180,7 @@ QScrollBar:vertical, QScrollBar:horizontal {
     border: 1px solid rgb(50,50,50);
     border-radius: 4px;
 }
-QScrollBar::handle:vertical, , QScrollBar::handle:horizontal  {
+QScrollBar::handle:vertical, QScrollBar::handle:horizontal  {
     background-color: #787878;
     border: 1px solid rgb(50,50,50);
     min-height: 8px;
