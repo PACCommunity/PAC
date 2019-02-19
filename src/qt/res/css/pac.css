@@ -173,26 +173,26 @@ QPlainTextEdit {
     font-size: 15px;
 }
 /* ScrollBar */
-QScrollBar:vertical {
+QScrollBar:vertical, QScrollBar:horizontal {
     background-color: #191919;
     width: 16px;
     margin: 16px 2px 16px 2px;
     border: 1px solid rgb(50,50,50);
     border-radius: 4px;
 }
-QScrollBar::handle:vertical {
+QScrollBar::handle:vertical, , QScrollBar::handle:horizontal  {
     background-color: #787878;
     border: 1px solid rgb(50,50,50);
     min-height: 8px;
     border-radius: 4px;
 }
-QScrollBar::handle:vertical:hover {
+QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
     background-color: rgb(243,232,56);
     border: 1px solid rgb(243,232,56);
     border-radius: 4px;
     min-height: 8px;
 }
-QScrollBar::sub-line:vertical {
+QScrollBar::sub-line:vertical, QScrollBar::sub-line:horizontal{
     margin: 3px 0px 3px 0px;
     border-image: url(:/images/pac/drkblue_upArrow_small);
     height: 10px;
@@ -200,7 +200,7 @@ QScrollBar::sub-line:vertical {
     subcontrol-position: top;
     subcontrol-origin: margin;
 }
-QScrollBar::add-line:vertical {
+QScrollBar::add-line:vertical, QScrollBar::add-line:horizontal {
     margin: 3px 0px 3px 0px;
     border-image: url(:/images/pac/drkblue_downArrow_small);
     height: 10px;
@@ -208,24 +208,24 @@ QScrollBar::add-line:vertical {
     subcontrol-position: bottom;
     subcontrol-origin: margin;
 }
-QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on {
+QScrollBar::sub-line:vertical:hover, QScrollBar::sub-line:vertical:on , QScrollBar::sub-line:horizontal:hover, QScrollBar::sub-line:horizontal:on{
     border-image: url(:/images/pac/drkblue_upArrow_small);
     height: 10px;
     width: 10px;
     subcontrol-position: top;
     subcontrol-origin: margin;
 }
-QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on {
+QScrollBar::add-line:vertical:hover, QScrollBar::add-line:vertical:on, QScrollBar::add-line:horizontal:hover, QScrollBar::add-line:horizontal:on{
     border-image: url(:/images/pac/drkblue_downArrow_small);
     height: 10px;
     width: 10px;
     subcontrol-position: bottom;
     subcontrol-origin: margin;
 }
-QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::up-arrow:horizontal, QScrollBar::down-arrow:horizontal {
     background: none;
 }
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal{
     background: none;
 }
 /* GLOBAL SPINBOX */
