@@ -606,7 +606,6 @@ RES_IMAGES = \
   qt/res/images/pac/splash_testnet.png \
   qt/res/images/pac/hover_profile.png \
   qt/res/images/pac/profile_bkg.png \
-  qt/res/images/pac/profile.jpg \
   qt/res/images/pac/header_bkg.png \
   qt/res/images/pac/checked_b.png \
   qt/res/images/pac/unchecked_b.png \
