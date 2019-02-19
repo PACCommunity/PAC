@@ -277,3 +277,14 @@ CAmount BitcoinUnits::maxMoney()
 {
     return MAX_MONEY;
 }
+
+QString BitcoinUnits::pacToUsd(CAmount balance)
+{
+    QSettings settings;
+    qint64 bal = (qint64)balance;
+    qint64 tbal = (bal > 0 ? bal : -bal);
+    double dbal = tbal;
+    double dval = (settings.value("PACvalue").toString()).toDouble();
+    QString s_n_abs = QString::number((dbal/100000000)*dval);
+    return s_n_abs;
+}

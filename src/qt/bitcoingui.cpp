@@ -65,9 +65,6 @@
 #include <QFileDialog>
 #include <QProxyStyle>
 #include <QPainter>
-#include <QJsonDocument>
-#include <QJsonObject>
-#include <QJsonValue>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -206,6 +203,10 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     rpcConsole = new RPCConsole(platformStyle, 0);
     helpMessageDialog = new HelpMessageDialog(this, HelpMessageDialog::cmdline);
 #ifdef ENABLE_WALLET
+    manager = new QNetworkAccessManager();
+    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerFinished(QNetworkReply*)));
+    request.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    manager->get(request);
     if(enableWallet)
     {
         /** Create wallet frame*/
@@ -1702,6 +1703,23 @@ void BitcoinGUI::handleRestart(QStringList args)
 {
     if (!ShutdownRequested())
         Q_EMIT requestedRestart(args);
+}
+
+void BitcoinGUI::managerFinished(QNetworkReply *reply) {
+    if (reply->error()) {
+        QSettings settings;
+        settings.setValue("PACvalue","0");
+        settings.sync();
+        return;
+    }
+    QString answer = reply->readAll();
+
+    QSettings settings;
+    QStringList list1 = answer.split('"');
+    QString s = list1[6];
+    s = s.mid(1, s.length()-2); 
+    settings.setValue("PACvalue",s);
+    settings.sync();
 }
 
 UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *platformStyle) :
