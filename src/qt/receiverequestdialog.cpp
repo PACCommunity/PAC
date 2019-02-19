@@ -150,6 +150,8 @@ void ReceiveRequestDialog::update()
     if(!info.message.isEmpty())
         html += "<b>"+tr("Message")+"</b>: " + GUIUtil::HtmlEscape(info.message) + "<br>";
     html += "<b>"+tr("InstantPAC")+"</b>: " + (info.fUseInstantSend ? tr("Yes") : tr("No")) + "<br>";
+    ui->outUri->setObjectName("outuri");
+    ui->outUri->setStyleSheet("#outuri {background-color: #1a1a1a; color: #fff;}");
     ui->outUri->setText(html);
 
 #ifdef USE_QRCODE
