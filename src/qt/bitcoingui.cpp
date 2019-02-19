@@ -722,7 +722,7 @@ void BitcoinGUI::createHeaderBar()
     headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/pac/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");
 
 
-    messageLabel->setText("LATEST NEWS: $PAC launches new desktop wallet, featuring new merchant-focused...");
+    messageLabel->setText("");
     messageLabel->setAlignment(Qt::AlignCenter);
     messageLabel->setStyleSheet("QLabel { color:white; font-size:24px;}");
 
