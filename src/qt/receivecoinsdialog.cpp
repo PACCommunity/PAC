@@ -65,6 +65,17 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
     ui->qrLayoutContainer->setContentsMargins(0,0,0,0);
     ui->qrLayoutContainer->addWidget(lblQRCode);
 
+    if (!platformStyle->getImagesOnButtons()) {
+            ui->clearButton->setIcon(QIcon());
+            ui->receiveButton->setIcon(QIcon());
+            ui->showRequestButton->setIcon(QIcon());
+            ui->removeRequestButton->setIcon(QIcon());
+        } else {
+            ui->clearButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
+            ui->receiveButton->setIcon(QIcon(":/icons/" + theme + "/receiving_addresses"));
+            ui->showRequestButton->setIcon(QIcon(":/icons/" + theme + "/edit"));
+            ui->removeRequestButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
+    }
     ui->iconLabelAvailableBalance->setPixmap(QPixmap(":icons/bitcoin-32")); 
 
     // context menu actions

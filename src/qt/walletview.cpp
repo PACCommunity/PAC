@@ -49,6 +49,10 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     vbox->addWidget(transactionView);
     QPushButton *exportButton = new QPushButton(tr("&Export"), this);
     exportButton->setToolTip(tr("Export the data in the current tab to a file"));
+    if (platformStyle->getImagesOnButtons()) {
+        QString theme = GUIUtil::getThemeName();
+        exportButton->setIcon(QIcon(":/icons/" + theme + "/export"));
+    }
     hbox_buttons->addStretch();
 
     // Sum of selected transactions
