@@ -19,6 +19,9 @@
 #include <QPushButton>
 #include <QSystemTrayIcon>
 #include <boost/filesystem/path.hpp>
+#include <QNetworkRequest>
+#include <QNetworkAccessManager>
+#include <QNetworkReply>
 
 class ClientModel;
 class NetworkStyle;
@@ -143,6 +146,9 @@ private:
     QPushButton *btnImg;
     QLabel *messageLabel;
 
+    QNetworkAccessManager *manager;
+    QNetworkRequest request;
+
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
@@ -241,6 +247,9 @@ private Q_SLOTS:
     void gotoSignMessageTab(QString addr = "");
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
+
+    /** API PAC_USD request */
+    void managerFinished(QNetworkReply *reply);
 
 
     /** Show open dialog */

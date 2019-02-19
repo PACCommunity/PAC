@@ -222,6 +222,10 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         cachedTxLocks = nCompleteTXLocks;
         ui->listTransactions->update();
     }
+
+    ui->labelBalanceUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
+    ui->labelUnconfirmedUSD->setText("$ " + BitcoinUnits::pacToUsd(unconfirmedBalance) + " USD");
+    ui->labelTotalUSD->setText("$ " + BitcoinUnits::pacToUsd(balance + unconfirmedBalance + immatureBalance) + " USD");
 }
 
 // show/hide watch-only labels
