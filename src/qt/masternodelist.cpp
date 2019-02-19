@@ -59,6 +59,9 @@ MasternodeList::MasternodeList(const PlatformStyle *platformStyle, QWidget *pare
     ui->tableWidgetMasternodes->setAlternatingRowColors(false);
     ui->tableWidgetMasternodes->setShowGrid(false);
 
+    ui->tableWidgetMyMasternodes->setAlternatingRowColors(false);
+    ui->tableWidgetMyMasternodes->setShowGrid(false);
+    
     ui->tableWidgetMyMasternodes->setContextMenuPolicy(Qt::CustomContextMenu);
 
     QAction *startAliasAction = new QAction(tr("Start alias"), this);
