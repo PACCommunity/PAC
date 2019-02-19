@@ -365,12 +365,11 @@
         <file alias="drkblue_leftArrow_small">res/images/pac/drkblue_leftArrow_small.png</file>
         <file alias="drkblue_rightArrow_small">res/images/pac/drkblue_rightArrow_small.png</file>
         <file alias="drkblue_qtreeview_selected">res/images/pac/drkblue_qtreeview_selected.png</file>
-        <file alias="drkblue_walletFrame_bg">res/images/pac/drkblue_walletFrame_bg.jpg</file>
+        <file alias="drkblue_walletFrame_bg">res/images/pac/drkblue_walletFrame_bg.png</file>
         <file alias="splash">res/images/pac/splash.png</file>
         <file alias="splash_testnet">res/images/pac/splash_testnet.png</file>
         <file alias="hover_profile">res/images/pac/hover_profile.png</file>
         <file alias="profile_bkg">res/images/pac/profile_bkg.png</file>
-        <file alias="profile">res/images/pac/profile.jpg</file>
         <file alias="header_bkg">res/images/pac/header_bkg.png</file>
         <file alias="checked_b">res/images/pac/checked_b.png</file>
         <file alias="unchecked_b">res/images/pac/unchecked_b.png</file>
