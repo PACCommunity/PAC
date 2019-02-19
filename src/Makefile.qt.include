@@ -601,7 +601,7 @@ RES_IMAGES = \
   qt/res/images/pac/drkblue_leftArrow_small.png \
   qt/res/images/pac/drkblue_rightArrow_small.png \
   qt/res/images/pac/drkblue_qtreeview_selected.png \
-  qt/res/images/pac/drkblue_walletFrame_bg.jpg \
+  qt/res/images/pac/drkblue_walletFrame_bg.png \
   qt/res/images/pac/splash.png \
   qt/res/images/pac/splash_testnet.png \
   qt/res/images/pac/hover_profile.png \
