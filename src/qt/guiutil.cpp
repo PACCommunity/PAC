@@ -934,10 +934,10 @@ QString loadStyleSheet()
     QString styleSheet;
     QSettings settings;
     QString cssName;
-    QString theme = settings.value("theme", "").toString();
+    QString theme = QString("pac");//settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        cssName = QString(":/css/") + theme;
+        cssName = QString(":/css/pac");
     }
     else {
         cssName = QString(":/css/pac");

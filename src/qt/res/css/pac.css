@@ -528,7 +528,7 @@ BitcoinAmountField QComboBox::indicator {
     border: 0px !important;
 }
 #frameCoinControl{
-    background: rgba(255,255,255,0.3);
+    background: rgba(200,200,200,0.15);
     border-radius: 8px !important;
 }
 #frameFee{

@@ -148,6 +148,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     spinnerFrame(0),
     platformStyle(platformStyle)
 {
+    QSettings settings;
+    settings.setValue("theme", "pac");
     /* Open CSS when configured */
     GUIUtil::setGUITextColor();
     QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
@@ -158,9 +160,9 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
     int id = QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
-    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    /*QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     std::cout<< "family: ";
-    std::cout<< family.toStdString();
+    std::cout<< family.toStdString();*/
 
     QFont defaultFont("Volte Rounded",13, 1, false);
     defaultFont.setBold(false);
