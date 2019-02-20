@@ -308,7 +308,7 @@ QScrollArea {
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(40, 40, 40, 0.3);
     color: white !important;
-    /*alternate-background-color: yellow;*/
+    border:none;
 }
 QTableView::item { /* Table Item */
     font-size:12px;
