@@ -77,12 +77,12 @@ class BitcoinTestFramework(object):
 
     def sync_all(self):
         if self.is_network_split:
-            sync_blocks(self.nodes[:2])
-            sync_blocks(self.nodes[2:])
+            sync_blocks(self.nodes[:2], p=False)
+            sync_blocks(self.nodes[2:], p=False)
             sync_mempools(self.nodes[:2])
             sync_mempools(self.nodes[2:])
         else:
-            sync_blocks(self.nodes)
+            sync_blocks(self.nodes, p=False)
             sync_mempools(self.nodes)
 
     def join_network(self):
