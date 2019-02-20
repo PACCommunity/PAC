@@ -392,7 +392,7 @@ void BitcoinGUI::createActions()
     //:v
     privateAction = new QAction(QIcon(":/icons/" + theme + "/private"), tr("&Private"), this);
     privateAction->setStatusTip(tr("Browse private section"));
-    privateAction->setToolTip(historyAction->statusTip());
+    privateAction->setToolTip(privateAction->statusTip());
     privateAction->setCheckable(true);
 #ifdef Q_OS_MAC
     privateAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
