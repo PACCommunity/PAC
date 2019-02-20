@@ -1,5 +1,5 @@
 ---
-name: "paccoin-osx-0.13"
+name: "paccoin-osx-0.12"
 enable_cache: true
 suites:
 - "bionic"
@@ -30,7 +30,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/CryptoMx/PAC.git"
+- "url": "https://github.com/PACCommunity/PAC.git"
   "dir": "PAC"
 files:
 - "MacOSX10.11.sdk.tar.gz"

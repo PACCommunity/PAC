@@ -1,5 +1,5 @@
 ---
-name: "paccoin-win-0.13"
+name: "paccoin-win-0.12"
 enable_cache: true
 suites:
 - "bionic"
@@ -25,7 +25,7 @@ packages:
 - "python3"
 - "rename"
 remotes:
-- "url": "https://github.com/CryptoMx/PAC.git"
+- "url": "https://github.com/PACCommunity/PAC.git"
   "dir": "PAC"
 files: []
 script: |
