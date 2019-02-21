@@ -82,7 +82,7 @@ Translators should also follow the [forum](https://www.paccoin.org/forum/topic/p
 Setting up a masternode on a VPS (only for Cold wallet setup)
 -------
 Go to your VPS and execute this:
-1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/contrib/masternodetools/pacmn.sh`
+1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pacmn.sh`
 2) `chmod +x pacmn.sh`
 3) `./pacmn.sh`
 
@@ -94,12 +94,12 @@ The script will setup the environment and run your masternode
 Updating a masternode on a VPS to the latest verion (only for Cold wallet setup)
 -------
 Go to your VPS and execute the following commands on the command line:
-1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/contrib/masternodetools/pac-update.sh`
+1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh`
 2) `chmod +x pac-update.sh`
 3) `./pac-update.sh`
 
 Or run this single line to execute the previous commands in one go:
-`wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh && chmod +x pac-update.sh && ./pac-update.sh`
+`wget -q -O- https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh | bash`
 
 Follow the instructions:
 1)Do you want to autobackup wallet.dat and continue with the process? [y/n]: Type yes to backup and continue or no to stop process 
