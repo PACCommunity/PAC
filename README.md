@@ -82,7 +82,7 @@ Translators should also follow the [forum](https://www.paccoin.org/forum/topic/p
 Setting up a masternode on a VPS (only for Cold wallet setup)
 -------
 Go to your VPS and execute this:
-1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pacmn.sh`
+1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/contrib/masternodetools/pacmn.sh`
 2) `chmod +x pacmn.sh`
 3) `./pacmn.sh`
 
@@ -94,7 +94,7 @@ The script will setup the environment and run your masternode
 Updating a masternode on a VPS to the latest verion (only for Cold wallet setup)
 -------
 Go to your VPS and execute the following commands on the command line:
-1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh`
+1) `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/contrib/masternodetools/pac-update.sh`
 2) `chmod +x pac-update.sh`
 3) `./pac-update.sh`
 
@@ -107,15 +107,20 @@ Follow the instructions:
 Updating multiple masternode on a VPS to the latest verion (only for Cold wallet setup)
 -------
 1) Open your command line and run the following command:
-`wget https://raw.githubusercontent.com/PACCommunity/PAC/master/PacNodesUpdater.tar.g && tar -xzf PacNodesUpdater.tar.gz`
+`wget https://raw.githubusercontent.com/PACCommunity/PAC/master/contrib/masternodetools/PacNodesUpdater.tar.g && tar -xzf PacNodesUpdater.tar.gz`
 
 2) Open and edit the nodes.csv file by adding the following data in order to login to the each node:
     -hostname: This is the user name used to login to the node (ssh user)
     -ip: Is the address of the node, be it an url or an IP address
     -password: It is the password used by the ssh user to authenticate in the node
-    
+    Example in order to update 2 nodes the csv table will look like this:
+    | hostname   | ip            | password  |
+    | ---------- | ------------- | --------- |
+    | john       | 192.168.1.1   | 12345     |
+    | node2      | 198.39.0.1    | 12345     |
+
 3) Go back to the command line and run the following command:
-`chmod +x updateMNs.sh && sudo ./updateMNs.sh`
+`chmod +x updateMNs.sh && ./updateMNs.sh`
 
 Notes: Keep an eye on the execution as the script might ask you for confirmation or passwords to
 authorize certain actions.
