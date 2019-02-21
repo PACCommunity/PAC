@@ -206,8 +206,7 @@ install_and_run_systemd_service()
 	rm $PAC_SERVICE_NAME
 	echo 
 	echo "==> PAC Updated!"
-	echo "==> If you are upgrading from 12.5 (Protocol 7014) You are all set!, nothing left to do."
-	echo "==> If you are upgrading from the older Protocol 7013, Remember to go to your cold wallet and start the masternode (cold wallet must also be on the latest version)."
+	echo "==> Remember to go to your cold wallet and start the masternode, cold wallet must also be on the latest version (${version})."
 }
 
 stop_paccoin
