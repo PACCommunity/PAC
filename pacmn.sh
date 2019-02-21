@@ -15,8 +15,8 @@ else
 fi
 
 arch=`uname -m`
-version="0.12.5.1"
-old_version="0.12.5.0"
+version="0.12.6.0"
+old_version="0.12.5.1"
 base_url="https://github.com/PACCommunity/PAC/releases/download/v${version}"
 if [ "${arch}" == "x86_64" ]; then
 	tarball_name="PAC-v${version}-linux-x86_64.tar.gz"

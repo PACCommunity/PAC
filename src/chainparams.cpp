@@ -165,10 +165,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000291362006875385877"); // #151380
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000002ca70cb14917f702ff"); // #216000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d"); // #151380
+        consensus.defaultAssumeValid = uint256S("0x00000000000038a52e7bafb7fb091ed2989ec8bdd7a550db9925300687805d87"); // #216000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -230,9 +230,10 @@ public:
             (  43850,   uint256S("0x0000000000000be675f137fbf5cbe5e9d8cb0ea509d30252a02c30944f16970f"))
             (  50000,   uint256S("0x00000000000007cdd43a784898eb9cb5be63ca7db5e5935a05a1baa01a658ca0"))
             (  50620,   uint256S("0x0000000000000349685ff23a2344db4d51ae9f169cda23c8a472fb783914b071"))
-            (  151380,  uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d")),
-            1540326989, // * UNIX timestamp of last checkpoint block
-            704761,    // * total number of transactions between genesis and last checkpoint
+            (  151380,  uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d"))
+            (  216000,  uint256S("0x00000000000038a52e7bafb7fb091ed2989ec8bdd7a550db9925300687805d87")),
+            1550525942, // * UNIX timestamp of last checkpoint block
+            814704,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             5000        // * estimated number of transactions per day after checkpoint
         };

@@ -2,7 +2,7 @@
 
 export LC_ALL=en_US.UTF-8
 set -e
-version="0.12.5.1"
+version="0.12.6.0"
 
 echo 
 echo "################################################"
