@@ -1,4 +1,4 @@
-$PAC Core staging tree 0.12.3.0
+$PAC Core staging tree 0.12.6.0
 ===============================
 
 <!-- `master:` [![Build Status](https://travis-ci.org/paccoinpay/paccoin.svg?branch=master)](https://travis-ci.org/paccoinpay/paccoin) `develop:` [![Build Status](https://travis-ci.org/paccoinpay/paccoin.svg?branch=develop)](https://travis-ci.org/paccoinpay/paccoin/branches) -->
