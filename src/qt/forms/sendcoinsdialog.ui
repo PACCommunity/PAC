@@ -63,15 +63,21 @@
         <item>
          <widget class="QFrame" name="frameCoinControl">
           <property name="sizePolicy">
-           <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+           <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
             <horstretch>0</horstretch>
             <verstretch>0</verstretch>
            </sizepolicy>
           </property>
+          <property name="minimumSize">
+           <size>
+            <width>0</width>
+            <height>0</height>
+           </size>
+          </property>
           <property name="maximumSize">
            <size>
             <width>16777215</width>
-            <height>200</height>
+            <height>180</height>
            </size>
           </property>
           <property name="frameShape">
@@ -97,7 +103,7 @@
             <number>6</number>
            </property>
            <item>
-            <layout class="QVBoxLayout" name="verticalLayoutCoinControl" stretch="0,0,0,0,0">
+            <layout class="QVBoxLayout" name="verticalLayoutCoinControl" stretch="0,0,0">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -127,7 +133,7 @@
                   </font>
                  </property>
                  <property name="styleSheet">
-                  <string notr="true">font-weight:bold;</string>
+                  <string notr="true"/>
                  </property>
                  <property name="text">
                   <string>Coin Control Features</string>
@@ -137,10 +143,65 @@
                  </property>
                 </widget>
                </item>
+               <item>
+                <spacer name="horizontalSpacer_15">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelCoinControlChangeLabel">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="text">
+                  <string/>
+                 </property>
+                 <property name="margin">
+                  <number>3</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QLabel" name="labelCoinControlInsuffFunds">
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                   <weight>75</weight>
+                   <bold>true</bold>
+                  </font>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">color:red;font-weight:bold;</string>
+                 </property>
+                 <property name="text">
+                  <string>Insufficient funds!</string>
+                 </property>
+                 <property name="margin">
+                  <number>5</number>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
              <item>
-              <layout class="QHBoxLayout" name="horizontalLayoutCoinControl2" stretch="0,0,0,0">
+              <layout class="QHBoxLayout" name="horizontalLayoutCoinControl2" stretch="0,0,0,0,0,0">
                <property name="spacing">
                 <number>8</number>
                </property>
@@ -158,31 +219,20 @@
                  <property name="autoDefault">
                   <bool>false</bool>
                  </property>
+                 <property name="class" stdset="0">
+                  <string>SmallButton</string>
+                 </property>
                 </widget>
                </item>
                <item>
                 <widget class="QLabel" name="labelCoinControlAutomaticallySelected">
-                 <property name="text">
-                  <string>automatically selected</string>
-                 </property>
-                 <property name="margin">
-                  <number>5</number>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="labelCoinControlInsuffFunds">
                  <property name="font">
                   <font>
-                   <weight>75</weight>
-                   <bold>true</bold>
+                   <pointsize>12</pointsize>
                   </font>
                  </property>
-                 <property name="styleSheet">
-                  <string notr="true">color:red;font-weight:bold;</string>
-                 </property>
                  <property name="text">
-                  <string>Insufficient funds!</string>
+                  <string>automatically selected</string>
                  </property>
                  <property name="margin">
                   <number>5</number>
@@ -198,6 +248,80 @@
                   <size>
                    <width>40</width>
                    <height>1</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item>
+                <widget class="QCheckBox" name="checkBoxCoinControlChange">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>176</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>12</pointsize>
+                  </font>
+                 </property>
+                 <property name="toolTip">
+                  <string>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</string>
+                 </property>
+                 <property name="text">
+                  <string>Custom change address</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QValidatedLineEdit" name="lineEditCoinControlChange">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>0</width>
+                   <height>0</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>400</width>
+                   <height>16777215</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true"/>
+                 </property>
+                 <property name="class" stdset="0">
+                  <string>LineEditSmall</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_16">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Fixed</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>10</width>
+                   <height>20</height>
                   </size>
                  </property>
                 </spacer>
@@ -266,6 +390,7 @@
                      <widget class="QLabel" name="labelCoinControlQuantityText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -280,6 +405,11 @@
                     </item>
                     <item row="0" column="1">
                      <widget class="QLabel" name="labelCoinControlQuantity">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -297,21 +427,13 @@
                       </property>
                      </widget>
                     </item>
-                    <item row="1" column="0">
-                     <widget class="QLabel" name="labelCoinControlBytesText">
-                      <property name="font">
-                       <font>
-                        <weight>75</weight>
-                        <bold>true</bold>
-                       </font>
-                      </property>
-                      <property name="text">
-                       <string>Bytes:</string>
-                      </property>
-                     </widget>
-                    </item>
                     <item row="1" column="1">
                      <widget class="QLabel" name="labelCoinControlBytes">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -323,6 +445,20 @@
                       </property>
                       <property name="textInteractionFlags">
                        <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+                      </property>
+                     </widget>
+                    </item>
+                    <item row="1" column="0">
+                     <widget class="QLabel" name="labelCoinControlBytesText">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                        <weight>75</weight>
+                        <bold>true</bold>
+                       </font>
+                      </property>
+                      <property name="text">
+                       <string>Bytes:</string>
                       </property>
                      </widget>
                     </item>
@@ -349,6 +485,7 @@
                      <widget class="QLabel" name="labelCoinControlAmountText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -363,6 +500,11 @@
                     </item>
                     <item row="0" column="1">
                      <widget class="QLabel" name="labelCoinControlAmount">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -381,6 +523,7 @@
                      <widget class="QLabel" name="labelCoinControlLowOutputText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -392,6 +535,11 @@
                     </item>
                     <item row="1" column="1">
                      <widget class="QLabel" name="labelCoinControlLowOutput">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -429,6 +577,7 @@
                      <widget class="QLabel" name="labelCoinControlFeeText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -443,6 +592,11 @@
                     </item>
                     <item row="0" column="1">
                      <widget class="QLabel" name="labelCoinControlFee">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -480,6 +634,7 @@
                      <widget class="QLabel" name="labelCoinControlAfterFeeText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -494,6 +649,11 @@
                     </item>
                     <item row="0" column="1">
                      <widget class="QLabel" name="labelCoinControlAfterFee">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -512,6 +672,7 @@
                      <widget class="QLabel" name="labelCoinControlChangeText">
                       <property name="font">
                        <font>
+                        <pointsize>12</pointsize>
                         <weight>75</weight>
                         <bold>true</bold>
                        </font>
@@ -523,6 +684,11 @@
                     </item>
                     <item row="1" column="1">
                      <widget class="QLabel" name="labelCoinControlChange">
+                      <property name="font">
+                       <font>
+                        <pointsize>12</pointsize>
+                       </font>
+                      </property>
                       <property name="cursor">
                        <cursorShape>IBeamCursor</cursorShape>
                       </property>
@@ -544,95 +710,6 @@
                </layout>
               </widget>
              </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayoutCoinControl4" stretch="0,0,0">
-               <property name="spacing">
-                <number>12</number>
-               </property>
-               <property name="sizeConstraint">
-                <enum>QLayout::SetDefaultConstraint</enum>
-               </property>
-               <property name="topMargin">
-                <number>5</number>
-               </property>
-               <property name="rightMargin">
-                <number>5</number>
-               </property>
-               <item>
-                <widget class="QCheckBox" name="checkBoxCoinControlChange">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>200</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="toolTip">
-                  <string>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</string>
-                 </property>
-                 <property name="text">
-                  <string>Custom change address</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QValidatedLineEdit" name="lineEditCoinControlChange">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true"/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="labelCoinControlChangeLabel">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>0</width>
-                   <height>0</height>
-                  </size>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                 <property name="margin">
-                  <number>3</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <spacer name="verticalSpacerCoinControl">
-               <property name="orientation">
-                <enum>Qt::Vertical</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>800</width>
-                 <height>1</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
             </layout>
            </item>
           </layout>
@@ -648,8 +725,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>811</width>
-             <height>185</height>
+             <width>621</width>
+             <height>207</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -677,6 +754,9 @@
             </item>
             <item>
              <widget class="QStackedWidget" name="stackedWidget">
+              <property name="currentIndex">
+               <number>0</number>
+              </property>
               <widget class="QWidget" name="page"/>
               <widget class="QWidget" name="page_2"/>
              </widget>
@@ -1362,7 +1442,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>293</width>
+               <width>388</width>
                <height>484</height>
               </rect>
              </property>
