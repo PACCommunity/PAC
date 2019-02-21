@@ -34,7 +34,7 @@ find_paccoin_data_dir()
 }
 
 stop_paccoin() {
-	echo '*** Stoping any $PAC daemon running'
+	echo '*** Stopping any $PAC daemon running'
     INSTALL_DIR=''
     is_pacd_enabled=0
 
