@@ -99,9 +99,21 @@ Go to your VPS and execute the following commands on the command line:
 3) `./pac-update.sh`
 
 Or run this single line to execute the previous commands in one go:
-
 `wget https://raw.githubusercontent.com/PACCommunity/PAC/master/pac-update.sh && chmod +x pac-update.sh && ./pac-update.sh`
-
 
 Follow the instructions:
 1)Do you want to autobackup wallet.dat and continue with the process? [y/n]: Type yes to backup and continue or no to stop process 
+
+Updating multiple masternode on a VPS to the latest verion (only for Cold wallet setup)
+-------
+1) Download and unzip PacNodesUpdater.zip 
+2) Edit the nodes.csv file by adding the following data in order to login to the each node:
+    -hostname: This is the user name used to login to the node (ssh user)
+    -ip: Is the address of the node, be it an url or an IP address
+    -password: It is the password used by the ssh user to authenticate in the node
+3) Open your command line move to the directory where you unzipped the files and then run:
+  - `chmod +x updateMNs.sh`
+  - `sudo ./updateMNs.sh'
+
+Keep an eye on the execution as the script might ask you for confirmation or passwords to
+authorize certain actions.
