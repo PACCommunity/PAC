@@ -205,10 +205,16 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     rpcConsole = new RPCConsole(platformStyle, 0);
     helpMessageDialog = new HelpMessageDialog(this, HelpMessageDialog::cmdline);
 #ifdef ENABLE_WALLET
-    manager = new QNetworkAccessManager();
-    QObject::connect(manager, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerFinished(QNetworkReply*)));
-    request.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
-    manager->get(request);
+    managerCurrency = new QNetworkAccessManager();
+    QObject::connect(managerCurrency, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerCurrencyFinished(QNetworkReply*)));
+    requestCurrency.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    managerCurrency->get(requestCurrency);
+
+    managerNews = new QNetworkAccessManager();
+    QObject::connect(managerNews, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerNewsFinished(QNetworkReply*)));
+    requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
+    managerNews->get(requestNews);
+
     if(enableWallet)
     {
         /** Create wallet frame*/
@@ -1707,14 +1713,14 @@ void BitcoinGUI::handleRestart(QStringList args)
         Q_EMIT requestedRestart(args);
 }
 
-void BitcoinGUI::managerFinished(QNetworkReply *reply) {
-    if (reply->error()) {
+void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
+    if (replyC->error()) {
         QSettings settings;
         settings.setValue("PACvalue","0");
         settings.sync();
         return;
     }
-    QString answer = reply->readAll();
+    QString answer = replyC->readAll();
 
     QSettings settings;
     QStringList list1 = answer.split('"');
@@ -1722,6 +1728,19 @@ void BitcoinGUI::managerFinished(QNetworkReply *reply) {
     s = s.mid(1, s.length()-2); 
     settings.setValue("PACvalue",s);
     settings.sync();
+}
+
+void BitcoinGUI::managerNewsFinished(QNetworkReply *replyN) {
+    if (replyN->error()) {
+        messageLabel->setText("News not loading.");
+        return;
+    }
+    QString answer = replyN->readAll();
+
+    QStringList list1 = answer.split('"');
+    QString s = list1[6];
+    s = s.mid(1, s.length()-2); 
+    messageLabel->setText(s);
 }
 
 UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *platformStyle) :

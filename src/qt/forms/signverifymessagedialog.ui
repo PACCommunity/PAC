@@ -50,6 +50,9 @@
            <property name="toolTip">
             <string>The Paccoin address to sign the message with</string>
            </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -117,6 +120,9 @@
            </property>
            <property name="readOnly">
             <bool>true</bool>
+           </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
            </property>
           </widget>
          </item>
@@ -240,6 +246,9 @@
            <property name="toolTip">
             <string>The Paccoin address the message was signed with</string>
            </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -264,7 +273,11 @@
         <widget class="QPlainTextEdit" name="messageIn_VM"/>
        </item>
        <item>
-        <widget class="QValidatedLineEdit" name="signatureIn_VM"/>
+        <widget class="QValidatedLineEdit" name="signatureIn_VM">
+         <property name="class" stdset="0">
+          <string>LineEditSmall</string>
+         </property>
+        </widget>
        </item>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2_VM">
@@ -351,8 +364,6 @@
    <header>qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
- <resources>
-  <include location="../paccoin.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
