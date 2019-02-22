@@ -32,7 +32,7 @@
 #include <QPixmap>
 #include <QDebug>
 #include <QPainter>
-
+#include <QToolTip>
 
 #if QT_VERSION < 0x050000
 #include <QUrl>
@@ -55,6 +55,9 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
+
+    ui->lineEditCurrentAddress->hide();
+    ui->btnCopyLastAddress->hide();
 
     lblQRCode = new QRImageWidget;
     lblQRCode->setAlignment(Qt::AlignCenter);
@@ -98,7 +101,15 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
     connect(copyMessageAction, SIGNAL(triggered()), this, SLOT(copyMessage()));
     connect(copyAmountAction, SIGNAL(triggered()), this, SLOT(copyAmount()));
 
+    connect(ui->btnCopyLastAddress,  SIGNAL(clicked()), this, SLOT(copyAddress()));
+
     connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
+}
+void ReceiveCoinsDialog::copyAddress(){
+    QClipboard *clip = QApplication::clipboard();
+    QString input = ui->lineEditCurrentAddress->text();
+    clip->setText(input);
+    QToolTip::showText(ui->btnCopyLastAddress->mapToGlobal(QPoint(10,10)), "Copied Address to Clipboard!",ui->btnCopyLastAddress);
 }
 
 void ReceiveCoinsDialog::setModel(WalletModel *model)
@@ -173,6 +184,10 @@ void ReceiveCoinsDialog::generateQRCode()
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
     QString uri = GUIUtil::formatBitcoinURI(info);
+
+    ui->lineEditCurrentAddress->setText(info.address);
+    ui->lineEditCurrentAddress->show();
+    ui->btnCopyLastAddress->show();
 #ifdef USE_QRCODE
     lblQRCode->setText("");
     if(!uri.isEmpty())

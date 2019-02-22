@@ -49,6 +49,7 @@ public:
     void setModel(WalletModel *model);
 
 public Q_SLOTS:
+    void copyAddress();
     void clear();
     void reject();
     void accept();

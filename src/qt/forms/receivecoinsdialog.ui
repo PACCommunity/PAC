@@ -372,33 +372,7 @@
               </property>
               <layout class="QHBoxLayout" name="horizontalLayout_4">
                <item>
-                <widget class="QLabel" name="label_7">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_4">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <spacer name="horizontalSpacer_4">
+                <spacer name="horizontalSpacer_8">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
@@ -431,6 +405,19 @@
                   <string>R&amp;euse an existing receiving address (not recommended)</string>
                  </property>
                 </widget>
+               </item>
+               <item>
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>20</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
                </item>
                <item>
                 <widget class="QCheckBox" name="checkUseInstantSend">
@@ -627,6 +614,22 @@
           </widget>
          </item>
          <item>
+          <spacer name="verticalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeType">
+            <enum>QSizePolicy::Fixed</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>0</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
             <spacer name="horizontalSpacer_6">
@@ -658,14 +661,32 @@
                <height>16777215</height>
               </size>
              </property>
+             <property name="acceptDrops">
+              <bool>false</bool>
+             </property>
+             <property name="toolTip">
+              <string>Last PAC Address generated</string>
+             </property>
+             <property name="toolTipDuration">
+              <number>2</number>
+             </property>
              <property name="whatsThis">
               <string>Last PAC Address</string>
+             </property>
+             <property name="locale">
+              <locale language="English" country="UnitedStates"/>
+             </property>
+             <property name="inputMethodHints">
+              <set>Qt::ImhNone</set>
              </property>
              <property name="inputMask">
               <string/>
              </property>
              <property name="text">
               <string/>
+             </property>
+             <property name="frame">
+              <bool>false</bool>
              </property>
              <property name="readOnly">
               <bool>true</bool>
@@ -695,6 +716,9 @@
                <height>50</height>
               </size>
              </property>
+             <property name="toolTip">
+              <string>Copy Last PAC Address Generated</string>
+             </property>
              <property name="text">
               <string/>
              </property>
@@ -704,6 +728,21 @@
              </property>
              <property name="checkable">
               <bool>false</bool>
+             </property>
+             <property name="autoRepeat">
+              <bool>false</bool>
+             </property>
+             <property name="autoExclusive">
+              <bool>false</bool>
+             </property>
+             <property name="toolButtonStyle">
+              <enum>Qt::ToolButtonIconOnly</enum>
+             </property>
+             <property name="autoRaise">
+              <bool>true</bool>
+             </property>
+             <property name="arrowType">
+              <enum>Qt::NoArrow</enum>
              </property>
              <property name="class" stdset="0">
               <string>QuickButton</string>
@@ -756,6 +795,9 @@
                <width>260</width>
                <height>0</height>
               </size>
+             </property>
+             <property name="toolTip">
+              <string>Request a Payment and generates the Address and QRCode</string>
              </property>
              <property name="text">
               <string>&amp;Request payment</string>
