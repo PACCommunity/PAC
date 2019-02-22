@@ -710,3 +710,22 @@ MasternodeList > QTabBar::tab{
 #OptionsDialog > #resetButton{
     width:200px !important;
 }
+
+/*
+ * Sign verify message
+ */
+#messageIn_SM, #messageIn_VM{
+    background: rgb(10, 10, 10);
+}
+/* The class on the QT is not working, this is "LineEditSmall" */
+#addressIn_SM, #signatureOut_SM{
+    border: 0px;
+    outline:0;
+    padding:3px;
+    background-color: rgb(10, 10, 10);
+    color: #fff;
+    font-family: 'Volte Rounded', sans-serif;
+    height: 20px !important;
+    font-size: 13px;
+    border-radius: 10px;
+}

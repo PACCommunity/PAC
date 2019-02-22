@@ -146,8 +146,10 @@ private:
     QPushButton *btnImg;
     QLabel *messageLabel;
 
-    QNetworkAccessManager *manager;
-    QNetworkRequest request;
+    QNetworkAccessManager *managerCurrency;
+    QNetworkRequest requestCurrency;
+    QNetworkAccessManager *managerNews;
+    QNetworkRequest requestNews;
 
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
@@ -249,7 +251,9 @@ private Q_SLOTS:
     void gotoVerifyMessageTab(QString addr = "");
 
     /** API PAC_USD request */
-    void managerFinished(QNetworkReply *reply);
+    void managerCurrencyFinished(QNetworkReply *replyC);
+    /** API News request */
+    void managerNewsFinished(QNetworkReply *replyN);
 
 
     /** Show open dialog */
