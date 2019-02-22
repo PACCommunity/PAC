@@ -13,7 +13,12 @@ QMainWindow{
 QMessageBox {
     background-color:rgb(26,26,26);
 }
-
+QToolTip {
+    font-family: 'Volte Rounded',sans-serif !important;
+    color: #0A0A0A;
+    background-color: #ffffff;
+    border: none;
+}
 QDialog{
     background-color:rgb(26,26,26);
     color:white;
