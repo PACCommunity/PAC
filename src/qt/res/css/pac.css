@@ -86,16 +86,16 @@ QTabBar::tab:selected {
 QProgressBar {
     border: 1px solid white;
     background-color: white;
-    border-bottom-right-radius: 3px;
-    border-bottom-left-radius: 3px;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     height: 4px ;
 
 }
 QProgressBar::chunk {
     background-color:#F4EA13;
-    border-radius: 3px;
+    border-radius: 7px;
 }
 
 QStatusBar{
@@ -154,11 +154,8 @@ QStatusBar{
 }
 [class="QuickButton"]{
     background-color: transparent;
-    border: none;
-}
-[class="QuickButton"]:hover{
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 10px;
+    border: none !important;
+    border-radius: 10 px !important;
 }
 [class="SpinBoxSmall"]{
     border-radius: 10px !important;
