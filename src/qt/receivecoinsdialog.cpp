@@ -33,7 +33,9 @@
 #include <QDebug>
 #include <QPainter>
 #include <QToolTip>
+#include <QGraphicsOpacityEffect>
 
+#include <QPropertyAnimation>
 #if QT_VERSION < 0x050000
 #include <QUrl>
 #endif
@@ -188,6 +190,7 @@ void ReceiveCoinsDialog::generateQRCode()
     ui->lineEditCurrentAddress->setText(info.address);
     ui->lineEditCurrentAddress->show();
     ui->btnCopyLastAddress->show();
+
 #ifdef USE_QRCODE
     lblQRCode->setText("");
     if(!uri.isEmpty())
@@ -265,6 +268,29 @@ void ReceiveCoinsDialog::updateDisplayUnit()
 void ReceiveCoinsDialog::on_receiveButton_clicked()
 {
     generateQRCode();
+
+    // animation added in order to make the user noticing the qrcode and address changing  (UX element)
+    QGraphicsOpacityEffect *eff1 = new QGraphicsOpacityEffect(this);
+    QGraphicsOpacityEffect *eff2 = new QGraphicsOpacityEffect(this);
+
+    lblQRCode->setGraphicsEffect(eff1);
+    ui->lineEditCurrentAddress->setGraphicsEffect(eff2);
+
+    QPropertyAnimation *a1 = new QPropertyAnimation(eff1,"opacity");
+    QPropertyAnimation *a2 = new QPropertyAnimation(eff2,"opacity");
+    a1->setDuration(250);
+    a1->setStartValue(0);
+    a1->setEndValue(1);
+    a1->setEasingCurve(QEasingCurve::InBack);
+
+    a2->setDuration(250);
+    a2->setStartValue(0);
+    a2->setEndValue(1);
+    a2->setEasingCurve(QEasingCurve::InBack);
+
+    a1->start(QPropertyAnimation::DeleteWhenStopped);
+    a2->start(QPropertyAnimation::DeleteWhenStopped);
+    ui->recentRequestsView->selectRow(0);
 }
 
 void ReceiveCoinsDialog::on_recentRequestsView_doubleClicked(const QModelIndex &index)
