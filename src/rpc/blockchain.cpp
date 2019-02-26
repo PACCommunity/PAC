@@ -924,6 +924,7 @@ UniValue getchaintips(const UniValue& params, bool fHelp)
             "    \"chainwork\" : \"0000...1f3\"  (string) Expected number of hashes required to produce the current chain (in hex)\n"
             "    \"branchlen\": 0              (numeric) zero for main chain\n"
             "    \"status\": \"active\"          (string) \"active\" for the main chain\n"
+            "    \"penalization\": 0              (numeric) zero for main chain\n"
             "  },\n"
             "  {\n"
             "    \"height\": xxxx,\n"
@@ -932,6 +933,7 @@ UniValue getchaintips(const UniValue& params, bool fHelp)
             "    \"chainwork\" : \"0000...1f3\"\n"
             "    \"branchlen\": 1              (numeric) length of branch connecting the tip to the main chain\n"
             "    \"status\": \"xxxx\"            (string) status of the chain (active, valid-fork, valid-headers, headers-only, invalid)\n"
+            "    \"penalization\": 0              (numeric) penalization of the chain, zero for the main chain.\n"
             "  }\n"
             "]\n"
             "Possible values for status:\n"
@@ -1009,7 +1011,7 @@ UniValue getchaintips(const UniValue& params, bool fHelp)
             status = "unknown";
         }
         obj.push_back(Pair("status", status));
-
+        obj.push_back(Pair("penalization", block->nChainDelay));
         res.push_back(obj);
     }
 

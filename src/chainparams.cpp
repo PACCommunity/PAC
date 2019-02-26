@@ -30,9 +30,9 @@
 #define TESTNET_GENESIS_NONCE 2279587UL
 #define TESTNET_GENESIS_TIMESTAMP 1517541975UL
 
-#define REGTEST_GENESIS_HASH "0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95"
-#define REGTEST_GENESIS_NONCE 1UL
-#define REGTEST_GENESIS_TIMESTAMP 1517542062UL
+#define REGTEST_GENESIS_HASH "0x03ddaf131760ea9614a00fd504b035061b6ad367dc91be7a8821bd787484cba0"
+#define REGTEST_GENESIS_NONCE 2UL
+#define REGTEST_GENESIS_TIMESTAMP 1548210160UL
 
 static CBlock CreateGenesisBlock(const char* pszTimestamp, const CScript& genesisOutputScript, uint32_t nTime, uint32_t nNonce, uint32_t nBits, int32_t nVersion, const CAmount& genesisReward, const Consensus::Params& consensus)
 {
@@ -121,7 +121,7 @@ public:
         strNetworkID = "main";
         consensus.nSubsidyHalvingInterval = 210240; // Note: actual number of blocks per calendar year with DGW v3 is ~200700 (for example 449750 - 249050)
         consensus.nMasternodePaymentsStartBlock = 200; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
-        consensus.nMasternodePaymentsIncreaseBlock = 50000; // 50000 height aproximately April 20th
+        consensus.nMasternodePaymentsIncreaseBlock = 217736; // 217736 height aproximately February 21th
         consensus.nMasternodePaymentsIncreasePeriod = 576*30; // Not used
         consensus.nFeeChangeBlock = 155000; // Aproximately October 29th 2018
         consensus.nInstantSendKeepLock = 24;
@@ -165,10 +165,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nThreshold = 3226; // 80% of 4032
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000291362006875385877"); // #151380
+        consensus.nMinimumChainWork = uint256S("0x00000000000000000000000000000000000000000000002ca70cb14917f702ff"); // #216000
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d"); // #151380
+        consensus.defaultAssumeValid = uint256S("0x00000000000038a52e7bafb7fb091ed2989ec8bdd7a550db9925300687805d87"); // #216000
 
         /**
          * The message start string is designed to be unlikely to occur in normal data.
@@ -230,9 +230,10 @@ public:
             (  43850,   uint256S("0x0000000000000be675f137fbf5cbe5e9d8cb0ea509d30252a02c30944f16970f"))
             (  50000,   uint256S("0x00000000000007cdd43a784898eb9cb5be63ca7db5e5935a05a1baa01a658ca0"))
             (  50620,   uint256S("0x0000000000000349685ff23a2344db4d51ae9f169cda23c8a472fb783914b071"))
-            (  151380,  uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d")),
-            1540326989, // * UNIX timestamp of last checkpoint block
-            704761,    // * total number of transactions between genesis and last checkpoint
+            (  151380,  uint256S("0x00000000000027377aa412aad9342c61c20973ac1636663b2ef06b3f7549876d"))
+            (  216000,  uint256S("0x00000000000038a52e7bafb7fb091ed2989ec8bdd7a550db9925300687805d87")),
+            1550525942, // * UNIX timestamp of last checkpoint block
+            814704,    // * total number of transactions between genesis and last checkpoint
                         //   (the tx=... number in the SetBestChain debug.log lines)
             5000        // * estimated number of transactions per day after checkpoint
         };
@@ -249,7 +250,7 @@ public:
         strNetworkID = "test";
         consensus.nSubsidyHalvingInterval = 210240;
         consensus.nMasternodePaymentsStartBlock = 2; // not true, but it's ok as long as it's less then nMasternodePaymentsIncreaseBlock
-        consensus.nMasternodePaymentsIncreaseBlock = 6200;
+        consensus.nMasternodePaymentsIncreaseBlock = 126250;
         consensus.nMasternodePaymentsIncreasePeriod = 10;
         consensus.nFeeChangeBlock = 99500;
         consensus.nInstantSendKeepLock = 6;
@@ -402,10 +403,10 @@ public:
         consensus.vDeployments[Consensus::DEPLOYMENT_DIP0001].nTimeout = 999999999999ULL;
 
         // The best chain should have at least this much work.
-        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000100010");
+        consensus.nMinimumChainWork = uint256S("0x0000000000000000000000000000000000000000000000000000000000000002");
 
         // By default assume that the signatures in ancestors of this block are valid.
-        consensus.defaultAssumeValid = uint256S("0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95");
+        consensus.defaultAssumeValid = uint256S("0x03ddaf131760ea9614a00fd504b035061b6ad367dc91be7a8821bd787484cba0");
 
         pchMessageStart[0] = 0x96;
         pchMessageStart[1] = 0xa6;
@@ -434,7 +435,7 @@ public:
 
         checkpointData = (CCheckpointData){
             boost::assign::map_list_of
-            ( 0, uint256S("0x084c58211fe102add2fb5c3976f14f997e3c27a3a6fd5ab15a1929f7b5db9d95")),
+            ( 0, uint256S("0x03ddaf131760ea9614a00fd504b035061b6ad367dc91be7a8821bd787484cba0")),
             0,
             0,
             0

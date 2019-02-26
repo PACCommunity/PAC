@@ -128,6 +128,7 @@ testScripts = [
     'invalidtxrequest.py', # NOTE: needs paccoin_hash to pass
     'abandonconflict.py',
     'p2p-versionbits-warning.py',
+    'blockdelay.py',
 ]
 if ENABLE_ZMQ:
     testScripts.append('zmq_test.py')
