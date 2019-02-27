@@ -14,9 +14,7 @@
    <string>Send Coins</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">#SendCoinsDialog{
-  background:transparent;
-}</string>
+   <string notr="true"/>
   </property>
   <property name="windowFilePath">
    <string/>
@@ -849,6 +847,22 @@
               </property>
              </widget>
             </item>
+            <item>
+             <spacer name="horizontalSpacer_17">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>10</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
           </item>
          </layout>
@@ -1040,20 +1054,20 @@
      <item>
       <widget class="QWidget" name="verticalWidget" native="true">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
        <property name="minimumSize">
         <size>
-         <width>250</width>
+         <width>380</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>450</width>
+         <width>480</width>
          <height>16777215</height>
         </size>
        </property>
@@ -1252,13 +1266,13 @@
           </item>
           <item row="13" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <property name="spacing">
+             <number>0</number>
+            </property>
             <item>
              <spacer name="horizontalSpacer_4">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1270,9 +1284,21 @@
             </item>
             <item>
              <widget class="QPushButton" name="addButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="minimumSize">
+               <size>
+                <width>175</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>170</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1288,16 +1314,38 @@
              </widget>
             </item>
             <item>
+             <spacer name="horizontalSpacer_18">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>10</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item>
              <widget class="QPushButton" name="clearButton">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
+              <property name="minimumSize">
+               <size>
+                <width>175</width>
+                <height>0</height>
+               </size>
+              </property>
               <property name="maximumSize">
                <size>
-                <width>120</width>
+                <width>170</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1316,9 +1364,6 @@
              <spacer name="horizontalSpacer_12">
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1401,15 +1446,21 @@
            <layout class="QHBoxLayout" name="horizontalLayout_9">
             <item>
              <widget class="QPushButton" name="sendButton">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>250</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
               <property name="maximumSize">
                <size>
-                <width>200</width>
+                <width>16777215</width>
                 <height>16777215</height>
                </size>
               </property>
@@ -1433,7 +1484,10 @@
            </layout>
           </item>
           <item row="6" column="0">
-           <widget class="QScrollArea" name="scrollArea_2">
+           <widget class="QScrollArea" name="scrollAreaFees">
+            <property name="styleSheet">
+             <string notr="true">#scrollArea_2{ padding: 5px;}</string>
+            </property>
             <property name="widgetResizable">
              <bool>true</bool>
             </property>
@@ -1442,7 +1496,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>388</width>
+               <width>378</width>
                <height>484</height>
               </rect>
              </property>
@@ -1552,6 +1606,42 @@
                         <property name="verticalSpacing">
                          <number>4</number>
                         </property>
+                        <item row="3" column="0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_11">
+                          <item>
+                           <spacer name="horizontalSpacer_14">
+                            <property name="orientation">
+                             <enum>Qt::Horizontal</enum>
+                            </property>
+                            <property name="sizeType">
+                             <enum>QSizePolicy::Fixed</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>30</width>
+                              <height>20</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item>
+                           <widget class="QLabel" name="labelMinFeeWarning">
+                            <property name="enabled">
+                             <bool>true</bool>
+                            </property>
+                            <property name="toolTip">
+                             <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for paccoin transactions than the network can process.</string>
+                            </property>
+                            <property name="text">
+                             <string>    (read the tooltip)</string>
+                            </property>
+                            <property name="margin">
+                             <number>5</number>
+                            </property>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
                         <item row="0" column="0">
                          <layout class="QVBoxLayout" name="verticalLayoutFee3" stretch="0,0,1">
                           <property name="spacing">
@@ -1858,41 +1948,21 @@
                           </item>
                          </layout>
                         </item>
-                        <item row="3" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_11">
-                          <item>
-                           <spacer name="horizontalSpacer_14">
-                            <property name="orientation">
-                             <enum>Qt::Horizontal</enum>
-                            </property>
-                            <property name="sizeType">
-                             <enum>QSizePolicy::Fixed</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>30</width>
-                              <height>20</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                          <item>
-                           <widget class="QLabel" name="labelMinFeeWarning">
-                            <property name="enabled">
-                             <bool>true</bool>
-                            </property>
-                            <property name="toolTip">
-                             <string>Paying only the minimum fee is just fine as long as there is less transaction volume than space in the blocks.&lt;br /&gt;But be aware that this can end up in a never confirming transaction once there is more demand for paccoin transactions than the network can process.</string>
-                            </property>
-                            <property name="text">
-                             <string>    (read the tooltip)</string>
-                            </property>
-                            <property name="margin">
-                             <number>5</number>
-                            </property>
-                           </widget>
-                          </item>
-                         </layout>
+                        <item row="0" column="1">
+                         <spacer name="horizontalSpacer_19">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
+                          </property>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Fixed</enum>
+                          </property>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>15</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
                         </item>
                        </layout>
                       </item>
@@ -1959,15 +2029,15 @@
  </widget>
  <customwidgets>
   <customwidget>
-   <class>QValidatedLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qvalidatedlineedit.h</header>
-  </customwidget>
-  <customwidget>
    <class>BitcoinAmountField</class>
    <extends>QLineEdit</extends>
    <header>bitcoinamountfield.h</header>
    <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>QValidatedLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
