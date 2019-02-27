@@ -17,6 +17,7 @@
 #include "transactiontablemodel.h"
 #include "utilitydialog.h"
 #include "walletmodel.h"
+#include "walletview.h"
 
 #include "instantx.h"
 #include "darksendconfig.h"
@@ -335,4 +336,11 @@ void OverviewPage::on_overviewInfo_clicked()
 {
     HelpMessageDialog dlg(this, HelpMessageDialog::ovhelp);
     dlg.exec();
+}
+
+void OverviewPage::receive_from_walletview()
+{
+    ui->labelBalanceUSD->setText("$ " + BitcoinUnits::pacToUsd(currentBalance) + " USD");
+    ui->labelUnconfirmedUSD->setText("$ " + BitcoinUnits::pacToUsd(currentUnconfirmedBalance) + " USD");
+    ui->labelTotalUSD->setText("$ " + BitcoinUnits::pacToUsd(currentBalance + currentUnconfirmedBalance + currentImmatureBalance) + " USD");
 }

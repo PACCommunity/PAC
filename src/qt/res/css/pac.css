@@ -101,25 +101,6 @@ QProgressBar::chunk {
 QStatusBar{
     background-color: rgb(10,10,10) !important;
 }
-#btnChangeImage{
-    height:80px;
-    width:80px;
-    border-radius: 40px;
-    /*border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch;*/
-}
-#btnChangeImage:hover {
-    height:80px;
-    width:80px;
-    border-radius: 40px;
-    border: 1px solid rgb(255,255,255) !important;
-    /*border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch;*/
-}
-#btnChangeImage:pressed {
-    height:80px;
-    width:80px;
-    border-radius: 40px;
-    border: 1px solid rgb(263,252,76) !important;
-}
 
 /* Global containers */
 [class="container"]{
@@ -154,8 +135,11 @@ QStatusBar{
 }
 [class="QuickButton"]{
     background-color: transparent;
-    border: none !important;
-    border-radius: 10 px !important;
+    border: none;
+}
+[class="QuickButton"]:hover{
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
 }
 [class="SpinBoxSmall"]{
     border-radius: 10px !important;
@@ -545,6 +529,38 @@ BitcoinAmountField QComboBox::indicator {
     color:transparent;
     selection-color:transparent;
 }
+
+/*
+ * News/profile image bar style
+ */
+#btnChangeImage{
+    height:80px;
+    width:80px;
+    border-radius: 40px;
+    /*border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch;*/
+}
+#btnChangeImage:hover {
+    height:80px;
+    width:80px;
+    border-radius: 40px;
+    border: 1px solid rgb(255,255,255) !important;
+    /*border-image: url(:/images/pac/hover_profile) 0 0 0 0 stretch stretch;*/
+}
+#btnChangeImage:pressed {
+    height:80px;
+    width:80px;
+    border-radius: 40px;
+    border: 1px solid rgb(263,252,76) !important;
+}
+#btnRefreshNews, #btnRefreshNews:hover, #btnCopyNews, #btnCopyNews:hover{
+    border: 0px;
+    background: transparent;
+}
+#btnRefreshNews:pressed, #btnCopyNews:pressed{
+    border: 1px solid #F4EA13;
+    border-radius: 10px;
+}
+
 /*
  * Overview Page
 */

@@ -15,6 +15,7 @@
 #include "openuridialog.h"
 #include "optionsdialog.h"
 #include "optionsmodel.h"
+#include "overviewpage.h"
 #include "platformstyle.h"
 #include "rpcconsole.h"
 #include "utilitydialog.h"
@@ -40,6 +41,7 @@
 
 #include <QAction>
 #include <QApplication>
+#include <QClipboard>
 #include <QDateTime>
 #include <QDesktopWidget>
 #include <QDragEnterEvent>
@@ -55,6 +57,7 @@
 #include <QStyle>
 #include <QTimer>
 #include <QToolBar>
+#include <QToolTip>
 #include <QVBoxLayout>
 #include <QDebug>
 #include <QRegion>
@@ -212,7 +215,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     managerNews = new QNetworkAccessManager();
     QObject::connect(managerNews, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerNewsFinished(QNetworkReply*)));
-    requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
+    //requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
+    requestNews.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
     managerNews->get(requestNews);
 
     if(enableWallet)
@@ -318,6 +322,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(walletFrame, SIGNAL(requestedSyncWarningInfo()), this, SLOT(showModalOverlay()));
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
+        connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
 }
@@ -721,13 +726,14 @@ void BitcoinGUI::createHeaderBar()
     QFrame *frameImg = new QFrame;
     QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
     btnImg = new QPushButton;
+    btnRefresh = new QPushButton;
+    btnCopyNews = new QPushButton;
     QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
     QSpacerItem *messageLeftSpacer = new QSpacerItem(30,1, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
     headerFrame->setFixedHeight(100);
     headerFrame->setObjectName("headerFrameLayout");
     headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/pac/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");
-
 
     messageLabel->setText("");
     messageLabel->setAlignment(Qt::AlignCenter);
@@ -744,6 +750,18 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setFixedHeight(80);
     btnImg->setFixedWidth(80);
 
+    btnRefresh->setObjectName("btnRefreshNews");
+    btnRefresh->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnRefresh->setFixedHeight(20);
+    btnRefresh->setFixedWidth(20);
+    btnRefresh->setIcon(QIcon(":/movies/spinner-000"));
+
+    btnCopyNews->setObjectName("btnCopyNews");
+    btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnCopyNews->setFixedHeight(20);
+    btnCopyNews->setFixedWidth(20);
+    btnCopyNews->setIcon(QIcon(":/icons/pac/editcopy"));
+
     profileImgLayout->setContentsMargins(0,0,0,0);
     profileImgLayout->addWidget(btnImg);
     profileImgLayout->addSpacerItem(item);
@@ -755,6 +773,8 @@ void BitcoinGUI::createHeaderBar()
     headerFrameLayout->setContentsMargins(0,0,0,0);
     headerFrameLayout->addSpacerItem(messageLeftSpacer);
     headerFrameLayout->addWidget(messageLabel);
+    headerFrameLayout->addWidget(btnRefresh);
+    headerFrameLayout->addWidget(btnCopyNews);
     headerFrameLayout->addWidget(frameImg);
     headerFrame->setLayout(headerFrameLayout);
 
@@ -781,6 +801,8 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setIcon(ButtonIcon);
     btnImg->setIconSize(QSize(78,78));
     connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
+    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyAddress()));
+    connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
 }
 
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
@@ -1669,6 +1691,24 @@ void BitcoinGUI::showModalOverlay()
         modalOverlay->toggleVisibility();
 }
 
+void BitcoinGUI::copyAddress(){
+    QClipboard *clip = QApplication::clipboard();
+    QString input = messageLabel->text();
+    clip->setText(input);
+    QToolTip::showText(btnCopyNews->mapToGlobal(QPoint(10,10)), "Copied Address to Clipboard!",btnCopyNews);
+}
+
+void BitcoinGUI::refreshNewsPacValue(){
+    //Refresh news
+    requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
+    //requestNews.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    managerNews->get(requestNews);
+
+    //Refresh PAC value
+    requestCurrency.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    managerCurrency->get(requestCurrency);
+}
+
 static bool ThreadSafeMessageBox(BitcoinGUI *gui, const std::string& message, const std::string& caption, unsigned int style)
 {
     bool modal = (style & CClientUIInterface::MODAL);
@@ -1719,6 +1759,7 @@ void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
         QSettings settings;
         settings.setValue("PACvalue","0");
         settings.sync();
+        Q_EMIT transmit_to_walletframe();
         return;
     }
     QString answer = replyC->readAll();
@@ -1729,6 +1770,7 @@ void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
     s = s.mid(1, s.length()-2); 
     settings.setValue("PACvalue",s);
     settings.sync();
+    Q_EMIT transmit_to_walletframe();
 }
 
 void BitcoinGUI::managerNewsFinished(QNetworkReply *replyN) {

@@ -144,6 +144,8 @@ private:
 
     QFrame *headerFrame;
     QPushButton *btnImg;
+    QPushButton *btnRefresh;
+    QPushButton *btnCopyNews;
     QLabel *messageLabel;
 
     QNetworkAccessManager *managerCurrency;
@@ -187,6 +189,9 @@ Q_SIGNALS:
     void receivedURI(const QString &uri);
     /** Restart handling */
     void requestedRestart(QStringList args);
+
+    /** Refresh PAC value to the walletframe */
+    void transmit_to_walletframe();
 
 public Q_SLOTS:
     /** Set number of connections shown in the UI */
@@ -254,6 +259,10 @@ private Q_SLOTS:
     void managerCurrencyFinished(QNetworkReply *replyC);
     /** API News request */
     void managerNewsFinished(QNetworkReply *replyN);
+    /** Copy the text of the news */
+    void copyAddress();
+    /** Refresh the news and the PAC value */
+    void refreshNewsPacValue();
 
 
     /** Show open dialog */

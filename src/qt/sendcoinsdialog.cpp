@@ -972,5 +972,9 @@ void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
     }else{
         ui->labelConvertionUSD->setText("0.0");
     }
-    
+}
+
+void SendCoinsDialog::receive_from_walletview()
+{
+    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(model->getBalance()) + " USD");
 }

@@ -6,6 +6,7 @@
 #define BITCOIN_QT_OVERVIEWPAGE_H
 
 #include "amount.h"
+#include "walletview.h"
 
 #include <QWidget>
 #include <memory>
@@ -36,6 +37,7 @@ public:
     void setClientModel(ClientModel *clientModel);
     void setWalletModel(WalletModel *walletModel);
     void showOutOfSyncWarning(bool fShow);
+    //void updatePacUsd();
 
 public Q_SLOTS:
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
@@ -64,8 +66,6 @@ private:
     std::unique_ptr<TransactionFilterProxy> filter;
 
     void SetupTransactionList(int nNumItems);
-    void getadata();
-    void myFunction();
 
 private Q_SLOTS:
     void updateDisplayUnit();
@@ -75,6 +75,7 @@ private Q_SLOTS:
     void updateWatchOnlyLabels(bool showWatchOnly);
     void handleOutOfSyncWarningClicks();
     void on_overviewInfo_clicked();
+    void receive_from_walletview();
 };
 
 #endif // BITCOIN_QT_OVERVIEWPAGE_H

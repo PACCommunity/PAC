@@ -66,6 +66,8 @@ private:
     bool fFeeMinimized;
     const PlatformStyle *platformStyle;
 
+    uint64_t *bal;
+
     // Process WalletModel::SendCoinsReturn and generate a pair consisting
     // of a message and message flags for use in Q_EMIT message().
     // Additional parameter msgArg can be used via .arg(msgArg).
@@ -97,6 +99,7 @@ private Q_SLOTS:
     void updateMinFeeLabel();
     void updateSmartFeeLabel();
     void updateGlobalFeeVariables();
+    void receive_from_walletview();
 
     void on_lineConvertCurrency_textChanged(const QString &arg1);
 

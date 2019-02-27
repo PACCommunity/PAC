@@ -8,6 +8,7 @@
 #include "amount.h"
 #include "masternodelist.h"
 #include "proposallist.h"
+#include "walletframe.h"
 
 #include <QStackedWidget>
 
@@ -98,6 +99,9 @@ public Q_SLOTS:
     /** Show Sign/Verify Message dialog and switch to verify message tab */
     void gotoVerifyMessageTab(QString addr = "");
 
+    /** Gets the value of the PAC from walletframe */
+    void receive_from_walletframe();
+
     /** Show incoming transaction notification for new transactions.
 
         The new items are those between start and end inclusive, under the given parent item.
@@ -144,8 +148,12 @@ Q_SIGNALS:
     void incomingTransaction(const QString& date, int unit, const CAmount& amount, const QString& type, const QString& address, const QString& label);
     /** Notify that the out of sync warning icon has been pressed */
     void outOfSyncWarningClicked();
-    /** Send PAC value to overviewPage */
-    void transmit_to_overview(QString message);
+    /** Refresh the value on the overview */
+    void transmit_to_overview();
+    /** Refresh the value on the sendview */
+    void transmit_to_sendview();
+    /** Refresh the value on the receiveview */
+    void transmit_to_receiveview();
 };
 
 #endif // BITCOIN_QT_WALLETVIEW_H

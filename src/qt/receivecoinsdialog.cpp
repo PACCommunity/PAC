@@ -53,6 +53,7 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
     ui(new Ui::ReceiveCoinsDialog),
     columnResizingFixer(0),
     model(0),
+    currentBalance(-1),
     platformStyle(platformStyle)
 {
     ui->setupUi(this);
@@ -423,6 +424,7 @@ void ReceiveCoinsDialog::copyAmount()
 void ReceiveCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
                                  const CAmount& watchBalance, const CAmount& watchUnconfirmedBalance, const CAmount& watchImmatureBalance)
 {
+    currentBalance = balance;
     Q_UNUSED(unconfirmedBalance);
     Q_UNUSED(immatureBalance);
     Q_UNUSED(anonymizedBalance);
@@ -432,4 +434,9 @@ void ReceiveCoinsDialog::setBalance(const CAmount& balance, const CAmount& uncon
 
     ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), balance, false, BitcoinUnits::separatorAlways));
+}
+
+void ReceiveCoinsDialog::receive_from_walletview()
+{
+    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(currentBalance) + " USD");
 }

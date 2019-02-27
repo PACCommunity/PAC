@@ -63,6 +63,7 @@ private:
     GUIUtil::TableViewLastColumnResizingFixer *columnResizingFixer;
     WalletModel *model;
     QMenu *contextMenu;
+    CAmount currentBalance;
     const PlatformStyle *platformStyle;
 
     QModelIndex selectedRow();
@@ -83,6 +84,7 @@ private Q_SLOTS:
     void copyLabel();
     void copyMessage();
     void copyAmount();
+    void receive_from_walletview();
 };
 
 #endif // BITCOIN_QT_RECEIVECOINSDIALOG_H

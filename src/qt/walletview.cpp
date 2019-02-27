@@ -18,7 +18,9 @@
 #include "signverifymessagedialog.h"
 #include "transactiontablemodel.h"
 #include "transactionview.h"
+#include "walletframe.h"
 #include "walletmodel.h"
+
 #include "privatepage.h"
 
 #include "ui_interface.h"
@@ -120,8 +122,12 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     // Pass through messages from transactionView
     connect(transactionView, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
 
-    // Sends the value of the PAC to the overviewPage
-    connect(this,SIGNAL(transmit_to_overview(QString)), overviewPage, SLOT(receive_from_walletview(QString)));
+    // Refresh the value of PAC on the overview
+    connect(this,SIGNAL(transmit_to_overview()), overviewPage, SLOT(receive_from_walletview()));
+    // Refresh the value of PAC on the sendview
+    connect(this,SIGNAL(transmit_to_sendview()), overviewPage, SLOT(receive_from_walletview()));
+    // Refresh the value of PAC on the receiveview
+    connect(this,SIGNAL(transmit_to_receiveview()), overviewPage, SLOT(receive_from_walletview()));
 }
 
 WalletView::~WalletView()
@@ -414,4 +420,11 @@ void WalletView::requestedSyncWarningInfo()
 void WalletView::trxAmount(QString amount)
 {
     transactionSum->setText(amount);
+}
+
+void WalletView::receive_from_walletframe()
+{
+    Q_EMIT transmit_to_overview();
+    Q_EMIT transmit_to_sendview();
+    Q_EMIT transmit_to_receiveview();
 }
