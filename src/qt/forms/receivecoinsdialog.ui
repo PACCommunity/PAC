@@ -802,6 +802,12 @@
                <height>0</height>
               </size>
              </property>
+             <property name="maximumSize">
+              <size>
+               <width>300</width>
+               <height>16777215</height>
+              </size>
+             </property>
              <property name="toolTip">
               <string>Request a Payment and generates the Address and QRCode</string>
              </property>
@@ -830,7 +836,7 @@
              </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>170</width>
+               <width>160</width>
                <height>20</height>
               </size>
              </property>
