@@ -260,7 +260,7 @@ private Q_SLOTS:
     /** API News request */
     void managerNewsFinished(QNetworkReply *replyN);
     /** Copy the text of the news */
-    void copyAddress();
+    void copyNews();
     /** Refresh the news and the PAC value */
     void refreshNewsPacValue();
 

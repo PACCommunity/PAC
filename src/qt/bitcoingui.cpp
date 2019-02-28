@@ -801,7 +801,7 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setIcon(ButtonIcon);
     btnImg->setIconSize(QSize(78,78));
     connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
-    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyAddress()));
+    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyNews()));
     connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
 }
 
@@ -1691,7 +1691,7 @@ void BitcoinGUI::showModalOverlay()
         modalOverlay->toggleVisibility();
 }
 
-void BitcoinGUI::copyAddress(){
+void BitcoinGUI::copyNews(){
     QClipboard *clip = QApplication::clipboard();
     QString input = messageLabel->text();
     clip->setText(input);

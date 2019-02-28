@@ -125,9 +125,9 @@ WalletView::WalletView(const PlatformStyle *platformStyle, QWidget *parent):
     // Refresh the value of PAC on the overview
     connect(this,SIGNAL(transmit_to_overview()), overviewPage, SLOT(receive_from_walletview()));
     // Refresh the value of PAC on the sendview
-    connect(this,SIGNAL(transmit_to_sendview()), overviewPage, SLOT(receive_from_walletview()));
+    connect(this,SIGNAL(transmit_to_sendview()), sendCoinsPage, SLOT(receive_from_walletview()));
     // Refresh the value of PAC on the receiveview
-    connect(this,SIGNAL(transmit_to_receiveview()), overviewPage, SLOT(receive_from_walletview()));
+    connect(this,SIGNAL(transmit_to_receiveview()), receiveCoinsPage, SLOT(receive_from_walletview()));
 }
 
 WalletView::~WalletView()
