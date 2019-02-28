@@ -55,7 +55,7 @@ HelpMessageDialog::HelpMessageDialog(QWidget *parent, HelpMode helpMode) :
         // Make URLs clickable
         QRegExp uri("<(.*)>", Qt::CaseSensitive, QRegExp::RegExp2);
         uri.setMinimal(true); // use non-greedy matching
-        licenseInfoHTML.replace(uri, "<a href=\"\\1\">\\1</a>");
+        licenseInfoHTML.replace(uri, "<a style=\"color:#F4EA13\" href=\"\\1\">\\1</a>");
         // Replace newlines with HTML breaks
         licenseInfoHTML.replace("\n\n", "<br><br>");
 
@@ -158,7 +158,7 @@ This means those 1000 addresses last for about 100 mixing events. When 900 of th
 It can only do this, however, if you have automatic backups enabled.<br> \
 Consequently, users who have backups disabled will also have PrivatePAC disabled. <hr>\
         "));
-//For more info see <a href=\"https://paccoinpay.atlassian.net/wiki/display/DOC/PrivateSend\">https://paccoinpay.atlassian.net/wiki/display/DOC/PrivateSend</a> \
+//For more info see <a style=\"color:#F4EA13\" href=\"https://paccoinpay.atlassian.net/wiki/display/DOC/PrivateSend\">https://paccoinpay.atlassian.net/wiki/display/DOC/PrivateSend</a> \
   //      "));
         ui->aboutMessage->setWordWrap(true);
         ui->helpMessage->setVisible(false);
