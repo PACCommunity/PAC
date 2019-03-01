@@ -750,12 +750,14 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setFixedWidth(80);
 
     btnRefresh->setObjectName("btnRefreshNews");
+    btnRefresh->setToolTip("Refresh news and PAC-USD value.");
     btnRefresh->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnRefresh->setFixedHeight(20);
     btnRefresh->setFixedWidth(20);
     btnRefresh->setIcon(QIcon(":/movies/spinner-000"));
 
     btnCopyNews->setObjectName("btnCopyNews");
+    btnCopyNews->setToolTip("Copy news.");
     btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnCopyNews->setFixedHeight(20);
     btnCopyNews->setFixedWidth(20);
