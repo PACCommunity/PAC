@@ -215,8 +215,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     managerNews = new QNetworkAccessManager();
     QObject::connect(managerNews, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerNewsFinished(QNetworkReply*)));
-    //requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
-    requestNews.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    requestNews.setUrl(QUrl("http://144.202.121.149:8080/"));
     managerNews->get(requestNews);
 
     if(enableWallet)
@@ -1700,8 +1699,7 @@ void BitcoinGUI::copyNews(){
 
 void BitcoinGUI::refreshNewsPacValue(){
     //Refresh news
-    requestNews.setUrl(QUrl("https://samples.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=b6907d289e10d714a6e88b30761fae22"));
-    //requestNews.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    requestNews.setUrl(QUrl("http://144.202.121.149:8080/"));
     managerNews->get(requestNews);
 
     //Refresh PAC value
@@ -1779,11 +1777,7 @@ void BitcoinGUI::managerNewsFinished(QNetworkReply *replyN) {
         return;
     }
     QString answer = replyN->readAll();
-
-    QStringList list1 = answer.split('"');
-    QString s = list1[6];
-    s = s.mid(1, s.length()-2); 
-    messageLabel->setText(s);
+    messageLabel->setText(answer);
 }
 
 UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *platformStyle) :
