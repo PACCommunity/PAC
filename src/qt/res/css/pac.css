@@ -25,7 +25,7 @@ QDialog{
 }
 /* Global ComboBox */
 QComboBox{
-    background-color: #0B0B0B;
+    background-color: rgb(17,17,17);
     border:0px;
     height: 26px;
     padding: 3px 5px 3px 5px;
@@ -105,7 +105,7 @@ QStatusBar{
 
 /* Global containers */
 [class="container"]{
-    background-color: rgba(50,50,50,0.55);
+    background-color: rgba(0,0,0,0.5); 
     border: 0px !important;
 }
 /* Global text inputs */
@@ -113,7 +113,7 @@ QStatusBar{
     border: 0px;
     outline:0;
     padding:3px;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(17,17,17);
     color: #fff;
     font-family: 'Volte Rounded', sans-serif;
 }
@@ -246,7 +246,7 @@ QAbstractSpinBox {
     border-radius: 20px;
     font-size: 15px;
     min-height:40px;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(17,17,17);
     font-family: 'Volte Rounded', sans-serif;
     text-align: center;
     border:0px;
@@ -285,10 +285,10 @@ QAbstractSpinBox::down-arrow {
 }
 /* GLOBAL TABLES*/
 QHeaderView { /* Top of the table Header */
-    background-color: #0F0F0F;
+    background-color: rgb(17,17,17);
 }
 QHeaderView::section { /* Top of the table Header Sections */
-    background-color: #0F0F0F;
+    background-color: rgb(17,17,17);
     color:#fff;
     min-height:20px;
     height:35px;
@@ -319,7 +319,7 @@ QScrollArea {
     border:2px solid transparent;
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
-    background-color: rgba(40, 40, 40, 0.3);
+    background-color: rgba(0,0,0,0.5); 
     color: white !important;
     border:none;
 }
@@ -332,7 +332,7 @@ QTableView::item:selected { /* Table Item Selected */
     color: white;
 }
 QTableWidget{
-    background-color: rgba(40, 40, 40, 0.3);
+    background-color: rgba(0,0,0,0.5); 
 }
 /* ToolBar Menu */
 QToolBar {
@@ -469,7 +469,7 @@ QRadioButton::indicator:unchecked:disabled{
 /* ComboBox dropdown Menus for the selector of PAC units inside BitcoinAmountField inputs  */
 BitcoinAmountField QComboBox {
     border-radius: 20px;
-    background-color: #0A0A0A;
+    background-color: rgb(17,17,17);
     font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
@@ -479,17 +479,6 @@ BitcoinAmountField QComboBox {
     color:#fff;
 }
 /* when the combo box is disabled */
-BitcoinAmountField QComboBox{
-    border-radius: 20px;
-    background-color: rgb(10, 10, 10);
-    font-family: 'Volte Rounded', sans-serif;
-    font-size: 15px;
-    text-align: center;
-    border:0px;
-    padding: 3px 5px 3px 5px;
-    min-height:40px;
-    color:#fff;
-}
 BitcoinAmountField QComboBox:disabled{
     background-color: rgb(61,61,61);
     color: #efefef;
@@ -618,17 +607,18 @@ BitcoinAmountField QComboBox::indicator {
  * Transactions Page
  */
 /* Over the table */
-QLineEdit#addressWidget, QLineEdit#tAmountWidget{
-    background-color: #0B0B0B;
+QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBox#typeWidget, QCombobox#watchOnlyWidget {
+    background-color: rgb(17,17,17);
     color:#fff;
     border:0px;
-    min-height: 30px !important;
+    min-height: 24px !important;
 }
 /*
  * Private Page
  */
 #framePrivateSend{
-    background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.35), stop: 1 rgba(75, 75, 75, 0.30));
+    /*background-color:qlineargradient(x1: 0, y1: 0, x2: 0, y2: 0.85, stop: 0 rgba(0, 0, 0, 0.35), stop: 1 rgba(75, 75, 75, 0.30));*/
+    background-color: rgba(0,0,0,0.5); 
     border: 0px !important;
 }
 #labelPrivateSendHeader{
@@ -655,7 +645,7 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget{
     color: #FDF002;
 }
 /* Black button */
-[class="buttonAllBlack"]{
+/*[class="buttonAllBlack"]{
     text-transform:uppercase;
     font-family:"Gotham Medium", sans-serif;
     background: #1A1919;
@@ -677,7 +667,7 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget{
 [class="buttonAllBlack"]:pressed {
     background: rgb(243,232,56);
     color: #fff;
-}
+}*/
 #privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed, #overviewInfo, #overviewInfo:hover, #overviewInfo:focus, #overviewInfo:disabled, #overviewInfo:pressed{
     background: transparent;
     border: 0px;
@@ -688,13 +678,13 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget{
 
 /* Over the table */
 QLineEdit#proposalWidget, QLineEdit#amountWidget, QLineEdit#yesVotesWidget, QLineEdit#noVotesWidget, QLineEdit#absoluteYesVotesWidget, QLineEdit#percentageWidget{ /* Example of setObjectName for widgets without name */
-    background-color: #0B0B0B;
+    background-color: rgb(17,17,17);
     color:#fff;
     border:0px;
     min-height: 30px !important;
 }
 QComboBox#startDateWidget, QComboBox#endDateWidget{
-    background-color: #0B0B0B;
+    background-color: rgb(17,17,17);
     border:0px;
     padding: 3px 5px 3px 5px;
     color:#fff;
@@ -708,7 +698,7 @@ QComboBox#startDateWidget, QComboBox#endDateWidget{
     border:3px red;
 }
 QComboBox#startDateWidget QListView, QComboBox#endDateWidget QListView{
-    background-color:  rgb(20, 20, 20);
+    background-color: rgb(17,17,17);
     border:0px;
     border-radius: 5px;
     padding-right:1px;
