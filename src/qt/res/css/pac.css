@@ -84,12 +84,12 @@ QTabBar::tab:selected {
 
 /* Global Progress Bar styles */
 QProgressBar {
-    border: 1px solid white;
+    border: 2px solid rgb(50,50,50);
     background-color: white;
-    border-bottom-right-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-bottom-right-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-left-radius: 9px;
+    border-top-right-radius: 9px;
     max-height: 16px !important;
 
 }
@@ -432,13 +432,11 @@ QPushButton:pressed {
     font-size: 22px;
     font-weight:medium;
 }
-QCheckBox {
+QCheckBox, QRadioButton {
     color: #FFF;
-    width: 10px;
-    height: 10px;
-}
-QRadioButton {
-    color: rgb(255, 255, 255);
+    width: 9px;
+    height: 9px;
+    spacing: 15px;
 }
 /* GLOBAL CHECKBOX */
 QCheckBox::indicator:unchecked, QCheckBox::indicator:unchecked:hover, QCheckBox::indicator:unchecked:pressed, QCheckBox::indicator:indeterminate:hover{

@@ -753,7 +753,7 @@
             <item>
              <widget class="QStackedWidget" name="stackedWidget">
               <property name="currentIndex">
-               <number>0</number>
+               <number>1</number>
               </property>
               <widget class="QWidget" name="page"/>
               <widget class="QWidget" name="page_2"/>
@@ -801,16 +801,28 @@
             </property>
             <item>
              <widget class="QCheckBox" name="checkUsePrivateSend">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
-                <width>95</width>
+                <width>0</width>
                 <height>0</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
               </property>
               <property name="text">
                <string>PrivatePAC</string>
               </property>
               <property name="checked">
+               <bool>false</bool>
+              </property>
+              <property name="tristate">
                <bool>false</bool>
               </property>
              </widget>
@@ -836,6 +848,12 @@
               <property name="enabled">
                <bool>true</bool>
               </property>
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="minimumSize">
                <size>
                 <width>85</width>
@@ -853,7 +871,7 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
+               <enum>QSizePolicy::Preferred</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -1488,6 +1506,9 @@
             <property name="styleSheet">
              <string notr="true">#scrollArea_2{ padding: 5px;}</string>
             </property>
+            <property name="horizontalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOn</enum>
+            </property>
             <property name="widgetResizable">
              <bool>true</bool>
             </property>
@@ -1618,7 +1639,7 @@
                             </property>
                             <property name="sizeHint" stdset="0">
                              <size>
-                              <width>30</width>
+                              <width>15</width>
                               <height>20</height>
                              </size>
                             </property>
@@ -1679,7 +1700,7 @@
                               </property>
                               <property name="sizeHint" stdset="0">
                                <size>
-                                <width>30</width>
+                                <width>15</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -1844,7 +1865,7 @@
                               </property>
                               <property name="sizeHint" stdset="0">
                                <size>
-                                <width>30</width>
+                                <width>15</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -1852,6 +1873,12 @@
                             </item>
                             <item>
                              <widget class="QRadioButton" name="radioCustomPerKilobyte">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
                               <property name="toolTip">
                                <string>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                               </property>
@@ -1868,6 +1895,12 @@
                             </item>
                             <item>
                              <widget class="QRadioButton" name="radioCustomAtLeast">
+                              <property name="sizePolicy">
+                               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                                <horstretch>0</horstretch>
+                                <verstretch>0</verstretch>
+                               </sizepolicy>
+                              </property>
                               <property name="toolTip">
                                <string>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then &quot;per kilobyte&quot; only pays 250 duffs in fee,&lt;br /&gt;while &quot;total at least&quot; pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</string>
                               </property>
@@ -1883,22 +1916,6 @@
                           </item>
                           <item>
                            <layout class="QHBoxLayout" name="horizontalLayout_10">
-                            <item>
-                             <spacer name="horizontalSpacer_6">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>50</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
                             <item>
                              <widget class="BitcoinAmountField" name="customFee"/>
                             </item>
@@ -1916,7 +1933,7 @@
                               </property>
                               <property name="sizeHint" stdset="0">
                                <size>
-                                <width>30</width>
+                                <width>15</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -1954,7 +1971,7 @@
                            <enum>Qt::Horizontal</enum>
                           </property>
                           <property name="sizeType">
-                           <enum>QSizePolicy::Fixed</enum>
+                           <enum>QSizePolicy::Expanding</enum>
                           </property>
                           <property name="sizeHint" stdset="0">
                            <size>
