@@ -75,7 +75,7 @@ QTabBar::tab {
     font-family: 'Volte Rounded',sans-serif !important;
 }
 QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog QTabBar::tab:selected, #tabWidget_OptionsDialog QTabBar::tab:hover {
-    background-color: #363636 !important;
+    background-color: #202020 !important;
 }
 QTabBar::tab:selected {
     border-color: transparent !important;
@@ -105,7 +105,7 @@ QStatusBar{
 
 /* Global containers */
 [class="container"]{
-    background-color: rgba(50,50,50,0.35);
+    background-color: rgba(50,50,50,0.55);
     border: 0px !important;
 }
 /* Global text inputs */
