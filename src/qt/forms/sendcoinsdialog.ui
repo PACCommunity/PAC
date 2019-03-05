@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1183</width>
-    <height>606</height>
+    <width>1123</width>
+    <height>579</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -724,7 +724,7 @@
              <x>0</x>
              <y>0</y>
              <width>621</width>
-             <height>207</height>
+             <height>180</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -786,9 +786,12 @@
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
             <property name="sizeHint" stdset="0">
              <size>
-              <width>40</width>
+              <width>15</width>
               <height>20</height>
              </size>
             </property>
@@ -809,7 +812,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>0</width>
+                <width>100</width>
                 <height>0</height>
                </size>
               </property>
@@ -833,11 +836,11 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Fixed</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>15</width>
                 <height>20</height>
                </size>
               </property>
@@ -856,7 +859,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>85</width>
+                <width>100</width>
                 <height>0</height>
                </size>
               </property>
@@ -871,7 +874,7 @@
                <enum>Qt::Horizontal</enum>
               </property>
               <property name="sizeType">
-               <enum>QSizePolicy::Preferred</enum>
+               <enum>QSizePolicy::Expanding</enum>
               </property>
               <property name="sizeHint" stdset="0">
                <size>
@@ -927,7 +930,7 @@
                <string>Convert currency</string>
               </property>
               <property name="alignment">
-               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+               <set>Qt::AlignCenter</set>
               </property>
               <property name="class" stdset="0">
                <string>titleLabel</string>
@@ -1042,9 +1045,28 @@
                 <property name="text">
                  <string>0.0</string>
                 </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
                </widget>
               </item>
              </layout>
+            </item>
+            <item>
+             <spacer name="horizontalSpacer_22">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::Fixed</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>30</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
             </item>
             <item>
              <spacer name="horizontalSpacer_11">
@@ -1107,6 +1129,76 @@
         </property>
         <item>
          <layout class="QGridLayout" name="gridLayout_2">
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayoutSmartFee">
+            <property name="spacing">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="labelFeeHeadline">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="font">
+               <font>
+                <weight>75</weight>
+                <bold>true</bold>
+               </font>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">font-weight:bold;</string>
+              </property>
+              <property name="text">
+               <string>Transaction Fee: </string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="labelFeeMinimized">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="labelAvailableUSD">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>30</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>$ 0.0 USD</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="class" stdset="0">
+             <string>usdLabel</string>
+            </property>
+           </widget>
+          </item>
           <item row="2" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_5">
             <property name="spacing">
@@ -1196,92 +1288,6 @@
             </item>
            </layout>
           </item>
-          <item row="4" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayoutSmartFee">
-            <property name="spacing">
-             <number>10</number>
-            </property>
-            <item>
-             <widget class="QLabel" name="labelFeeHeadline">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="font">
-               <font>
-                <weight>75</weight>
-                <bold>true</bold>
-               </font>
-              </property>
-              <property name="styleSheet">
-               <string notr="true">font-weight:bold;</string>
-              </property>
-              <property name="text">
-               <string>Transaction Fee: </string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
-            </item>
-            <item>
-             <widget class="QLabel" name="labelFeeMinimized">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="text">
-               <string/>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="0" column="0">
-           <spacer name="verticalSpacer_5">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>15</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLabel" name="label_2">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>15</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>AVAILABLE BALANCE</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="class" stdset="0">
-             <string>titleLabel</string>
-            </property>
-           </widget>
-          </item>
           <item row="13" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_6">
             <property name="spacing">
@@ -1292,9 +1298,12 @@
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::MinimumExpanding</enum>
+              </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>15</width>
                 <height>20</height>
                </size>
               </property>
@@ -1303,14 +1312,14 @@
             <item>
              <widget class="QPushButton" name="addButton">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
               <property name="minimumSize">
                <size>
-                <width>175</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -1350,14 +1359,14 @@
             <item>
              <widget class="QPushButton" name="clearButton">
               <property name="sizePolicy">
-               <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
                 <horstretch>0</horstretch>
                 <verstretch>0</verstretch>
                </sizepolicy>
               </property>
               <property name="minimumSize">
                <size>
-                <width>175</width>
+                <width>0</width>
                 <height>0</height>
                </size>
               </property>
@@ -1383,9 +1392,12 @@
               <property name="orientation">
                <enum>Qt::Horizontal</enum>
               </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::MinimumExpanding</enum>
+              </property>
               <property name="sizeHint" stdset="0">
                <size>
-                <width>40</width>
+                <width>15</width>
                 <height>20</height>
                </size>
               </property>
@@ -1393,75 +1405,24 @@
             </item>
            </layout>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="labelAvailableUSD">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>$ 0.0 USD</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-            <property name="class" stdset="0">
-             <string>usdLabel</string>
-            </property>
-           </widget>
-          </item>
-          <item row="5" column="0">
-           <layout class="QHBoxLayout" name="horizontalLayout_8">
-            <item>
-             <widget class="QPushButton" name="buttonChooseFee">
-              <property name="sizePolicy">
-               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                <horstretch>0</horstretch>
-                <verstretch>0</verstretch>
-               </sizepolicy>
-              </property>
-              <property name="maximumSize">
-               <size>
-                <width>250</width>
-                <height>16777215</height>
-               </size>
-              </property>
-              <property name="text">
-               <string>Choose...</string>
-              </property>
-              <property name="class" stdset="0">
-               <string>linkButton</string>
-              </property>
-             </widget>
-            </item>
-           </layout>
-          </item>
-          <item row="10" column="0">
-           <spacer name="verticalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
           <item row="11" column="0">
            <layout class="QHBoxLayout" name="horizontalLayout_9">
+            <item>
+             <spacer name="horizontalSpacer_20">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::MinimumExpanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>15</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
             <item>
              <widget class="QPushButton" name="sendButton">
               <property name="sizePolicy">
@@ -1499,6 +1460,22 @@
               </property>
              </widget>
             </item>
+            <item>
+             <spacer name="horizontalSpacer_21">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeType">
+               <enum>QSizePolicy::MinimumExpanding</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>15</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
            </layout>
           </item>
           <item row="6" column="0">
@@ -1507,7 +1484,7 @@
              <string notr="true">#scrollArea_2{ padding: 5px;}</string>
             </property>
             <property name="horizontalScrollBarPolicy">
-             <enum>Qt::ScrollBarAlwaysOn</enum>
+             <enum>Qt::ScrollBarAsNeeded</enum>
             </property>
             <property name="widgetResizable">
              <bool>true</bool>
@@ -1517,8 +1494,8 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>388</width>
-               <height>484</height>
+               <width>328</width>
+               <height>461</height>
               </rect>
              </property>
              <layout class="QVBoxLayout" name="verticalLayout_6">
@@ -1559,7 +1536,7 @@
                   <number>0</number>
                  </property>
                  <item>
-                  <layout class="QVBoxLayout" name="verticalLayoutFee2" stretch="0,0">
+                  <layout class="QVBoxLayout" name="verticalLayoutFee2" stretch="0">
                    <property name="spacing">
                     <number>0</number>
                    </property>
@@ -1569,32 +1546,6 @@
                    <property name="topMargin">
                     <number>0</number>
                    </property>
-                   <item>
-                    <layout class="QHBoxLayout" name="horizontalLayoutFee1">
-                     <property name="bottomMargin">
-                      <number>0</number>
-                     </property>
-                     <item>
-                      <widget class="QPushButton" name="buttonMinimizeFee">
-                       <property name="maximumSize">
-                        <size>
-                         <width>250</width>
-                         <height>16777215</height>
-                        </size>
-                       </property>
-                       <property name="toolTip">
-                        <string>collapse fee-settings</string>
-                       </property>
-                       <property name="text">
-                        <string>Hide</string>
-                       </property>
-                       <property name="class" stdset="0">
-                        <string>linkButton</string>
-                       </property>
-                      </widget>
-                     </item>
-                    </layout>
-                   </item>
                    <item>
                     <widget class="QFrame" name="frameFeeSelection">
                      <layout class="QVBoxLayout" name="verticalLayoutFee12">
@@ -1616,18 +1567,18 @@
                       <item>
                        <layout class="QGridLayout" name="gridLayoutFee">
                         <property name="topMargin">
-                         <number>10</number>
+                         <number>0</number>
                         </property>
                         <property name="bottomMargin">
                          <number>4</number>
                         </property>
                         <property name="horizontalSpacing">
-                         <number>10</number>
+                         <number>5</number>
                         </property>
                         <property name="verticalSpacing">
-                         <number>4</number>
+                         <number>10</number>
                         </property>
-                        <item row="3" column="0">
+                        <item row="4" column="1">
                          <layout class="QHBoxLayout" name="horizontalLayout_11">
                           <item>
                            <spacer name="horizontalSpacer_14">
@@ -1639,7 +1590,7 @@
                             </property>
                             <property name="sizeHint" stdset="0">
                              <size>
-                              <width>15</width>
+                              <width>10</width>
                               <height>20</height>
                              </size>
                             </property>
@@ -1663,182 +1614,23 @@
                           </item>
                          </layout>
                         </item>
-                        <item row="0" column="0">
-                         <layout class="QVBoxLayout" name="verticalLayoutFee3" stretch="0,0,1">
-                          <property name="spacing">
-                           <number>6</number>
+                        <item row="1" column="2">
+                         <spacer name="horizontalSpacer_19">
+                          <property name="orientation">
+                           <enum>Qt::Horizontal</enum>
                           </property>
-                          <property name="topMargin">
-                           <number>2</number>
+                          <property name="sizeType">
+                           <enum>QSizePolicy::Fixed</enum>
                           </property>
-                          <item>
-                           <layout class="QVBoxLayout" name="verticalLayout_5">
-                            <item>
-                             <widget class="QRadioButton" name="radioSmartFee">
-                              <property name="text">
-                               <string>Recommended:</string>
-                              </property>
-                              <property name="checked">
-                               <bool>true</bool>
-                              </property>
-                              <attribute name="buttonGroup">
-                               <string notr="true">groupFee</string>
-                              </attribute>
-                             </widget>
-                            </item>
-                           </layout>
-                          </item>
-                          <item>
-                           <layout class="QHBoxLayout" name="horizontalLayoutFee9">
-                            <item>
-                             <spacer name="horizontalSpacer_13">
-                              <property name="orientation">
-                               <enum>Qt::Horizontal</enum>
-                              </property>
-                              <property name="sizeType">
-                               <enum>QSizePolicy::Fixed</enum>
-                              </property>
-                              <property name="sizeHint" stdset="0">
-                               <size>
-                                <width>15</width>
-                                <height>20</height>
-                               </size>
-                              </property>
-                             </spacer>
-                            </item>
-                            <item>
-                             <layout class="QVBoxLayout" name="verticalLayoutFee5">
-                              <property name="rightMargin">
-                               <number>0</number>
-                              </property>
-                              <item>
-                               <layout class="QHBoxLayout" name="horizontalLayoutFee12">
-                                <item>
-                                 <widget class="QLabel" name="labelSmartFee">
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                  <property name="margin">
-                                   <number>2</number>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QLabel" name="labelFeeEstimation">
-                                  <property name="text">
-                                   <string/>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </item>
-                              <item>
-                               <widget class="QLabel" name="labelSmartFee2">
-                                <property name="lineWidth">
-                                 <number>1</number>
-                                </property>
-                                <property name="text">
-                                 <string>(Smart fee not initialized yet. This usually takes a few blocks...)</string>
-                                </property>
-                                <property name="wordWrap">
-                                 <bool>true</bool>
-                                </property>
-                                <property name="margin">
-                                 <number>2</number>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QLabel" name="labelSmartFee3">
-                                <property name="text">
-                                 <string>Confirmation time:</string>
-                                </property>
-                                <property name="margin">
-                                 <number>2</number>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <widget class="QSlider" name="sliderSmartFee">
-                                <property name="sizePolicy">
-                                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                  <horstretch>0</horstretch>
-                                  <verstretch>0</verstretch>
-                                 </sizepolicy>
-                                </property>
-                                <property name="maximumSize">
-                                 <size>
-                                  <width>16777215</width>
-                                  <height>16777215</height>
-                                 </size>
-                                </property>
-                                <property name="minimum">
-                                 <number>0</number>
-                                </property>
-                                <property name="maximum">
-                                 <number>24</number>
-                                </property>
-                                <property name="pageStep">
-                                 <number>1</number>
-                                </property>
-                                <property name="value">
-                                 <number>0</number>
-                                </property>
-                                <property name="orientation">
-                                 <enum>Qt::Horizontal</enum>
-                                </property>
-                                <property name="invertedAppearance">
-                                 <bool>false</bool>
-                                </property>
-                                <property name="invertedControls">
-                                 <bool>false</bool>
-                                </property>
-                                <property name="tickPosition">
-                                 <enum>QSlider::NoTicks</enum>
-                                </property>
-                               </widget>
-                              </item>
-                              <item>
-                               <layout class="QHBoxLayout" name="horizontalLayoutFee10">
-                                <item>
-                                 <widget class="QLabel" name="labelSmartFeeNormal">
-                                  <property name="text">
-                                   <string>normal</string>
-                                  </property>
-                                 </widget>
-                                </item>
-                                <item>
-                                 <widget class="QLabel" name="labelSmartFeeFast">
-                                  <property name="text">
-                                   <string>fast</string>
-                                  </property>
-                                  <property name="alignment">
-                                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                                  </property>
-                                 </widget>
-                                </item>
-                               </layout>
-                              </item>
-                             </layout>
-                            </item>
-                           </layout>
-                          </item>
-                          <item>
-                           <spacer name="verticalSpacer_4">
-                            <property name="orientation">
-                             <enum>Qt::Vertical</enum>
-                            </property>
-                            <property name="sizeHint" stdset="0">
-                             <size>
-                              <width>1</width>
-                              <height>1</height>
-                             </size>
-                            </property>
-                           </spacer>
-                          </item>
-                         </layout>
+                          <property name="sizeHint" stdset="0">
+                           <size>
+                            <width>15</width>
+                            <height>20</height>
+                           </size>
+                          </property>
+                         </spacer>
                         </item>
-                        <item row="1" column="0">
+                        <item row="2" column="1">
                          <layout class="QVBoxLayout" name="verticalLayoutFee8">
                           <property name="spacing">
                            <number>6</number>
@@ -1865,7 +1657,7 @@
                               </property>
                               <property name="sizeHint" stdset="0">
                                <size>
-                                <width>15</width>
+                                <width>10</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -1933,7 +1725,7 @@
                               </property>
                               <property name="sizeHint" stdset="0">
                                <size>
-                                <width>15</width>
+                                <width>10</width>
                                 <height>20</height>
                                </size>
                               </property>
@@ -1965,17 +1757,207 @@
                           </item>
                          </layout>
                         </item>
-                        <item row="0" column="1">
-                         <spacer name="horizontalSpacer_19">
+                        <item row="1" column="1">
+                         <layout class="QVBoxLayout" name="verticalLayoutFee3" stretch="0,0,1">
+                          <property name="spacing">
+                           <number>6</number>
+                          </property>
+                          <property name="topMargin">
+                           <number>2</number>
+                          </property>
+                          <item>
+                           <layout class="QVBoxLayout" name="verticalLayout_5">
+                            <item>
+                             <widget class="QRadioButton" name="radioSmartFee">
+                              <property name="text">
+                               <string>Recommended:</string>
+                              </property>
+                              <property name="checked">
+                               <bool>true</bool>
+                              </property>
+                              <attribute name="buttonGroup">
+                               <string notr="true">groupFee</string>
+                              </attribute>
+                             </widget>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <layout class="QHBoxLayout" name="horizontalLayoutFee9">
+                            <item>
+                             <spacer name="horizontalSpacer_13">
+                              <property name="orientation">
+                               <enum>Qt::Horizontal</enum>
+                              </property>
+                              <property name="sizeType">
+                               <enum>QSizePolicy::Fixed</enum>
+                              </property>
+                              <property name="sizeHint" stdset="0">
+                               <size>
+                                <width>10</width>
+                                <height>20</height>
+                               </size>
+                              </property>
+                             </spacer>
+                            </item>
+                            <item>
+                             <layout class="QVBoxLayout" name="verticalLayoutFee5">
+                              <property name="rightMargin">
+                               <number>0</number>
+                              </property>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayoutFee12">
+                                <item>
+                                 <widget class="QLabel" name="labelSmartFee">
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                  <property name="margin">
+                                   <number>2</number>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QLabel" name="labelFeeEstimation">
+                                  <property name="text">
+                                   <string/>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                              <item>
+                               <widget class="QLabel" name="labelSmartFee2">
+                                <property name="lineWidth">
+                                 <number>1</number>
+                                </property>
+                                <property name="text">
+                                 <string>(Smart fee not initialized yet. This usually takes a few blocks...)</string>
+                                </property>
+                                <property name="wordWrap">
+                                 <bool>true</bool>
+                                </property>
+                                <property name="margin">
+                                 <number>2</number>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QLabel" name="labelSmartFee3">
+                                <property name="text">
+                                 <string>Confirmation time:</string>
+                                </property>
+                                <property name="margin">
+                                 <number>2</number>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <widget class="QSlider" name="sliderSmartFee">
+                                <property name="enabled">
+                                 <bool>false</bool>
+                                </property>
+                                <property name="sizePolicy">
+                                 <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                                  <horstretch>0</horstretch>
+                                  <verstretch>0</verstretch>
+                                 </sizepolicy>
+                                </property>
+                                <property name="maximumSize">
+                                 <size>
+                                  <width>16777215</width>
+                                  <height>16777215</height>
+                                 </size>
+                                </property>
+                                <property name="autoFillBackground">
+                                 <bool>false</bool>
+                                </property>
+                                <property name="styleSheet">
+                                 <string notr="true"/>
+                                </property>
+                                <property name="minimum">
+                                 <number>0</number>
+                                </property>
+                                <property name="maximum">
+                                 <number>24</number>
+                                </property>
+                                <property name="pageStep">
+                                 <number>1</number>
+                                </property>
+                                <property name="value">
+                                 <number>10</number>
+                                </property>
+                                <property name="sliderPosition">
+                                 <number>10</number>
+                                </property>
+                                <property name="orientation">
+                                 <enum>Qt::Horizontal</enum>
+                                </property>
+                                <property name="invertedAppearance">
+                                 <bool>false</bool>
+                                </property>
+                                <property name="invertedControls">
+                                 <bool>false</bool>
+                                </property>
+                                <property name="tickPosition">
+                                 <enum>QSlider::NoTicks</enum>
+                                </property>
+                                <property name="tickInterval">
+                                 <number>0</number>
+                                </property>
+                               </widget>
+                              </item>
+                              <item>
+                               <layout class="QHBoxLayout" name="horizontalLayoutFee10">
+                                <item>
+                                 <widget class="QLabel" name="labelSmartFeeNormal">
+                                  <property name="text">
+                                   <string>normal</string>
+                                  </property>
+                                 </widget>
+                                </item>
+                                <item>
+                                 <widget class="QLabel" name="labelSmartFeeFast">
+                                  <property name="text">
+                                   <string>fast</string>
+                                  </property>
+                                  <property name="alignment">
+                                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                                  </property>
+                                 </widget>
+                                </item>
+                               </layout>
+                              </item>
+                             </layout>
+                            </item>
+                           </layout>
+                          </item>
+                          <item>
+                           <spacer name="verticalSpacer_4">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>1</width>
+                              <height>1</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                         </layout>
+                        </item>
+                        <item row="1" column="0">
+                         <spacer name="horizontalSpacer_6">
                           <property name="orientation">
                            <enum>Qt::Horizontal</enum>
                           </property>
                           <property name="sizeType">
-                           <enum>QSizePolicy::Expanding</enum>
+                           <enum>QSizePolicy::Fixed</enum>
                           </property>
                           <property name="sizeHint" stdset="0">
                            <size>
-                            <width>10</width>
+                            <width>15</width>
                             <height>20</height>
                            </size>
                           </property>
@@ -2034,6 +2016,111 @@
              </layout>
             </widget>
            </widget>
+          </item>
+          <item row="5" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <property name="spacing">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QPushButton" name="buttonMinimizeFee">
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="toolTip">
+               <string>collapse fee-settings</string>
+              </property>
+              <property name="text">
+               <string>Hide</string>
+              </property>
+              <property name="class" stdset="0">
+               <string>linkButton</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="buttonChooseFee">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>80</width>
+                <height>18</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Choose...</string>
+              </property>
+              <property name="class" stdset="0">
+               <string>linkButton</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <spacer name="verticalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>15</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>100</width>
+              <height>15</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>AVAILABLE BALANCE</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+            <property name="class" stdset="0">
+             <string>titleLabel</string>
+            </property>
+           </widget>
+          </item>
+          <item row="10" column="0">
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeType">
+             <enum>QSizePolicy::Fixed</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>0</width>
+              <height>5</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </item>
