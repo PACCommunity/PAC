@@ -179,11 +179,15 @@ QStatusBar{
 [class="QuickButton"]{
     background-color: transparent;
     border: none;
-}
-[class="QuickButton"]:hover{
-    background-color: rgba(255,255,255,0.2);
     border-radius: 10px;
 }
+[class="QuickButton"]:hover{
+    background-color: rgba(128,128,128,0.2);
+}
+[class="QuickButton"]:pressed{
+    background-color: rgba(250,250,250,0.5);
+}
+
 [class="SpinBoxSmall"]{
     border-radius: 10px !important;
     font-size: 12px !important;
@@ -580,15 +584,7 @@ BitcoinAmountField QComboBox::indicator {
     height:80px;
     width:80px;
     border-radius: 40px;
-    border: 1px solid rgb(263,252,76) !important;
-}
-#btnRefreshNews, #btnRefreshNews:hover, #btnCopyNews, #btnCopyNews:hover{
-    border: 0px;
-    background: transparent;
-}
-#btnRefreshNews:pressed, #btnCopyNews:pressed{
-    border: 1px solid #F4EA13;
-    border-radius: 10px;
+    background: red !important;
 }
 
 /*

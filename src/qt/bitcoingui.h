@@ -17,6 +17,7 @@
 #include <QMenu>
 #include <QPoint>
 #include <QPushButton>
+#include <QToolButton>
 #include <QSystemTrayIcon>
 #include <boost/filesystem/path.hpp>
 #include <QNetworkRequest>
@@ -144,8 +145,8 @@ private:
 
     QFrame *headerFrame;
     QPushButton *btnImg;
-    QPushButton *btnRefresh;
-    QPushButton *btnCopyNews;
+    QToolButton *btnRefresh;
+    QToolButton *btnCopyNews;
     QLabel *messageLabel;
 
     QNetworkAccessManager *managerCurrency;

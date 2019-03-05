@@ -68,6 +68,7 @@
 #include <QFileDialog>
 #include <QProxyStyle>
 #include <QPainter>
+#include <QToolButton>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -725,8 +726,8 @@ void BitcoinGUI::createHeaderBar()
     QFrame *frameImg = new QFrame;
     QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
     btnImg = new QPushButton;
-    btnRefresh = new QPushButton;
-    btnCopyNews = new QPushButton;
+    btnRefresh = new QToolButton;
+    btnCopyNews = new QToolButton;
     QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
     QSpacerItem *messageLeftSpacer = new QSpacerItem(30,1, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
@@ -749,14 +750,14 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setFixedHeight(80);
     btnImg->setFixedWidth(80);
 
-    btnRefresh->setObjectName("btnRefreshNews");
+    btnRefresh->setProperty("class","QuickButton");
     btnRefresh->setToolTip("Refresh news and PAC-USD value.");
     btnRefresh->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnRefresh->setFixedHeight(20);
     btnRefresh->setFixedWidth(20);
     btnRefresh->setIcon(QIcon(":/movies/spinner-000"));
 
-    btnCopyNews->setObjectName("btnCopyNews");
+    btnCopyNews->setProperty("class","QuickButton");
     btnCopyNews->setToolTip("Copy news.");
     btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnCopyNews->setFixedHeight(20);
