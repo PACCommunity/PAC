@@ -57,6 +57,7 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     ui->iconLabelAvailableBalance->setPixmap(QPixmap(":icons/bitcoin-32"));
     
     GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
+    colorCount = 0;
 
     addEntry();
 
@@ -442,6 +443,7 @@ void SendCoinsDialog::clear()
     {
         ui->entries->takeAt(0)->widget()->deleteLater();
     }
+    colorCount = 0;
     addEntry();
 
     updateTabsAndLabels();
@@ -459,7 +461,12 @@ void SendCoinsDialog::accept()
 
 SendCoinsEntry *SendCoinsDialog::addEntry()
 {
+    colorCount++;
     SendCoinsEntry *entry = new SendCoinsEntry(platformStyle, this);
+    
+    if(colorCount!=1){
+        entry->setStyleSheet("#SendCoinsEntry { border-top: 3px solid #474747; }");
+    }
     entry->setModel(model);
     ui->entries->addWidget(entry);
     connect(entry, SIGNAL(removeEntry(SendCoinsEntry*)), this, SLOT(removeEntry(SendCoinsEntry*)));
@@ -496,6 +503,7 @@ void SendCoinsDialog::removeEntry(SendCoinsEntry* entry)
     entry->deleteLater();
 
     updateTabsAndLabels();
+    colorCount--;
 }
 
 QWidget *SendCoinsDialog::setupTabChain(QWidget *prev)
