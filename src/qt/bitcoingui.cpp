@@ -1696,7 +1696,7 @@ void BitcoinGUI::copyNews(){
     QClipboard *clip = QApplication::clipboard();
     QString input = messageLabel->text();
     clip->setText(input);
-    QToolTip::showText(btnCopyNews->mapToGlobal(QPoint(10,10)), "Copied Address to Clipboard!",btnCopyNews);
+    QToolTip::showText(btnCopyNews->mapToGlobal(QPoint(10,10)), "Copied news to clipboard!",btnCopyNews);
 }
 
 void BitcoinGUI::refreshNewsPacValue(){
