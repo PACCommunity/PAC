@@ -5,11 +5,11 @@
 
 /* custom Qslider */
 QSlider::handle:horizontal {
-    background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #222, stop:1 #666 );
-    border: 1px solid transparent;
-    width: 14px;
-    margin: -4px 0px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
-    border-radius: 7px;
+    background: #D4CA03;
+    border: 2px solid #D4CA03;
+    width: 10px;
+    margin: -3px 0px; /* handle is placed by default on the contents rect of the groove. Expand outside the groove */
+    border-radius: 6px;
 }
 QSlider::groove:horizontal {
     border: 1px solid transparent;
@@ -27,13 +27,14 @@ QSlider:add-page:disabled, QSlider:sub-page:disabled {
     background: #ccc;
 }
 QSlider::add-page {
-    background: #fff;
+    background: rgba(100,100,100,0.5);
 }
 QSlider::sub-page {
-    background: #777;
+    background: #555;
 }
 QSlider::handle:disabled{
-     background: qlineargradient(x1:0, y1:0, x2:1, y2:1, stop:0 #999, stop:1 #999 );
+    background: #999;
+    border: 1px solid #999;
 }
 
 QLabel, QGroupBox::title{
@@ -438,7 +439,7 @@ QPushButton:pressed {
     text-decoration: underline;
 }
 [class="linkButton"]:hover, [class="linkButton"]:focus, #removeRequestButton:hover, #removeRequestButton:focus {
-    color:rgb(61,47,255);
+    color:rgb(180,180,180);
     background-color: transparent !important;
     border: 0px !important;
 }
