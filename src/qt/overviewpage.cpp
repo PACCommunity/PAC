@@ -55,7 +55,7 @@ public:
                       const QModelIndex &index ) const
     {
         painter->save();
-        QFont customFont("Volte Rounded",11, 1, false);
+        QFont customFont("Volte Rounded",13, 1, false);
         customFont.setBold(false);
         QFont defaultFont = painter->font();
         painter->setFont(customFont);
