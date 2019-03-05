@@ -165,7 +165,7 @@ QVariant ProposalTableModel::data(const QModelIndex &index, int role) const
             }
         } 
 
-        return COLOR_BAREADDRESS;
+        return COLOR_WHITE;
         break;
     case ProposalRole:
         return rec->name;

@@ -355,16 +355,16 @@ QScrollArea {
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
     background-color: rgba(0,0,0,0.5); 
-    color: white !important;
     border:none;
 }
 QTableView::item { /* Table Item */
     font-size:12px;
-    color: white !important;
+}
+QTableView#recentRequestsView, QTableView#MasternodeList, QTableView#transactionsTable{ /* Text color not for proposals */
+    color: white;
 }
 QTableView::item:selected { /* Table Item Selected */
     background-color: rgb(70, 70, 70);
-    color: white;
 }
 QTableWidget{
     background-color: rgba(0,0,0,0.5); 
