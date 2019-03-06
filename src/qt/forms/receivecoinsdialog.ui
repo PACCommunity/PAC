@@ -468,7 +468,7 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_4">
          <property name="spacing">
-          <number>6</number>
+          <number>2</number>
          </property>
          <property name="leftMargin">
           <number>5</number>
@@ -592,8 +592,8 @@
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>20</width>
-             <height>40</height>
+             <width>0</width>
+             <height>0</height>
             </size>
            </property>
           </spacer>
@@ -614,7 +614,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>0</width>
-             <height>20</height>
+             <height>10</height>
             </size>
            </property>
           </spacer>
@@ -622,13 +622,16 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout_7">
            <item>
-            <spacer name="horizontalSpacer_6">
+            <spacer name="horizontalSpacer_7">
              <property name="orientation">
               <enum>Qt::Horizontal</enum>
              </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
              <property name="sizeHint" stdset="0">
               <size>
-               <width>40</width>
+               <width>35</width>
                <height>20</height>
               </size>
              </property>
@@ -647,15 +650,20 @@
              </property>
              <property name="minimumSize">
               <size>
-               <width>280</width>
+               <width>250</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>16777215</width>
+               <width>300</width>
                <height>16777215</height>
               </size>
+             </property>
+             <property name="font">
+              <font>
+               <pointsize>11</pointsize>
+              </font>
              </property>
              <property name="acceptDrops">
               <bool>false</bool>
@@ -684,6 +692,9 @@
              <property name="frame">
               <bool>false</bool>
              </property>
+             <property name="alignment">
+              <set>Qt::AlignCenter</set>
+             </property>
              <property name="readOnly">
               <bool>true</bool>
              </property>
@@ -702,14 +713,14 @@
             <widget class="QToolButton" name="btnCopyLastAddress">
              <property name="minimumSize">
               <size>
-               <width>20</width>
+               <width>0</width>
                <height>0</height>
               </size>
              </property>
              <property name="maximumSize">
               <size>
-               <width>20</width>
-               <height>50</height>
+               <width>30</width>
+               <height>30</height>
               </size>
              </property>
              <property name="toolTip">
@@ -722,6 +733,12 @@
               <iconset resource="../paccoin.qrc">
                <normaloff>:/icons/pac/editcopy</normaloff>:/icons/pac/editcopy</iconset>
              </property>
+             <property name="iconSize">
+              <size>
+               <width>24</width>
+               <height>24</height>
+              </size>
+             </property>
              <property name="checkable">
               <bool>false</bool>
              </property>
@@ -730,6 +747,9 @@
              </property>
              <property name="autoExclusive">
               <bool>false</bool>
+             </property>
+             <property name="popupMode">
+              <enum>QToolButton::InstantPopup</enum>
              </property>
              <property name="toolButtonStyle">
               <enum>Qt::ToolButtonIconOnly</enum>
@@ -745,19 +765,6 @@
              </property>
             </widget>
            </item>
-           <item>
-            <spacer name="horizontalSpacer_7">
-             <property name="orientation">
-              <enum>Qt::Horizontal</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>40</width>
-               <height>20</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
           </layout>
          </item>
          <item>
@@ -766,12 +773,12 @@
             <enum>Qt::Vertical</enum>
            </property>
            <property name="sizeType">
-            <enum>QSizePolicy::Expanding</enum>
+            <enum>QSizePolicy::MinimumExpanding</enum>
            </property>
            <property name="sizeHint" stdset="0">
             <size>
-             <width>20</width>
-             <height>40</height>
+             <width>0</width>
+             <height>10</height>
             </size>
            </property>
           </spacer>
@@ -779,9 +786,25 @@
          <item>
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
+            <spacer name="horizontalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeType">
+              <enum>QSizePolicy::Fixed</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>45</width>
+               <height>10</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
             <widget class="QPushButton" name="receiveButton">
              <property name="sizePolicy">
-              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
                <horstretch>0</horstretch>
                <verstretch>0</verstretch>
               </sizepolicy>
@@ -794,7 +817,7 @@
              </property>
              <property name="maximumSize">
               <size>
-               <width>300</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>
@@ -822,7 +845,7 @@
               <enum>Qt::Horizontal</enum>
              </property>
              <property name="sizeType">
-              <enum>QSizePolicy::Fixed</enum>
+              <enum>QSizePolicy::Expanding</enum>
              </property>
              <property name="sizeHint" stdset="0">
               <size>
@@ -848,7 +871,7 @@
              </property>
              <property name="maximumSize">
               <size>
-               <width>140</width>
+               <width>16777215</width>
                <height>16777215</height>
               </size>
              </property>

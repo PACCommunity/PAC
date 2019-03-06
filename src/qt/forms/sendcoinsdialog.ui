@@ -38,7 +38,7 @@
        </property>
        <property name="maximumSize">
         <size>
-         <width>1600</width>
+         <width>1500</width>
          <height>16777215</height>
         </size>
        </property>
@@ -723,7 +723,7 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>621</width>
+             <width>541</width>
              <height>180</height>
             </rect>
            </property>
@@ -1113,13 +1113,13 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>380</width>
+         <width>460</width>
          <height>0</height>
         </size>
        </property>
        <property name="maximumSize">
         <size>
-         <width>480</width>
+         <width>510</width>
          <height>16777215</height>
         </size>
        </property>
@@ -1506,7 +1506,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>328</width>
+               <width>408</width>
                <height>461</height>
               </rect>
              </property>
@@ -2159,7 +2159,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupFee"/>
   <buttongroup name="groupCustomFee"/>
+  <buttongroup name="groupFee"/>
  </buttongroups>
 </ui>

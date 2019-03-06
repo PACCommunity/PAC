@@ -96,21 +96,17 @@ QTabWidget::pane {
     border: 0px !important;
     border-radius:15px;
 }
-/* move to the right by 5px
-QTabWidget::tab-bar {
-    left: 200px;
-}*/
 /* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
 QTabBar::tab {
     background:#1D1D1D;
     border: 0px solid transparent;
     border-bottom-color: transparent; /* same as the pane color */
-    padding: 2px;
+    padding: 1px;
     width: 180px;
     color:#FFFFFF;
     font-family: 'Volte Rounded',sans-serif !important;
 }
-QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog QTabBar::tab:selected, #tabWidget_OptionsDialog QTabBar::tab:hover {
+QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog > QTabBar::tab:selected, #tabWidget_OptionsDialog > QTabBar::tab:hover {
     background-color: #202020 !important;
 }
 QTabBar::tab:selected {
@@ -161,8 +157,9 @@ QStatusBar{
 
 [class="LineEditMedium"]{
     height: 28px !important;
-    font-size: 14px;
+    font-size: 13px;
     border-radius: 14px;
+    text-align: center;
 }
 [class="LineEditSmall"]{
     height: 18px !important;
@@ -465,7 +462,6 @@ QPushButton:pressed {
     background: #F4EA13;
     color: rgb(5,5,5);
     border-radius: 35px;
-    /*min-height:60px !important;*/
     height: 70px !important;
     width: 360px;
     font-style: normal;
@@ -772,13 +768,13 @@ MasternodeList > QTabBar::tab{
 */
 #tabWidget_OptionsDialog QTabBar::tab {
     background: rgb(50,50,50);
-    width:80px;
+    width:100px;
 }
 #tabWidget_OptionsDialog::pane {
     background-color: rgba(50,50,50,0.35);
 }
 #OptionsDialog > #resetButton{
-    width:200px !important;
+    width:210px !important;
 }
 
 /*
