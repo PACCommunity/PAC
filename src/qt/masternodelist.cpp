@@ -5,6 +5,7 @@
 #include "clientmodel.h"
 #include "init.h"
 #include "guiutil.h"
+#include "guiconstants.h"
 #include "masternode-sync.h"
 #include "masternodeconfig.h"
 #include "masternodeman.h"
@@ -13,6 +14,7 @@
 #include "walletmodel.h"
 
 #include <QTimer>
+#include <QColor>
 #include <QMessageBox>
 
 int GetOffsetFromUtc()
@@ -287,6 +289,9 @@ void MasternodeList::updateNodeList()
     std::map<COutPoint, CMasternode> mapMasternodes = mnodeman.GetFullMasternodeMap();
     int offsetFromUtc = GetOffsetFromUtc();
 
+    QBrush notEnabled;
+    notEnabled.setColor(COLOR_NEGATIVE);
+
     for(auto& mnpair : mapMasternodes)
     {
         CMasternode mn = mnpair.second;
@@ -314,6 +319,8 @@ void MasternodeList::updateNodeList()
         ui->tableWidgetMasternodes->setItem(0, 0, addressItem);
         ui->tableWidgetMasternodes->setItem(0, 1, protocolItem);
         ui->tableWidgetMasternodes->setItem(0, 2, statusItem);
+        if(statusItem->text()!="ENABLED")
+            ui->tableWidgetMasternodes->item(0,2)->setForeground(notEnabled);
         ui->tableWidgetMasternodes->setItem(0, 3, activeSecondsItem);
         ui->tableWidgetMasternodes->setItem(0, 4, lastSeenItem);
         ui->tableWidgetMasternodes->setItem(0, 5, pubkeyItem);
