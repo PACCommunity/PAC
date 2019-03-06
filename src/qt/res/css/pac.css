@@ -373,6 +373,7 @@ QTableView::item:selected { /* Table Item Selected */
 }
 QTableWidget{
     background-color: rgba(0,0,0,0.5); 
+    color: white;
 }
 /* ToolBar Menu */
 QToolBar {
