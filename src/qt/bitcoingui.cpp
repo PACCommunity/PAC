@@ -170,6 +170,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     QFont defaultFont("Volte Rounded",13, 1, false);
     defaultFont.setBold(false);
+    defaultFont.setPixelSize(13);
     QApplication::setFont(defaultFont);
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
@@ -342,6 +343,7 @@ BitcoinGUI::~BitcoinGUI()
 
     delete rpcConsole;
 }
+
 
 void BitcoinGUI::createActions()
 {
@@ -760,8 +762,8 @@ void BitcoinGUI::createHeaderBar()
     btnCopyNews->setProperty("class","QuickButton");
     btnCopyNews->setToolTip("Copy news.");
     btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
-    btnCopyNews->setFixedHeight(20);
-    btnCopyNews->setFixedWidth(20);
+    btnCopyNews->setFixedHeight(24);
+    btnCopyNews->setFixedWidth(24);
     btnCopyNews->setIcon(QIcon(":/icons/pac/editcopy"));
 
     profileImgLayout->setContentsMargins(0,0,0,0);
