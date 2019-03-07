@@ -29,6 +29,8 @@
 #include <QScrollBar>
 #include <QSettings>
 #include <QTextDocument>
+#include <QClipboard>
+#include <QToolTip>
 
 SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *parent) :
     QDialog(parent),
@@ -975,7 +977,7 @@ void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
         if(list1.length() == 1){
             ui->labelConvertionUSD->setText(list1[0]);
         }else{
-            ui->labelConvertionUSD->setText(list1[0] + '.' + list1[1]);
+            ui->labelConvertionUSD->setText(list1[0] + '.' + list1[1].left(8));
         }
     }else{
         ui->labelConvertionUSD->setText("0.0");
@@ -985,4 +987,12 @@ void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
 void SendCoinsDialog::receive_from_walletview()
 {
     ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(model->getBalance()) + " USD");
+}
+void SendCoinsDialog::on_copyPacs_clicked()
+{
+    QClipboard *clip = QApplication::clipboard();
+    QString input = ui->labelConvertionUSD->text();
+    input.replace( ",", " " );
+    clip->setText(input);
+    QToolTip::showText(ui->copyPacs->mapToGlobal(QPoint(10,10)), "Copied PACs to clipboard!",ui->copyPacs);
 }

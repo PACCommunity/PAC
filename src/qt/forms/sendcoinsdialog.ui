@@ -1060,6 +1060,37 @@
                 <property name="alignment">
                  <set>Qt::AlignCenter</set>
                 </property>
+                <property name="textInteractionFlags">
+                 <set>Qt::LinksAccessibleByMouse|Qt::TextSelectableByMouse</set>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="copyPacs">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+                <property name="maximumSize">
+                 <size>
+                  <width>20</width>
+                  <height>20</height>
+                 </size>
+                </property>
+                <property name="toolTip">
+                 <string>Copy PACs</string>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-image: url(:/icons/pac/editcopy);</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="class" stdset="0">
+                 <string>QuickButton</string>
+                </property>
                </widget>
               </item>
              </layout>
@@ -1245,6 +1276,9 @@
                 <width>30</width>
                 <height>30</height>
                </size>
+              </property>
+              <property name="styleSheet">
+               <string notr="true"/>
               </property>
               <property name="text">
                <string/>
@@ -2145,15 +2179,15 @@
  </widget>
  <customwidgets>
   <customwidget>
+   <class>QValidatedLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qvalidatedlineedit.h</header>
+  </customwidget>
+  <customwidget>
    <class>BitcoinAmountField</class>
    <extends>QLineEdit</extends>
    <header>bitcoinamountfield.h</header>
    <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>QValidatedLineEdit</class>
-   <extends>QLineEdit</extends>
-   <header>qvalidatedlineedit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>
