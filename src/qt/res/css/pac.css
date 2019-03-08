@@ -97,6 +97,9 @@ QTabWidget::pane {
     border-radius:15px;
 }
 /* Style the tab using the tab sub-control. Note that it reads QTabBar _not_ QTabWidget */
+QTabBar{
+    margin-left: 20px;
+}
 QTabBar::tab {
     background:#1D1D1D;
     border: 0px solid transparent;
