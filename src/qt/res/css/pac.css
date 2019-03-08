@@ -763,6 +763,14 @@ MasternodeList > QTabBar::tab{
     border-radius: 12px;
     height: 24px;
 }
+#tabWidget>QTabBar::tab {
+    background-color: #1D1D1D !important;
+    min-height: 25px;
+}
+#tabWidget>QTabBar::tab:selected{
+    background-color: #383737 !important;
+    border: 1px solid black !important;
+}
 /*
  * OptionsDialog
 */
