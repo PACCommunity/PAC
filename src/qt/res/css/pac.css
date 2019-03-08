@@ -352,7 +352,7 @@ QHeaderView::up-arrow{
     margin-right: 5px;
 }
 QScrollArea {
-    background:transparent;
+    background: transparent;
     border:2px solid transparent;
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
@@ -427,11 +427,11 @@ QPushButton:pressed {
 }
 [class="SmallButton"]{
     border-radius: 8px;
-    height: 18px;
-    width: 60px;
+    height: 20px;
+    width: 80px;
     font-family: 'Volte Rounded', sans-serif;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 12px;
 }
 [class="linkButton"]{
     background-color: transparent !important;
@@ -617,7 +617,7 @@ BitcoinAmountField QComboBox::indicator {
 #SendCoinsDialog{
     background:transparent;
 }
-#frameCoinControl, #scrollArea, #scrollAreaWidgetContents{
+#frameCoinControl, #scrollArea, #scrollAreaWidgetContents, #scrollAreaCoinControl{
     border: 0px !important;
 }
 #frameCoinControl{
@@ -627,7 +627,7 @@ BitcoinAmountField QComboBox::indicator {
 #frameFee{
     border: 0px;
 }
-#scrollArea, #scrollAreaWidgetContents, #scrollAreaWidgetContents_3{
+#scrollArea, #scrollAreaWidgetContents, #scrollAreaWidgetContents_3, #scrollAreaCoinControl{
     background-color:rgba(0,0,0,0) !important;
 }
 #verticalWidget{
