@@ -227,12 +227,12 @@ void PrivatePage::updatePrivateSendProgress()
         strAmountAndRounds = strPrivateSendAmount + " / " + tr("%n Rounds", "", privateSendClient.nPrivateSendRounds);
     } else {
         QString strMaxToAnonymize = BitcoinUnits::formatHtmlWithUnit(nDisplayUnit, nMaxToAnonymize, false, BitcoinUnits::separatorAlways);
-        ui->labelAmountRounds->setToolTip(tr("Not enough compatible inputs to anonymize <span style='color:red;'>%1</span>,<br>"
-                                             "will anonymize <span style='color:red;'>%2</span> instead")
+        ui->labelAmountRounds->setToolTip(tr("Not enough compatible inputs to anonymize <span style='color:rgb(223,31,56);'>%1</span>,<br>"
+                                             "will anonymize <span style='color:rgb(223,31,56);'>%2</span> instead")
                                           .arg(strPrivateSendAmount)
                                           .arg(strMaxToAnonymize));
         strMaxToAnonymize = strMaxToAnonymize.remove(strMaxToAnonymize.indexOf("."), BitcoinUnits::decimals(nDisplayUnit) + 1);
-        strAmountAndRounds = "<span style='color:red;'>" +
+        strAmountAndRounds = "<span style='color:rgb(223,31,56);'>" +
                 QString(BitcoinUnits::factor(nDisplayUnit) == 1 ? "" : "~") + strMaxToAnonymize +
                 " / " + tr("%n Rounds", "", privateSendClient.nPrivateSendRounds) + "</span>";
     }
@@ -324,7 +324,7 @@ void PrivatePage::privateSendStatus()
 
     QString strKeysLeftText(tr("keys left: %1").arg(pwalletMain->nKeysLeftSinceAutoBackup));
     if(pwalletMain->nKeysLeftSinceAutoBackup < PRIVATESEND_KEYS_THRESHOLD_WARNING) {
-        strKeysLeftText = "<span style='color:red;'>" + strKeysLeftText + "</span>";
+        strKeysLeftText = "<span style='color:rgb(223,31,56);'>" + strKeysLeftText + "</span>";
     }
     ui->labelPrivateSendEnabled->setToolTip(strKeysLeftText);
 
@@ -352,7 +352,7 @@ void PrivatePage::privateSendStatus()
         if(settings.value("fLowKeysWarning").toBool()) {
             QString strWarn =   tr("Very low number of keys left since last automatic backup!") + "<br><br>" +
                                 tr("We are about to create a new automatic backup for you, however "
-                                   "<span style='color:red;'> you should always make sure you have backups "
+                                   "<span style='color:rgb(223,31,56);'> you should always make sure you have backups "
                                    "saved in some safe place</span>!") + "<br><br>" +
                                 tr("Note: You turn this message off in options.");
             ui->labelPrivateSendEnabled->setToolTip(strWarn);
@@ -513,7 +513,7 @@ void PrivatePage::DisablePrivateSendCompletely() {
     ui->privateSendReset->setText("(" + tr("Disabled") + ")");
     ui->framePrivateSend->setEnabled(false);
     if (nWalletBackups <= 0) {
-        ui->labelPrivateSendEnabled->setText("<span style='color:red;'>(" + tr("Disabled") + ")</span>");
+        ui->labelPrivateSendEnabled->setText("<span style='color:rgb(223,31,56);'>(" + tr("Disabled") + ")</span>");
     }
     privateSendClient.fEnablePrivateSend = false;
 }
