@@ -100,7 +100,11 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     //ui->theme->addItem(QString("PAC-blue"), QVariant("drkblue"));
     //ui->theme->addItem(QString("PAC-Crownium"), QVariant("crownium"));
     //ui->theme->addItem(QString("PAC-traditional"), QVariant("trad"));
-    
+
+    /* typography selector */
+    ui->cboFontType->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
+    ui->cboFontType->addItem(QString("(") + tr("MonoSpace") + QString(")"), QVariant(""));
+
     /* Language selector */
     QDir translations(":translations");
     ui->lang->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
@@ -238,6 +242,8 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->lang, OptionsModel::Language);
     mapper->addMapping(ui->unit, OptionsModel::DisplayUnit);
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
+    mapper->addMapping(ui->cboFontType, OptionsModel::Language);
+
 
 }
 

@@ -928,6 +928,18 @@ void setGUITextColor(){
         COLOR_TEXT = QColor(20,20,20);
 }
 
+// Return name of current UI-theme or default theme if no theme was found
+QString getFontType()
+{
+    QSettings settings;
+    QString FontType = settings.value("FontType", "").toString();
+
+    if(!FontType.isEmpty()){
+        return FontType;
+    }
+    return QString("default");
+}
+
 // Open CSS when configured
 QString loadStyleSheet()
 {

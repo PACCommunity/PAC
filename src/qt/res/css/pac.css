@@ -38,7 +38,6 @@ QSlider::handle:disabled{
 }
 
 QLabel, QGroupBox::title{
-    font-family: 'Volte Rounded',sans-serif !important;
     color: white !important;
     font-weight:normal;
 }
@@ -50,7 +49,6 @@ QMessageBox {
     background-color:rgb(26,26,26);
 }
 QToolTip {
-    font-family: 'Volte Rounded',sans-serif !important;
     color: #0A0A0A;
     background-color: #ffffff;
     border: none;
@@ -107,7 +105,6 @@ QTabBar::tab {
     padding: 1px;
     width: 180px;
     color:#FFFFFF;
-    font-family: 'Volte Rounded',sans-serif !important;
 }
 QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog > QTabBar::tab:selected, #tabWidget_OptionsDialog > QTabBar::tab:hover {
     background-color: #202020 !important;
@@ -150,7 +147,6 @@ QStatusBar{
     padding:3px;
     background-color: rgb(25,25,25);
     color: #fff;
-    font-family: 'Volte Rounded', sans-serif;
 }
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
     height: 40px !important;
@@ -198,20 +194,17 @@ QStatusBar{
 QLabel[class="titleLabel"]{
     text-transform:uppercase;
     color: #FFF;
-    font-family: 'Volte Rounded', sans-serif;
     font-weight: medium;
     font-size: 20px;
 }
 QLabel[class="pacCoinsLabel"]{
     margin: 0px;
     color: #F4EA13;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 32px;
     font-weight: medium;
 }
 QLabel[class="usdLabel"]{
     color: #FFF;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 23px;
     font-weight: normal;
 }
@@ -222,7 +215,6 @@ QLabel[class="labelPacIcon"]{
 QPlainTextEdit {
     background: rgb(255, 0, 0);
     color: rgb(20, 20, 20);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
 }
 /* ScrollBar */
@@ -287,7 +279,6 @@ QAbstractSpinBox {
     font-size: 15px;
     min-height:40px;
     background-color: rgb(17,17,17);
-    font-family: 'Volte Rounded', sans-serif;
     text-align: center;
     border:0px;
     color:#fff;
@@ -409,7 +400,6 @@ QPushButton {
     border-radius: 18px;
     height: 35px;
     width: 180px;
-    font-family: 'Volte Rounded', sans-serif;
     font-weight: medium;
     font-size: 16px;
 }
@@ -432,7 +422,6 @@ QPushButton:pressed {
     border-radius: 8px;
     height: 20px;
     width: 80px;
-    font-family: 'Volte Rounded', sans-serif;
     font-weight: normal;
     font-size: 12px;
 }
@@ -468,7 +457,6 @@ QPushButton:pressed {
     height: 70px !important;
     width: 360px;
     font-style: normal;
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 22px;
     font-weight:medium;
 }
@@ -508,7 +496,6 @@ QRadioButton::indicator:unchecked:disabled{
 BitcoinAmountField QComboBox {
     border-radius: 20px;
     background-color: rgb(17,17,17);
-    font-family: 'Volte Rounded', sans-serif;
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -811,7 +798,6 @@ MasternodeList > QTabBar::tab{
     padding:3px;
     background-color: rgb(10, 10, 10);
     color: #fff;
-    font-family: 'Volte Rounded', sans-serif;
     height: 20px !important;
     font-size: 13px;
     border-radius: 10px;

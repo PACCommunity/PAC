@@ -811,6 +811,20 @@
         </layout>
        </item>
        <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6_Display">
+         <item>
+          <widget class="QLabel" name="lblFontType">
+           <property name="text">
+            <string>Font Type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QValueComboBox" name="cboFontType"/>
+         </item>
+        </layout>
+       </item>
+       <item>
         <spacer name="verticalSpacer">
          <property name="orientation">
           <enum>Qt::Vertical</enum>

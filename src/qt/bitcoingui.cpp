@@ -164,14 +164,28 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
     int id = QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
-    /*QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+    QString family = QFontDatabase::applicationFontFamilies(id).at(0);
     std::cout<< "family: ";
-    std::cout<< family.toStdString();*/
+    std::cout<< "fontType: " << family.toStdString();
 
-    QFont defaultFont("Volte Rounded",13, 1, false);
-    defaultFont.setBold(false);
-    defaultFont.setPixelSize(13);
-    QApplication::setFont(defaultFont);
+    QString fontType = GUIUtil::getFontType();
+    std::cout<< fontType.toStdString();
+
+    if(fontType.toStdString() == "default"){
+        std::cout << "entrando aqui ";
+        QFont defaultFont("Volte Rounded",13, 1, false);
+        defaultFont.setBold(false);
+        defaultFont.setPixelSize(13);
+        QApplication::setFont(defaultFont);
+    }
+    else{
+        std::cout << "entrando aca ";
+        QFont defaultFont("Gotham Medium",13, 1, false);
+        defaultFont.setBold(false);
+        defaultFont.setPixelSize(13);
+        QApplication::setFont(defaultFont);
+    }
+
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
