@@ -362,7 +362,7 @@ QTableView { /* Table - has to be selected as a class otherwise it throws off QC
 QTableView::item { /* Table Item */
     font-size:12px;
 }
-QTableView#recentRequestsView, QTableView#MasternodeList, QTableView#transactionsTable{ /* Text color not for proposals */
+QTableView#recentRequestsView, QTableView#MasternodeList, QTableView#transactionsTable, QTableView#tableView{ /* Text color not for proposals */
     color: white;
 }
 QTableView::item:selected { /* Table Item Selected */
