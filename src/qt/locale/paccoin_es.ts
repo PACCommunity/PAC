@@ -1301,7 +1301,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>&amp;Restablecer opciones</translation>
+        <translation>&amp;Restablecer</translation>
     </message>
     <message>
         <source>&amp;OK</source>

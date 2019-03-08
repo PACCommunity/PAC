@@ -949,13 +949,13 @@ void SendCoinsDialog::coinControlUpdateLabels()
 
         // show coin control stats
         ui->labelCoinControlAutomaticallySelected->hide();
-        ui->widgetCoinControl->show();
+        ui->scrollAreaCoinControl->show();
     }
     else
     {
         // hide coin control stats
         ui->labelCoinControlAutomaticallySelected->show();
-        ui->widgetCoinControl->hide();
+        ui->scrollAreaCoinControl->hide();
         ui->labelCoinControlInsuffFunds->hide();
     }
 }
