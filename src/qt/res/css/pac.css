@@ -784,12 +784,22 @@ MasternodeList > QTabBar::tab{
 #OptionsDialog > #resetButton{
     width:210px !important;
 }
-
 /*
  * Sign verify message
  */
 #messageIn_SM, #messageIn_VM{
     background: rgb(10, 10, 10);
+}
+/*
+ * Coin contro dialog
+ */
+#frame{
+    border: 0px;
+}
+#treeWidget{
+    border: 0px;
+    background-color: rgb(17,17,17);
+    color:#fff;
 }
 /* The class on the QT is not working, this is "LineEditSmall" */
 #addressIn_SM, #signatureOut_SM{
