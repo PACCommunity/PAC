@@ -1549,7 +1549,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>Konfiguration &amp;zurücksetzen</translation>
+        <translation>&amp;Zurücksetzen</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -2806,7 +2806,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>Empfänger &amp;hinzufügen</translation>
+        <translation>&amp;Hinzufügen</translation>
     </message>
     <message>
         <source>Balance:</source>
