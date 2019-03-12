@@ -37,6 +37,12 @@ MasternodeList::MasternodeList(const PlatformStyle *platformStyle, QWidget *pare
     ui->setupUi(this);
 
     ui->startButton->setEnabled(false);
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 
     int columnAliasWidth = 100;
     int columnAddressWidth = 200;

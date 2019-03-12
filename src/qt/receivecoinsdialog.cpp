@@ -59,6 +59,13 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
 
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
+
     ui->lineEditCurrentAddress->hide();
     ui->btnCopyLastAddress->hide();
 

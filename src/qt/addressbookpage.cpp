@@ -31,6 +31,14 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode mode, 
 {
     QString theme = GUIUtil::getThemeName();
     ui->setupUi(this);
+
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
+
     if (!platformStyle->getImagesOnButtons()) {
         ui->newAddress->setIcon(QIcon());
         ui->copyAddress->setIcon(QIcon());

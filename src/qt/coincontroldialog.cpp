@@ -46,9 +46,15 @@ CoinControlDialog::CoinControlDialog(const PlatformStyle *platformStyle, QWidget
     platformStyle(platformStyle)
 {
     ui->setupUi(this);
-    
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
+
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 
     // context menu actions
     QAction *copyAddressAction = new QAction(tr("Copy address"), this);

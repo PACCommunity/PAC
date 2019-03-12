@@ -61,7 +61,6 @@ private:
     CAmount currentWatchImmatureBalance;
     int nDisplayUnit;
     bool fShowAdvancedPSUI;
-
     TxViewDelegate *txdelegate;
     std::unique_ptr<TransactionFilterProxy> filter;
 

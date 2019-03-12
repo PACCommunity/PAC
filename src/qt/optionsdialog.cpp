@@ -25,12 +25,14 @@
 
 #include <boost/thread.hpp>
 
+#include <QFontDatabase>
 #include <QDataWidgetMapper>
 #include <QDir>
 #include <QIntValidator>
 #include <QLocale>
 #include <QMessageBox>
 #include <QTimer>
+#include <QFont>
 
 #ifdef ENABLE_WALLET
 extern CWallet* pwalletMain;
@@ -102,8 +104,15 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     //ui->theme->addItem(QString("PAC-traditional"), QVariant("trad"));
 
     /* typography selector */
-    ui->cboFontType->addItem(QString("(") + tr("default") + QString(")"), QVariant(""));
-    ui->cboFontType->addItem(QString("(") + tr("MonoSpace") + QString(")"), QVariant(""));
+    ui->cboFontType->addItem(QString("PAC Default Font"), QVariant("Volte Rounded"));
+    ui->cboFontType->addItem(QString("Volte Rounded Semibold"), QVariant("Volte Rounded Semibold"));
+    ui->cboFontType->addItem(QString("Gotham Medium"), QVariant("Gotham Medium"));
+    ui->cboFontType->addItem(QString("Gotham Bold"), QVariant("Gotham Bold"));
+    QFontDatabase database;
+    for(int i = 0; i < database.families().count(); i++)
+    {
+        ui->cboFontType->addItem(QString(database.families().at(i)), QVariant(database.families().at(i)));
+    }
 
     /* Language selector */
     QDir translations(":translations");
@@ -198,6 +207,8 @@ void OptionsDialog::setModel(OptionsModel *model)
     connect(ui->theme, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->lang, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
     connect(ui->thirdPartyTxUrls, SIGNAL(textChanged(const QString &)), this, SLOT(showRestartWarning()));
+    connect(ui->cboFontType, SIGNAL(valueChanged()), this, SLOT(showRestartWarning()));
+
 }
 
 void OptionsDialog::setMapper()
@@ -242,7 +253,7 @@ void OptionsDialog::setMapper()
     mapper->addMapping(ui->lang, OptionsModel::Language);
     mapper->addMapping(ui->unit, OptionsModel::DisplayUnit);
     mapper->addMapping(ui->thirdPartyTxUrls, OptionsModel::ThirdPartyTxUrls);
-    mapper->addMapping(ui->cboFontType, OptionsModel::Language);
+    mapper->addMapping(ui->cboFontType, OptionsModel::FontType);
 
 
 }

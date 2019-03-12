@@ -1,4 +1,4 @@
-// Copyright (c) 2011-2015 The Bitcoin Core developers
+﻿// Copyright (c) 2011-2015 The Bitcoin Core developers
 // Copyright (c) 2014-2017 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
@@ -27,6 +27,7 @@
 #include <QAbstractItemDelegate>
 #include <QPainter>
 #include <QSettings>
+#include <QFontDatabase>
 
 #include <QCoreApplication>
 
@@ -55,10 +56,20 @@ public:
                       const QModelIndex &index ) const
     {
         painter->save();
-        QFont customFont("Volte Rounded",13, 1, false);
-        customFont.setBold(false);
+
+        // set the typography correctly
+        QString fontType = GUIUtil::getFontType();
+        QFont font;
+        font = QFont(fontType,13, 1, false);
+        font.setBold(false);
+
+        QList<QWidget*> widgets = this->findChildren<QWidget*>();
+        for (int i = 0; i < widgets.length(); i++){
+            widgets.at(i)->setFont(font);
+        }
+
         QFont defaultFont = painter->font();
-        painter->setFont(customFont);
+        painter->setFont(font);
 
         QIcon icon = qvariant_cast<QIcon>(index.data(TransactionTableModel::RawDecorationRole));
         QRect mainRect = option.rect;
@@ -114,10 +125,10 @@ public:
         {
             amountText = QString("[") + amountText + QString("]");
         }
-        painter->setFont(customFont);
+        painter->setFont(font);
         painter->drawText(amountRect, Qt::AlignRight|Qt::AlignVCenter, amountText);
         painter->setPen(COLOR_TEXT);
-        painter->setFont(customFont);
+        painter->setFont(font);
         painter->drawText(amountRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::dateStr(date));
         painter->drawText(addressRect, Qt::AlignLeft|Qt::AlignVCenter, GUIUtil::timeStr(date));
         painter->restore();
@@ -149,6 +160,13 @@ OverviewPage::OverviewPage(const PlatformStyle *platformStyle, QWidget *parent) 
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
+
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 
     // Recent transactions
     ui->listTransactions->setItemDelegate(txdelegate);

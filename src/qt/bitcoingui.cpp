@@ -69,6 +69,7 @@
 #include <QProxyStyle>
 #include <QPainter>
 #include <QToolButton>
+#include <QTreeWidget>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -156,41 +157,51 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     settings.setValue("theme", "pac");
     /* Open CSS when configured */
     GUIUtil::setGUITextColor();
-    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
+    int id = QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
     QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Light");
     QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Medium");
     QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Semibold");
     QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Bold");
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
-    int id = QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
+    QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
+
+
+/*
+    for(int i = 0; i < database.families().count(); i++)
+    {
+        QTreeWidgetItem *familyItem = new QTreeWidgetItem(&fontTree);
+        familyItem->setText(0, database.families().at(i));
+
+        for(int j = 0; j < database.styles(database.families().at(i)).count(); j++)
+        {
+            QTreeWidgetItem *styleItem = new QTreeWidgetItem(familyItem);
+            styleItem->setText(0, database.styles(database.families().at(i)).at(j));
+
+            QString sizes;
+            styleItem->setText(1, sizes.trimmed());
+        }
+    }
+
+*/
+
 
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-    std::cout<< "family: ";
-    std::cout<< "fontType: " << family.toStdString();
-
-    QString fontType = GUIUtil::getFontType();
-    std::cout<< fontType.toStdString();
-
-    if(fontType.toStdString() == "default"){
-        std::cout << "entrando aqui ";
-        QFont defaultFont("Volte Rounded",13, 1, false);
-        defaultFont.setBold(false);
-        defaultFont.setPixelSize(13);
-        QApplication::setFont(defaultFont);
-    }
-    else{
-        std::cout << "entrando aca ";
-        QFont defaultFont("Gotham Medium",13, 1, false);
-        defaultFont.setBold(false);
-        defaultFont.setPixelSize(13);
-        QApplication::setFont(defaultFont);
-    }
-
-
+    std::cout << "family: " << family.toStdString() << std::endl;
     this->setStyleSheet(GUIUtil::loadStyleSheet());
+    QString fontType = GUIUtil::getFontType();
 
-    GUIUtil::restoreWindowGeometry("nWindow", QSize(850, 550), this);
+    QSettings setting;
+    std::cout << "fontType: " << fontType.toStdString();
 
+    std::cout << "   entrando aca ";
+    QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
+    defaultFont.setBold(false);
+    defaultFont.setPixelSize(13);
+    defaultFont.setStyleHint(QFont::SansSerif);
+    QApplication::setFont(defaultFont);
+
+
+    GUIUtil::restoreWindowGeometry("nWindow", QSize(800, 550), this);
     QString windowTitle = tr("$PAC Core") + " - ";
 #ifdef ENABLE_WALLET
     /* if compiled with wallet support, -disablewallet can still disable the wallet */

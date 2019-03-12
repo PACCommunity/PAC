@@ -246,6 +246,13 @@ ProposalList::ProposalList(const PlatformStyle *platformStyle, QWidget *parent) 
     timer->start(1000);
 
     setLayout(vlayout);
+
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 }
 
 void ProposalList::invalidateAlignedLayout() {

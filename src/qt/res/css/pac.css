@@ -194,8 +194,7 @@ QStatusBar{
 QLabel[class="titleLabel"]{
     text-transform:uppercase;
     color: #FFF;
-    font-weight: medium;
-    font-size: 20px;
+    font-size:18px;
 }
 QLabel[class="pacCoinsLabel"]{
     margin: 0px;

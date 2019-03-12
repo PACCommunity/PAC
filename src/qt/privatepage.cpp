@@ -53,6 +53,12 @@ PrivatePage::PrivatePage(const PlatformStyle *platformStyle, QWidget *parent) :
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 
     // init "out of sync" warning labels
     ui->labelPrivateSendSyncStatus->setText("(" + tr("out of sync") + ")");
