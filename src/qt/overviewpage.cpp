@@ -351,6 +351,7 @@ void OverviewPage::SetupTransactionList(int nNumItems) {
     }
 }
 
+/** Opens a window with info about PAC */
 void OverviewPage::on_overviewInfo_clicked()
 {
     HelpMessageDialog dlg(this, HelpMessageDialog::ovhelp);

@@ -450,7 +450,6 @@ void PrivatePage::privateSendReset(){
 }
 
 void PrivatePage::privateSendInfo(){
-    cout << "PACCCCC";
     HelpMessageDialog dlg(this, HelpMessageDialog::pshelp);
     dlg.exec();
 }

@@ -165,35 +165,12 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
-
-/*
-    for(int i = 0; i < database.families().count(); i++)
-    {
-        QTreeWidgetItem *familyItem = new QTreeWidgetItem(&fontTree);
-        familyItem->setText(0, database.families().at(i));
-
-        for(int j = 0; j < database.styles(database.families().at(i)).count(); j++)
-        {
-            QTreeWidgetItem *styleItem = new QTreeWidgetItem(familyItem);
-            styleItem->setText(0, database.styles(database.families().at(i)).at(j));
-
-            QString sizes;
-            styleItem->setText(1, sizes.trimmed());
-        }
-    }
-
-*/
-
-
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-    std::cout << "family: " << family.toStdString() << std::endl;
     this->setStyleSheet(GUIUtil::loadStyleSheet());
     QString fontType = GUIUtil::getFontType();
 
     QSettings setting;
-    std::cout << "fontType: " << fontType.toStdString();
 
-    std::cout << "   entrando aca ";
     QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
@@ -319,11 +296,11 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     // Override style sheet for progress bar for styles that have a segmented progress bar,
     // as they make the text unreadable (workaround for issue #1071)
     // See https://qt-project.org/doc/qt-4.8/gallery.html
-    QString curStyle = QApplication::style()->metaObject()->className();
+    /*QString curStyle = QApplication::style()->metaObject()->className();
     if(curStyle == "QWindowsStyle" || curStyle == "QWindowsXPStyle")
     {
-        //progressBar->setStyleSheet("QProgressBar { background-color: #F8F8F8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
-    }
+        progressBar->setStyleSheet("QProgressBar { background-color: #F8F8F8; border: 1px solid grey; border-radius: 7px; padding: 1px; text-align: center; } QProgressBar::chunk { background: QLinearGradient(x1: 0, y1: 0, x2: 1, y2: 0, stop: 0 #00CCFF, stop: 1 #33CCFF); border-radius: 7px; margin: 0px; }");
+    }*/
 
     statusBar()->addWidget(progressBarLabel);
     statusBar()->addWidget(progressBar);
@@ -375,7 +352,6 @@ void BitcoinGUI::createActions()
     QActionGroup *tabGroup = new QActionGroup(this);
 
     QString theme = GUIUtil::getThemeName();
-    std::cout << "CURRENT THEME: " << theme.toStdString();
     overviewAction = new QAction(QIcon(":/icons/" + theme + "/overview"), tr("&Overview"), this);
     overviewAction->setStatusTip(tr("Show general overview of wallet"));
     overviewAction->setToolTip(overviewAction->statusTip());
@@ -427,7 +403,7 @@ void BitcoinGUI::createActions()
     historyAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_4));
 #endif
     tabGroup->addAction(historyAction);
-    //:v
+    
     privateAction = new QAction(QIcon(":/icons/" + theme + "/private"), tr("&Private"), this);
     privateAction->setStatusTip(tr("Browse private section"));
     privateAction->setToolTip(privateAction->statusTip());
@@ -438,7 +414,7 @@ void BitcoinGUI::createActions()
     privateAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
 #endif
     tabGroup->addAction(privateAction);
-    //v:
+    
 
 
 #ifdef ENABLE_WALLET
@@ -1613,8 +1589,6 @@ void BitcoinGUI::selectProfileImageFile(){
         /** Copy the image to the Pac Folder: */
         boost::filesystem::path directoryToCopy = GetDefaultDataDir();
         std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
-        std::cout << "imgPath: " << imgPath.toStdString() << std::endl;//debug
-        std::cout << "imgFinalPath: " << imgFinalPath << std::endl;//debug
 
         std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
         std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
@@ -1625,8 +1599,6 @@ void BitcoinGUI::selectProfileImageFile(){
         QSettings settings;
         settings.setValue("profilePicture", imgPath);
         settings.sync();
-        std::cout << "picturePath: " << imgPath.toStdString() << std::endl;
-        std::cout << "settings: " << settings.value("profilePicture").toString().toStdString();
 
         //load the image from that path as the icon of the button
         QPixmap target(80, 80);
