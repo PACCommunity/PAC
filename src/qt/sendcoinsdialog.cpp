@@ -603,8 +603,10 @@ void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfir
 	    } else {
 		    bal = balance;
 	    }
-        ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(bal) + " USD");
+        // Sets the value of PACs
         ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), bal, false, BitcoinUnits::separatorAlways));
+        // Sets the value in USD
+        ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(bal) + " USD");
     }
 }
 
@@ -991,10 +993,13 @@ void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
     }
 }
 
+/** Receive the signal to update the USD value when the USD-PAC value is updated */
 void SendCoinsDialog::receive_from_walletview()
 {
     ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(model->getBalance()) + " USD");
 }
+
+/** Copy the value of the convertion of USD to PAC to the clipboard */
 void SendCoinsDialog::on_copyPacs_clicked()
 {
     QClipboard *clip = QApplication::clipboard();

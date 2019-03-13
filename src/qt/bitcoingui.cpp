@@ -826,10 +826,11 @@ void BitcoinGUI::createHeaderBar()
     p.addEllipse(QRect(0,0,80,80));
     painter.setClipPath(p);
     painter.drawPixmap(0, 0,pixmap);
-    //btnImg->setPixmap(target); this for a Qlabel
     QIcon ButtonIcon(target);
     btnImg->setIcon(ButtonIcon);
     btnImg->setIconSize(QSize(78,78));
+
+    // Adding the connections for the buttons of the image, copy the news and refresh news/pacValue
     connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
     connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyNews()));
     connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
@@ -1603,6 +1604,7 @@ void BitcoinGUI::setEncryptionStatus(int status)
 }
 #endif // ENABLE_WALLET
 
+/** Select a new image for the top bar */
 void BitcoinGUI::selectProfileImageFile(){
     //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
     QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
@@ -1637,7 +1639,6 @@ void BitcoinGUI::selectProfileImageFile(){
         p.addEllipse(QRect(0,0,80,80));
         painter.setClipPath(p);
         painter.drawPixmap(0, 0,pixmap);
-        //btnImg->setPixmap(target); this for a Qlabel
         QIcon ButtonIcon(target);
         btnImg->setIcon(ButtonIcon);
         btnImg->setIconSize(QSize(78,78));
@@ -1721,6 +1722,7 @@ void BitcoinGUI::showModalOverlay()
         modalOverlay->toggleVisibility();
 }
 
+/** Copy the new into the clipboard */
 void BitcoinGUI::copyNews(){
     QClipboard *clip = QApplication::clipboard();
     QString input = messageLabel->text();
@@ -1728,6 +1730,7 @@ void BitcoinGUI::copyNews(){
     QToolTip::showText(btnCopyNews->mapToGlobal(QPoint(10,10)), "Copied news to clipboard!",btnCopyNews);
 }
 
+/** Button on the top bar to refresh news and pac value */
 void BitcoinGUI::refreshNewsPacValue(){
     //Refresh news
     requestNews.setUrl(QUrl("http://144.202.121.149:8080/"));
@@ -1783,6 +1786,7 @@ void BitcoinGUI::handleRestart(QStringList args)
         Q_EMIT requestedRestart(args);
 }
 
+/** Manager that waits for the response of the value of PAC */
 void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
     if (replyC->error()) {
         QSettings settings;
@@ -1793,15 +1797,19 @@ void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
     }
     QString answer = replyC->readAll();
 
+    // The value is in JSON the value is just cropped from the string
     QSettings settings;
     QStringList list1 = answer.split('"');
     QString s = list1[6];
     s = s.mid(1, s.length()-2); 
+    // Value saved on settings
     settings.setValue("PACvalue",s);
     settings.sync();
+    // Call to update the windows where the PAC value is shown
     Q_EMIT transmit_to_walletframe();
 }
 
+/** Manager that waits for the response of the news */
 void BitcoinGUI::managerNewsFinished(QNetworkReply *replyN) {
     if (replyN->error()) {
         messageLabel->setText("News not loading.");

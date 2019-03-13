@@ -242,6 +242,7 @@ void OverviewPage::setBalance(const CAmount& balance, const CAmount& unconfirmed
         ui->listTransactions->update();
     }
 
+    // Set the balance in USD on the UI
     ui->labelBalanceUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
     ui->labelUnconfirmedUSD->setText("$ " + BitcoinUnits::pacToUsd(unconfirmedBalance) + " USD");
     ui->labelTotalUSD->setText("$ " + BitcoinUnits::pacToUsd(balance + unconfirmedBalance + immatureBalance) + " USD");
@@ -356,6 +357,7 @@ void OverviewPage::on_overviewInfo_clicked()
     dlg.exec();
 }
 
+/** Receive the signal to update the USD value when the USD-PAC value is updated */
 void OverviewPage::receive_from_walletview()
 {
     ui->labelBalanceUSD->setText("$ " + BitcoinUnits::pacToUsd(currentBalance) + " USD");

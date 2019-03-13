@@ -439,10 +439,13 @@ void ReceiveCoinsDialog::setBalance(const CAmount& balance, const CAmount& uncon
     Q_UNUSED(watchUnconfirmedBalance);
     Q_UNUSED(watchImmatureBalance);
 
-    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
+    // Sets the value of PACs
     ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), balance, false, BitcoinUnits::separatorAlways));
+    // Sets the value in USD
+    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(balance) + " USD");
 }
 
+/** Receive the signal to update the USD value when the USD-PAC value is updated */
 void ReceiveCoinsDialog::receive_from_walletview()
 {
     ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(currentBalance) + " USD");
