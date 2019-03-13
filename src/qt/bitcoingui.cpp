@@ -153,6 +153,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     spinnerFrame(0),
     platformStyle(platformStyle)
 {
+
     QSettings settings;
     settings.setValue("theme", "pac");
     /* Open CSS when configured */
@@ -166,17 +167,21 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
+
+    settings.setValue("WindowHeight",this->height());//saving the height, we'll use it later for the qrcode
+
     this->setStyleSheet(GUIUtil::loadStyleSheet());
     QString fontType = GUIUtil::getFontType();
 
     QSettings setting;
+    std::cout << "fontType: " << fontType.toStdString();
 
+    std::cout << "   entrando aca ";
     QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
     defaultFont.setStyleHint(QFont::SansSerif);
     QApplication::setFont(defaultFont);
-
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(800, 550), this);
     QString windowTitle = tr("$PAC Core") + " - ";
@@ -328,6 +333,13 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
+    QSettings setting;
+    std::cout << "fontType: " << fontType.toStdString();
+    QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
+    defaultFont.setBold(false);
+    defaultFont.setPixelSize(13);
+    defaultFont.setStyleHint(QFont::SansSerif);
+    QApplication::setFont(defaultFont);
 }
 
 BitcoinGUI::~BitcoinGUI()

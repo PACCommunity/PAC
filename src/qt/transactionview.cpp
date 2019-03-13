@@ -47,6 +47,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     // Build filter row
     setContentsMargins(0,0,0,0);
 
+
     QHBoxLayout *hlayout = new QHBoxLayout();
     hlayout->setContentsMargins(0,0,0,8);
     if (platformStyle->getUseExtraSpacing()) {
@@ -177,6 +178,14 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     contextMenu->addAction(editLabelAction);
 
     mapperThirdPartyTxUrls = new QSignalMapper(this);
+
+
+    // set the typography correctly
+    QString fontType = GUIUtil::getFontType();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+    }
 
     // Connect actions
     connect(mapperThirdPartyTxUrls, SIGNAL(mapped(QString)), this, SLOT(openThirdPartyTxUrl(QString)));

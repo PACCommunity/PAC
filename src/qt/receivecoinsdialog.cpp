@@ -34,6 +34,8 @@
 #include <QPainter>
 #include <QToolTip>
 #include <QGraphicsOpacityEffect>
+#include <iostream>
+#include <QSettings>
 
 #include <QPropertyAnimation>
 #if QT_VERSION < 0x050000
@@ -58,6 +60,9 @@ ReceiveCoinsDialog::ReceiveCoinsDialog(const PlatformStyle *platformStyle, QWidg
 {
     ui->setupUi(this);
     QString theme = GUIUtil::getThemeName();
+    //Initializing the qrcodelabel size:
+    QRCodeLabelSize = 160;
+    wasQRCodeGeneratedAlready = false;
 
     // set the typography correctly
     QString fontType = GUIUtil::getFontType();
@@ -163,7 +168,7 @@ ReceiveCoinsDialog::~ReceiveCoinsDialog()
 {
     delete ui;
 }
-void ReceiveCoinsDialog::generateQRCode()
+void ReceiveCoinsDialog::generateRequestCoins()
 {
     if(!model || !model->getOptionsModel() || !model->getAddressTableModel() || !model->getRecentRequestsTableModel())
         return;
@@ -193,54 +198,16 @@ void ReceiveCoinsDialog::generateQRCode()
     clear();
     /* Store request for later reference */
     model->getRecentRequestsTableModel()->addNewRequest(info);
-    QString uri = GUIUtil::formatBitcoinURI(info);
+    uri = GUIUtil::formatBitcoinURI(info);
 
     ui->lineEditCurrentAddress->setText(info.address);
     ui->lineEditCurrentAddress->show();
     ui->btnCopyLastAddress->show();
 
 #ifdef USE_QRCODE
-    lblQRCode->setText("");
-    if(!uri.isEmpty())
-    {
-        // limit URI length
-        if (uri.length() > MAX_URI_LENGTH)
-        {
-            lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
-        } else {
-            QRcode *code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
-            if (!code)
-            {
-                lblQRCode->setText(tr("Error encoding URI into QR Code."));
-                return;
-            }
-            QImage myImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
-            myImage.fill(0xffffff);
-            unsigned char *p = code->data;
-            for (int y = 0; y < code->width; y++)
-            {
-                for (int x = 0; x < code->width; x++)
-                {
-                    myImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
-                    p++;
-                }
-            }
-            QRcode_free(code);
-            int QRCodeLabelSize = 160;
-            int QRCodeSize = QRCodeLabelSize - 20;
-            QPixmap target(QRCodeLabelSize, QRCodeLabelSize);
-            target.fill(Qt::transparent);
-            QPixmap pixmap = QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
-            QPainter painter(&target);
-            painter.setRenderHint(QPainter::Antialiasing, true);
-            QPainterPath painterPath;
-            painterPath.addEllipse(QRect(0,0,QRCodeLabelSize,QRCodeLabelSize));
-            painter.setClipPath(painterPath);
-            painter.fillPath(painterPath, Qt::white);
-            painter.drawPixmap(10,10,pixmap);
-            lblQRCode->setPixmap(target);
-        }
-    }
+    QSettings settings;
+    QRCodeLabelSize = settings.value("WindowHeight").toInt();
+    createQRCodeImage();
 #endif
 }
 void ReceiveCoinsDialog::clear()
@@ -275,7 +242,7 @@ void ReceiveCoinsDialog::updateDisplayUnit()
 
 void ReceiveCoinsDialog::on_receiveButton_clicked()
 {
-    generateQRCode();
+    generateRequestCoins();
 
     // animation added in order to make the user noticing the qrcode and address changing  (UX element)
     QGraphicsOpacityEffect *eff1 = new QGraphicsOpacityEffect(this);
@@ -342,12 +309,90 @@ void ReceiveCoinsDialog::on_removeRequestButton_clicked()
     model->getRecentRequestsTableModel()->removeRows(firstIndex.row(), selection.length(), firstIndex.parent());
 }
 
+void ReceiveCoinsDialog::createQRCodeImage()
+{
+    lblQRCode->setText("");
+    if(!uri.isEmpty())
+    {
+        // limit URI length
+        if (uri.length() > MAX_URI_LENGTH)
+        {
+            lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
+        } else {
+            QRcode *code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
+            if (!code)
+            {
+                lblQRCode->setText(tr("Error encoding URI into QR Code."));
+                return;
+            }
+            QImage myImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
+            myImage.fill(0xffffff);
+            unsigned char *p = code->data;
+            for (int y = 0; y < code->width; y++)
+            {
+                for (int x = 0; x < code->width; x++)
+                {
+                    myImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
+                    p++;
+                }
+            }
+            currentImage = myImage;
+
+            QRcode_free(code);
+            int QRCodeSize = QRCodeLabelSize - 20;
+
+            QPixmap target(QRCodeLabelSize, QRCodeLabelSize);
+            target.fill(Qt::transparent);
+
+            QPixmap pixmap = QPixmap::fromImage(currentImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
+            currentQR = &pixmap;
+
+            QPainter painter(&target);
+            painter.setRenderHint(QPainter::Antialiasing, true);
+
+            QPainterPath painterPath;
+            painterPath.addEllipse(QRect(0,0,QRCodeLabelSize,QRCodeLabelSize));
+
+            painter.setClipPath(painterPath);
+            painter.fillPath(painterPath, Qt::white);
+            painter.drawPixmap(10,10,pixmap);
+            lblQRCode->setPixmap(target);
+            wasQRCodeGeneratedAlready = true;
+        }
+    }
+}
+
+
 // We override the virtual resizeEvent of the QWidget to adjust tables column
 // sizes as the tables width is proportional to the dialogs width.
 void ReceiveCoinsDialog::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     columnResizingFixer->stretchColumnWidth(RecentRequestsTableModel::Message);
+    std::cout << "height: " << event->size().height() << std::endl;
+
+    if(wasQRCodeGeneratedAlready)
+    {
+        int QRCodeSize = QRCodeLabelSize - 20;
+
+        // Small QRCode
+        if(event->size().height() < 520)
+        {
+            QRCodeLabelSize = 100;
+        }
+        // Medium QRCode
+        else if(event->size().height() > 520 && event->size().height() < 700)
+        {
+            QRCodeLabelSize = 160;
+        }
+        // Big QRCode
+        else if(event->size().height() > 800)
+        {
+            QRCodeLabelSize = 240;
+        }
+        createQRCodeImage();
+    }
+
 }
 
 void ReceiveCoinsDialog::keyPressEvent(QKeyEvent *event)

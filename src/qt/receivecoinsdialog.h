@@ -69,8 +69,14 @@ private:
     QModelIndex selectedRow();
     void copyColumnToClipboard(int column);
     virtual void resizeEvent(QResizeEvent *event);
-    void generateQRCode();
+    void generateRequestCoins();
+    void createQRCodeImage();
     QRImageWidget *lblQRCode;
+    QPixmap *currentQR;
+    QImage currentImage;
+    int QRCodeLabelSize;
+    bool wasQRCodeGeneratedAlready;
+    QString uri;
 
 private Q_SLOTS:
     void on_receiveButton_clicked();
