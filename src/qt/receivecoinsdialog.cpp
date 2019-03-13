@@ -206,8 +206,8 @@ void ReceiveCoinsDialog::generateRequestCoins()
 
 #ifdef USE_QRCODE
     QSettings settings;
-    QRCodeLabelSize = settings.value("WindowHeight").toInt();
-    createQRCodeImage();
+    int height = settings.value("WindowHeight").toInt();
+    createQRCodeImage(height);
 #endif
 }
 void ReceiveCoinsDialog::clear()
@@ -309,7 +309,7 @@ void ReceiveCoinsDialog::on_removeRequestButton_clicked()
     model->getRecentRequestsTableModel()->removeRows(firstIndex.row(), selection.length(), firstIndex.parent());
 }
 
-void ReceiveCoinsDialog::createQRCodeImage()
+void ReceiveCoinsDialog::createQRCodeImage(int height)
 {
     lblQRCode->setText("");
     if(!uri.isEmpty())
@@ -318,7 +318,8 @@ void ReceiveCoinsDialog::createQRCodeImage()
         if (uri.length() > MAX_URI_LENGTH)
         {
             lblQRCode->setText(tr("Resulting URI too long, try to reduce the text for label / message."));
-        } else {
+        }
+        else {
             QRcode *code = QRcode_encodeString(uri.toUtf8().constData(), 0, QR_ECLEVEL_L, QR_MODE_8, 1);
             if (!code)
             {
@@ -336,7 +337,21 @@ void ReceiveCoinsDialog::createQRCodeImage()
                     p++;
                 }
             }
-            currentImage = myImage;
+            // Small QRCode
+            if(height < 520)
+            {
+                QRCodeLabelSize = 100;
+            }
+            // Medium QRCode
+            else if(height > 520 && height < 700)
+            {
+                QRCodeLabelSize = 160;
+            }
+            // Big QRCode
+            else if(height > 800)
+            {
+                QRCodeLabelSize = 240;
+            }
 
             QRcode_free(code);
             int QRCodeSize = QRCodeLabelSize - 20;
@@ -344,9 +359,7 @@ void ReceiveCoinsDialog::createQRCodeImage()
             QPixmap target(QRCodeLabelSize, QRCodeLabelSize);
             target.fill(Qt::transparent);
 
-            QPixmap pixmap = QPixmap::fromImage(currentImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
-            currentQR = &pixmap;
-
+            QPixmap pixmap = QPixmap::fromImage(myImage).scaled(QRCodeSize, QRCodeSize,Qt::KeepAspectRatioByExpanding);
             QPainter painter(&target);
             painter.setRenderHint(QPainter::Antialiasing, true);
 
@@ -371,26 +384,12 @@ void ReceiveCoinsDialog::resizeEvent(QResizeEvent *event)
     columnResizingFixer->stretchColumnWidth(RecentRequestsTableModel::Message);
     std::cout << "height: " << event->size().height() << std::endl;
 
+    // It will only resize after the first creation of the qrcode.
     if(wasQRCodeGeneratedAlready)
     {
-        int QRCodeSize = QRCodeLabelSize - 20;
-
-        // Small QRCode
-        if(event->size().height() < 520)
-        {
-            QRCodeLabelSize = 100;
-        }
-        // Medium QRCode
-        else if(event->size().height() > 520 && event->size().height() < 700)
-        {
-            QRCodeLabelSize = 160;
-        }
-        // Big QRCode
-        else if(event->size().height() > 800)
-        {
-            QRCodeLabelSize = 240;
-        }
-        createQRCodeImage();
+        QSettings settings;
+        settings.setValue("WindowHeight",event->size().height());
+        createQRCodeImage(event->size().height());
     }
 
 }

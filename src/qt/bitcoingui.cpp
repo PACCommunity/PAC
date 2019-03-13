@@ -173,16 +173,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     this->setStyleSheet(GUIUtil::loadStyleSheet());
     QString fontType = GUIUtil::getFontType();
 
-    QSettings setting;
-    std::cout << "fontType: " << fontType.toStdString();
-
-    std::cout << "   entrando aca ";
-    QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
-    defaultFont.setBold(false);
-    defaultFont.setPixelSize(13);
-    defaultFont.setStyleHint(QFont::SansSerif);
-    QApplication::setFont(defaultFont);
-
     GUIUtil::restoreWindowGeometry("nWindow", QSize(800, 550), this);
     QString windowTitle = tr("$PAC Core") + " - ";
 #ifdef ENABLE_WALLET
@@ -333,9 +323,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
-    QSettings setting;
     std::cout << "fontType: " << fontType.toStdString();
-    QFont defaultFont(setting.value("FontType").toString(),13, QFont::Normal, false);
+    QFont defaultFont(settings.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
     defaultFont.setStyleHint(QFont::SansSerif);

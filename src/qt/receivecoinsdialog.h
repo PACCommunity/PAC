@@ -70,10 +70,8 @@ private:
     void copyColumnToClipboard(int column);
     virtual void resizeEvent(QResizeEvent *event);
     void generateRequestCoins();
-    void createQRCodeImage();
+    void createQRCodeImage(int height);
     QRImageWidget *lblQRCode;
-    QPixmap *currentQR;
-    QImage currentImage;
     int QRCodeLabelSize;
     bool wasQRCodeGeneratedAlready;
     QString uri;
