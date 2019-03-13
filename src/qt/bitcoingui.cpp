@@ -765,6 +765,7 @@ void BitcoinGUI::createHeaderBar()
     messageLabel->setText("");
     messageLabel->setAlignment(Qt::AlignCenter);
     messageLabel->setStyleSheet("QLabel { color:white; font-size:24px;}");
+    messageLabel->setWordWrap(true);
 
     frameImg->setFrameStyle(QFrame::StyledPanel);
     frameImg->setFrameShadow(QFrame::Raised);
