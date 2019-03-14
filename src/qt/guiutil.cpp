@@ -946,14 +946,14 @@ QString loadStyleSheet()
     QString styleSheet;
     QSettings settings;
     QString cssName;
-    QString theme = QString("pac");//settings.value("theme", "").toString();
+    QString theme = QString("light");//settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        cssName = QString(":/css/pac");
+        cssName = QString(":/css/light");
     }
     else {
-        cssName = QString(":/css/pac");
-        settings.setValue("theme", "pac");
+        cssName = QString(":/css/light");
+        settings.setValue("theme", "light");
     }
     
     QFile qFile(cssName);      
