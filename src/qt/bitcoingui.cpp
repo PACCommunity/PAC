@@ -168,7 +168,10 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
 
-    settings.setValue("WindowHeight",this->height());//saving the height, we'll use it later for the qrcode
+
+    //std::cout << "Bitcoingui height: " << this->height() << std::endl;
+    //settings.setValue("WindowHeight",this->height());//saving the height, we'll use it later for the qrcode
+
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
     QString fontType = GUIUtil::getFontType();
@@ -323,7 +326,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
-    std::cout << "fontType: " << fontType.toStdString();
+    //std::cout << "fontType: " << fontType.toStdString();
     QFont defaultFont(settings.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);

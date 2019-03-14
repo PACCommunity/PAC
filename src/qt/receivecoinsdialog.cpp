@@ -207,6 +207,7 @@ void ReceiveCoinsDialog::generateRequestCoins()
 #ifdef USE_QRCODE
     QSettings settings;
     int height = settings.value("WindowHeight").toInt();
+    std::cout << "on button clicked height: " << height << std::endl;
     createQRCodeImage(height);
 #endif
 }
@@ -337,13 +338,14 @@ void ReceiveCoinsDialog::createQRCodeImage(int height)
                     p++;
                 }
             }
+            std::cout<<"height of window Inside function: " << height << std::endl;
             // Small QRCode
-            if(height < 520)
+            if(height < 500)
             {
                 QRCodeLabelSize = 100;
             }
             // Medium QRCode
-            else if(height > 520 && height < 700)
+            else if(height > 520 && height < 800)
             {
                 QRCodeLabelSize = 160;
             }
@@ -382,13 +384,13 @@ void ReceiveCoinsDialog::resizeEvent(QResizeEvent *event)
 {
     QWidget::resizeEvent(event);
     columnResizingFixer->stretchColumnWidth(RecentRequestsTableModel::Message);
-    std::cout << "height: " << event->size().height() << std::endl;
+    std::cout << "on resize height: " << event->size().height() << std::endl;
+    QSettings settings;
+    settings.setValue("WindowHeight",event->size().height());
 
     // It will only resize after the first creation of the qrcode.
     if(wasQRCodeGeneratedAlready)
     {
-        QSettings settings;
-        settings.setValue("WindowHeight",event->size().height());
         createQRCodeImage(event->size().height());
     }
 
