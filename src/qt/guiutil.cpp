@@ -124,7 +124,9 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 {
     parent->setFocusProxy(widget);
 
-    widget->setFont(fixedPitchFont());
+    QString fontType = GUIUtil::getFontType();
+    widget->setFont(QFont(fontType,13, 1, false));
+    //widget->setFont(fixedPitchFont());
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
@@ -946,10 +948,10 @@ QString loadStyleSheet()
     QString styleSheet;
     QSettings settings;
     QString cssName;
-    QString theme = QString("pac");//settings.value("theme", "").toString();
+    QString theme = settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        cssName = QString(":/css/pac");
+        cssName = QString(":/css/" + theme);
     }
     else {
         cssName = QString(":/css/pac");

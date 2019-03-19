@@ -154,12 +154,19 @@ private:
     QNetworkAccessManager *managerNews;
     QNetworkRequest requestNews;
 
+    QPixmap backgroundImage;
+    QPalette palette;
+
+    /** override events */
+    virtual void resizeEvent(QResizeEvent *event);
+
     /** Keep track of previous number of blocks, to detect progress */
     int prevBlocks;
     int spinnerFrame;
 
     const PlatformStyle *platformStyle;
 
+    void setProfileImage();
     /** Create the main UI actions. */
     void createActions();
     /** Create the menu bar and sub-menus. */

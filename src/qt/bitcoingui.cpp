@@ -153,7 +153,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     spinnerFrame(0),
     platformStyle(platformStyle)
 {
-
     QSettings settings;
     settings.setValue("theme", "pac");
     /* Open CSS when configured */
@@ -167,11 +166,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-
-
-    //std::cout << "Bitcoingui height: " << this->height() << std::endl;
-    //settings.setValue("WindowHeight",this->height());//saving the height, we'll use it later for the qrcode
-
 
     this->setStyleSheet(GUIUtil::loadStyleSheet());
     QString fontType = GUIUtil::getFontType();
@@ -326,12 +320,17 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
-    //std::cout << "fontType: " << fontType.toStdString();
     QFont defaultFont(settings.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
     defaultFont.setStyleHint(QFont::SansSerif);
     QApplication::setFont(defaultFont);
+
+    // set Background Image of window so it can keep aspect ratio >
+    backgroundImage = QPixmap(":/images/pac/drkblue_walletFrame_bg");
+    backgroundImage = backgroundImage.scaled(this->size(), Qt::KeepAspectRatioByExpanding);
+    palette.setBrush(QPalette::Window, backgroundImage);
+    this->setPalette(palette);
 }
 
 BitcoinGUI::~BitcoinGUI()
@@ -593,6 +592,17 @@ void BitcoinGUI::createActions()
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_P), this, SLOT(showPeers()));
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_R), this, SLOT(showRepair()));
 }
+// We override the virtual resizeEvent of the QWidget to adjust background image to the new window size
+void BitcoinGUI::resizeEvent(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);
+
+    // set Background Image of window so it can keep aspect ratio >
+    backgroundImage = QPixmap(":/images/pac/drkblue_walletFrame_bg");
+    backgroundImage = backgroundImage.scaled(event->size(), Qt::KeepAspectRatioByExpanding);
+    palette.setBrush(QPalette::Window, backgroundImage);
+    this->setPalette(palette);
+}
 
 void BitcoinGUI::createMenuBar()
 {
@@ -749,7 +759,8 @@ void BitcoinGUI::createHeaderBar()
 
     frameImg->setFrameStyle(QFrame::StyledPanel);
     frameImg->setFrameShadow(QFrame::Raised);
-    frameImg->setStyleSheet("QFrame { border-image: url(:/images/pac/profile_bkg) 0 0 0 0 stretch stretch; margin-right:-1px !important }");
+    frameImg->setStyleSheet("QFrame { border-image: url(:/images/pac/profile_bkg) 0 0 0 0 stretch stretch;"
+                            " margin-right:-1px !important }");
     frameImg->setFixedWidth(115);
     frameImg->setFixedHeight(95);
 
@@ -757,6 +768,8 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnImg->setFixedHeight(80);
     btnImg->setFixedWidth(80);
+    btnImg->setToolTip("Press to change or remove the image.");
+    setProfileImage();
 
     btnRefresh->setProperty("class","QuickButton");
     btnRefresh->setToolTip("Refresh news and PAC-USD value.");
@@ -788,13 +801,22 @@ void BitcoinGUI::createHeaderBar()
     headerFrameLayout->addWidget(frameImg);
     headerFrame->setLayout(headerFrameLayout);
 
-    /** initializing profile image */
     QSettings settings;
     QString strImgValue = settings.value("profilePicture").toString();
 
     if(strImgValue == "" && strImgValue == NULL){
         strImgValue = ":/icons/bitcoin";
     }
+
+    // Adding the connections for the buttons of the image, copy the news and refresh news/pacValue
+    connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
+    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyNews()));
+    connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
+}
+void BitcoinGUI::setProfileImage(){
+    /** initializing profile image */
+    QSettings settings;
+    QString strImgValue = settings.value("profilePicture").toString();
 
     QPixmap target(80, 80);
     target.fill(Qt::transparent);
@@ -810,12 +832,7 @@ void BitcoinGUI::createHeaderBar()
     btnImg->setIcon(ButtonIcon);
     btnImg->setIconSize(QSize(78,78));
 
-    // Adding the connections for the buttons of the image, copy the news and refresh news/pacValue
-    connect(btnImg, SIGNAL (released()),this, SLOT (selectProfileImageFile()));
-    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyNews()));
-    connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
 }
-
 void BitcoinGUI::setClientModel(ClientModel *clientModel)
 {
     this->clientModel = clientModel;
@@ -1586,39 +1603,42 @@ void BitcoinGUI::setEncryptionStatus(int status)
 
 /** Select a new image for the top bar */
 void BitcoinGUI::selectProfileImageFile(){
-    //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
-    QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
+    QMessageBox msgBox;
+    msgBox.setText("Would you like to change the current profile image or remove it and restore the original Pac logo?");
+    QPushButton *changeImage = msgBox.addButton(tr("Change Profile Image"), QMessageBox::ActionRole);
+    QPushButton *removeRestoreImage = msgBox.addButton(tr("Remove and Restore"), QMessageBox::ActionRole);
+    QPushButton *abortButton = msgBox.addButton(QMessageBox::Cancel);
+    msgBox.exec();
 
-    if(!imgPath.isEmpty() && !imgPath.isNull()){/** when the user click on ok button inside the file picker */
-        /** Copy the image to the Pac Folder: */
-        boost::filesystem::path directoryToCopy = GetDefaultDataDir();
-        std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
+    QSettings settings;
+    if (msgBox.clickedButton() == changeImage)// change image
+    {
+        //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
+        QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
+        if(!imgPath.isEmpty() && !imgPath.isNull()){
+            // when the user click on ok button inside the file picker
+            // Copy the image to the Pac Folder:
+            boost::filesystem::path directoryToCopy = GetDefaultDataDir();
+            std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
 
-        std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
-        std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
-        ofs << ifs.rdbuf();
-        imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
+            std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
+            std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
+            ofs << ifs.rdbuf();
+            imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
 
-        // saves the path as setting
-        QSettings settings;
-        settings.setValue("profilePicture", imgPath);
-        settings.sync();
-
-        //load the image from that path as the icon of the button
-        QPixmap target(80, 80);
-        target.fill(Qt::transparent);
-        QPixmap pixmap = QPixmap::fromImage( QImage(imgPath).scaled(80,80,Qt::IgnoreAspectRatio,Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
-        QPainter painter(&target);
-        painter.setRenderHint(QPainter::Antialiasing);
-        painter.setRenderHint(QPainter::Antialiasing, true);
-        QPainterPath p;
-        p.addEllipse(QRect(0,0,80,80));
-        painter.setClipPath(p);
-        painter.drawPixmap(0, 0,pixmap);
-        QIcon ButtonIcon(target);
-        btnImg->setIcon(ButtonIcon);
-        btnImg->setIconSize(QSize(78,78));
+            // saves the path as setting and then refresh the profile image button
+            settings.setValue("profilePicture", imgPath);
+        }
     }
+    else if (msgBox.clickedButton() == removeRestoreImage)// remove and restore pac logo
+    {
+        settings.setValue("profilePicture", ":/icons/bitcoin");
+    }
+    else{
+        return;
+    }
+    settings.sync();
+    setProfileImage();
 }
 
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)

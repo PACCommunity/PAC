@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>982</width>
-    <height>471</height>
+    <height>553</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -63,6 +63,12 @@
          </property>
          <item row="1" column="0">
           <widget class="QFrame" name="verticalFrame">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>250</height>
+            </size>
+           </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
@@ -97,7 +103,7 @@
               <item>
                <widget class="QLabel" name="label">
                 <property name="sizePolicy">
-                 <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                   <horstretch>0</horstretch>
                   <verstretch>0</verstretch>
                  </sizepolicy>
@@ -412,7 +418,7 @@
          <item row="4" column="0">
           <widget class="QTableView" name="recentRequestsView">
            <property name="sizePolicy">
-            <sizepolicy hsizetype="Expanding" vsizetype="MinimumExpanding">
+            <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
              <horstretch>0</horstretch>
              <verstretch>0</verstretch>
             </sizepolicy>
