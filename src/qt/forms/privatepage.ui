@@ -100,6 +100,19 @@
             <item>
              <layout class="QHBoxLayout" name="horizontalLayout_5">
               <item>
+               <widget class="QLabel" name="labelPrivateSendLastMessage">
+                <property name="text">
+                 <string>(Last Message)</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                </property>
+                <property name="wordWrap">
+                 <bool>true</bool>
+                </property>
+               </widget>
+              </item>
+              <item>
                <widget class="QLabel" name="labelPrivateSendSyncStatus">
                 <property name="toolTip">
                  <string>The displayed information may be out of date. Your wallet automatically synchronizes with the Paccoin network after a connection is established, but this process has not completed yet.</string>
@@ -402,19 +415,6 @@
             </item>
             <item>
              <layout class="QVBoxLayout" name="VerticalLayout_PS">
-              <item>
-               <widget class="QLabel" name="labelPrivateSendLastMessage">
-                <property name="text">
-                 <string>(Last Message)</string>
-                </property>
-                <property name="alignment">
-                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                </property>
-                <property name="wordWrap">
-                 <bool>true</bool>
-                </property>
-               </widget>
-              </item>
               <item>
                <widget class="QPushButton" name="togglePrivateSend">
                 <property name="sizePolicy">
