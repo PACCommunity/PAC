@@ -394,7 +394,7 @@ QPushButton {
     font-weight: medium;
     font-size: 16px;
 }
-QPushButton:hover, QPushButton:focus {
+QPushButton:hover, QPushButton:focus{
     background: rgb(243,232,56) !important;
     border: 1px solid rgb(243,232,56);
     color: rgb(5,5,5);
@@ -410,6 +410,7 @@ QPushButton:pressed {
     color: rgb(243,232,56) !important;
 }
 /* Style of buttons with classes */
+
 [class="SmallButton"]{
     border-radius: 8px;
     height: 20px;
@@ -547,6 +548,10 @@ BitcoinAmountField QComboBox::indicator {
  * Styles by section
  */
 
+/* Modal Overlay */
+#bgWidget{
+    background:#171717;
+}
 
 /*
  * News/profile bar style

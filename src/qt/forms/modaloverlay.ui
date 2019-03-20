@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>640</width>
-    <height>397</height>
+    <height>398</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
    <item>
     <widget class="QWidget" name="bgWidget" native="true">
      <property name="styleSheet">
-      <string notr="true">background:#171717;</string>
+      <string notr="true"/>
      </property>
      <layout class="QVBoxLayout" name="verticalLayoutMain" stretch="0">
       <property name="leftMargin">
@@ -370,6 +370,12 @@
             <widget class="QPushButton" name="closeButton">
              <property name="text">
               <string>Hide</string>
+             </property>
+             <property name="default">
+              <bool>false</bool>
+             </property>
+             <property name="flat">
+              <bool>false</bool>
              </property>
             </widget>
            </item>
