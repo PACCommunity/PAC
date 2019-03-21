@@ -153,6 +153,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     spinnerFrame(0),
     platformStyle(platformStyle)
 {
+
     QSettings settings;
     settings.setValue("theme", "pac");
     /* Open CSS when configured */
@@ -803,8 +804,7 @@ void BitcoinGUI::createHeaderBar()
 
     QSettings settings;
     QString strImgValue = settings.value("profilePicture").toString();
-
-    if(strImgValue == "" && strImgValue == NULL){
+    if(strImgValue == "" || strImgValue == NULL){
         strImgValue = ":/icons/bitcoin";
     }
 
@@ -817,6 +817,10 @@ void BitcoinGUI::setProfileImage(){
     /** initializing profile image */
     QSettings settings;
     QString strImgValue = settings.value("profilePicture").toString();
+
+    if(strImgValue == "" || strImgValue == NULL){
+        strImgValue = ":/icons/bitcoin";
+    }
 
     QPixmap target(80, 80);
     target.fill(Qt::transparent);
@@ -1634,7 +1638,8 @@ void BitcoinGUI::selectProfileImageFile(){
     {
         settings.setValue("profilePicture", ":/icons/bitcoin");
     }
-    else{
+    else if (msgBox.clickedButton() == abortButton){
+        settings.sync();
         return;
     }
     settings.sync();
