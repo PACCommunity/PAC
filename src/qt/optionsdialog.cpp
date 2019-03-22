@@ -108,6 +108,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     ui->cboFontType->addItem(QString("Volte Rounded Semibold"), QVariant("Volte Rounded Semibold"));
     ui->cboFontType->addItem(QString("Gotham Medium"), QVariant("Gotham Medium"));
     ui->cboFontType->addItem(QString("Gotham Bold"), QVariant("Gotham Bold"));
+    ui->cboFontType->setCurrentIndex(1);
     QFontDatabase database;
     for(int i = 0; i < database.families().count(); i++)
     {

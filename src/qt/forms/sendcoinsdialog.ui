@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1213</width>
-    <height>623</height>
+    <width>1028</width>
+    <height>584</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -389,7 +389,7 @@
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>604</width>
+                  <width>419</width>
                   <height>126</height>
                  </rect>
                 </property>
@@ -951,8 +951,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>631</width>
-             <height>219</height>
+             <width>446</width>
+             <height>180</height>
             </rect>
            </property>
            <property name="styleSheet">
@@ -1010,22 +1010,6 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout">
           <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>15</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
            <layout class="QHBoxLayout" name="horizontalLayout_2">
             <property name="spacing">
              <number>3</number>
@@ -1040,7 +1024,7 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>150</width>
                 <height>0</height>
                </size>
               </property>
@@ -1059,22 +1043,6 @@
              </widget>
             </item>
             <item>
-             <spacer name="horizontalSpacer_5">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Fixed</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>15</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
-            </item>
-            <item>
              <widget class="QCheckBox" name="checkUseInstantSend">
               <property name="enabled">
                <bool>true</bool>
@@ -1087,30 +1055,19 @@
               </property>
               <property name="minimumSize">
                <size>
-                <width>100</width>
+                <width>130</width>
                 <height>0</height>
                </size>
+              </property>
+              <property name="font">
+               <font>
+                <pointsize>13</pointsize>
+               </font>
               </property>
               <property name="text">
                <string>InstantPAC</string>
               </property>
              </widget>
-            </item>
-            <item>
-             <spacer name="horizontalSpacer_17">
-              <property name="orientation">
-               <enum>Qt::Horizontal</enum>
-              </property>
-              <property name="sizeType">
-               <enum>QSizePolicy::Expanding</enum>
-              </property>
-              <property name="sizeHint" stdset="0">
-               <size>
-                <width>10</width>
-                <height>20</height>
-               </size>
-              </property>
-             </spacer>
             </item>
            </layout>
           </item>
@@ -2421,7 +2378,7 @@
  <resources/>
  <connections/>
  <buttongroups>
-  <buttongroup name="groupFee"/>
   <buttongroup name="groupCustomFee"/>
+  <buttongroup name="groupFee"/>
  </buttongroups>
 </ui>
