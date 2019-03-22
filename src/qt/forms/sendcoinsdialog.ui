@@ -388,13 +388,8 @@
                 <property name="geometry">
                  <rect>
                   <x>0</x>
-<<<<<<< HEAD
-                  <y>-78</y>
-                  <width>604</width>
-=======
                   <y>0</y>
                   <width>419</width>
->>>>>>> new-ui_v1.4
                   <height>126</height>
                  </rect>
                 </property>
@@ -1067,15 +1062,8 @@
                 <height>0</height>
                </size>
               </property>
-<<<<<<< HEAD
               <property name="toolTip">
                <string>Instant PAC</string>
-=======
-              <property name="font">
-               <font>
-                <pointsize>13</pointsize>
-               </font>
->>>>>>> new-ui_v1.4
               </property>
               <property name="text">
                <string>InstantPAC</string>
