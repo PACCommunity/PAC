@@ -920,11 +920,11 @@ QString getThemeName()
     if(!theme.isEmpty()){
         return theme;
     }
-    return QString("pac");
+    return QString("pac theme");
 }
 void setGUITextColor(){
     QString theme = getThemeName();
-    if( theme.toStdString().compare("pac") == 0 )
+    if( theme.toStdString().compare("pac theme") == 0 )
         COLOR_TEXT = QColor(255,255,255);
     else
         COLOR_TEXT = QColor(20,20,20);
@@ -939,7 +939,7 @@ QString getFontType()
     if(!FontType.isEmpty()){
         return FontType;
     }
-    return QString("default");
+    return QString("PAC Default Font");
 }
 
 // Open CSS when configured
