@@ -37,8 +37,10 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     // set the typography correctly
     QString fontType = GUIUtil::getFontType();
     QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    QFont selectedFont = QFont(fontType,13, QFont::Medium, false);
+    selectedFont.setPixelSize(13);
     for (int i = 0; i < widgets.length(); i++){
-        widgets.at(i)->setFont(QFont(fontType,13, 1, false));
+        widgets.at(i)->setFont(selectedFont);
     }
 
     // These icons are needed on Mac also!

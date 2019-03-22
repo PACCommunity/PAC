@@ -321,7 +321,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
-    QFont defaultFont(settings.value("FontType").toString(),13, QFont::Normal, false);
+    QFont defaultFont(settings.value("FontType").toString(),13, QFont::Medium, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
     defaultFont.setStyleHint(QFont::SansSerif);

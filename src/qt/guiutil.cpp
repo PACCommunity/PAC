@@ -125,12 +125,12 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
     parent->setFocusProxy(widget);
 
     QString fontType = GUIUtil::getFontType();
-    widget->setFont(QFont(fontType,13, 1, false));
+    widget->setFont(QFont(fontType,13, QFont::Medium, false));
     //widget->setFont(fixedPitchFont());
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
-    widget->setPlaceholderText(QObject::tr("Enter a $PAC address (e.g. %1)").arg("XwnLY9Tf7Zsef8gMGL2fhWA9ZmMjt4KPwg"));
+    widget->setPlaceholderText(QObject::tr("Enter a $PAC address (e.g. %1)").arg("P96Vyav6w6rRJCwsDG49R3WgN2pTuie4dv"));
 #endif
     widget->setValidator(new BitcoinAddressEntryValidator(parent));
     widget->setCheckValidator(new BitcoinAddressCheckValidator(parent));
