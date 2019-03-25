@@ -94,6 +94,9 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <property name="class" stdset="0">
+          <string>container</string>
+         </property>
          <layout class="QVBoxLayout" name="VerticalLayout_PS1">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_3">

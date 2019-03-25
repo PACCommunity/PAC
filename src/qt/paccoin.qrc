@@ -350,9 +350,15 @@
         <file alias="drkblue_leftArrow_small">res/images/light/drkblue_leftArrow_small.png</file>
         <file alias="drkblue_rightArrow_small">res/images/light/drkblue_rightArrow_small.png</file>
         <file alias="drkblue_qtreeview_selected">res/images/light/drkblue_qtreeview_selected.png</file>
-        <file alias="drkblue_walletFrame_bg">res/images/light/drkblue_walletFrame_bg.png</file>
         <file alias="splash">res/images/light/splash.png</file>
         <file alias="splash_testnet">res/images/light/splash_testnet.png</file>
+        <file alias="checked_b_dis">res/images/light/checked_b_dis.png</file>
+        <file alias="checked_b">res/images/light/checked_b.png</file>
+        <file alias="checked_dis">res/images/light/checked_dis.png</file>
+        <file alias="unchecked_b_dis">res/images/light/unchecked_b_dis.png</file>
+        <file alias="unchecked_b">res/images/light/unchecked_b.png</file>
+        <file alias="unchecked_dis">res/images/light/unchecked_dis.png</file>
+        <file alias="drkblue_walletFrame_bg">res/images/light/drkblue_walletFrame_bg.png</file>
     </qresource>
     <qresource prefix="/images/pac">
         <file alias="about">res/images/pac/about.png</file>

@@ -43,7 +43,8 @@ QLabel, QGroupBox::title{
 }
 /* General window */
 QMainWindow{
-    border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;
+    /*border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;*/
+    background: #d1d1d1;
 }
 /* Global message box */
 QMessageBox {
@@ -52,7 +53,7 @@ QMessageBox {
 /* Global tooltip */
 QToolTip {
     color: #000;
-    background-color: #0A0A0A;
+    background-color: #e0e0e0;
     border: none;
 }
 /* Global dialogs*/
@@ -131,12 +132,14 @@ QProgressBar::chunk {
     max-height: 16px !important;
 }
 QStatusBar{
-    background-color: #bfbfbf;
+    background-color: #212121;
 }
 /* Global with classes */
 [class="container"]{
-    background-color: rgba(204,204,204,0.5); 
-    border: 0px !important;
+    background-color: #e5e5e5;
+    border: 0px;
+    border-bottom: 13px solid qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
+    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
 }
 [class="LineEdit"], [class="LineEdit_PacCoins"], [class="LineEditSmall"]{
     border: 0px;
@@ -194,7 +197,7 @@ QLabel[class="titleLabel"]{
 }
 QLabel[class="pacCoinsLabel"]{
     margin: 0px;
-    color: #F4EA13;
+    color: #000;
     font-size: 32px;
     font-weight: medium;
 }
@@ -205,6 +208,12 @@ QLabel[class="usdLabel"]{
 }
 QLabel[class="labelPacIcon"]{
     margin: 0px;
+}
+QLabel[class2="yellowUnderline"]{
+    border: 2px solid yellow;
+    border-left:transparent;
+    border-right:transparent;
+    border-top:transparent;
 }
 /*textarea*/
 QPlainTextEdit {
@@ -363,7 +372,7 @@ QTableWidget{
 }
 /* ToolBar Menu */
 QToolBar {
-    background-color: #bfbfbf;
+    background-color: #212121;
     border: 0px;
     padding: 0px;
     margin: 0px;
@@ -376,7 +385,7 @@ QToolBar > QToolButton {
     color: #fff;
 }
 QToolBar > QToolButton:checked {
-    background-color: #7a7a7a;
+    background-color: #444444;
 }
 #toolbarIcon{
     background: none;
@@ -453,7 +462,7 @@ QPushButton:pressed {
     font-weight:medium;
 }
 QCheckBox, QRadioButton {
-    color: #FFF;
+    color: #000;
     width: 9px;
     height: 9px;
     spacing: 10px;
@@ -648,10 +657,10 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBo
 /*
  * Private Page
  */
-#framePrivateSend{
+/*#framePrivateSend{
     background-color: rgba(0,0,0,0.5); 
     border: 0px !important;
-}
+}*/
 #labelPrivateSendHeader{
     font-size: 27px;
     font-family:"Gotham", sans-serif;
