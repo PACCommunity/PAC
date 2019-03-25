@@ -96,21 +96,16 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
     /* Theme selector */
     ui->theme->addItem(QString("pac theme"), QVariant("pac"));
     ui->theme->setCurrentIndex(1);
-    //ui->theme->addItem(QString("light"), QVariant("light"));
-    //ui->theme->addItem(QString("PAC-light"), QVariant("light"));
-    //ui->theme->addItem(QString("PAC-light-hires"), QVariant("light-hires"));
-    //ui->theme->addItem(QString("PAC-blue"), QVariant("drkblue"));
-    //ui->theme->addItem(QString("PAC-Crownium"), QVariant("crownium"));
-    //ui->theme->addItem(QString("PAC-traditional"), QVariant("trad"));
 
     /* typography selector */
+    //ui->cboFontType->addItem(QString("PAC Default Font"), QVariant("Volte Rounded"));
     ui->cboFontType->addItem(QString("PAC Default Font"), QVariant("Volte Rounded"));
-    ui->cboFontType->addItem(QString("Volte Rounded Semibold"), QVariant("Volte Rounded Semibold"));
     ui->cboFontType->addItem(QString("Gotham Medium"), QVariant("Gotham Medium"));
     ui->cboFontType->addItem(QString("Gotham Bold"), QVariant("Gotham Bold"));
+
+    /* Gets and loads in the combo box the whole list of fonts available on your OS */
     QFontDatabase database;
-    for(int i = 0; i < database.families().count(); i++)
-    {
+    for(int i = 0; i < database.families().count(); i++){
         ui->cboFontType->addItem(QString(database.families().at(i)), QVariant(database.families().at(i)));
     }
     ui->cboFontType->setCurrentIndex(1);

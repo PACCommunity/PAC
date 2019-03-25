@@ -153,23 +153,20 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
     spinnerFrame(0),
     platformStyle(platformStyle)
 {
-
+    /* Setting the default Pac Theme */
     QSettings settings;
     settings.setValue("theme", "pac");
     /* Open CSS when configured */
     GUIUtil::setGUITextColor();
-    int id = QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
-    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Light");
-    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Medium");
-    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Semibold");
-    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Bold");
+    /* Add the custom Fonts to the wallet */
+    // QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Regular");
+    int id = QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Medium");
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
     QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
 
     QString family = QFontDatabase::applicationFontFamilies(id).at(0);
-
+    std::cout << family.toStdString();
     this->setStyleSheet(GUIUtil::loadStyleSheet());
-    QString fontType = GUIUtil::getFontType();
 
     GUIUtil::restoreWindowGeometry("nWindow", QSize(800, 550), this);
     QString windowTitle = tr("$PAC Core") + " - ";
@@ -321,10 +318,9 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
         connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
-    QFont defaultFont(settings.value("FontType").toString(),13, QFont::Medium, false);
+    QFont defaultFont(settings.value("FontType").toString(),13, QFont::Normal, false);
     defaultFont.setBold(false);
     defaultFont.setPixelSize(13);
-    defaultFont.setStyleHint(QFont::SansSerif);
     QApplication::setFont(defaultFont);
 
     // set Background Image of window so it can keep aspect ratio >

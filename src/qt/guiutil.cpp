@@ -911,6 +911,16 @@ void restoreWindowGeometry(const QString& strSetting, const QSize& defaultSize, 
     }
 }
 
+QFont getCustomSelectedFont()
+{
+    QString fontType = getFontType();
+    QFont font = QFont(fontType,14, QFont::Normal, false);
+    font.setPixelSize(14);
+    return font;
+}
+
+
+
 // Return name of current UI-theme or default theme if no theme was found
 QString getThemeName()
 {
@@ -920,11 +930,11 @@ QString getThemeName()
     if(!theme.isEmpty()){
         return theme;
     }
-    return QString("pac theme");
+    return QString("pac");
 }
 void setGUITextColor(){
     QString theme = getThemeName();
-    if( theme.toStdString().compare("pac theme") == 0 )
+    if( theme.toStdString().compare("pac") == 0 )
         COLOR_TEXT = QColor(255,255,255);
     else
         COLOR_TEXT = QColor(20,20,20);

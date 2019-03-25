@@ -203,6 +203,9 @@ namespace GUIUtil
     /** Load global CSS theme */
     QString loadStyleSheet();
 
+    /** returns the QFont previously selected by the user in settings */
+    QFont getCustomSelectedFont();
+
     /** Return name of current CSS theme */
     QString getThemeName();
 

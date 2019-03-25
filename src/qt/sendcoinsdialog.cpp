@@ -45,10 +45,8 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *platformStyle, QWidget *pa
     QString theme = GUIUtil::getThemeName();
 
     // set the typography correctly
-    QString fontType = GUIUtil::getFontType();
+    QFont selectedFont = GUIUtil::getCustomSelectedFont();
     QList<QWidget*> widgets = this->findChildren<QWidget*>();
-    QFont selectedFont = QFont(fontType,13, QFont::Medium, false);
-    selectedFont.setPixelSize(13);
     for (int i = 0; i < widgets.length(); i++){
         widgets.at(i)->setFont(selectedFont);
     }
