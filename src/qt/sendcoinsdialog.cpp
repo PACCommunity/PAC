@@ -750,11 +750,25 @@ void SendCoinsDialog::updateFeeMinimizedLabel()
     if(!model || !model->getOptionsModel())
         return;
 
-    if (ui->radioSmartFee->isChecked())
-        ui->labelFeeMinimized->setText(ui->labelSmartFee->text());
-    else {
-        ui->labelFeeMinimized->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), ui->customFee->value()) +
-            ((ui->radioCustomPerKilobyte->isChecked()) ? "/kB" : ""));
+    if (ui->radioSmartFee->isChecked()){
+        QString feeMinimized = ui->labelSmartFee->text();
+        QStringList list1 = feeMinimized.split('.');
+        QStringList list2 = list1[1].split(' ');
+        if(list2[0].toInt()==0){
+            ui->labelFeeMinimized->setText(list1[0] + ".00" + list2[1]);
+        }else{
+            ui->labelFeeMinimized->setText(feeMinimized);
+        }
+    }else {
+        QString feeMinimized = BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), ui->customFee->value()) + ((ui->radioCustomPerKilobyte->isChecked()) ? "/kB" : "");
+        QStringList list1 = feeMinimized.split('.');
+        QStringList list2 = list1[1].split(' ');
+        if(list2[0].toInt()==0){
+            ui->labelFeeMinimized->setText(list1[0] + ".00" + list2[1]);
+        }else{
+            ui->labelFeeMinimized->setText(feeMinimized);
+        }
+        
     }
 }
 

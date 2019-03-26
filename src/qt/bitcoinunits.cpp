@@ -156,6 +156,9 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
         return _str;
 
     //then it adds the dot and the cents:
+    /*if(remainder_str.toInt()==0){
+        return _str + QString(".00");
+    }*/
     return _str + QString(".") + remainder_str;
 }
 
