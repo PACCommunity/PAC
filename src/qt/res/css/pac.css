@@ -645,9 +645,9 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBo
     color:#FFF;
 }
 #labelAnonymized{
-    font-size: 48px;
-    font-family:"Gotham Medium", sans-serif;
+    font-size: 38px;
     color: #FDF002;
+    font-weight:bold;
 }
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledText{
     text-transform:uppercase;
@@ -656,10 +656,9 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBo
     color:#FFF;
 }
 #labelAmountRounds, #labelPrivateSendEnabled {
-    text-transform:uppercase;
-    font-size: 25px;
-    font-family:"Gotham Medium", sans-serif;
+    font-size: 20px;
     color: #FDF002;
+    font-weight:bold;
 }
 #privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed, #overviewInfo, #overviewInfo:hover, #overviewInfo:focus, #overviewInfo:disabled, #overviewInfo:pressed{
     background: transparent;
