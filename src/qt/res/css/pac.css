@@ -142,7 +142,7 @@ QStatusBar{
     border: 0px;
     outline:0;
     padding:3px;
-    background-color: rgb(25,25,25);
+    background-color: rgba(67,67,67,0.5);
     color: #fff;
 }
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
@@ -273,7 +273,7 @@ QAbstractSpinBox {
     border-radius: 20px;
     font-size: 15px;
     min-height:40px;
-    background-color: rgb(17,17,17);
+    background-color: rgba(67,67,67,0.5);
     text-align: center;
     border:0px;
     color:#fff;
@@ -376,7 +376,7 @@ QToolBar > QToolButton {
     color: #fff;
 }
 QToolBar > QToolButton:checked {
-    background-color: rgba(57,57,57,0.3);
+    background-color: rgba(67,67,67,0.5);
 }
 #toolbarIcon{
     background: none;
@@ -488,7 +488,7 @@ QRadioButton::indicator:unchecked:disabled{
 /* ComboBox dropdown Menus for the selector of PAC units inside BitcoinAmountField inputs  */
 BitcoinAmountField QComboBox {
     border-radius: 20px;
-    background-color: rgb(17,17,17);
+    background-color: rgba(67,67,67,0.5);
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -530,7 +530,7 @@ BitcoinAmountField QComboBox::item {
     color:#fff !important;
 }
 BitcoinAmountField QComboBox::item:alternate{
-    background:rgb(20, 20, 20);
+    background: rgb(20,20,20);
 }
 BitcoinAmountField QComboBox::item:selected{
     border:0px solid transparent;
