@@ -577,9 +577,7 @@ BitcoinAmountField QComboBox::indicator {
 /*
  * Overview Page
 */
-#frame_RecentTransactions>QLabel, #frame_Balances>QLabel{
-    text-transform:uppercase;
-}
+
 
 /*
  * SendCoins Page
