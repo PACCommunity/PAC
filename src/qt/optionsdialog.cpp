@@ -99,7 +99,7 @@ OptionsDialog::OptionsDialog(QWidget *parent, bool enableWallet) :
 
     /* typography selector */
     //ui->cboFontType->addItem(QString("PAC Default Font"), QVariant("Volte Rounded"));
-    ui->cboFontType->addItem(QString("PAC Default Font"), QVariant("Volte Rounded"));
+    ui->cboFontType->addItem(QString("Volte Rounded"), QVariant("Volte Rounded"));
     ui->cboFontType->addItem(QString("Gotham Medium"), QVariant("Gotham Medium"));
     ui->cboFontType->addItem(QString("Gotham Bold"), QVariant("Gotham Bold"));
 

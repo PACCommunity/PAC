@@ -58,7 +58,7 @@ public:
         painter->save();
 
         // set the typography correctly
-        QString fontType = GUIUtil::getFontType();
+        QString fontType = GUIUtil::getFontName();
         QFont font;
         font = QFont(fontType,13,QFont::Medium, false);
         font.setBold(false);

@@ -124,8 +124,8 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 {
     parent->setFocusProxy(widget);
 
-    QString fontType = GUIUtil::getFontType();
-    widget->setFont(QFont(fontType,13, QFont::Medium, false));
+    QString fontType = GUIUtil::getFontName();
+    widget->setFont(QFont(fontType,14, QFont::Medium, false));
     //widget->setFont(fixedPitchFont());
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
@@ -913,13 +913,12 @@ void restoreWindowGeometry(const QString& strSetting, const QSize& defaultSize, 
 
 QFont getCustomSelectedFont()
 {
-    QString fontType = getFontType();
+    QString fontType = getFontName();
+    std::cout << "font name: " << fontType.toStdString() << std::endl;
     QFont font = QFont(fontType,14, QFont::Normal, false);
     font.setPixelSize(14);
     return font;
 }
-
-
 
 // Return name of current UI-theme or default theme if no theme was found
 QString getThemeName()
@@ -941,7 +940,7 @@ void setGUITextColor(){
 }
 
 // Return name of current UI-theme or default theme if no theme was found
-QString getFontType()
+QString getFontName()
 {
     QSettings settings;
     QString FontType = settings.value("FontType", "").toString();
@@ -949,7 +948,7 @@ QString getFontType()
     if(!FontType.isEmpty()){
         return FontType;
     }
-    return QString("PAC Default Font");
+    return QString("Volte Rounded");
 }
 
 // Open CSS when configured

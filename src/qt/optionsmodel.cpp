@@ -84,7 +84,7 @@ void OptionsModel::Init(bool resetSettings)
         settings.setValue("theme", "");
 
     if (!settings.contains("FontType"))
-        settings.setValue("FontType", "PAC Default Font");
+        settings.setValue("FontType", "Volte Rounded");
 
 #ifdef ENABLE_WALLET
     if (!settings.contains("fCoinControlFeatures"))

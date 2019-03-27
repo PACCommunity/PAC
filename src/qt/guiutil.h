@@ -209,7 +209,7 @@ namespace GUIUtil
     /** Return name of current CSS theme */
     QString getThemeName();
 
-    QString getFontType();
+    QString getFontName();
     
     /* Convert QString to OS specific boost path through UTF-8 */
     boost::filesystem::path qstringToBoostPath(const QString &path);
