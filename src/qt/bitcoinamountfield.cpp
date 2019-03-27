@@ -28,7 +28,7 @@ public:
         singleStep(100000) // satoshis
     {
         setAlignment(Qt::AlignHCenter);
-        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);//Expanding, Fixed
+        setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Fixed);
         connect(lineEdit(), SIGNAL(textEdited(QString)), this, SIGNAL(valueChanged()));
     }
 
