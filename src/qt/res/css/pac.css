@@ -582,7 +582,10 @@ BitcoinAmountField QComboBox::indicator {
 /*
  * SendCoins Page
 */
-
+#lineEditCoinControlChange{
+    background-color: rgba(67,67,67,0.5);
+    color: #fff;
+}
 #SendCoinsDialog{
     background:transparent;
 }
@@ -590,7 +593,7 @@ BitcoinAmountField QComboBox::indicator {
     border: 0px !important;
 }
 #frameCoinControl{
-    background: rgba(200,200,200,0.15);
+    background: rgba(150,150,150,0.1);
     border-radius: 8px !important;
 }
 #frameFee{
