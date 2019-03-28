@@ -142,7 +142,7 @@
                  <string>Information about PrivateSend and Mixing</string>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border-image: url(&quot;:/icons/pac/info&quot;);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string/>

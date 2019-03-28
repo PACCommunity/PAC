@@ -916,9 +916,10 @@ QString getThemeName()
     QString theme = settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        return theme;
+        //return theme;
+        return QString("light");
     }
-    return QString("pac");
+    return QString("light");
 }
 void setGUITextColor(){
     QString theme = getThemeName();
