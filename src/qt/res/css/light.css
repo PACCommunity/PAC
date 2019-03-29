@@ -39,7 +39,7 @@ QSlider::handle:disabled{
 /* Global labels a Box with a title */
 QLabel, QGroupBox::title{
     color: black !important;
-    font-weight:normal;
+    font-weight: normal;
 }
 /* General window */
 QMainWindow{
@@ -58,7 +58,7 @@ QToolTip {
 }
 /* Global dialogs*/
 QDialog{
-    background-color: #aaaaaa;
+    background-color: #eee;
     color:black;
 }
 /* Global ComboBox */
@@ -73,9 +73,12 @@ QComboBox{
 QComboBox::down-arrow {
     border-image: url(':/images/light/drkblue_downArrow_black') 0 0 0 0 stretch stretch;
     border:none;
+    color: none;
+    background:transparent;
 }
 QComboBox::drop-down {
     width:25px;
+    height:200px;
 }
 QComboBox QListView {
     color: #000;
@@ -110,7 +113,7 @@ QTabBar::tab {
     color:#000;
 }
 QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog > QTabBar::tab:selected, #tabWidget_OptionsDialog > QTabBar::tab:hover {
-    background-color: rgb(128,128,128) !important;
+    background-color: rgb(200,200,200) !important;
     color:#F4EA13;
 }
 QTabBar::tab:selected {
@@ -133,7 +136,7 @@ QProgressBar::chunk {
     max-height: 16px !important;
 }
 QStatusBar{
-    background-color: #212121;
+    background-color: #525252;
 }
 /* Global with classes */
 [class="container"]{
@@ -148,7 +151,7 @@ QStatusBar{
     border: 0px;
     outline:0;
     padding:3px;
-    background-color: rgb(168, 168, 168);
+    background-color: #fff;
     color: #000;
 }
 [class="LineEdit"], [class="LineEdit_PacCoins"]{
@@ -235,13 +238,13 @@ QScrollBar:vertical, QScrollBar:horizontal {
 }
 QScrollBar::handle:vertical, QScrollBar::handle:horizontal  {
     background-color: #787878;
-    border: 1px solid rgb(50,50,50);
+    border: 1px solid rgb(200,200,200);
     min-height: 8px;
     border-radius: 4px;
 }
 QScrollBar::handle:vertical:hover, QScrollBar::handle:horizontal:hover {
-    background-color: rgb(243,232,56);
-    border: 1px solid rgb(243,232,56);
+    background-color: rgb(7,23,199);
+    border: 1px solid rgb(7,23,199);
     border-radius: 4px;
     min-height: 8px;
 }
@@ -281,19 +284,19 @@ QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical, QScrollBar::up-a
 QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical, QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal{
     background: none;
 }
-/* Global spinbox */
+/* Global spinbox: BitcoinAmountField */
 QAbstractSpinBox {
     border-radius: 20px;
     font-size: 15px;
     min-height:40px;
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(255, 255, 255);
     text-align: center;
     border:0px;
     color:#000;
     padding: 3px 5px 3px 5px;
 }
 QAbstractSpinBox:disabled{
-    background-color: rgb(61,61,61);
+    background-color: rgb(128,128,128);
     color: #efefef;
 }
 QAbstractSpinBox::up-button {
@@ -324,11 +327,11 @@ QAbstractSpinBox::down-arrow {
 }
 /* Global tables */
 QHeaderView { /* Top of the table Header */
-    background-color: #212121;
+    background-color: #292929;
     color: #fff;
 }
 QHeaderView::section { /* Top of the table Header Sections */
-    background-color: #212121;
+    background-color: #292929;
     color:#fff;
     min-height:20px;
     height:35px;
@@ -359,11 +362,8 @@ QScrollArea {
     border:2px solid transparent;
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
-    /*background-color: #e5e5e5;*/
-    background-color: rgba(242, 242, 242, 0.75);
+    background-color: rgba(255, 255, 255, 0.75);
     border:none;
-    /*border-bottom: 13px solid qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
-    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);*/
 }
 QTableView::item { /* Table Item */
     font-size:12px;
@@ -372,7 +372,7 @@ QTableView#recentRequestsView, QTableView#MasternodeList, QTableView#transaction
     color: gray;
 }
 QTableView::item:selected { /* Table Item Selected */
-    background-color: rgb(70, 70, 70);
+    background-color: rgb(68, 68, 68);
 }
 QTableWidget{
     background-color: #e5e5e5;
@@ -380,7 +380,7 @@ QTableWidget{
 }
 /* ToolBar Menu */
 QToolBar {
-    background-color: #212121;
+    background-color: #292929;
     border: 0px;
     padding: 0px;
     margin: 0px;
@@ -402,9 +402,9 @@ QToolBar > QToolButton:checked {
 }
 /* Global Button styles*/
 QPushButton {
-    background: rgba(0,0,0,0.5);
+    background: rgba(255,255,255,0.5);
     border: 1px solid #F4EA13;
-    color: #F4EA13;
+    color: #222;
     border-radius: 18px;
     height: 35px;
     width: 180px;
@@ -422,9 +422,9 @@ QPushButton:disabled {
     color:rgb(100,100,100) !important;
 }
 QPushButton:pressed {
-    background: rgba(243,232,56, 0.3) !important;
+    background: rgba(243,232,56, 0.5) !important;
     border: 0px !important;
-    color: rgb(243,232,56) !important;
+    color: rgb(255,255,255) !important;
 }
 /* Style of buttons with classes */
 [class="SmallButton"]{
@@ -504,7 +504,7 @@ QRadioButton::indicator:unchecked:disabled{
 /* ComboBox dropdown Menus for the selector of PAC units inside BitcoinAmountField inputs  */
 BitcoinAmountField QComboBox {
     border-radius: 20px;
-    background-color: rgb(168, 168, 168);
+    background-color: rgb(255, 255, 255);
     font-size: 15px;
     text-align: center;
     border:0px;
@@ -513,14 +513,14 @@ BitcoinAmountField QComboBox {
     color:#000;
 }
 BitcoinAmountField QComboBox:disabled{
-    background-color: rgb(61,61,61);
+    background-color: rgb(120,120,120);
     color: #efefef;
 }
 BitcoinAmountField QComboBox:checked{
-    background-color: rgba(219, 219, 219,0.5);
+    background-color: rgba(250, 250, 250,0.5);
 }
 BitcoinAmountField QComboBox:editable{
-    background-color: rgba(219, 219, 219,0.5);
+    background-color: rgba(250, 250, 250,0.5);
     color:#616161;
     border:0px;
 }
@@ -533,7 +533,7 @@ BitcoinAmountField QComboBox::down-arrow {
 }
 BitcoinAmountField QComboBox QListView{
     color: #000;
-    background-color:  rgb(168, 168, 168);
+    background-color:  rgb(255, 255, 255);
     border:1px solid transparent;
     border-radius: 5px;
     padding-right:1px;
@@ -546,11 +546,11 @@ BitcoinAmountField QComboBox::item {
     color:#000 !important;
 }
 BitcoinAmountField QComboBox::item:alternate{
-    background:rgb(20, 20, 20);
+    background:rgb(255, 255, 255);
 }
 BitcoinAmountField QComboBox::item:selected{
     border:0px solid transparent;
-    background-color:  rgb(40, 40, 40);
+    background-color:  rgb(255, 255, 255);
 }
 BitcoinAmountField QComboBox::indicator {
     background-color:transparent;
@@ -771,12 +771,12 @@ MasternodeList > QTabBar::tab{
     height: 24px;
 }
 #tabWidget>QTabBar::tab {
-    background-color: #1D1D1D !important;
+    background-color: #BDBDBD !important;
     min-height: 25px;
     color: white;
 }
 #tabWidget>QTabBar::tab:selected{
-    background-color: #383737 !important;
+    background-color: #BDBDBD !important;
     border: 1px solid black !important;
     color: #fffbb2;
 }
@@ -789,7 +789,7 @@ MasternodeList > QTabBar::tab{
     width:100px;
 }
 #tabWidget_OptionsDialog::pane {
-    background-color: rgba(50,50,50,0.35);
+    background-color: rgba(200,200,200,1);
 }
 #OptionsDialog > #resetButton{
     width:210px !important;
@@ -824,4 +824,8 @@ MasternodeList > QTabBar::tab{
     height: 20px !important;
     font-size: 13px;
     border-radius: 10px;
+}
+/* Modal overlay*/
+ModalOverlay > #bgWidget{
+    background:#D9D9D9;
 }
