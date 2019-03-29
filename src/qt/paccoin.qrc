@@ -186,6 +186,7 @@
         <file alias="network_disabled">res/icons/light/network_disabled.png</file>
         <file alias="refresh">res/icons/light/refresh.png</file>
         <file alias="info">res/icons/light/info.png</file>
+        <file alias="private">res/icons/light/private.png</file>
     </qresource>
     <qresource prefix="/icons/pac">
         <file alias="address-book">res/icons/pac/address-book.png</file>

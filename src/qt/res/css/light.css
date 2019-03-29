@@ -43,8 +43,8 @@ QLabel, QGroupBox::title{
 }
 /* General window */
 QMainWindow{
-    /*border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;*/
-    background: #d1d1d1;
+    border-image: url(':/images/light/drkblue_walletFrame_bg') 0 0 0 0 stretch stretch;
+    /*background: #d1d1d1;*/
 }
 /* Global message box */
 QMessageBox {
@@ -58,8 +58,8 @@ QToolTip {
 }
 /* Global dialogs*/
 QDialog{
-    background-color:rgb(89, 89, 89);
-    color:white;
+    background-color: #aaaaaa;
+    color:black;
 }
 /* Global ComboBox */
 QComboBox{
@@ -71,7 +71,7 @@ QComboBox{
     min-height: 24px !important;
 }
 QComboBox::down-arrow {
-    border-image: url(':/images/light/drkblue_downArrow') 0 0 0 0 stretch stretch;
+    border-image: url(':/images/light/drkblue_downArrow_black') 0 0 0 0 stretch stretch;
     border:none;
 }
 QComboBox::drop-down {
@@ -110,7 +110,8 @@ QTabBar::tab {
     color:#000;
 }
 QTabBar::tab:selected, QTabBar::tab:hover, #tabWidget_OptionsDialog > QTabBar::tab:selected, #tabWidget_OptionsDialog > QTabBar::tab:hover {
-    background-color: #494949 !important;
+    background-color: rgb(128,128,128) !important;
+    color:#F4EA13;
 }
 QTabBar::tab:selected {
     border-color: transparent !important;
@@ -136,10 +137,12 @@ QStatusBar{
 }
 /* Global with classes */
 [class="container"]{
-    background-color: #e5e5e5;
+    /*background-color: #f2f2f2;*/
+    background-color: rgba(242, 242, 242, 0.75);
     border: 0px;
+    /*background-color: #e5e5e5;
     border-bottom: 13px solid qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
-    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
+    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);*/
 }
 [class="LineEdit"], [class="LineEdit_PacCoins"], [class="LineEditSmall"]{
     border: 0px;
@@ -211,7 +214,7 @@ QLabel[class="labelPacIcon"]{
 }
 /* On the overview something is not working properly, that is the reason on doing the underline like this */
 QLabel[class2="yellowUnderline"]{
-    border: 2px solid yellow;
+    border: 2px solid #FDF002;
     border-left:transparent;
     border-right:transparent;
     border-top:transparent;
@@ -356,10 +359,11 @@ QScrollArea {
     border:2px solid transparent;
 }
 QTableView { /* Table - has to be selected as a class otherwise it throws off QCalendarWidget */
-    background-color: #e5e5e5;
+    /*background-color: #e5e5e5;*/
+    background-color: rgba(242, 242, 242, 0.75);
     border:none;
-    border-bottom: 13px solid qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
-    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
+    /*border-bottom: 13px solid qlineargradient(x1: 1, y1: 0, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);
+    border-right: 13px solid qlineargradient(x1: 0, y1: 1, x2: 1, y2: 1, stop: 0 rgba(80, 80, 80, 0.35), stop: 1 #d1d1d1);*/
 }
 QTableView::item { /* Table Item */
     font-size:12px;
@@ -433,12 +437,12 @@ QPushButton:pressed {
 [class="linkButton"]{
     background-color: transparent !important;
     border: none !important;
-    color: #F4EA13;
+    color: #f2a710;
     font-size: 11px;
     text-decoration: underline;
 }
 [class="linkButton"]:hover, [class="linkButton"]:focus, #removeRequestButton:hover, #removeRequestButton:focus {
-    color:rgb(180,180,180);
+    color:rgb(142, 142, 142);
     background-color: transparent !important;
     border: 0px !important;
 }
@@ -672,6 +676,9 @@ BitcoinAmountField QComboBox::indicator {
     background: transparent !important;
     color: #8E8E8E !important;
 }
+#btnCopyLastAddress{
+    border-image: url(":/icons/light/editcopy");
+}
 
 /*
  * Transactions Page
@@ -694,24 +701,24 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBo
     font-size: 27px;
     font-family:"Gotham", sans-serif;
     font-weight:bold;
-    color:#FFF;
+    color:#000;
 }
 #labelAnonymized{
     font-size: 48px;
     font-family:"Gotham Medium", sans-serif;
-    color: #FDF002;
+    color: #e5dc1b;
 }
 #labelAnonymizedText, #labelAmountAndRoundsText, #labelPrivateSendEnabledText{
     text-transform:uppercase;
     font-size: 14px;
     font-family:"Gotham Medium", sans-serif;
-    color:#FFF;
+    color:#000;
 }
 #labelAmountRounds, #labelPrivateSendEnabled {
     text-transform:uppercase;
     font-size: 25px;
     font-family:"Gotham Medium", sans-serif;
-    color: #FDF002;
+    color: #e5dc1b;
 }
 #privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed, #overviewInfo, #overviewInfo:hover, #overviewInfo:focus, #overviewInfo:disabled, #overviewInfo:pressed{
     background: transparent;
@@ -771,14 +778,14 @@ MasternodeList > QTabBar::tab{
 #tabWidget>QTabBar::tab:selected{
     background-color: #383737 !important;
     border: 1px solid black !important;
-    color: white;
+    color: #fffbb2;
 }
 
 /*
  * OptionsDialog
 */
 #tabWidget_OptionsDialog QTabBar::tab {
-    background: rgb(50,50,50);
+    background: #666666;
     width:100px;
 }
 #tabWidget_OptionsDialog::pane {

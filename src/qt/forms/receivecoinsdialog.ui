@@ -768,11 +768,17 @@
             </widget>
            </item>
            <item>
-            <widget class="QToolButton" name="btnCopyLastAddress">
+            <widget class="QPushButton" name="btnCopyLastAddress">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <property name="minimumSize">
               <size>
-               <width>0</width>
-               <height>0</height>
+               <width>30</width>
+               <height>30</height>
               </size>
              </property>
              <property name="maximumSize">
@@ -781,42 +787,8 @@
                <height>30</height>
               </size>
              </property>
-             <property name="toolTip">
-              <string>Copy Last PAC Address Generated</string>
-             </property>
              <property name="text">
               <string/>
-             </property>
-             <property name="icon">
-              <iconset resource="../paccoin.qrc">
-               <normaloff>:/icons/pac/editcopy</normaloff>:/icons/pac/editcopy</iconset>
-             </property>
-             <property name="iconSize">
-              <size>
-               <width>24</width>
-               <height>24</height>
-              </size>
-             </property>
-             <property name="checkable">
-              <bool>false</bool>
-             </property>
-             <property name="autoRepeat">
-              <bool>false</bool>
-             </property>
-             <property name="autoExclusive">
-              <bool>false</bool>
-             </property>
-             <property name="popupMode">
-              <enum>QToolButton::InstantPopup</enum>
-             </property>
-             <property name="toolButtonStyle">
-              <enum>Qt::ToolButtonIconOnly</enum>
-             </property>
-             <property name="autoRaise">
-              <bool>true</bool>
-             </property>
-             <property name="arrowType">
-              <enum>Qt::NoArrow</enum>
              </property>
              <property name="class" stdset="0">
               <string>QuickButton</string>
@@ -969,8 +941,6 @@
   <tabstop>showRequestButton</tabstop>
   <tabstop>removeRequestButton</tabstop>
  </tabstops>
- <resources>
-  <include location="../paccoin.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>

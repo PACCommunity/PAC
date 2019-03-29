@@ -70,7 +70,7 @@ QComboBox{
     min-height: 24px !important;
 }
 QComboBox::down-arrow {
-    border-image: url(':/images/pac/drkblue_downArrow_black') 0 0 0 0 stretch stretch;
+    border-image: url(':/images/pac/drkblue_downArrow') 0 0 0 0 stretch stretch;
 }
 QComboBox::drop-down {
     width:25px;
@@ -659,6 +659,9 @@ BitcoinAmountField QComboBox::indicator {
     border-right: 0px solid transparent !important;
     background: transparent !important;
     color: #8E8E8E !important;
+}
+#btnCopyLastAddress{
+    border-image: url(":/icons/pac/editcopy");
 }
 
 /*
