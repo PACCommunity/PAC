@@ -927,9 +927,10 @@ QString getThemeName()
     QString theme = settings.value("theme", "").toString();
 
     if(!theme.isEmpty()){
-        return theme;
+        //return theme;
+        return QString("light");
     }
-    return QString("pac");
+    return QString("light");
 }
 void setGUITextColor(){
     QString theme = getThemeName();
@@ -963,8 +964,8 @@ QString loadStyleSheet()
         cssName = QString(":/css/" + theme);
     }
     else {
-        cssName = QString(":/css/pac");
-        settings.setValue("theme", "pac");
+        cssName = QString(":/css/light");
+        settings.setValue("theme", "light");
     }
     
     QFile qFile(cssName);      

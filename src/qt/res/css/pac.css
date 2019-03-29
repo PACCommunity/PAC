@@ -573,11 +573,16 @@ BitcoinAmountField QComboBox::indicator {
     border-radius: 40px;
     background: white !important;
 }
+#refreshTopBar{
+    qproperty-icon: url(":/icons/pac/refresh");
+}
+#copyNews{
+    qproperty-icon: url(":/icons/light/editcopy");
+}
 
 /*
  * Overview Page
 */
-
 
 /*
  * SendCoins Page
@@ -605,6 +610,22 @@ BitcoinAmountField QComboBox::indicator {
 #verticalWidget{
     margin-left: 25px !important;
 }
+#copyPacs{
+    border-image: url(:/icons/pac/editcopy);
+}
+
+/*
+ * Send coins Entry
+ */
+ #addressBookButton{
+    border-image: url(":/icons/pac/address-book");
+ }
+ #pasteButton{
+    border-image: url(":/icons/pac/editcopy");
+ }
+ #deleteButton, #deleteButton_s, #deleteButton_is{
+    border-image: url(":/icons/pac/remove");
+ }
 
 /*
  * ReceiveCoins Page
@@ -622,6 +643,9 @@ BitcoinAmountField QComboBox::indicator {
     border-right: 0px solid transparent !important;
     background: transparent !important;
     color: #8E8E8E !important;
+}
+#btnCopyLastAddress{
+    border-image: url(":/icons/pac/editcopy");
 }
 
 /*
@@ -666,6 +690,9 @@ QLineEdit#addressWidget, QLineEdit#tAmountWidget, QComboBox#dateWidget, QComboBo
 #privateSendInfo, #privateSendInfo:hover, #privateSendInfo:focus, #privateSendInfo:disabled, #privateSendInfo:pressed, #overviewInfo, #overviewInfo:hover, #overviewInfo:focus, #overviewInfo:disabled, #overviewInfo:pressed{
     background: transparent;
     border: 0px;
+}
+#privateSendInfo{
+    border-image: url(":/icons/pac/info");
 }
 
 /*

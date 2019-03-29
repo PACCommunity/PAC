@@ -184,6 +184,9 @@
         <file alias="fontsmaller">res/icons/light/fontsmaller.png</file>
         <file alias="transaction_abandoned">res/icons/light/transaction_abandoned.png</file>
         <file alias="network_disabled">res/icons/light/network_disabled.png</file>
+        <file alias="refresh">res/icons/light/refresh.png</file>
+        <file alias="info">res/icons/light/info.png</file>
+        <file alias="private">res/icons/light/private.png</file>
     </qresource>
     <qresource prefix="/icons/pac">
         <file alias="address-book">res/icons/pac/address-book.png</file>
@@ -243,6 +246,7 @@
         <file alias="network_disabled">res/icons/pac/network_disabled.png</file>
         <file alias="info">res/icons/pac/info.png</file>
         <file alias="private">res/icons/pac/private.png</file>
+        <file alias="refresh">res/icons/pac/refresh.png</file>
     </qresource>
     <qresource prefix="/icons/trad">
         <file alias="address-book">res/icons/trad/address-book.png</file>
@@ -350,9 +354,18 @@
         <file alias="drkblue_leftArrow_small">res/images/light/drkblue_leftArrow_small.png</file>
         <file alias="drkblue_rightArrow_small">res/images/light/drkblue_rightArrow_small.png</file>
         <file alias="drkblue_qtreeview_selected">res/images/light/drkblue_qtreeview_selected.png</file>
-        <file alias="drkblue_walletFrame_bg">res/images/light/drkblue_walletFrame_bg.png</file>
         <file alias="splash">res/images/light/splash.png</file>
         <file alias="splash_testnet">res/images/light/splash_testnet.png</file>
+        <file alias="checked_b_dis">res/images/light/checked_b_dis.png</file>
+        <file alias="checked_b">res/images/light/checked_b.png</file>
+        <file alias="checked_dis">res/images/light/checked_dis.png</file>
+        <file alias="unchecked_b_dis">res/images/light/unchecked_b_dis.png</file>
+        <file alias="unchecked_b">res/images/light/unchecked_b.png</file>
+        <file alias="unchecked_dis">res/images/light/unchecked_dis.png</file>
+        <file alias="drkblue_walletFrame_bg">res/images/light/drkblue_walletFrame_bg.png</file>
+        <file alias="drkblue_downArrow_small_black">res/images/light/drkblue_downArrow_small_black.png</file>
+        <file alias="drkblue_upArrow_small_black">res/images/light/drkblue_upArrow_small_black.png</file>
+        <file alias="drkblue_downArrow_black">res/images/light/drkblue_downArrow_black.png</file>
     </qresource>
     <qresource prefix="/images/pac">
         <file alias="about">res/images/pac/about.png</file>

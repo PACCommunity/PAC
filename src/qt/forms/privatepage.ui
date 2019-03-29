@@ -94,6 +94,9 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
+         <property name="class" stdset="0">
+          <string>container</string>
+         </property>
          <layout class="QVBoxLayout" name="VerticalLayout_PS1">
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -174,7 +177,7 @@
                  <string>Information about PrivateSend and Mixing</string>
                 </property>
                 <property name="styleSheet">
-                 <string notr="true">border-image: url(&quot;:/icons/pac/info&quot;);</string>
+                 <string notr="true"/>
                 </property>
                 <property name="text">
                  <string/>
@@ -187,21 +190,60 @@
              </layout>
             </item>
             <item>
-             <widget class="QLabel" name="labelPrivateSendHeader">
-              <property name="font">
-               <font>
-                <pointsize>18</pointsize>
-                <weight>50</weight>
-                <bold>false</bold>
-               </font>
-              </property>
-              <property name="text">
-               <string>PRIVATE</string>
-              </property>
-              <property name="alignment">
-               <set>Qt::AlignCenter</set>
-              </property>
-             </widget>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <item>
+               <spacer name="horizontalSpacer_7">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="labelPrivateSendHeader">
+                <property name="font">
+                 <font>
+                  <pointsize>18</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>PRIVATE</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+                <property name="class2" stdset="0">
+                 <string>yellowUnderline</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <spacer name="horizontalSpacer_8">
+                <property name="orientation">
+                 <enum>Qt::Horizontal</enum>
+                </property>
+                <property name="sizeType">
+                 <enum>QSizePolicy::Preferred</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>40</width>
+                  <height>20</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
             </item>
            </layout>
           </item>
