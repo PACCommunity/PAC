@@ -773,14 +773,14 @@ void BitcoinGUI::createHeaderBar()
     btnRefresh->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnRefresh->setFixedHeight(20);
     btnRefresh->setFixedWidth(20);
-    btnRefresh->setObjectName("refreshTopBar");
+    btnRefresh->setIcon(QIcon(":/movies/spinner-000"));
 
     btnCopyNews->setProperty("class","QuickButton");
     btnCopyNews->setToolTip("Copy news.");
     btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
     btnCopyNews->setFixedHeight(24);
     btnCopyNews->setFixedWidth(24);
-    btnCopyNews->setObjectName("copyNews");
+    btnCopyNews->setIcon(QIcon(":/icons/pac/editcopy"));
 
     profileImgLayout->setContentsMargins(0,0,0,0);
     profileImgLayout->addWidget(btnImg);

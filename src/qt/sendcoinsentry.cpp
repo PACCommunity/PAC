@@ -40,6 +40,13 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *platformStyle, QWidget *pare
     for (int i = 0; i < widgets.length(); i++){
         widgets.at(i)->setFont(selectedFont);
     }
+
+    // These icons are needed on Mac also!
+    ui->addressBookButton->setIcon(QIcon(":/icons/" + theme + "/address-book"));
+    ui->pasteButton->setIcon(QIcon(":/icons/" + theme + "/editpaste"));
+    ui->deleteButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
+    ui->deleteButton_is->setIcon(QIcon(":/icons/" + theme + "/remove"));
+    ui->deleteButton_s->setIcon(QIcon(":/icons/" + theme + "/remove"));
       
     // normal paccoin address field
     GUIUtil::setupAddressWidget(ui->payTo, this);
