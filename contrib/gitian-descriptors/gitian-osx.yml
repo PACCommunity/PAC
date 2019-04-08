@@ -30,7 +30,7 @@ packages:
 - "python3-setuptools"
 - "fonts-tuffy"
 remotes:
-- "url": "https://github.com/CryptoMx/PAC.git"
+- "url": "https://github.com/PACCommunity/PAC.git"
   "dir": "PAC"
 files:
 - "MacOSX10.11.sdk.tar.gz"
