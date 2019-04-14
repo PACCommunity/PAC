@@ -71,11 +71,11 @@
     </message>
     <message>
         <source>&amp;Copy Address</source>
-        <translation>アドレスをコピー (&amp;C)</translation>
+        <translation>アドレスをコピー(&amp;C)</translation>
     </message>
     <message>
         <source>Copy &amp;Label</source>
-        <translation>ラベルをコピー (&amp;L)</translation>
+        <translation>ラベルをコピー(&amp;L)</translation>
     </message>
     <message>
         <source>&amp;Edit</source>
@@ -110,14 +110,14 @@
     </message>
     <message>
         <source>(no label)</source>
-        <translation>（ラベル無し）</translation>
+        <translation>(ラベル無し)</translation>
     </message>
 </context>
 <context>
     <name>AskPassphraseDialog</name>
     <message>
         <source>Passphrase Dialog</source>
-        <translation>パスフレーズ ダイアログ</translation>
+        <translation>パスフレーズダイアログ</translation>
     </message>
     <message>
         <source>Enter passphrase</source>
@@ -443,7 +443,7 @@
     </message>
     <message>
         <source>Open Masternode configuration file</source>
-        <translation>マスターノード設定ファイルを開くe</translation>
+        <translation>マスターノード設定ファイルを開く</translation>
     </message>
     <message>
         <source>Show Automatic &amp;Backups</source>
@@ -817,11 +817,11 @@
     </message>
     <message>
         <source>change from %1 (%2)</source>
-        <translation>%1 (%2) からのおつり</translation>
+        <translation>%1 (%2) からの変更</translation>
     </message>
     <message>
         <source>(change)</source>
-        <translation>(おつり)</translation>
+        <translation>(変更)</translation>
     </message>
     <message>
         <source>n/a</source>
@@ -911,7 +911,7 @@
     </message>
     <message>
         <source>&amp;Address</source>
-        <translation>アドレス帳 (&amp;A)</translation>
+        <translation>アドレス帳(&amp;A)</translation>
     </message>
     <message>
         <source>The address associated with this address list entry. This can only be modified for sending addresses.</source>
@@ -1009,7 +1009,7 @@
     </message>
     <message>
         <source>Choose data directory on startup (default: 0)</source>
-        <translation>起動時にデータ ディレクトリを選ぶ ( デフォルト：0)</translation>
+        <translation>起動時にデータ ディレクトリを選ぶ( デフォルト：0)</translation>
     </message>
     <message>
         <source>Set language, for example "de_DE" (default: system locale)</source>
@@ -1021,7 +1021,7 @@
     </message>
     <message>
         <source>Set SSL root certificates for payment request (default: -system-)</source>
-        <translation>支払いリクエスト用にSSLルート証明書を設定する（デフォルト：-system-）</translation>
+        <translation>支払いリクエスト用にSSLルート証明書を設定する (デフォルト：-system-)</translation>
     </message>
     <message>
         <source>Show splash screen on startup (default: %u)</source>
@@ -1210,7 +1210,7 @@
     <name>ModalOverlay</name>
     <message>
         <source>Form</source>
-        <translation>Form</translation>
+        <translation>フォーム</translation>
     </message>
     <message>
         <source>Recent transactions may not yet be visible, and therefore your wallet&apos;s balance might be incorrect. This information will be correct once your wallet has finished synchronizing with the $PAC network, as detailed below.</source>
@@ -1292,11 +1292,11 @@
     </message>
     <message>
         <source>&amp;Main</source>
-        <translation>メイン (&amp;M)</translation>
+        <translation>メイン(&amp;M)</translation>
     </message>
     <message>
         <source>Size of &amp;database cache</source>
-        <translation>データベースキャッシュのサイズ (&amp;D)</translation>
+        <translation>データベースキャッシュのサイズ(&amp;D)</translation>
     </message>
     <message>
         <source>MB</source>
@@ -1304,7 +1304,7 @@
     </message>
     <message>
         <source>Number of script &amp;verification threads</source>
-        <translation>スクリプト検証用スレッド数 (&amp;V)</translation>
+        <translation>スクリプト検証用スレッド数(&amp;V)</translation>
     </message>
     <message>
         <source>(0 = auto, &lt;0 = leave that many cores free)</source>
@@ -1316,7 +1316,7 @@
     </message>
     <message>
         <source>W&amp;allet</source>
-        <translation>ウォレット (&amp;A)</translation>
+        <translation>ウォレット(&amp;A)</translation>
     </message>
     <message>
         <source>Automatically start $PAC Core after logging in to the system.</source>
@@ -1400,7 +1400,7 @@
     </message>
     <message>
         <source>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</source>
-        <translation>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</translation>
+        <translation>コンテキストメニュー項目としてトランザクションタブに現れる第三者 URL（例えばブロックエクスプローラ）。&lt;br/&gt;%s URL内のトランザクションハッシュに置き換えられます。複数のURLは縦線|で区切られています。</translation>
     </message>
     <message>
         <source>Expert</source>
@@ -1416,19 +1416,19 @@
     </message>
     <message>
         <source>Enable coin &amp;control features</source>
-        <translation>コインコントロール機能を有効化する (&amp;C)</translation>
+        <translation>コインコントロール機能を有効化する(&amp;C)</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
-        <translation>未検証のおつりを使用する (&amp;S)</translation>
+        <translation>未検証の変更を使用する(&amp;S)</translation>
     </message>
     <message>
         <source>&amp;Network</source>
-        <translation>ネットワーク (&amp;N)</translation>
+        <translation>ネットワーク(&amp;N)</translation>
     </message>
     <message>
         <source>Map port using &amp;UPnP</source>
-        <translation>UPnP を使ってポートを割り当てる (&amp;U)</translation>
+        <translation>UPnP を使ってポートを割り当てる(&amp;U)</translation>
     </message>
     <message>
         <source>Proxy &amp;IP:</source>
@@ -1440,7 +1440,7 @@
     </message>
     <message>
         <source>&amp;Port:</source>
-        <translation>ポート (&amp;P)：</translation>
+        <translation>ポート(&amp;P)：</translation>
     </message>
     <message>
         <source>Port of the proxy (e.g. 9050)</source>
@@ -1476,7 +1476,7 @@
     </message>
     <message>
         <source>&amp;Window</source>
-        <translation>ウインドウ (&amp;W)</translation>
+        <translation>ウインドウ(&amp;W)</translation>
     </message>
     <message>
         <source>&amp;Hide the icon from the system tray.</source>
@@ -1492,19 +1492,19 @@
     </message>
     <message>
         <source>&amp;Minimize to the tray instead of the taskbar</source>
-        <translation>タスクバーの代わりにトレイに最小化 (&amp;M)</translation>
+        <translation>タスクバーの代わりにトレイに最小化(&amp;M)</translation>
     </message>
     <message>
         <source>M&amp;inimize on close</source>
-        <translation>閉じる時に最小化 (&amp;i)</translation>
+        <translation>閉じる時に最小化(&amp;i)</translation>
     </message>
     <message>
         <source>&amp;Display</source>
-        <translation>表示 (&amp;D)</translation>
+        <translation>表示(&amp;D)</translation>
     </message>
     <message>
         <source>User Interface &amp;language:</source>
-        <translation>ユーザインターフェースの言語 (&amp;l)：</translation>
+        <translation>ユーザインターフェースの言語(&amp;l)：</translation>
     </message>
     <message>
         <source>Language missing or translation incomplete? Help contributing translations here:
@@ -1518,7 +1518,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Unit to show amounts in:</source>
-        <translation>額を表示する単位 (&amp;U)：</translation>
+        <translation>額を表示する単位(&amp;U)：</translation>
     </message>
     <message>
         <source>Choose the default subdivision unit to show in the interface and when sending coins.</source>
@@ -1542,7 +1542,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Reset Options</source>
-        <translation>オプションをリセット (&amp;R)</translation>
+        <translation>オプションをリセット(&amp;R)</translation>
     </message>
     <message>
         <source>&amp;OK</source>
@@ -1550,7 +1550,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Cancel</source>
-        <translation>キャンセル (&amp;C)</translation>
+        <translation>キャンセル(&amp;C)</translation>
     </message>
     <message>
         <source>default</source>
@@ -1665,7 +1665,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Completion:</source>
-        <translation>完了；</translation>
+        <translation>完了：</translation>
     </message>
     <message>
         <source>Try to manually submit a PrivateSend request.</source>
@@ -1721,7 +1721,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Try Mix</source>
-        <translation>Try Mix</translation>
+        <translation>ミックスを試す</translation>
     </message>
     <message>
         <source>Reset</source>
@@ -1779,10 +1779,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message numerus="yes">
         <source>Denominated inputs have %5 of %n rounds on average</source>
-        <translation>
-            <numerusform>Denominated inputs have %5 of %n round on average</numerusform>
-            <numerusform>建て入力は %5 の %n 平均ラウンドがあります</numerusform>
-        </translation>
+        <translation><numerusform>建て入力は %5 の %n 平均ラウンドがあります</numerusform></translation>
     </message>
     <message>
         <source>keys left: %1</source>
@@ -1925,7 +1922,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Error communicating with %1: %2</source>
-        <translation>%1: %2とコミュニケーション・エラーです</translation>
+        <translation>%1：%2 とコミュニケーションエラーです</translation>
     </message>
     <message>
         <source>Payment request cannot be parsed!</source>
@@ -1937,7 +1934,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Network request error</source>
-        <translation>ネットワーク・リクエストのエラーです</translation>
+        <translation>ネットワークリクエストエラーです</translation>
     </message>
     <message>
         <source>Payment acknowledged</source>
@@ -2097,7 +2094,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Information</source>
-        <translation>情報 (&amp;I)</translation>
+        <translation>情報(&amp;I)</translation>
     </message>
     <message>
         <source>General</source>
@@ -2121,7 +2118,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Open</source>
-        <translation>開く (&amp;O)</translation>
+        <translation>開く(&amp;O)</translation>
     </message>
     <message>
         <source>Startup time</source>
@@ -2177,7 +2174,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Console</source>
-        <translation>コンソール (&amp;C)</translation>
+        <translation>コンソール(&amp;C)</translation>
     </message>
     <message>
         <source>Clear console</source>
@@ -2185,7 +2182,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Network Traffic</source>
-        <translation>ネットワーク (&amp;N)</translation>
+        <translation>ネットワーク(&amp;N)</translation>
     </message>
     <message>
         <source>&amp;Clear</source>
@@ -2476,7 +2473,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Message:</source>
-        <translation>メッセージ (&amp;M)：</translation>
+        <translation>メッセージ(&amp;M)：</translation>
     </message>
     <message>
         <source>An optional label to associate with the new receiving address.</source>
@@ -2492,7 +2489,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>ラベル (&amp;L)：</translation>
+        <translation>ラベル(&amp;L)：</translation>
     </message>
     <message>
         <source>An optional amount to request. Leave this empty or zero to not request a specific amount.</source>
@@ -2500,7 +2497,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Amount:</source>
-        <translation>総額 (&amp;A)：</translation>
+        <translation>総額(&amp;A)：</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
@@ -2563,15 +2560,15 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Copy &amp;URI</source>
-        <translation>URI をコピー (&amp;U)</translation>
+        <translation>URI をコピー(&amp;U)</translation>
     </message>
     <message>
         <source>Copy &amp;Address</source>
-        <translation>アドレスをコピー (&amp;A)</translation>
+        <translation>アドレスをコピー(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Save Image...</source>
-        <translation>画像を保存… (&amp;S)</translation>
+        <translation>画像を保存(&amp;S)...</translation>
     </message>
     <message>
         <source>Request payment to %1</source>
@@ -2665,7 +2662,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Inputs...</source>
-        <translation>入力…</translation>
+        <translation>入力...</translation>
     </message>
     <message>
         <source>automatically selected</source>
@@ -2705,11 +2702,11 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>If this is activated, but the change address is empty or invalid, change will be sent to a newly generated address.</source>
-        <translation>これが有効にもかかわらずおつりアドレスが空欄であったり無効であった場合には、おつりは新しく生成されたアドレスへ送金されます。</translation>
+        <translation>これが有効にもかかわらず変更アドレスが空欄であったり無効であった場合には、変更は新しく生成されたアドレスへ送金されます。</translation>
     </message>
     <message>
         <source>Custom change address</source>
-        <translation>カスタムおつりアドレス</translation>
+        <translation>カスタム変更アドレス</translation>
     </message>
     <message>
         <source>Transaction Fee:</source>
@@ -2717,7 +2714,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Choose...</source>
-        <translation>選択…</translation>
+        <translation>選択...</translation>
     </message>
     <message>
         <source>collapse fee-settings</source>
@@ -2757,7 +2754,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>(read the tooltip)</source>
-        <translation>（ツールチップをお読みください）</translation>
+        <translation>(ツールチップをお読みください)</translation>
     </message>
     <message>
         <source>Recommended:</source>
@@ -2769,7 +2766,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>(Smart fee not initialized yet. This usually takes a few blocks...)</source>
-        <translation>（スマート手数料はまだ初期化されていません。これにはおおよそ数ブロックほどかかります…）</translation>
+        <translation>(スマート手数料はまだ初期化されていません。これにはおおよそ数ブロックほどかかります...)</translation>
     </message>
     <message>
         <source>Confirmation time:</source>
@@ -2789,7 +2786,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>(confirmation may take longer)</source>
-        <translation>（検証に長い時間がかかる可能性があります）</translation>
+        <translation>(検証に長い時間がかかる可能性があります)</translation>
     </message>
     <message>
         <source>Confirm the send action</source>
@@ -2797,7 +2794,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>S&amp;end</source>
-        <translation>送る (&amp;e)</translation>
+        <translation>送る(&amp;e)</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -2805,7 +2802,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>すべてクリア (&amp;A)</translation>
+        <translation>すべてクリア(&amp;A)</translation>
     </message>
     <message>
         <source>Send to multiple recipients at once</source>
@@ -2813,7 +2810,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Add &amp;Recipient</source>
-        <translation>受取人を追加 (&amp;R)</translation>
+        <translation>受取人を追加(&amp;R)</translation>
     </message>
     <message>
         <source>Balance:</source>
@@ -2857,7 +2854,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(プライベート送信では、この金額を最も近い金額に切り上げる必要があります %1).</translation>
+        <translation>(プライベート送信では、この金額を最も近い金額に切り上げる必要があります %1)。</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
@@ -2943,7 +2940,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Warning: Unknown change address</source>
-        <translation>警告：未知のおつりアドレスです</translation>
+        <translation>警告：未知の変更アドレスです</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2958,7 +2955,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Pay &amp;To:</source>
-        <translation>送り先 (&amp;T)：</translation>
+        <translation>送り先(&amp;T)：</translation>
     </message>
     <message>
         <source>The $PAC address to send the payment to</source>
@@ -2986,7 +2983,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Label:</source>
-        <translation>ラベル (&amp;L)：</translation>
+        <translation>ラベル(&amp;L)：</translation>
     </message>
     <message>
         <source>Enter a label for this address to add it to the list of used addresses</source>
@@ -2994,7 +2991,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>A&amp;mount:</source>
-        <translation>金額 (&amp;A)：</translation>
+        <translation>金額(&amp;A)：</translation>
     </message>
     <message>
         <source>The fee will be deducted from the amount being sent. The recipient will receive a lower amount of $PAC than you enter in the amount field. If multiple recipients are selected, the fee is split equally.</source>
@@ -3052,7 +3049,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Sign Message</source>
-        <translation>メッセージの署名 (&amp;S)</translation>
+        <translation>メッセージの署名(&amp;S)</translation>
     </message>
     <message>
         <source>You can sign messages/agreements with your addresses to prove you can receive $PAC sent to them. Be careful not to sign anything vague or random, as phishing attacks may try to trick you into signing your identity over to them. Only sign fully-detailed statements you agree to.</source>
@@ -3096,7 +3093,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Sign &amp;Message</source>
-        <translation>メッセージの署名 (&amp;M)</translation>
+        <translation>メッセージの署名(&amp;M)</translation>
     </message>
     <message>
         <source>Reset all sign message fields</source>
@@ -3104,11 +3101,11 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Clear &amp;All</source>
-        <translation>すべてクリア (&amp;A)</translation>
+        <translation>すべてクリア(&amp;A)</translation>
     </message>
     <message>
         <source>&amp;Verify Message</source>
-        <translation>メッセージの検証 (&amp;V)</translation>
+        <translation>メッセージの検証(&amp;V)</translation>
     </message>
     <message>
         <source>Enter the receiver&apos;s address, message (ensure you copy line breaks, spaces, tabs, etc. exactly) and signature below to verify the message. Be careful not to read more into the signature than what is in the signed message itself, to avoid being tricked by a man-in-the-middle attack. Note that this only proves the signing party receives with the address, it cannot prove sendership of any transaction!</source>
@@ -3124,7 +3121,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Verify &amp;Message</source>
-        <translation>メッセージの検証 (&amp;M)</translation>
+        <translation>メッセージの検証(&amp;M)</translation>
     </message>
     <message>
         <source>Reset all verify message fields</source>
@@ -3187,7 +3184,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <name>SplashScreen</name>
     <message>
         <source>[testnet]</source>
-        <translation>[testnet]</translation>
+        <translation>[テストネット]</translation>
     </message>
     <message>
         <source>$PAC Core</source>
@@ -3451,7 +3448,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Confirming (%1 of %2 recommended confirmations)</source>
-        <translation>検証中（%2の推奨検証数のうち、%1検証が完了）</translation>
+        <translation>検証中 (%2の推奨検証数のうち、%1検証が完了)</translation>
     </message>
     <message>
         <source>Confirmed (%1 confirmations)</source>
@@ -3463,7 +3460,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Immature (%1 confirmations, will be available after %2)</source>
-        <translation>未成熟（%1検証。%2検証完了後に使用可能となります）</translation>
+        <translation>未成熟 (%1検証。%2検証完了後に使用可能となります)</translation>
     </message>
     <message>
         <source>This block was not received by any other nodes and will probably not be accepted!</source>
@@ -3503,7 +3500,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>PrivateSend Collateral Payment</source>
-        <translation>プライベート送信担保支払t</translation>
+        <translation>プライベート送信担保支払</translation>
     </message>
     <message>
         <source>PrivateSend Make Collateral Inputs</source>
@@ -3766,7 +3763,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     <name>WalletView</name>
     <message>
         <source>&amp;Export</source>
-        <translation>エクスポート (&amp;E)</translation>
+        <translation>エクスポート(&amp;E)</translation>
     </message>
     <message>
         <source>Export the data in the current tab to a file</source>
@@ -4221,7 +4218,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Importing...</source>
-        <translation>インポートしています…</translation>
+        <translation>インポートしています...</translation>
     </message>
     <message>
         <source>Include IP addresses in debug output (default: %u)</source>
@@ -4409,7 +4406,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Spend unconfirmed change when sending transactions (default: %u)</source>
-        <translation>トランザクション送信時に未検証のおつりを使用する (デフォルト：%u)</translation>
+        <translation>トランザクション送信時に未検証の変更を使用する (デフォルト：%u)</translation>
     </message>
     <message>
         <source>Submitted following entries to masternode: %u / %d</source>
