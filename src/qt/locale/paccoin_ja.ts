@@ -2202,7 +2202,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Peers</source>
-        <translation>ピア (&amp;P)</translation>
+        <translation>ピア(&amp;P)</translation>
     </message>
     <message>
         <source>Banned peers</source>
@@ -2282,7 +2282,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>The duration of a currently outstanding ping.</source>
-        <translation>現在未処理のピン期間</translation>
+        <translation>現在未処理のピン期間。</translation>
     </message>
     <message>
         <source>Ping Wait</source>
@@ -2501,7 +2501,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>&amp;Request payment</source>
-        <translation>支払をリクエストする (&amp;R)</translation>
+        <translation>支払をリクエストする(&amp;R)</translation>
     </message>
     <message>
         <source>Clear all fields of the form.</source>
@@ -4334,7 +4334,7 @@ https://www.transifex.com/projects/p/$PAC/</translation>
     </message>
     <message>
         <source>Need to specify a port with -whitebind: &apos;%s&apos;</source>
-        <translation>-whitebind を用いてポートを指定する必要があります： '%s'</translation>
+        <translation>-whitebind を用いてポートを指定する必要があります：&apos;%s&apos;</translation>
     </message>
     <message>
         <source>No Masternodes detected.</source>
