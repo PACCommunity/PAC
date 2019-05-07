@@ -1,2 +1,2 @@
-contrib/dashd.bash-completion	dashd
-contrib/dash-cli.bash-completion    dash-cli
+contrib/paccoind.bash-completion	paccoind
+contrib/paccoin-cli.bash-completion    paccoin-cli

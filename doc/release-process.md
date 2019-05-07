@@ -1,9 +1,9 @@
 Release Process
 ====================
 
-* Update translations, see [translation_process.md](https://github.com/dashpay/dash/blob/master/doc/translation_process.md#synchronising-translations).
+* Update translations, see [translation_process.md](https://github.com/PACCommunity/PAC/blob/master/doc/translation_process.md#synchronising-translations).
 
-* Update manpages, see [gen-manpages.sh](https://github.com/dashpay/dash/blob/master/contrib/devtools/README.md#gen-manpagessh).
+* Update manpages, see [gen-manpages.sh](https://github.com/PACCommunity/PAC/blob/master/contrib/devtools/README.md#gen-manpagessh).
 
 Before every minor and major release:
 
@@ -19,7 +19,7 @@ Before every minor and major release:
 
 Before every major release:
 
-* Update hardcoded [seeds](/contrib/seeds/README.md). TODO: Give example PR for Dash
+* Update hardcoded [seeds](/contrib/seeds/README.md). TODO: Give example PR for PAC
 * Update [`BLOCK_CHAIN_SIZE`](/src/qt/intro.cpp) to the current size plus some overhead.
 
 ### First time / New builders
@@ -29,12 +29,12 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 Check out the source code in the following directory hierarchy.
 
 	cd /path/to/your/toplevel/build
-	git clone https://github.com/dashpay/gitian.sigs.git
-	git clone https://github.com/dashpay/dash-detached-sigs.git
+	git clone https://github.com/PACCommunity/gitian.sigs.git
+	git clone https://github.com/PACCommunity/PAC-detached-sigs.git
 	git clone https://github.com/devrandom/gitian-builder.git
-	git clone https://github.com/dashpay/dash.git
+	git clone https://github.com/PACCommunity/PAC.git
 
-### Dash Core maintainers/release engineers, update (commit) version in sources
+### PAC Core maintainers/release engineers, update (commit) version in sources
 
 - `configure.ac`:
     - `_CLIENT_VERSION_MAJOR`
@@ -68,7 +68,7 @@ If you're using the automated script (found in [contrib/gitian-build.py](/contri
 
 Setup Gitian descriptors:
 
-    pushd ./dash
+    pushd ./paccoin
     export SIGNER=(your Gitian key, ie bluematt, sipa, etc)
     export VERSION=(new version, e.g. 0.12.3)
     git fetch
@@ -103,7 +103,7 @@ Create the OS X SDK tarball, see the [OS X readme](README_osx.md) for details, a
 By default, Gitian will fetch source files as needed. To cache them ahead of time:
 
     pushd ./gitian-builder
-    make -C ../dash/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../paccoin/depends download SOURCES_PATH=`pwd`/cache/common
     popd
 
 Only missing files will be fetched, so this is safe to re-run for each build.
@@ -111,50 +111,50 @@ Only missing files will be fetched, so this is safe to re-run for each build.
 NOTE: Offline builds must use the --url flag to ensure Gitian fetches only from local URLs. For example:
 
     pushd ./gitian-builder
-    ./bin/gbuild --url dash=/path/to/dash,signature=/path/to/sigs {rest of arguments}
+    ./bin/gbuild --url paccoin=/path/to/paccoin,signature=/path/to/sigs {rest of arguments}
     popd
 
 The gbuild invocations below <b>DO NOT DO THIS</b> by default.
 
-### Build and sign Dash Core for Linux, Windows, and OS X:
+### Build and sign PAC Core for Linux, Windows, and OS X:
 
     pushd ./gitian-builder
-    ./bin/gbuild --memory 3000 --commit dash=v${VERSION} ../dash/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../dash/contrib/gitian-descriptors/gitian-linux.yml
-    mv build/out/dash-*.tar.gz build/out/src/dash-*.tar.gz ../
+    ./bin/gbuild --memory 3000 --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
+    mv build/out/paccoin-*.tar.gz build/out/src/paccoin-*.tar.gz ../
 
-    ./bin/gbuild --memory 3000 --commit dash=v${VERSION} ../dash/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../dash/contrib/gitian-descriptors/gitian-win.yml
-    mv build/out/dash-*-win-unsigned.tar.gz inputs/dash-win-unsigned.tar.gz
-    mv build/out/dash-*.zip build/out/dash-*.exe ../
+    ./bin/gbuild --memory 3000 --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-win.yml
+    mv build/out/paccoin-*-win-unsigned.tar.gz inputs/paccoin-win-unsigned.tar.gz
+    mv build/out/paccoin-*.zip build/out/paccoin-*.exe ../
 
-    ./bin/gbuild --memory 3000 --commit dash=v${VERSION} ../dash/contrib/gitian-descriptors/gitian-osx.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../dash/contrib/gitian-descriptors/gitian-osx.yml
-    mv build/out/dash-*-osx-unsigned.tar.gz inputs/dash-osx-unsigned.tar.gz
-    mv build/out/dash-*.tar.gz build/out/dash-*.dmg ../
+    ./bin/gbuild --memory 3000 --commit paccoin=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
+    mv build/out/paccoin-*-osx-unsigned.tar.gz inputs/paccoin-osx-unsigned.tar.gz
+    mv build/out/paccoin-*.tar.gz build/out/paccoin-*.dmg ../
     popd
 
 Build output expected:
 
-  1. source tarball (`dash-${VERSION}.tar.gz`)
-  2. linux 32-bit and 64-bit dist tarballs (`dash-${VERSION}-linux[32|64].tar.gz`)
-  3. windows 32-bit and 64-bit unsigned installers and dist zips (`dash-${VERSION}-win[32|64]-setup-unsigned.exe`, `dash-${VERSION}-win[32|64].zip`)
-  4. OS X unsigned installer and dist tarball (`dash-${VERSION}-osx-unsigned.dmg`, `dash-${VERSION}-osx64.tar.gz`)
+  1. source tarball (`paccoin-${VERSION}.tar.gz`)
+  2. linux 32-bit and 64-bit dist tarballs (`paccoin-${VERSION}-linux[32|64].tar.gz`)
+  3. windows 32-bit and 64-bit unsigned installers and dist zips (`paccoin-${VERSION}-win[32|64]-setup-unsigned.exe`, `paccoin-${VERSION}-win[32|64].zip`)
+  4. OS X unsigned installer and dist tarball (`paccoin-${VERSION}-osx-unsigned.dmg`, `paccoin-${VERSION}-osx64.tar.gz`)
   5. Gitian signatures (in `gitian.sigs/${VERSION}-<linux|{win,osx}-unsigned>/(your Gitian key)/`)
 
 ### Verify other gitian builders signatures to your own. (Optional)
 
 Add other gitian builders keys to your gpg keyring, and/or refresh keys.
 
-    gpg --import dash/contrib/gitian-keys/*.pgp
+    gpg --import paccoin/contrib/gitian-keys/*.pgp
     gpg --refresh-keys
 
 Verify the signatures
 
     pushd ./gitian-builder
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../dash/contrib/gitian-descriptors/gitian-linux.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../dash/contrib/gitian-descriptors/gitian-win.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../dash/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../paccoin/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../paccoin/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../paccoin/contrib/gitian-descriptors/gitian-osx.yml
     popd
 
 ### Next steps:
@@ -203,25 +203,25 @@ Codesigner only: Commit the detached codesign payloads:
 Non-codesigners: wait for Windows/OS X detached signatures:
 
 - Once the Windows/OS X builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [dash-detached-sigs](https://github.com/dashpay/dash-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [paccoin-detached-sigs](https://github.com/PACCommunity/PAC-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 Create (and optionally verify) the signed OS X binary:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../dash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../dash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../dash/contrib/gitian-descriptors/gitian-osx-signer.yml
-    mv build/out/dash-osx-signed.dmg ../dash-${VERSION}-osx.dmg
+    ./bin/gbuild -i --commit signature=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../paccoin/contrib/gitian-descriptors/gitian-osx-signer.yml
+    mv build/out/paccoin-osx-signed.dmg ../paccoin-${VERSION}-osx.dmg
     popd
 
 Create (and optionally verify) the signed Windows binaries:
 
     pushd ./gitian-builder
-    ./bin/gbuild -i --commit signature=v${VERSION} ../dash/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../dash/contrib/gitian-descriptors/gitian-win-signer.yml
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../dash/contrib/gitian-descriptors/gitian-win-signer.yml
-    mv build/out/dash-*win64-setup.exe ../dash-${VERSION}-win64-setup.exe
-    mv build/out/dash-*win32-setup.exe ../dash-${VERSION}-win32-setup.exe
+    ./bin/gbuild -i --commit signature=v${VERSION} ../paccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gsign --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../paccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-signed ../paccoin/contrib/gitian-descriptors/gitian-win-signer.yml
+    mv build/out/paccoin-*win64-setup.exe ../paccoin-${VERSION}-win64-setup.exe
+    mv build/out/paccoin-*win32-setup.exe ../paccoin-${VERSION}-win32-setup.exe
     popd
 
 Commit your signature for the signed OS X/Windows binaries:
@@ -243,23 +243,23 @@ sha256sum * > SHA256SUMS
 
 The list of files should be:
 ```
-dash-${VERSION}-aarch64-linux-gnu.tar.gz
-dash-${VERSION}-arm-linux-gnueabihf.tar.gz
-dash-${VERSION}-i686-pc-linux-gnu.tar.gz
-dash-${VERSION}-x86_64-linux-gnu.tar.gz
-dash-${VERSION}-osx64.tar.gz
-dash-${VERSION}-osx.dmg
-dash-${VERSION}.tar.gz
-dash-${VERSION}-win32-setup.exe
-dash-${VERSION}-win32.zip
-dash-${VERSION}-win64-setup.exe
-dash-${VERSION}-win64.zip
+paccoin-${VERSION}-aarch64-linux-gnu.tar.gz
+paccoin-${VERSION}-arm-linux-gnueabihf.tar.gz
+paccoin-${VERSION}-i686-pc-linux-gnu.tar.gz
+paccoin-${VERSION}-x86_64-linux-gnu.tar.gz
+paccoin-${VERSION}-osx64.tar.gz
+paccoin-${VERSION}-osx.dmg
+paccoin-${VERSION}.tar.gz
+paccoin-${VERSION}-win32-setup.exe
+paccoin-${VERSION}-win32.zip
+paccoin-${VERSION}-win64-setup.exe
+paccoin-${VERSION}-win64.zip
 ```
 The `*-debug*` files generated by the gitian build contain debug symbols
 for troubleshooting by developers. It is assumed that anyone that is interested
 in debugging can run gitian to generate the files for themselves. To avoid
 end-user confusion about which file to pick, as well as save storage
-space *do not upload these to the dash.org server*.
+space *do not upload these to the paccoin.org server*.
 
 - GPG-sign it, delete the unsigned file:
 ```
@@ -269,20 +269,20 @@ rm SHA256SUMS
 (the digest algorithm is forced to sha256 to avoid confusion of the `Hash:` header that GPG adds with the SHA256 used for the files)
 Note: check that SHA256SUMS itself doesn't end up in SHA256SUMS, which is a spurious/nonsensical entry.
 
-- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the dash.org server
+- Upload zips and installers, as well as `SHA256SUMS.asc` from last step, to the paccoin.org server
 
-- Update dash.org
+- Update paccoin.org
 
 - Announce the release:
 
-  - Release on Dash forum: https://www.dash.org/forum/topic/official-announcements.54/
+  - Release on PAC forum: https://www.paccoin.org/forum/topic/official-announcements.54/
 
-  - Optionally Discord, twitter, reddit /r/Dashpay, ... but this will usually sort out itself
+  - Optionally Discord, twitter, reddit /r/PACpay, ... but this will usually sort out itself
 
-  - Notify flare so that he can start building [the PPAs](https://launchpad.net/~dash.org/+archive/ubuntu/dash)
+  - Notify flare so that he can start building [the PPAs](https://launchpad.net/~paccoin.org/+archive/ubuntu/paccoin)
 
   - Archive release notes for the new version to `doc/release-notes/` (branch `master` and branch of the release)
 
-  - Create a [new GitHub release](https://github.com/dashpay/dash/releases/new) with a link to the archived release notes.
+  - Create a [new GitHub release](https://github.com/PACCommunity/PAC/releases/new) with a link to the archived release notes.
 
   - Celebrate

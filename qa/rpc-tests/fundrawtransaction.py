@@ -197,8 +197,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         rawtx   = self.nodes[2].createrawtransaction(inputs, outputs)
         dec_tx  = self.nodes[2].decoderawtransaction(rawtx)
         assert_equal(utx['txid'], dec_tx['vin'][0]['txid'])
-
-        assert_raises_jsonrpc(-5, "changeAddress must be a valid dash address", self.nodes[2].fundrawtransaction, rawtx, {'changeAddress':'foobar'})
+        assert_raises_jsonrpc(-5, "changeAddress must be a valid paccoin address", self.nodes[2].fundrawtransaction, rawtx, {'changeAddress':'foobar'})
 
         ############################################################
         # test a fundrawtransaction with a provided change address #
@@ -428,7 +427,7 @@ class RawTransactionsTest(BitcoinTestFramework):
         mSigObj = self.nodes[2].addmultisigaddress(2, [addr1Obj['pubkey'], addr2Obj['pubkey']])
 
 
-        # send 12 DASH to msig addr
+        # send 12 PAC to msig addr
         txId = self.nodes[0].sendtoaddress(mSigObj, 12)
         self.sync_all()
         self.nodes[1].generate(1)

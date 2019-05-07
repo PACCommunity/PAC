@@ -2,8 +2,8 @@
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DASH_QUORUMS_INIT_H
-#define DASH_QUORUMS_INIT_H
+#ifndef PAC_QUORUMS_INIT_H
+#define PAC_QUORUMS_INIT_H
 
 class CDBWrapper;
 class CEvoDB;
@@ -25,4 +25,4 @@ void StopLLMQSystem();
 void InterruptLLMQSystem();
 }
 
-#endif //DASH_QUORUMS_INIT_H
+#endif //PAC_QUORUMS_INIT_H

@@ -140,13 +140,13 @@ void masternode_list_help()
             "  json           - Print info in JSON format (can be additionally filtered, partial match)\n"
             "  lastpaidblock  - Print the last block height a node was paid on the network\n"
             "  lastpaidtime   - Print the last time a node was paid on the network\n"
-            "  owneraddress   - Print the masternode owner Dash address\n"
-            "  payee          - Print the masternode payout Dash address (can be additionally filtered,\n"
+            "  owneraddress   - Print the masternode owner PAC address\n"
+            "  payee          - Print the masternode payout PAC address (can be additionally filtered,\n"
             "                   partial match)\n"
             "  pubKeyOperator - Print the masternode operator public key\n"
             "  status         - Print masternode status: ENABLED / POSE_BANNED\n"
             "                   (can be additionally filtered, partial match)\n"
-            "  votingaddress  - Print the masternode voting Dash address\n"
+            "  votingaddress  - Print the masternode voting PAC address\n"
         );
 }
 
@@ -623,11 +623,11 @@ UniValue masternodelist(const JSONRPCRequest& request)
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         okSafe argNames
   //  --------------------- ------------------------  -----------------------  ------ ----------
-    { "dash",               "masternode",             &masternode,             true,  {} },
-    { "dash",               "masternodelist",         &masternodelist,         true,  {} },
-    { "dash",               "getpoolinfo",            &getpoolinfo,            true,  {} },
+    { "paccoin",               "masternode",             &masternode,             true,  {} },
+    { "paccoin",               "masternodelist",         &masternodelist,         true,  {} },
+    { "paccoin",               "getpoolinfo",            &getpoolinfo,            true,  {} },
 #ifdef ENABLE_WALLET
-    { "dash",               "privatesend",            &privatesend,            false, {} },
+    { "paccoin",               "privatesend",            &privatesend,            false, {} },
 #endif // ENABLE_WALLET
 };
 

@@ -2,8 +2,8 @@
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef DASH_CRYPTO_BLS_IES_H
-#define DASH_CRYPTO_BLS_IES_H
+#ifndef PAC_CRYPTO_BLS_IES_H
+#define PAC_CRYPTO_BLS_IES_H
 
 #include "bls.h"
 #include "streams.h"
@@ -161,4 +161,4 @@ public:
     }
 };
 
-#endif // DASH_CRYPTO_BLS_IES_H
+#endif // PAC_CRYPTO_BLS_IES_H

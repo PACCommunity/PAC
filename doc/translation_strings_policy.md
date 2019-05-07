@@ -1,7 +1,7 @@
 Translation Strings Policy
 ===========================
 
-This document provides guidelines for internationalization of the Dash Core software.
+This document provides guidelines for internationalization of the PAC Core software.
 
 How to translate?
 ------------------
@@ -85,10 +85,10 @@ In Qt code use tr's third argument for optional plurality. For example:
 This adds `<numerusform>`s to the respective `.ts` file, which can be translated separately depending on the language. In English, this is simply:
 
     <message numerus="yes">
-        <source>%n active connection(s) to Dash network</source>
+        <source>%n active connection(s) to PAC network</source>
         <translation>
-            <numerusform>%n active connection to Dash network</numerusform>
-            <numerusform>%n active connections to Dash network</numerusform>
+            <numerusform>%n active connection to PAC network</numerusform>
+            <numerusform>%n active connections to PAC network</numerusform>
         </translation>
     </message>
 
@@ -106,4 +106,4 @@ The second example reduces the number of pluralized words that translators have 
 
 During a string freeze (often before a major release), no translation strings are to be added, modified or removed.
 
-This can be checked by executing `make translate` in the `src` directory, then verifying that `dash_en.ts` remains unchanged.
+This can be checked by executing `make translate` in the `src` directory, then verifying that `paccoin_en.ts` remains unchanged.
