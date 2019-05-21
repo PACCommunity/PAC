@@ -16,9 +16,9 @@ Create a new wallet address for each Masternode.
 
 Close your QT Wallet.
 
-### Send 1000 PAC to New Addresses
+### Send 500000 PAC to New Addresses
 
-Send exactly 1000 PAC to each new address created above.
+Send exactly 500000 PAC to each new address created above.
 
 ### Create New Masternode Private Keys
 
@@ -38,9 +38,9 @@ Remember... this is local. Make sure your QT is not running.
 
 Create the `masternode.conf` file in the same directory as your `wallet.dat`.
 
-Copy the masternode private key and corresponding collateral output transaction that holds the 1000 PAC.
+Copy the masternode private key and corresponding collateral output transaction that holds the 500000 PAC.
 
-*Note: The masternode private key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 1000 PAC on the remote server and defeats the purpose of a hot/cold setup.*
+*Note: The masternode private key is **not** the same as a wallet private key. **Never** put your wallet private key in the masternode.conf file. That is almost equivalent to putting your 500000 PAC on the remote server and defeats the purpose of a hot/cold setup.*
 
 ### Get the collateral output
 
@@ -120,7 +120,7 @@ paccoin-cli masternode status
 {
     "outpoint" : "<collateral_output>-<collateral_output_index>",
     "service" : "<ipaddress>:<port>",
-    "pubkey" : "<1000 PAC address>",
+    "pubkey" : "<500000 PAC address>",
     "status" : "Masternode successfully started"
 }
 ```
