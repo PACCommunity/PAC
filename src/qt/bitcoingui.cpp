@@ -209,7 +209,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *platformStyle, const NetworkStyle *n
 
     managerNews = new QNetworkAccessManager();
     QObject::connect(managerNews, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerNewsFinished(QNetworkReply*)));
-    requestNews.setUrl(QUrl("http://144.202.121.149:8080/"));
+    requestNews.setUrl(QUrl("http://news.paccoin.io:8080/"));
     managerNews->get(requestNews);
 
     if(enableWallet)
