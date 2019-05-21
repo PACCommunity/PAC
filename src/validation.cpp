@@ -1146,64 +1146,64 @@ CAmount GetBlockSubsidy(int nPrevBits, int nPrevHeight, const Consensus::Params&
         dDiff = ConvertBitsToDouble(nPrevBits);
     }
 
-    if (nPrevHeight < 5465) {
-        // Early ages...
-        // 1111/((x+1)^2)
-        nSubsidyBase = (1111.0 / (pow((dDiff+1.0),2.0)));
-        if(nSubsidyBase > 500) nSubsidyBase = 500;
-        else if(nSubsidyBase < 1) nSubsidyBase = 1;
-    } else if (nPrevHeight < 17000 || (dDiff <= 75 && nPrevHeight < 24000)) {
-        // CPU mining era
-        // 11111/(((x+51)/6)^2)
-        nSubsidyBase = (11111.0 / (pow((dDiff+51.0)/6.0,2.0)));
-        if(nSubsidyBase > 500) nSubsidyBase = 500;
-        else if(nSubsidyBase < 25) nSubsidyBase = 25;
+    if (nPrevHeight < 100)
+    {
+        nSubsidyBase = 35500000;
     } else {
-        // GPU/ASIC mining era
-        // 2222222/(((x+2600)/9)^2)
-        nSubsidyBase = (2222222.0 / (pow((dDiff+2600.0)/9.0,2.0)));
-        if(nSubsidyBase > 25) nSubsidyBase = 25;
-        else if(nSubsidyBase < 5) nSubsidyBase = 5;
+        nSubsidyBase = 23000;
     }
 
-    // LogPrintf("height %u diff %4.2f reward %d\n", nPrevHeight, dDiff, nSubsidyBase);
-    CAmount nSubsidy = nSubsidyBase * COIN;
+    // Projected ~100B coins by year 2043.
+    double dSubsidyMultiplier = GetSubsidyMultiplier(nPrevHeight, consensusParams.nSubsidyHalvingInterval);
+    CAmount nSubsidy = nSubsidyBase * COIN * dSubsidyMultiplier;
+    //LogPrintf("height %u diff %4.2f - reward %d - net reward %d\n", nPrevHeight, dDiff, nSubsidyBase * COIN, nSubsidy);
 
-    // yearly decline of production by ~7.1% per year, projected ~18M coins max by year 2050+.
-    for (int i = consensusParams.nSubsidyHalvingInterval; i <= nPrevHeight; i += consensusParams.nSubsidyHalvingInterval) {
-        nSubsidy -= nSubsidy/14;
-    }
-
-    // this is only active on devnets
-    if (nPrevHeight < consensusParams.nHighSubsidyBlocks) {
-        nSubsidy *= consensusParams.nHighSubsidyFactor;
-    }
-
-    // Hard fork to reduce the block reward by 10 extra percent (allowing budget/superblocks)
-    CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/10 : 0;
+    // Hard fork to reduce the block reward by 20 extra percent (allowing budget/superblocks)
+    CAmount nSuperblockPart = (nPrevHeight > consensusParams.nBudgetPaymentsStartBlock) ? nSubsidy/5 : 0;
 
     return fSuperblockPartOnly ? nSuperblockPart : nSubsidy - nSuperblockPart;
 }
 
-CAmount GetMasternodePayment(int nHeight, CAmount blockValue)
+CAmount GetMasternodePayment(int nHeight, CAmount blockValue, const Consensus::Params& consensusParams)
 {
-    CAmount ret = blockValue/5; // start at 20%
+    double dMasternodePart;
 
-    int nMNPIBlock = Params().GetConsensus().nMasternodePaymentsIncreaseBlock;
-    int nMNPIPeriod = Params().GetConsensus().nMasternodePaymentsIncreasePeriod;
+    if(nHeight < consensusParams.nMasternodePaymentsIncreaseBlock){
+        dMasternodePart = 15.0/16.0; // 93.75% of the block reward.
+    } else {
+        dMasternodePart = 13.0/16.0; // 81.25% of the corresponding reward for miners/masternodes, or 65% of the total block reward.
+    }
 
-                                                                      // mainnet:
-    if(nHeight > nMNPIBlock)                  ret += blockValue / 20; // 158000 - 25.0% - 2014-10-24
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 1)) ret += blockValue / 20; // 175280 - 30.0% - 2014-11-25
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 2)) ret += blockValue / 20; // 192560 - 35.0% - 2014-12-26
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 3)) ret += blockValue / 40; // 209840 - 37.5% - 2015-01-26
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 4)) ret += blockValue / 40; // 227120 - 40.0% - 2015-02-27
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 5)) ret += blockValue / 40; // 244400 - 42.5% - 2015-03-30
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 6)) ret += blockValue / 40; // 261680 - 45.0% - 2015-05-01
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 7)) ret += blockValue / 40; // 278960 - 47.5% - 2015-06-01
-    if(nHeight > nMNPIBlock+(nMNPIPeriod* 9)) ret += blockValue / 40; // 313520 - 50.0% - 2015-08-03
+    return (blockValue * dMasternodePart);
+}
 
-    return ret;
+double GetSubsidyMultiplier(int nPrevHeight, int nSubsidyAdjustmentInterval)
+{
+    double dMultiplier = 0.0;
+
+    if (nPrevHeight < 100) {
+        dMultiplier = 1.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 1) {
+        dMultiplier = 3.0/5.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 2) {
+        dMultiplier = 4.0/5.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 14) {
+        dMultiplier = 1.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 19) {
+        dMultiplier = 4.0/5.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 20) {
+        dMultiplier = 6.0/8.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 21) {
+        dMultiplier = 3.0/5.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 23) {
+        dMultiplier = 2.0/5.0;
+    } else if (nPrevHeight <= nSubsidyAdjustmentInterval * 25) {
+        dMultiplier = 1.0/5.0;
+    } else {
+        dMultiplier = 0.0;
+    }
+
+    return dMultiplier;
 }
 
 bool IsInitialBlockDownload()
