@@ -210,14 +210,17 @@ void CPrivateSend::InitStandardDenominations()
         1DRK+1000 == (.1DRK+100)*10
         10DRK+10000 == (1DRK+1000)*10
     */
-    /* Disabled
+    vecStandardDenominations.push_back( (10000    * COIN)+10000000 );
+    vecStandardDenominations.push_back( (1000     * COIN)+1000000 );
     vecStandardDenominations.push_back( (100      * COIN)+100000 );
+    vecStandardDenominations.push_back( (10       * COIN)+10000 );
+    
+    /* Disabled till we need them
+    vecStandardDenominations.push_back( (1        * COIN)+1000 );
+    vecStandardDenominations.push_back( (.1       * COIN)+100 );
+    vecStandardDenominations.push_back( (.01      * COIN)+10 );
+    vecStandardDenominations.push_back( (.001     * COIN)+1 );
     */
-    vecStandardDenominations.push_back((10 * COIN) + 10000);
-    vecStandardDenominations.push_back((1 * COIN) + 1000);
-    vecStandardDenominations.push_back((.1 * COIN) + 100);
-    vecStandardDenominations.push_back((.01 * COIN) + 10);
-    vecStandardDenominations.push_back((.001 * COIN) + 1);
 }
 
 // check to make sure the collateral provided by the client is valid
