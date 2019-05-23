@@ -9,10 +9,10 @@ from test_framework.util import *
 from time import *
 
 '''
-InstantSendTest -- test InstantSend functionality (prevent doublespend for unconfirmed transactions)
+InstantPACTest -- test InstantPAC functionality (prevent doublespend for unconfirmed transactions)
 '''
 
-class InstantSendTest(PACTestFramework):
+class InstantPACTest(PACTestFramework):
     def __init__(self):
         super().__init__(9, 5, [], fast_dip3_enforcement=True)
         # set sender,  receiver,  isolated nodes
@@ -118,4 +118,4 @@ class InstantSendTest(PACTestFramework):
         assert_raises_jsonrpc(-5, "No such mempool or blockchain transaction", isolated.getrawtransaction, dblspnd_txid)
 
 if __name__ == '__main__':
-    InstantSendTest().main()
+    InstantPACTest().main()

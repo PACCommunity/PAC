@@ -482,12 +482,12 @@
         <translation>%1 khách</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
-        <translation>Thông tin về &amp;PrivateSend</translation>
+        <source>&amp;PrivatePAC information</source>
+        <translation>Thông tin về &amp;PrivatePAC</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
-        <translation>Hiển thị những thông tin cơ bản về PrivateSend</translation>
+        <source>Show the PrivatePAC basic information</source>
+        <translation>Hiển thị những thông tin cơ bản về PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -782,8 +782,8 @@
         <translation>Hãy chuyển về "Chế độ danh sách" để sử dụng tính năng này.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
-        <translation>Đầu vào được chọn chưa được ẩn danh. &lt;b&gt;PrivateSend sẽ được tắt.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Nếu bạn vẫn muốn sử dụng PrivateSend, hãy bỏ chọn tất cả các đầu vào chưa được ẩn danh trước và sau đó chọn vào ô PrivateSend lần nữa.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
+        <translation>Đầu vào được chọn chưa được ẩn danh. &lt;b&gt;PrivatePAC sẽ được tắt.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Nếu bạn vẫn muốn sử dụng PrivatePAC, hãy bỏ chọn tất cả các đầu vào chưa được ẩn danh trước và sau đó chọn vào ô PrivatePAC lần nữa.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -955,12 +955,12 @@
         <translation>Tái thiết lập tất cả các thông số thay đổi trên giao diện đồ hoạ</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
-        <translation>Thông tin PrivateSend</translation>
+        <source>PrivatePAC information</source>
+        <translation>Thông tin PrivatePAC</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Cơ bản về PrivateSend&lt;/h3&gt; PrivateSend cho bạn sự thực sự riêng tư về tài chính bằng việc che dấu những nguồn cung. Tất cả PAC trong ví của bạn bao gồm những "đầu vào" khác nhau mà bạn nghĩ đó là các coin riêng biệt và rời rạc.&lt;br&gt; PrivateSend sử dụng một tiến trình độc đáo để trộn các đầu vào của bạn với đầu vào của những người khác, mà không làm cho các coin rời khỏi ví của bạn. Bạn vẫn giữ quyền kiểm soát tiền của bạn bất cứ lúc nào.&lt;hr&gt; &lt;b&gt;Quá trình PrivateSend làm việc như sau: &lt;/b&gt; &lt;ol type="1"&gt; &lt;li&gt;PrivateSend bắt đầu bằng việc chia các giao dịch đầu vào của bạn thành những mệnh giá chuẩn. Những mệnh giá đó là 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC, và 10 PAC -- cũng giống như các mệnh giá trên tiền giấy mà bạn sử dụng hàng ngày. &lt;/li&gt;&lt;li&gt;Ví của bạn sau đó gửi yêu cầu đến những nút phần mềm được cấu hình đặc biệt trên mạng gọi là các "masternode". Những masternode được báo rằng bạn quan tâm đến việc xáo trộn một mệnh giá nào đó. Không có thông tin định danh nào được gửi đến cho các masternode, và như vậy họ không bao giờ biết bạn "là ai". &lt;/li&gt; &lt;li&gt;Khi hai người khác nhau gửi những thông điệp tương tự, có nghĩa là họ muốn xáo trộn cùng loại mệnh giá, một phiên xáo trộn bắt đầu. Masternode xáo trộn các đầu vào và hướng dẫn tất cả ví của tất cả ba người dùng để trả đầu vào đã được chuyển đổi trở lại cho chính họ. Ví của bạn sẽ trả mệnh giá đó trực tiếp cho nó, nhưng với một địa chỉ khác (được gọi là địa chỉ trả tiền lẻ). &lt;/li&gt; &lt;li&gt;Để thực sự che khuất nguồn tiền của bạn, ví của bạn phải lặp lại quy trình đó một số lần với mỗi mệnh giá nhất định. Mỗi lần tiến trình hoàn tất, nó được gọi là một "vòng". Mỗi vòng của PrivateSend làm nên độ khó bậc số mũ để xác định nguồn tiền của bạn đến từ đâu. &lt;/li&gt; &lt;li&gt;Quá trình xáo trộn này xảy ra trong chế độ nền mà không xen vào những việc khác của bạn. Khi bạn muốn thực hiện một giao dịch, nguồn tiền của bạn đã được ẩn danh rồi. Do đó bạn không cần phải đợi thêm gì nữa. &lt;/li&gt;&lt;/ol&gt; &lt;hr&gt; &lt;b&gt;QUAN TRỌNG:&lt;/b&gt; Ví của bạn chỉ có chứa 1000 "địa chỉ tiền trả lại". Mỗi lần một sự kiện xáo trộn xảy ra, có đến 9 địa chỉ sẽ được sử dụng. Điều đó có nghĩa với ví mới với 1000 địa chỉ thì dùng cho 100 lần trộn. Khi 900 địa chỉ đã được sử dụng, ví của bạn phải tạo thêm các địa chỉ mới. Nó chỉ có thể làm việc đó, tuy nhiên, nếu bạn có chế độ tự động backup được bật&lt;br&gt; Kết quả là, những người dùng mà chế độ backup bị tắt sẽ có chế độ PrivateSend cũng bị tắt.&lt;hr&gt; Để biết thêm thông tin hãy xem &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;Tài liệu về PrivateSend&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Cơ bản về PrivatePAC&lt;/h3&gt; PrivatePAC cho bạn sự thực sự riêng tư về tài chính bằng việc che dấu những nguồn cung. Tất cả PAC trong ví của bạn bao gồm những "đầu vào" khác nhau mà bạn nghĩ đó là các coin riêng biệt và rời rạc.&lt;br&gt; PrivatePAC sử dụng một tiến trình độc đáo để trộn các đầu vào của bạn với đầu vào của những người khác, mà không làm cho các coin rời khỏi ví của bạn. Bạn vẫn giữ quyền kiểm soát tiền của bạn bất cứ lúc nào.&lt;hr&gt; &lt;b&gt;Quá trình PrivatePAC làm việc như sau: &lt;/b&gt; &lt;ol type="1"&gt; &lt;li&gt;PrivatePAC bắt đầu bằng việc chia các giao dịch đầu vào của bạn thành những mệnh giá chuẩn. Những mệnh giá đó là 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC, và 10 PAC -- cũng giống như các mệnh giá trên tiền giấy mà bạn sử dụng hàng ngày. &lt;/li&gt;&lt;li&gt;Ví của bạn sau đó gửi yêu cầu đến những nút phần mềm được cấu hình đặc biệt trên mạng gọi là các "masternode". Những masternode được báo rằng bạn quan tâm đến việc xáo trộn một mệnh giá nào đó. Không có thông tin định danh nào được gửi đến cho các masternode, và như vậy họ không bao giờ biết bạn "là ai". &lt;/li&gt; &lt;li&gt;Khi hai người khác nhau gửi những thông điệp tương tự, có nghĩa là họ muốn xáo trộn cùng loại mệnh giá, một phiên xáo trộn bắt đầu. Masternode xáo trộn các đầu vào và hướng dẫn tất cả ví của tất cả ba người dùng để trả đầu vào đã được chuyển đổi trở lại cho chính họ. Ví của bạn sẽ trả mệnh giá đó trực tiếp cho nó, nhưng với một địa chỉ khác (được gọi là địa chỉ trả tiền lẻ). &lt;/li&gt; &lt;li&gt;Để thực sự che khuất nguồn tiền của bạn, ví của bạn phải lặp lại quy trình đó một số lần với mỗi mệnh giá nhất định. Mỗi lần tiến trình hoàn tất, nó được gọi là một "vòng". Mỗi vòng của PrivatePAC làm nên độ khó bậc số mũ để xác định nguồn tiền của bạn đến từ đâu. &lt;/li&gt; &lt;li&gt;Quá trình xáo trộn này xảy ra trong chế độ nền mà không xen vào những việc khác của bạn. Khi bạn muốn thực hiện một giao dịch, nguồn tiền của bạn đã được ẩn danh rồi. Do đó bạn không cần phải đợi thêm gì nữa. &lt;/li&gt;&lt;/ol&gt; &lt;hr&gt; &lt;b&gt;QUAN TRỌNG:&lt;/b&gt; Ví của bạn chỉ có chứa 1000 "địa chỉ tiền trả lại". Mỗi lần một sự kiện xáo trộn xảy ra, có đến 9 địa chỉ sẽ được sử dụng. Điều đó có nghĩa với ví mới với 1000 địa chỉ thì dùng cho 100 lần trộn. Khi 900 địa chỉ đã được sử dụng, ví của bạn phải tạo thêm các địa chỉ mới. Nó chỉ có thể làm việc đó, tuy nhiên, nếu bạn có chế độ tự động backup được bật&lt;br&gt; Kết quả là, những người dùng mà chế độ backup bị tắt sẽ có chế độ PrivatePAC cũng bị tắt.&lt;hr&gt; Để biết thêm thông tin hãy xem &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;Tài liệu về PrivatePAC&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1254,40 +1254,40 @@
         <translation>Hiển thị trang Masternodes</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>Hiển thị thêm thông tin và các nút cho PrivateSend trên màn hình tổng quát.</translation>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
+        <translation>Hiển thị thêm thông tin và các nút cho PrivatePAC trên màn hình tổng quát.</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
-        <translation>Bật chế độ giao diện PrivateSend cao cấp</translation>
+        <source>Enable advanced PrivatePAC interface</source>
+        <translation>Bật chế độ giao diện PrivatePAC cao cấp</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>Hiển thị bảng hội thoại cảnh báo khi PrivateSend phát hiện ví chỉ còn rất ít khoá còn lại.</translation>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
+        <translation>Hiển thị bảng hội thoại cảnh báo khi PrivatePAC phát hiện ví chỉ còn rất ít khoá còn lại.</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
-        <translation>Cảnh báo nếu PrivateSend đang thiếu khoá</translation>
+        <source>Warn if PrivatePAC is running out of keys</source>
+        <translation>Cảnh báo nếu PrivatePAC đang thiếu khoá</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>Cho dù sử dụng thí nghiệm chế độ PrivateSend với việc trộn nhiều phiên trên một khối.&lt;br/&gt;Chú ý: Bạn cần sử dụng tính năng này một cách thận trọng.&lt;br/&gt;Hãy đảm bảo rằng bạn luôn lưu trữ sao lưu (tự động) ví gần nhất ở nơi an toàn.</translation>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Cho dù sử dụng thí nghiệm chế độ PrivatePAC với việc trộn nhiều phiên trên một khối.&lt;br/&gt;Chú ý: Bạn cần sử dụng tính năng này một cách thận trọng.&lt;br/&gt;Hãy đảm bảo rằng bạn luôn lưu trữ sao lưu (tự động) ví gần nhất ở nơi an toàn.</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>Bật chế độ đa &amp;kênh PrivateSend</translation>
+        <source>Enable PrivatePAC &amp;multi-session</source>
+        <translation>Bật chế độ đa &amp;kênh PrivatePAC</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>Nếu bạn vô hiệu hóa các chi tiêu của phần tiền lẻ chưa được xác nhận, phần tiền lẻ từ một giao dịch &lt;br/&gt;không thể được sử dụng đến khi giao dịch đó nhận được ít nhất một xác nhận. &lt;br/&gt;Điều này ảnh hưởng đến cách tính số dư của bạn.</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
-        <translation>Số vòng PrivateSend được dùng</translation>
+        <source>PrivatePAC rounds to use</source>
+        <translation>Số vòng PrivatePAC được dùng</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>Số lượng này hoạt động như là một ngưỡng để tắt PrivateSend khi nó được chạm tới.</translation>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
+        <translation>Số lượng này hoạt động như là một ngưỡng để tắt PrivatePAC khi nó được chạm tới.</translation>
     </message>
     <message>
         <source>Automatically open the PAC Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
@@ -1342,12 +1342,12 @@
         <translation>Bật tính năng Coin &amp;control</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>Hiển thị bảng hội thoại cho giao dịch trộn PrivateSend &lt;br/&gt;giống như cho tất các các loại giao dịch khác.</translation>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Hiển thị bảng hội thoại cho giao dịch trộn PrivatePAC &lt;br/&gt;giống như cho tất các các loại giao dịch khác.</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
-        <translation>Hiển thị yêu cầu xác nhận cho các giao dịch PrivateSend</translation>
+        <source>Show popups for PrivatePAC transactions</source>
+        <translation>Hiển thị yêu cầu xác nhận cho các giao dịch PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1587,8 +1587,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Có thể tiêu được:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1603,16 +1603,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Hoàn thành:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Thử gửi một yêu cầu PrivateSend bằng tay.</translation>
+        <source>Try to manually submit a PrivatePAC request.</source>
+        <translation>Thử gửi một yêu cầu PrivatePAC bằng tay.</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Khởi tạo lại trạng thái hiện tại của PrivateSend (có thể làm ngắt PrivateSend nếu nó đang trong quá trình Trộn, điều đó có thể làm bạn tốn tiền!)</translation>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>Khởi tạo lại trạng thái hiện tại của PrivatePAC (có thể làm ngắt PrivatePAC nếu nó đang trong quá trình Trộn, điều đó có thể làm bạn tốn tiền!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Thông tin về PrivateSend và Trộn coin</translation>
+        <source>Information about PrivatePAC and Mixing</source>
+        <translation>Thông tin về PrivatePAC và Trộn coin</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1643,8 +1643,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Bắt đầu/Tắt việc trộn</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
-        <translation>Số dư PrivateSend:</translation>
+        <source>PrivatePAC Balance:</source>
+        <translation>Số dư PrivatePAC:</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
@@ -1759,26 +1759,26 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>CẢNH BÁO! Không thể bổ sung keypool, hãy mở khoá ví của bạn để làm việc đó.</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
-        <translation>Thông điệp PrivateSend cuối cùng:
+        <translation>Thông điệp PrivatePAC cuối cùng:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend đã được thiết lập lại thành công.</translation>
+        <source>PrivatePAC was successfully reset.</source>
+        <translation>PrivatePAC đã được thiết lập lại thành công.</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>Nếu bạn không muốn nhìn thấy thông tin nội bộ về phí/giao dich PrivateSend thì hãy chọn "Thông dụng nhất" là kiểu trên trang "Các giao dịch".</translation>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>Nếu bạn không muốn nhìn thấy thông tin nội bộ về phí/giao dich PrivatePAC thì hãy chọn "Thông dụng nhất" là kiểu trên trang "Các giao dịch".</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
-        <translation>PrivateSend yêu cầu ít nhất %1 để sử dụng.</translation>
+        <source>PrivatePAC requires at least %1 to use.</source>
+        <translation>PrivatePAC yêu cầu ít nhất %1 để sử dụng.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>Ví đã được khoá và người dùng từ chối mở khoá. Tắt chức năng PrivateSend.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
+        <translation>Ví đã được khoá và người dùng từ chối mở khoá. Tắt chức năng PrivatePAC.</translation>
     </message>
 </context>
 <context>
@@ -2464,8 +2464,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Xoá</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
-        <translation>Yêu cầu InstantSend</translation>
+        <source>Request InstantPAC</source>
+        <translation>Yêu cầu InstantPAC</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2551,8 +2551,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Thông điệp</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2685,12 +2685,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Thời gian xác nhận đối tượng:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2805,16 +2805,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>các khoản tiền ẩn danh</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend yêu cầu số lượng này để làm tròn về giá trị gần nhất %1).</translation>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(PrivatePAC yêu cầu số lượng này để làm tròn về giá trị gần nhất %1).</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
         <translation>bất kỳ nguồn cung nào còn (không ẩn danh)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
-        <translation>và InstantSend</translation>
+        <source>and InstantPAC</source>
+        <translation>và InstantPAC</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3210,16 +3210,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>%1 xác nhận</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
-        <translation>đã được kiểm tra bởi InstantSend</translation>
+        <source>verified via InstantPAC</source>
+        <translation>đã được kiểm tra bởi InstantPAC</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>Việc kiểm chứng InstantSend đang trong tiến trình - %1 của %2 các chữ ký</translation>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
+        <translation>Việc kiểm chứng InstantPAC đang trong tiến trình - %1 của %2 các chữ ký</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
-        <translation>Kiểm chứng InstantSend thất bại</translation>
+        <source>InstantPAC verification failed</source>
+        <translation>Kiểm chứng InstantPAC thất bại</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3432,8 +3432,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Nhận từ</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
-        <translation>Nhận được thông qua PrivateSend</translation>
+        <source>Received via PrivatePAC</source>
+        <translation>Nhận được thông qua PrivatePAC</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3448,24 +3448,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Được đào</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>Mệnh giá PrivateSend</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>Mệnh giá PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>Thanh toán đảm bảo cho PrivateSend</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>Thanh toán đảm bảo cho PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Tạo Đặt Cọc Đầu Vào</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Tạo Đặt Cọc Đầu Vào</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Tạo Các Mệnh Giá</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Tạo Các Mệnh Giá</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -3496,8 +3496,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Cho dù có hay không thì một địa chỉ chỉ theo dõi cũng liên quan đến giao dịch này.</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
-        <translation>Giao dịch này có được khoá hay không được khoá bởi InstantSend.</translation>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
+        <translation>Giao dịch này có được khoá hay không được khoá bởi InstantPAC.</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
@@ -3515,12 +3515,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Tất cả</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
-        <translation>Đã được khoá bởi InstantSend</translation>
+        <source>Locked by InstantPAC</source>
+        <translation>Đã được khoá bởi InstantPAC</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
-        <translation>Không được khoá bởi InstantSend</translation>
+        <source>Not locked by InstantPAC</source>
+        <translation>Không được khoá bởi InstantPAC</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3559,24 +3559,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Gửi đến</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Tạo Đặt Cọc Đầu Vào</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Tạo Đặt Cọc Đầu Vào</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Tạo Các Mệnh Giá</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Tạo Các Mệnh Giá</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>Mệnh giá PrivateSend</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>Mệnh giá PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend Collateral Payment</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC Collateral Payment</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3716,12 +3716,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Gửi tiền</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend không hỗ trợ gửi giá trị lớn đến vậy. Các giao dịch hiện giới hạn với %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC không hỗ trợ gửi giá trị lớn đến vậy. Các giao dịch hiện giới hạn với %1 PAC.</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Sử dụng quá nhiều đầu vào (&gt;%1) cho giao dịch InstantSend này, phí giao dịch có thể rất lớn.</translation>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
+        <translation>Sử dụng quá nhiều đầu vào (&gt;%1) cho giao dịch InstantPAC này, phí giao dịch có thể rất lớn.</translation>
     </message>
 </context>
 <context>
@@ -3938,12 +3938,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Xoá hết tất cả các giao dịch ví và chỉ phục hồi những phần đó của blockchain qua -rescan khi khởi động</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Cho phép công bố các giao dịch thô đã dùng InstantSend trong việc tiêu lặp ở &lt;address&gt;</translation>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Cho phép công bố các giao dịch thô đã dùng InstantPAC trong việc tiêu lặp ở &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Cho phép công bố các mã băm của giao dịch đã dùng InstantSend trong việc tiêu lặp ở &lt;address&gt;</translation>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Cho phép công bố các mã băm của giao dịch đã dùng InstantPAC trong việc tiêu lặp ở &lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4354,8 +4354,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Giữ nhiều nhất &lt;n&gt; các giao dịch không kết nối được trong bộ nhớ (ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Tắt tất cả các chức năng đắc trưng của PAC (Masternode, PrivateSend, InstantSend, Governance) (0-1, ngầm định: %u)</translation>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
+        <translation>Tắt tất cả các chức năng đắc trưng của PAC (Masternode, PrivatePAC, InstantPAC, Governance) (0-1, ngầm định: %u)</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
@@ -4374,20 +4374,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Không giữ các giao dịch trong mempool lâu hơn &lt;n&gt; giờ (ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Bật InstantSend, hiển thị các xác thực cho các giao dịch bị khoá (0-1, ngầm định: %u)</translation>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>Bật InstantPAC, hiển thị các xác thực cho các giao dịch bị khoá (0-1, ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
-        <translation>Cho phép nhiều phiên trộn PrivateSend cho mỗi khối, thí nghiệm (0-1, ngầm định: %u)</translation>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Cho phép nhiều phiên trộn PrivatePAC cho mỗi khối, thí nghiệm (0-1, ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Cho phép sử dụng tự động PrivateSend cho các nguồn được lưu trong ví (0-1, ngầm định: %u)</translation>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Cho phép sử dụng tự động PrivatePAC cho các nguồn được lưu trong ví (0-1, ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
-        <translation>Thực hiện lên khi một giao dịch InstantSend được khoá thành công (%s trong cmd được thay thế bằng TxID)</translation>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <translation>Thực hiện lên khi một giao dịch InstantPAC được khoá thành công (%s trong cmd được thay thế bằng TxID)</translation>
     </message>
     <message>
         <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
@@ -4410,12 +4410,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Nếu &lt;category&gt; không được cung cấp hoặc nếu &lt;category&gt; = 1, xuất tất cả các thông tin gỡ lỗi.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend chưa hỗ trợ việc gửi những giá trị lớn như vậy. Các giao dịch hiện tại bị giới hạn đến %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC chưa hỗ trợ việc gửi những giá trị lớn như vậy. Các giao dịch hiện tại bị giới hạn đến %1 PAC.</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend cần các đầu vào ít nhất %d xác thực, bạn cần đợi thêm vài phút nữa và thử lại.</translation>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantPAC cần các đầu vào ít nhất %d xác thực, bạn cần đợi thêm vài phút nữa và thử lại.</translation>
     </message>
     <message>
         <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
@@ -4434,8 +4434,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Duy trì nhiều nhất &lt;n&gt; kết nối đến các nút ngang hàng (các kết nối dịch vụ tạm thời không được tính) (ngầm định: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend sử dụng một số lượng mệnh giá nhất định để gửi tiền, bạn có thể đơn giản cần ẩn danh một ít coins nữa.</translation>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>PrivatePAC sử dụng một số lượng mệnh giá nhất định để gửi tiền, bạn có thể đơn giản cần ẩn danh một ít coins nữa.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -4482,8 +4482,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Thử giữ cho thông lượng mạng truyền ra dưới ngưỡng (theo MiB mỗi 24 giờ), 0 = không giới hạn (ngầm định: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
-        <translation>Không tìm đủ nguồn tiền PrivateSend denominated cho giao dịch này.</translation>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
+        <translation>Không tìm đủ nguồn tiền PrivatePAC denominated cho giao dịch này.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4558,8 +4558,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Cho phép xuất bản hash của các biểu quyết quản trị trong &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Cho phép công bố hash transaction (khoá thông qua InstantSend) trong &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Cho phép công bố hash transaction (khoá thông qua InstantPAC) trong &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4570,8 +4570,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Cho phép công bố các khối thô trong &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Cho phép công bố các giao dịch thô (được khoá qua InstantSend) trong &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Cho phép công bố các giao dịch thô (được khoá qua InstantPAC) trong &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4594,8 +4594,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Không xoá được backup, lỗi: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
-        <translation>Thất bại trong việc tải dữ liệu cache của InstantSend từ</translation>
+        <source>Failed to load InstantPAC data cache from</source>
+        <translation>Thất bại trong việc tải dữ liệu cache của InstantPAC từ</translation>
     </message>
     <message>
         <source>Failed to load sporks cache from</source>
@@ -4610,8 +4610,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Nhập các khối từ các file ngoài blk000??.dat khi khởi động</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
-        <translation>Các tuỳ chọn InstantSend:</translation>
+        <source>InstantPAC options:</source>
+        <translation>Các tuỳ chọn InstantPAC:</translation>
     </message>
     <message>
         <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
@@ -4622,16 +4622,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Giữ cho bể nhớ giao dịch dưới &lt;n&gt; megabytes (ngầm định: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
-        <translation>Lần gửi PrivateSend mới nhất quá gần.</translation>
+        <source>Last PrivatePAC was too recent.</source>
+        <translation>Lần gửi PrivatePAC mới nhất quá gần.</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
-        <translation>PrivateSend mới nhất được thực hiện quá gần đây.</translation>
+        <source>Last successful PrivatePAC action was too recent.</source>
+        <translation>PrivatePAC mới nhất được thực hiện quá gần đây.</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
-        <translation>Đang tải dữ liệu cache của InstantSend...</translation>
+        <source>Loading InstantPAC data cache...</source>
+        <translation>Đang tải dữ liệu cache của InstantPAC...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4726,20 +4726,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>In ra phiên bản và thoát</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
-        <translation>PrivateSend đang nghỉ</translation>
+        <source>PrivatePAC is idle.</source>
+        <translation>PrivatePAC đang nghỉ</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
-        <translation>Các tuỳ chọn PrivateSend:</translation>
+        <source>PrivatePAC options:</source>
+        <translation>Các tuỳ chọn PrivatePAC:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
-        <translation>Yêu cầu gửi PrivateSend đã hoàn thành:</translation>
+        <source>PrivatePAC request complete:</source>
+        <translation>Yêu cầu gửi PrivatePAC đã hoàn thành:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
-        <translation>Yêu cầu gửi PrivateSend không hoàn thành:</translation>
+        <source>PrivatePAC request incomplete:</source>
+        <translation>Yêu cầu gửi PrivatePAC không hoàn thành:</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4914,8 +4914,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Please contribute if you find %s useful. Visit %s for further information about the software.</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
-        <translation>Cung cấp thanh khoản cho PrivateSend bằng việc thường xuyên trộn coin theo mức độ thường xuyên (%u-%u, ngầm định: %u, 1=rất thường xuyên, phí cao, %u=rất không thường xuyên, phí thấp)</translation>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <translation>Cung cấp thanh khoản cho PrivatePAC bằng việc thường xuyên trộn coin theo mức độ thường xuyên (%u-%u, ngầm định: %u, 1=rất thường xuyên, phí cao, %u=rất không thường xuyên, phí thấp)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -4938,7 +4938,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>This product includes software developed by the OpenSSL Project for use in the OpenSSL Toolkit %s and cryptographic software written by Eric Young and UPnP software written by Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
         <translation>Không thể tìm đủ lượng ngân sách chưa phân mệnh giá Private Send cho giao dịch  này.</translation>
     </message>
     <message>

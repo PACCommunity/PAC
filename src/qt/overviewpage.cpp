@@ -510,7 +510,7 @@ void OverviewPage::privateSendStatus()
                                 tr("Note: You can turn this message off in options.");
             ui->labelPrivateSendEnabled->setToolTip(strWarn);
             LogPrintf("OverviewPage::privateSendStatus -- Very low number of keys left since last automatic backup, warning user and trying to create new backup...\n");
-            QMessageBox::warning(this, tr("PrivateSend"), strWarn, QMessageBox::Ok, QMessageBox::Ok);
+            QMessageBox::warning(this, tr("PrivatePAC"), strWarn, QMessageBox::Ok, QMessageBox::Ok);
         } else {
             LogPrintf("OverviewPage::privateSendStatus -- Very low number of keys left since last automatic backup, skipping warning and trying to create new backup...\n");
         }
@@ -522,7 +522,7 @@ void OverviewPage::privateSendStatus()
                 // It's still more or less safe to continue but warn user anyway
                 LogPrintf("OverviewPage::privateSendStatus -- WARNING! Something went wrong on automatic backup: %s\n", strBackupWarning);
 
-                QMessageBox::warning(this, tr("PrivateSend"),
+                QMessageBox::warning(this, tr("PrivatePAC"),
                     tr("WARNING! Something went wrong on automatic backup") + ":<br><br>" + strBackupWarning.c_str(),
                     QMessageBox::Ok, QMessageBox::Ok);
             }
@@ -530,7 +530,7 @@ void OverviewPage::privateSendStatus()
                 // Things are really broken, warn user and stop mixing immediately
                 LogPrintf("OverviewPage::privateSendStatus -- ERROR! Failed to create automatic backup: %s\n", strBackupError);
 
-                QMessageBox::warning(this, tr("PrivateSend"),
+                QMessageBox::warning(this, tr("PrivatePAC"),
                     tr("ERROR! Failed to create automatic backup") + ":<br><br>" + strBackupError.c_str() + "<br>" +
                     tr("Mixing is disabled, please close your wallet and fix the issue!"),
                     QMessageBox::Ok, QMessageBox::Ok);
@@ -568,10 +568,10 @@ void OverviewPage::privateSendStatus()
 
     QString strStatus = QString(privateSendClient.GetStatuses().c_str());
 
-    QString s = tr("Last PrivateSend message:\n") + strStatus;
+    QString s = tr("Last PrivatePAC message:\n") + strStatus;
 
     if(s != ui->labelPrivateSendLastMessage->text())
-        LogPrint("privatesend", "OverviewPage::privateSendStatus -- Last PrivateSend message: %s\n", strStatus.toStdString());
+        LogPrint("privatesend", "OverviewPage::privateSendStatus -- Last PrivatePAC message: %s\n", strStatus.toStdString());
 
     ui->labelPrivateSendLastMessage->setText(s);
 
@@ -585,8 +585,8 @@ void OverviewPage::privateSendAuto(){
 void OverviewPage::privateSendReset(){
     privateSendClient.ResetPool();
 
-    QMessageBox::warning(this, tr("PrivateSend"),
-        tr("PrivateSend was successfully reset."),
+    QMessageBox::warning(this, tr("PrivatePAC"),
+        tr("PrivatePAC was successfully reset."),
         QMessageBox::Ok, QMessageBox::Ok);
 }
 
@@ -600,8 +600,8 @@ void OverviewPage::togglePrivateSend(){
     // Popup some information on first mixing
     QString hasMixed = settings.value("hasMixed").toString();
     if(hasMixed.isEmpty()){
-        QMessageBox::information(this, tr("PrivateSend"),
-                tr("If you don't want to see internal PrivateSend fees/transactions select \"Most Common\" as Type on the \"Transactions\" tab."),
+        QMessageBox::information(this, tr("PrivatePAC"),
+                tr("If you don't want to see internal PrivatePAC fees/transactions select \"Most Common\" as Type on the \"Transactions\" tab."),
                 QMessageBox::Ok, QMessageBox::Ok);
         settings.setValue("hasMixed", "hasMixed");
     }
@@ -609,8 +609,8 @@ void OverviewPage::togglePrivateSend(){
         const CAmount nMinAmount = CPrivateSend::GetSmallestDenomination() + CPrivateSend::GetMaxCollateralAmount();
         if(currentBalance < nMinAmount){
             QString strMinAmount(BitcoinUnits::formatWithUnit(nDisplayUnit, nMinAmount));
-            QMessageBox::warning(this, tr("PrivateSend"),
-                tr("PrivateSend requires at least %1 to use.").arg(strMinAmount),
+            QMessageBox::warning(this, tr("PrivatePAC"),
+                tr("PrivatePAC requires at least %1 to use.").arg(strMinAmount),
                 QMessageBox::Ok, QMessageBox::Ok);
             return;
         }
@@ -623,10 +623,10 @@ void OverviewPage::togglePrivateSend(){
             {
                 //unlock was cancelled
                 privateSendClient.nCachedNumBlocks = std::numeric_limits<int>::max();
-                QMessageBox::warning(this, tr("PrivateSend"),
-                    tr("Wallet is locked and user declined to unlock. Disabling PrivateSend."),
+                QMessageBox::warning(this, tr("PrivatePAC"),
+                    tr("Wallet is locked and user declined to unlock. Disabling PrivatePAC."),
                     QMessageBox::Ok, QMessageBox::Ok);
-                LogPrint("privatesend", "OverviewPage::togglePrivateSend -- Wallet is locked and user declined to unlock. Disabling PrivateSend.\n");
+                LogPrint("privatesend", "OverviewPage::togglePrivateSend -- Wallet is locked and user declined to unlock. Disabling PrivatePAC.\n");
                 return;
             }
         }

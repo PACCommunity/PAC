@@ -11,7 +11,7 @@ from time import *
 '''
 autoix-mempool.py
 
-Checks if automatic InstantSend locks stop working when transaction mempool 
+Checks if automatic InstantPAC locks stop working when transaction mempool 
 is full (more than 0.1 part from max value). 
 
 '''

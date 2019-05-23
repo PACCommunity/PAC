@@ -127,7 +127,7 @@ void gobject_prepare_help(CWallet* const pwallet)
                 "2. revision      (numeric, required) object revision in the system\n"
                 "3. time          (numeric, required) time this object was created\n"
                 "4. data-hex      (string, required)  data in hex string form\n"
-                "5. use-IS        (boolean, optional, default=false) InstantSend lock the collateral, only requiring one chain confirmation\n"
+                "5. use-IS        (boolean, optional, default=false) InstantPAC lock the collateral, only requiring one chain confirmation\n"
                 "6. outputHash    (string, optional) the single output to submit the proposal fee from\n"
                 "7. outputIndex   (numeric, optional) The output index.\n"
                 );

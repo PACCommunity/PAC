@@ -435,7 +435,7 @@ std::string CPrivateSend::GetMessageByID(PoolMessage nMessageID)
     case ERR_QUEUE_FULL:
         return _("Masternode queue is full.");
     case ERR_RECENT:
-        return _("Last PrivateSend was too recent.");
+        return _("Last PrivatePAC was too recent.");
     case ERR_SESSION:
         return _("Session not complete!");
     case ERR_MISSING_TX:

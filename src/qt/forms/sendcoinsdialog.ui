@@ -1284,7 +1284,7 @@
           </size>
          </property>
          <property name="text">
-          <string>PrivateSend</string>
+          <string>PrivatePAC</string>
          </property>
          <property name="checked">
           <bool>false</bool>
@@ -1303,7 +1303,7 @@
           </size>
          </property>
          <property name="text">
-          <string>InstantSend</string>
+          <string>InstantPAC</string>
          </property>
         </widget>
        </item>

@@ -11,17 +11,17 @@ from time import *
 '''
 p2p-autoinstantsend.py
 
-Test automatic InstantSend locks functionality.
+Test automatic InstantPAC locks functionality.
 
-Checks that simple transactions automatically become InstantSend locked, 
+Checks that simple transactions automatically become InstantPAC locked, 
 complex transactions don't become IS-locked and this functionality is
 activated only if SPORK_16_INSTANTSEND_AUTOLOCKS is active.
 
-Also checks that this functionality doesn't influence regular InstantSend
+Also checks that this functionality doesn't influence regular InstantPAC
 transactions with high fee. 
 '''
 
-class AutoInstantSendTest(PACTestFramework):
+class AutoInstantPACTest(PACTestFramework):
     def __init__(self):
         super().__init__(8, 5, [], fast_dip3_enforcement=True)
         # set sender,  receiver,  isolated nodes
@@ -96,4 +96,4 @@ class AutoInstantSendTest(PACTestFramework):
         self.sync_all()
 
 if __name__ == '__main__':
-    AutoInstantSendTest().main()
+    AutoInstantPACTest().main()

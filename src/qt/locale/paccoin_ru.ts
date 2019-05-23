@@ -498,12 +498,12 @@
         <translation>Клиент %1</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
-        <translation>Информация о &amp;PrivateSend</translation>
+        <source>&amp;PrivatePAC information</source>
+        <translation>Информация о &amp;PrivatePAC</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
-        <translation>Показать краткую информацию о PrivateSend</translation>
+        <source>Show the PrivatePAC basic information</source>
+        <translation>Показать краткую информацию о PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -798,8 +798,8 @@
         <translation>Пожалуйста, переключитесь в режим списка для использования этой функции.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
-        <translation>Выбраны неанонимизированные средства. &lt;b&gt;PrivateSend будет отключен.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Если Вы все-таки хотите использовать PrivateSend, пожалуйста, снимите выделение со всех неанонимизированных средств и заново поставьте галочку напротив PrivateSend.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
+        <translation>Выбраны неанонимизированные средства. &lt;b&gt;PrivatePAC будет отключен.&lt;/b&gt;&lt;br&gt;&lt;br&gt;Если Вы все-таки хотите использовать PrivatePAC, пожалуйста, снимите выделение со всех неанонимизированных средств и заново поставьте галочку напротив PrivatePAC.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -971,12 +971,12 @@
         <translation>Сбросить все настройки, измененные через графический интерфейс</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
-        <translation>Информация о PrivateSend</translation>
+        <source>PrivatePAC information</source>
+        <translation>Информация о PrivatePAC</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Основы PrivateSend&lt;/h3&gt;PrivateSend позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все PAC в  Вашем кошельке состоят из различных "входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;PrivateSend использует инновационный процесс для перемешивания Ваших входов со входами еще двоих человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;PrivateSend работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC и 10 PAC -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом PrivateSend становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут анонимизированы. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием PrivateSend не доступен. &lt;hr&gt;Дополнительная информация доступна в &lt;a href="https://paccoinpay.atlassian.net/wiki/display/DOC/PrivateSend"&gt;документации по PrivateSend&lt;/a&gt;         </translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Основы PrivatePAC&lt;/h3&gt;PrivatePAC позволяет Вам получить настоящую финансовую конфиденциальность за счет скрытия источников Ваших средств. Все PAC в  Вашем кошельке состоят из различных "входов", Вы можете думать о них как об отдельных монетах.&lt;br&gt;PrivatePAC использует инновационный процесс для перемешивания Ваших входов со входами еще двоих человек, но при этом Ваши монеты никогда не покидают Ваш кошелек. Вы сохраняете контроль над Вашими деньгами на протяжении всего времени.&lt;hr&gt; &lt;b&gt;PrivatePAC работает так:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC начинается с разбиения Ваших входов транзакций на стандартные номиналы. Такими номиналами являются 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC и 10 PAC -- что-то вроде купюр, которыми вы пользуетесь каждый день.&lt;/li&gt; &lt;li&gt;Ваш кошелек затем отправляет запросы к особым образом настроенным сетевым узлам, называемым "мастернодами". Эти мастерноды знают только то, что Вы хотите перемешать определенные номиналы. Никакой идентифицирующей информации мастернодам не отправляется, так что они не знают "кто" Вы конкретно.&lt;/li&gt; &lt;li&gt;Сессия перемешивания начинается тогда, когда еще двое человек отправляют схожее сообщение, подтверждающее, что они хотят перемешать точно такой же номинал. Мастернода перемешивает входы и просит кошельки всех пользователей осуществить платежи по ним. Ваш кошелек осуществляет выплату самому себе, но на другой адрес (тоже из вашего кошелька).&lt;/li&gt; &lt;li&gt;Для скрытия Ваших средств кошелек должен повторить этот процесс несколько раз с каждым номиналом. Каждый раз, когда такой процесс завершается, называется "раундом". С каждым раундом PrivatePAC становится экспоненциально сложнее определить откуда поступили средства.&lt;/li&gt; &lt;li&gt;Процесс перемешивания выполняется в фоне, без участия пользователя. Когда Вы захотите провести транзакцию, средства уже будут анонимизированы. Дополнительно ждать не требуется.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ВАЖНО:&lt;/b&gt; Ваш кошелек содержит 1000 адресов. Каждое перемешивание использует до 9 из этих адресов. Это означает, что 1000 адресов хватит примерно на 100 перемешиваний. Когда 900 адресов будут уже использованы, Ваш кошелек должен создать новые адреса. Однако, он может сделать это, только если у Вас включены автоматические резервные копии.&lt;br&gt;Соответственно, пользователям с отключенным резервным копированием PrivatePAC не доступен. &lt;hr&gt;Дополнительная информация доступна в &lt;a href="https://paccoinpay.atlassian.net/wiki/display/DOC/PrivatePAC"&gt;документации по PrivatePAC&lt;/a&gt;         </translation>
     </message>
 </context>
 <context>
@@ -1270,40 +1270,40 @@
         <translation>Показывать вкладку с мастернодами</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>Показывать дополнительную информацию и кнопки для PrivateSend на обзорной вкладке.</translation>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
+        <translation>Показывать дополнительную информацию и кнопки для PrivatePAC на обзорной вкладке.</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
-        <translation>Включить расширенный интерфейс PrivateSend</translation>
+        <source>Enable advanced PrivatePAC interface</source>
+        <translation>Включить расширенный интерфейс PrivatePAC</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>Показывать предупреждение, когда PrivateSend обнаружит, что в кошельке осталось слишком мало ключей.</translation>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
+        <translation>Показывать предупреждение, когда PrivatePAC обнаружит, что в кошельке осталось слишком мало ключей.</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
-        <translation>Предупредить, если кончаются ключи для PrivateSend</translation>
+        <source>Warn if PrivatePAC is running out of keys</source>
+        <translation>Предупредить, если кончаются ключи для PrivatePAC</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>Использовать или нет экспериментальный режим PrivateSend с множественным перемешивание за один блок.&lt;br/&gt;Примечание: Используйте с осторожностью.&lt;br/&gt;Убедитесь, что у вас всегда есть (автоматический) бэкап в безопасном месте!</translation>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Использовать или нет экспериментальный режим PrivatePAC с множественным перемешивание за один блок.&lt;br/&gt;Примечание: Используйте с осторожностью.&lt;br/&gt;Убедитесь, что у вас всегда есть (автоматический) бэкап в безопасном месте!</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>Включить &amp;мульти-сессионный PrivateSend</translation>
+        <source>Enable PrivatePAC &amp;multi-session</source>
+        <translation>Включить &amp;мульти-сессионный PrivatePAC</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>При отключении траты неподтверждённой сдачи, сдача от транзакции&lt;br/&gt;не может быть использована до тех пор, пока у этой транзакции не будет хотя бы одно подтверждение.&lt;br/&gt;Это также влияет на то, как рассчитывается Ваш баланс.</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
-        <translation>Количество раундов PrivateSend</translation>
+        <source>PrivatePAC rounds to use</source>
+        <translation>Количество раундов PrivatePAC</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>Это пороговое значение, при достижении которого PrivateSend отключается.</translation>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
+        <translation>Это пороговое значение, при достижении которого PrivatePAC отключается.</translation>
     </message>
     <message>
         <source>Automatically open the PAC Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
@@ -1358,12 +1358,12 @@
         <translation>Включить функции &amp;контроля монет</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>Показывать всплывающие уведомления для транзакций перемешивания PrivateSend&lt;br/&gt;также как для всех остальных типов транзакций.</translation>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Показывать всплывающие уведомления для транзакций перемешивания PrivatePAC&lt;br/&gt;также как для всех остальных типов транзакций.</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
-        <translation>Показывать всплывающие уведомления для транзакций PrivateSend</translation>
+        <source>Show popups for PrivatePAC transactions</source>
+        <translation>Показывать всплывающие уведомления для транзакций PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1603,8 +1603,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Для расхода:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1619,16 +1619,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Завершение:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Попробовать отправить запрос PrivateSend вручную.</translation>
+        <source>Try to manually submit a PrivatePAC request.</source>
+        <translation>Попробовать отправить запрос PrivatePAC вручную.</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Сбросить текущий статус PrivateSend (можно прервать процесс перемешивания PrivateSend, но это может стоить Вам немного денег!)</translation>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>Сбросить текущий статус PrivatePAC (можно прервать процесс перемешивания PrivatePAC, но это может стоить Вам немного денег!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Информация о PrivateSend и перемешивании</translation>
+        <source>Information about PrivatePAC and Mixing</source>
+        <translation>Информация о PrivatePAC и перемешивании</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1659,8 +1659,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Начать/остановить автоматическое перемешивание</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
-        <translation>Баланс PrivateSend:</translation>
+        <source>PrivatePAC Balance:</source>
+        <translation>Баланс PrivatePAC:</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
@@ -1775,26 +1775,26 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ВНИМАНИЕ! Ну удалось обновить пул ключей, пожалуйста, разблокируйте кошелек.</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
-        <translation>Последнее сообщение PrivateSend:
+        <translation>Последнее сообщение PrivatePAC:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend был успешно прерван.</translation>
+        <source>PrivatePAC was successfully reset.</source>
+        <translation>PrivatePAC был успешно прерван.</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>Если Вы не хотите видеть внутренние транзакции/комиссии от работы PrivateSend, выберите Тип "Наиболее общие" на закладке "Транзакции".</translation>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>Если Вы не хотите видеть внутренние транзакции/комиссии от работы PrivatePAC, выберите Тип "Наиболее общие" на закладке "Транзакции".</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
-        <translation>Для работы PrivateSend требуется минимум %1.</translation>
+        <source>PrivatePAC requires at least %1 to use.</source>
+        <translation>Для работы PrivatePAC требуется минимум %1.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>Бумажник заблокирован и пользователь отказался его разблокировать. PrivateSend будет выключен.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
+        <translation>Бумажник заблокирован и пользователь отказался его разблокировать. PrivatePAC будет выключен.</translation>
     </message>
 </context>
 <context>
@@ -2484,8 +2484,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Очистить</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
-        <translation>Запросить InstantSend</translation>
+        <source>Request InstantPAC</source>
+        <translation>Запросить InstantPAC</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2571,8 +2571,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Сообщение</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2705,12 +2705,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Желаемое время подтверждения:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2825,16 +2825,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>анонимные средства</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(для работы PrivateSend требуется принудительно округлить до ближайшего %1).</translation>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(для работы PrivatePAC требуется принудительно округлить до ближайшего %1).</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
         <translation>любые доступные средства (не анонимно)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
-        <translation>и InstantSend</translation>
+        <source>and InstantPAC</source>
+        <translation>и InstantPAC</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3234,20 +3234,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>зафиксировано с помощью ChainLocks на основе LLMQ</translation>
     </message>
     <message>
-        <source>verified via LLMQ based InstantSend</source>
-        <translation>проверено с помощью InstantSend на основе LLMQ</translation>
+        <source>verified via LLMQ based InstantPAC</source>
+        <translation>проверено с помощью InstantPAC на основе LLMQ</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
-        <translation>проверено через InstantSend</translation>
+        <source>verified via InstantPAC</source>
+        <translation>проверено через InstantPAC</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>верификация InstantSend в процессе - %1 из %2 подписей</translation>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
+        <translation>верификация InstantPAC в процессе - %1 из %2 подписей</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
-        <translation>верификация InstantSend завершилась неудачно</translation>
+        <source>InstantPAC verification failed</source>
+        <translation>верификация InstantPAC завершилась неудачно</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3460,8 +3460,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Получено от</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
-        <translation>Получено через PrivateSend</translation>
+        <source>Received via PrivatePAC</source>
+        <translation>Получено через PrivatePAC</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3476,24 +3476,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Добыто</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>Перемешивание PrivateSend</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>Перемешивание PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>Обеспечительный платеж PrivateSend</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>Обеспечительный платеж PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>Создание обеспечительных монет для PrivateSend</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>Создание обеспечительных монет для PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>Создание номиналов для PrivateSend</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>Создание номиналов для PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -3524,8 +3524,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Участвовал ли адрес для просмотра в этой транзакции.</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
-        <translation>Была ли данная транзакция заблокирована с помощью InstantSend.</translation>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
+        <translation>Была ли данная транзакция заблокирована с помощью InstantPAC.</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
@@ -3543,12 +3543,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Все</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
-        <translation>Заблокировано с помощью InstantSend</translation>
+        <source>Locked by InstantPAC</source>
+        <translation>Заблокировано с помощью InstantPAC</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
-        <translation>Не заблокировано с помощью InstantSend</translation>
+        <source>Not locked by InstantPAC</source>
+        <translation>Не заблокировано с помощью InstantPAC</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3587,24 +3587,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Отправлено на</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>Создание обеспечительных монет для PrivateSend</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>Создание обеспечительных монет для PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>Создание номиналов для PrivateSend</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>Создание номиналов для PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>Перемешивание PrivateSend</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>Перемешивание PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>Обеспечительный платеж PrivateSend</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>Обеспечительный платеж PrivatePAC</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3752,12 +3752,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Отправка</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend пока что не поддерживает такие большие суммы. На данный момент транзакции ограничены суммами до %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC пока что не поддерживает такие большие суммы. На данный момент транзакции ограничены суммами до %1 PAC.</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Для этой InstantSend транзакции было использовано слишком много входов (&gt;%1), комиссия может быть огромной.</translation>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
+        <translation>Для этой InstantPAC транзакции было использовано слишком много входов (&gt;%1), комиссия может быть огромной.</translation>
     </message>
 </context>
 <context>
@@ -3974,12 +3974,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Удалить все трансакции из кошелька и при рестарте с помощью -rescan восстановить только те, которые есть в цепочке блоков</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Включить публикацию кода транзакции при попытке двойной траты другой транзакции, заблокированной через InstantSend, на &lt;address&gt;</translation>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Включить публикацию кода транзакции при попытке двойной траты другой транзакции, заблокированной через InstantPAC, на &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Включить публикацию хэша транзакции при попытке двойной траты другой транзакции, заблокированной через InstantSend, на &lt;address&gt;</translation>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Включить публикацию хэша транзакции при попытке двойной траты другой транзакции, заблокированной через InstantPAC, на &lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4390,8 +4390,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Держать в памяти до &lt;n&gt; несвязных транзакций (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Отключить всю функциональность, относящуюся к PAC (Мастерноды, PrivateSend, InstantSend, Governance) (0-1, по умолчанию: %u)</translation>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
+        <translation>Отключить всю функциональность, относящуюся к PAC (Мастерноды, PrivatePAC, InstantPAC, Governance) (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
@@ -4410,20 +4410,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Не хранить транзакции в мемпуле дольше чем &lt;n&gt; часов (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Включить InstantSend, показывать подтверждения для заблокированных транзакций (0-1, по умолчанию: %u)</translation>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>Включить InstantPAC, показывать подтверждения для заблокированных транзакций (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
-        <translation>Включить множественное перемешивание PrivateSend за один блок (0-1, по умолчанию: %u)</translation>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Включить множественное перемешивание PrivatePAC за один блок (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Включить автоматическое перемешивание PrivateSend для средств, хранящихся в этом кошельке (0-1, по умолчанию: %u)</translation>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Включить автоматическое перемешивание PrivatePAC для средств, хранящихся в этом кошельке (0-1, по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
-        <translation>Выполнить команду, когда транзакция InstantSend успешно заблокирована (%s в команде заменяется на TxID)</translation>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <translation>Выполнить команду, когда транзакция InstantPAC успешно заблокирована (%s в команде заменяется на TxID)</translation>
     </message>
     <message>
         <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
@@ -4446,12 +4446,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Если &lt;category&gt; не указана или &lt;category&gt; = 1, выводит всю отладочную информацию.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend пока что не поддерживает такие большие суммы. На данный момент транзакции ограничены суммами до %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC пока что не поддерживает такие большие суммы. На данный момент транзакции ограничены суммами до %1 PAC.</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend требует наличия средств с хотя бы %d подтверждениями, возможно Вам нужно подождать пару минут и попробовать снова.</translation>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantPAC требует наличия средств с хотя бы %d подтверждениями, возможно Вам нужно подождать пару минут и попробовать снова.</translation>
     </message>
     <message>
         <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
@@ -4470,8 +4470,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Поддерживать не более &lt;n&gt; подключений к узлам (без учета временных сервисных соединений) (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>При отправке PrivateSend использует только деноминированные средства, возможно, Вам просто нужно анонимизировать немного больше монет.</translation>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>При отправке PrivatePAC использует только деноминированные средства, возможно, Вам просто нужно анонимизировать немного больше монет.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -4518,8 +4518,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Пытаться ограничить исходящий трафик в пределах установленного лимита (в МБ за 24ч), 0 = не ограничивать (по умолчанию: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
-        <translation>Не удалось обнаружить достаточных для выполнения этой транзакции номиналов PrivateSend.</translation>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
+        <translation>Не удалось обнаружить достаточных для выполнения этой транзакции номиналов PrivatePAC.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4594,8 +4594,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Включить публикацию хэша голосов за объекты управления на &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Включить публикацию хэша транзакции (заблокированной через InstantSend) на &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Включить публикацию хэша транзакции (заблокированной через InstantPAC) на &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4606,8 +4606,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Включить публикацию кода блока на &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Включить публикацию кода транзакции (заблокированной через InstantSend) на &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Включить публикацию кода транзакции (заблокированной через InstantPAC) на &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4630,8 +4630,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Не удалось удалить резервную копию, ошибка: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
-        <translation>Ошибка загрузки кэша InstantSend из</translation>
+        <source>Failed to load InstantPAC data cache from</source>
+        <translation>Ошибка загрузки кэша InstantPAC из</translation>
     </message>
     <message>
         <source>Failed to load sporks cache from</source>
@@ -4646,8 +4646,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Импортировать блоки из внешнего файла blk000??.dat на старте</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
-        <translation>Параметры InstantSend:</translation>
+        <source>InstantPAC options:</source>
+        <translation>Параметры InstantPAC:</translation>
     </message>
     <message>
         <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
@@ -4658,16 +4658,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Держать размер пула памяти транзакций ниже &lt;n&gt; мегабайт (по умолчанию: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
-        <translation>Последнее действие PrivateSend было слишком недавно.</translation>
+        <source>Last PrivatePAC was too recent.</source>
+        <translation>Последнее действие PrivatePAC было слишком недавно.</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
-        <translation>Последнее успешное действие PrivateSend было слишком недавно.</translation>
+        <source>Last successful PrivatePAC action was too recent.</source>
+        <translation>Последнее успешное действие PrivatePAC было слишком недавно.</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
-        <translation>Загрузка кэша InstantSend...</translation>
+        <source>Loading InstantPAC data cache...</source>
+        <translation>Загрузка кэша InstantPAC...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4762,20 +4762,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Вывести версию и выйти</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
-        <translation>PrivateSend в режиме ожидания.</translation>
+        <source>PrivatePAC is idle.</source>
+        <translation>PrivatePAC в режиме ожидания.</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
-        <translation>Опции PrivateSend:</translation>
+        <source>PrivatePAC options:</source>
+        <translation>Опции PrivatePAC:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
-        <translation>Запрос PrivateSend завершен:</translation>
+        <source>PrivatePAC request complete:</source>
+        <translation>Запрос PrivatePAC завершен:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
-        <translation>Запрос PrivateSend не завершен:</translation>
+        <source>PrivatePAC request incomplete:</source>
+        <translation>Запрос PrivatePAC не завершен:</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4950,8 +4950,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Пожалуйста, поддержите нас, если считаете %s полезным. Посетите %s для дополнительной информации.</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
-        <translation>Предоставлять ликвидность для PrivateSend путем редкого участия в перемешивании монет на постоянной основе (%u-%u, по умолчанию: %u, 1=очень часто, высокая комиссия, %u=очень редко, низкая комиссия)</translation>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <translation>Предоставлять ликвидность для PrivatePAC путем редкого участия в перемешивании монет на постоянной основе (%u-%u, по умолчанию: %u, 1=очень часто, высокая комиссия, %u=очень редко, низкая комиссия)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -4974,7 +4974,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Этот продукт включает ПО, разработанное проектом OpenSSL Project для использования в OpenSSL Toolkit %s, криптографическое ПО, написанное Eric Young и ПО для работы с UPnP, написанное Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
         <translation>Не удалось обнаружить достаточных для выполнения этой транзакции неденоминированных средств.</translation>
     </message>
     <message>

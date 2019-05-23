@@ -186,7 +186,7 @@
         <item row="8" column="2">
          <widget class="QCheckBox" name="checkUseInstantSend">
           <property name="text">
-           <string>Request InstantSend</string>
+           <string>Request InstantPAC</string>
           </property>
           <property name="checked">
            <bool>true</bool>

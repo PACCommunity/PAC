@@ -498,11 +498,11 @@
         <translation>%1 客戶端軟體</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
+        <source>&amp;PrivatePAC information</source>
         <translation>匿名發送資訊(&amp;P)</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
+        <source>Show the PrivatePAC basic information</source>
         <translation>顯示匿名發送基本信息</translation>
     </message>
     <message>
@@ -798,7 +798,7 @@
         <translation>請切換到“列表模式”來使用此功能。</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
         <translation>選擇了非匿名的輸入。 &lt;b&gt;匿名發送將會被禁用。&lt;/b&gt;&lt;br&gt;&lt;br&gt;如果你仍然想用匿名發送，請先取消選取所有非匿名的輸入，然後再勾選匿名發送的核取方塊。</translation>
     </message>
     <message>
@@ -971,12 +971,12 @@
         <translation>重置所有在GUI 更改的設置</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
+        <source>PrivatePAC information</source>
         <translation>匿名發送資訊</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;匿名發送基礎知識&lt;/h3&gt; 匿名發送通過隱藏您的資金來源為您提供真正的財務隱私。您的錢包中所有的達世幣都由不同的“輸入”組成，您可以將其視為分開的離散硬幣。&lt;br&gt; 匿名發送使用創新的方法將您的輸入與其他兩個人的輸入相結合，而過程中不會讓您的達世幣離開您的錢包。每時每刻，您仍然控制著您的錢。&lt;hr&gt; &lt;b&gt;匿名發送的運作原理如下:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;匿名發送首先將您的交易分柝成多個標準面額的交易。這些標準面額分別為0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC 和10 PAC --有點像您每天使用的紙幣。&lt;/li&gt; &lt;li&gt;您的錢包然後發送請求到網絡上有專門配置的軟件節點，稱為“主節點”。這些主節點會收到您希望混合一些資金的通知。沒有可識別的信息發送到主節點，所以他們永遠不會知道你是"誰"。&lt;/li&gt; &lt;li&gt;當另外兩個人發送類似的消息時，表示希望混合相同的面額的話，混合會話就會開始。相關的主節點會混合這些輸入，並指示所有三個用戶的錢包將已經轉換了輸入的交易支付給自己。你的錢包直接支付給自己，但是付給不同的位址 (稱之為找零位址)。&lt;/li&gt; &lt;li&gt;為了完全掩蓋您的資金來源，您的錢包必須以每個面額來重複此過程數次。每次這個過程完成後，都稱之為一個 "循環"。每個循環的匿名發送都會令確定您的資金來源的工作倍加困難。&lt;/li&gt; &lt;li&gt;這種混合過程發生在後台，而不需要您進行任何操作。當您想進行交易時，您的資金將已被匿名處理。不需再花額外的時間等待。&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;重要:&lt;/b&gt;您的錢包只能擁有1000個"找零位址。" 每次混合事件發生時，最多會使用9個找零位址。這意味著這1000個位址可以容許100次的混合事件。當其的中900個已經被使用後，您的錢包必須創建更多的位址。如果您啟用了自動備份，則只能夠這樣做。&lt;br&gt;因此，禁用備份的用戶也將禁用匿名發送。&lt;hr&gt;如欲了解更多信息請參閱&lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;匿名發送文檔&lt;/a&gt;。</translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;匿名發送基礎知識&lt;/h3&gt; 匿名發送通過隱藏您的資金來源為您提供真正的財務隱私。您的錢包中所有的達世幣都由不同的“輸入”組成，您可以將其視為分開的離散硬幣。&lt;br&gt; 匿名發送使用創新的方法將您的輸入與其他兩個人的輸入相結合，而過程中不會讓您的達世幣離開您的錢包。每時每刻，您仍然控制著您的錢。&lt;hr&gt; &lt;b&gt;匿名發送的運作原理如下:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;匿名發送首先將您的交易分柝成多個標準面額的交易。這些標準面額分別為0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC 和10 PAC --有點像您每天使用的紙幣。&lt;/li&gt; &lt;li&gt;您的錢包然後發送請求到網絡上有專門配置的軟件節點，稱為“主節點”。這些主節點會收到您希望混合一些資金的通知。沒有可識別的信息發送到主節點，所以他們永遠不會知道你是"誰"。&lt;/li&gt; &lt;li&gt;當另外兩個人發送類似的消息時，表示希望混合相同的面額的話，混合會話就會開始。相關的主節點會混合這些輸入，並指示所有三個用戶的錢包將已經轉換了輸入的交易支付給自己。你的錢包直接支付給自己，但是付給不同的位址 (稱之為找零位址)。&lt;/li&gt; &lt;li&gt;為了完全掩蓋您的資金來源，您的錢包必須以每個面額來重複此過程數次。每次這個過程完成後，都稱之為一個 "循環"。每個循環的匿名發送都會令確定您的資金來源的工作倍加困難。&lt;/li&gt; &lt;li&gt;這種混合過程發生在後台，而不需要您進行任何操作。當您想進行交易時，您的資金將已被匿名處理。不需再花額外的時間等待。&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;重要:&lt;/b&gt;您的錢包只能擁有1000個"找零位址。" 每次混合事件發生時，最多會使用9個找零位址。這意味著這1000個位址可以容許100次的混合事件。當其的中900個已經被使用後，您的錢包必須創建更多的位址。如果您啟用了自動備份，則只能夠這樣做。&lt;br&gt;因此，禁用備份的用戶也將禁用匿名發送。&lt;hr&gt;如欲了解更多信息請參閱&lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;匿名發送文檔&lt;/a&gt;。</translation>
     </message>
 </context>
 <context>
@@ -1270,27 +1270,27 @@
         <translation>顯示主節點標籤頁</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
         <translation>在概覽屏幕上顯示匿名發送的其他信息和按鈕。</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
+        <source>Enable advanced PrivatePAC interface</source>
         <translation>啟用進階匿名發送界面</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
         <translation>當匿名發送檢測到錢包具有非常少的公鑰時，就顯示警告對話框。</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
+        <source>Warn if PrivatePAC is running out of keys</source>
         <translation>如果匿名發送用完公鑰就發出警告</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
         <translation>是否使用實驗性質的匿名發送模式，當中每個區塊都會有多個混合會話。.&lt;br/&gt;注意 : 您必須小心使用此功能。&lt;br/&gt; 確保你總是有最近的錢包 (自動) 備份在一個安全的地方！</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
+        <source>Enable PrivatePAC &amp;multi-session</source>
         <translation>啟用匿名發送多重會話</translation>
     </message>
     <message>
@@ -1298,11 +1298,11 @@
         <translation>如果你關掉「可以花還沒確認的零錢」，那麼交易中找零的零錢&lt;br/&gt;就必須要等交易至少有一次確認後，才能夠使用。&lt;br/&gt;這也會影響餘額的計算方式。</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
+        <source>PrivatePAC rounds to use</source>
         <translation>匿名發送的循環次數</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
         <translation>此金額為關閉匿名發送的門檻。</translation>
     </message>
     <message>
@@ -1358,11 +1358,11 @@
         <translation>開啟錢幣控制功能(&amp;C)</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
         <translation>顯示匿名發送混合交易的系統彈出窗口 &lt;br/&gt;就像所有其他交易類型一樣。</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
+        <source>Show popups for PrivatePAC transactions</source>
         <translation>顯示匿名發送交易的彈出式窗口</translation>
     </message>
     <message>
@@ -1603,7 +1603,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>能夠花費：</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>匿名發送</translation>
     </message>
     <message>
@@ -1619,15 +1619,15 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>完成度:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
+        <source>Try to manually submit a PrivatePAC request.</source>
         <translation>嘗試手動提交匿名發送請求。</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
         <translation>重置目前匿名發送狀態(此操作可能會影響您目前正在執行的混合過程，並且產生費用!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
+        <source>Information about PrivatePAC and Mixing</source>
         <translation>關於匿名發送混合的資訊</translation>
     </message>
     <message>
@@ -1659,7 +1659,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>啟動/停止混合</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
+        <source>PrivatePAC Balance:</source>
         <translation>匿名發送餘額:</translation>
     </message>
     <message>
@@ -1775,25 +1775,25 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>警告! 無法補充公鑰池，請解鎖您的錢包。</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
         <translation>最近收到的匿名發送訊息:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
+        <source>PrivatePAC was successfully reset.</source>
         <translation>匿名發送成功重置。</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
         <translation>如果你不希望看到內部匿名發送手續費/交易，請在"交易"種類標籤中選擇 "最常用的" 。</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
+        <source>PrivatePAC requires at least %1 to use.</source>
         <translation>匿名發送要求至少 %1 才能使用</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
         <translation>錢包被鎖定，用戶拒絕解鎖。正在停用匿名發送。</translation>
     </message>
 </context>
@@ -2484,7 +2484,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>清空</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
+        <source>Request InstantPAC</source>
         <translation>要求即時到帳付款</translation>
     </message>
     <message>
@@ -2571,7 +2571,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>訊息</translation>
     </message>
     <message>
-        <source>InstantSend</source>
+        <source>InstantPAC</source>
         <translation>即時到帳</translation>
     </message>
     <message>
@@ -2705,11 +2705,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>目標確認時間:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>匿名發送</translation>
     </message>
     <message>
-        <source>InstantSend</source>
+        <source>InstantPAC</source>
         <translation>即時到帳</translation>
     </message>
     <message>
@@ -2825,7 +2825,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>匿名資金</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
         <translation>(匿名發送需要這一數額四捨五入到最接近%1)</translation>
     </message>
     <message>
@@ -2833,7 +2833,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>任何可用資金 (不是匿名的)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
+        <source>and InstantPAC</source>
         <translation>和 即時到帳</translation>
     </message>
     <message>
@@ -3234,19 +3234,19 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>透過基於LLMQ 的 ChainLocks鎖定的</translation>
     </message>
     <message>
-        <source>verified via LLMQ based InstantSend</source>
+        <source>verified via LLMQ based InstantPAC</source>
         <translation>經基於LLMQ 的 ChainLocks驗證的</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
+        <source>verified via InstantPAC</source>
         <translation>經即時到帳系統核實</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
         <translation>即時到帳驗證正在進行- %2 個簽署中的第 %1 個</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
+        <source>InstantPAC verification failed</source>
         <translation>即時到帳驗證失敗</translation>
     </message>
     <message>
@@ -3460,7 +3460,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>收款來自</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
+        <source>Received via PrivatePAC</source>
         <translation>經由匿名發送收到</translation>
     </message>
     <message>
@@ -3476,23 +3476,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>開採所得</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
+        <source>PrivatePAC Denominate</source>
         <translation>匿名發送除名</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
+        <source>PrivatePAC Collateral Payment</source>
         <translation>匿名發送抵押品付款</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
+        <source>PrivatePAC Make Collateral Inputs</source>
         <translation>用作匿名發送抵押品的輸入</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
+        <source>PrivatePAC Create Denominations</source>
         <translation>匿名發送產生的除名資金</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>匿名發送</translation>
     </message>
     <message>
@@ -3524,7 +3524,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>決定是否有一個僅限查看的位址參與這次的交易</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
         <translation>這交易是否被即時到帳鎖定。</translation>
     </message>
     <message>
@@ -3543,11 +3543,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>全部</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
+        <source>Locked by InstantPAC</source>
         <translation>被即時到帳鎖定</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
+        <source>Not locked by InstantPAC</source>
         <translation>沒有被即時到帳鎖定</translation>
     </message>
     <message>
@@ -3587,23 +3587,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>付款給</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>匿名發送</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
+        <source>PrivatePAC Make Collateral Inputs</source>
         <translation>用作匿名發送抵押品的輸入</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
+        <source>PrivatePAC Create Denominations</source>
         <translation>匿名發送產生的除名資金</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
+        <source>PrivatePAC Denominate</source>
         <translation>匿名發送除名</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
+        <source>PrivatePAC Collateral Payment</source>
         <translation>匿名發送抵押品付款</translation>
     </message>
     <message>
@@ -3752,11 +3752,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>付款</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
         <translation>即時到帳系統暫時並不支援這麼高的交易金額。目前的金額僅限於%1 PAC。</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
         <translation>這個即時到帳交易使用過多的輸入 (&gt;%1)，費用可能很大。</translation>
     </message>
 </context>
@@ -3974,11 +3974,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>清掉錢包裡的所有交易資料，並且在下次啟動時，使用 -rescan 來從區塊鏈中復原回來。</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
         <translation>在&lt;address&gt;中啟用嘗試發布雙重花費的即時到帳交易的原始交易</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
         <translation>在&lt;address&gt;中啟用嘗試發布雙重花費的即時到帳交易的哈希值</translation>
     </message>
     <message>
@@ -4390,7 +4390,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>保留最多 &lt;n&gt; 個不可連接的交易於記憶體 (預設值: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
         <translation>禁止所有達世幣的附加功能 (主節點，匿名發送，即時到帳，預算案) (0-1，預設值: %u)</translation>
     </message>
     <message>
@@ -4410,19 +4410,19 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>在內存池中的交易不要存放超過 &lt;n&gt; 小時 (預設值: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
         <translation>啟用即時到帳，顯示鎖定交易的確認次數 (0-1, 預設值: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
         <translation>允許在每個區塊中使用多用匿名發送的會話，實驗性功能 (0-1，預設值 : %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
         <translation>允許存儲在這個錢包內的資金自動使用匿名發送 (0-1，預設值 : %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>當錢包有交易改變時要執行的指令(指令中的 %s 會被取代成交易識別碼)</translation>
     </message>
     <message>
@@ -4446,11 +4446,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>如果沒有提供  &lt;category&gt; 又或者 &lt;category&gt; = 1，就會輸出所有的除錯資訊。</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
         <translation>即時到帳系統暫時並不支援這麼高的交易金額。目前的金額僅限於%1 PAC。</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
         <translation>即時到帳系統要求輸入的資金最少要有%d個確認，你可能需要等待數分鐘然後再重試。</translation>
     </message>
     <message>
@@ -4470,7 +4470,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>維持與節點連線數的上限為 &lt;n&gt; 個 (臨時服務連接除外) (預設值: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
         <translation>匿名發送要求使用準確的已除名資金來發送，你可能需要再匿名處理一些資金。</translation>
     </message>
     <message>
@@ -4518,7 +4518,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>嘗試保持指定目標下的出站流量 (以每24小時多少MB計算), 0 = 沒有限制 (預設值: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
         <translation>在本之交易中，無法找到足夠的匿名發送已除名資金。</translation>
     </message>
     <message>
@@ -4594,8 +4594,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>在 &lt;address&gt;啟用發布治理投票的哈希值</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>在 &lt;address&gt; 中啟用發布哈希交易 (通過InstantSend來鎖定)</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>在 &lt;address&gt; 中啟用發布哈希交易 (通過InstantPAC來鎖定)</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4606,8 +4606,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>在 &lt;address&gt; 中啟用發布原始區塊</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>在 &lt;address&gt; 中啟用發布原始交易 (通過 InstantSend 來鎖定)</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>在 &lt;address&gt; 中啟用發布原始交易 (通過 InstantPAC 來鎖定)</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4630,7 +4630,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>無法刪除備份，錯誤: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
+        <source>Failed to load InstantPAC data cache from</source>
         <translation>無法載入即時到帳數據緩存</translation>
     </message>
     <message>
@@ -4646,7 +4646,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>啟動時從其它來源的 blk000??.dat 檔匯入區塊</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
+        <source>InstantPAC options:</source>
         <translation>即時到帳選項:</translation>
     </message>
     <message>
@@ -4658,15 +4658,15 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>把交易內存池限制在 &lt;n&gt; MB 以下(預設值: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
+        <source>Last PrivatePAC was too recent.</source>
         <translation>距離上一次匿名發送的時間過短。</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
+        <source>Last successful PrivatePAC action was too recent.</source>
         <translation>距離上一次成功送出匿名發送的時間過短。</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
+        <source>Loading InstantPAC data cache...</source>
         <translation>正在載入即時到帳數據緩存...</translation>
     </message>
     <message>
@@ -4762,19 +4762,19 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>列印版本並退出</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
+        <source>PrivatePAC is idle.</source>
         <translation>匿名發送處於閒置狀態。</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
+        <source>PrivatePAC options:</source>
         <translation>匿名發送選項:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
+        <source>PrivatePAC request complete:</source>
         <translation>完成匿名發送請求:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
+        <source>PrivatePAC request incomplete:</source>
         <translation>未完成匿名發送請求:</translation>
     </message>
     <message>
@@ -4950,7 +4950,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>如果你覺得 %s 有用，可以幫助我們。關於這個軟體的更多資訊請見 %s。</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
         <translation>通過不斷混合硬幣來為匿名發送提供流動性(%u-%u, 預設值: %u, 1=非常頻繁, 高收費, %u=非常不頻繁, 低收費)</translation>
     </message>
     <message>
@@ -4974,7 +4974,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>此產品包含了由 OpenSSL Project 所開發的 OpenSSL Toolkit 軟體 %s, 由 Eric Young 撰寫的加解密軟體，以及由 Thomas Bernard 所撰寫的 UPnP 軟體。</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
         <translation>在本之交易中，無法找到足夠的匿名發送未除名資金。</translation>
     </message>
     <message>

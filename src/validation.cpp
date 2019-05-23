@@ -714,7 +714,7 @@ bool AcceptToMemoryPoolWorker(CTxMemPool& pool, CValidationState& state, const C
         {
             const CTransaction *ptxConflicting = itConflicting->second;
 
-            // InstantSend txes are not replacable
+            // InstantPAC txes are not replacable
             if(instantsend.HasTxLockRequest(ptxConflicting->GetHash())) {
                 // this tx conflicts with a Transaction Lock Request candidate
                 return state.DoS(0, error("AcceptToMemoryPool : Transaction %s conflicts with Transaction Lock Request %s",

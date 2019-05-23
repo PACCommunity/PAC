@@ -84,7 +84,7 @@ struct CMainSignals {
     boost::signals2::signal<void (const CGovernanceVote &)> NotifyGovernanceVote;
     /** Notifies listeners of a new governance object. */
     boost::signals2::signal<void (const CGovernanceObject &)> NotifyGovernanceObject;
-    /** Notifies listeners of a attempted InstantSend double spend*/
+    /** Notifies listeners of a attempted InstantPAC double spend*/
     boost::signals2::signal<void(const CTransaction &currentTx, const CTransaction &previousTx)> NotifyInstantSendDoubleSpendAttempt;
     /** Notifies listeners that the MN list changed */
     boost::signals2::signal<void(bool undo, const CDeterministicMNList& oldMNList, const CDeterministicMNListDiff& diff)> NotifyMasternodeListChanged;

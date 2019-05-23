@@ -252,9 +252,9 @@ Spork
  
 | Spork ID | Number | Name | Description | 
 | ---------- | ---------- | ----------- | ----------- |
-| 10001 | 2 | INSTANTSEND_ENABLED | Turns on and off InstantSend network wide
-| 10002 | 3 | INSTANTSEND_BLOCK_FILTERING | Turns on and off InstantSend block filtering
-| 10004 | 5 | INSTANTSEND_MAX_VALUE | Controls the max value for an InstantSend transaction (currently 2000 paccoin)
+| 10001 | 2 | INSTANTSEND_ENABLED | Turns on and off InstantPAC network wide
+| 10002 | 3 | INSTANTSEND_BLOCK_FILTERING | Turns on and off InstantPAC block filtering
+| 10004 | 5 | INSTANTSEND_MAX_VALUE | Controls the max value for an InstantPAC transaction (currently 2000 paccoin)
 | 10005 | 6 | NEW_SIGS | Turns on and off new signature format for PAC-specific messages
 | 10007 | 8 | MASTERNODE_PAYMENT_ENFORCEMENT | Requires masternodes to be paid by miners when blocks are processed
 | 10008 | 9 | SUPERBLOCKS_ENABLED | Superblocks are enabled (the 10% comes to fund the paccoin treasury)

@@ -418,7 +418,7 @@ Enable publish hash transaction in <address>
 .HP
 \fB\-zmqpubhashtxlock=\fR<address>
 .IP
-Enable publish hash transaction (locked via InstantSend) in <address>
+Enable publish hash transaction (locked via InstantPAC) in <address>
 .HP
 \fB\-zmqpubhashgovernancevote=\fR<address>
 .IP
@@ -430,7 +430,7 @@ Enable publish hash of governance objects (like proposals) in <address>
 .HP
 \fB\-zmqpubhashinstantsenddoublespend=\fR<address>
 .IP
-Enable publish transaction hashes of attempted InstantSend double spend
+Enable publish transaction hashes of attempted InstantPAC double spend
 in <address>
 .HP
 \fB\-zmqpubrawblock=\fR<address>
@@ -443,11 +443,11 @@ Enable publish raw transaction in <address>
 .HP
 \fB\-zmqpubrawtxlock=\fR<address>
 .IP
-Enable publish raw transaction (locked via InstantSend) in <address>
+Enable publish raw transaction (locked via InstantPAC) in <address>
 .HP
 \fB\-zmqpubrawinstantsenddoublespend=\fR<address>
 .IP
-Enable publish raw transactions of attempted InstantSend double spend in
+Enable publish raw transactions of attempted InstantPAC double spend in
 <address>
 .PP
 Debugging/Testing options:
@@ -514,8 +514,8 @@ Use devnet chain with provided name
 .HP
 \fB\-litemode\fR
 .IP
-Disable all PAC specific functionality (Masternodes, PrivateSend,
-InstantSend, Governance) (0\-1, default: 0)
+Disable all PAC specific functionality (Masternodes, PrivatePAC,
+InstantPAC, Governance) (0\-1, default: 0)
 .HP
 \fB\-sporkaddr=\fR<dashaddress>
 .IP
@@ -538,16 +538,16 @@ Enable the client to act as a masternode (0\-1, default: 0)
 .IP
 Set the masternode BLS private key
 .PP
-PrivateSend options:
+PrivatePAC options:
 .HP
 \fB\-enableprivatesend\fR
 .IP
-Enable use of automated PrivateSend for funds stored in this wallet
+Enable use of automated PrivatePAC for funds stored in this wallet
 (0\-1, default: 0)
 .HP
 \fB\-privatesendmultisession\fR
 .IP
-Enable multiple PrivateSend mixing sessions per block, experimental
+Enable multiple PrivatePAC mixing sessions per block, experimental
 (0\-1, default: 0)
 .HP
 \fB\-privatesendsessions=\fR<n>
@@ -570,20 +570,20 @@ Create up to N inputs of each denominated amount (10\-100000, default:
 .HP
 \fB\-liquidityprovider=\fR<n>
 .IP
-Provide liquidity to PrivateSend by infrequently mixing coins on a
+Provide liquidity to PrivatePAC by infrequently mixing coins on a
 continual basis (0\-100, default: 0, 1=very frequent, high fees,
 100=very infrequent, low fees)
 .PP
-InstantSend options:
+InstantPAC options:
 .HP
 \fB\-enableinstantsend\fR
 .IP
-Enable InstantSend, show confirmations for locked transactions (0\-1,
+Enable InstantPAC, show confirmations for locked transactions (0\-1,
 default: 1)
 .HP
 \fB\-instantsendnotify=\fR<cmd>
 .IP
-Execute command when a wallet InstantSend transaction is successfully
+Execute command when a wallet InstantPAC transaction is successfully
 locked (%s in cmd is replaced by TxID)
 .PP
 Node relay options:

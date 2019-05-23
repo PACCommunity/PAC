@@ -31,7 +31,7 @@ void CPrivateSendClientManager::ProcessMessage(CNode* pfrom, const std::string& 
     if (!CheckDiskSpace()) {
         ResetPool();
         fEnablePrivateSend = false;
-        LogPrintf("CPrivateSendClientManager::ProcessMessage -- Not enough disk space, disabling PrivateSend.\n");
+        LogPrintf("CPrivateSendClientManager::ProcessMessage -- Not enough disk space, disabling PrivatePAC.\n");
         return;
     }
 
@@ -78,7 +78,7 @@ void CPrivateSendClientManager::ProcessMessage(CNode* pfrom, const std::string& 
             for (auto& session : deqSessions) {
                 CDeterministicMNCPtr mnMixing;
                 if (session.GetMixingMasternodeInfo(mnMixing) && mnMixing->pdmnState->addr == dmn->pdmnState->addr && session.GetState() == POOL_STATE_QUEUE) {
-                    LogPrint("privatesend", "DSQUEUE -- PrivateSend queue (%s) is ready on masternode %s\n", dsq.ToString(), dmn->pdmnState->addr.ToString());
+                    LogPrint("privatesend", "DSQUEUE -- PrivatePAC queue (%s) is ready on masternode %s\n", dsq.ToString(), dmn->pdmnState->addr.ToString());
                     session.SubmitDenominate(connman);
                     return;
                 }
@@ -107,7 +107,7 @@ void CPrivateSendClientManager::ProcessMessage(CNode* pfrom, const std::string& 
 
             mmetaman.AllowMixing(dmn->proTxHash);
 
-            LogPrint("privatesend", "DSQUEUE -- new PrivateSend queue (%s) from masternode %s\n", dsq.ToString(), dmn->pdmnState->addr.ToString());
+            LogPrint("privatesend", "DSQUEUE -- new PrivatePAC queue (%s) from masternode %s\n", dsq.ToString(), dmn->pdmnState->addr.ToString());
             for (auto& session : deqSessions) {
                 CDeterministicMNCPtr mnMixing;
                 if (session.GetMixingMasternodeInfo(mnMixing) && mnMixing->collateralOutpoint == dsq.masternodeOutpoint) {
@@ -195,7 +195,7 @@ void CPrivateSendClientSession::ProcessMessage(CNode* pfrom, const std::string& 
         CTransaction txNew(deserialize, vRecv);
 
         if (nSessionID != nMsgSessionID) {
-            LogPrint("privatesend", "DSFINALTX -- message doesn't match current PrivateSend session: nSessionID: %d  nMsgSessionID: %d\n", nSessionID, nMsgSessionID);
+            LogPrint("privatesend", "DSFINALTX -- message doesn't match current PrivatePAC session: nSessionID: %d  nMsgSessionID: %d\n", nSessionID, nMsgSessionID);
             return;
         }
 
@@ -227,7 +227,7 @@ void CPrivateSendClientSession::ProcessMessage(CNode* pfrom, const std::string& 
         }
 
         if (nSessionID != nMsgSessionID) {
-            LogPrint("privatesend", "DSCOMPLETE -- message doesn't match current PrivateSend session: nSessionID: %d  nMsgSessionID: %d\n", nSessionID, nMsgSessionID);
+            LogPrint("privatesend", "DSCOMPLETE -- message doesn't match current PrivatePAC session: nSessionID: %d  nMsgSessionID: %d\n", nSessionID, nMsgSessionID);
             return;
         }
 
@@ -299,7 +299,7 @@ std::string CPrivateSendClientSession::GetStatus(bool fWaitForBlock)
 
     switch (nState) {
     case POOL_STATE_IDLE:
-        return _("PrivateSend is idle.");
+        return _("PrivatePAC is idle.");
     case POOL_STATE_QUEUE:
         if (nStatusMessageProgress % 70 <= 30)
             strSuffix = ".";
@@ -317,7 +317,7 @@ std::string CPrivateSendClientSession::GetStatus(bool fWaitForBlock)
                 fLastEntryAccepted = false;
                 nStatusMessageProgress = 0;
             }
-            return _("PrivateSend request complete:") + " " + _("Your transaction was accepted into the pool!");
+            return _("PrivatePAC request complete:") + " " + _("Your transaction was accepted into the pool!");
         } else {
             if (nStatusMessageProgress % 70 <= 40)
                 return strprintf(_("Submitted following entries to masternode: %u"), nEntriesCount);
@@ -340,9 +340,9 @@ std::string CPrivateSendClientSession::GetStatus(bool fWaitForBlock)
             strSuffix = "...";
         return strprintf(_("Found enough users, signing ( waiting %s )"), strSuffix);
     case POOL_STATE_ERROR:
-        return _("PrivateSend request incomplete:") + " " + strLastMessage + " " + _("Will retry...");
+        return _("PrivatePAC request incomplete:") + " " + strLastMessage + " " + _("Will retry...");
     case POOL_STATE_SUCCESS:
-        return _("PrivateSend request complete:") + " " + strLastMessage;
+        return _("PrivatePAC request complete:") + " " + strLastMessage;
     default:
         return strprintf(_("Unknown state: id = %u"), nState);
     }
@@ -471,12 +471,12 @@ void CPrivateSendClientManager::CheckTimeout()
 bool CPrivateSendClientSession::SendDenominate(const std::vector<std::pair<CTxDSIn, CTxOut> >& vecPSInOutPairsIn, CConnman& connman)
 {
     if (fMasternodeMode) {
-        LogPrintf("CPrivateSendClientSession::SendDenominate -- PrivateSend from a Masternode is not supported currently.\n");
+        LogPrintf("CPrivateSendClientSession::SendDenominate -- PrivatePAC from a Masternode is not supported currently.\n");
         return false;
     }
 
     if (txMyCollateral == CMutableTransaction()) {
-        LogPrintf("CPrivateSendClient:SendDenominate -- PrivateSend collateral not set\n");
+        LogPrintf("CPrivateSendClient:SendDenominate -- PrivatePAC collateral not set\n");
         return false;
     }
 
@@ -1017,8 +1017,8 @@ bool CPrivateSendClientManager::DoAutomaticDenominating(CConnman& connman, bool 
             return false;
 
         if (WaitForAnotherBlock()) {
-            LogPrintf("CPrivateSendClientManager::DoAutomaticDenominating -- Last successful PrivateSend action was too recent\n");
-            strAutoDenomResult = _("Last successful PrivateSend action was too recent.");
+            LogPrintf("CPrivateSendClientManager::DoAutomaticDenominating -- Last successful PrivatePAC action was too recent\n");
+            strAutoDenomResult = _("Last successful PrivatePAC action was too recent.");
             return false;
         }
 
@@ -1269,13 +1269,13 @@ bool CPrivateSendClientSession::SubmitDenominate(CConnman& connman)
 
     for (int i = 0; i < privateSendClient.nPrivateSendRounds; i++) {
         if (PrepareDenominate(i, i, strError, vecPSInOutPairs, vecPSInOutPairsTmp, fDryRun)) {
-            LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivateSend denominate for %d rounds, success\n", i);
+            LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivatePAC denominate for %d rounds, success\n", i);
             if (!fDryRun) {
                 return SendDenominate(vecPSInOutPairsTmp, connman);
             }
             vecInputsByRounds.emplace_back(i, vecPSInOutPairsTmp.size());
         } else {
-            LogPrint("privatesend", "CPrivateSendClientSession::SubmitDenominate -- Running PrivateSend denominate for %d rounds, error: %s\n", i, strError);
+            LogPrint("privatesend", "CPrivateSendClientSession::SubmitDenominate -- Running PrivatePAC denominate for %d rounds, error: %s\n", i, strError);
         }
     }
 
@@ -1291,18 +1291,18 @@ bool CPrivateSendClientSession::SubmitDenominate(CConnman& connman)
 
     int nRounds = vecInputsByRounds.begin()->first;
     if (PrepareDenominate(nRounds, nRounds, strError, vecPSInOutPairs, vecPSInOutPairsTmp)) {
-        LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivateSend denominate for %d rounds, success\n", nRounds);
+        LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivatePAC denominate for %d rounds, success\n", nRounds);
         return SendDenominate(vecPSInOutPairsTmp, connman);
     }
 
     // We failed? That's strange but let's just make final attempt and try to mix everything
     if (PrepareDenominate(0, privateSendClient.nPrivateSendRounds - 1, strError, vecPSInOutPairs, vecPSInOutPairsTmp)) {
-        LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivateSend denominate for all rounds, success\n");
+        LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivatePAC denominate for all rounds, success\n");
         return SendDenominate(vecPSInOutPairsTmp, connman);
     }
 
     // Should never actually get here but just in case
-    LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivateSend denominate for all rounds, error: %s\n", strError);
+    LogPrintf("CPrivateSendClientSession::SubmitDenominate -- Running PrivatePAC denominate for all rounds, error: %s\n", strError);
     strAutoDenomResult = strError;
     return false;
 }
@@ -1320,7 +1320,7 @@ bool CPrivateSendClientSession::SelectDenominate(std::string& strErrorRet, std::
     }
 
     if (GetEntriesCount() > 0) {
-        strErrorRet = "Already have pending entries in the PrivateSend pool";
+        strErrorRet = "Already have pending entries in the PrivatePAC pool";
         return false;
     }
 

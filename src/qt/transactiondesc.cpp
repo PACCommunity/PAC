@@ -58,7 +58,7 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
         }
 
         if (wtx.IsLockedByLLMQInstantSend()) {
-            strTxStatus += " (" + tr("verified via LLMQ based InstantSend") + ")";
+            strTxStatus += " (" + tr("verified via LLMQ based InstantPAC") + ")";
             return strTxStatus;
         }
 
@@ -66,14 +66,14 @@ QString TransactionDesc::FormatTxStatus(const CWalletTx& wtx)
 
         int nSignatures = instantsend.GetTransactionLockSignatures(wtx.GetHash());
         int nSignaturesMax = CTxLockRequest(wtx).GetMaxSignatures();
-        // InstantSend
+        // InstantPAC
         strTxStatus += " (";
         if(instantsend.IsLockedInstantSendTransaction(wtx.GetHash())) {
-            strTxStatus += tr("verified via InstantSend");
+            strTxStatus += tr("verified via InstantPAC");
         } else if(!instantsend.IsTxLockCandidateTimedOut(wtx.GetHash())) {
-            strTxStatus += tr("InstantSend verification in progress - %1 of %2 signatures").arg(nSignatures).arg(nSignaturesMax);
+            strTxStatus += tr("InstantPAC verification in progress - %1 of %2 signatures").arg(nSignatures).arg(nSignaturesMax);
         } else {
-            strTxStatus += tr("InstantSend verification failed");
+            strTxStatus += tr("InstantPAC verification failed");
         }
         strTxStatus += ")";
 

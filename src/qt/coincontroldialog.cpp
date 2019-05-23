@@ -436,7 +436,7 @@ void CoinControlDialog::viewItemChanged(QTreeWidgetItem* item, int column)
             int nRounds = pwalletMain->GetRealOutpointPrivateSendRounds(outpt);
             if (coinControl->fUsePrivateSend && nRounds < privateSendClient.nPrivateSendRounds) {
                 QMessageBox::warning(this, windowTitle(),
-                    tr("Non-anonymized input selected. <b>PrivateSend will be disabled.</b><br><br>If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again."),
+                    tr("Non-anonymized input selected. <b>PrivatePAC will be disabled.</b><br><br>If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again."),
                     QMessageBox::Ok, QMessageBox::Ok);
                 coinControl->fUsePrivateSend = false;
             }
@@ -539,7 +539,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         }
         else nBytesInputs += 148;
 
-        // Add inputs to calculate InstantSend Fee later
+        // Add inputs to calculate InstantPAC Fee later
         if(coinControl->fUseInstantSend)
             txDummy.vin.push_back(CTxIn());
     }
@@ -560,7 +560,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
         if (nPayFee > 0 && coinControl->nMinimumTotalFee > nPayFee)
             nPayFee = coinControl->nMinimumTotalFee;
 
-        // InstantSend Fee
+        // InstantPAC Fee
         if (coinControl->fUseInstantSend) nPayFee = std::max(nPayFee, CTxLockRequest(txDummy).GetMinFee(true));
 
         if (nPayAmount > 0)
@@ -569,7 +569,7 @@ void CoinControlDialog::updateLabels(WalletModel *model, QDialog* dialog)
             if (!CoinControlDialog::fSubtractFeeFromAmount)
                 nChange -= nPayFee;
 
-            // PrivateSend Fee = overpay
+            // PrivatePAC Fee = overpay
             if(coinControl->fUsePrivateSend && nChange > 0)
             {
                 nPayFee += nChange;
@@ -761,7 +761,7 @@ void CoinControlDialog::updateView()
             itemOutput->setData(COLUMN_DATE, Qt::UserRole, QVariant((qlonglong)out.tx->GetTxTime()));
 
 
-            // PrivateSend rounds
+            // PrivatePAC rounds
             COutPoint outpoint = COutPoint(out.tx->tx->GetHash(), out.i);
             int nRounds = pwalletMain->GetRealOutpointPrivateSendRounds(outpoint);
 

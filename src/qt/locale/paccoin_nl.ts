@@ -498,12 +498,12 @@
         <translation>%1 client</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
-        <translation>&amp;PrivateSend informatie</translation>
+        <source>&amp;PrivatePAC information</source>
+        <translation>&amp;PrivatePAC informatie</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
-        <translation>Toon de PrivateSend basis informatie</translation>
+        <source>Show the PrivatePAC basic information</source>
+        <translation>Toon de PrivatePAC basis informatie</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -798,8 +798,8 @@
         <translation>Schakel over naar "Lijst mode" om deze functie te gebruiken.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
-        <translation>Niet-anonieme invoer geselecteerd. &lt;b&gt;PrivateSend wordt uitgeschakeld. &lt;/b&gt;&lt;br&gt;&lt;br&gt; Indien je toch PrivateSend wenst te gebruiken, deselecteer dan eerst alle niet-anonieme invoer. Vink daarna PrivateSend opnieuw aan.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
+        <translation>Niet-anonieme invoer geselecteerd. &lt;b&gt;PrivatePAC wordt uitgeschakeld. &lt;/b&gt;&lt;br&gt;&lt;br&gt; Indien je toch PrivatePAC wenst te gebruiken, deselecteer dan eerst alle niet-anonieme invoer. Vink daarna PrivatePAC opnieuw aan.</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -971,12 +971,12 @@
         <translation>Reset alle wijzigingen aan instellingen gedaan in de GUI</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
-        <translation>PrivateSend informatie</translation>
+        <source>PrivatePAC information</source>
+        <translation>PrivatePAC informatie</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend geeft u een echte financiële privacy door de oorsprong van uw geld te verschuilen. Alle PAC in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; PrivateSend maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het PrivateSend-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 PAC, 0,01 PAC, 0,1 PAC, 1 PAC en 10 PAC - zoals de papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Jouw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geïnteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie je bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Jouw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijziging adres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor elke denominaties. Elke keer dat het proces wordt voltooid, dit heet een 'ronde'. Elke ronde van PrivateSend maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, zijn uw fondsen al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Je portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 werden gebruikt, moet je portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Bijgevolg hebben gebruikers die back-ups hebben uitgeschakeld, ook PrivateSend uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentatie&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC geeft u een echte financiële privacy door de oorsprong van uw geld te verschuilen. Alle PAC in uw portefeuille bestaat uit verschillende "inputs" die u kunt beschouwen als afzonderlijke, discrete munten.&lt;br&gt; PrivatePAC maakt gebruik van een innovatief proces om uw invoer te mengen met de invoer van twee andere mensen, zonder dat uw munten ooit uw portemonnee verlaten . U behoudt de controle over uw geld te allen tijde. &lt;hr&gt; &lt;b&gt;Het PrivatePAC-proces werkt als volgt: &lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begint door uw transactie-inputs in de standaard denominaties te breken. Deze denominaties zijn 0,001 PAC, 0,01 PAC, 0,1 PAC, 1 PAC en 10 PAC - zoals de papiergeld dat u elke dag gebruikt.&lt;/li&gt; &lt;li&gt;Jouw portemonnee stuurt dan verzoeken naar speciaal geconfigureerde software nodes op het netwerk, genaamd "masternodes." Deze masternodes worden dan op de hoogte gesteld dat u geïnteresseerd bent in het mengen van een bepaalde denominaties. Er wordt geen identificeerbare informatie naar de masternodes gestuurd, zodat ze nooit weten wie je bent.&lt;/li&gt; &lt;li&gt;Wanneer twee andere mensen dezelfde berichten sturen, die aanduiden dat ze dezelfde denominaties willen vermengen, begint een mengsessie. De masternode mengt alle invoeren en instrueert de portefeuilles van alle drie de gebruikers om de nu getransformeerde invoer aan zichzelf terug te betalen. Jouw portemonnee betaalt die denominaties rechtstreeks naar zichzelf, maar met een ander adres (een wijziging adres genoemd).&lt;/li&gt; &lt;li&gt;Om uw geld volledig te verschuilen, moet uw portemonnee dit proces een aantal keren herhalen voor elke denominaties. Elke keer dat het proces wordt voltooid, dit heet een 'ronde'. Elke ronde van PrivatePAC maakt het exponentieel moeilijker om te bepalen waar uw geld van afkomstig is.&lt;/li&gt; &lt;li&gt;Dit mengproces gebeurt op de achtergrond zonder enige interventie van uw kant. Wanneer u een transactie wenst uit te voeren, zijn uw fondsen al geanonimiseerd. Er is geen extra wachttijd nodig.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;BELANGRIJK:&lt;/b&gt; Je portemonnee bevat slechts 1000 van deze "wijzigingsadressen". Elke keer dat er een mengsessie plaatsvindt, worden maximaal 9 van uw adressen opgebruikt. Dit betekent dat deze 1000 adressen voor ongeveer 100 mengsessies volstaat. Wanneer er 900 werden gebruikt, moet je portemonnee meer adressen aanmaken. Dit kan alleen maar als u automatische back-ups hebt ingeschakeld.&lt;br&gt; Bijgevolg hebben gebruikers die back-ups hebben uitgeschakeld, ook PrivatePAC uitgeschakeld. &lt;hr&gt;Voor meer informatie zie de &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentatie&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1270,28 +1270,28 @@
         <translation>Toon Masternodes tab</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>Toon extra informatie en knoppen voor PrivateSend op het overzichtscherm.</translation>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
+        <translation>Toon extra informatie en knoppen voor PrivatePAC op het overzichtscherm.</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
-        <translation>Schakel de geavanceerde PrivateSend interface in</translation>
+        <source>Enable advanced PrivatePAC interface</source>
+        <translation>Schakel de geavanceerde PrivatePAC interface in</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>Toon waarschuwing-dialoog wanneer PrivateSend detecteert dat je portemonnee slechts een klein aantal sleutels over heeft.</translation>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
+        <translation>Toon waarschuwing-dialoog wanneer PrivatePAC detecteert dat je portemonnee slechts een klein aantal sleutels over heeft.</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
-        <translation>Waarschuw als de sleutels voor PrivateSend dreigen op te raken</translation>
+        <source>Warn if PrivatePAC is running out of keys</source>
+        <translation>Waarschuw als de sleutels voor PrivatePAC dreigen op te raken</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>Of je de experimentele PrivateSend-modus wenst te gebruiken met meerdere mengingssessies per blok.&lt;br/&gt;Nota: Je moet deze functie zorgvuldig gebruiken.&lt;br/&gt;Zorg ervoor dat je steeds een recente (auto)backup van jouw portemonnee op een veilige plek hebt!</translation>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Of je de experimentele PrivatePAC-modus wenst te gebruiken met meerdere mengingssessies per blok.&lt;br/&gt;Nota: Je moet deze functie zorgvuldig gebruiken.&lt;br/&gt;Zorg ervoor dat je steeds een recente (auto)backup van jouw portemonnee op een veilige plek hebt!</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>Schakel PrivateSend &amp;multi-sessie in</translation>
+        <source>Enable PrivatePAC &amp;multi-session</source>
+        <translation>Schakel PrivatePAC &amp;multi-sessie in</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
@@ -1299,12 +1299,12 @@
 Dit heeft ook invloed op de manier waarop uw saldo wordt berekend.</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
-        <translation>PrivateSend rondes te gebruiken</translation>
+        <source>PrivatePAC rounds to use</source>
+        <translation>PrivatePAC rondes te gebruiken</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>Dit bedrag fungeert als een drempel om PrivateSend uit te schakelen zodra het werd bereikt.</translation>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
+        <translation>Dit bedrag fungeert als een drempel om PrivatePAC uit te schakelen zodra het werd bereikt.</translation>
     </message>
     <message>
         <source>Automatically open the PAC Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
@@ -1360,12 +1360,12 @@ Meer anonimisatie rondes geeft een hoger niveau van privacy, maar kost ook meer 
         <translation>Coin &amp;Control activeren</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>Toon systeem popups voor PrivateSend mixing transacties &lt;br/&gt;, net zoals voor alle andere transactie types.</translation>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Toon systeem popups voor PrivatePAC mixing transacties &lt;br/&gt;, net zoals voor alle andere transactie types.</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
-        <translation>Toon popups voor PrivateSend transacties</translation>
+        <source>Show popups for PrivatePAC transactions</source>
+        <translation>Toon popups voor PrivatePAC transacties</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1605,8 +1605,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Uitgeefbaar:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1621,16 +1621,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Voltooiing:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Probeer handmatig een PrivateSend verzoek in te dienen</translation>
+        <source>Try to manually submit a PrivatePAC request.</source>
+        <translation>Probeer handmatig een PrivatePAC verzoek in te dienen</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset de huidige status van PrivateSend (kan PrivateSend onderbreken indien het Mix proces bezig is, wat u geld kan kosten!)</translation>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>Reset de huidige status van PrivatePAC (kan PrivatePAC onderbreken indien het Mix proces bezig is, wat u geld kan kosten!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Informatie over PrivateSend en mixen</translation>
+        <source>Information about PrivatePAC and Mixing</source>
+        <translation>Informatie over PrivatePAC en mixen</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1661,8 +1661,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Start/Stop met Mixen</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
-        <translation>PrivateSend-balans:</translation>
+        <source>PrivatePAC Balance:</source>
+        <translation>PrivatePAC-balans:</translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
@@ -1778,26 +1778,26 @@ Om te mixen moeten andere gebruikers exact dezelfde denominaties inbrengen.</tra
         <translation>WAARSCHUWING! Het aanvullen van de keypool is mislukt, ontgrendel alstublieft uw portemonnee om dit te doen.</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
-        <translation>Laatste PrivateSend bericht:
+        <translation>Laatste PrivatePAC bericht:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend is succesvol gereset</translation>
+        <source>PrivatePAC was successfully reset.</source>
+        <translation>PrivatePAC is succesvol gereset</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>Als u de interne PrivateSend transacties/vergoeding niet wilt zien, selecteer dan "Meest gebruikte" als Type in de "Transacties" tab.</translation>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>Als u de interne PrivatePAC transacties/vergoeding niet wilt zien, selecteer dan "Meest gebruikte" als Type in de "Transacties" tab.</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
-        <translation>PrivateSend benodigd ten minste %1 om te gebruiken.</translation>
+        <source>PrivatePAC requires at least %1 to use.</source>
+        <translation>PrivatePAC benodigd ten minste %1 om te gebruiken.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>De portemonnee is vergrendeld en de gebruiker heeft geweigerd deze te ontgrendelen. PrivateSend is uitgeschakeld.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
+        <translation>De portemonnee is vergrendeld en de gebruiker heeft geweigerd deze te ontgrendelen. PrivatePAC is uitgeschakeld.</translation>
     </message>
 </context>
 <context>
@@ -2490,8 +2490,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Wissen</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
-        <translation>Verzoek InstantSend</translation>
+        <source>Request InstantPAC</source>
+        <translation>Verzoek InstantPAC</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2577,8 +2577,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Bericht</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2711,12 +2711,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Bevestigingstijddoel:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2831,16 +2831,16 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>anonieme geldmiddelen</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(PrivateSend vereist dat dit bedrag afgerond wordt naar dedichtstbijzijnde %1)</translation>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(PrivatePAC vereist dat dit bedrag afgerond wordt naar dedichtstbijzijnde %1)</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
         <translation>Al het beschikbare geldmiddelen (niet anoniem)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
-        <translation>en InstantSend</translation>
+        <source>and InstantPAC</source>
+        <translation>en InstantPAC</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3240,20 +3240,20 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>vergrendeld door LLMQ-gebaseerde ChainLocks</translation>
     </message>
     <message>
-        <source>verified via LLMQ based InstantSend</source>
-        <translation>vergrendeld door LLMQ-gebaseerde InstandSend</translation>
+        <source>verified via LLMQ based InstantPAC</source>
+        <translation>vergrendeld door LLMQ-gebaseerde InstantPAC</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
-        <translation>geverifieerd met InstantSend</translation>
+        <source>verified via InstantPAC</source>
+        <translation>geverifieerd met InstantPAC</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>Bezig met InstantSend verficatie - %1 van %2 ondertekeningen</translation>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
+        <translation>Bezig met InstantPAC verficatie - %1 van %2 ondertekeningen</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
-        <translation>InstantSend verificatie mislukt</translation>
+        <source>InstantPAC verification failed</source>
+        <translation>InstantPAC verificatie mislukt</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3466,8 +3466,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Ontvangen van</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
-        <translation>Ontvangen via PrivateSend</translation>
+        <source>Received via PrivatePAC</source>
+        <translation>Ontvangen via PrivatePAC</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3482,24 +3482,24 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Gedolven</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend denominatie</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC denominatie</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend Onderpand Betaling</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC Onderpand Betaling</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Vorm Onderpand Inputs</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Vorm Onderpand Inputs</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Creëer Denominaties</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Creëer Denominaties</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -3530,8 +3530,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Of er een alleen-bekijken-adres is betrokken bij deze transactie.</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
-        <translation>Of deze transactie wel of niet was vastgezet door InstantSend.</translation>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
+        <translation>Of deze transactie wel of niet was vastgezet door InstantPAC.</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
@@ -3549,12 +3549,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Alles</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
-        <translation>Geblokkeerd door InstantSend</translation>
+        <source>Locked by InstantPAC</source>
+        <translation>Geblokkeerd door InstantPAC</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
-        <translation>Niet geblokkeerd door InstantSend</translation>
+        <source>Not locked by InstantPAC</source>
+        <translation>Niet geblokkeerd door InstantPAC</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3593,24 +3593,24 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Verzonden aan</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Vorm Onderpand Inputs</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Vorm Onderpand Inputs</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Creëer Denominaties</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Creëer Denominaties</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend Denomineren</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC Denomineren</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend Onderpand Betaling</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC Onderpand Betaling</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3758,12 +3758,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Verstuur munten</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend ondersteund het verzenden van zulke hoge bedragen nog niet. Transacties zijn momenteel gelimiteerd tot %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC ondersteund het verzenden van zulke hoge bedragen nog niet. Transacties zijn momenteel gelimiteerd tot %1 PAC.</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Er worden veel te veel inputs (&gt;%1) gebruikt voor deze InstantSend transactie, de vergoeding kan enorm zijn.</translation>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
+        <translation>Er worden veel te veel inputs (&gt;%1) gebruikt voor deze InstantPAC transactie, de vergoeding kan enorm zijn.</translation>
     </message>
 </context>
 <context>
@@ -3980,12 +3980,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Verwijder alle transacties van de portemonnee en herstel alleen de delen van de blokketen door -rescan tijdens het opstarten</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Inschakelen van ruwe transacties van pogingen van InstantSend double spend in&lt;address&gt;</translation>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Inschakelen van ruwe transacties van pogingen van InstantPAC double spend in&lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Inschakelen van het publiceren van transactiehashes van pogingen van InstantSend double spend in &lt;address&gt;</translation>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Inschakelen van het publiceren van transactiehashes van pogingen van InstantPAC double spend in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4396,8 +4396,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Houd maximaal &lt;n&gt; onverbonden transacties in geheugen (standaard: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Uitschakelen van alle PAC specifieke functies (Masternodes, PrivateSend, InstantSend, Governance) (0-1, standaard: %u)</translation>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
+        <translation>Uitschakelen van alle PAC specifieke functies (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, standaard: %u)</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
@@ -4416,19 +4416,19 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Bewaar transactie niet langer dan &lt;n&gt; uren in de geheugenpool (standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Inschakelen van InstantSend, toon bevestigingen van vastgezette transacties (0-1, standaard: %u)</translation>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>Inschakelen van InstantPAC, toon bevestigingen van vastgezette transacties (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
-        <translation>Inschakel van meerdere PrivateSend mix sessies per blok, experimenteel (0-1, standaard: %u)</translation>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Inschakel van meerdere PrivatePAC mix sessies per blok, experimenteel (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Inschakelen van het automatisch gebruik van PrivateSend voor geld opgeslagen in deze wallet (0-1, standaard: %u)</translation>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Inschakelen van het automatisch gebruik van PrivatePAC voor geld opgeslagen in deze wallet (0-1, standaard: %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Voer opdracht uit zodra een wallettransactie succesvol vastgezet is (%s in cmd wordt vervangen door TxID)</translation>
     </message>
     <message>
@@ -4452,12 +4452,12 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Als er geen &lt;categorie&gt; is opgegeven of als de &lt;categorie&gt; 1 is, laat dan alle debugginginformatie zien.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend ondersteund het verzenden van zulke hoge bedragen nog niet. Transacties zijn momenteel gelimiteerd tot %1 PAC.</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC ondersteund het verzenden van zulke hoge bedragen nog niet. Transacties zijn momenteel gelimiteerd tot %1 PAC.</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend vereist dat inputs ten minste %d bevestigingen hebben, u zult een paar minuten moeten wachten en opnieuw moeten proberen.</translation>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantPAC vereist dat inputs ten minste %d bevestigingen hebben, u zult een paar minuten moeten wachten en opnieuw moeten proberen.</translation>
     </message>
     <message>
         <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
@@ -4476,8 +4476,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Onderhoudt maximaal &lt;n&gt; connecties met peers (tijdelijke service connecties uitgezonderd) (standaard: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend gebruikt exact gedenomineerde bedragen om geld te versturen, u zult wellicht simpelweg meer geld moeten anonimiseren.</translation>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>PrivatePAC gebruikt exact gedenomineerde bedragen om geld te versturen, u zult wellicht simpelweg meer geld moeten anonimiseren.</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -4524,8 +4524,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Pogingen om uitgaand verkeer onder een bepaald doel te houden (in MiB per 24u), 0 = geen limiet (standaard: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
-        <translation>Kan onvoldoende met PrivateSend gedenomineerd geld vinden voor deze transactie.</translation>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
+        <translation>Kan onvoldoende met PrivatePAC gedenomineerd geld vinden voor deze transactie.</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4545,7 +4545,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
     </message>
     <message>
         <source>Wallet is locked, can't replenish keypool! Automatic backups and mixing are disabled, please unlock your wallet to replenish keypool.</source>
-        <translation>Wallet is vergrendeld, niet instaat om keypool aan te vullen! Automatische backups en PrivateSend zijn uitgeschakeld, ontgrendel alstublieft uw wallet om de keypool aan te vullen.</translation>
+        <translation>Wallet is vergrendeld, niet instaat om keypool aan te vullen! Automatische backups en PrivatePAC zijn uitgeschakeld, ontgrendel alstublieft uw wallet om de keypool aan te vullen.</translation>
     </message>
     <message>
         <source>Warning: Unknown block versions being mined! It's possible unknown rules are in effect</source>
@@ -4600,8 +4600,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Inschakelen van publiceren van governance stemmen in &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Inschakelen publiceren van de hashtransactie (vastgezet met InstantSend) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Inschakelen publiceren van de hashtransactie (vastgezet met InstantPAC) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4612,8 +4612,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Sta toe rauw blok te publiceren in &lt;adres&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Inschakelen het publiceren van de ruwe transactie (vastgezet via InstantSend) in &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Inschakelen het publiceren van de ruwe transactie (vastgezet via InstantPAC) in &lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4636,7 +4636,7 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Verwijderen van de back-up is mislukt, foutmelding: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
+        <source>Failed to load InstantPAC data cache from</source>
         <translation>Fout bij het laden van InstandSend data cache uit</translation>
     </message>
     <message>
@@ -4652,8 +4652,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Importeer blocks van externe blk000??.dat-bestand bij opstarten</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
-        <translation>InstantSend-opties:</translation>
+        <source>InstantPAC options:</source>
+        <translation>InstantPAC-opties:</translation>
     </message>
     <message>
         <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
@@ -4664,16 +4664,16 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>De transactiegeheugenpool moet onder de &lt;n&gt; megabytes blijven (standaard: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
-        <translation>Vorige PrivateSend is te recent.</translation>
+        <source>Last PrivatePAC was too recent.</source>
+        <translation>Vorige PrivatePAC is te recent.</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
-        <translation>Vorige succesvolle PrivateSend actie is te recent.</translation>
+        <source>Last successful PrivatePAC action was too recent.</source>
+        <translation>Vorige succesvolle PrivatePAC actie is te recent.</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
-        <translation>Laden van InstantSend data cache...</translation>
+        <source>Loading InstantPAC data cache...</source>
+        <translation>Laden van InstantPAC data cache...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4768,20 +4768,20 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Print versie en sluit af</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
-        <translation>PrivateSend is niet actief.</translation>
+        <source>PrivatePAC is idle.</source>
+        <translation>PrivatePAC is niet actief.</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
-        <translation>PrivateSend-opties:</translation>
+        <source>PrivatePAC options:</source>
+        <translation>PrivatePAC-opties:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
-        <translation>PrivateSend verzoek voltooid:</translation>
+        <source>PrivatePAC request complete:</source>
+        <translation>PrivatePAC verzoek voltooid:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
-        <translation>PrivateSend aanvraag niet voltooid:</translation>
+        <source>PrivatePAC request incomplete:</source>
+        <translation>PrivatePAC aanvraag niet voltooid:</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4956,8 +4956,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Gelieve bij te dragen als je %s nuttig vindt. Bezoek %s voor meer informatie over de software.</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
-        <translation>Voorzie PrivateSend van liquiditeit door niet vaak maar stelselmatig geld te mixen (%u-%u, standaard: %u, 1=heel vaak, hoge vergoedingen, %u=heel zelden, lage vergoedingen)</translation>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <translation>Voorzie PrivatePAC van liquiditeit door niet vaak maar stelselmatig geld te mixen (%u-%u, standaard: %u, 1=heel vaak, hoge vergoedingen, %u=heel zelden, lage vergoedingen)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -4980,8 +4980,8 @@ Nota: Het bericht zal niet verzonden worden met de betaling over het PAC netwerk
         <translation>Dit product bevat software dat ontwikkeld is door het OpenSSL Project voor gebruik in de OpenSSL Toolkit %s en cryptografische software geschreven door Eric Young en UPnP software geschreven door Thomas Bernard.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
-        <translation>Kan onvoldoende met PrivateSend niet-gedenomineerd geld vinden voor deze transactie.</translation>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
+        <translation>Kan onvoldoende met PrivatePAC niet-gedenomineerd geld vinden voor deze transactie.</translation>
     </message>
     <message>
         <source>Use N separate masternodes for each denominated input to mix funds (%u-%u, default: %u)</source>

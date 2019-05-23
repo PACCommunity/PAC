@@ -251,7 +251,7 @@ private Q_SLOTS:
 
     /** Show help message dialog */
     void showHelpMessageClicked();
-    /** Show PrivateSend help message dialog */
+    /** Show PrivatePAC help message dialog */
     void showPrivateSendHelpClicked();
 #ifndef Q_OS_MAC
     /** Handle tray icon clicked */

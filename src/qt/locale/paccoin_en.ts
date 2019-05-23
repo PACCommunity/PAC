@@ -633,13 +633,13 @@
     </message>
     <message>
         <location line="-286"/>
-        <source>&amp;PrivateSend information</source>
-        <translation>&amp;PrivateSend information</translation>
+        <source>&amp;PrivatePAC information</source>
+        <translation>&amp;PrivatePAC information</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Show the PrivateSend basic information</source>
-        <translation>Show the PrivateSend basic information</translation>
+        <source>Show the PrivatePAC basic information</source>
+        <translation>Show the PrivatePAC basic information</translation>
     </message>
     <message>
         <location line="+61"/>
@@ -1011,8 +1011,8 @@
     </message>
     <message>
         <location line="+196"/>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
-        <translation>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
+        <translation>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</translation>
     </message>
     <message>
         <location line="+29"/>
@@ -1227,13 +1227,13 @@
     </message>
     <message>
         <location line="+42"/>
-        <source>PrivateSend information</source>
-        <translation>PrivateSend information</translation>
+        <source>PrivatePAC information</source>
+        <translation>PrivatePAC information</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html&quot;&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html&quot;&gt;PrivateSend documentation&lt;/a&gt;.</translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html&quot;&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different &quot;inputs&quot; which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type=&quot;1&quot;&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called &quot;masternodes.&quot; These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know &quot;who&quot; you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users&apos; wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it&apos;s called a &quot;round.&quot; Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these &quot;change addresses.&quot; Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href=&quot;https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html&quot;&gt;PrivatePAC documentation&lt;/a&gt;.</translation>
     </message>
 </context>
 <context>
@@ -1602,33 +1602,33 @@
     </message>
     <message>
         <location line="+7"/>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>Show additional information and buttons for PrivateSend on overview screen.</translation>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
+        <translation>Show additional information and buttons for PrivatePAC on overview screen.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable advanced PrivateSend interface</source>
-        <translation>Enable advanced PrivateSend interface</translation>
+        <source>Enable advanced PrivatePAC interface</source>
+        <translation>Enable advanced PrivatePAC interface</translation>
     </message>
     <message>
         <location line="+17"/>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</translation>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
+        <translation>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Warn if PrivateSend is running out of keys</source>
-        <translation>Warn if PrivateSend is running out of keys</translation>
+        <source>Warn if PrivatePAC is running out of keys</source>
+        <translation>Warn if PrivatePAC is running out of keys</translation>
     </message>
     <message>
         <location line="+7"/>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</translation>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>Enable PrivateSend &amp;multi-session</translation>
+        <source>Enable PrivatePAC &amp;multi-session</source>
+        <translation>Enable PrivatePAC &amp;multi-session</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -1637,13 +1637,13 @@
     </message>
     <message>
         <location line="+18"/>
-        <source>PrivateSend rounds to use</source>
-        <translation>PrivateSend rounds to use</translation>
+        <source>PrivatePAC rounds to use</source>
+        <translation>PrivatePAC rounds to use</translation>
     </message>
     <message>
         <location line="+24"/>
-        <source>This amount acts as a threshold to turn off PrivateSend once it&apos;s reached.</source>
-        <translation>This amount acts as a threshold to turn off PrivateSend once it&apos;s reached.</translation>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it&apos;s reached.</source>
+        <translation>This amount acts as a threshold to turn off PrivatePAC once it&apos;s reached.</translation>
     </message>
     <message>
         <location line="+60"/>
@@ -1713,13 +1713,13 @@
     </message>
     <message>
         <location line="+27"/>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</translation>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Show popups for PrivateSend transactions</source>
-        <translation>Show popups for PrivateSend transactions</translation>
+        <source>Show popups for PrivatePAC transactions</source>
+        <translation>Show popups for PrivatePAC transactions</translation>
     </message>
     <message>
         <location line="+30"/>
@@ -2034,8 +2034,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <location line="+15"/>
         <location line="+9"/>
         <location line="+14"/>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -2054,18 +2054,18 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+109"/>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>Try to manually submit a PrivateSend request.</translation>
+        <source>Try to manually submit a PrivatePAC request.</source>
+        <translation>Try to manually submit a PrivatePAC request.</translation>
     </message>
     <message>
         <location line="+16"/>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</source>
-        <translation>Reset the current status of PrivateSend (can interrupt PrivateSend if it&apos;s in the process of Mixing, which can cost you money!)</translation>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it&apos;s in the process of Mixing, which can cost you money!)</source>
+        <translation>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it&apos;s in the process of Mixing, which can cost you money!)</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>Information about PrivateSend and Mixing</translation>
+        <source>Information about PrivatePAC and Mixing</source>
+        <translation>Information about PrivatePAC and Mixing</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2104,8 +2104,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="-74"/>
-        <source>PrivateSend Balance:</source>
-        <translation>PrivateSend Balance:</translation>
+        <source>PrivatePAC Balance:</source>
+        <translation>PrivatePAC Balance:</translation>
     </message>
     <message>
         <location line="+41"/>
@@ -2270,30 +2270,30 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
-        <translation>Last PrivateSend message:
+        <translation>Last PrivatePAC message:
 </translation>
     </message>
     <message>
         <location line="+18"/>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>PrivateSend was successfully reset.</translation>
+        <source>PrivatePAC was successfully reset.</source>
+        <translation>PrivatePAC was successfully reset.</translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</source>
-        <translation>If you don&apos;t want to see internal PrivateSend fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</translation>
+        <source>If you don&apos;t want to see internal PrivatePAC fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</source>
+        <translation>If you don&apos;t want to see internal PrivatePAC fees/transactions select &quot;Most Common&quot; as Type on the &quot;Transactions&quot; tab.</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>PrivateSend requires at least %1 to use.</source>
-        <translation>PrivateSend requires at least %1 to use.</translation>
+        <source>PrivatePAC requires at least %1 to use.</source>
+        <translation>PrivatePAC requires at least %1 to use.</translation>
     </message>
     <message>
         <location line="+14"/>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>Wallet is locked and user declined to unlock. Disabling PrivateSend.</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
+        <translation>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</translation>
     </message>
 </context>
 <context>
@@ -3223,8 +3223,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+32"/>
-        <source>Request InstantSend</source>
-        <translation>Request InstantSend</translation>
+        <source>Request InstantPAC</source>
+        <translation>Request InstantPAC</translation>
     </message>
     <message>
         <location line="+49"/>
@@ -3331,8 +3331,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <location line="+0"/>
@@ -3498,13 +3498,13 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+231"/>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <location line="+19"/>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <location line="-455"/>
@@ -3652,8 +3652,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+4"/>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend requires this amount to be rounded up to the nearest %1).</translation>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(PrivatePAC requires this amount to be rounded up to the nearest %1).</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -3662,8 +3662,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>and InstantSend</source>
-        <translation>and InstantSend</translation>
+        <source>and InstantPAC</source>
+        <translation>and InstantPAC</translation>
     </message>
     <message>
         <location line="+76"/>
@@ -4186,23 +4186,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>verified via LLMQ based InstantSend</source>
-        <translation>verified via LLMQ based InstantSend</translation>
+        <source>verified via LLMQ based InstantPAC</source>
+        <translation>verified via LLMQ based InstantPAC</translation>
     </message>
     <message>
         <location line="+11"/>
-        <source>verified via InstantSend</source>
-        <translation>verified via InstantSend</translation>
+        <source>verified via InstantPAC</source>
+        <translation>verified via InstantPAC</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>InstantSend verification in progress - %1 of %2 signatures</translation>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
+        <translation>InstantPAC verification in progress - %1 of %2 signatures</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>InstantSend verification failed</source>
-        <translation>InstantSend verification failed</translation>
+        <source>InstantPAC verification failed</source>
+        <translation>InstantPAC verification failed</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -4490,8 +4490,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Received via PrivateSend</source>
-        <translation>Received via PrivateSend</translation>
+        <source>Received via PrivatePAC</source>
+        <translation>Received via PrivatePAC</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4510,28 +4510,28 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend Denominate</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC Denominate</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend Collateral Payment</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC Collateral Payment</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Make Collateral Inputs</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Make Collateral Inputs</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Create Denominations</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Create Denominations</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <location line="+32"/>
@@ -4570,8 +4570,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
-        <translation>Whether or not this transaction was locked by InstantSend.</translation>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
+        <translation>Whether or not this transaction was locked by InstantPAC.</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4595,13 +4595,13 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="-27"/>
-        <source>Locked by InstantSend</source>
-        <translation>Locked by InstantSend</translation>
+        <source>Locked by InstantPAC</source>
+        <translation>Locked by InstantPAC</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Not locked by InstantSend</source>
-        <translation>Not locked by InstantSend</translation>
+        <source>Not locked by InstantPAC</source>
+        <translation>Not locked by InstantPAC</translation>
     </message>
     <message>
         <location line="+10"/>
@@ -4650,28 +4650,28 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend Make Collateral Inputs</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC Make Collateral Inputs</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend Create Denominations</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC Create Denominations</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend Denominate</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC Denominate</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend Collateral Payment</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC Collateral Payment</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -4858,13 +4858,13 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     <message>
         <location line="-47"/>
         <location line="+31"/>
-        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</translation>
+        <source>InstantPAC doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</translation>
     </message>
     <message>
         <location line="+5"/>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</translation>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
+        <translation>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</translation>
     </message>
 </context>
 <context>
@@ -5134,13 +5134,13 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+20"/>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</translation>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</translation>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5654,8 +5654,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="-385"/>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</translation>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
+        <translation>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</translation>
     </message>
     <message>
         <location line="-45"/>
@@ -5679,23 +5679,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</translation>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
-        <translation>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</translation>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</translation>
     </message>
     <message>
         <location line="+9"/>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</translation>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
-        <translation>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</translation>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <translation>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -5724,13 +5724,13 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+13"/>
-        <source>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</translation>
+        <source>InstantPAC doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC doesn&apos;t support sending values that high yet. Transactions are currently limited to %1 PAC.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</translation>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -5754,8 +5754,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+34"/>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</translation>
     </message>
     <message>
         <location line="+7"/>
@@ -5814,8 +5814,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
-        <translation>Unable to locate enough PrivateSend denominated funds for this transaction.</translation>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
+        <translation>Unable to locate enough PrivatePAC denominated funds for this transaction.</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -5909,8 +5909,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5924,8 +5924,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -5954,8 +5954,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Failed to load InstantSend data cache from</source>
-        <translation>Failed to load InstantSend data cache from</translation>
+        <source>Failed to load InstantPAC data cache from</source>
+        <translation>Failed to load InstantPAC data cache from</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -5974,8 +5974,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+8"/>
-        <source>InstantSend options:</source>
-        <translation>InstantSend options:</translation>
+        <source>InstantPAC options:</source>
+        <translation>InstantPAC options:</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -5989,18 +5989,18 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+2"/>
-        <source>Last PrivateSend was too recent.</source>
-        <translation>Last PrivateSend was too recent.</translation>
+        <source>Last PrivatePAC was too recent.</source>
+        <translation>Last PrivatePAC was too recent.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>Last successful PrivateSend action was too recent.</source>
-        <translation>Last successful PrivateSend action was too recent.</translation>
+        <source>Last successful PrivatePAC action was too recent.</source>
+        <translation>Last successful PrivatePAC action was too recent.</translation>
     </message>
     <message>
         <location line="+3"/>
-        <source>Loading InstantSend data cache...</source>
-        <translation>Loading InstantSend data cache...</translation>
+        <source>Loading InstantPAC data cache...</source>
+        <translation>Loading InstantPAC data cache...</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -6119,23 +6119,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend is idle.</source>
-        <translation>PrivateSend is idle.</translation>
+        <source>PrivatePAC is idle.</source>
+        <translation>PrivatePAC is idle.</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend options:</source>
-        <translation>PrivateSend options:</translation>
+        <source>PrivatePAC options:</source>
+        <translation>PrivatePAC options:</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend request complete:</source>
-        <translation>PrivateSend request complete:</translation>
+        <source>PrivatePAC request complete:</source>
+        <translation>PrivatePAC request complete:</translation>
     </message>
     <message>
         <location line="+1"/>
-        <source>PrivateSend request incomplete:</source>
-        <translation>PrivateSend request incomplete:</translation>
+        <source>PrivatePAC request incomplete:</source>
+        <translation>PrivatePAC request incomplete:</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -6354,8 +6354,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+6"/>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
-        <translation>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</translation>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <translation>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -6384,8 +6384,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <location line="+15"/>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
-        <translation>Unable to locate enough PrivateSend non-denominated funds for this transaction.</translation>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
+        <translation>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</translation>
     </message>
     <message>
         <location line="+9"/>

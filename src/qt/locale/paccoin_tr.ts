@@ -482,11 +482,11 @@
         <translation>%1 istemci</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
+        <source>&amp;PrivatePAC information</source>
         <translation>&amp;Özel Gönder bilgisi</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
+        <source>Show the PrivatePAC basic information</source>
         <translation>Özel Gönder temel bilgilerini göster</translation>
     </message>
     <message>
@@ -782,7 +782,7 @@
         <translation>Bu fonksiyonu kullanmak için lütfen "Liste modu"na geçin.</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
         <translation>Anonim hale getirilmemiş girdi seçildi. &lt;b&gt;Özel Gönder devre dışı olacak&lt;/b&gt;&lt;br&gt;&lt;br&gt;Yine de Özel Gönder kullanmak istiyorsanız, lütfen önce anonim hale getirilmemiş girdilerin seçimini kaldırın sonra Özel Gönder kutusunu işaretleyin.</translation>
     </message>
     <message>
@@ -955,12 +955,12 @@
         <translation>Grafik arayüzde yapılan tüm seçenek değişikliklerini sıfırla</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
+        <source>PrivatePAC information</source>
         <translation>Özel Gönder bilgisi</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;Özel Gönder Temel Bilgiler&lt;/h3&gt; Özel Gönder size paranızın gerçek kaynağını gizleyerek tam bir gizlilik imkanı sağlar. Cüzdanınızdaki PAC farklı "girdiler"den oluşur, bunu ayrı gizli paralar olarak düşünebilirsiniz.&lt;br&gt; Özel Gönder sizin girdilerinizi başka iki kişinin girdileri ile karıştırmak için yenilikçi bir işlem kullanır ve bu sırada paranın cüzdanınızdan çıkmasına gerek kalmaz. Her an paranızın kontrolü sizdedir.&lt;hr&gt; &lt;b&gt;Özel Gönder işlemi şöyle işler:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;Özel Gönder işlem girdilerinizi standart birimlere bölerek başlar. Bu birimler 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC ve 10 PAC'dir -- her gün kullandığınız kağıt para gibi düşünebilirsiniz.&lt;/li&gt; &lt;li&gt;Sonra cüzdanınız ağdaki özel ayarlanmış yazılım düğümlerine talepler gönderir, bunşara "ana düğümler" denir. Bu ana düğümlere sizin belli bir miktar birimi karıştırmak istediğiniz bilgisi gider. Ana düğümlere kimliğinizi açık edecek bir bilgi gönderilmez, bu yüzden "kim" olduğunuzu bilmezler.&lt;/li&gt; &lt;li&gt;Aynı birimleri karıştırmak istediğini belirten iki başka kişi daha benzer mesajlar gönderince, karıştırma işlemi başlar. Ana düğüm giridleri karıştırır ve üç kullanıcının da cüzdanına şimdi dönüştürülmüş olan girdiyi kendilerne ödemelerini emreder. Cüzdanınız bu birimleri doğrudan kendisine öder ama farklı bir adres kullanır (buna değişim adresi denir).&lt;/li&gt; &lt;li&gt;Paranızı tamamen gizlemek için cüzdanınız bu işlemi her birim için birkaç defa tekrar etmelidir. Her işlem tamamlandığına buna bir "tur" denir. Her bir Özel Gönder turu paranızın kaynağının bulunmasını üstel olarak zorlaştırır.&lt;/li&gt; &lt;li&gt;Bu karışım işlemi arkaplanda sizin tarafınızdan bir müdahale olmadan gerçekleşir. Bir işlem yapmak istediğinizde bakiyeniz zaten anonimleştirilmiş olacaktır. Ek bir beklemeye gerek kalmaz.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ÖNEMLİ:&lt;/b&gt; Cüzdanınızda bu "değişim adreslerinden" sadece 1000 tane vardır. Her bir karışım işleminde bu adreslerden 9 taneye kadar kullanılır. Bu da 1000 adresin yaklaşık 100 karışım işlemine yeteceği anlamına gelir. 900 tanesi kullanıldığı zaman, cüzdanınızın daha fazla adres oluşturması gerekir. Yalnız bunu ancak otomatik yedekleme etkinse yapabilir.&lt;br&gt; Sonuç olarak yedeklemeyi kapatan kullanıcılar aynı zamanda Özel Gönderi de kapatmış olurlar. &lt;hr&gt;Daha fazla bilgi için lütfen &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;Özel Gönder dökümantasyonuna&lt;/a&gt; göz atın.         </translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;Özel Gönder Temel Bilgiler&lt;/h3&gt; Özel Gönder size paranızın gerçek kaynağını gizleyerek tam bir gizlilik imkanı sağlar. Cüzdanınızdaki PAC farklı "girdiler"den oluşur, bunu ayrı gizli paralar olarak düşünebilirsiniz.&lt;br&gt; Özel Gönder sizin girdilerinizi başka iki kişinin girdileri ile karıştırmak için yenilikçi bir işlem kullanır ve bu sırada paranın cüzdanınızdan çıkmasına gerek kalmaz. Her an paranızın kontrolü sizdedir.&lt;hr&gt; &lt;b&gt;Özel Gönder işlemi şöyle işler:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;Özel Gönder işlem girdilerinizi standart birimlere bölerek başlar. Bu birimler 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC ve 10 PAC'dir -- her gün kullandığınız kağıt para gibi düşünebilirsiniz.&lt;/li&gt; &lt;li&gt;Sonra cüzdanınız ağdaki özel ayarlanmış yazılım düğümlerine talepler gönderir, bunşara "ana düğümler" denir. Bu ana düğümlere sizin belli bir miktar birimi karıştırmak istediğiniz bilgisi gider. Ana düğümlere kimliğinizi açık edecek bir bilgi gönderilmez, bu yüzden "kim" olduğunuzu bilmezler.&lt;/li&gt; &lt;li&gt;Aynı birimleri karıştırmak istediğini belirten iki başka kişi daha benzer mesajlar gönderince, karıştırma işlemi başlar. Ana düğüm giridleri karıştırır ve üç kullanıcının da cüzdanına şimdi dönüştürülmüş olan girdiyi kendilerne ödemelerini emreder. Cüzdanınız bu birimleri doğrudan kendisine öder ama farklı bir adres kullanır (buna değişim adresi denir).&lt;/li&gt; &lt;li&gt;Paranızı tamamen gizlemek için cüzdanınız bu işlemi her birim için birkaç defa tekrar etmelidir. Her işlem tamamlandığına buna bir "tur" denir. Her bir Özel Gönder turu paranızın kaynağının bulunmasını üstel olarak zorlaştırır.&lt;/li&gt; &lt;li&gt;Bu karışım işlemi arkaplanda sizin tarafınızdan bir müdahale olmadan gerçekleşir. Bir işlem yapmak istediğinizde bakiyeniz zaten anonimleştirilmiş olacaktır. Ek bir beklemeye gerek kalmaz.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;ÖNEMLİ:&lt;/b&gt; Cüzdanınızda bu "değişim adreslerinden" sadece 1000 tane vardır. Her bir karışım işleminde bu adreslerden 9 taneye kadar kullanılır. Bu da 1000 adresin yaklaşık 100 karışım işlemine yeteceği anlamına gelir. 900 tanesi kullanıldığı zaman, cüzdanınızın daha fazla adres oluşturması gerekir. Yalnız bunu ancak otomatik yedekleme etkinse yapabilir.&lt;br&gt; Sonuç olarak yedeklemeyi kapatan kullanıcılar aynı zamanda Özel Gönderi de kapatmış olurlar. &lt;hr&gt;Daha fazla bilgi için lütfen &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;Özel Gönder dökümantasyonuna&lt;/a&gt; göz atın.         </translation>
     </message>
 </context>
 <context>
@@ -1242,27 +1242,27 @@
         <translation>Ana Düğümler Sekmesini Göster</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
         <translation>Genel bakış ekranında Özel Gönder için ek bilgi ve düğmeler göster.</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
+        <source>Enable advanced PrivatePAC interface</source>
         <translation>Gelişmiş Özel Gönder arayüzünü etkinleştir</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
         <translation>Özel Gönder çok az sayıda anahtar kaldığını tespit ettiğinde bir uyarı göster.</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
+        <source>Warn if PrivatePAC is running out of keys</source>
         <translation>Özel Gönderin anahtarı bitiyorsa uyar</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
         <translation>Blok başına birden fazla karışım yapmak için deneysel Özel Gönder modunu kullanıp kullanmayacağınızı belirler.&lt;br/&gt;Not: Bu özelliği dikkatli kullanmalısınız.&lt;br/&gt;Cüzdanınızın son (oto)yedeğinin güvenli bir yerde olduğundan her zaman emin olun!</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
+        <source>Enable PrivatePAC &amp;multi-session</source>
         <translation>Özel Gönder &amp;çoklu oturumu etkinleştir</translation>
     </message>
     <message>
@@ -1270,11 +1270,11 @@
         <translation>Teyit edilmemiş para üstünü harcamayı devre dışı bırakırsanız&lt;br/&gt;bir işlemin para üstü bu işlem için en az bir teyit olana dek harcanamaz.&lt;br/&gt;Bu, aynı zamanda bakiyenizin nasıl hesaplandığını da etkiler.</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
+        <source>PrivatePAC rounds to use</source>
         <translation>Kullanılacak Özel Gönder turları</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
         <translation>Bu tutar ulaşıldığında Özel Gönderi kapatacak bir eşik olarak çalışır.</translation>
     </message>
     <message>
@@ -1330,11 +1330,11 @@
         <translation>Para &amp;kontrolü özelliklerini etkinleştir</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
         <translation>Özel Gönder karışım işlemleri için tıpkı diğer işlemler&lt;br/&gt;için olduğu gibi sistem popuplarını göster.</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
+        <source>Show popups for PrivatePAC transactions</source>
         <translation>Özel Gönder işlemleri için popup göster.</translation>
     </message>
     <message>
@@ -1575,7 +1575,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Harcanabilir:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>Özel Gönder</translation>
     </message>
     <message>
@@ -1591,15 +1591,15 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Tamamlanma:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
+        <source>Try to manually submit a PrivatePAC request.</source>
         <translation>Bir Özel Gönder isteğini elle göndermeyi dene.</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
         <translation>Özel Gönderin mevcut durumunu sıfırla (eğer bir Karışım işlemi devam ediyorsa Özel Gönderi yarıda keser, bu da para kaybetmenize neden olabilir!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
+        <source>Information about PrivatePAC and Mixing</source>
         <translation>Özel Gönder ve Karışım hakkında bilgi</translation>
     </message>
     <message>
@@ -1631,7 +1631,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Karışımı Başlat/Durdur</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
+        <source>PrivatePAC Balance:</source>
         <translation>Özel Gönder Bakiyesi:</translation>
     </message>
     <message>
@@ -1747,25 +1747,25 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>UYARI! Anahtar havuzu yenilenemedi, lütfen devam etmek için cüzdanınızın kilidini açın.</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
         <translation>Son Özel Gönder mesajı:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
+        <source>PrivatePAC was successfully reset.</source>
         <translation>Özel Gönder başarıyla sıfırlandı.</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
         <translation>Eğer Özel Gönderin iç ücretlerini/işlemlerini görmek istemiyorsanız "İşlemler" sekmesinde Tür olarak "En Sıkı" seçin.</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
+        <source>PrivatePAC requires at least %1 to use.</source>
         <translation>Özel Gönder en az %1 gerektiriyor.</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
         <translation>Cüzdan kilitli ve kullanıcı kilidi açmadı. Özel Gönder devredışı bırakılıyor.</translation>
     </message>
 </context>
@@ -2452,7 +2452,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Temizle</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
+        <source>Request InstantPAC</source>
         <translation>Anında Gönder Talep Et</translation>
     </message>
     <message>
@@ -2539,7 +2539,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>İleti</translation>
     </message>
     <message>
-        <source>InstantSend</source>
+        <source>InstantPAC</source>
         <translation>Anında Gönder</translation>
     </message>
     <message>
@@ -2673,11 +2673,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Doğrulama süresi hedefi:</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>Özel Gönder</translation>
     </message>
     <message>
-        <source>InstantSend</source>
+        <source>InstantPAC</source>
         <translation>Anında Gönder</translation>
     </message>
     <message>
@@ -2793,7 +2793,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>anonim bakiye</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
         <translation>(özel gönder için bu tutarın en yakın %1 tutarına yuvarlanması gerekiyor).</translation>
     </message>
     <message>
@@ -2801,7 +2801,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>tüm mevcut bakiye (anonim değil)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
+        <source>and InstantPAC</source>
         <translation>ve Anında Gönder</translation>
     </message>
     <message>
@@ -3198,15 +3198,15 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>%1 doğrulama</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
+        <source>verified via InstantPAC</source>
         <translation>Anında Gönder ile onaylanmış</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
         <translation>Anında Gönder onaylaması sürüyor - %1 / %2 imza</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
+        <source>InstantPAC verification failed</source>
         <translation>Anında Gönder onaylaması başarısız</translation>
     </message>
     <message>
@@ -3420,7 +3420,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Alındığı kişi</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
+        <source>Received via PrivatePAC</source>
         <translation>Özel Gönder ile alındı</translation>
     </message>
     <message>
@@ -3436,23 +3436,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Madenden çıkarılan</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
+        <source>PrivatePAC Denominate</source>
         <translation>Özel Gönder Birimi</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
+        <source>PrivatePAC Collateral Payment</source>
         <translation>Özel Gönder Teminat Ödemesi</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
+        <source>PrivatePAC Make Collateral Inputs</source>
         <translation>Özel Gönder Teminat Girdisi Yap</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
+        <source>PrivatePAC Create Denominations</source>
         <translation>Özel Gönder Birim Oluştur</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>Özel Gönder</translation>
     </message>
     <message>
@@ -3484,7 +3484,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Bu işleme sadece-izlenen bir adresin dahil edilip, edilmediği.</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
         <translation>Bu işlem Anında Gönder ile kilitlendi mi gösterir.</translation>
     </message>
     <message>
@@ -3503,11 +3503,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Hepsi</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
+        <source>Locked by InstantPAC</source>
         <translation>Anında Gönder ile kilitlendi</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
+        <source>Not locked by InstantPAC</source>
         <translation>Anında Gönder ile kilitlenmedi</translation>
     </message>
     <message>
@@ -3547,23 +3547,23 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Gönderildiği adres</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
+        <source>PrivatePAC</source>
         <translation>Özel Gönder</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
+        <source>PrivatePAC Make Collateral Inputs</source>
         <translation>Özel Gönder Teminat Girdisi Yap</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
+        <source>PrivatePAC Create Denominations</source>
         <translation>Özel Gönder Birim Oluştur</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
+        <source>PrivatePAC Denominate</source>
         <translation>Özel Gönder Birimi</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
+        <source>PrivatePAC Collateral Payment</source>
         <translation>Özel Gönder Teminat Ödemesi</translation>
     </message>
     <message>
@@ -3704,11 +3704,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Bitcoini Gönder</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
         <translation>Anında Gönder şu anda bu kadar yüksek tutarları göndermeyi desteklemiyor. İşlemler şimdilik %1 PAC ile sınırlı.</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
         <translation>Bu Anında Gönder işlemi için çok fazla girdi (&gt;%1) kullanıldı, ücret çok yüksek olabilir.</translation>
     </message>
 </context>
@@ -3926,11 +3926,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Tüm cüzdan işlemlerini sil ve başlangıçta -rescan ile sadece blok zincirinin parçası olanları geri getir</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
         <translation>&lt;address&gt; adresindeki Anında Gönder çift harcama girişimleri için ham işlem yayınını etkinleştir.</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
         <translation>&lt;address&gt; adresindeki Anında Gönder çift harcama girişimleri için işlem hash yayınını etkinleştir.</translation>
     </message>
     <message>
@@ -4338,7 +4338,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Hafızada en çok &lt;n&gt; bağlanılamaz işlem tut (varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
         <translation>Tüm PAC spesifik işlevleri kapat (Ana Düğümler, Özel Gönder, Anında Gönder, Yönetim) (0-1, varsayılan: %u)</translation>
     </message>
     <message>
@@ -4354,19 +4354,19 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>İşlemleri bellek alanında &lt;n&gt; saatten fazla tutma (varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
         <translation>Anında Gönderi aç, kilitlenmiş işlemler için teyitleri gösterir (0-1, varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
         <translation>Blok başına birden fazla Özel Gönder karışım işlemini aç, deneysel (0-1, varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
         <translation>Bu cüzdanda depolanan meblağ için otomatik Özel Gönder kullanımını aç (0-1, varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
         <translation>Bir cüzdan bir Anında Gönder işlemini başarılı şekilde kilitlediğinde bir komut çalıştır (cmd içinde %s TxID ile değiştirilir)</translation>
     </message>
     <message>
@@ -4390,11 +4390,11 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Eğer &lt;category&gt; belirtilmemişse ya da &lt;category&gt; = 1 ise, tüm hata ayıklama verilerini çıktı al.</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
         <translation>Özel Gönder şu anda bu kadar büyük meblağları desteklemiyor. Şu anda işlemler %1 PAC ile sınırlı.</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
         <translation>Anında Gönder için girdilerin en az %d teyidi olması gerekiyor, birkaç dakika daha bekleyip tekrar denemeniz gerekebilir.</translation>
     </message>
     <message>
@@ -4414,7 +4414,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Eşlerle en fazla &lt;n&gt; bağlantı sağla (geçici hizmet bağlantıları dahil değildir) (varsayılan: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
         <translation>Özel Gönder para göndermek için tam olarak birimlendirilmiş meblağlar kullanır, sadece biraz daha fazla parayı anonim hale getirmeniz gerekiyor.</translation>
     </message>
     <message>
@@ -4462,7 +4462,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Giden trafiği belirtilen hedefin altında tutmaya çalışır (24 saat başı MiB olarak), 0 = sınırsız (varsayılan: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
         <translation>Bu işlem için yeterli Özel Gönder ile birimlendirilmiş bakiye bulunamadı.</translation>
     </message>
     <message>
@@ -4538,7 +4538,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Şuradaki yönetim hashlerini yayınlamayı etkinleştir: &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
         <translation>Şurada hash işlemleri yayınlamayı etkinleştir (Anında Gönder ile kilitli): &lt;address&gt;</translation>
     </message>
     <message>
@@ -4550,7 +4550,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Ham blokun &lt;adres&gt;te yayınlanmasını etkinleştir</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
         <translation>Şurada ham işlemleri yayınlamayı etkinleştir (Anında Gönder ile kilitli): &lt;address&gt;</translation>
     </message>
     <message>
@@ -4574,7 +4574,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Yedek silinemedi, hata: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
+        <source>Failed to load InstantPAC data cache from</source>
         <translation>Şuradan Anında Gönder verisi önbelleği yüklemesi başarısız:</translation>
     </message>
     <message>
@@ -4590,7 +4590,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Başlangıçta harici blk000??.dat dosyasından blokları içe aktarır</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
+        <source>InstantPAC options:</source>
         <translation>Anında Gönder seçenekleri:</translation>
     </message>
     <message>
@@ -4602,15 +4602,15 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>İşlem bellek alanını &lt;n&gt; megabayttan düşük tut (varsayılan: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
+        <source>Last PrivatePAC was too recent.</source>
         <translation>Son Özel Gönder çok yakında yapıldı.</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
+        <source>Last successful PrivatePAC action was too recent.</source>
         <translation>Son başarılı Özel Gönder eylemi çok yakında yapıldı.</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
+        <source>Loading InstantPAC data cache...</source>
         <translation>Anında Gönder verisi önbelleği yükleniyor...</translation>
     </message>
     <message>
@@ -4706,19 +4706,19 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Sürümü yaz ve çık</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
+        <source>PrivatePAC is idle.</source>
         <translation>Özel Gönder boşta.</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
+        <source>PrivatePAC options:</source>
         <translation>Özel Gönder seçenekleri:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
+        <source>PrivatePAC request complete:</source>
         <translation>Özel Gönder talebi tamamlandı:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
+        <source>PrivatePAC request incomplete:</source>
         <translation>Özel Gönder talebi tamamlanmadı:</translation>
     </message>
     <message>
@@ -4882,7 +4882,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>%s programını faydalı buluyorsanız lütfen katkıda bulununuz. Yazılım hakkında daha fazla bilgi için %s adresini ziyaret ediniz.</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
         <translation>Sürekli olarak para karışımı yaparak Özel Göndere likidite sağla  (%u-%u, varsayılan: %u, 1=çok sık, yüksek ücret, %u=düşük sıklıkta, düşük ücret)</translation>
     </message>
     <message>
@@ -4906,7 +4906,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Bu ürün OpenSSL Projesi tarafından geliştirilen OpenSSL araç takımınında kullanılmak üzere yazılan yazılımları %s Eric Young  tarafından yazılmış şifreleme yazılımını ve Thomas Bernard tarafından yazılmış UPnP yazılımını içerir.</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
         <translation>Bu işlem için yeterli Özel Gönder ile birimlendirilmemiş bakiye bulunamadı.</translation>
     </message>
     <message>

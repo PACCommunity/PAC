@@ -482,12 +482,12 @@
         <translation>%1 ไคลเอนต์</translation>
     </message>
     <message>
-        <source>&amp;PrivateSend information</source>
-        <translation>ข้อมูล PrivateSend</translation>
+        <source>&amp;PrivatePAC information</source>
+        <translation>ข้อมูล PrivatePAC</translation>
     </message>
     <message>
-        <source>Show the PrivateSend basic information</source>
-        <translation>แสดงข้อมูลพื้นฐานของ PrivateSend</translation>
+        <source>Show the PrivatePAC basic information</source>
+        <translation>แสดงข้อมูลพื้นฐานของ PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;File</source>
@@ -782,8 +782,8 @@
         <translation>โปรดเปลี่ยนเป็น List mode เพื่อใช้ฟังก์ชั่นนี้</translation>
     </message>
     <message>
-        <source>Non-anonymized input selected. &lt;b&gt;PrivateSend will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivateSend, please deselect all non-anonymized inputs first and then check the PrivateSend checkbox again.</source>
-        <translation>อินพุตแบบไม่ระบุตัวตนอินที่ถูกเลือก &lt;b&gt; PrivateSend จะถูกปิดการใช้งาน &lt;/b&gt;&lt;br&gt;&lt;br&gt; หากคุณยังต้องการใช้ PrivateSend โปรดยกเลิกการเลือกอินพุตที่ไม่ระบุตัวตนทั้งหมดก่อนแล้วจึงเช็คในช่อง PrivateSend อีกครั้ง</translation>
+        <source>Non-anonymized input selected. &lt;b&gt;PrivatePAC will be disabled.&lt;/b&gt;&lt;br&gt;&lt;br&gt;If you still want to use PrivatePAC, please deselect all non-anonymized inputs first and then check the PrivatePAC checkbox again.</source>
+        <translation>อินพุตแบบไม่ระบุตัวตนอินที่ถูกเลือก &lt;b&gt; PrivatePAC จะถูกปิดการใช้งาน &lt;/b&gt;&lt;br&gt;&lt;br&gt; หากคุณยังต้องการใช้ PrivatePAC โปรดยกเลิกการเลือกอินพุตที่ไม่ระบุตัวตนทั้งหมดก่อนแล้วจึงเช็คในช่อง PrivatePAC อีกครั้ง</translation>
     </message>
     <message>
         <source>(%1 locked)</source>
@@ -955,12 +955,12 @@
         <translation>รีเซตการเปลี่ยนการตั้งค่าทั้งหมดใน GUI</translation>
     </message>
     <message>
-        <source>PrivateSend information</source>
-        <translation>ข้อมูล PrivateSend</translation>
+        <source>PrivatePAC information</source>
+        <translation>ข้อมูล PrivatePAC</translation>
     </message>
     <message>
-        <source>&lt;h3&gt;PrivateSend Basics&lt;/h3&gt; PrivateSend gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivateSend uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivateSend process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivateSend begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivateSend makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivateSend disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;PrivateSend documentation&lt;/a&gt;.</source>
-        <translation>&lt;h3&gt;ข้อมูลพื้นฐานเกี่ยวกับ PrivateSend PrivateSend ช่วยให้คุณมีความเป็นส่วนตัวทางการเงินอย่างแท้จริงโดยปิดบังแหล่งที่มาของเงินทุนของคุณ  PAC ทั้งหมดใน wallet ของคุณประกอบด้วย "อินพุต" ที่แตกต่างกันซึ่งคุณสามารถแยกเหรียญกันได้ &lt;br&gt;  PrivateSend ใช้กระบวนการใหม่ในการผสมผสานอินพุตของคุณเข้ากับอินพุตของคนอื่นอีกสองคนโดยไม่ต้องมีเหรียญออกจาก wallet  คุณสามารถควบคุมเงินได้ตลอดเวลา&lt;hr&gt;&lt;b&gt;กระบวนการ PrivateSend ทำงานได้ดังนี้:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivateSend เริ่มต้นด้วยการทำลายอินพุตการทำธุรกรรมของคุณลงไปเป็นหน่วยเงินมาตรฐาน หน่วยเงินเหล่านี้คือ 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC และ 10 PAC - เหมือนกับเงินกระดาษที่คุณใช้ทุกวัน&lt;/li&gt;&lt;li&gt; Wallet ของคุณจะส่งคำขอไปยังโหนดซอฟต์แวร์ที่กำหนดค่าไว้เป็นพิเศษในเครือข่ายที่ เรียกว่า "masternodes"  โดย masternodes เหล่านี้จะแจ้งให้ทราบแล้วว่าคุณสนใจที่จะผสมหน่วยเงินนั้นๆ  ไม่มีข้อมูลที่สามารถระบุตัวได้ถูกส่งไปยัง masternodes ดังนั้นพวกเขาจึงไม่เคยรู้จักว่าคุณเป็นใคร &lt;/li&gt;&lt;li&gt;เมื่อมีคนอีกสองคนส่งข้อความที่คล้ายกันแสดงว่าพวกเขาต้องการที่จะผสมผสานหน่วยเงินเดียวกันเซสชันการผสมจะเริ่มขึ้น  Masternode จะผสมผสานอินพุตเข้าด้วยกันและสั่งให้ wallet ของผู้ใช้ทั้ง 3 รายชำระค่าป้อนข้อมูลที่เปลี่ยนไปแล้วกลับคืนสู่ตัวเอง Wallet ของคุณจ่ายเงินให้กับตัวเองโดยตรง แต่ในที่อยู่อื่น (เรียกว่าที่อยู่เปลี่ยน)&lt;/li&gt;&lt;li&gt;เพื่อเป็นการปิดบังเงินทุนของคุณ   wallet ของคุณจะต้องทำซ้ำขั้นตอนนี้ซ้ำหลายครั้งโดยใช้แต่ละหน่วยเงิน ทุกครั้งที่ดำเนินการเสร็จสิ้นระบบจะเรียกว่า "รอบ ๆ "  รอบ PrivateSend ในแต่ละครั้งทำให้การระบุแหล่งเงินทุนของคุณเกิดขึ้นยากขึ้นอย่างมาก&lt;/li&gt;&lt;li&gt;กระบวนการผสมนี้เกิดขึ้นโดยไม่มีการก้าวก่ายในส่วนของคุณ  เมื่อคุณต้องการทำธุรกรรม เงินของคุณจะถูกซ่อนไว้  ไม่ต้องการเพิ่มเติม &lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt;สำคัญ:&lt;/b&gt;Wallet ของคุณมีเพียง 1,000 ที่อยู่ในการเปลี่ยนแปลงเท่านั้น ทุกครั้งที่เกิดเหตุการณ์ผสมเกิดขึ้น 9 ที่อยู่ของคุณจะถูกนำมาใช้  ซึ่งหมายความว่า 1000 ที่อยู่ล่าสุดสำหรับการผสมประมาณ 100 เหตุการณ์ เมื่อมีการใช้ 900 ราย Wallet ของคุณต้องสร้างที่อยู่เพิ่มเติม  สามารถทำเช่นนี้ได้หากคุณเปิดใช้งานการสำรองข้อมูลอัตโนมัติไว้&lt;br&gt;ดังนั้นผู้ใช้ที่มีการสำรองข้อมูลถูกปิดใช้งานจะมีการปิดใช้ PrivateSend &lt;hr&gt;สำหรับข้อมูลเพิ่มเติม&lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/privatesend-instantsend.html"&gt;โปรดดูที่เอกสาร PrivateSend &lt;/a&gt;</translation>
+        <source>&lt;h3&gt;PrivatePAC Basics&lt;/h3&gt; PrivatePAC gives you true financial privacy by obscuring the origins of your funds. All the PAC in your wallet is comprised of different "inputs" which you can think of as separate, discrete coins.&lt;br&gt; PrivatePAC uses an innovative process to mix your inputs with the inputs of two other people, without having your coins ever leave your wallet. You retain control of your money at all times.&lt;hr&gt; &lt;b&gt;The PrivatePAC process works like this:&lt;/b&gt;&lt;ol type="1"&gt; &lt;li&gt;PrivatePAC begins by breaking your transaction inputs down into standard denominations. These denominations are 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC and 10 PAC -- sort of like the paper money you use every day.&lt;/li&gt; &lt;li&gt;Your wallet then sends requests to specially configured software nodes on the network, called "masternodes." These masternodes are informed then that you are interested in mixing a certain denomination. No identifiable information is sent to the masternodes, so they never know "who" you are.&lt;/li&gt; &lt;li&gt;When two other people send similar messages, indicating that they wish to mix the same denomination, a mixing session begins. The masternode mixes up the inputs and instructs all three users' wallets to pay the now-transformed input back to themselves. Your wallet pays that denomination directly to itself, but in a different address (called a change address).&lt;/li&gt; &lt;li&gt;In order to fully obscure your funds, your wallet must repeat this process a number of times with each denomination. Each time the process is completed, it's called a "round." Each round of PrivatePAC makes it exponentially more difficult to determine where your funds originated.&lt;/li&gt; &lt;li&gt;This mixing process happens in the background without any intervention on your part. When you wish to make a transaction, your funds will already be anonymized. No additional waiting is required.&lt;/li&gt; &lt;/ol&gt; &lt;hr&gt;&lt;b&gt;IMPORTANT:&lt;/b&gt; Your wallet only contains 1000 of these "change addresses." Every time a mixing event happens, up to 9 of your addresses are used up. This means those 1000 addresses last for about 100 mixing events. When 900 of them are used, your wallet must create more addresses. It can only do this, however, if you have automatic backups enabled.&lt;br&gt; Consequently, users who have backups disabled will also have PrivatePAC disabled. &lt;hr&gt;For more information, see the &lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;PrivatePAC documentation&lt;/a&gt;.</source>
+        <translation>&lt;h3&gt;ข้อมูลพื้นฐานเกี่ยวกับ PrivatePAC PrivatePAC ช่วยให้คุณมีความเป็นส่วนตัวทางการเงินอย่างแท้จริงโดยปิดบังแหล่งที่มาของเงินทุนของคุณ  PAC ทั้งหมดใน wallet ของคุณประกอบด้วย "อินพุต" ที่แตกต่างกันซึ่งคุณสามารถแยกเหรียญกันได้ &lt;br&gt;  PrivatePAC ใช้กระบวนการใหม่ในการผสมผสานอินพุตของคุณเข้ากับอินพุตของคนอื่นอีกสองคนโดยไม่ต้องมีเหรียญออกจาก wallet  คุณสามารถควบคุมเงินได้ตลอดเวลา&lt;hr&gt;&lt;b&gt;กระบวนการ PrivatePAC ทำงานได้ดังนี้:&lt;/b&gt;&lt;ol type="1"&gt;&lt;li&gt;PrivatePAC เริ่มต้นด้วยการทำลายอินพุตการทำธุรกรรมของคุณลงไปเป็นหน่วยเงินมาตรฐาน หน่วยเงินเหล่านี้คือ 0.001 PAC, 0.01 PAC, 0.1 PAC, 1 PAC และ 10 PAC - เหมือนกับเงินกระดาษที่คุณใช้ทุกวัน&lt;/li&gt;&lt;li&gt; Wallet ของคุณจะส่งคำขอไปยังโหนดซอฟต์แวร์ที่กำหนดค่าไว้เป็นพิเศษในเครือข่ายที่ เรียกว่า "masternodes"  โดย masternodes เหล่านี้จะแจ้งให้ทราบแล้วว่าคุณสนใจที่จะผสมหน่วยเงินนั้นๆ  ไม่มีข้อมูลที่สามารถระบุตัวได้ถูกส่งไปยัง masternodes ดังนั้นพวกเขาจึงไม่เคยรู้จักว่าคุณเป็นใคร &lt;/li&gt;&lt;li&gt;เมื่อมีคนอีกสองคนส่งข้อความที่คล้ายกันแสดงว่าพวกเขาต้องการที่จะผสมผสานหน่วยเงินเดียวกันเซสชันการผสมจะเริ่มขึ้น  Masternode จะผสมผสานอินพุตเข้าด้วยกันและสั่งให้ wallet ของผู้ใช้ทั้ง 3 รายชำระค่าป้อนข้อมูลที่เปลี่ยนไปแล้วกลับคืนสู่ตัวเอง Wallet ของคุณจ่ายเงินให้กับตัวเองโดยตรง แต่ในที่อยู่อื่น (เรียกว่าที่อยู่เปลี่ยน)&lt;/li&gt;&lt;li&gt;เพื่อเป็นการปิดบังเงินทุนของคุณ   wallet ของคุณจะต้องทำซ้ำขั้นตอนนี้ซ้ำหลายครั้งโดยใช้แต่ละหน่วยเงิน ทุกครั้งที่ดำเนินการเสร็จสิ้นระบบจะเรียกว่า "รอบ ๆ "  รอบ PrivatePAC ในแต่ละครั้งทำให้การระบุแหล่งเงินทุนของคุณเกิดขึ้นยากขึ้นอย่างมาก&lt;/li&gt;&lt;li&gt;กระบวนการผสมนี้เกิดขึ้นโดยไม่มีการก้าวก่ายในส่วนของคุณ  เมื่อคุณต้องการทำธุรกรรม เงินของคุณจะถูกซ่อนไว้  ไม่ต้องการเพิ่มเติม &lt;/li&gt;&lt;/ol&gt;&lt;hr&gt;&lt;b&gt;สำคัญ:&lt;/b&gt;Wallet ของคุณมีเพียง 1,000 ที่อยู่ในการเปลี่ยนแปลงเท่านั้น ทุกครั้งที่เกิดเหตุการณ์ผสมเกิดขึ้น 9 ที่อยู่ของคุณจะถูกนำมาใช้  ซึ่งหมายความว่า 1000 ที่อยู่ล่าสุดสำหรับการผสมประมาณ 100 เหตุการณ์ เมื่อมีการใช้ 900 ราย Wallet ของคุณต้องสร้างที่อยู่เพิ่มเติม  สามารถทำเช่นนี้ได้หากคุณเปิดใช้งานการสำรองข้อมูลอัตโนมัติไว้&lt;br&gt;ดังนั้นผู้ใช้ที่มีการสำรองข้อมูลถูกปิดใช้งานจะมีการปิดใช้ PrivatePAC &lt;hr&gt;สำหรับข้อมูลเพิ่มเติม&lt;a href="https://docs.paccoin.org/en/latest/wallets/paccoincore/PrivatePAC-InstantPAC.html"&gt;โปรดดูที่เอกสาร PrivatePAC &lt;/a&gt;</translation>
     </message>
 </context>
 <context>
@@ -1218,40 +1218,40 @@
         <translation>แสดงแถบ Masternodes</translation>
     </message>
     <message>
-        <source>Show additional information and buttons for PrivateSend on overview screen.</source>
-        <translation>แสดงข้อมูลเพิ่มเติมและปุ่มสำหรับ PrivateSend บนหน้าจอ</translation>
+        <source>Show additional information and buttons for PrivatePAC on overview screen.</source>
+        <translation>แสดงข้อมูลเพิ่มเติมและปุ่มสำหรับ PrivatePAC บนหน้าจอ</translation>
     </message>
     <message>
-        <source>Enable advanced PrivateSend interface</source>
-        <translation>เปิดใช้งานอินเทอร์เฟซขั้นสูงของ PrivateSend</translation>
+        <source>Enable advanced PrivatePAC interface</source>
+        <translation>เปิดใช้งานอินเทอร์เฟซขั้นสูงของ PrivatePAC</translation>
     </message>
     <message>
-        <source>Show warning dialog when PrivateSend detects that wallet has very low number of keys left.</source>
-        <translation>แสดงข้อความแจ้งเตือนเมื่อ PrivateSend ตรวจพบว่า Wallet มีจำนวนคีย์ที่เหลืออยู่ต่ำมาก</translation>
+        <source>Show warning dialog when PrivatePAC detects that wallet has very low number of keys left.</source>
+        <translation>แสดงข้อความแจ้งเตือนเมื่อ PrivatePAC ตรวจพบว่า Wallet มีจำนวนคีย์ที่เหลืออยู่ต่ำมาก</translation>
     </message>
     <message>
-        <source>Warn if PrivateSend is running out of keys</source>
-        <translation>แจ้งเตือนหากคีย์ PrivateSend กำลังจะหมด</translation>
+        <source>Warn if PrivatePAC is running out of keys</source>
+        <translation>แจ้งเตือนหากคีย์ PrivatePAC กำลังจะหมด</translation>
     </message>
     <message>
-        <source>Whether to use experimental PrivateSend mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
-        <translation>ไม่ว่าจะใช้โหมด PrivateSend แบบทดลองกับการผสมหลายเซสชันต่อบล็อกหรือไม่&lt;br/&gt;หมายเหตุ: คุณต้องใช้คุณลักษณะนี้อย่างระมัดระวัง&lt;br/&gt;ตรวจสอบให้แน่ใจว่าคุณได้สำรองข้อมูล wallet (อัตโนมัติ) ไว้ในที่ปลอดภัยทุกครั้ง!</translation>
+        <source>Whether to use experimental PrivatePAC mode with multiple mixing sessions per block.&lt;br/&gt;Note: You must use this feature carefully.&lt;br/&gt;Make sure you always have recent wallet (auto)backup in a safe place!</source>
+        <translation>ไม่ว่าจะใช้โหมด PrivatePAC แบบทดลองกับการผสมหลายเซสชันต่อบล็อกหรือไม่&lt;br/&gt;หมายเหตุ: คุณต้องใช้คุณลักษณะนี้อย่างระมัดระวัง&lt;br/&gt;ตรวจสอบให้แน่ใจว่าคุณได้สำรองข้อมูล wallet (อัตโนมัติ) ไว้ในที่ปลอดภัยทุกครั้ง!</translation>
     </message>
     <message>
-        <source>Enable PrivateSend &amp;multi-session</source>
-        <translation>เปิดใช้งาน PrivateSend และหลายเซสชัน</translation>
+        <source>Enable PrivatePAC &amp;multi-session</source>
+        <translation>เปิดใช้งาน PrivatePAC และหลายเซสชัน</translation>
     </message>
     <message>
         <source>If you disable the spending of unconfirmed change, the change from a transaction&lt;br/&gt;cannot be used until that transaction has at least one confirmation.&lt;br/&gt;This also affects how your balance is computed.</source>
         <translation>ถ้าหากคุณปิดการใช้จ่ายในการเปลี่ยนแปลงที่ไม่ได้รับการยืนยัน การเปลี่ยนแปลงจากธุรกรรม&lt;br/&gt;จะไม่สามารถใช้ได้จนกว่ารายการดังกล่าวจะมีการยืนยันอย่างน้อยหนึ่งรายการ&lt;br/&gt;นอกจากนี้ยังมีผลต่อการคำนวณยอดคงเหลือของคุณอีกด้วย</translation>
     </message>
     <message>
-        <source>PrivateSend rounds to use</source>
-        <translation>จำนวนรอบ PrivateSend ที่ใช้</translation>
+        <source>PrivatePAC rounds to use</source>
+        <translation>จำนวนรอบ PrivatePAC ที่ใช้</translation>
     </message>
     <message>
-        <source>This amount acts as a threshold to turn off PrivateSend once it's reached.</source>
-        <translation>จำนวนนี้ทำหน้าที่เป็นเกณฑ์เพื่อปิดการใช้งาน PrivateSend เมื่อถึงขีดจำกัดแล้ว</translation>
+        <source>This amount acts as a threshold to turn off PrivatePAC once it's reached.</source>
+        <translation>จำนวนนี้ทำหน้าที่เป็นเกณฑ์เพื่อปิดการใช้งาน PrivatePAC เมื่อถึงขีดจำกัดแล้ว</translation>
     </message>
     <message>
         <source>Automatically open the PAC Core client port on the router. This only works when your router supports UPnP and it is enabled.</source>
@@ -1306,12 +1306,12 @@
         <translation>เปิดใช้ coin &amp; รูปแบบการควบคุม</translation>
     </message>
     <message>
-        <source>Show system popups for PrivateSend mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
-        <translation>แสดงระบบป๊อปอัพสำหรับทำธุรกรรมผสม PrivateSend &lt;br/&gt; เช่นเดียวกับทำธุรกรรมแบบประเภทอื่นๆ</translation>
+        <source>Show system popups for PrivatePAC mixing transactions&lt;br/&gt;just like for all other transaction types.</source>
+        <translation>แสดงระบบป๊อปอัพสำหรับทำธุรกรรมผสม PrivatePAC &lt;br/&gt; เช่นเดียวกับทำธุรกรรมแบบประเภทอื่นๆ</translation>
     </message>
     <message>
-        <source>Show popups for PrivateSend transactions</source>
-        <translation>แสดงป๊อปอัปสำหรับธุรกรรม PrivateSend</translation>
+        <source>Show popups for PrivatePAC transactions</source>
+        <translation>แสดงป๊อปอัปสำหรับธุรกรรม PrivatePAC</translation>
     </message>
     <message>
         <source>&amp;Spend unconfirmed change</source>
@@ -1551,8 +1551,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ที่สามารถใช้ได้: </translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>Status:</source>
@@ -1567,16 +1567,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เสร็จสิ้น:</translation>
     </message>
     <message>
-        <source>Try to manually submit a PrivateSend request.</source>
-        <translation>พยายามส่งคำขอ PrivateSend ด้วยตนเอง</translation>
+        <source>Try to manually submit a PrivatePAC request.</source>
+        <translation>พยายามส่งคำขอ PrivatePAC ด้วยตนเอง</translation>
     </message>
     <message>
-        <source>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</source>
-        <translation>รีเซ็ตสถานะปัจจุบันของ PrivateSend (สามารถขัดจังหวะการทำงานของ PrivateSend หากอยู่ในระหว่างการผสม ซึ่งสามารถทำให้คุณเสียเงินได้!)</translation>
+        <source>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</source>
+        <translation>รีเซ็ตสถานะปัจจุบันของ PrivatePAC (สามารถขัดจังหวะการทำงานของ PrivatePAC หากอยู่ในระหว่างการผสม ซึ่งสามารถทำให้คุณเสียเงินได้!)</translation>
     </message>
     <message>
-        <source>Information about PrivateSend and Mixing</source>
-        <translation>ข้อมูลเกี่ยวกับ PrivateSend และการผสม</translation>
+        <source>Information about PrivatePAC and Mixing</source>
+        <translation>ข้อมูลเกี่ยวกับ PrivatePAC และการผสม</translation>
     </message>
     <message>
         <source>Info</source>
@@ -1607,8 +1607,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เริ่ม / หยุดการผสม</translation>
     </message>
     <message>
-        <source>PrivateSend Balance:</source>
-        <translation>PrivateSend ยอดคงเหลือ : </translation>
+        <source>PrivatePAC Balance:</source>
+        <translation>PrivatePAC ยอดคงเหลือ : </translation>
     </message>
     <message>
         <source>The denominations you submitted to the Masternode.&lt;br&gt;To mix, other users must submit the exact same denominations.</source>
@@ -1723,26 +1723,26 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>คำเตือน! ไม่สามารถเติม keypool ได้ โปรดปลดล็อก Wallet ของคุณ</translation>
     </message>
     <message>
-        <source>Last PrivateSend message:
+        <source>Last PrivatePAC message:
 </source>
-        <translation>ข้อความ PrivateSend ล่าสุด:
+        <translation>ข้อความ PrivatePAC ล่าสุด:
 </translation>
     </message>
     <message>
-        <source>PrivateSend was successfully reset.</source>
-        <translation>รีเซ็ต PrivateSend สำเร็จแล้ว</translation>
+        <source>PrivatePAC was successfully reset.</source>
+        <translation>รีเซ็ต PrivatePAC สำเร็จแล้ว</translation>
     </message>
     <message>
-        <source>If you don't want to see internal PrivateSend fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
-        <translation>หากคุณไม่ต้องการเห็นค่าธรรมเนียม PrivateSend / ธุรกรรม  ให้เลือก "Most Common" เป็นประเภท "Transactions"</translation>
+        <source>If you don't want to see internal PrivatePAC fees/transactions select "Most Common" as Type on the "Transactions" tab.</source>
+        <translation>หากคุณไม่ต้องการเห็นค่าธรรมเนียม PrivatePAC / ธุรกรรม  ให้เลือก "Most Common" เป็นประเภท "Transactions"</translation>
     </message>
     <message>
-        <source>PrivateSend requires at least %1 to use.</source>
-        <translation>PrivateSend ต้องการอย่างน้อย %1 เพื่อใช้งาน</translation>
+        <source>PrivatePAC requires at least %1 to use.</source>
+        <translation>PrivatePAC ต้องการอย่างน้อย %1 เพื่อใช้งาน</translation>
     </message>
     <message>
-        <source>Wallet is locked and user declined to unlock. Disabling PrivateSend.</source>
-        <translation>Wallet ถูกล็อกและผู้ใช้ปฏิเสธที่จะปลดล็อก กำลังปิดใช้งาน PrivateSend</translation>
+        <source>Wallet is locked and user declined to unlock. Disabling PrivatePAC.</source>
+        <translation>Wallet ถูกล็อกและผู้ใช้ปฏิเสธที่จะปลดล็อก กำลังปิดใช้งาน PrivatePAC</translation>
     </message>
 </context>
 <context>
@@ -2428,8 +2428,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ลบล้าง</translation>
     </message>
     <message>
-        <source>Request InstantSend</source>
-        <translation>ขอ InstantSend</translation>
+        <source>Request InstantPAC</source>
+        <translation>ขอ InstantPAC</translation>
     </message>
     <message>
         <source>Requested payments history</source>
@@ -2515,8 +2515,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ข้อความ</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>Yes</source>
@@ -2649,12 +2649,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>การยืนยันเวลาเป้าหมาย</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>InstantSend</source>
-        <translation>InstantSend</translation>
+        <source>InstantPAC</source>
+        <translation>InstantPAC</translation>
     </message>
     <message>
         <source>If the custom fee is set to 1000 duffs and the transaction is only 250 bytes, then "per kilobyte" only pays 250 duffs in fee,&lt;br /&gt;while "at least" pays 1000 duffs. For transactions bigger than a kilobyte both pay by kilobyte.</source>
@@ -2769,16 +2769,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>กองทุนที่ไม่ระบุตัวตน</translation>
     </message>
     <message>
-        <source>(privatesend requires this amount to be rounded up to the nearest %1).</source>
-        <translation>(privatesend ต้องใช้จำนวนเงินนี้เพื่อปัดเศษขึ้นให้อยู่ใกล้ที่สุด %1)</translation>
+        <source>(PrivatePAC requires this amount to be rounded up to the nearest %1).</source>
+        <translation>(PrivatePAC ต้องใช้จำนวนเงินนี้เพื่อปัดเศษขึ้นให้อยู่ใกล้ที่สุด %1)</translation>
     </message>
     <message>
         <source>any available funds (not anonymous)</source>
         <translation>เงินทุนที่มีอยู่ (ไม่ระบุชื่อ)</translation>
     </message>
     <message>
-        <source>and InstantSend</source>
-        <translation>และ InstantSend</translation>
+        <source>and InstantPAC</source>
+        <translation>และ InstantPAC</translation>
     </message>
     <message>
         <source>%1 to %2</source>
@@ -3174,16 +3174,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>%1 ยืนยัน</translation>
     </message>
     <message>
-        <source>verified via InstantSend</source>
-        <translation>ยืนยันผ่าน InstantSend</translation>
+        <source>verified via InstantPAC</source>
+        <translation>ยืนยันผ่าน InstantPAC</translation>
     </message>
     <message>
-        <source>InstantSend verification in progress - %1 of %2 signatures</source>
-        <translation>การยืนยันของ InstantSend อยู่ระหว่างดำเนินการ - ลายเซ็น %1 ของ %2</translation>
+        <source>InstantPAC verification in progress - %1 of %2 signatures</source>
+        <translation>การยืนยันของ InstantPAC อยู่ระหว่างดำเนินการ - ลายเซ็น %1 ของ %2</translation>
     </message>
     <message>
-        <source>InstantSend verification failed</source>
-        <translation>การยืนยัน InstantSend ล้มเหลว</translation>
+        <source>InstantPAC verification failed</source>
+        <translation>การยืนยัน InstantPAC ล้มเหลว</translation>
     </message>
     <message>
         <source>Status</source>
@@ -3396,8 +3396,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ได้รับจาก</translation>
     </message>
     <message>
-        <source>Received via PrivateSend</source>
-        <translation>ได้รับผ่าน PrivateSend</translation>
+        <source>Received via PrivatePAC</source>
+        <translation>ได้รับผ่าน PrivatePAC</translation>
     </message>
     <message>
         <source>Sent to</source>
@@ -3412,24 +3412,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>Mined</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend Denominate</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC Denominate</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>หลักประกันการชำระเงิน PrivateSend </translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>หลักประกันการชำระเงิน PrivatePAC </translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend สร้างการป้อนข้อมูลหลักประกัน</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC สร้างการป้อนข้อมูลหลักประกัน</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend สร้างหน่วยเงิน</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC สร้างหน่วยเงิน</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
         <source>watch-only</source>
@@ -3460,8 +3460,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ไม่ว่าจะเป็นที่อยู่สำหรับดูอย่างเดียวหรือไม่ก็ตามก็เกี่ยวข้องกับธุรกรรมนี้</translation>
     </message>
     <message>
-        <source>Whether or not this transaction was locked by InstantSend.</source>
-        <translation>ไม่ว่าธุรกรรมนี้จะถูกล็อคโดย InstantSend หรือไม่</translation>
+        <source>Whether or not this transaction was locked by InstantPAC.</source>
+        <translation>ไม่ว่าธุรกรรมนี้จะถูกล็อคโดย InstantPAC หรือไม่</translation>
     </message>
     <message>
         <source>User-defined intent/purpose of the transaction.</source>
@@ -3479,12 +3479,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ทั้งหมด</translation>
     </message>
     <message>
-        <source>Locked by InstantSend</source>
-        <translation>ล็อคโดย InstantSend</translation>
+        <source>Locked by InstantPAC</source>
+        <translation>ล็อคโดย InstantPAC</translation>
     </message>
     <message>
-        <source>Not locked by InstantSend</source>
-        <translation>ไม่ได้ถูกล็อคโดย InstantSend</translation>
+        <source>Not locked by InstantPAC</source>
+        <translation>ไม่ได้ถูกล็อคโดย InstantPAC</translation>
     </message>
     <message>
         <source>Today</source>
@@ -3523,24 +3523,24 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ส่งถึง</translation>
     </message>
     <message>
-        <source>PrivateSend</source>
-        <translation>PrivateSend</translation>
+        <source>PrivatePAC</source>
+        <translation>PrivatePAC</translation>
     </message>
     <message>
-        <source>PrivateSend Make Collateral Inputs</source>
-        <translation>PrivateSend สร้างการป้อนข้อมูลหลักประกัน</translation>
+        <source>PrivatePAC Make Collateral Inputs</source>
+        <translation>PrivatePAC สร้างการป้อนข้อมูลหลักประกัน</translation>
     </message>
     <message>
-        <source>PrivateSend Create Denominations</source>
-        <translation>PrivateSend สร้างหน่วยเงิน</translation>
+        <source>PrivatePAC Create Denominations</source>
+        <translation>PrivatePAC สร้างหน่วยเงิน</translation>
     </message>
     <message>
-        <source>PrivateSend Denominate</source>
-        <translation>PrivateSend Denominate</translation>
+        <source>PrivatePAC Denominate</source>
+        <translation>PrivatePAC Denominate</translation>
     </message>
     <message>
-        <source>PrivateSend Collateral Payment</source>
-        <translation>PrivateSend หลักประกันการชำระเงิน</translation>
+        <source>PrivatePAC Collateral Payment</source>
+        <translation>PrivatePAC หลักประกันการชำระเงิน</translation>
     </message>
     <message>
         <source>To yourself</source>
@@ -3680,12 +3680,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ส่งเหรียญ</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend ไม่สนับสนุนการส่งค่าที่สูงเกินไป  ธุรกรรมปัจจุบันถูก จำกัด ไว้ที่ %1 PAC</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC ไม่สนับสนุนการส่งค่าที่สูงเกินไป  ธุรกรรมปัจจุบันถูก จำกัด ไว้ที่ %1 PAC</translation>
     </message>
     <message>
-        <source>Used way too many inputs (&gt;%1) for this InstantSend transaction, fees could be huge.</source>
-        <translation>จำนวนอินพุทที่ใช้มากเกินไป (&gt;%1) สำหรับการทำธุรกรรม InstantSend นี้ ค่าธรรมเนียมค่อนข้างสูง</translation>
+        <source>Used way too many inputs (&gt;%1) for this InstantPAC transaction, fees could be huge.</source>
+        <translation>จำนวนอินพุทที่ใช้มากเกินไป (&gt;%1) สำหรับการทำธุรกรรม InstantPAC นี้ ค่าธรรมเนียมค่อนข้างสูง</translation>
     </message>
 </context>
 <context>
@@ -3902,12 +3902,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ลบการทำธุรกรรมทั้งหมดของ wallet และกู้เฉพาะส่วนของ blockchain ผ่านการสแกนใหม่เมื่อเริ่มต้น</translation>
     </message>
     <message>
-        <source>Enable publish raw transactions of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>เปิดใช้งาน raw transactions ของ InstantSend พยายามที่จะใช้จ่ายสองเท่าใน &lt;address&gt;</translation>
+        <source>Enable publish raw transactions of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>เปิดใช้งาน raw transactions ของ InstantPAC พยายามที่จะใช้จ่ายสองเท่าใน &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish transaction hashes of attempted InstantSend double spend in &lt;address&gt;</source>
-        <translation>เปิดใช้งาน transaction hashes ของ InstantSend พยายามที่จะใช้จ่ายสองเท่าใน&lt;address&gt;</translation>
+        <source>Enable publish transaction hashes of attempted InstantPAC double spend in &lt;address&gt;</source>
+        <translation>เปิดใช้งาน transaction hashes ของ InstantPAC พยายามที่จะใช้จ่ายสองเท่าใน&lt;address&gt;</translation>
     </message>
     <message>
         <source>Error loading %s: You can't enable HD on a already existing non-HD wallet</source>
@@ -4314,8 +4314,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เก็บให้ได้มากที่สุด&lt;n&gt;รายการที่ไม่สามารถยกเลิกการทำธุรกรรมในหน่วยความจำ (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
-        <source>Disable all PAC specific functionality (Masternodes, PrivateSend, InstantSend, Governance) (0-1, default: %u)</source>
-        <translation>ปิดใช้ฟังก์ชันการทำงานเฉพาะ PAC ทั้งหมด  (Masternodes, PrivateSend, InstantSend, Governance) (0-1, ค่าดีฟอลต์: %u)</translation>
+        <source>Disable all PAC specific functionality (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, default: %u)</source>
+        <translation>ปิดใช้ฟังก์ชันการทำงานเฉพาะ PAC ทั้งหมด  (Masternodes, PrivatePAC, InstantPAC, Governance) (0-1, ค่าดีฟอลต์: %u)</translation>
     </message>
     <message>
         <source>%s file contains all private keys from this wallet. Do not share it with anyone!</source>
@@ -4330,20 +4330,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>อย่าเก็บธุรกรรมไว้ใน mempool นานกว่า &lt;n&gt; ชั่วโมง (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
-        <source>Enable InstantSend, show confirmations for locked transactions (0-1, default: %u)</source>
-        <translation>เปิดใช้งาน InstantSend แสดงการยืนยันสำหรับธุรกรรมที่ล็อกไว้ (0-1 ค่าดีฟอลต์: %u)</translation>
+        <source>Enable InstantPAC, show confirmations for locked transactions (0-1, default: %u)</source>
+        <translation>เปิดใช้งาน InstantPAC แสดงการยืนยันสำหรับธุรกรรมที่ล็อกไว้ (0-1 ค่าดีฟอลต์: %u)</translation>
     </message>
     <message>
-        <source>Enable multiple PrivateSend mixing sessions per block, experimental (0-1, default: %u)</source>
-        <translation>เปิดใช้งานเซสชันการผสม PrivateSend ต่อบล็อค (0-1 ค่าดีฟอลต์: %u)</translation>
+        <source>Enable multiple PrivatePAC mixing sessions per block, experimental (0-1, default: %u)</source>
+        <translation>เปิดใช้งานเซสชันการผสม PrivatePAC ต่อบล็อค (0-1 ค่าดีฟอลต์: %u)</translation>
     </message>
     <message>
-        <source>Enable use of automated PrivateSend for funds stored in this wallet (0-1, default: %u)</source>
-        <translation>เปิดใช้งาน PrivateSend โดยอัตโนมัติสำหรับเก็บเงินไว้ใน wallet นี้ (0-1 ค่าเริ่มต้น: %u)</translation>
+        <source>Enable use of automated PrivatePAC for funds stored in this wallet (0-1, default: %u)</source>
+        <translation>เปิดใช้งาน PrivatePAC โดยอัตโนมัติสำหรับเก็บเงินไว้ใน wallet นี้ (0-1 ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
-        <source>Execute command when a wallet InstantSend transaction is successfully locked (%s in cmd is replaced by TxID)</source>
-        <translation>ดำเนินการคำสั่งเมื่อทำธุรกรรมแบบ InstantSend  ล็อคเรียบร้อยแล้ว (%s ใน cmd จะถูกแทนที่ด้วย TxID)</translation>
+        <source>Execute command when a wallet InstantPAC transaction is successfully locked (%s in cmd is replaced by TxID)</source>
+        <translation>ดำเนินการคำสั่งเมื่อทำธุรกรรมแบบ InstantPAC  ล็อคเรียบร้อยแล้ว (%s ใน cmd จะถูกแทนที่ด้วย TxID)</translation>
     </message>
     <message>
         <source>Extra transactions to keep in memory for compact block reconstructions (default: %u)</source>
@@ -4366,12 +4366,12 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ถ้าไม่มี &lt;category&gt;หรือถ้า &lt;category&gt;= 1  , ผลลัพธ์ก็จะเกิดจากข้อมูลการดีบักทั้งหมด</translation>
     </message>
     <message>
-        <source>InstantSend doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
-        <translation>InstantSend ยังไม่สนับสนุนการส่งค่าที่สูงเกินไป ธุรกรรมปัจจุบันถูกจำกัดไว้ที่ %1 PAC</translation>
+        <source>InstantPAC doesn't support sending values that high yet. Transactions are currently limited to %1 PAC.</source>
+        <translation>InstantPAC ยังไม่สนับสนุนการส่งค่าที่สูงเกินไป ธุรกรรมปัจจุบันถูกจำกัดไว้ที่ %1 PAC</translation>
     </message>
     <message>
-        <source>InstantSend requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
-        <translation>InstantSend ต้องการอินพุตที่มีการยืนยันอย่างน้อย %d คุณอาจต้องรออีกสักครู่แล้วลองอีกครั้ง</translation>
+        <source>InstantPAC requires inputs with at least %d confirmations, you might need to wait a few minutes and try again.</source>
+        <translation>InstantPAC ต้องการอินพุตที่มีการยืนยันอย่างน้อย %d คุณอาจต้องรออีกสักครู่แล้วลองอีกครั้ง</translation>
     </message>
     <message>
         <source>Maintain a full address index, used to query for the balance, txids and unspent outputs for addresses (default: %u)</source>
@@ -4390,8 +4390,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>รักษาบริการเชื่อมต่อแบบ peer อย่างน้อย &lt;n&gt;  (ไม่รวมบริการเชื่อมต่อชั่วคราว) (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
-        <source>PrivateSend uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
-        <translation>PrivateSend ใช้จำนวนเงินตามสกุลเงินที่แน่นอนในการส่งเงิน คุณอาจเพียงต้องการระบุชื่อเหรียญเพิ่มเติม</translation>
+        <source>PrivatePAC uses exact denominated amounts to send funds, you might simply need to anonymize some more coins.</source>
+        <translation>PrivatePAC ใช้จำนวนเงินตามสกุลเงินที่แน่นอนในการส่งเงิน คุณอาจเพียงต้องการระบุชื่อเหรียญเพิ่มเติม</translation>
     </message>
     <message>
         <source>Prune configured below the minimum of %d MiB.  Please use a higher number.</source>
@@ -4438,8 +4438,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>พยายามให้การรับส่งข้อมูลขาออกตามเป้าหมายที่กำหนด (ใน MiB ต่อ 24 ชั่วโมง), 0 = ไม่มีขีด จำกัด (ค่าเริ่มต้น: %d)</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend denominated funds for this transaction.</source>
-        <translation>ไม่สามารถหาเงินได้เพียงพอสำหรับ PrivateSend สำหรับธุรกรรมนี้</translation>
+        <source>Unable to locate enough PrivatePAC denominated funds for this transaction.</source>
+        <translation>ไม่สามารถหาเงินได้เพียงพอสำหรับ PrivatePAC สำหรับธุรกรรมนี้</translation>
     </message>
     <message>
         <source>Unsupported argument -socks found. Setting SOCKS version isn't possible anymore, only SOCKS5 proxies are supported.</source>
@@ -4463,7 +4463,7 @@ https://www.transifex.com/projects/p/paccoin/</translation>
     </message>
     <message>
         <source>Warning: Unknown block versions being mined! It's possible unknown rules are in effect</source>
-        <translation>คำเตือน: ไม่สามารถหาเงิน PrivateSend ที่ระบุได้เพียงพอสำหรับธุรกรรมนี้</translation>
+        <translation>คำเตือน: ไม่สามารถหาเงิน PrivatePAC ที่ระบุได้เพียงพอสำหรับธุรกรรมนี้</translation>
     </message>
     <message>
         <source>You are starting in lite mode, all PAC-specific functionality is disabled.</source>
@@ -4514,8 +4514,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เปิดใช้งานแฮชการโหวตเกี่ยวกับการกำกับดูแลใน &lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish hash transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>เปิดใช้งานการทำธุรกรรมแฮช (ล็อกผ่าน InstantSend) ใน&lt;address&gt;</translation>
+        <source>Enable publish hash transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>เปิดใช้งานการทำธุรกรรมแฮช (ล็อกผ่าน InstantPAC) ใน&lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish hash transaction in &lt;address&gt;</source>
@@ -4526,8 +4526,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เปิดใช้งานบล็อกแบบดิบใน&lt;address&gt;</translation>
     </message>
     <message>
-        <source>Enable publish raw transaction (locked via InstantSend) in &lt;address&gt;</source>
-        <translation>เปิดใช้งานการทำธุรกรรมดิบ (ล็อกผ่าน InstantSend) ใน&lt;address&gt;</translation>
+        <source>Enable publish raw transaction (locked via InstantPAC) in &lt;address&gt;</source>
+        <translation>เปิดใช้งานการทำธุรกรรมดิบ (ล็อกผ่าน InstantPAC) ใน&lt;address&gt;</translation>
     </message>
     <message>
         <source>Enable publish raw transaction in &lt;address&gt;</source>
@@ -4550,8 +4550,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ไม่สามารถลบข้อมูลสำรอง  ผิดพลาด: %s</translation>
     </message>
     <message>
-        <source>Failed to load InstantSend data cache from</source>
-        <translation>โหลดแคชข้อมูล InstantSend  ล้มเหลว</translation>
+        <source>Failed to load InstantPAC data cache from</source>
+        <translation>โหลดแคชข้อมูล InstantPAC  ล้มเหลว</translation>
     </message>
     <message>
         <source>Failed to load sporks cache from</source>
@@ -4566,8 +4566,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>นำเข้าบล็อคจากภายนอก blk000 ??.dat ไฟล์เมื่อเริ่มต้น</translation>
     </message>
     <message>
-        <source>InstantSend options:</source>
-        <translation>ตัวเลือก InstantSend : </translation>
+        <source>InstantPAC options:</source>
+        <translation>ตัวเลือก InstantPAC : </translation>
     </message>
     <message>
         <source>Invalid amount for -fallbackfee=&lt;amount&gt;: '%s'</source>
@@ -4578,16 +4578,16 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>เก็บหน่วยความจำธุรกรรมไว้ต่ำกว่า 1 เมกะไบต์ (ค่าเริ่มต้น: %u)</translation>
     </message>
     <message>
-        <source>Last PrivateSend was too recent.</source>
-        <translation>PrivateSend ล่าสุดเป็นข้อมูลล่าสุด</translation>
+        <source>Last PrivatePAC was too recent.</source>
+        <translation>PrivatePAC ล่าสุดเป็นข้อมูลล่าสุด</translation>
     </message>
     <message>
-        <source>Last successful PrivateSend action was too recent.</source>
-        <translation>การกระทำ PrivateSend ที่ประสบความสำเร็จล่าสุดเป็นข้อมูลล่าสุด</translation>
+        <source>Last successful PrivatePAC action was too recent.</source>
+        <translation>การกระทำ PrivatePAC ที่ประสบความสำเร็จล่าสุดเป็นข้อมูลล่าสุด</translation>
     </message>
     <message>
-        <source>Loading InstantSend data cache...</source>
-        <translation>กำลังโหลดแคชข้อมูล InstantSend ...</translation>
+        <source>Loading InstantPAC data cache...</source>
+        <translation>กำลังโหลดแคชข้อมูล InstantPAC ...</translation>
     </message>
     <message>
         <source>Loading block index...</source>
@@ -4682,20 +4682,20 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>พิมพ์เวอร์ชันแล้วออกโปรแกรม</translation>
     </message>
     <message>
-        <source>PrivateSend is idle.</source>
-        <translation>PrivateSend ไม่ได้ใช้งาน</translation>
+        <source>PrivatePAC is idle.</source>
+        <translation>PrivatePAC ไม่ได้ใช้งาน</translation>
     </message>
     <message>
-        <source>PrivateSend options:</source>
-        <translation>ตัวเลือก PrivateSend:</translation>
+        <source>PrivatePAC options:</source>
+        <translation>ตัวเลือก PrivatePAC:</translation>
     </message>
     <message>
-        <source>PrivateSend request complete:</source>
-        <translation>คำขอ PrivateSend สมบูรณ์:</translation>
+        <source>PrivatePAC request complete:</source>
+        <translation>คำขอ PrivatePAC สมบูรณ์:</translation>
     </message>
     <message>
-        <source>PrivateSend request incomplete:</source>
-        <translation>คำขอ PrivateSend ไม่สมบูรณ์:</translation>
+        <source>PrivatePAC request incomplete:</source>
+        <translation>คำขอ PrivatePAC ไม่สมบูรณ์:</translation>
     </message>
     <message>
         <source>Prune cannot be configured with a negative value.</source>
@@ -4858,8 +4858,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>โปรดให้การสนับสนุนหากคุณพบ %s ที่เป็นประโยชน์ ไปที่ %s เพื่อดูข้อมูลเพิ่มเติมเกี่ยวกับซอฟต์แวร์</translation>
     </message>
     <message>
-        <source>Provide liquidity to PrivateSend by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
-        <translation>ให้สภาพคล่องแก่ PrivateSend โดยการผสมเหรียญเป็นระยะ ๆ อย่างต่อเนื่อง  (%u-%u, ค่าเริ่มต้น: %u,  1 = บ่อยครั้งมากค่าธรรมเนียมสูง,%u = ไม่บ่อยมากค่าธรรมเนียมต่ำ)</translation>
+        <source>Provide liquidity to PrivatePAC by infrequently mixing coins on a continual basis (%u-%u, default: %u, 1=very frequent, high fees, %u=very infrequent, low fees)</source>
+        <translation>ให้สภาพคล่องแก่ PrivatePAC โดยการผสมเหรียญเป็นระยะ ๆ อย่างต่อเนื่อง  (%u-%u, ค่าเริ่มต้น: %u,  1 = บ่อยครั้งมากค่าธรรมเนียมสูง,%u = ไม่บ่อยมากค่าธรรมเนียมต่ำ)</translation>
     </message>
     <message>
         <source>Query for peer addresses via DNS lookup, if low on addresses (default: 1 unless -connect/-noconnect)</source>
@@ -4882,8 +4882,8 @@ https://www.transifex.com/projects/p/paccoin/</translation>
         <translation>ผลิตภัณฑ์นี้รวมถึงซอฟต์แวร์ที่พัฒนาโดย OpenSSL Project เพื่อใช้ใน OpenSSL Toolkit %s และซอฟต์แวร์เข้ารหัสที่เขียนขึ้นโดย Eric Young และซอฟต์แวร์ UPnP ที่เขียนโดย Thomas Bernard</translation>
     </message>
     <message>
-        <source>Unable to locate enough PrivateSend non-denominated funds for this transaction.</source>
-        <translation>ไม่สามารถหาเงินทุนที่ไม่ใช่สกุลเงินที่ระบุ PrivateSend ได้มากพอสำหรับธุรกรรมนี้</translation>
+        <source>Unable to locate enough PrivatePAC non-denominated funds for this transaction.</source>
+        <translation>ไม่สามารถหาเงินทุนที่ไม่ใช่สกุลเงินที่ระบุ PrivatePAC ได้มากพอสำหรับธุรกรรมนี้</translation>
     </message>
     <message>
         <source>Use N separate masternodes for each denominated input to mix funds (%u-%u, default: %u)</source>

@@ -418,7 +418,7 @@
                </font>
               </property>
               <property name="text">
-               <string>PrivateSend</string>
+               <string>PrivatePAC</string>
               </property>
              </widget>
             </item>
@@ -501,7 +501,7 @@
             <item row="2" column="0">
              <widget class="QLabel" name="labelAnonymizedText">
               <property name="text">
-               <string>PrivateSend Balance:</string>
+               <string>PrivatePAC Balance:</string>
               </property>
              </widget>
             </item>
@@ -590,7 +590,7 @@
                  </sizepolicy>
                 </property>
                 <property name="toolTip">
-                 <string>Try to manually submit a PrivateSend request.</string>
+                 <string>Try to manually submit a PrivatePAC request.</string>
                 </property>
                 <property name="text">
                  <string>Try Mix</string>
@@ -606,7 +606,7 @@
                  </sizepolicy>
                 </property>
                 <property name="toolTip">
-                 <string>Reset the current status of PrivateSend (can interrupt PrivateSend if it's in the process of Mixing, which can cost you money!)</string>
+                 <string>Reset the current status of PrivatePAC (can interrupt PrivatePAC if it's in the process of Mixing, which can cost you money!)</string>
                 </property>
                 <property name="autoFillBackground">
                  <bool>false</bool>
@@ -625,7 +625,7 @@
                  </sizepolicy>
                 </property>
                 <property name="toolTip">
-                 <string>Information about PrivateSend and Mixing</string>
+                 <string>Information about PrivatePAC and Mixing</string>
                 </property>
                 <property name="text">
                  <string>Info</string>

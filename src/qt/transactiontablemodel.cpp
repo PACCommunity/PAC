@@ -396,7 +396,7 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
     case TransactionRecord::RecvFromOther:
         return tr("Received from");
     case TransactionRecord::RecvWithPrivateSend:
-        return tr("Received via PrivateSend");
+        return tr("Received via PrivatePAC");
     case TransactionRecord::SendToAddress:
     case TransactionRecord::SendToOther:
         return tr("Sent to");
@@ -406,15 +406,15 @@ QString TransactionTableModel::formatTxType(const TransactionRecord *wtx) const
         return tr("Mined");
 
     case TransactionRecord::PrivateSendDenominate:
-        return tr("PrivateSend Denominate");
+        return tr("PrivatePAC Denominate");
     case TransactionRecord::PrivateSendCollateralPayment:
-        return tr("PrivateSend Collateral Payment");
+        return tr("PrivatePAC Collateral Payment");
     case TransactionRecord::PrivateSendMakeCollaterals:
-        return tr("PrivateSend Make Collateral Inputs");
+        return tr("PrivatePAC Make Collateral Inputs");
     case TransactionRecord::PrivateSendCreateDenominations:
-        return tr("PrivateSend Create Denominations");
+        return tr("PrivatePAC Create Denominations");
     case TransactionRecord::PrivateSend:
-        return tr("PrivateSend");
+        return tr("PrivatePAC");
 
     default:
         return QString();
@@ -750,7 +750,7 @@ QVariant TransactionTableModel::headerData(int section, Qt::Orientation orientat
             case Watchonly:
                 return tr("Whether or not a watch-only address is involved in this transaction.");
             case InstantSend:
-                return tr("Whether or not this transaction was locked by InstantSend.");
+                return tr("Whether or not this transaction was locked by InstantPAC.");
             case ToAddress:
                 return tr("User-defined intent/purpose of the transaction.");
             case Amount:

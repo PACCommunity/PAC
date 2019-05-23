@@ -862,7 +862,7 @@ public:
     bool HasCollateralInputs(bool fOnlyConfirmed = true) const;
     int  CountInputsWithAmount(CAmount nInputAmount) const;
 
-    // get the PrivateSend chain depth for a given input
+    // get the PrivatePAC chain depth for a given input
     int GetRealOutpointPrivateSendRounds(const COutPoint& outpoint, int nRounds = 0) const;
     // respect current settings
     int GetCappedOutpointPrivateSendRounds(const COutPoint& outpoint) const;

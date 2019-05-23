@@ -271,7 +271,7 @@ void SendCoinsDialog::on_sendButton_clicked()
 
     if(model->IsOldInstantSendEnabled() && ui->checkUseInstantSend->isChecked()) {
         strFunds += " ";
-        strFunds += tr("and InstantSend");
+        strFunds += tr("and InstantPAC");
     }
 
     for (SendCoinsRecipient& rcp : recipients) {

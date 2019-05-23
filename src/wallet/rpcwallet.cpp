@@ -420,7 +420,7 @@ UniValue sendtoaddress(const JSONRPCRequest& request)
             "                             transaction, just kept in your wallet.\n"
             "5. subtractfeefromamount  (boolean, optional, default=false) The fee will be deducted from the amount being sent.\n"
             "                             The recipient will receive less amount of PAC than you enter in the amount field.\n"
-            "6. \"use_is\"             (bool, optional, default=false) Send this transaction as InstantSend\n"
+            "6. \"use_is\"             (bool, optional, default=false) Send this transaction as InstantPAC\n"
             "7. \"use_ps\"             (bool, optional, default=false) Use anonymized funds only\n"
             "\nResult:\n"
             "\"txid\"                  (string) The transaction id.\n"
@@ -694,7 +694,7 @@ UniValue getreceivedbyaddress(const JSONRPCRequest& request)
             "\nArguments:\n"
             "1. \"address\"         (string, required) The paccoin address for transactions.\n"
             "2. minconf             (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
-            "3. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "3. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "\nResult:\n"
             "amount   (numeric) The total amount in " + CURRENCY_UNIT + " received at this address.\n"
             "\nExamples:\n"
@@ -756,7 +756,7 @@ UniValue getreceivedbyaccount(const JSONRPCRequest& request)
             "\nArguments:\n"
             "1. \"account\"      (string, required) The selected account, may be the default account using \"\".\n"
             "2. minconf        (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
-            "3. addlocked      (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "3. addlocked      (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "\nResult:\n"
             "amount            (numeric) The total amount in " + CURRENCY_UNIT + " received for this account.\n"
             "\nExamples:\n"
@@ -820,7 +820,7 @@ UniValue getbalance(const JSONRPCRequest& request)
             "\nArguments:\n"
             "1. \"account\"        (string, optional) DEPRECATED. The selected account, or \"*\" for entire wallet. It may be the default account using \"\".\n"
             "2. minconf          (numeric, optional, default=1) Only include transactions confirmed at least this many times.\n"
-            "3. addlocked      (bool, optional, default=false) Whether to include the value of transactions locked via InstantSend in the wallet's balance.\n"
+            "3. addlocked      (bool, optional, default=false) Whether to include the value of transactions locked via InstantPAC in the wallet's balance.\n"
             "4. include_watchonly (bool, optional, default=false) Also include balance in watch-only addresses (see 'importaddress')\n"
             "\nResult:\n"
             "amount              (numeric) The total amount in " + CURRENCY_UNIT + " received for this account.\n"
@@ -969,7 +969,7 @@ UniValue sendfrom(const JSONRPCRequest& request)
             "2. \"toaddress\"         (string, required) The paccoin address to send funds to.\n"
             "3. amount              (numeric or string, required) The amount in " + CURRENCY_UNIT + " (transaction fee is added on top).\n"
             "4. minconf             (numeric, optional, default=1) Only use funds with at least this many confirmations.\n"
-            "5. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "5. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "6. \"comment\"           (string, optional) A comment used to store what the transaction is for. \n"
             "                       This is not part of the transaction, just kept in your wallet.\n"
             "7. \"comment_to\"        (string, optional) An optional comment to store the name of the person or organization \n"
@@ -1040,7 +1040,7 @@ UniValue sendmany(const JSONRPCRequest& request)
             "      ,...\n"
             "    }\n"
             "3. minconf                 (numeric, optional, default=1) Only use the balance confirmed at least this many times.\n"
-            "4. addlocked               (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "4. addlocked               (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "5. \"comment\"               (string, optional) A comment\n"
             "6. subtractfeefromamount   (array, optional) A json array with addresses.\n"
             "                           The fee will be equally deducted from the amount of each selected address.\n"
@@ -1050,7 +1050,7 @@ UniValue sendmany(const JSONRPCRequest& request)
             "      \"address\"          (string) Subtract fee from this address\n"
             "      ,...\n"
             "    ]\n"
-            "7. \"use_is\"                (bool, optional, default=false) Send this transaction as InstantSend\n"
+            "7. \"use_is\"                (bool, optional, default=false) Send this transaction as InstantPAC\n"
             "8. \"use_ps\"                (bool, optional, default=false) Use anonymized funds only\n"
             "\nResult:\n"
             "\"txid\"                   (string) The transaction id for the send. Only 1 transaction is created regardless of \n"
@@ -1359,7 +1359,7 @@ UniValue listreceivedbyaddress(const JSONRPCRequest& request)
             "\nList incoming payments grouped by receiving address.\n"
             "\nArguments:\n"
             "1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.\n"
-            "2. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "2. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "3. include_empty     (bool, optional, default=false) Whether to include addresses that haven't received any payments.\n"
             "4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').\n"
 
@@ -1372,7 +1372,7 @@ UniValue listreceivedbyaddress(const JSONRPCRequest& request)
             "    \"amount\" : x.xxx,                  (numeric) The total amount in " + CURRENCY_UNIT + " received by the address\n"
             "    \"confirmations\" : n                (numeric) The number of confirmations of the most recent transaction included.\n"
             "                                                 If 'addlocked' is true, the number of confirmations can be less than\n"
-            "                                                 configured for transactions locked via InstantSend\n"
+            "                                                 configured for transactions locked via InstantPAC\n"
             "    \"label\" : \"label\",               (string) A comment for the address/transaction, if any\n"
             "    \"txids\": [\n"
             "       n,                                (numeric) The ids of transactions received with the address \n"
@@ -1406,7 +1406,7 @@ UniValue listreceivedbyaccount(const JSONRPCRequest& request)
             "\nDEPRECATED. List incoming payments grouped by account.\n"
             "\nArguments:\n"
             "1. minconf           (numeric, optional, default=1) The minimum number of confirmations before payments are included.\n"
-            "2. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "2. addlocked         (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "3. include_empty     (bool, optional, default=false) Whether to include accounts that haven't received any payments.\n"
             "4. include_watchonly (bool, optional, default=false) Whether to include watch-only addresses (see 'importaddress').\n"
 
@@ -1682,7 +1682,7 @@ UniValue listaccounts(const JSONRPCRequest& request)
             "\nDEPRECATED. Returns Object that has account names as keys, account balances as values.\n"
             "\nArguments:\n"
             "1. minconf             (numeric, optional, default=1) Only include transactions with at least this many confirmations\n"
-            "2. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantSend.\n"
+            "2. addlocked           (bool, optional, default=false) Whether to include transactions locked via InstantPAC.\n"
             "3. include_watchonly   (bool, optional, default=false) Include balances in watch-only addresses (see 'importaddress')\n"
             "\nResult:\n"
             "{                    (json object where keys are account names, and values are numeric balances\n"
@@ -2090,7 +2090,7 @@ UniValue walletpassphrase(const JSONRPCRequest& request)
             "\nExamples:\n"
             "\nUnlock the wallet for 60 seconds\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\" 60") +
-            "\nUnlock the wallet for 60 seconds but allow PrivateSend mixing only\n"
+            "\nUnlock the wallet for 60 seconds but allow PrivatePAC mixing only\n"
             + HelpExampleCli("walletpassphrase", "\"my pass phrase\" 60 true") +
             "\nLock the wallet again (before 60 seconds)\n"
             + HelpExampleCli("walletlock", "") +
@@ -2471,7 +2471,7 @@ UniValue setprivatesendrounds(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
             "setprivatesendrounds rounds\n"
-            "\nSet the number of rounds for PrivateSend mixing.\n"
+            "\nSet the number of rounds for PrivatePAC mixing.\n"
             "\nArguments:\n"
             "1. rounds         (numeric, required) The default number of rounds is " + std::to_string(DEFAULT_PRIVATESEND_ROUNDS) + 
             " Cannot be more than " + std::to_string(MAX_PRIVATESEND_ROUNDS) + " nor less than " + std::to_string(MIN_PRIVATESEND_ROUNDS) +
@@ -2499,7 +2499,7 @@ UniValue setprivatesendamount(const JSONRPCRequest& request)
     if (request.fHelp || request.params.size() != 1)
         throw std::runtime_error(
             "setprivatesendamount amount\n"
-            "\nSet the goal amount in " + CURRENCY_UNIT + " for PrivateSend mixing.\n"
+            "\nSet the goal amount in " + CURRENCY_UNIT + " for PrivatePAC mixing.\n"
             "\nArguments:\n"
             "1. amount         (numeric, required) The default amount is " + std::to_string(DEFAULT_PRIVATESEND_AMOUNT) +
             " Cannot be more than " + std::to_string(MAX_PRIVATESEND_AMOUNT) + " nor less than " + std::to_string(MIN_PRIVATESEND_AMOUNT) +

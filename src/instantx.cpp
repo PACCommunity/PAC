@@ -61,7 +61,7 @@ void CInstantSend::ProcessMessage(CNode* pfrom, const std::string& strCommand, C
 
     // NOTE: NetMsgType::TXLOCKREQUEST is handled via ProcessMessage() in net_processing.cpp
 
-    if (strCommand == NetMsgType::TXLOCKVOTE) { // InstantSend Transaction Lock Consensus Votes
+    if (strCommand == NetMsgType::TXLOCKVOTE) { // InstantPAC Transaction Lock Consensus Votes
         if(pfrom->nVersion < MIN_INSTANTSEND_PROTO_VERSION) {
             LogPrint("instantsend", "TXLOCKVOTE -- peer=%d using obsolete version %i\n", pfrom->id, pfrom->nVersion);
             connman.PushMessage(pfrom, CNetMsgMaker(pfrom->GetSendVersion()).Make(NetMsgType::REJECT, strCommand, REJECT_OBSOLETE,
