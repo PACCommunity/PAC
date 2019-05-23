@@ -553,7 +553,8 @@ QWidget *ProposalList::createStartDateRangeWidget()
     QSettings settings;
  
     startDateRangeWidget = new QFrame();
-    startDateRangeWidget->setFrameStyle(QFrame::Panel | QFrame::Raised);
+    startDateRangeWidget->setStyleSheet("border:none;");
+    startDateRangeWidget->setFrameStyle(QFrame::NoFrame | QFrame::Raised);
     startDateRangeWidget->setContentsMargins(1,1,1,1);
     QHBoxLayout *layout = new QHBoxLayout(startDateRangeWidget);
     layout->setContentsMargins(0,0,0,0);
@@ -561,6 +562,8 @@ QWidget *ProposalList::createStartDateRangeWidget()
     layout->addWidget(new QLabel(tr("Start Date:")));
 
     proposalStartDate = new QDateTimeEdit(this);
+    proposalStartDate->setProperty("class2","comboBoxRangeDate");
+
     proposalStartDate->setCalendarPopup(true);
     proposalStartDate->setMinimumWidth(100);
 
@@ -582,7 +585,8 @@ QWidget *ProposalList::createEndDateRangeWidget()
     QSettings settings;
  
     endDateRangeWidget = new QFrame();
-    endDateRangeWidget->setFrameStyle(QFrame::Panel | QFrame::Raised);
+    endDateRangeWidget->setStyleSheet("border:none;");
+    endDateRangeWidget->setFrameStyle(QFrame::NoFrame | QFrame::Raised);
     endDateRangeWidget->setContentsMargins(1,1,1,1);
     QHBoxLayout *layout = new QHBoxLayout(endDateRangeWidget);
     layout->setContentsMargins(0,0,0,0);
@@ -590,6 +594,7 @@ QWidget *ProposalList::createEndDateRangeWidget()
     layout->addWidget(new QLabel(tr("End Date:")));
 
     proposalEndDate = new QDateTimeEdit(this);
+    proposalEndDate->setProperty("class2","comboBoxRangeDate");
     proposalEndDate->setCalendarPopup(true);
     proposalEndDate->setMinimumWidth(100);
 
