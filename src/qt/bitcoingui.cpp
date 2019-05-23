@@ -1730,7 +1730,7 @@ void BitcoinGUI::copyNews(){
 /** Button on the top bar to refresh news and pac value */
 void BitcoinGUI::refreshNewsPacValue(){
     //Refresh news
-    requestNews.setUrl(QUrl("http://144.202.121.149:8080/"));
+    requestNews.setUrl(QUrl("http://news.paccoin.io:8080/"));
     managerNews->get(requestNews);
 
     //Refresh PAC value
