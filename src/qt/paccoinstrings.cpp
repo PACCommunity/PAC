@@ -40,9 +40,11 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "Bind to given address and whitelist peers connecting to it. Use [host]:port "
 "notation for IPv6"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Bind to given address to listen for JSON-RPC connections. Use [host]:port "
-"notation for IPv6. This option can be specified multiple times (default: "
-"bind to all interfaces)"),
+"Bind to given address to listen for JSON-RPC connections. This option is "
+"ignored unless -rpcallowip is also passed. Port is optional and overrides -"
+"rpcport. Use [host]:port notation for IPv6. This option can be specified "
+"multiple times (default: 127.0.0.1 and ::1 i.e., localhost, or if -"
+"rpcallowip has been specified, 0.0.0.0 and :: i.e., all addresses)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "Cannot obtain a lock on data directory %s. %s is probably already running."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
@@ -303,13 +305,6 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 "Wallet will not create transactions that violate mempool chain limits "
 "(default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"Warning: At least %d of %d masternodes are running on a newer software "
-"version. Please check latest releases, you might need to update too."),
-QT_TRANSLATE_NOOP("paccoin-core", ""
-"Warning: Every masternode (out of %d known ones) is running on a newer "
-"software version. Please check latest releases, it's very likely that you "
-"missed a major/critical update."),
-QT_TRANSLATE_NOOP("paccoin-core", ""
 "Warning: The network does not appear to fully agree! Some miners appear to "
 "be experiencing issues."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
@@ -331,9 +326,6 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 QT_TRANSLATE_NOOP("paccoin-core", ""
 "You are starting in lite mode, all PAC-specific functionality is disabled."),
 QT_TRANSLATE_NOOP("paccoin-core", ""
-"You must specify a masternodeprivkey in the configuration. Please see "
-"documentation for help."),
-QT_TRANSLATE_NOOP("paccoin-core", ""
 "You need to rebuild the database using -reindex to go back to unpruned "
 "mode.  This will redownload the entire blockchain"),
 QT_TRANSLATE_NOOP("paccoin-core", ""
@@ -344,15 +336,14 @@ QT_TRANSLATE_NOOP("paccoin-core", ""
 QT_TRANSLATE_NOOP("paccoin-core", "%s corrupt, salvage failed"),
 QT_TRANSLATE_NOOP("paccoin-core", "%s is not a valid backup folder!"),
 QT_TRANSLATE_NOOP("paccoin-core", "%s is set very high!"),
-QT_TRANSLATE_NOOP("paccoin-core", "(%d could be used only on mainnet)"),
 QT_TRANSLATE_NOOP("paccoin-core", "(default: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", "(default: %u)"),
-QT_TRANSLATE_NOOP("paccoin-core", "(must be %d for mainnet)"),
 QT_TRANSLATE_NOOP("paccoin-core", "(press q to shutdown and continue later)"),
 QT_TRANSLATE_NOOP("paccoin-core", "-devnet can only be specified once"),
 QT_TRANSLATE_NOOP("paccoin-core", "-maxmempool must be at least %d MB"),
 QT_TRANSLATE_NOOP("paccoin-core", "-port must be specified when -devnet and -listen are specified"),
 QT_TRANSLATE_NOOP("paccoin-core", "-rpcport must be specified when -devnet and -server are specified"),
+QT_TRANSLATE_NOOP("paccoin-core", "-wallet parameter must only specify a filename (not a path)"),
 QT_TRANSLATE_NOOP("paccoin-core", "<category> can be:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Accept command line and JSON-RPC commands"),
 QT_TRANSLATE_NOOP("paccoin-core", "Accept public REST requests (default: %u)"),
@@ -381,7 +372,6 @@ QT_TRANSLATE_NOOP("paccoin-core", "Connect to a node to retrieve peer addresses,
 QT_TRANSLATE_NOOP("paccoin-core", "Connection options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Copyright (C)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Corrupted block database detected"),
-QT_TRANSLATE_NOOP("paccoin-core", "Could not parse masternode.conf"),
 QT_TRANSLATE_NOOP("paccoin-core", "Debugging/Testing options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Do not load the wallet and disable wallet RPC calls"),
 QT_TRANSLATE_NOOP("paccoin-core", "Do you want to rebuild the block database now?"),
@@ -420,9 +410,7 @@ QT_TRANSLATE_NOOP("paccoin-core", "Failed to load InstantPAC data cache from"),
 QT_TRANSLATE_NOOP("paccoin-core", "Failed to load fulfilled requests cache from"),
 QT_TRANSLATE_NOOP("paccoin-core", "Failed to load governance cache from"),
 QT_TRANSLATE_NOOP("paccoin-core", "Failed to load masternode cache from"),
-QT_TRANSLATE_NOOP("paccoin-core", "Failed to load masternode payments cache from"),
 QT_TRANSLATE_NOOP("paccoin-core", "Failed to load sporks cache from"),
-QT_TRANSLATE_NOOP("paccoin-core", "Failed to parse host:port string"),
 QT_TRANSLATE_NOOP("paccoin-core", "Failed to start a new mixing queue"),
 QT_TRANSLATE_NOOP("paccoin-core", "Fee (in %s/kB) to add to transactions you send (default: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Found enough users, signing ( waiting %s )"),
@@ -439,16 +427,15 @@ QT_TRANSLATE_NOOP("paccoin-core", "Initialization sanity check failed. %s is shu
 QT_TRANSLATE_NOOP("paccoin-core", "Input is not valid."),
 QT_TRANSLATE_NOOP("paccoin-core", "InstantPAC options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Insufficient funds."),
-QT_TRANSLATE_NOOP("paccoin-core", "Invalid -onion address: '%s'"),
-QT_TRANSLATE_NOOP("paccoin-core", "Invalid -proxy address: '%s'"),
+QT_TRANSLATE_NOOP("paccoin-core", "Invalid -onion address or hostname: '%s'"),
+QT_TRANSLATE_NOOP("paccoin-core", "Invalid -proxy address or hostname: '%s'"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid amount for -%s=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid amount for -fallbackfee=<amount>: '%s'"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid amount for -paytxfee=<amount>: '%s' (must be at least %s)"),
+QT_TRANSLATE_NOOP("paccoin-core", "Invalid characters in -wallet filename"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid masternodeblsprivkey. Please see documenation."),
-QT_TRANSLATE_NOOP("paccoin-core", "Invalid masternodeprivkey. Please see documenation."),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid minimum number of spork signers specified with -minsporkkeys"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid netmask specified in -whitelist: '%s'"),
-QT_TRANSLATE_NOOP("paccoin-core", "Invalid port detected in masternode.conf"),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid script detected."),
 QT_TRANSLATE_NOOP("paccoin-core", "Invalid spork address specified with -sporkaddr"),
 QT_TRANSLATE_NOOP("paccoin-core", "KeePassHttp id for the established association"),
@@ -459,25 +446,21 @@ QT_TRANSLATE_NOOP("paccoin-core", "Keep the transaction memory pool below <n> me
 QT_TRANSLATE_NOOP("paccoin-core", "Keypool ran out, please call keypoolrefill first"),
 QT_TRANSLATE_NOOP("paccoin-core", "Last PrivatePAC was too recent."),
 QT_TRANSLATE_NOOP("paccoin-core", "Last successful PrivatePAC action was too recent."),
-QT_TRANSLATE_NOOP("paccoin-core", "Line: %d"),
 QT_TRANSLATE_NOOP("paccoin-core", "Listen for JSON-RPC connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Listen for connections on <port> (default: %u or testnet: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading InstantPAC data cache..."),
-QT_TRANSLATE_NOOP("paccoin-core", "Loading addresses..."),
+QT_TRANSLATE_NOOP("paccoin-core", "Loading P2P addresses..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading banlist..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading block index..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading fulfilled requests cache..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading governance cache..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading masternode cache..."),
-QT_TRANSLATE_NOOP("paccoin-core", "Loading masternode payment cache..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading sporks cache..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading wallet... (%3.2f %%)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Loading wallet..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Location of the auth cookie (default: data dir)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Lock is already in place."),
-QT_TRANSLATE_NOOP("paccoin-core", "Lock masternodes from masternode configuration file (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Make the wallet broadcast transactions"),
-QT_TRANSLATE_NOOP("paccoin-core", "Masternode cache is empty, skipping payments and governance cache..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Masternode options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Masternode queue is full."),
 QT_TRANSLATE_NOOP("paccoin-core", "Masternode:"),
@@ -502,7 +485,6 @@ QT_TRANSLATE_NOOP("paccoin-core", "Number of automatic wallet backups (default: 
 QT_TRANSLATE_NOOP("paccoin-core", "Only connect to nodes in network <net> (ipv4, ipv6 or onion)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Options:"),
 QT_TRANSLATE_NOOP("paccoin-core", "Password for JSON-RPC connections"),
-QT_TRANSLATE_NOOP("paccoin-core", "Port: %d"),
 QT_TRANSLATE_NOOP("paccoin-core", "Prepend debug output with timestamp (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Print this help message and exit"),
 QT_TRANSLATE_NOOP("paccoin-core", "Print version and exit"),
@@ -532,7 +514,6 @@ QT_TRANSLATE_NOOP("paccoin-core", "Set database cache size in megabytes (%d to %
 QT_TRANSLATE_NOOP("paccoin-core", "Set key pool size to <n> (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Set maximum block size in bytes (default: %d)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Set the masternode BLS private key"),
-QT_TRANSLATE_NOOP("paccoin-core", "Set the masternode private key"),
 QT_TRANSLATE_NOOP("paccoin-core", "Set the number of threads to service RPC calls (default: %d)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Show all debugging options (usage: --help -help-debug)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Shrink debug.log file on client startup (default: 1 when no -debug)"),
@@ -540,22 +521,19 @@ QT_TRANSLATE_NOOP("paccoin-core", "Signing transaction failed"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify configuration file (default: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify connection timeout in milliseconds (minimum: 1, default: %d)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify data directory"),
-QT_TRANSLATE_NOOP("paccoin-core", "Specify masternode configuration file (default: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify pid file (default: %s)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify wallet file (within data directory)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Specify your own public address"),
 QT_TRANSLATE_NOOP("paccoin-core", "Spend unconfirmed change when sending transactions (default: %u)"),
 QT_TRANSLATE_NOOP("paccoin-core", "Starting network threads..."),
-QT_TRANSLATE_NOOP("paccoin-core", "Submitted following entries to masternode: %u / %d"),
-QT_TRANSLATE_NOOP("paccoin-core", "Submitted to masternode, waiting for more entries ( %u / %d ) %s"),
+QT_TRANSLATE_NOOP("paccoin-core", "Submitted following entries to masternode: %u"),
+QT_TRANSLATE_NOOP("paccoin-core", "Submitted to masternode, waiting for more entries ( %u ) %s"),
 QT_TRANSLATE_NOOP("paccoin-core", "Submitted to masternode, waiting in queue %s"),
-QT_TRANSLATE_NOOP("paccoin-core", "Synchroning blockchain..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Synchronization failed"),
 QT_TRANSLATE_NOOP("paccoin-core", "Synchronization finished"),
 QT_TRANSLATE_NOOP("paccoin-core", "Synchronization pending..."),
+QT_TRANSLATE_NOOP("paccoin-core", "Synchronizing blockchain..."),
 QT_TRANSLATE_NOOP("paccoin-core", "Synchronizing governance objects..."),
-QT_TRANSLATE_NOOP("paccoin-core", "Synchronizing masternode payments..."),
-QT_TRANSLATE_NOOP("paccoin-core", "Synchronizing masternodes..."),
 QT_TRANSLATE_NOOP("paccoin-core", "The source code is available from %s."),
 QT_TRANSLATE_NOOP("paccoin-core", "The transaction amount is too small to pay the fee"),
 QT_TRANSLATE_NOOP("paccoin-core", "The wallet will avoid paying less than the minimum relay fee."),

@@ -7,7 +7,7 @@
 #include "random.h"
 #include "util.h"
 
-#include "dash-config.h"
+#include "paccoin-config.h"
 
 #include <mutex>
 #include <map>

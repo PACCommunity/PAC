@@ -4,7 +4,7 @@
 
 #include "bls/bls.h"
 #include "bls/bls_batchverifier.h"
-#include "test/test_dash.h"
+#include "test/test_paccoin.h"
 
 #include <boost/test/unit_test.hpp>
 
