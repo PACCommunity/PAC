@@ -31,7 +31,7 @@ packages:
 - "fonts-tuffy"
 remotes:
 - "url": "https://github.com/PACCommunity/PAC.git"
-  "dir": "paccoin"
+  "dir": "PAC"
 files:
 - "MacOSX10.11.sdk.tar.gz"
 script: |

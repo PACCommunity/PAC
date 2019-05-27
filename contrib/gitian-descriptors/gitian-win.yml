@@ -26,7 +26,7 @@ packages:
 - "rename"
 remotes:
 - "url": "https://github.com/PACCommunity/PAC.git"
-  "dir": "paccoin"
+  "dir": "PAC"
 files: []
 script: |
   WRAP_DIR=$HOME/wrapped

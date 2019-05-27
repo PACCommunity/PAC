@@ -32,7 +32,7 @@ packages:
 - "libxkbcommon0"
 remotes:
 - "url": "https://github.com/PACCommunity/PAC.git"
-  "dir": "paccoin"
+  "dir": "PAC"
 files: []
 script: |
 
