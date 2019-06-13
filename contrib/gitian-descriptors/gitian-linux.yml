@@ -142,7 +142,7 @@ script: |
   touch -d "${REFERENCE_DATETIME}" ${WRAP_DIR}/${prog}
   done
 
-  cd paccoin
+  cd PAC
   BASEPREFIX=`pwd`/depends
   # Build dependencies for each host
   for i in $HOSTS; do
