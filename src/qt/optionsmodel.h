@@ -43,6 +43,7 @@ public:
         Digits,                 // QString
         Theme,                  // QString
         Language,               // QString
+        FontType,               // QString
         CoinControlFeatures,    // bool
         ThreadsScriptVerif,     // int
         DatabaseCache,          // int

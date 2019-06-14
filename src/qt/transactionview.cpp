@@ -73,6 +73,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(instantsendWidget);
 
     dateWidget = new QComboBox(this);
+    dateWidget->setObjectName("dateWidget");
     if (platformStyle->getUseExtraSpacing()) {
         dateWidget->setFixedWidth(120);
     } else {
@@ -89,6 +90,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     hlayout->addWidget(dateWidget);
 
     typeWidget = new QComboBox(this);
+    typeWidget->setObjectName("typeWidget");
     if (platformStyle->getUseExtraSpacing()) {
         typeWidget->setFixedWidth(TYPE_COLUMN_WIDTH);
     } else {
@@ -138,6 +140,7 @@ TransactionView::TransactionView(const PlatformStyle *platformStyle, QWidget *pa
     vlayout->setSpacing(0);
 
     QTableView *view = new QTableView(this);
+    view->setObjectName("transactionsTable");
     vlayout->addLayout(hlayout);
     vlayout->addWidget(createDateRangeWidget());
     vlayout->addWidget(view);
@@ -227,7 +230,8 @@ void TransactionView::setModel(WalletModel *_model)
 
         transactionView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
         transactionView->setModel(transactionProxyModel);
-        transactionView->setAlternatingRowColors(true);
+        transactionView->setAlternatingRowColors(false);
+        transactionView->setShowGrid(false);
         transactionView->setSelectionBehavior(QAbstractItemView::SelectRows);
         transactionView->setSelectionMode(QAbstractItemView::ExtendedSelection);
         transactionView->setSortingEnabled(true);
@@ -599,7 +603,8 @@ QWidget *TransactionView::createDateRangeWidget()
     QSettings settings;
  
     dateRangeWidget = new QFrame();
-    dateRangeWidget->setFrameStyle(QFrame::Panel | QFrame::Raised);
+    dateRangeWidget->setStyleSheet("border: none;");
+    dateRangeWidget->setFrameStyle(QFrame::NoFrame | QFrame::Raised);
     dateRangeWidget->setContentsMargins(1,1,1,1);
     QHBoxLayout *layout = new QHBoxLayout(dateRangeWidget);
     layout->setContentsMargins(0,0,0,0);
@@ -607,6 +612,9 @@ QWidget *TransactionView::createDateRangeWidget()
     layout->addWidget(new QLabel(tr("Range:")));
 
     dateFrom = new QDateTimeEdit(this);
+    dateFrom->setProperty("class","ComboBoxSmall");
+    dateFrom->setProperty("class2","comboBoxRangeDate");
+    
     dateFrom->setCalendarPopup(true);
     dateFrom->setMinimumWidth(100);
     // Load persisted FROM date
@@ -616,6 +624,9 @@ QWidget *TransactionView::createDateRangeWidget()
     layout->addWidget(new QLabel(tr("to")));
 
     dateTo = new QDateTimeEdit(this);
+    dateTo->setProperty("class","ComboBoxSmall");
+    dateTo->setProperty("class2","comboBoxRangeDate");
+
     dateTo->setCalendarPopup(true);
     dateTo->setMinimumWidth(100);
     // Load persisted TO date

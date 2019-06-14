@@ -31,6 +31,10 @@
 #include <QSettings>
 #include <QTextDocument>
 #include <QTimer>
+#include <QPropertyAnimation>
+#include <QClipboard>
+#include <QToolTip>
+
 
 #define SEND_CONFIRM_DELAY   3
 
@@ -55,10 +59,14 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *_platformStyle, QWidget *p
         ui->clearButton->setIcon(QIcon(":/icons/" + theme + "/remove"));
         ui->sendButton->setIcon(QIcon(":/icons/" + theme + "/send"));
     }
+    ui->iconLabelAvailableBalance->setPixmap(QPixmap(":icons/bitcoin-32"));
+    ui->iconLabelConvertedCurrency->setPixmap(QPixmap(":icons/bitcoin-32").scaled(20,20, Qt::KeepAspectRatio, Qt::SmoothTransformation));
 
     GUIUtil::setupAddressWidget(ui->lineEditCoinControlChange, this);
-
     addEntry();
+
+    //ui->advanced_page->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+
 
     connect(ui->addButton, SIGNAL(clicked()), this, SLOT(addEntry()));
     connect(ui->clearButton, SIGNAL(clicked()), this, SLOT(clear()));
@@ -144,6 +152,16 @@ SendCoinsDialog::SendCoinsDialog(const PlatformStyle *_platformStyle, QWidget *p
     ui->customFee->setValue(settings.value("nTransactionFee").toLongLong());
     ui->checkBoxMinimumFee->setChecked(settings.value("fPayOnlyMinFee").toBool());
     minimizeFeeSection(settings.value("fFeeSectionMinimized").toBool());
+
+    // removes the focus blue border that is native on Mac OS from all the QLineEdit
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        std::string str(widgets.at(i)->metaObject()->className());
+        if(str.compare("QLineEdit") == 0){
+            widgets.at(i)->setAttribute(Qt::WA_MacShowFocusRect, false);
+        }
+    }
+    ui->toolBox->setCurrentIndex(0);
 }
 
 void SendCoinsDialog::setClientModel(ClientModel *_clientModel)
@@ -197,6 +215,8 @@ void SendCoinsDialog::setModel(WalletModel *_model)
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(updateFeeSectionControls()));
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(updateGlobalFeeVariables()));
         connect(ui->checkBoxMinimumFee, SIGNAL(stateChanged(int)), this, SLOT(coinControlUpdateLabels()));
+        connect(ui->toolBox, SIGNAL(currentChanged(int)), this, SLOT(tabSelected()));
+
         ui->customFee->setSingleStep(CWallet::GetRequiredFee(1000));
         updateFeeSectionControls();
         updateMinFeeLabel();
@@ -591,8 +611,10 @@ void SendCoinsDialog::setBalance(const CAmount& balance, const CAmount& unconfir
 	    } else {
 		    bal = balance;
 	    }
-
-        ui->labelBalance->setText(BitcoinUnits::formatWithUnit(model->getOptionsModel()->getDisplayUnit(), bal));
+        // Sets the value of PACs
+        ui->labelBalance->setText(BitcoinUnits::floorHtmlWithUnit(model->getOptionsModel()->getDisplayUnit(), bal, false, BitcoinUnits::separatorAlways));
+        // Sets the value in USD
+        ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(bal) + " USD");
     }
 }
 
@@ -673,18 +695,36 @@ void SendCoinsDialog::minimizeFeeSection(bool fMinimize)
     ui->frameFeeSelection->setVisible(!fMinimize);
     ui->horizontalLayoutSmartFee->setContentsMargins(0, (fMinimize ? 0 : 6), 0, 0);
     fFeeMinimized = fMinimize;
+    /*QPropertyAnimation *animation = new QPropertyAnimation(ui->toolBox, "currentIndex");
+    animation->setDuration(2500);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->start();*/
 }
 
 void SendCoinsDialog::on_buttonChooseFee_clicked()
 {
+    (false) ? (ui->toolBox->setCurrentIndex(0)) : (ui->toolBox->setCurrentIndex(1));
     minimizeFeeSection(false);
 }
 
 void SendCoinsDialog::on_buttonMinimizeFee_clicked()
 {
+    (true) ? (ui->toolBox->setCurrentIndex(0)) : (ui->toolBox->setCurrentIndex(1));
     updateFeeMinimizedLabel();
     minimizeFeeSection(true);
 }
+
+void SendCoinsDialog::tabSelected(){
+    int tabIndex = ui->toolBox->currentIndex();
+    if(tabIndex == 0){
+        minimizeFeeSection(true);
+    }
+    else if(tabIndex == 1){
+        minimizeFeeSection(false);
+    }
+}
+
 
 void SendCoinsDialog::setMinimumFee()
 {
@@ -966,13 +1006,13 @@ void SendCoinsDialog::coinControlUpdateLabels()
 
         // show coin control stats
         ui->labelCoinControlAutomaticallySelected->hide();
-        ui->widgetCoinControl->show();
+        ui->scrollAreaCoinControl->show();
     }
     else
     {
         // hide coin control stats
         ui->labelCoinControlAutomaticallySelected->show();
-        ui->widgetCoinControl->hide();
+        ui->scrollAreaCoinControl->hide();
         ui->labelCoinControlInsuffFunds->hide();
     }
 }
@@ -1018,3 +1058,85 @@ void SendConfirmationDialog::updateYesButton()
         yesButton->setText(tr("Yes"));
     }
 }
+
+/** Receive the signal to update the USD value when the USD-PAC value is updated */
+void SendCoinsDialog::receive_from_walletview()
+{
+    ui->labelAvailableUSD->setText("$ " + BitcoinUnits::pacToUsd(model->getBalance()) + " USD");
+}
+
+/** Convert PAC to USD */
+void SendCoinsDialog::on_lineConvertCurrency_textChanged(const QString &arg1)
+{
+    bool ok;
+    double dbal;
+    dbal = arg1.toDouble(&ok);
+    if(ok)
+    {
+        QSettings settings;
+        double dval = (settings.value("PACvalue").toString()).toDouble();
+
+        QString sconv;
+        if(settings.value("currencyToConvert").toString() == "PAC")
+            sconv = QString::number(dbal*dval, 'g', 17);
+        else if(settings.value("currencyToConvert").toString() == "USD")
+            sconv = QString::number(dbal/dval, 'g', 17);
+
+        QStringList list1 = sconv.split('.');
+        int q_size = list1[0].size();
+            for (int i = 3; i < q_size; i += 3)
+                list1[0].insert(q_size - i, ',');
+        if(list1.length() == 1)
+        {
+            ui->labelConvertion->setText(list1[0]);
+        }
+        else{
+            ui->labelConvertion->setText(list1[0] + '.' + list1[1].left(8));
+        }
+    }
+    else
+    {
+        ui->labelConvertion->setText("0.0");
+    }
+}
+/** Copy the value of the convertion of USD to PAC to the clipboard */
+void SendCoinsDialog::on_copyPacs_clicked()
+{
+    QClipboard *clip = QApplication::clipboard();
+    QString input = ui->labelConvertion->text();
+    input.replace( ",", " " );
+    clip->setText(input);
+    QToolTip::showText(ui->copyPacs->mapToGlobal(QPoint(10,10)), "Copied PACs to clipboard!",ui->copyPacs);
+}
+
+/** Invert the currency convertor tool PAC - USD */
+void SendCoinsDialog::on_btnInvertCurrency_clicked()
+{
+    QString toConvert = ui->lineConvertCurrency->text();
+    QString Converted = ui->labelConvertion->text();
+
+    Converted = Converted.replace(",", "");
+
+    ui->lineConvertCurrency->setText(Converted);
+    (toConvert == NULL || toConvert == "") ? toConvert = "0.0" : toConvert;
+    ui->labelConvertion->setText(toConvert);
+
+    QSettings setting;
+    QString currency = setting.value("currencyToConvert").toString();
+    if(currency == "USD"){
+        ui->lineConvertCurrency->setPlaceholderText("PAC's");
+        ui->iconLabelConvertedCurrency->setPixmap(QPixmap(""));
+        ui->CurrencyToConvert->setPixmap(QPixmap(":icons/bitcoin-32").scaled(20,20, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        ui->iconLabelConvertedCurrency->setText("USD");
+        setting.setValue("currencyToConvert", "PAC");
+    }
+    else{
+        ui->lineConvertCurrency->setPlaceholderText("Dollars");
+        ui->iconLabelConvertedCurrency->setPixmap(QPixmap(":icons/bitcoin-32").scaled(20,20, Qt::KeepAspectRatio, Qt::SmoothTransformation));
+        ui->CurrencyToConvert->setPixmap(QPixmap(""));
+        ui->CurrencyToConvert->setText("USD");
+        setting.setValue("currencyToConvert", "USD");
+    }
+    QToolTip::showText(ui->btnInvertCurrency->mapToGlobal(QPoint(10,10)), "Currency convert tool inverted!",ui->btnInvertCurrency);
+}
+

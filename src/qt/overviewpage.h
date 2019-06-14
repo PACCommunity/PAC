@@ -38,7 +38,6 @@ public:
     void showOutOfSyncWarning(bool fShow);
 
 public Q_SLOTS:
-    void privateSendStatus();
     void setBalance(const CAmount& balance, const CAmount& unconfirmedBalance, const CAmount& immatureBalance, const CAmount& anonymizedBalance,
                     const CAmount& watchOnlyBalance, const CAmount& watchUnconfBalance, const CAmount& watchImmatureBalance);
 
@@ -66,20 +65,16 @@ private:
     std::unique_ptr<TransactionFilterProxy> filter;
 
     void SetupTransactionList(int nNumItems);
-    void DisablePrivateSendCompletely();
 
 private Q_SLOTS:
-    void togglePrivateSend();
-    void privateSendAuto();
-    void privateSendReset();
-    void privateSendInfo();
     void updateDisplayUnit();
-    void updatePrivateSendProgress();
     void updateAdvancedPSUI(bool fShowAdvancedPSUI);
     void handleTransactionClicked(const QModelIndex &index);
     void updateAlerts(const QString &warnings);
     void updateWatchOnlyLabels(bool showWatchOnly);
     void handleOutOfSyncWarningClicks();
+    void on_overviewInfo_clicked();
+    void receive_from_walletview();
 };
 
 #endif // BITCOIN_QT_OVERVIEWPAGE_H

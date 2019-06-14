@@ -52,6 +52,14 @@ SendCoinsEntry::SendCoinsEntry(const PlatformStyle *_platformStyle, QWidget *par
     connect(ui->deleteButton, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_is, SIGNAL(clicked()), this, SLOT(deleteClicked()));
     connect(ui->deleteButton_s, SIGNAL(clicked()), this, SLOT(deleteClicked()));
+
+    // removes the focus blue border that is native on Mac OS from all the QLineEdit
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        std::string str(widgets.at(i)->metaObject()->className());
+        if(str.compare("QLineEdit") == 0 || str.compare("QValidatedLineEdit") == 0)
+            widgets.at(i)->setAttribute(Qt::WA_MacShowFocusRect, false);
+    }
 }
 
 SendCoinsEntry::~SendCoinsEntry()

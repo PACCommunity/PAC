@@ -33,6 +33,8 @@ AddressBookPage::AddressBookPage(const PlatformStyle *platformStyle, Mode _mode,
 {
     QString theme = GUIUtil::getThemeName();
     ui->setupUi(this);
+
+
     if (!platformStyle->getImagesOnButtons()) {
         ui->newAddress->setIcon(QIcon());
         ui->copyAddress->setIcon(QIcon());

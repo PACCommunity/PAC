@@ -17,6 +17,7 @@
 #include "script/script.h"
 #include "script/standard.h"
 #include "util.h"
+#include "guiconstants.h"
 
 #ifdef WIN32
 #ifdef _WIN32_WINNT
@@ -84,7 +85,14 @@ QString dateTimeStr(const QDateTime &date)
 {
     return date.date().toString(Qt::SystemLocaleShortDate) + QString(" ") + date.toString("hh:mm");
 }
-
+QString timeStr(const QDateTime &date)
+{
+    return date.toString("hh:mm");
+}
+QString dateStr(const QDateTime &date)
+{
+    return date.date().toString(Qt::SystemLocaleShortDate);
+}
 QString dateTimeStr(qint64 nTime)
 {
     return dateTimeStr(QDateTime::fromTime_t((qint32)nTime));
@@ -126,7 +134,9 @@ void setupAddressWidget(QValidatedLineEdit *widget, QWidget *parent)
 {
     parent->setFocusProxy(widget);
 
-    widget->setFont(fixedPitchFont());
+    QString fontType = GUIUtil::getFontName();
+    widget->setFont(QFont(fontType,14, QFont::Medium, false));
+    //widget->setFont(fixedPitchFont());
 #if QT_VERSION >= 0x040700
     // We don't want translators to use own addresses in translations
     // and this is the only place, where this address is supplied.
@@ -905,6 +915,24 @@ void restoreWindowGeometry(const QString& strSetting, const QSize& defaultSize, 
         parent->move(defaultPos);
     }
 }
+// Return name of current UI-theme or default theme if no theme was found
+QString getFontName()
+{
+    QSettings settings;
+    QString FontType = settings.value("FontType", "").toString();
+
+    if(!FontType.isEmpty()){
+        return FontType;
+    }
+    return QString("Volte Rounded");
+}
+QFont getCustomSelectedFont()
+{
+    QString fontType = getFontName();
+    QFont font = QFont(fontType,14, QFont::Normal, false);
+    font.setPixelSize(14);
+    return font;
+}
 
 // Return name of current UI-theme or default theme if no theme was found
 QString getThemeName()
@@ -915,7 +943,14 @@ QString getThemeName()
     if(!theme.isEmpty()){
         return theme;
     }
-    return QString("light");  
+    return QString("drkblue");
+}
+void setGUITextColor(){
+    QString theme = getThemeName();
+    if( theme.toStdString().compare("pac") == 0 )
+        COLOR_TEXT = QColor(255,255,255);
+    else
+        COLOR_TEXT = QColor(20,20,20);
 }
 
 // Open CSS when configured

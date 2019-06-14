@@ -7,6 +7,7 @@
 
 #include <QDialog>
 #include <QValidator>
+#include <QFontComboBox>
 
 class OptionsModel;
 class QValidatedLineEdit;
@@ -65,6 +66,7 @@ private:
     Ui::OptionsDialog *ui;
     OptionsModel *model;
     QDataWidgetMapper *mapper;
+    QFontComboBox *fontComboBox;
 };
 
 #endif // BITCOIN_QT_OPTIONSDIALOG_H

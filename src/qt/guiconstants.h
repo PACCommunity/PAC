@@ -2,6 +2,7 @@
 // Copyright (c) 2014-2018 The Dash Core developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
+#include <QColor>
 
 #ifndef BITCOIN_QT_GUICONSTANTS_H
 #define BITCOIN_QT_GUICONSTANTS_H
@@ -23,7 +24,7 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 /* Transaction list -- unconfirmed transaction */
 #define COLOR_UNCONFIRMED QColor(128, 128, 128)
 /* Transaction list -- negative amount */
-#define COLOR_NEGATIVE QColor(255, 0, 0)
+#define COLOR_NEGATIVE QColor(223,31,56)
 /* Transaction list -- bare address (without label) */
 #define COLOR_BAREADDRESS QColor(140, 140, 140)
 /* Transaction list -- TX status decoration - open until date */
@@ -32,10 +33,17 @@ static const bool DEFAULT_SPLASHSCREEN = true;
 #define COLOR_TX_STATUS_OFFLINE QColor(192, 192, 192)
 /* Transaction list -- TX status decoration - danger, tx needs attention */
 #define COLOR_TX_STATUS_DANGER QColor(200, 100, 100)
-/* Transaction list -- TX status decoration - default color */
-#define COLOR_BLACK QColor(0, 0, 0)
+
 /* Transaction list -- TX status decoration - LockedByInstantSend color */
 #define COLOR_TX_STATUS_LOCKED QColor(0, 128, 255)
+/* Transaction list -- TX status decoration - positive tansactions color */
+#define COLOR_POSITIVE QColor(46,222,95)
+/* Transaction list -- TX status decoration - default color */
+#define COLOR_BLACK QColor(20,20,20)
+#define COLOR_WHITE QColor(255,255,255)
+
+/* Color of the general text */
+static QColor COLOR_TEXT = QColor(128,128,128);
 
 /* Tooltips longer than this (in characters) are converted into rich text,
    so that they can be word-wrapped.
@@ -46,7 +54,7 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 static const int MAX_URI_LENGTH = 255;
 
 /* QRCodeDialog -- size of exported QR Code image */
-#define QR_IMAGE_SIZE 300
+#define QR_IMAGE_SIZE 256
 
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36

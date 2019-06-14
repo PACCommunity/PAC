@@ -6,9 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>576</width>
-    <height>402</height>
+    <width>700</width>
+    <height>496</height>
    </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>16777215</height>
+   </size>
   </property>
   <property name="windowTitle">
    <string>Options</string>
@@ -18,11 +24,14 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tabWidget_OptionsDialog">
      <property name="currentIndex">
-      <number>0</number>
+      <number>4</number>
      </property>
      <widget class="QWidget" name="tabMain">
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
       <attribute name="title">
        <string>&amp;Main</string>
       </attribute>
@@ -53,7 +62,19 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="databaseCache"/>
+          <widget class="QSpinBox" name="databaseCache">
+           <property name="styleSheet">
+            <string notr="true">#databaseCache{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
+           <property name="class" stdset="0">
+            <string>SpinBoxSmall</string>
+           </property>
+          </widget>
          </item>
          <item>
           <widget class="QLabel" name="databaseCacheUnitLabel">
@@ -99,6 +120,17 @@
           <widget class="QSpinBox" name="threadsScriptVerif">
            <property name="toolTip">
             <string>(0 = auto, &lt;0 = leave that many cores free)</string>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">#threadsScriptVerif{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
+           <property name="class" stdset="0">
+            <string>SpinBoxSmall</string>
            </property>
           </widget>
          </item>
@@ -239,6 +271,9 @@
            <property name="value">
             <number>4</number>
            </property>
+           <property name="class" stdset="0">
+            <string>SpinBoxSmall</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -280,6 +315,9 @@
            </property>
            <property name="value">
             <number>20000</number>
+           </property>
+           <property name="class" stdset="0">
+            <string>SpinBoxSmall</string>
            </property>
           </widget>
          </item>
@@ -367,6 +405,9 @@
            <property name="toolTip">
             <string>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</string>
            </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -398,6 +439,9 @@
            </property>
            <property name="toolTip">
             <string>Port of the proxy (e.g. 9050)</string>
+           </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
            </property>
           </widget>
          </item>
@@ -554,6 +598,9 @@
            <property name="toolTip">
             <string>IP address of the proxy (e.g. IPv4: 127.0.0.1 / IPv6: ::1)</string>
            </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
+           </property>
           </widget>
          </item>
          <item>
@@ -585,6 +632,9 @@
            </property>
            <property name="toolTip">
             <string>Port of the proxy (e.g. 9050)</string>
+           </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
            </property>
           </widget>
          </item>
@@ -693,6 +743,14 @@
            <property name="toolTip">
             <string>The user interface language can be set here. This setting will take effect after restarting %1.</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">#lang{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -736,7 +794,39 @@ https://www.transifex.com/projects/p/paccoin/</string>
           </widget>
          </item>
          <item>
-          <widget class="QValueComboBox" name="theme"/>
+          <widget class="QValueComboBox" name="theme">
+           <property name="styleSheet">
+            <string notr="true">#theme{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6_Display">
+         <item>
+          <widget class="QLabel" name="lblFontType">
+           <property name="text">
+            <string>Font Type:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFontComboBox" name="cboFontType">
+           <property name="styleSheet">
+            <string notr="true">#cboFontType{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -767,6 +857,14 @@ https://www.transifex.com/projects/p/paccoin/</string>
            <property name="toolTip">
             <string>Choose the default subdivision unit to show in the interface and when sending coins.</string>
            </property>
+           <property name="styleSheet">
+            <string notr="true">#unit{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
           </widget>
          </item>
         </layout>
@@ -781,7 +879,16 @@ https://www.transifex.com/projects/p/paccoin/</string>
           </widget>
          </item>
          <item>
-          <widget class="QValueComboBox" name="digits"/>
+          <widget class="QValueComboBox" name="digits">
+           <property name="styleSheet">
+            <string notr="true">#digits{
+    border-radius: 10px !important;
+    font-size: 12px !important;
+    min-width: 40px !important;
+    min-height:20px !important;
+}</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>
@@ -804,6 +911,9 @@ https://www.transifex.com/projects/p/paccoin/</string>
           <widget class="QLineEdit" name="thirdPartyTxUrls">
            <property name="toolTip">
             <string>Third party URLs (e.g. a block explorer) that appear in the transactions tab as context menu items.&lt;br/&gt;%s in the URL is replaced by transaction hash. Multiple URLs are separated by vertical bar |.</string>
+           </property>
+           <property name="class" stdset="0">
+            <string>LineEditSmall</string>
            </property>
           </widget>
          </item>

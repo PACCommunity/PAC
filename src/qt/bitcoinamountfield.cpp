@@ -198,6 +198,7 @@ BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
     amount->setLocale(QLocale::c());
     amount->installEventFilter(this);
     amount->setMaximumWidth(170);
+    amount->setAttribute(Qt::WA_MacShowFocusRect, false);
 
     QHBoxLayout *layout = new QHBoxLayout(this);
     layout->addWidget(amount);
@@ -218,6 +219,7 @@ BitcoinAmountField::BitcoinAmountField(QWidget *parent) :
 
     // Set default based on configuration
     unitChanged(unit->currentIndex());
+
 }
 
 void BitcoinAmountField::clear()

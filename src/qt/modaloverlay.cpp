@@ -22,6 +22,7 @@ userClosed(false),
 foreverHidden(false)
 {
     ui->setupUi(this);
+
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(closeClicked()));
     if (parent) {
         parent->installEventFilter(this);

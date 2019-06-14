@@ -97,6 +97,11 @@ private Q_SLOTS:
     void updateMinFeeLabel();
     void updateSmartFeeLabel();
     void updateGlobalFeeVariables();
+    void receive_from_walletview();
+    void on_lineConvertCurrency_textChanged(const QString &arg1);
+    void on_copyPacs_clicked();
+    void on_btnInvertCurrency_clicked();
+    void tabSelected();
 
 Q_SIGNALS:
     // Fired when a message should be reported to the user

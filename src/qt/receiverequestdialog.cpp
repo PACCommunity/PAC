@@ -17,6 +17,8 @@
 #include <QMimeData>
 #include <QMouseEvent>
 #include <QPixmap>
+#include <QBitmap>
+#include <QPainter>
 #if QT_VERSION < 0x050000
 #include <QUrl>
 #endif
@@ -141,7 +143,7 @@ void ReceiveRequestDialog::update()
     html += "<html><font face='verdana, arial, helvetica, sans-serif'>";
     html += "<b>"+tr("Payment information")+"</b><br>";
     html += "<b>"+tr("URI")+"</b>: ";
-    html += "<a href=\""+uri+"\">" + GUIUtil::HtmlEscape(uri) + "</a><br>";
+    html += "<a style=\"color:#F4EA13\" href=\""+uri+"\">" + GUIUtil::HtmlEscape(uri) + "</a><br>";
     html += "<b>"+tr("Address")+"</b>: " + GUIUtil::HtmlEscape(info.address) + "<br>";
     if(info.amount)
         html += "<b>"+tr("Amount")+"</b>: " + BitcoinUnits::formatHtmlWithUnit(model->getDisplayUnit(), info.amount) + "<br>";
@@ -149,7 +151,9 @@ void ReceiveRequestDialog::update()
         html += "<b>"+tr("Label")+"</b>: " + GUIUtil::HtmlEscape(info.label) + "<br>";
     if(!info.message.isEmpty())
         html += "<b>"+tr("Message")+"</b>: " + GUIUtil::HtmlEscape(info.message) + "<br>";
-    html += "<b>"+tr("InstantPAC")+"</b>: " + (info.fUseInstantSend ? tr("Yes") : tr("No")) + "<br>";
+    html += "<b>"+tr("InstantSend")+"</b>: " + (info.fUseInstantSend ? tr("Yes") : tr("No")) + "<br>";
+    ui->outUri->setObjectName("outuri");
+    ui->outUri->setStyleSheet("#outuri {background-color: #1a1a1a; color: #fff;}");
     ui->outUri->setText(html);
 
 #ifdef USE_QRCODE
@@ -168,20 +172,20 @@ void ReceiveRequestDialog::update()
                 return;
             }
             QImage qrImage = QImage(code->width + 8, code->width + 8, QImage::Format_RGB32);
-            qrImage.fill(0xffffff);
+            qrImage.fill(0xcccccc);
             unsigned char *p = code->data;
             for (int y = 0; y < code->width; y++)
             {
                 for (int x = 0; x < code->width; x++)
                 {
-                    qrImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xffffff));
+                    qrImage.setPixel(x + 4, y + 4, ((*p & 1) ? 0x0 : 0xcccccc));
                     p++;
                 }
             }
             QRcode_free(code);
 
             QImage qrAddrImage = QImage(QR_IMAGE_SIZE, QR_IMAGE_SIZE+20, QImage::Format_RGB32);
-            qrAddrImage.fill(0xffffff);
+            qrAddrImage.fill(0xcccccc);
             QPainter painter(&qrAddrImage);
             painter.drawImage(0, 0, qrImage.scaled(QR_IMAGE_SIZE, QR_IMAGE_SIZE));
             QFont font = GUIUtil::fixedPitchFont();
@@ -192,7 +196,17 @@ void ReceiveRequestDialog::update()
             painter.drawText(paddedRect, Qt::AlignBottom|Qt::AlignCenter, info.address);
             painter.end();
 
-            ui->lblQRCode->setPixmap(QPixmap::fromImage(qrAddrImage));
+            // Round corners
+            QBrush brush(qrAddrImage);
+            QImage out(qrAddrImage.width(), qrAddrImage.height(), QImage::Format_ARGB32);
+            out.fill(Qt::transparent);
+            QPainter painter2(&out);
+            painter2.setRenderHint(QPainter::Antialiasing);
+            painter2.setBrush(brush);
+            painter2.drawRoundedRect(0, 0, qrAddrImage.width(), qrAddrImage.height(), 25, 25);
+            painter2.end();
+
+            ui->lblQRCode->setPixmap(QPixmap::fromImage(out));
             ui->btnSaveAs->setEnabled(true);
         }
     }

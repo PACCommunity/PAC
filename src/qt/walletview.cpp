@@ -19,6 +19,8 @@
 #include "transactiontablemodel.h"
 #include "transactionview.h"
 #include "walletmodel.h"
+#include "privatepage.h"
+#include "walletframe.h"
 
 #include "ui_interface.h"
 
@@ -76,6 +78,11 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
     usedSendingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::SendingTab, this);
     usedReceivingAddressesPage = new AddressBookPage(platformStyle, AddressBookPage::ForEditing, AddressBookPage::ReceivingTab, this);
 
+    overviewPage->setContentsMargins(30,0,30,10);
+    transactionsPage->setContentsMargins(30,0,30,10);
+    receiveCoinsPage->setContentsMargins(30,0,30,10);
+    sendCoinsPage->setContentsMargins(30,0,30,10);
+
     addWidget(overviewPage);
     addWidget(transactionsPage);
     addWidget(receiveCoinsPage);
@@ -86,6 +93,10 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
         masternodeListPage = new MasternodeList(platformStyle);
         addWidget(masternodeListPage);
     }
+    //proposalList = new ProposalList(platformStyle);
+    //addWidget(proposalList);
+    privatePage = new PrivatePage(platformStyle);
+    addWidget(privatePage);
 
     // Clicking on a transaction on the overview pre-selects the transaction on the transaction history page
     connect(overviewPage, SIGNAL(transactionClicked(QModelIndex)), transactionView, SLOT(focusTransaction(QModelIndex)));
@@ -105,6 +116,13 @@ WalletView::WalletView(const PlatformStyle *_platformStyle, QWidget *parent):
 
     // Pass through messages from transactionView
     connect(transactionView, SIGNAL(message(QString,QString,unsigned int)), this, SIGNAL(message(QString,QString,unsigned int)));
+
+    // Refresh the value of PAC on the overview
+    connect(this,SIGNAL(transmit_to_overview()), overviewPage, SLOT(receive_from_walletview()));
+    // Refresh the value of PAC on the sendview
+    connect(this,SIGNAL(transmit_to_sendview()), sendCoinsPage, SLOT(receive_from_walletview()));
+    // Refresh the value of PAC on the receiveview
+    connect(this,SIGNAL(transmit_to_receiveview()), receiveCoinsPage, SLOT(receive_from_walletview()));
 }
 
 WalletView::~WalletView()
@@ -139,6 +157,7 @@ void WalletView::setClientModel(ClientModel *_clientModel)
     overviewPage->setClientModel(_clientModel);
     sendCoinsPage->setClientModel(_clientModel);
     QSettings settings;
+    privatePage->setClientModel(_clientModel);
     if (!fLiteMode && settings.value("fShowMasternodesTab").toBool()) {
         masternodeListPage->setClientModel(_clientModel);
     }
@@ -157,8 +176,12 @@ void WalletView::setWalletModel(WalletModel *_walletModel)
     }
     receiveCoinsPage->setModel(_walletModel);
     sendCoinsPage->setModel(_walletModel);
+    privatePage->setModel(_walletModel);
     usedReceivingAddressesPage->setModel(_walletModel->getAddressTableModel());
     usedSendingAddressesPage->setModel(_walletModel->getAddressTableModel());
+
+
+
 
     if (_walletModel)
     {
@@ -221,6 +244,16 @@ void WalletView::gotoOverviewPage()
 void WalletView::gotoHistoryPage()
 {
     setCurrentWidget(transactionsPage);
+}
+
+void WalletView::gotoProposalPage()
+{
+    //setCurrentWidget(proposalList);
+}
+
+void WalletView::gotoPrivatePage()
+{
+    setCurrentWidget(privatePage);
 }
 
 void WalletView::gotoMasternodePage()
@@ -394,4 +427,12 @@ void WalletView::requestedSyncWarningInfo()
 void WalletView::trxAmount(QString amount)
 {
     transactionSum->setText(amount);
+}
+
+/** Signal to update the value of PAC on the different windows */
+void WalletView::receive_from_walletframe()
+{
+    Q_EMIT transmit_to_overview();
+    Q_EMIT transmit_to_sendview();
+    Q_EMIT transmit_to_receiveview();
 }

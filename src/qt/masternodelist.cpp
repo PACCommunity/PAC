@@ -5,6 +5,7 @@
 #include "clientmodel.h"
 #include "clientversion.h"
 #include "guiutil.h"
+#include "guiconstants.h"
 #include "init.h"
 #include "masternode-sync.h"
 #include "netbase.h"
@@ -64,6 +65,9 @@ MasternodeList::MasternodeList(const PlatformStyle* platformStyle, QWidget* pare
 
     ui->tableWidgetMasternodesDIP3->setContextMenuPolicy(Qt::CustomContextMenu);
 
+    ui->tableWidgetMasternodesDIP3->setAlternatingRowColors(false);
+    ui->tableWidgetMasternodesDIP3->setShowGrid(false);
+
     QAction* copyProTxHashAction = new QAction(tr("Copy ProTx Hash"), this);
     QAction* copyCollateralOutpointAction = new QAction(tr("Copy Collateral Outpoint"), this);
     contextMenuDIP3 = new QMenu();
@@ -77,6 +81,15 @@ MasternodeList::MasternodeList(const PlatformStyle* platformStyle, QWidget* pare
     timer = new QTimer(this);
     connect(timer, SIGNAL(timeout()), this, SLOT(updateDIP3ListScheduled()));
     timer->start(1000);
+    // removes the focus blue border that is native on Mac OS from all the QLineEdit
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        std::string str(widgets.at(i)->metaObject()->className());
+        if(str.compare("QLineEdit") == 0 || str.compare("QValidatedLineEdit") == 0)
+            widgets.at(i)->setAttribute(Qt::WA_MacShowFocusRect, false);
+    }
+    //ui->tableWidgetMasternodes->setAlternatingRowColors(false);
+
 }
 
 MasternodeList::~MasternodeList()

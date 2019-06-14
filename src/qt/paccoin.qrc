@@ -1,8 +1,18 @@
-<!DOCTYPE RCC><RCC version="1.0">
+<RCC>
     <qresource prefix="/icons">
         <file alias="bitcoin">res/icons/bitcoin.png</file>
+        <file alias="bitcoin-32">res/icons/bitcoin-32.png</file>
         <file alias="prompticon">res/icons/chevron.png</file>
         <file alias="warning">res/icons/warning.png</file>
+    </qresource>
+    <qresource prefix="/fonts">
+        <file alias="VolteRounded-Regular">res/fonts/VolteRounded-Regular.otf</file>
+        <file alias="VolteRounded-Bold">res/fonts/VolteRounded-Bold.otf</file>
+        <file alias="VolteRounded-Light">res/fonts/VolteRounded-Light.otf</file>
+        <file alias="VolteRounded-Medium">res/fonts/VolteRounded-Medium.otf</file>
+        <file alias="VolteRounded-Semibold">res/fonts/VolteRounded-Semibold.otf</file>
+        <file alias="Gotham-Medium">res/fonts/Gotham-Medium.ttf</file>
+        <file alias="Gotham-Bold">res/fonts/Gotham-Bold.otf</file>
     </qresource>
     <qresource prefix="/icons/drkblue">
         <file alias="address-book">res/icons/drkblue/address-book.png</file>
@@ -26,6 +36,7 @@
         <file alias="eye_plus">res/icons/drkblue/eye_plus.png</file>
         <file alias="options">res/icons/drkblue/configure.png</file>
         <file alias="receiving_addresses">res/icons/drkblue/receive.png</file>
+        <file alias="proposal">res/icons/drkblue/proposal.png</file>
         <file alias="editpaste">res/icons/drkblue/editpaste.png</file>
         <file alias="editcopy">res/icons/drkblue/editcopy.png</file>
         <file alias="add">res/icons/drkblue/add.png</file>
@@ -59,6 +70,8 @@
         <file alias="fontsmaller">res/icons/drkblue/fontsmaller.png</file>
         <file alias="transaction_abandoned">res/icons/drkblue/transaction_abandoned.png</file>
         <file alias="network_disabled">res/icons/drkblue/network_disabled.png</file>
+        <file alias="info">res/icons/drkblue/info.png</file>
+        <file alias="private">res/icons/drkblue/private.png</file>
     </qresource>
     <qresource prefix="/icons/crownium">
         <file alias="address-book">res/icons/crownium/address-book.png</file>
@@ -307,6 +320,15 @@
         <file alias="drkblue_walletFrame_bg">res/images/drkblue/drkblue_walletFrame_bg.png</file>
         <file alias="splash">res/images/drkblue/splash.png</file>
         <file alias="splash_testnet">res/images/drkblue/splash_testnet.png</file>
+        <file alias="checked_b">res/images/drkblue/checked_b.png</file>
+        <file alias="checked_b_dis">res/images/drkblue/checked_b_dis.png</file>
+        <file alias="checked_dis">res/images/drkblue/checked_dis.png</file>
+        <file alias="header_bkg">res/images/drkblue/header_bkg.png</file>
+        <file alias="hover_profile">res/images/drkblue/hover_profile.png</file>
+        <file alias="profile_bkg">res/images/drkblue/profile_bkg.png</file>
+        <file alias="unchecked_b">res/images/drkblue/unchecked_b.png</file>
+        <file alias="unchecked_b_dis">res/images/drkblue/unchecked_b_dis.png</file>
+        <file alias="unchecked_dis">res/images/drkblue/unchecked_dis.png</file>
     </qresource>
     <qresource prefix="/images/crownium">
         <file alias="about">res/images/crownium/about.png</file>

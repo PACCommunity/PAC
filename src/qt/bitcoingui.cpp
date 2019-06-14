@@ -22,6 +22,7 @@
 #include "platformstyle.h"
 #include "rpcconsole.h"
 #include "utilitydialog.h"
+#include "util.h"
 
 #ifdef ENABLE_WALLET
 #include "walletframe.h"
@@ -59,6 +60,20 @@
 #include <QTimer>
 #include <QToolBar>
 #include <QVBoxLayout>
+#include <QToolButton>
+#include <QPainter>
+#include <QFileDialog>
+#include <QClipboard>
+#include <QToolTip>
+
+#include <QPushButton>
+//Rubik
+//#include <QRegion>
+#include <QFontDatabase>
+//#include <QSpacerItem>
+#include <QFont>
+#include <QProxyStyle>
+//#include <QTreeWidget>
 
 #if QT_VERSION < 0x050000
 #include <QTextDocument>
@@ -81,6 +96,20 @@ const std::string BitcoinGUI::DEFAULT_UIPLATFORM =
  * collisions in the future with additional wallets */
 const QString BitcoinGUI::DEFAULT_WALLET = "~Default";
 
+/** For the style on the comboBox */
+class MyProxyStyle : public QProxyStyle
+{
+public:
+    int styleHint( StyleHint hint, const QStyleOption*
+    option = 0, const QWidget* widget = 0, QStyleHintReturn* returnData =
+    0 ) const   
+    {
+    if( SH_ComboBox_Popup == hint )
+            return 0;//disable combo-box popup top & bottom areas
+        return QProxyStyle::styleHint( hint, option, widget, returnData );   
+    }
+};
+
 BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *networkStyle, QWidget *parent) :
     QMainWindow(parent),
     enableWallet(false),
@@ -97,6 +126,8 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     appMenuBar(0),
     overviewAction(0),
     historyAction(0),
+    privateAction(0),
+    proposalAction(0),
     masternodeAction(0),
     quitAction(0),
     sendCoinsAction(0),
@@ -129,6 +160,26 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     spinnerFrame(0),
     platformStyle(_platformStyle)
 {
+    QSettings settings;
+    settings.setValue("currencyToConvert", "USD");
+
+    /* Setting the default Pac Theme
+    settings.setValue("theme", "pac");
+    QString currentFont = GUIUtil::getFontName(); */
+
+    /* Open CSS when configured */
+    GUIUtil::setGUITextColor();
+    /* Add the custom Fonts to the wallet */
+    QFontDatabase::addApplicationFont(":/fonts/VolteRounded-Medium");
+    QFontDatabase::addApplicationFont(":/fonts/Gotham-Bold");
+    QFontDatabase::addApplicationFont(":/fonts/Gotham-Medium");
+
+    this->setStyleSheet(GUIUtil::loadStyleSheet());
+
+    /* Setting the default Pac Theme */
+    settings.setValue("theme", "drkblue");
+
+
     /* Open CSS when configured */
     this->setStyleSheet(GUIUtil::loadStyleSheet());
 
@@ -164,6 +215,16 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
     rpcConsole = new RPCConsole(_platformStyle, 0);
     helpMessageDialog = new HelpMessageDialog(this, HelpMessageDialog::cmdline);
 #ifdef ENABLE_WALLET
+    managerCurrency = new QNetworkAccessManager();
+    QObject::connect(managerCurrency, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerCurrencyFinished(QNetworkReply*)));
+    requestCurrency.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    managerCurrency->get(requestCurrency);
+
+    managerNews = new QNetworkAccessManager();
+    QObject::connect(managerNews, SIGNAL(finished(QNetworkReply*)), this, SLOT(managerNewsFinished(QNetworkReply*)));
+    requestNews.setUrl(QUrl("http://news.paccoin.io:8080/"));
+    managerNews->get(requestNews);
+
     if(enableWallet)
     {
         /** Create wallet frame*/
@@ -264,8 +325,28 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
         connect(walletFrame, SIGNAL(requestedSyncWarningInfo()), this, SLOT(showModalOverlay()));
         connect(labelBlocksIcon, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
         connect(progressBar, SIGNAL(clicked(QPoint)), this, SLOT(showModalOverlay()));
+        connect(this,SIGNAL(transmit_to_walletframe()), walletFrame, SLOT(receive_from_bitcoingui()));
     }
 #endif
+    QFont defaultFont(settings.value("FontType").toString(),14, QFont::Normal, false);
+    defaultFont.setBold(false);
+    defaultFont.setPixelSize(14);
+    QApplication::setFont(defaultFont);
+
+    // set Background Image of window so it can keep aspect ratio >
+    backgroundImage = QPixmap(":/images/drkblue/drkblue_walletFrame_bg");
+    backgroundImage = backgroundImage.scaled(this->size(), Qt::KeepAspectRatioByExpanding);
+    palette.setBrush(QPalette::Window, backgroundImage);
+    this->setPalette(palette);
+
+
+    // set the custom selected typography for the ui form:
+    QFont selectedFont = GUIUtil::getCustomSelectedFont();
+    QList<QWidget*> widgets = this->findChildren<QWidget*>();
+    for (int i = 0; i < widgets.length(); i++){
+        widgets.at(i)->setFont(selectedFont);
+    }
+    resize(QDesktopWidget().availableGeometry(this).size() * 0.75);
 }
 
 BitcoinGUI::~BitcoinGUI()
@@ -341,6 +422,17 @@ void BitcoinGUI::createActions()
 #endif
     tabGroup->addAction(historyAction);
 
+    privateAction = new QAction(QIcon(":/icons/" + theme + "/private"), tr("&Private"), this);
+    privateAction->setStatusTip(tr("Browse private section"));
+    privateAction->setToolTip(historyAction->statusTip());
+    privateAction->setCheckable(true);
+#ifdef Q_OS_MAC
+    privateAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_7));
+#else
+    privateAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_7));
+#endif
+    tabGroup->addAction(privateAction);
+
 #ifdef ENABLE_WALLET
     QSettings settings;
     if (!fLiteMode && settings.value("fShowMasternodesTab").toBool()) {
@@ -349,14 +441,25 @@ void BitcoinGUI::createActions()
         masternodeAction->setToolTip(masternodeAction->statusTip());
         masternodeAction->setCheckable(true);
 #ifdef Q_OS_MAC
-        masternodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+        masternodeAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_6));
 #else
-        masternodeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+        masternodeAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_6));
 #endif
         tabGroup->addAction(masternodeAction);
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
         connect(masternodeAction, SIGNAL(triggered()), this, SLOT(gotoMasternodePage()));
     }
+
+    proposalAction = new QAction(QIcon(":/icons/" + theme + "/proposal"), tr("&Proposals"), this);
+    proposalAction->setStatusTip(tr("Browse proposals"));
+    proposalAction->setToolTip(proposalAction->statusTip());
+    proposalAction->setCheckable(true);
+#ifdef Q_OS_MAC
+    proposalAction->setShortcut(QKeySequence(Qt::CTRL + Qt::Key_5));
+#else
+    proposalAction->setShortcut(QKeySequence(Qt::ALT + Qt::Key_5));
+#endif
+    tabGroup->addAction(proposalAction);
 
     // These showNormalIfMinimized are needed because Send Coins and Receive Coins
     // can be triggered from the tray menu, and need to show the GUI to be useful.
@@ -372,6 +475,11 @@ void BitcoinGUI::createActions()
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
+    connect(privateAction, SIGNAL(triggered()), this, SLOT(gotoPrivatePage()));
+    connect(privateAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(proposalAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
+    connect(proposalAction, SIGNAL(triggered()), this, SLOT(gotoProposalPage()));
+
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(QIcon(":/icons/" + theme + "/quit"), tr("E&xit"), this);
@@ -469,6 +577,9 @@ void BitcoinGUI::createActions()
     // prevents an open debug window from becoming stuck/unusable on client shutdown
     connect(quitAction, SIGNAL(triggered()), rpcConsole, SLOT(hide()));
 
+    // Setting the new style for the comboBox
+    qApp->setStyle( new MyProxyStyle );
+
 #ifdef ENABLE_WALLET
     if(walletFrame)
     {
@@ -490,6 +601,18 @@ void BitcoinGUI::createActions()
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_G), this, SLOT(showGraph()));
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_P), this, SLOT(showPeers()));
     new QShortcut(QKeySequence(Qt::CTRL + Qt::SHIFT + Qt::Key_R), this, SLOT(showRepair()));
+}
+
+// We override the virtual resizeEvent of the QWidget to adjust background image to the new window size
+void BitcoinGUI::resizeEvent(QResizeEvent *event)
+{
+    QWidget::resizeEvent(event);
+
+    // set Background Image of window so it can keep aspect ratio >
+    backgroundImage = QPixmap(":/images/drkblue/drkblue_walletFrame_bg");
+    backgroundImage = backgroundImage.scaled(event->size(), Qt::KeepAspectRatioByExpanding);
+    palette.setBrush(QPalette::Window, backgroundImage);
+    this->setPalette(palette);
 }
 
 void BitcoinGUI::createMenuBar()
@@ -554,8 +677,32 @@ void BitcoinGUI::createToolBars()
 #ifdef ENABLE_WALLET
     if(walletFrame)
     {
+        QWidget* spacer = new QWidget();
+        spacer->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        spacer->setFixedWidth(120);
+        spacer->setFixedHeight(10);
+
+        QWidget* spacerBottomIcon = new QWidget();
+        spacerBottomIcon->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        spacerBottomIcon->setFixedWidth(120);
+        spacerBottomIcon->setFixedHeight(5);
+
+        QWidget* mainIcon = new QWidget();
+        mainIcon->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        mainIcon->setObjectName("toolbarIcon");
+        mainIcon->setFixedWidth(105);
+        mainIcon->setFixedHeight(105);
+
         QToolBar *toolbar = new QToolBar(tr("Tabs toolbar"));
-        toolbar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+        toolbar->setObjectName("toolBar");
+        toolbar->setContextMenuPolicy(Qt::PreventContextMenu);
+        toolbar->setToolButtonStyle(Qt::ToolButtonIconOnly);
+        addToolBar(Qt::LeftToolBarArea, toolbar);
+        toolbar->setOrientation(Qt::Vertical);
+        toolbar->setFixedWidth(120);
+        toolbar->addWidget(spacer);
+        toolbar->addWidget(mainIcon);
+        toolbar->addWidget(spacerBottomIcon);
         toolbar->addAction(overviewAction);
         toolbar->addAction(sendCoinsAction);
         toolbar->addAction(receiveCoinsAction);
@@ -565,24 +712,142 @@ void BitcoinGUI::createToolBars()
         {
             toolbar->addAction(masternodeAction);
         }
+        toolbar->addAction(proposalAction);
+        toolbar->addAction(privateAction);
         toolbar->setMovable(false); // remove unused icon in upper left corner
         overviewAction->setChecked(true);
+
+        createHeaderBar();
+        QSpacerItem *HeaderSpacer = new QSpacerItem(1,27, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
         /** Create additional container for toolbar and walletFrame and make it the central widget.
             This is a workaround mostly for toolbar styling on Mac OS but should work fine for every other OSes too.
         */
-        QVBoxLayout *layout = new QVBoxLayout;
-        layout->addWidget(toolbar);
-        layout->addWidget(walletFrame);
+
+        QVBoxLayout *verticalLayout = new QVBoxLayout;
+        verticalLayout->addSpacerItem(HeaderSpacer);
+        verticalLayout->addWidget(headerFrame);
+        //:V
+        //verticalLayout->addWidget(toolbar);
+        verticalLayout->addWidget(walletFrame);
+        verticalLayout->setSpacing(0);
+        verticalLayout->setContentsMargins(QMargins());
+
+        QWidget* container = new QWidget();
+        container->setLayout(verticalLayout);
+        QHBoxLayout *layout = new QHBoxLayout;
+        layout->addWidget(container);
         layout->setSpacing(0);
         layout->setContentsMargins(QMargins());
         QWidget *containerWidget = new QWidget();
+        containerWidget->setObjectName("containerWidget");
         containerWidget->setLayout(layout);
         setCentralWidget(containerWidget);
     }
 #endif // ENABLE_WALLET
 }
+void BitcoinGUI::createHeaderBar()
+{
+    /** Creating the profile image widget */
+    headerFrame = new QFrame;
+    QHBoxLayout *headerFrameLayout = new QHBoxLayout(this);
+    messageLabel = new QLabel(this);
+    QFrame *frameImg = new QFrame;
+    QHBoxLayout *profileImgLayout = new QHBoxLayout(this);
+    btnImg = new QPushButton;
+    btnRefresh = new QToolButton;
+    btnCopyNews = new QToolButton;
+    QSpacerItem *item = new QSpacerItem(15,1, QSizePolicy::Fixed, QSizePolicy::Expanding);
+    QSpacerItem *messageLeftSpacer = new QSpacerItem(30,1, QSizePolicy::Fixed, QSizePolicy::Fixed);
 
+    headerFrame->setFixedHeight(100);
+    headerFrame->setObjectName("headerFrameLayout");
+    headerFrame->setStyleSheet("#headerFrameLayout { background: transparent !important; border-image: url(:/images/drkblue/header_bkg) 0 0 0 0 stretch stretch; margin-left: 40px;}");
+
+    messageLabel->setText("");
+    messageLabel->setAlignment(Qt::AlignCenter);
+    messageLabel->setStyleSheet("QLabel { color:white; font-size:24px;}");
+    messageLabel->setWordWrap(true);
+
+    frameImg->setFrameStyle(QFrame::StyledPanel);
+    frameImg->setFrameShadow(QFrame::Raised);
+    frameImg->setStyleSheet("QFrame { border-image: url(:/images/drkblue/profile_bkg) 0 0 0 0 stretch stretch;"
+                            " margin-right:-1px !important }");
+    frameImg->setFixedWidth(115);
+    frameImg->setFixedHeight(95);
+
+    btnImg->setObjectName("btnChangeImage");
+    btnImg->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnImg->setFixedHeight(80);
+    btnImg->setFixedWidth(80);
+    btnImg->setToolTip("Press to change or remove the image.");
+    setProfileImage();
+
+    btnRefresh->setProperty("class","QuickButton");
+    btnRefresh->setToolTip("Refresh news and PAC-USD value.");
+    btnRefresh->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnRefresh->setFixedHeight(20);
+    btnRefresh->setFixedWidth(20);
+    btnRefresh->setIcon(QIcon(":/movies/spinner-000"));
+
+    btnCopyNews->setProperty("class","QuickButton");
+    btnCopyNews->setToolTip("Copy news.");
+    btnCopyNews->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+    btnCopyNews->setFixedHeight(24);
+    btnCopyNews->setFixedWidth(24);
+    btnCopyNews->setIcon(QIcon(":/icons/drkblue/editcopy"));
+
+    profileImgLayout->setContentsMargins(0,0,0,0);
+    profileImgLayout->addWidget(btnImg);
+    profileImgLayout->addSpacerItem(item);
+    frameImg->setLayout(profileImgLayout);
+
+    /* inserting everything inside the header*/
+
+    headerFrameLayout->setContentsMargins(0,0,0,0);
+    headerFrameLayout->setContentsMargins(0,0,0,0);
+    headerFrameLayout->addSpacerItem(messageLeftSpacer);
+    headerFrameLayout->addWidget(messageLabel);
+    headerFrameLayout->addWidget(btnRefresh);
+    headerFrameLayout->addWidget(btnCopyNews);
+    headerFrameLayout->addWidget(frameImg);
+    headerFrame->setLayout(headerFrameLayout);
+
+    QSettings settings;
+    QString strImgValue = settings.value("profilePicture").toString();
+    if(strImgValue == "" || strImgValue == NULL){
+        strImgValue = ":/icons/bitcoin";
+    }
+
+    // Adding the connections for the buttons of the image, copy the news and refresh news/pacValue
+    connect(btnImg, SIGNAL(released()),this, SLOT(selectProfileImageFile()));
+    connect(btnCopyNews,  SIGNAL(clicked()), this, SLOT(copyNews()));
+    connect(btnRefresh,  SIGNAL(clicked()), this, SLOT(refreshNewsPacValue()));
+}
+void BitcoinGUI::setProfileImage(){
+    /** initializing profile image */
+    QSettings settings;
+    QString strImgValue = settings.value("profilePicture").toString();
+
+    if(strImgValue == "" || strImgValue == NULL){
+        strImgValue = ":/icons/bitcoin";
+    }
+
+    QPixmap target(80, 80);
+    target.fill(Qt::transparent);
+    QPixmap pixmap = QPixmap::fromImage( QImage(strImgValue).scaled(80,80,Qt::KeepAspectRatioByExpanding, Qt::SmoothTransformation).convertToFormat(QImage::Format_ARGB32));
+    QPainter painter(&target);
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.setRenderHint(QPainter::Antialiasing, true);
+    QPainterPath p;
+    p.addEllipse(QRect(0,0,80,80));
+    painter.setClipPath(p);
+    painter.drawPixmap(0, 0,pixmap);
+    QIcon ButtonIcon(target);
+    btnImg->setIcon(ButtonIcon);
+    btnImg->setIconSize(QSize(78,78));
+
+}
 void BitcoinGUI::setClientModel(ClientModel *_clientModel)
 {
     this->clientModel = _clientModel;
@@ -709,6 +974,8 @@ void BitcoinGUI::setWalletActionsEnabled(bool enabled)
     receiveCoinsAction->setEnabled(enabled);
     receiveCoinsMenuAction->setEnabled(enabled);
     historyAction->setEnabled(enabled);
+    proposalAction->setEnabled(enabled);
+    privateAction->setEnabled(enabled);
     QSettings settings;
     if (!fLiteMode && settings.value("fShowMasternodesTab").toBool() && masternodeAction) {
         masternodeAction->setEnabled(enabled);
@@ -871,6 +1138,17 @@ void BitcoinGUI::gotoHistoryPage()
 {
     historyAction->setChecked(true);
     if (walletFrame) walletFrame->gotoHistoryPage();
+}
+
+void BitcoinGUI::gotoProposalPage()
+{
+    proposalAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoProposalPage();
+}
+
+void BitcoinGUI::gotoPrivatePage(){
+    privateAction->setChecked(true);
+    if (walletFrame) walletFrame->gotoPrivatePage();
 }
 
 void BitcoinGUI::gotoMasternodePage()
@@ -1345,6 +1623,47 @@ void BitcoinGUI::setEncryptionStatus(int status)
 }
 #endif // ENABLE_WALLET
 
+/** Select a new image for the top bar */
+void BitcoinGUI::selectProfileImageFile(){
+    QMessageBox msgBox;
+    msgBox.setText("Would you like to change the current profile image or remove it and restore the original Pac logo?");
+    QPushButton *changeImage = msgBox.addButton(tr("Change Profile Image"), QMessageBox::ActionRole);
+    QPushButton *removeRestoreImage = msgBox.addButton(tr("Remove and Restore"), QMessageBox::ActionRole);
+    QPushButton *abortButton = msgBox.addButton(QMessageBox::Cancel);
+    msgBox.exec();
+
+    QSettings settings;
+    if (msgBox.clickedButton() == changeImage)// change image
+    {
+        //there is a bug with qt which won't let load .png files: output error will be:  libpng error: Read Error
+        QString imgPath = QFileDialog::getOpenFileName(this, QObject::tr("Choose Profile Picture"),"/",QObject::tr("Images (*.xpm *.jpg)"));
+        if(!imgPath.isEmpty() && !imgPath.isNull()){
+            // when the user click on ok button inside the file picker
+            // Copy the image to the Pac Folder:
+            boost::filesystem::path directoryToCopy = GetDefaultDataDir();
+            std::string imgFinalPath = directoryToCopy.string() + "/profileImg";//concatenate every substring to create the final path std string
+
+            std::ifstream ifs(imgPath.toStdString(), std::ios::binary);//copy img file
+            std::ofstream ofs(imgFinalPath, std::ios::binary);//paste img file
+            ofs << ifs.rdbuf();
+            imgPath = QString::fromUtf8(imgFinalPath.c_str());//parse from std string to QString
+
+            // saves the path as setting and then refresh the profile image button
+            settings.setValue("profilePicture", imgPath);
+        }
+    }
+    else if (msgBox.clickedButton() == removeRestoreImage)// remove and restore pac logo
+    {
+        settings.setValue("profilePicture", ":/icons/bitcoin");
+    }
+    else if (msgBox.clickedButton() == abortButton){
+        settings.sync();
+        return;
+    }
+    settings.sync();
+    setProfileImage();
+}
+
 void BitcoinGUI::showNormalIfMinimized(bool fToggleHidden)
 {
     if(!clientModel)
@@ -1422,6 +1741,25 @@ void BitcoinGUI::showModalOverlay()
         modalOverlay->toggleVisibility();
 }
 
+/** Copy the new into the clipboard */
+void BitcoinGUI::copyNews(){
+    QClipboard *clip = QApplication::clipboard();
+    QString input = messageLabel->text();
+    clip->setText(input);
+    QToolTip::showText(btnCopyNews->mapToGlobal(QPoint(10,10)), "Copied news to clipboard!",btnCopyNews);
+}
+
+/** Button on the top bar to refresh news and pac value */
+void BitcoinGUI::refreshNewsPacValue(){
+    //Refresh news
+    requestNews.setUrl(QUrl("http://news.paccoin.io:8080/"));
+    managerNews->get(requestNews);
+
+    //Refresh PAC value
+    requestCurrency.setUrl(QUrl("http://explorer.pachub.io/api/currency/USD"));
+    managerCurrency->get(requestCurrency);
+}
+
 static bool ThreadSafeMessageBox(BitcoinGUI *gui, const std::string& message, const std::string& caption, unsigned int style)
 {
     bool modal = (style & CClientUIInterface::MODAL);
@@ -1465,6 +1803,39 @@ void BitcoinGUI::handleRestart(QStringList args)
 {
     if (!ShutdownRequested())
         Q_EMIT requestedRestart(args);
+}
+
+/** Manager that waits for the response of the value of PAC */
+void BitcoinGUI::managerCurrencyFinished(QNetworkReply *replyC) {
+    if (replyC->error()) {
+        QSettings settings;
+        settings.setValue("PACvalue","0");
+        settings.sync();
+        Q_EMIT transmit_to_walletframe();
+        return;
+    }
+    QString answer = replyC->readAll();
+
+    // The value is in JSON the value is just cropped from the string
+    QSettings settings;
+    QStringList list1 = answer.split('"');
+    QString s = list1[6];
+    s = s.mid(1, s.length()-2); 
+    // Value saved on settings
+    settings.setValue("PACvalue",s);
+    settings.sync();
+    // Call to update the windows where the PAC value is shown
+    Q_EMIT transmit_to_walletframe();
+}
+
+/** Manager that waits for the response of the news */
+void BitcoinGUI::managerNewsFinished(QNetworkReply *replyN) {
+    if (replyN->error()) {
+        messageLabel->setText("News not loading.");
+        return;
+    }
+    QString answer = replyN->readAll();
+    messageLabel->setText(answer);
 }
 
 UnitDisplayStatusBarControl::UnitDisplayStatusBarControl(const PlatformStyle *platformStyle) :

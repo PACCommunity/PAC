@@ -30,6 +30,15 @@ QT_TS = \
   qt/locale/paccoin_zh_CN.ts \
   qt/locale/paccoin_zh_TW.ts
 
+RES_FONTS = \
+  qt/res/fonts/VolteRounded-Regular.otf \
+  qt/res/fonts/VolteRounded-Bold.otf \
+  qt/res/fonts/VolteRounded-Light.otf \
+  qt/res/fonts/VolteRounded-Medium.otf \
+  qt/res/fonts/VolteRounded-Semibold.otf \
+  qt/res/fonts/Gotham-Medium.ttf \
+  qt/res/fonts/Gotham-Bold.otf
+
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
   qt/forms/askpassphrasedialog.ui \
@@ -49,7 +58,8 @@ QT_FORMS_UI = \
   qt/forms/sendcoinsdialog.ui \
   qt/forms/sendcoinsentry.ui \
   qt/forms/signverifymessagedialog.ui \
-  qt/forms/transactiondescdialog.ui
+  qt/forms/transactiondescdialog.ui \
+  qt/forms/privatepage.ui
 
 QT_MOC_CPP = \
   qt/moc_addressbookpage.cpp \
@@ -63,6 +73,7 @@ QT_MOC_CPP = \
   qt/moc_clientmodel.cpp \
   qt/moc_coincontroldialog.cpp \
   qt/moc_coincontroltreewidget.cpp \
+  qt/moc_columnalignedlayout.cpp \
   qt/moc_csvmodelwriter.cpp \
   qt/moc_editaddressdialog.cpp \
   qt/moc_guiutil.cpp \
@@ -71,6 +82,7 @@ QT_MOC_CPP = \
   qt/moc_macnotificationhandler.cpp \
   qt/moc_modaloverlay.cpp \
   qt/moc_masternodelist.cpp \
+  qt/moc_privatepage.cpp \
   qt/moc_notificator.cpp \
   qt/moc_openuridialog.cpp \
   qt/moc_optionsdialog.cpp \
@@ -98,7 +110,7 @@ QT_MOC_CPP = \
   qt/moc_utilitydialog.cpp \
   qt/moc_walletframe.cpp \
   qt/moc_walletmodel.cpp \
-  qt/moc_walletview.cpp
+  qt/moc_walletview.cpp 
 
 BITCOIN_MM = \
   qt/macdockiconhandler.mm \
@@ -132,6 +144,7 @@ BITCOIN_QT_H = \
   qt/clientmodel.h \
   qt/coincontroldialog.h \
   qt/coincontroltreewidget.h \
+  qt/columnalignedlayout.h \
   qt/csvmodelwriter.h \
   qt/editaddressdialog.h \
   qt/guiconstants.h \
@@ -148,6 +161,7 @@ BITCOIN_QT_H = \
   qt/optionsmodel.h \
   qt/overviewpage.h \
   qt/paymentrequestplus.h \
+  qt/privatepage.h \
   qt/paymentserver.h \
   qt/peertablemodel.h \
   qt/platformstyle.h \
@@ -175,11 +189,12 @@ BITCOIN_QT_H = \
   qt/walletmodel.h \
   qt/walletmodeltransaction.h \
   qt/walletview.h \
-  qt/winshutdownmonitor.h
+  qt/winshutdownmonitor.h 
 
 RES_ICONS = \
   qt/res/icons/bitcoin.ico \
   qt/res/icons/bitcoin_testnet.ico \
+  qt/res/icons/bitcoin-32.png \
   qt/res/icons/bitcoin.png \
   qt/res/icons/chevron.png \
   qt/res/icons/warning.png \
@@ -213,11 +228,14 @@ RES_ICONS = \
   qt/res/icons/drkblue/hd_disabled.png \
   qt/res/icons/drkblue/hd_enabled.png \
   qt/res/icons/drkblue/history.png \
+  qt/res/icons/drkblue/info.png \
   qt/res/icons/drkblue/key.png \
   qt/res/icons/drkblue/lock_closed.png \
   qt/res/icons/drkblue/lock_open.png \
   qt/res/icons/drkblue/masternodes.png \
   qt/res/icons/drkblue/overview.png \
+  qt/res/icons/drkblue/private.png \
+  qt/res/icons/drkblue/proposal.png \
   qt/res/icons/drkblue/quit.png \
   qt/res/icons/drkblue/receive.png \
   qt/res/icons/drkblue/remove.png \
@@ -487,6 +505,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/askpassphrasedialog.cpp \
   qt/coincontroldialog.cpp \
   qt/coincontroltreewidget.cpp \
+  qt/columnalignedlayout.cpp \
   qt/editaddressdialog.cpp \
   qt/masternodelist.cpp \
   qt/openuridialog.cpp \
@@ -497,6 +516,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/receivecoinsdialog.cpp \
   qt/receiverequestdialog.cpp \
   qt/recentrequeststablemodel.cpp \
+  qt/privatepage.cpp \
   qt/sendcoinsdialog.cpp \
   qt/sendcoinsentry.cpp \
   qt/signverifymessagedialog.cpp \
@@ -509,7 +529,7 @@ BITCOIN_QT_WALLET_CPP = \
   qt/walletframe.cpp \
   qt/walletmodel.cpp \
   qt/walletmodeltransaction.cpp \
-  qt/walletview.cpp
+  qt/walletview.cpp 
 
 BITCOIN_QT_CPP = $(BITCOIN_QT_BASE_CPP)
 if TARGET_WINDOWS
@@ -532,6 +552,16 @@ RES_IMAGES = \
   qt/res/images/drkblue/drkblue_leftArrow_small.png \
   qt/res/images/drkblue/drkblue_rightArrow_small.png \
   qt/res/images/drkblue/drkblue_qtreeview_selected.png \
+  qt/res/images/drkblue/drkblue_walletFrame_bg.png \
+  qt/res/images/drkblue/hover_profile.png \
+  qt/res/images/drkblue/profile_bkg.png \
+  qt/res/images/drkblue/header_bkg.png \
+  qt/res/images/drkblue/checked_b.png \
+  qt/res/images/drkblue/unchecked_b.png \
+  qt/res/images/drkblue/checked_b_dis.png \
+  qt/res/images/drkblue/unchecked_b_dis.png \
+  qt/res/images/drkblue/checked_dis.png \
+  qt/res/images/drkblue/unchecked_dis.png \
   qt/res/images/drkblue/drkblue_walletFrame_bg.png \
   qt/res/images/crownium/about.png \
   qt/res/images/crownium/splash.png \
@@ -605,7 +635,7 @@ qt_libpaccoinqt_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INC
 qt_libpaccoinqt_a_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
 qt_libpaccoinqt_a_SOURCES = $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(QT_FORMS_UI) \
-  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
+  $(QT_QRC) $(QT_QRC_LOCALE) $(QT_TS) $(PROTOBUF_PROTO) $(RES_ICONS) $(RES_FONTS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES)
 
 nodist_qt_libpaccoinqt_a_SOURCES = $(QT_MOC_CPP) $(QT_MOC) $(PROTOBUF_CC) \
   $(PROTOBUF_H) $(QT_QRC_CPP) $(QT_QRC_LOCALE_CPP)
@@ -668,7 +698,7 @@ $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
-$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
+$(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_FONTS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
 	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) $(RCCFLAGS) -name paccoin $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@

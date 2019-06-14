@@ -9,6 +9,9 @@
 
 #include <QSettings>
 #include <QStringList>
+#include <QLocale>
+#include <iostream>
+#include <string>
 
 BitcoinUnits::BitcoinUnits(QObject *parent):
         QAbstractListModel(parent),
@@ -144,10 +147,19 @@ QString BitcoinUnits::format(int unit, const CAmount& nIn, bool fPlus, Separator
     else if (fPlus && n > 0)
         quotient_str.insert(0, '+');
 
-    if (num_decimals <= 0)
-        return quotient_str;
+    //a substring is created in order to replace spaces with commas for easier reading.
+    QString _str;
+    _str = quotient_str.simplified();
+    _str.replace( " ", "," );
 
-    return quotient_str + QString(".") + remainder_str;
+    if (num_decimals <= 0)
+        return _str;
+
+    //then it adds the dot and the cents:
+    /*if(remainder_str.toInt()==0){
+        return _str + QString(".00");
+    }*/
+    return _str + QString(".") + remainder_str;
 }
 
 
@@ -267,4 +279,15 @@ QVariant BitcoinUnits::data(const QModelIndex &index, int role) const
 CAmount BitcoinUnits::maxMoney()
 {
     return MAX_MONEY;
+}
+
+QString BitcoinUnits::pacToUsd(CAmount balance)
+{
+    QSettings settings;
+    qint64 bal = (qint64)balance;
+    qint64 tbal = (bal > 0 ? bal : -bal);
+    double dbal = tbal;
+    double dval = (settings.value("PACvalue").toString()).toDouble();
+    QString s_n_abs = QString::number((dbal/100000000)*dval);
+    return s_n_abs;
 }

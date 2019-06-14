@@ -84,6 +84,9 @@ void OptionsModel::Init(bool resetSettings)
     if (!settings.contains("theme"))
         settings.setValue("theme", "");
 
+    if (!settings.contains("FontType"))
+        settings.setValue("FontType", "Volte Rounded");
+
 #ifdef ENABLE_WALLET
     if (!settings.contains("fCoinControlFeatures"))
         settings.setValue("fCoinControlFeatures", false);
@@ -294,6 +297,9 @@ QVariant OptionsModel::data(const QModelIndex & index, int role) const
             return settings.value("theme");
         case Language:
             return settings.value("language");
+        case FontType:
+            return  settings.value("FontType");
+
 #ifdef ENABLE_WALLET
         case CoinControlFeatures:
             return fCoinControlFeatures;
@@ -476,7 +482,13 @@ bool OptionsModel::setData(const QModelIndex & index, const QVariant & value, in
                 settings.setValue("theme", value);
                 setRestartRequired(true);
             }
-            break;            
+            break;
+        case FontType:
+            if (settings.value("FontType") != value) {
+                settings.setValue("FontType", value);
+                setRestartRequired(true);
+            }
+            break;
         case Language:
             if (settings.value("language") != value) {
                 settings.setValue("language", value);

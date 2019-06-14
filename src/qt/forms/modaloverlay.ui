@@ -83,11 +83,14 @@
                <property name="enabled">
                 <bool>false</bool>
                </property>
+               <property name="styleSheet">
+                <string notr="true">border:0px;</string>
+               </property>
                <property name="text">
                 <string/>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../dash.qrc">
                  <normaloff>:/icons/warning</normaloff>
                  <disabledoff>:/icons/warning</disabledoff>:/icons/warning</iconset>
                </property>
@@ -386,6 +389,8 @@
    <container>1</container>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="../dash.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>762</width>
+    <width>785</width>
     <height>457</height>
    </rect>
   </property>
@@ -46,8 +46,11 @@
      </item>
      <item>
       <widget class="QTabWidget" name="tabWidget">
+       <property name="tabShape">
+        <enum>QTabWidget::Rounded</enum>
+       </property>
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="tabDIP3Masternodes">
         <attribute name="title">
@@ -56,6 +59,9 @@
         <layout class="QGridLayout" name="gridLayout_3">
          <item row="0" column="0">
           <layout class="QHBoxLayout" name="horizontalLayout_4">
+           <property name="rightMargin">
+            <number>5</number>
+           </property>
            <property name="bottomMargin">
             <number>0</number>
            </property>
@@ -70,6 +76,9 @@
             <widget class="QLineEdit" name="filterLineEditDIP3">
              <property name="toolTip">
               <string>Filter masternode list</string>
+             </property>
+             <property name="class" stdset="0">
+              <string>LineEditSmall</string>
              </property>
             </widget>
            </item>
